@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript | kk</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="kkkkeywords" />
+  
+
+  <meta name="description" content="JavaScript运行在客户端的脚本语言；不需要编译，运行过程中由js引擎逐行解释并执行,也可以用于后端node.js技术浏览器引擎：渲染引擎：内核js引擎：js解释器  书写位置 行内式：&lt;input type&#x3D;&quot;botton&quot; onclick&#x3D;&quot;alert(&#39;hello!!&#39;) &#x2F;&gt;Html推荐双引号，js推荐单引号 外部链接：&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://example.com/2020/09/22/js/index.html">
+<meta property="og:site_name" content="kk">
+<meta property="og:description" content="JavaScript运行在客户端的脚本语言；不需要编译，运行过程中由js引擎逐行解释并执行,也可以用于后端node.js技术浏览器引擎：渲染引擎：内核js引擎：js解释器  书写位置 行内式：&lt;input type&#x3D;&quot;botton&quot; onclick&#x3D;&quot;alert(&#39;hello!!&#39;) &#x2F;&gt;Html推荐双引号，js推荐单引号 外部链接：&amp;lt">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-22T13:22:11.000Z">
+<meta property="article:modified_time" content="2021-05-18T15:22:25.978Z">
+<meta property="article:author" content="kk">
+<meta name="twitter:card" content="summary">
+
+  
+
+  
+    <link rel="icon" href="/images/1.png">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">选项</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">选项</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            文章
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/categories/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-js" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">JavaScript</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2020.09.22</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>kk</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>运行在客户端的脚本语言；不需要编译，运行过程中由js引擎逐行解释并执行,也可以用于后端node.js技术<br>浏览器引擎：<br>渲染引擎：内核<br>js引擎：js解释器</p>
+<ul>
+<li>书写位置<ol>
+<li>行内式：<code>&lt;input type=&quot;botton&quot; onclick=&quot;alert(&#39;hello!!&#39;) /&gt;</code>Html推荐双引号，js推荐单引号</li>
+<li>外部链接：<code>&lt;script src=&quot;xxx.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>内联式：<code>&lt;script&gt;alert(&#39;hello&#39;)&lt;/script&gt;</code></li>
+</ol>
+</li>
+</ul>
+<h4 id="输入输出语句"><a href="#输入输出语句" class="headerlink" title="输入输出语句"></a>输入输出语句</h4><ul>
+<li>alert(msg):浏览器弹窗提示</li>
+<li>console.log(msg):控制台打印信息</li>
+<li>prompt(info):浏览器弹出，用户输入</li>
+</ul>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><table>
+<thead>
+<tr>
+<th>情况</th>
+<th>说明</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>varage;console.log(age)</td>
+<td>只声明不负值</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>console.log(age)</td>
+<td>不声明，不负值</td>
+<td>报错</td>
+</tr>
+<tr>
+<td>age=10;console.log(age)</td>
+<td>不声明，只赋值</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><ul>
+<li>区分大小写</li>
+<li>不能数字开头</li>
+<li>可使用的符号作开头：下划线<code>_</code>，美元符<code>$</code></li>
+</ul>
+<h4 id="变量数据类型"><a href="#变量数据类型" class="headerlink" title="变量数据类型"></a>变量数据类型</h4><p>动态数据类型。同一变量可做不同数据类型使用<br>类型种类：<code>number``boolean``string``undefined``null</code></p>
+<ul>
+<li><p>数字型<br>Infinity:无穷大；</p>
+</li>
+<li><p>Infinity:无穷小；<br>NaN:非数字</p>
+</li>
+<li><p>字符串<br>使用单引号或双引号，推荐单引号<br>嵌套：<code>var str=&#39;啥&quot;嘎&quot;嘎和&#39;; var str=&quot;航空&#39;港行&#39;供货商&quot;;</code>也可以加转义符<code>\</code><br>字符串长度：<code>var str=&#39;画口红管工行&#39;;  alert(str.length);</code><br>字符串拼接：<code>字符串+任何类型=拼接后的字符串</code></p>
+</li>
+<li><p>布尔类型<br><code>var flag=true;</code><br>true参加数学加法时当做1，false为0；</p>
+</li>
+<li><p>undefined<br>与数字相加后结果为NaN;</p>
+</li>
+<li><p>typeof<br><code>console.log(typeof age);</code><br>查看数据类型</p>
+</li>
+</ul>
+<h4 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h4><ul>
+<li>转为字符串</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>toString()</td>
+<td><code>var num=1;alert(num.toString());</code></td>
+</tr>
+<tr>
+<td>String()强制转换</td>
+<td><code>var num=1; alert(String(num));</code></td>
+</tr>
+<tr>
+<td>拼接</td>
+<td><code>var num=1; alert(num+&quot;&quot;);</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>转数字</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>parseInt(string)保留整数,去掉单位</td>
+<td><code>parseInt(&#39;11&#39;);</code></td>
+</tr>
+<tr>
+<td>parseFloat(string)</td>
+<td><code>parseFloat(&#39;222&#39;);</code></td>
+</tr>
+<tr>
+<td>Number()强制转换</td>
+<td><code>Number(&#39;22&#39;);</code></td>
+</tr>
+<tr>
+<td>js隐式转换（减，乘，除)</td>
+<td><code>&#39;11&#39;-0</code></td>
+</tr>
+</tbody></table>
+<p><code>==</code>符号会把字符串的数据类型转换为数字型再比较。<br><code>===</code>两侧的值和数据类型一样才相等。</p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><ul>
+<li>逻辑与<br><code>表达式1&amp;&amp;表达式2</code>如果第一个表达式为真，则返回表达式2，否则返回表达式1</li>
+</ul>
+<blockquote>
+<p><code>0</code> <code>&#39;&#39;``null``undefind``NaN</code>为假</p>
+</blockquote>
+<ul>
+<li>逻辑或<br><code>表达式1||表达式2</code>如果表达式1为真则返回表达式1，否则返回表达式2</li>
+</ul>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//switch</span><br><span class="line">var num=3;</span><br><span class="line">switch(num)&#123;</span><br><span class="line">case 2:</span><br><span class="line">console.log(num);</span><br><span class="line">break;</span><br><span class="line">case 3:</span><br><span class="line">console.log(num);</span><br><span class="line">break;</span><br><span class="line">default:</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>continue用于跳出本次循环，继续下一次循环；<br>break用于结束循环；</p>
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//利用new创建数组</span><br><span class="line">var a=new Array();</span><br><span class="line">//数组字面量方式创建</span><br><span class="line">var a=[];</span><br><span class="line">var a=[&#x27;xxx&#x27;,77,true];</span><br><span class="line">//获取数组元素：数组名[索引号]</span><br><span class="line">console.log(a[0]);</span><br><span class="line">//数组长度：数组名.length</span><br><span class="line">console.log(a.length);</span><br><span class="line">//新增数组元素</span><br><span class="line">//修改数组索引追加数组元素</span><br><span class="line">//不能直接给数组名赋值，否则会覆盖以前的数据</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li>声明<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//函数关键字声明</span><br><span class="line">function a()&#123;</span><br><span class="line">console.log(&#x27;xxxxxxxxx&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">//函数表达式声明</span><br><span class="line">var b=function()&#123;&#125;;</span><br><span class="line">//function 函数名（形参1，形参2...）&#123;//形参即形式上的参数&#125;</span><br><span class="line">function b(n)&#123;</span><br><span class="line">console.log(n);</span><br><span class="line">&#125;</span><br><span class="line">b(&#x27;xxx&#x27;);</span><br><span class="line">//实参与形参个数一致时，正常输出</span><br><span class="line">//实参小于形参时，多余的形参可看作不用声明的变量，结果为undefined</span><br><span class="line">//实参多于形参时，只取到形参的个数</span><br><span class="line">//#######################################</span><br><span class="line">//函数的返回值</span><br><span class="line">function c()&#123;</span><br><span class="line">return 返回的内容；</span><br><span class="line">&#125;</span><br><span class="line">var n=c();</span><br><span class="line">//return 之后的代码不会执行；</span><br><span class="line">//return只返回一个值，且只返回最后一个值。</span><br><span class="line">//return可返回数组，字符串，</span><br><span class="line">//如果没有return则返回undefind</span><br><span class="line">//###########</span><br><span class="line">function fn()&#123;</span><br><span class="line">console.log(arguments);</span><br><span class="line">&#125;</span><br><span class="line">fn(1,2,2,34,9);</span><br><span class="line">//arguments里储存了所有传过来的实参，它是一个伪数组，具有length属性，可用索引的方式遍历，但不具有数组的push，pop等方法</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//js中没有块级作用域，如&#123;&#125; if&#123;&#125; for&#123;&#125;，只有全局作用域和局部作用域</span><br><span class="line">//作用域链：内部函数访问外部函数变量，采用的是链式查找方式来取值的，其采取就近原则</span><br><span class="line">var num=10;</span><br><span class="line">function fn ()&#123;</span><br><span class="line">var num=20;</span><br><span class="line">function fun()&#123;</span><br><span class="line">console.log(num)&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//js引擎运行分两步</span><br><span class="line">//预解析:js引擎会把js里的所有var， function提升到当前作用域的最前面，但不提升赋值操作</span><br><span class="line">//代码执行：顺序从上往下执行</span><br><span class="line">fun();</span><br><span class="line">var fun=function()&#123;xxx&#125;;//会报错</span><br><span class="line">//-------------</span><br><span class="line">fun();</span><br><span class="line">function fun()&#123;xxx&#125;//正常运行</span><br></pre></td></tr></table></figure>
+
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">//利用对象字面量创建对象&#123;&#125;</span><br><span class="line">var obj=&#123;&#125;;	//创建了一个空的对象</span><br><span class="line">var obj=&#123;</span><br><span class="line">username:&#x27;张山&#x27;,</span><br><span class="line">age: 18,</span><br><span class="line">sex:&#x27;男&#x27;,</span><br><span class="line">hi:function()&#123;</span><br><span class="line">console.log(&#x27;hello!!!!!!!!!!!!!!&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//#################</span><br><span class="line">//利用new Object 创建对象</span><br><span class="line">var obj1= new Object();//创建一个空对象</span><br><span class="line">obj1.username=&#x27;张山&#x27;;</span><br><span class="line">obj1.age= 18;</span><br><span class="line">obj1.sex=&#x27;男&#x27;;</span><br><span class="line">obj1.hi=function()&#123;</span><br><span class="line">console.log(&#x27;hello!!!!!!!!!!!!!!&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//里面的属性或方法，采用键值对的形式-&gt;  属性名： 属性值</span><br><span class="line">//多个属性或方法中间用逗号隔开</span><br><span class="line">//方法冒号后面跟的是一个匿名函数</span><br><span class="line">//##################################</span><br><span class="line">//调用对象的属性，采用 对象名.属性名</span><br><span class="line">console.log(obj1.uname);</span><br><span class="line">//或者 对象名[&#x27;属性名&#x27;]</span><br><span class="line">console.log(obj1[&#x27;age&#x27;]);</span><br><span class="line">//调用对象的方法-&gt; 对象名.方法名</span><br><span class="line">obj1.hi();</span><br><span class="line">//##############################</span><br><span class="line">//遍历对象</span><br><span class="line">//for(变量 in 对象)&#123;&#125;</span><br><span class="line">for (var i in obj)&#123;</span><br><span class="line">console.log(k);		</span><br><span class="line">console.log(obj[i]);</span><br><span class="line">&#125;</span><br><span class="line">//################################</span><br><span class="line">//利用构造函数创建对象</span><br><span class="line">//function 构造函数名()&#123;</span><br><span class="line">//this.属性名=值;</span><br><span class="line">//this.方法名=function()&#123;&#125;</span><br><span class="line">//&#125;</span><br><span class="line">// new 构造函数名();</span><br><span class="line">function Star(username,age,sex)&#123;</span><br><span class="line">this.name=username;</span><br><span class="line">this.age=age;</span><br><span class="line">this.sex=sex;</span><br><span class="line">&#125;</span><br><span class="line">new Star(&#x27;刘德华&#x27;,58,&#x27;男&#x27;);</span><br></pre></td></tr></table></figure>
+<p>内置对象(如同内置函数）如:Math、 Date、 Array、 String、</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.PI  //圆周率</span><br><span class="line">Math.abs()	//求绝对值</span><br><span class="line">Math.max()	//求最大</span><br><span class="line">Math.min()	//求最小值</span><br><span class="line">Math.round()	//四舍五入</span><br></pre></td></tr></table></figure>
+<pre><code>//获取当前时间
+//必须实例化
+var nowdate=new Date();
+console.log(nowdate);
+//############
+//Date()构造函数的参数
+//自定义日期格式
+var nowdate=new Date(&quot;2020-2-22&quot;);
+//日期格式化
+//getFUllYear()    //年
+//getMonth()     //月
+//getDate()    //天
+//getDay()    //星期（周日0到周六6）
+//getHours()
+//getMinutes()
+//getSeconds()
+var date= new Date();
+console.log(date.getHours());
+//封装一个获取时间的方法
+function gettime()&#123;
+var time = new Date();
+var h=time.getHours();
+h= h&lt;10 ? &quot;0&quot;+h : h;        //小于10前面添加0
+var m=time.getMinutes();
+var s=getSeconds();
+return h +&#39;:&#39;+ m +&#39;:&#39;+ s;
+&#125;
+console.log(gettime());
+
+//######################
+//获取Date总毫秒数，距离1970.1.1的总毫秒数
+var date= new Date();
+console.log(date.valueOf());
+//或
+console.log(date.getTime());
+//或
+var date1= +new Date();        //常用
+console.log(date1);
+//或
+console.log(Date.now());    //H5新增
+
+
+
+可以在字符串添加转义字符来使用引号：
+
+如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。
+</code></pre>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">END</span>
+      <div class="donation-body">
+        <div class="tip text-center">end!</div>
+        <ul>
+        
+          <li class="item">
+            
+            <img src="/images/1.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2020/02/22/markdown_preview/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2020/10/11/hexo/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">Close</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              文章
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/categories/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
