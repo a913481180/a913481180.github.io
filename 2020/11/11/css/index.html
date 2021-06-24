@@ -15,15 +15,15 @@
     <meta name="keywords" content="kkkkeywords" />
   
 
-  <meta name="description" content="css响应式布局：在不同设备之间缩放网页 1234@media screen and (max-width:768px)&amp;#123;当屏幕小于该尺寸时采用如下布局...&amp;#125;  选择器1.基础选择器： 标签选择器  123456p&amp;#123;   color:red;&amp;#125;div&amp;#123;   color:red;&amp;#125;   类选择器：  123.类名&amp;#123;   ...">
+  <meta name="description" content="css响应式布局：在不同设备之间缩放网页 1234@media screen and (max-width:768px)&amp;#123;当屏幕小于该尺寸时采用如下布局...&amp;#125;   网页适配移动端  百分比.item&amp;#123;width:55%;&amp;#125;  利用rem单位     12.html&amp;#123;font-size:100px;&amp;#125;.item&amp;#123;width:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS">
 <meta property="og:url" content="http://example.com/2020/11/11/css/index.html">
 <meta property="og:site_name" content="kk">
-<meta property="og:description" content="css响应式布局：在不同设备之间缩放网页 1234@media screen and (max-width:768px)&amp;#123;当屏幕小于该尺寸时采用如下布局...&amp;#125;  选择器1.基础选择器： 标签选择器  123456p&amp;#123;   color:red;&amp;#125;div&amp;#123;   color:red;&amp;#125;   类选择器：  123.类名&amp;#123;   ...">
+<meta property="og:description" content="css响应式布局：在不同设备之间缩放网页 1234@media screen and (max-width:768px)&amp;#123;当屏幕小于该尺寸时采用如下布局...&amp;#125;   网页适配移动端  百分比.item&amp;#123;width:55%;&amp;#125;  利用rem单位     12.html&amp;#123;font-size:100px;&amp;#125;.item&amp;#123;width:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-11T12:22:22.000Z">
-<meta property="article:modified_time" content="2021-06-13T05:20:15.280Z">
+<meta property="article:modified_time" content="2021-06-24T02:26:28.323Z">
 <meta property="article:author" content="kk">
 <meta name="twitter:card" content="summary">
 
@@ -209,6 +209,20 @@ ga('send', 'pageview');
 <h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>响应式布局：在不同设备之间缩放网页</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (max-width:768px)&#123;</span><br><span class="line">当屏幕小于该尺寸时采用如下布局</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><p>网页适配移动端</p>
+<ul>
+<li><p>百分比<br><code>.item&#123;width:55%;&#125;</code></p>
+</li>
+<li><p>利用rem单位</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.html&#123;font-size:100px;&#125;</span><br><span class="line">.item&#123;width: 0.4rem;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dpr=物理像素/设备独立像素<br><code>&lt;meta name=&quot;viewport&quot; content= &quot;width=device-width,initial-scale=1/dpr&gt;</code></li>
+</ul>
 <h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="1-基础选择器："><a href="#1-基础选择器：" class="headerlink" title="1.基础选择器："></a>1.基础选择器：</h4><ul>
 <li>标签选择器</li>
 </ul>
@@ -342,11 +356,22 @@ ga('send', 'pageview');
 
 <ol start="2">
 <li>边偏移：<code>top:33px;bottom:...;left:.....;right:...</code></li>
-<li>叠放次序：<code>选择器&#123;z-index:1;&#125;</code>数值可正可负；数值越大盒子越靠上；只有定位的盒子才能有z-index属性；</li>
+<li>叠放次序：<code>选择器&#123;z-index:1;&#125;</code>数值可正可负；数值越大盒子越靠上；只有定位的盒子才能有z-index属性；另外，有定位的在没有定位的上面，都有定位则后面写的在上面，</li>
 </ol>
 <blockquote>
 <p>子级是绝对定位的话，父级要用相对定位，子盒子不需要占有位置，父级需要占有位置；<br>行内元素添加绝对或固定定位，可直接设置宽高；块级元素添加后不设置宽高则默认是内容大小；<br>浮动元素可以压住标准流盒子；但不会压住标准流盒子里的文字和图片；</p>
 </blockquote>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><ul>
+<li>flex<br>属性：<ul>
+<li>flex-wrap:nowrap/wrap/wrap-reverse;</li>
+<li>align-items:stretch/center/flex-start/flex-end/baseline;</li>
+<li>flex-grow: 数字;</li>
+<li>flex-shrink:数字;</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">display:flex;</span><br><span class="line">flex-direction:row/coloumn;</span><br><span class="line">justify-content:flex-start(开始对齐)/flex-end（尾部对齐）/center/space-between（两端对齐）/space-around(自动分配间隔）</span><br><span class="line">align-items:stretch/center/flex-start/flex-end/baseline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h3 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h3><ul>
 <li><p>display:none（隐藏）|block(除转换为块级元素外，还可显示元素);</p>
 <blockquote>
@@ -422,6 +447,7 @@ ga('send', 'pageview');
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">   margin:0;</span><br><span class="line">   padding:0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
+<li>透明：<code>opacity:0.5</code>子元素也会跟着变化</li>
 <li>圆角边框：<code>border-radius:10px|10%|顺时针四个参数</code>;</li>
 <li>盒子阴影：<code>box-shadow:3px水平阴影 0px垂直阴影 5px模糊距离 0px阴影尺寸 #fff颜色 inset（内阴影）</code>不占空间</li>
 <li>文字阴影：<code>text-shadow:水平阴影 垂直阴影 模糊距离 颜色</code></li>
@@ -431,6 +457,7 @@ ga('send', 'pageview');
 <li>缩放：<code>transform:scale(1.5);</code>默认为1正常大小；<code>transform-origin:50% 50%;</code>元素缩放中心点位置</li>
 <li>旋转：<code>transform:rotateX|rotateY|rotateZ(30deg);</code></li>
 <li>透视：<code>transform:perspective(1000px);</code>透视距离，必须写在前面；</li>
+<li>循环动画：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//定义动画</span><br><span class="line">@keyframe beat&#123;		//关键帧</span><br><span class="line">30%:&#123;</span><br><span class="line">transform:scale(1.3);</span><br><span class="line">&#125;</span><br><span class="line">100%:&#123;</span><br><span class="line">transform:scale(1);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//使用动画</span><br><span class="line"></span><br><span class="line">span.heart&#123;</span><br><span class="line">animation:beat(动画名称) 1.5s(动画时长) infinite(循环动画);</span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h3><p>将多个小背景图整合到一张大图片中，减少了服务器的请求</p>
 <p>移动背景位置：<code>background-position </code>移动的距离是这个目标图片的x，y坐标，一般情况是向上或左移动，所以数值是负值；</p>
@@ -448,7 +475,7 @@ ga('send', 'pageview');
 
 <h3 id="鼠标样式"><a href="#鼠标样式" class="headerlink" title="鼠标样式"></a>鼠标样式</h3><p><code>li&#123; cursor:default|pointer(手指)|move|text(文本)|not-allowed(禁止)&#125;</code></p>
 <h3 id="防止文本域被拖拽"><a href="#防止文本域被拖拽" class="headerlink" title="防止文本域被拖拽"></a>防止文本域被拖拽</h3><p><code>textarea&#123;resize:none;&#125;</code></p>
-<h3 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h3><p>用于设置行内块垂直对齐方式<br><code>vertical-align:baseline(基线)|top|middle|bottom;</code></p>
+<h3 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h3><p>用于设置行内块垂直对齐方式(必须作用与inline-block元素)<br><code>vertical-align:baseline(基线)|top|middle|bottom;</code></p>
 <ul>
 <li>解决图片底部空白缝隙问题：添加vertical-align属性；或转换为块级元素`display:block;</li>
 </ul>
