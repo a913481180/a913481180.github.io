@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML超文本标记语言 | Hexo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="kkkkeywords" />
+  
+
+  <meta name="description" content="HTML 是用来描述网页的一种语言emmet语法： 123456div*3快速生成3个&lt;div&gt;&lt;&#x2F;div&gt;父子级关系：ul&gt;li兄弟关系：div+p生成带有类名的：.demo或#two有顺序的：加上$符号在生成的标签内写内容：&amp;#123;&amp;#125;  浏览器内核:    浏览器 内核    IE Trident   firefox Gecko   safari W">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML超文本标记语言">
+<meta property="og:url" content="http://example.com/2020/11/10/html/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HTML 是用来描述网页的一种语言emmet语法： 123456div*3快速生成3个&lt;div&gt;&lt;&#x2F;div&gt;父子级关系：ul&gt;li兄弟关系：div+p生成带有类名的：.demo或#two有顺序的：加上$符号在生成的标签内写内容：&amp;#123;&amp;#125;  浏览器内核:    浏览器 内核    IE Trident   firefox Gecko   safari W">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-10T12:22:11.000Z">
+<meta property="article:modified_time" content="2021-08-14T13:34:08.207Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+  
+
+  
+    <link rel="icon" href="/images/1.png">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">选项</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">选项</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            文章
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/categories/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-html" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">HTML超文本标记语言</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2020.11.10</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>John Doe</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/study/">study</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="HTML-是用来描述网页的一种语言"><a href="#HTML-是用来描述网页的一种语言" class="headerlink" title="HTML 是用来描述网页的一种语言"></a>HTML 是用来描述网页的一种语言</h1><p>emmet语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div*3快速生成3个&lt;div&gt;&lt;/div&gt;</span><br><span class="line">父子级关系：ul&gt;li</span><br><span class="line">兄弟关系：div+p</span><br><span class="line">生成带有类名的：.demo或#two</span><br><span class="line">有顺序的：加上$符号</span><br><span class="line">在生成的标签内写内容：&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>浏览器内核:</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>内核</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>Trident</td>
+</tr>
+<tr>
+<td>firefox</td>
+<td>Gecko</td>
+</tr>
+<tr>
+<td>safari</td>
+<td>Webkit</td>
+</tr>
+<tr>
+<td>chrome/Opera</td>
+<td>Blink</td>
+</tr>
+</tbody></table>
+<h2 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h2><blockquote>
+<p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</p>
+</blockquote>
+<ul>
+<li>HTML 标签是由尖括号包围的关键词，比如<code> &lt;html&gt;</code></li>
+<li>HTML 标签通常是成对出现的，称为双标签,如<code> &lt;html&gt;</code> 和<code> &lt;/html&gt;</code>.也有单标签：<code>&lt;br/&gt;</code></li>
+<li>标签对中的第一个标签是开始标签，第二个标签是结束标签</li>
+<li>开始和结束标签也被称为开放标签和闭合标签 </li>
+</ul>
+<p>网页：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;	//使用html5标准进行解析网页</span><br><span class="line">&lt;html lang&gt;</span><br><span class="line">&lt;head&gt;			//网页头部</span><br><span class="line">&lt;title&gt;title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;style&gt;&lt;/style&gt;</span><br><span class="line">&lt;script&gt;&lt;/script&gt;</span><br><span class="line">&lt;body&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>base</li>
+</ul>
+<p><code>&lt;base href=&quot;&quot; target=&quot;_top&quot;&gt;</code>所有链接标签的默认链接</p>
+<ul>
+<li>meta视口标签</li>
+</ul>
+<p>常用于指定网页描述、关键词、作者、事件等</p>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0&quot;&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>width</td>
+<td>设置的是viewport宽度，可设置device-width特殊值</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>初始缩放比，大于0的数字</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>最大缩放比，大于0的数字</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>最小缩放比，大于0的数字</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>用户是否可以缩放</td>
+</tr>
+</tbody></table>
+<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><ul>
+<li><p>标题标签:<code>&lt;h1&gt;----&lt;h6&gt;</code></p>
+</li>
+<li><p>段落标签：<code>&lt;p&gt;</code></p>
+</li>
+<li><p>换行标签：<code>&lt;br /&gt;</code></p>
+</li>
+<li><p>分割线： <code>&lt;hr&gt;</code></p>
+</li>
+<li><p>字体：<code>&lt;h1&gt;这是1号标题&lt;/h1&gt; &lt;font size=&quot;6&quot;&gt;这是6号字体文本&lt;/font&gt; 可以使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式,使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式</code>  </p>
+</li>
+</ul>
+<blockquote>
+<p>嵌套问题：超链接不能嵌套超链接，p标签不能嵌套p标签，标题标签h1-h6也不能嵌套；</p>
+</blockquote>
+<ul>
+<li><p>内部样式表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当单个文件需要特别样式时，就可以使用内部样式表。你可以在&lt;head&gt; 部分通过 &lt;style&gt;标签定义内部样式表:&lt;head&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">body &#123;background-color:yellow;&#125;</span><br><span class="line">p &#123;color:blue;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>外部样式表</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。</span><br><span class="line">使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;!--定义了文档与外部资源的关系--&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>背景色属性:<code>&lt;p style=&quot;background-color:green;&quot;&gt;这是一个段落。&lt;/p&gt;</code></p>
+</li>
+<li><p>加粗：<code>&lt;strong&gt;或&lt;b&gt;</code></p>
+</li>
+<li><p>斜体：<code>&lt;em&gt;或&lt;i&gt;</code></p>
+</li>
+<li><p>下划线：<code>&lt;ins&gt;或&lt;u&gt;</code></p>
+</li>
+<li><p>盒子: <code>&lt;div&gt;与&lt;span&gt;</code></p>
+</li>
+<li><p>图像标签和路径：<code>&lt;img src=&quot;图像路径&quot;/&gt;</code></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>图片路径</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>图片不显示时提醒文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>border</td>
+<td>边框</td>
+</tr>
+<tr>
+<td>width,height</td>
+<td>宽，高</td>
+</tr>
+</tbody></table>
+<ul>
+<li>超链接标签: <code>&lt;a href=&quot;跳转目标(外连接如www.xxx.com，内链接如xxx.html,空链接:#，下载链接)&quot; target=&quot;弹出方式(_self在本窗口打开，_blank在新窗口打开,_top跳出弹窗,&quot;&gt;文本图像&lt;/a&gt;</code></li>
+</ul>
+<ul>
+<li><p>锚点: <code>&lt;a href=&quot;#one&quot;&gt;&lt;/a&gt;   &lt;h3 id=&quot;one&quot;&gt;标题&lt;/h3&gt;</code></p>
+</li>
+<li><p>特殊符号:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格</td>
+<td><code>&amp;nbsp;</code></td>
+</tr>
+<tr>
+<td>小于号</td>
+<td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td>大于号</td>
+<td><code>&amp;gt;</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>表格标签：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;table width=&quot;500px&quot; border=&quot;1px&quot; cellspacing=&quot;0&quot;&gt;  &lt;!--定义表格标签,属性引号可要可不要--&gt;</span><br><span class="line">	&lt;thead&gt;&lt;!--头部--&gt;</span><br><span class="line">		&lt;tr&gt; </span><br><span class="line">			&lt;th&gt;&lt;/th&gt;&lt;!--表头，td-&gt;th加粗文字--&gt;</span><br><span class="line">			&lt;td&gt;&lt;/td&gt;&lt;!--列，必须嵌套在行中--&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">	&lt;/thead&gt;</span><br><span class="line">	&lt;tbody&gt;&lt;!--主体--&gt;</span><br><span class="line">&lt;col width=&quot;100px&quot;&gt;&lt;!--第1列的宽度--&gt;</span><br><span class="line">&lt;col width=&quot;100px&quot;&gt;&lt;!--第2列的宽度--&gt;</span><br><span class="line">&lt;colgroup span=&quot;6&quot; width=&quot;100px&quot;&gt;&lt;!--接下来6列合成一组，一起设置宽度--&gt;</span><br><span class="line">		&lt;tr&gt; &lt;!--行--&gt;</span><br><span class="line">			&lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;&lt;!--合并单元格,需要删除多余的单元格--&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;td rowspan=2&quot;&gt;&lt;!--合并行,需要在下面行中删除一个单元格--&gt;&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;tr height=&quot;100px&quot;&gt;	&lt;!--设置行高，宽无法设置--&gt;</span><br><span class="line">			&lt;td width=&quot;100px&quot;&gt;	&lt;!--设置列宽，一整列都一致变化,哪个大用哪个--&gt;</span><br><span class="line">			&lt;/td&gt;</span><br><span class="line">			&lt;td&gt;&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;td&gt;&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">	&lt;/tbody&gt;</span><br><span class="line"></span><br><span class="line">	&lt;tfoot&gt;&lt;!--页脚--&gt;</span><br><span class="line">	&lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
+<p>表格属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>left,center,right</td>
+<td>表格相对周围元素的对齐方式</td>
+</tr>
+<tr>
+<td>border</td>
+<td>1或”像素值”</td>
+<td>边框</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>像素值</td>
+<td>单元边沿与内容的的距离</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>像素值</td>
+<td>单元格间的空白</td>
+</tr>
+<tr>
+<td>width，height</td>
+<td></td>
+<td>高，宽</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>列表标签</p>
+<ol>
+<li>无序标签：<code>&lt;ul&gt;&lt;li&gt;列表&lt;/li&gt;&lt;li&gt;列表&lt;/li&gt;&lt;li&gt;列表&lt;/li&gt;&lt;/ul&gt;</code>;去掉小圆点：<code>list-style:none</code></li>
+<li>有序标签：<code>&lt;ol&gt;&lt;li&gt;列表&lt;/li&gt;&lt;li&gt;列表&lt;/li&gt;&lt;li&gt;列表&lt;/li&gt;&lt;/ol&gt;</code></li>
+<li>自定义列表：<code>&lt;dl&gt;&lt;dt&gt;名词&lt;/dt&gt;&lt;&lt;dd&gt;名词解释&lt;/dd&gt;dd&gt;名词解释&lt;/dd&gt;&lt;dl&gt;</code></li>
+</ol>
+</li>
+<li><p>表单域：</p>
+</li>
+</ul>
+<p><code>&lt;form action=&quot;url地址(服务器程序的url地址)&quot; method=&quot;提交方式(get/post)&quot; name=&quot;表单域名称&quot;&gt;表单域控件&lt;/form&gt;</code><br>用<code>&lt;input type=&quot;sumit&quot; value=&quot;提交&quot; /&gt;</code>提交数据，用<code>&lt;input type=&quot;reset&quot; value=&quot;重置&quot; /&gt;</code>重置输入；input必须放在form标签内才能提交，所有提交的数据必须有name属性；</p>
+<ul>
+<li><p>input表单元素：<br><code>&lt;input type=&quot;属性值&quot; name=&quot;名称;单选按钮与复选框应是相同的name值&quot; value=&quot;规定input元素的值&quot; checked=&quot;首次加载时选中&quot; maxlength=&quot;输入字段的最大长度&quot;/&gt;</code></p>
+</li>
+<li><p>input 样式修改</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">去除边框：</span><br><span class="line">border:none;</span><br><span class="line">ouline:none;</span><br><span class="line">居中：</span><br><span class="line">vertical-align:middle;</span><br><span class="line">隐藏radio的按钮:</span><br><span class="line">display:none</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>type属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>button</td>
+<td>按键</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>定义复选框</td>
+</tr>
+<tr>
+<td>file</td>
+<td>供文件上传</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>隐藏输入字段</td>
+</tr>
+<tr>
+<td>image</td>
+<td>图像形式提交按钮</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码字段</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>定义单选按钮</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>重置按钮</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>提交按钮</td>
+</tr>
+<tr>
+<td>text</td>
+<td>输入字段</td>
+</tr>
+</tbody></table>
+<ul>
+<li>label标签：用于绑定表单域，点击自动调整到输入框</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label\&gt;for=&quot;sex&quot;&gt; 男\&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;sex&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>select:下拉列表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;select&gt;</span><br><span class="line">/*至少包含一对option*/</span><br><span class="line">&lt;option&gt;\&lt;/option&gt;</span><br><span class="line">&lt;option&gt;\&lt;/option&gt;</span><br><span class="line">/*默认选中*/</span><br><span class="line">&lt;option selected=&quot;selected&quot;\&gt;xxx\&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>textarea:多行文本输入框</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea rows=&quot;3&quot; cols=&quot;28&quot;&gt;   /*cols:每行字符数； rows：行数*/</span><br><span class="line">内容</span><br><span class="line">&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="HTML5特性"><a href="#HTML5特性" class="headerlink" title="HTML5特性"></a>HTML5特性</h3><h4 id="1-新增语义化标签"><a href="#1-新增语义化标签" class="headerlink" title="1.新增语义化标签"></a>1.新增语义化标签</h4><p>标签语义化指根据网页中的内容结构，选择适合的标签进行编写。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;article&gt;</span><br><span class="line">&lt;aside&gt;		元素页面主内容之外的某些内容（比如侧栏）</span><br><span class="line">&lt;details&gt;	定义用户能够查看或隐藏的额外细节。</span><br><span class="line">&lt;figcaption&gt; 	定义 &lt;figure&gt; 元素的标题。</span><br><span class="line">&lt;figure&gt;	规定自包含内容，比如图示、图表、照片、代码清单等。</span><br><span class="line">&lt;footer&gt;</span><br><span class="line">&lt;header&gt;</span><br><span class="line">&lt;main&gt;</span><br><span class="line">&lt;mark&gt;	定义重要的或强调的文本。</span><br><span class="line">&lt;nav&gt;</span><br><span class="line">&lt;section&gt;	定义文档中的节。</span><br><span class="line">&lt;summary&gt;	定义 &lt;details&gt; 元素的可见标题。</span><br><span class="line">&lt;time&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-新增多媒体标签"><a href="#2-新增多媒体标签" class="headerlink" title="2.新增多媒体标签"></a>2.新增多媒体标签</h4><ul>
+<li>\&lt;video&gt;</li>
+</ul>
+<p><code>&lt;video src=&quot;&quot; controls=&quot;controls&quot; &gt;&lt;/video&gt;</code></p>
+<p>属性：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>自动播放，谷歌禁止，可添加muted属性解决</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>播放控件</td>
+</tr>
+<tr>
+<td>width;height</td>
+<td>宽高</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>auto(加载视频);none(不加载)</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>imgurl(加载等待图片)</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>静音播放</td>
+</tr>
+</tbody></table>
+<ul>
+<li>\&lt;audio&gt;</li>
+</ul>
+<p><code>&lt;audio src=&quot;&quot; &gt;&lt;/audio&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>自动播放，谷歌禁止</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>播放控件</td>
+</tr>
+</tbody></table>
+<h4 id="3-input类型"><a href="#3-input类型" class="headerlink" title="3.input类型"></a>3.input类型</h4><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type=”email”</td>
+<td>限制必须输入email类型</td>
+</tr>
+<tr>
+<td>type=”number”</td>
+<td>数字类型</td>
+</tr>
+<tr>
+<td>type=”search”</td>
+<td>搜索框</td>
+</tr>
+<tr>
+<td>type=”color”</td>
+<td>颜色</td>
+</tr>
+<tr>
+<td>type=”tel”</td>
+<td>手机号码</td>
+</tr>
+<tr>
+<td>type=”date”</td>
+<td>日期</td>
+</tr>
+<tr>
+<td>maxlength=””</td>
+<td>允许输入最大长度,不会提示</td>
+</tr>
+<tr>
+<td>max</td>
+<td>允许输入最大长度</td>
+</tr>
+<tr>
+<td>min</td>
+<td>允许输入最大长度</td>
+</tr>
+</tbody></table>
+<h4 id="4-表单属性"><a href="#4-表单属性" class="headerlink" title="4.表单属性"></a>4.表单属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>placeholder</td>
+<td>提示文本</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>可多选文件提交</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td>自动聚焦</td>
+</tr>
+<tr>
+<td>required</td>
+<td>不能为空，必填</td>
+</tr>
+</tbody></table>
+<h3 id="5-canvas"><a href="#5-canvas" class="headerlink" title="5. canvas"></a>5. canvas</h3><p>使用js在网页上绘制图像<br><code>&lt;canvas id=&#39;&#39;  width=&#39;&#39; height=&#39;&#39;&gt;&lt;/canvas&gt;</code></p>
+<h3 id="本地存储localStorage"><a href="#本地存储localStorage" class="headerlink" title="本地存储localStorage"></a>本地存储localStorage</h3><p>无时间限制，5M，只存储字符串</p>
+<h3 id="地理定位Geolocation"><a href="#地理定位Geolocation" class="headerlink" title="地理定位Geolocation"></a>地理定位Geolocation</h3><h3 id="socket通信：webscoket"><a href="#socket通信：webscoket" class="headerlink" title="socket通信：webscoket"></a>socket通信：webscoket</h3><h3 id="后台js：webworkers"><a href="#后台js：webworkers" class="headerlink" title="后台js：webworkers"></a>后台js：webworkers</h3>
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">END</span>
+      <div class="donation-body">
+        <div class="tip text-center">end!</div>
+        <ul>
+        
+          <li class="item">
+            
+            <img src="/images/1.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2020/10/11/dwm/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2020/11/11/css/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">Close</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              文章
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/categories/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
