@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bootloader、Linux内核和文件系统编译 | KK</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="前端,前端开发,用户体验,设计,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="交叉编译固件及系统测试一、目的掌握虚拟机软件的安装和配置，掌握Ubuntu系统的安装和配置，掌握交叉编译器的安装，掌握Bootloader、Linux内核和文件系统编译方法，并进行硬件平台系统功能测试。 二、内容1、在Windowns环境下安装虚拟机功能软件，在虚拟机环境下安装Ubuntu系统并对系统进行配置。 2、安装ARM交叉编译器，配置环境变量并功能测试。 3、通过对Bootloader、L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootloader、Linux内核和文件系统编译">
+<meta property="og:url" content="http://www.baidu.com/2021/02/08/qianrushi1/index.html">
+<meta property="og:site_name" content="KK">
+<meta property="og:description" content="交叉编译固件及系统测试一、目的掌握虚拟机软件的安装和配置，掌握Ubuntu系统的安装和配置，掌握交叉编译器的安装，掌握Bootloader、Linux内核和文件系统编译方法，并进行硬件平台系统功能测试。 二、内容1、在Windowns环境下安装虚拟机功能软件，在虚拟机环境下安装Ubuntu系统并对系统进行配置。 2、安装ARM交叉编译器，配置环境变量并功能测试。 3、通过对Bootloader、L">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.baidu.com/2021/02/08/qianrushi1/RackMultipart20210826-4-1d1i54l_html_ea6ac7d22326c54c.png">
+<meta property="og:image" content="http://www.baidu.com/2021/02/08/qianrushi1/RackMultipart20210826-4-1d1i54l_html_458a03b2d32152d4.png">
+<meta property="article:published_time" content="2021-02-08T14:23:45.000Z">
+<meta property="article:modified_time" content="2021-08-27T18:05:55.914Z">
+<meta property="article:author" content="KK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.baidu.com/2021/02/08/qianrushi1/RackMultipart20210826-4-1d1i54l_html_ea6ac7d22326c54c.png">
+
+  
+
+  
+    <link rel="icon" href="/images/1.png">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">选项</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">选项</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            Notes
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/categories/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%9B%BA%E4%BB%B6%E5%8F%8A%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95"><span class="toc-text">交叉编译固件及系统测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%9B%AE%E7%9A%84"><span class="toc-text">一、目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%86%85%E5%AE%B9"><span class="toc-text">二、内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%BE%E5%A4%87"><span class="toc-text">三、设备</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91"><span class="toc-text">应用程序开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%9B%AE%E7%9A%84-1"><span class="toc-text">一、目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%86%85%E5%AE%B9-1"><span class="toc-text">二、内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%BE%E5%A4%87-1"><span class="toc-text">三、设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8E%9F%E7%90%86"><span class="toc-text">四、原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%AD%A5%E9%AA%A4"><span class="toc-text">五、步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F3-x-2-2-x3"><span class="toc-text">5.1 计算公式3*x^2+2*x3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E8%AE%A1%E7%AE%974-%E4%B8%AA%E6%95%B0%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="toc-text">5.2 计算4 个数的平均值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3%E9%85%8D%E7%BD%AENFS%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">5.3配置NFS启动方式</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-qianrushi1" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Bootloader、Linux内核和文件系统编译</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2021.02.08</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>KK</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/experiments/">experiments</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="交叉编译固件及系统测试"><a href="#交叉编译固件及系统测试" class="headerlink" title="交叉编译固件及系统测试"></a>交叉编译固件及系统测试</h1><h2 id="一、目的"><a href="#一、目的" class="headerlink" title="一、目的"></a>一、目的</h2><p>掌握虚拟机软件的安装和配置，掌握Ubuntu系统的安装和配置，掌握交叉编译器的安装，掌握Bootloader、Linux内核和文件系统编译方法，并进行硬件平台系统功能测试。</p>
+<h2 id="二、内容"><a href="#二、内容" class="headerlink" title="二、内容"></a>二、内容</h2><p>1、在Windowns环境下安装虚拟机功能软件，在虚拟机环境下安装Ubuntu系统并对系统进行配置。</p>
+<p>2、安装ARM交叉编译器，配置环境变量并功能测试。</p>
+<p>3、通过对Bootloader、Linux内核和文件系统源码交叉编译，生成系统固件，记录编译结果。</p>
+<p>4、调试串口连接硬件平台，对Bootloader和Linux环境下功能命令测试，记录测试结果。</p>
+<h2 id="三、设备"><a href="#三、设备" class="headerlink" title="三、设备"></a>三、设备</h2><p>1、主机电脑。2、ARM实验箱3、调试连接配件</p>
+<p><strong>四、实验步骤</strong></p>
+<p><strong>4.1</strong> Ubuntu系统的安装和配置</p>
+<p>下载Ubuntu系统16.04稳定版系统映像，下载地址：</p>
+<p><a target="_blank" rel="noopener" href="http://releases.ubuntu.com/16.04.6/?_ga=2.221103960.1120206391.1590239549-144656828.1590239549"><strong>http://releases.ubuntu.com/16.04.6/?_ga=2.221103960.1120206391.1590239549-144656828.1590239549</strong></a></p>
+<p>在虚拟机中安装Ubuntu系统，根据自己电脑的配置情况，选择CPU数量和内存大小，硬盘分区大小等配置，安装结果下图所示。(实验室提供华清远见开发环境参考，无需安装系统)</p>
+<p>在虚拟机中配置网络适配器模式，理解NAT模式和桥接模式的区别。</p>
+<p>开机进入Ubuntu系统，进行网络配置，掌握图形界面和命令行下配置网络方法，理解ifconfig命令的使用方法，</p>
+<p>命令行方式下，vmware虚拟机网络方式为桥接模式，为ubuntu系统配置一个静态的IP地址。假设使用的网络地址为192.168.100.X段，默认为ubuntu系统分配的IP地址是192.168.100.192 。</p>
+<p>如果想修改ubuntu系统的IP地址，可以执行以下命令，修改文件内容。</p>
+<p>linux@ubuntu64-vm:~$ sudo vim /etc/network/interfaces</p>
+<p>修改完成后，重新启动网络配置。</p>
+<p>linux@ubuntu64-vm:~$ sudo /etc/init.d/networking restart</p>
+<p><strong>4. 3 安装交叉编译器并测试</strong></p>
+<p>Ubuntu系统中包含四个版本的交叉编译器，位于路径/usr/local/toolchain目录下，不用解压直接使用即可。</p>
+<p>修改bash启动文件，执行以下命令：</p>
+<p>linux@ubuntu64-vm:~$ sudo vim /etc/bash.bashrc</p>
+<p>在bash.bashrc文件最后添加以下内容并保存退出：</p>
+<p>export PATH=$PATH:/usr/local/toolchain/toolchain-4.5.1/bin/</p>
+<p>再退出bash终端重新打开，执行ARM交叉编译器命令，获取如下信息说明交叉编译器配置完成。</p>
+<p>linux@ubuntu64-vm:~$ arm-none-linux-gnueabi-gcc -v</p>
+<p><strong>4.4 Linux内核编译</strong></p>
+<ol>
+<li>首先在虚拟机工作目录下用个人学号建立自己的工作目录。</li>
+</ol>
+<p>linux@ubuntu64-vm:~$ mkdir /home/linux/2018011222/ -p</p>
+<ol>
+<li><p>通过U盘或者共享目录将Linux内核源码压缩包拷贝到该目录里面。</p>
+</li>
+<li><p>拷贝后进入该目录，解压源码。</p>
+</li>
+</ol>
+<p>linux@ubuntu64-vm:~/2018011222$ tar xvf linux-3.4.39.tar.xz</p>
+<ol>
+<li><p>拷贝ext4文件系统制作工具到/usr/bin目录下。</p>
+</li>
+<li><p>进入内核源码目录，查看源码结构。</p>
+</li>
+<li><p>拷贝硬件平台的标准配置文件为.config文件。</p>
+</li>
+</ol>
+<p>$ cp arch/arm/configs/fs6818M4_defconfig_v5 .config</p>
+<ol>
+<li>执行内核配置命令进入内核配置界面。</li>
+</ol>
+<p>$ make menuconfig</p>
+<p>查看System type和Deviec Driver配置情况，</p>
+<ol>
+<li>保存退出后，编译内核，编译结果如下图。(比较耗时间，15分钟左右，可以先做4.5小节内容)</li>
+</ol>
+<p>$ make uImage</p>
+<ol>
+<li>执行脚本打包内核镜像，内核镜像文件为boot.img，文件格式是ext4格式，其中包括开机LOGO，ramdisk文件系统和uImage内核镜像，生成boot.img文件，</li>
+</ol>
+<p>$./mkboot.sh</p>
+<p><strong>4.5 Linux文件系统镜像制作</strong></p>
+<p>1、通过U盘或者共享目录将文件系统源码压缩包拷贝到/source目录下。</p>
+<p>解压文件系统源码压缩包，查看文件系统内容。</p>
+<p>$tar xvf rootfs.tar.xz</p>
+<p>3、将文件系统打包成ext4格式的镜像，生成system_linux.img文件</p>
+<p>$make_ext4fs -s system_linux.img -l 300M rootfs</p>
+<p><strong>4.6 Bootloader</strong>** 环境测试**</p>
+<ol>
+<li>连接实验箱5V电源线，连接终</li>
+</ol>
+<p>端调试串口线和以太网线到电脑主</p>
+<p>机，如右图。</p>
+<p>(USB OTA调试线烧写镜像用，</p>
+<p>可以不连)</p>
+<ol>
+<li>安装USB转串口驱动程序，确</li>
+</ol>
+<p>认当前电脑上使用的串口号，设置</p>
+<p>电脑上串口调试软件putty。</p>
+<ol>
+<li>上电启动实验箱，在终端中可以看到启动信息，快速按空格键进入bootloader环境。</li>
+<li>通过print、setenv、saveenv等命令测试bootloader，</li>
+</ol>
+<p><strong>4.7</strong>  <strong>嵌入式</strong>** Linux **<strong>环境测试</strong></p>
+<p>按复位键重启硬件系统，等待平台系统进入Linux环境，测试三条Linux命令，</p>
+<h1 id="应用程序开发"><a href="#应用程序开发" class="headerlink" title="应用程序开发"></a>应用程序开发</h1><h2 id="一、目的-1"><a href="#一、目的-1" class="headerlink" title="一、目的"></a>一、目的</h2><p>掌握NFS挂载Linux启动方法，掌握Ubuntu 环境下交叉编译应用程序的方法。</p>
+<h2 id="二、内容-1"><a href="#二、内容-1" class="headerlink" title="二、内容"></a>二、内容</h2><p>1、使用Vim或者Gedit 文本编译器编写C 语言、汇编语言程序和Makefile文件，分别计算公式3*x2+2*x3 的值和计算4个输入数的平均数。</p>
+<p>2、编写Makefile文件，通过make编译得到ARM 可执行程序formula 和average。</p>
+<p>3、配置实验箱启动方式为NFS启动，执行并测试程序。</p>
+<h2 id="三、设备-1"><a href="#三、设备-1" class="headerlink" title="三、设备"></a>三、设备</h2><p>1、主机电脑。2、ARM实验箱3、调试连接配件</p>
+<h2 id="四、原理"><a href="#四、原理" class="headerlink" title="四、原理"></a>四、原理</h2><p>掌握嵌入式Linux 应用开发所用到的一些常用工具，包括编辑工具vim、gedit、编译工具gcc、MakeFile 文件及调试工具gdb。</p>
+<p>正确掌握C 语言、汇编语言程序和Makefile编写语法和格式。</p>
+<h2 id="五、步骤"><a href="#五、步骤" class="headerlink" title="五、步骤"></a>五、步骤</h2><h3 id="5-1-计算公式3-x-2-2-x3"><a href="#5-1-计算公式3-x-2-2-x3" class="headerlink" title="5.1 计算公式3*x^2+2*x3"></a>5.1 计算公式3*x^2+2*x3</h3><p>1、在Linux 主机上进入自己学号的工作目录，执行如下命令。</p>
+<p>$cd /home/linux/2018011222/</p>
+<p>$mkdir exam1</p>
+<p>$cd exam1</p>
+<p>$ gedit formula.c</p>
+<ol>
+<li>在formula.c 程序里面输入以下内容。</li>
+</ol>
+<p>#include&amp;lt;stdio.h&amp;gt;</p>
+<p>extern int compute(int data);</p>
+<p>int main()</p>
+<p>{</p>
+<p>int x;</p>
+<p>printf(&quot;Input x=&quot;);</p>
+<p>scanf(&quot;%d&quot;,&amp;x);</p>
+<p>printf(&quot;The result is %d\n&quot;,compute(x));</p>
+<p>return 0;</p>
+<p>}</p>
+<p>3、执行命令生成汇编文件</p>
+<p>$ gedit compute.S</p>
+<p>包含计算3*x^2+2*x^3过程的汇编文件为compute.S内容如下:.text</p>
+<p>.align</p>
+<p>.global compute</p>
+<p>compute:</p>
+<p>stmfd sp!,{r4-r11,r14}</p>
+<p>mul r1,r0,r0</p>
+<p>mov r3,#2</p>
+<p>mul r2,r1,r3</p>
+<p>mov r3,#3</p>
+<p>mul r4,r1,r3</p>
+<p>mla r0,r2,r0,r4</p>
+<p>ldmfd sp!,{r4-r11,r15}</p>
+<p>4、自行编写Makefile 文件，实现对c语言程序和汇编程序的编译得到formula可执行程序。</p>
+<p>5、在exam1目录下执行make命令得到可执行文件formula</p>
+<p>$make</p>
+<p>6、应用strip工具精简可执行程序</p>
+<p>$arm-none-linux-gnueabi-strip formula</p>
+<p>7、file命令可以查看formula程序属性，截图保存formula程序信息到实验报告中。</p>
+<p>$file formula</p>
+<h3 id="5-2-计算4-个数的平均值"><a href="#5-2-计算4-个数的平均值" class="headerlink" title="5.2 计算4 个数的平均值"></a>5.2 计算4 个数的平均值</h3><p>1、在Linux 主机上建立工作目录，执行如下命令。</p>
+<p>$cd /home/linux/2018011222/</p>
+<p>$mkdir exam2</p>
+<p>$cd exam2</p>
+<p>$gedit avg.c</p>
+<ol>
+<li>在avg.c程序里面输入以下内容。</li>
+</ol>
+<p>#include&amp;lt;stdio.h&amp;gt;</p>
+<p>extern int average(int i, int j,int k,int l);</p>
+<p>int main(void)</p>
+<p>{</p>
+<p>int a,b,c,d,avr;</p>
+<p>printf(&quot;Input 4 number: \n&quot;);</p>
+<p>scanf(&quot;%d&quot;,&amp;a);</p>
+<p>scanf(&quot;%d&quot;,&amp;b);</p>
+<p>scanf(&quot;%d&quot;,&amp;c);</p>
+<p>scanf(&quot;%d&quot;,&amp;d);</p>
+<p>printf(&quot;a=%d,b=%d,c=%d,d=%d\n&quot;,a,b,c,d);</p>
+<p>avr= average(a,b,c,d);</p>
+<p>printf(&quot;(%d+,%d+,%d+,%d)/4=,%d\n&quot;,a,b,c,d,avr);</p>
+<p>return 0;</p>
+<p>}</p>
+<p>3、执行命令生成汇编文件</p>
+<p>$gedit average.S</p>
+<p>自行编写计算平均值的汇编文件average.S程序。</p>
+<p>4、自行编写Makefile 文件，实现对c语言程序和汇编程序的编译得到formula可执行程序。</p>
+<p>5、在exam2目录下执行make命令得到可执行文件average</p>
+<p>$make</p>
+<p>6、应用strip工具精简可执行程序</p>
+<p>$ arm-none-linux-gnueabi-strip average</p>
+<p>7、file命令可以查看average程序属性，</p>
+<p>$file average</p>
+<h3 id="5-3配置NFS启动方式"><a href="#5-3配置NFS启动方式" class="headerlink" title="5.3配置NFS启动方式"></a>5.3配置NFS启动方式</h3><p>1、设置好电脑主机的IP地址为192.168.100.192 ，配置好主机的NFS服务，默认是启动的。</p>
+<p>2、在Bootloader环境下配置启动参数， <strong>注意格式不要出错！！！</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FS6818# setenv serverip 192.168.100.192</span><br><span class="line"></span><br><span class="line">FS6818#setenv ipaddr 192.168.100.100</span><br><span class="line"></span><br><span class="line">FS6818# setenv gatewayip 192.168.100.1</span><br><span class="line"></span><br><span class="line">FS6818# setenv bootcmd ext4load mmc 2:1 0x48000000 uImage\;bootm 0x48000000</span><br><span class="line"></span><br><span class="line">FS6818# setenv bootargs root=/dev/nfs nfsroot=192.168.100.192:/source/rootfs console=ttySAC0,115200 init=/linuxrc ip=192.168.100.100:::::eth0:off</span><br><span class="line"></span><br><span class="line">FS6818# saveenv</span><br></pre></td></tr></table></figure>
+
+<p>保存后复位ARM实验箱，等待进入NFS启动的文件系统，如下图。</p>
+<p><img src="RackMultipart20210826-4-1d1i54l_html_ea6ac7d22326c54c.png"></p>
+<p>拷贝之前编译好的可执行文件formula和average到主机NFS共享目录下wsn6818bp_test，这样在putty终端中就可以运行测试结果，</p>
+<p><img src="RackMultipart20210826-4-1d1i54l_html_458a03b2d32152d4.png"></p>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">END</span>
+      <div class="donation-body">
+        <div class="tip text-center">???????</div>
+        <ul>
+        
+          <li class="item">
+            
+            <img src="/images/2.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2021/01/11/weixin/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2021/02/12/ajax/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              Notes
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/categories/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
