@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="React浏览器中编写 准备容器  1&lt;div id&#x3D;&quot;test&quot;&gt;&lt;&#x2F;div&gt;   引入库  123456&lt;!--react核心库--&gt;&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;react.development.js&quot;&gt;&lt;&#x2F;script&gt;&lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react">
+<meta property="og:url" content="http://www.baidu.com/2022/12/09/20-00-00/index.html">
+<meta property="og:site_name" content="KK">
+<meta property="og:description" content="React浏览器中编写 准备容器  1&lt;div id&#x3D;&quot;test&quot;&gt;&lt;&#x2F;div&gt;   引入库  123456&lt;!--react核心库--&gt;&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;react.development.js&quot;&gt;&lt;&#x2F;script&gt;&lt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-09T12:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-06T03:30:12.080Z">
+<meta property="article:author" content="KK">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.baidu.com/2022/12/09/20-00-00/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>react | KK</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KK</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2022/12/09/20-00-00/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          react
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-12-09 20:00:00" itemprop="dateCreated datePublished" datetime="2022-12-09T20:00:00+08:00">2022-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-06 11:30:12" itemprop="dateModified" datetime="2023-02-06T11:30:12+08:00">2023-02-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="浏览器中编写"><a href="#浏览器中编写" class="headerlink" title="浏览器中编写"></a>浏览器中编写</h2><ul>
+<li>准备容器</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引入库</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--react核心库--&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;react.development.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!--react-dom，用于支持react操纵dom--&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;react-dom.development.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!--babel，用于将jsx转化为js--&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;babel.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>JSX</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/babel&gt;/*此处要写babel*/</span><br><span class="line">//创建虚拟dom</span><br><span class="line">const Vdom=(&lt;h1&gt;hello&lt;/h1&gt;)/*不用引号*/</span><br><span class="line">//渲染虚拟DOM到页面</span><br><span class="line">ReactDOM.render(Vdom,document.getElementById(&#x27;test&#x27;));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>js<blockquote>
+<p>jsx 最终会翻译成 js 写法</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">//创建虚拟dom</span><br><span class="line">const Vdom=React.createElement(&#x27;h1&#x27;,&#123;id:&#x27;title&#x27;&#125;,React.createElement(&#x27;span&#x27;,&#123;&#125;,&#x27;hello&#x27;))</span><br><span class="line">//渲染虚拟DOM到页面</span><br><span class="line">ReactDOM.render(Vdom,document.getElementById(&#x27;test&#x27;));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>虚拟 DOM 本质是一个对象，虚拟 dom 比较轻量，真实 DOM 比较完整，虚拟 DOM 是 react 内部用，因此无需真实 DOM 那么多的属性。最终虚拟 DOM 会被 react 转化为真实 DOM 呈现在页面上。</p>
+</blockquote>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><blockquote>
+<p>javascript XML,react 定义的类似与 XML 的 js 扩展语法</p>
+</blockquote>
+<p>xml：早期用于存储和传输数据的格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;student&gt;</span><br><span class="line">&lt;name&gt;XIAOMI&lt;/name&gt;</span><br><span class="line">&lt;age&gt;19&lt;/age&gt;</span><br><span class="line">&lt;/student&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="jsx-语法规则"><a href="#jsx-语法规则" class="headerlink" title="jsx 语法规则"></a>jsx 语法规则</h3><ul>
+<li>定义虚拟 dom，不要写引号</li>
+<li>标签中混入 js 表达式要用｛｝，js 表达式会产生一个值(返回值)，可以放在任何需要值的地方，如<code>a</code>、<code>a+b</code>、<code>demo(1)</code>、<code>arr.map()</code>、<code>function test()&#123;&#125;</code>。js 语句：<code>if()&#123;&#125;</code>,<code>for()&#123;&#125;</code>,<code>switch()&#123;&#125;</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const a=1;</span><br><span class="line">const Vdom=(</span><br><span class="line">&lt;span id=&#123;a&#125;&gt;&#123;a.toString()&#125;&lt;/span&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>样式的类型指定不要用 class，要用 className</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const Vdom=(</span><br><span class="line">&lt;span className=&quot;test&quot; &gt;xxx&lt;/span&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>内联样式<br>要用<code>style=&#123;&#123;fontSize:"20px"&#125;&#125;</code>的写法</p>
+</li>
+<li><p>虚拟 dom 只有一个根标签</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const Vdom=(</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;span className=&quot;test&quot; &gt;xxx&lt;/span&gt;</span><br><span class="line">&lt;span className=&quot;test&quot; &gt;xxx&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>标签首字符为小写则直接转为 html 中同名元素，若为大写则去渲染对应组件</li>
+</ul>
+<h2 id="组件和模块"><a href="#组件和模块" class="headerlink" title="组件和模块"></a>组件和模块</h2><p>模块：提供特定功能的 js 程序<br>组件：实现局部功能效果的代码和资源集合（html、js、css、img 等）</p>
+<h3 id="函数式组件"><a href="#函数式组件" class="headerlink" title="函数式组件"></a>函数式组件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Demo()&#123;  //组件必须首字母大写</span><br><span class="line">//this 为undefind,经过babel编译后开启严格模式，this便指向undefind，不开启严格模式则是window</span><br><span class="line">return &lt;h1&gt;test&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,document.getElementById(&#x27;test&#x27;))</span><br><span class="line">//react解析组件标签,找到Demo组件，发现此组件是函数定义的，便调用该函数，将虚拟dom渲染成真实dom</span><br></pre></td></tr></table></figure>
+
+<h3 id="类式组件"><a href="#类式组件" class="headerlink" title="类式组件"></a>类式组件</h3><h4 id="简单组件"><a href="#简单组件" class="headerlink" title="简单组件"></a>简单组件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">render()&#123;//在Demo的原型对象上</span><br><span class="line">//this指向Demo的实例对象</span><br><span class="line">return &lt;h1&gt;test&lt;/h1&gt;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,document.getElementById(&#x27;test&#x27;))</span><br><span class="line">//react解析组件标签,找到Demo组件，发现此组件是类定义的，便new 出该类实例，通过该实例调用原型对象上的render方法。将虚拟dom渲染成真实dom</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂组件"><a href="#复杂组件" class="headerlink" title="复杂组件"></a>复杂组件</h4><h5 id="state"><a href="#state" class="headerlink" title="state"></a>state</h5><blockquote>
+<p>state 为组件的重要属性，值是对象，通过更新组件的 state 来更新对应的页面显示（重新渲染组件）</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">constructor(prop)&#123;</span><br><span class="line">super(prop)</span><br><span class="line">this.state=&#123;</span><br><span class="line">a:1,</span><br><span class="line">b:2</span><br><span class="line">&#125;</span><br><span class="line">//改变t</span><br><span class="line">this.changValue=this.changValue.bind(this)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 onClick=&#123;test&#125;&gt;test&#123;this.state.a&#125;&lt;/h1&gt;</span><br><span class="line">&lt;h1 onClick=&#123;this.changeValue&#125;&gt;test&#123;this.state.b&#125;&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">changValue()&#123;</span><br><span class="line">	//类中的方法默认开启局部严格模式</span><br><span class="line">	//所以this为undefind</span><br><span class="line">	//只有通过Demo实例调用此实例，this才为Demo的实例</span><br><span class="line">	//changeValue作为onClick的回调，不是实例调用</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">function test()&#123;&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,document.getElementById(&#x27;test&#x27;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解决 this 指向</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">constructor(prop)&#123;</span><br><span class="line">super(prop)//构造器是否接受props，是否传给super取决于是否希望在构造器中通过this访问props</span><br><span class="line">this.state=&#123;</span><br><span class="line">a:1,</span><br><span class="line">b:2</span><br><span class="line">&#125;</span><br><span class="line">//改变this指向</span><br><span class="line">this.changValue=this.changValue.bind(this)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 onClick=&#123;this.changeValue&#125;&gt;test&#123;this.state.b&#125;&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">changValue()&#123;</span><br><span class="line">//state不能直接更改</span><br><span class="line">this.state.a=1</span><br><span class="line">//必须通过api</span><br><span class="line">this.setState(&#123;a:2&#125;)//更新为合并，不是替换</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,document.getElementById(&#x27;test&#x27;))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>简写</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">state=&#123;//等于号，代表给该类的实例追加属性</span><br><span class="line">a:1,</span><br><span class="line">b:2</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 onClick=&#123;this.changeValue&#125;&gt;test&#123;this.state.b&#125;&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">changValue=()=&gt;&#123;//必须用箭头函数</span><br><span class="line">this.setState(&#123;a:2&#125;)//更新为合并，不是替换</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo/&gt;,document.getElementById(&#x27;test&#x27;))</span><br></pre></td></tr></table></figure>
+
+<h5 id="props"><a href="#props" class="headerlink" title="props"></a>props</h5><blockquote>
+<p>组件的所有属性都保存在 props 中，props 是只读的，不能修改</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 &gt;test&#123;this.props.b&#125;&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo a=&#123;1&#125; b=&#x27;ss&#x27;/&gt;,document.getElementById(&#x27;test1&#x27;))//数据类型要用｛｝</span><br><span class="line">const obj=&#123;a:1,b:2&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo &#123;...obj&#125;/&gt;,document.getElementById(&#x27;test2&#x27;))//批量传属性</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>props 规则限制</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 &gt;test&#123;this.props.b&#125;&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//限制类型</span><br><span class="line">Demo.propTypes=&#123;</span><br><span class="line">//react16.x以上需引入prop-types.js</span><br><span class="line">a:PropTypes.number.isRequied</span><br><span class="line">test:PropTypes.func</span><br><span class="line">&#125;</span><br><span class="line">//默认值</span><br><span class="line">Demo.defaultProps=&#123;</span><br><span class="line">b:&#x27;xx&#x27;</span><br><span class="line">&#125;</span><br><span class="line">function test()&#123;&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo a=&#123;1&#125; b=&#x27;ss&#x27; handle=&quot;test&quot;/&gt;,document.getElementById(&#x27;test1&#x27;))//数据类型要用｛｝</span><br><span class="line">const obj=&#123;a:1,b:2&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo &#123;...obj&#125;/&gt;,document.getElementById(&#x27;test2&#x27;))//批量传属性</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>简写</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 &gt;test&#123;this.props.b&#125;&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static propTypes=&#123;	//加上static代表给类本身添加属性</span><br><span class="line">//react16.x以上需引入prop-types.js</span><br><span class="line">a:PropTypes.number.isRequied</span><br><span class="line">test:PropTypes.func</span><br><span class="line">&#125;</span><br><span class="line">static defaultProps=&#123;</span><br><span class="line">b:&#x27;xx&#x27;</span><br><span class="line">&#125;&#125;</span><br><span class="line">function test()&#123;&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo a=&#123;1&#125; b=&#x27;ss&#x27; handle=&quot;test&quot;/&gt;,document.getElementById(&#x27;test1&#x27;))//数据类型要用｛｝</span><br><span class="line">const obj=&#123;a:1,b:2&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo &#123;...obj&#125;/&gt;,document.getElementById(&#x27;test2&#x27;))//批量传属性</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数式组件使用 props</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function Demo(props)&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 &gt;test&#123;props.b&#125;&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> Demo.propTypes=&#123;</span><br><span class="line">//react16.x以上需引入prop-types.js</span><br><span class="line">a:PropTypes.number.isRequied</span><br><span class="line">test:PropTypes.func</span><br><span class="line">&#125;</span><br><span class="line">Demo.defaultProps=&#123;</span><br><span class="line">b:&#x27;xx&#x27;</span><br><span class="line">&#125;&#125;</span><br><span class="line">function test()&#123;&#125;</span><br><span class="line">ReactDOM.render(&lt;Demo a=&#123;1&#125; b=&#x27;ss&#x27; handle=&quot;test&quot;/&gt;,document.getElementById(&#x27;test1&#x27;))//数据类型要用｛｝</span><br></pre></td></tr></table></figure>
+
+<h5 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h5><blockquote>
+<p>组件内的标签可使用 ref 属性标识自己类似 id=’test’</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;h1 ref=&#x27;title1&#x27; &gt;官方不推荐String类型的ref写法，效率不高&lt;/h1&gt;</span><br><span class="line">&lt;h1 ref=&#123;(node)=&gt;&#123;this.title2=node&#125;&#125; &gt;ref的回调写法，内联写法在每次更新时会调用两次，第一次时为了清空旧的ref，所以为null，第二次才为DOM，可用类绑定函数替换&lt;/h1&gt;</span><br><span class="line">&lt;h1 ref=&#123;title3&#125; &gt;使用createRef&lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br><span class="line">title3=createRef()//调用后返回一个容器，用于存储ref标识的节点，只能存一个</span><br><span class="line">test=()=&gt;&#123;</span><br><span class="line">console.log(this.refs.title1)</span><br><span class="line">console.log(this.title2)</span><br><span class="line">console.log(this.title3.current)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h5><ol>
+<li>通过 onXxx 属性指定事件处理函数（注意大小写）<ul>
+<li>react 使用的自定义事件（原生小写-&gt;大写，原生大写-&gt;小写），而不是原生 DOM 事件</li>
+<li>react 中的事件是通过事件委托方式处理的（委托给组件最外层的元素,事件冒泡）</li>
+</ul>
+</li>
+<li>可通过 event.target 得到的发生事件的 DOM 元素对象</li>
+</ol>
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><h5 id="旧"><a href="#旧" class="headerlink" title="旧"></a>旧</h5><ul>
+<li>初始化阶段</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">constructor()//构造器</span><br><span class="line">componentWillMount()//组件将要挂载</span><br><span class="line">render()</span><br><span class="line">componentDidMount()//组件挂载完毕</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新数据时</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">setState()</span><br><span class="line">shouldComponentUpdate()//默认返回true，返回false时不执行更新</span><br><span class="line">componentWillUpdate()//组件将要更新</span><br><span class="line">render()</span><br><span class="line">componentDidUpdate()//组件更新更新完毕</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>强制更新时</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">forceUpdate()//不想更改状态中的数据，更新页面</span><br><span class="line">componentWillUpdate()//组件将要更新</span><br><span class="line">render()</span><br><span class="line">componentDidUpdate()//组件更新更新完毕</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>父组件渲染</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">componentWillReceiveProps(props)//第一次不调用，接受新的props才调用</span><br><span class="line">shouldComponentUpdate()//默认返回true，返回false时不执行更新</span><br><span class="line">componentWillUpdate()//组件将要更新</span><br><span class="line">render()</span><br><span class="line">componentDidUpdate()//组件更新更新完毕</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>卸载组件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">由React.unmountComponentAtNode()触发</span><br><span class="line">componentWillUnmount()</span><br></pre></td></tr></table></figure>
+
+<h5 id="新"><a href="#新" class="headerlink" title="新"></a>新</h5><blockquote>
+<p>因为新版本的异步渲染，因此 componentWillUpdate，componentWillReceive，componentWillMount 即将废弃，所以要加上 UNSAFE_防止误解和滥用</p>
+</blockquote>
+<ul>
+<li>初始化阶段</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">constructor()//构造器</span><br><span class="line">//UNSAFE_componentWillMount()</span><br><span class="line">static getDerivedStateFromProps(props,state)&#123;//组件将要挂载，不能加到实例上，要加上static。</span><br><span class="line">//必须返回状态对象，若包含state中的数据，将覆盖它。用于state的值任何时候取决于props</span><br><span class="line">return &#123;a:1&#125;</span><br><span class="line">&#125;</span><br><span class="line">render()</span><br><span class="line">componentDidMount()//组件挂载完毕</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新数据时，调用 setState()、forceUpdate()或父组件新 Props</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">static getDerivedStateFromProps(props,state)//组件将要挂载，不能加到实例上，要加上static。</span><br><span class="line">shouldComponentUpdate()//默认返回true，返回false时不执行更新</span><br><span class="line">static getSnapshotBeforeUpdate(preProps,preState)&#123;//更新前</span><br><span class="line"></span><br><span class="line">return &#x27;xxx&#x27;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">render()</span><br><span class="line">componentDidUpdate(preProps,preState,snapshotValue)//之前的prop时和状态</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>卸载组件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">由React.unmountComponentAtNode()触发</span><br><span class="line">componentWillUnmount()</span><br></pre></td></tr></table></figure>
+
+<h4 id="react-中的-key-作用"><a href="#react-中的-key-作用" class="headerlink" title="react 中的 key 作用"></a>react 中的 key 作用</h4><p>key 是虚拟 Dom 对象的标识，当状态中的数据变化时，react 会根据新数据形成新的虚拟 DOM，<br>随后将新的虚拟 DOM 与旧的虚拟 DOM 进行 diff 比较。<br>若旧虚拟 dom 中到了与新虚拟 dom 中相同的 key：</p>
+<ul>
+<li>虚拟 dom 中内容没有变化，使用之前的真实 dom</li>
+<li>虚拟 dom 中内容变化了，则生成新的真实 dom，随后替换掉页面中的真实 dom</li>
+</ul>
+<p>若旧虚拟 dom 未找到与新虚拟 dom 相同的 key，则创建新的真实 dom 渲染到页面中</p>
+<p>用 index 做 key 引发的问题</p>
+<ol>
+<li>若对数据进行逆序添加，逆序删除等破坏顺序操作时，产生没必要的真实 dom 更新，虽然界面没有问题</li>
+<li>若结构中包含输入类的 DOM，会产生错误 DOM 更新，界面会出现异常</li>
+<li>若仅用于渲染列表展示，没有逆序添加，逆序删除等破坏顺序操作，则用 index 做 key 没有任何问题</li>
+</ol>
+<h4 id="脚手架"><a href="#脚手架" class="headerlink" title="脚手架"></a>脚手架</h4><p>安装：<code>npm i create-react-app -g</code></p>
+<p>创建文件夹：<code>create-ract app test</code></p>
+<p>进入创建的文件夹：<code>npm start</code></p>
+<ul>
+<li>入口文件 index.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//核心库</span><br><span class="line">import React from &#x27;react&#x27;</span><br><span class="line">//渲染</span><br><span class="line">import ReactDOM from &#x27;react-dom&#x27;</span><br><span class="line">import App from &#x27;./App&#x27;</span><br><span class="line">ReactDOM.render(&lt;App/&gt;,document.getElementById(&#x27;root&#x27;))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>App.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;</span><br><span class="line">Class App extends React.Component&#123;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">return (&lt;div&gt;xx&lt;/div&gt;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">export default App</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>样式模块化</li>
+</ul>
+<p>index.module.css</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.title&#123;color:red&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import hello form &#x27;./index.module.css&#x27;</span><br><span class="line"></span><br><span class="line">export default calss Test extends Compont&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;div className=&#123;hello.title&#125;&gt;xx&lt;/div&gt;</span><br><span class="line">&#125;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>代理</li>
+</ul>
+<p>setupProxy.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const proxy=require(&#x27;http-proxy-middleware&#x27;);</span><br><span class="line">module.exports=function (app) &#123;</span><br><span class="line">app.use(</span><br><span class="line">proxy.createProxyMiddleware(&#x27;/apis&#x27;,&#123;</span><br><span class="line">target:&#x27;http://xxx:xxx&#x27;,</span><br><span class="line">changeOrigin:true,//控制服务器收到的响应头中的Host字段值</span><br><span class="line">pathRewrite:&#123;&#x27;^/apis&#x27;:&#x27;&#x27;&#125;</span><br><span class="line">&#125;)，</span><br><span class="line">proxy.createProxyMiddleware(&#x27;/api2&#x27;,&#123;</span><br><span class="line">target:&#x27;http://xxx:xxx&#x27;,</span><br><span class="line">changeOrigin:true,//控制服务器收到的响应头中的Host字段值,true时为代理服务ip,false为当前ip，默认为false</span><br><span class="line">pathRewrite:&#123;&#x27;^/api2&#x27;:&#x27;&#x27;&#125;</span><br><span class="line">&#125;)，</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h4><ul>
+<li><p>子-&gt;父<br>父给子组件间传入回调函数，子组件调用回调函数把数据传给父组件</p>
+</li>
+<li><p>消息订阅与发布<br>第三方库 pubsub.js</p>
+</li>
+</ul>
+<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><blockquote>
+<p>依赖 H5 BOM 浏览器对象上的 history 或 hash 锚点，监听路由变化，匹配对应的组件<br>BrowserRouter 使用的 h5 的 histrory API,不兼容 IE9 以下版本<br>HashRouter 使用的 URL 的哈希值</p>
+</blockquote>
+<ul>
+<li>react-router-dom</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//要统一由一个router管理，可包围在App外侧</span><br><span class="line">&lt;BrowserRouter&gt;</span><br><span class="line">&lt;Link to=&#x27;/test&#x27;&gt;&lt;/Link&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;/BrowserRouter&gt;</span><br><span class="line"></span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">&lt;Link to=&#x27;/test&#x27;&gt;&lt;/Link&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;/HashRouter&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>路由组件<blockquote>
+<p>接受的 props 默认有 history，location，match</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一般组件<br>props 传什么有什么</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Test/&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>NavLink<blockquote>
+<p>可以通过 activeClassName 指定样式名,标签体内容是个特殊属性，通过 this.props.children 获取</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;NavLink activeClassName=&quot;active_color&quot;&gt;test</span><br><span class="line">&lt;/NavLink&gt;</span><br><span class="line">&lt;NavLink activeClassName=&quot;active_color&quot; children=&#x27;test&#x27;&gt;</span><br><span class="line">&lt;/NavLink&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Switch<blockquote>
+<p>路由默认会全部匹配完，加上 switch 可实现单一匹配，提高效率</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">//默认模糊匹配,exact严格匹配，开启后无法匹配二级路由</span><br><span class="line">&lt;Route exact path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;/Switch&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Redirect<blockquote>
+<p>重定向，写在路由最下方，当路由都不匹配时，跳转到 redirect 指定的路由</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Redirect to=&quot;/test&quot; &gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>二级路由</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;Route path=&quot;/test/a&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;Redirect to=&quot;/test&quot; &gt;</span><br><span class="line">&lt;/Switch&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>路由参数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//params参数，this.props.match.params</span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">&lt;Link to=`/test/$&#123;123&#125;/$&#123;123&#125;`&gt;&lt;/Link&gt;</span><br><span class="line">&lt;Route path=&quot;/test/:id/:count&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;/HashRouter&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//search参数(为urlencoded编码字符串，需借助querystring解析)，this.location.match.search</span><br><span class="line">import qs from &#x27;querystring&#x27;</span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">&lt;Link to=`/test?a=$&#123;123&#125;&amp;b=$&#123;123&#125;`&gt;&lt;/Link&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">//qs.parse(this.props.location.search)</span><br><span class="line">&lt;/HashRouter&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//state参数(不在地址栏显示，browser刷新页面不丢失，hashRouter刷新丢失)，this.props.location.state</span><br><span class="line">&lt;HashRouter&gt;</span><br><span class="line">&lt;Link to=&#123;&#123;pathname:&#x27;/test&#x27;state:&#123;a=123,b=123&#125;&#125;&#125;&gt;&lt;/Link&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; component=&#123;Test&#125;&gt;</span><br><span class="line">&lt;/HashRouter&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编程式路由</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">goto()&#123;</span><br><span class="line">this.props.history.push(&#x27;/test&#x27;,&#123;</span><br><span class="line">xx:&#x27;xx&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">this.props.history.replace(&#x27;/test&#x27;,&#123;</span><br><span class="line">xx:&#x27;xx&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>withRouter<blockquote>
+<p>加工一般组件，让一般组件用上路由 api</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123;withRouter&#125; from &#x27;react-router-dom&#x27;</span><br><span class="line"></span><br><span class="line">class Test extends Component &#123;&#125;</span><br><span class="line"></span><br><span class="line">export default withRouter(Test)//返回的是全新的组件</span><br></pre></td></tr></table></figure>
+
+<h4 id="React-Router-6"><a href="#React-Router-6" class="headerlink" title="React Router 6"></a>React Router 6</h4><blockquote>
+<p>移除<code>&lt;Switch/&gt;</code> ，新增<code>&lt;Routers/&gt;</code><br>移除<code>&lt;Redirect/&gt; </code>，新增<code>&lt;Navigate/&gt;</code> &gt; <code>component=&#123;About&#125;</code>变为 <code>element=&#123;&lt;About/&gt;&#125;</code><br>增加 hooks</p>
+</blockquote>
+<ul>
+<li>Routers<blockquote>
+<p>必须用 Routers 包裹，不会匹配多个</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Routers,Route&#125; form &#x27;react-router-dom&#x27;</span><br><span class="line">&lt;Routers&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; element=&#123;&lt;Test/&gt;&#125;&gt;</span><br><span class="line">&lt;Route path=&quot;/TEST&quot; caseSensitive element=&#123;&lt;Test2/&gt;&#125;&gt;//区分大小写</span><br><span class="line">&lt;/Routers&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Navigate<blockquote>
+<p>重定向,只要被渲染，就会切换路由</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Routers,Route,Navigate&#125; form &#x27;react-router-dom&#x27;</span><br><span class="line">&lt;Routers&gt;</span><br><span class="line">&lt;Route path=&quot;/test&quot; element=&#123;&lt;Test/&gt;&#125;&gt;</span><br><span class="line">&lt;Route path=&quot;/&quot; element=&#123;&lt;Navigate to=&quot;/test&quot;  /&gt;&#125;&gt;</span><br><span class="line">&lt;Route path=&quot;/&quot; element=&#123;&lt;Navigate to=&quot;/test&quot; replace /&gt;&#125;&gt;</span><br><span class="line">&lt;/Routers&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>NavLink</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;NaviLink className=&#123;()=&gt;return &#x27;activeColor&#x27;&#125;&gt;&lt;/NaviLink&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>路由表</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">import &#123;lazy&#125; from &#x27;react&#x27;</span><br><span class="line">import &#123;useRoutes,Navigate&#125; from &#x27;react-router-dom&#x27;</span><br><span class="line">//生成路由</span><br><span class="line">cosnt About=lazy(()=&gt;import(&#x27;../pages/About&#x27;))</span><br><span class="line">const element=useRoutes([</span><br><span class="line">&#123;</span><br><span class="line">path:&#x27;/test&#x27;,</span><br><span class="line">element:&lt;Test/&gt;</span><br><span class="line">children:[</span><br><span class="line">&#123;</span><br><span class="line">path:&#x27;new&#x27;,</span><br><span class="line">element:&lt;New/&gt;</span><br><span class="line">&#125;</span><br><span class="line">]</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">path:&#x27;/about&#x27;,</span><br><span class="line">element:&lt;About/&gt;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">        path:&#x27;/&#x27;,</span><br><span class="line">        //实现路由重定向</span><br><span class="line">        element:&lt;Navigate to=&#x27;/main&#x27;/&gt;</span><br><span class="line">    &#125;</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123;/*引用路由表*/&#125;</span><br><span class="line">&#123;element&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Outlet</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 若要显示子路由，需在父级路由组件中引入Outlet！！！</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;NavLink end to=&quot;new&quot;&gt;&lt;/NavLink&gt;//end代表匹配子路由时，自己失去高亮</span><br><span class="line">&#123;/*指定路由组件呈现的位置*/&#125;</span><br><span class="line">&lt;Outlet /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>路由参数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//params参数，this.props.match.params</span><br><span class="line">&lt;Link to=`/test/$&#123;123&#125;/$&#123;123&#125;`&gt;&lt;/Link&gt;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">import &#123;useParams,useMath&#125; from &#x27;react-router-dom&#x27;</span><br><span class="line">export default function Demo()&#123;</span><br><span class="line">const &#123;a,b&#125;=userParams()</span><br><span class="line">const &#123;a,b&#125;=userParams(/test/:a/:b&#125;)</span><br><span class="line">return (&#123;a+b&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link to=`/test?a=$&#123;123&#125;&amp;b=$&#123;123&#125;`&gt;&lt;/Link&gt;</span><br><span class="line">import &#123;useSearchParams,useLocation&#125; from &#x27;react-router-dom&#x27;</span><br><span class="line">export default function Demo()&#123;</span><br><span class="line">const [search,setSearch]=userSearchParams()</span><br><span class="line">const a=search.get(&#x27;a&#x27;)</span><br><span class="line">let setData=()=&gt;&#123;setSearch(1234)&#125;//更新a</span><br><span class="line">const a1=useLocation()</span><br><span class="line">return (&#123;a&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link to=&#x27;/test&#x27; state=&#123;&#123;a=123,b=123&#125;&#125;&gt;&lt;/Link&gt;</span><br><span class="line">import &#123;useLocation&#125; from &#x27;react-router-dom&#x27;</span><br><span class="line">export default function Demo()&#123;</span><br><span class="line">const obj=useLocation()</span><br><span class="line">return (&#123;obj.a&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编程式路由</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123;useNavigate&#125; from &#x27;react-router-dom&#x27;</span><br><span class="line">const navigate=userNavigate()</span><br><span class="line">goto()&#123;</span><br><span class="line">navigate(&#x27;/test&#x27;,&#123;</span><br><span class="line">replace:false,</span><br><span class="line">state:&#123;&#125;</span><br><span class="line">&#125;)</span><br><span class="line">navigate(1)//前进</span><br><span class="line">navigate(-1)//后退</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h4><blockquote>
+<p>状态管理 js 库，集中式管理 react 应用中多个组件共享的状态</p>
+</blockquote>
+<h5 id="简单"><a href="#简单" class="headerlink" title="简单"></a>简单</h5><ul>
+<li>store.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125;form &#x27;redux&#x27;</span><br><span class="line">import countReducer from &#x27;./countReducer&#x27;</span><br><span class="line">const store=createStore(countReducer)</span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>countReducer.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//创建一个为count组件服务的reducer，reducer本质是一个函数</span><br><span class="line">第一次调用时是store自动触发的，传递的preState是undefin</span><br><span class="line">export default function (preState,action)&#123;</span><br><span class="line">const &#123;type,data&#125;=action</span><br><span class="line">return preState</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>test.jsx</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import store from &#x27;../store/store.js&#x27;</span><br><span class="line"></span><br><span class="line">componentDidMount()&#123;</span><br><span class="line">store.subscribe(()=&gt;&#123;</span><br><span class="line">this.setState(&#123;&#125;)</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">increment()&#123;</span><br><span class="line">store.dispatch(&#123;type:&#x27;xx&quot;,data:123&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">return （&lt;div&gt;&#123;&#123;store.getState()&#125;&#125;&lt;/div&gt;）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="完整"><a href="#完整" class="headerlink" title="完整"></a>完整</h5><ul>
+<li>countAction.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建一个为count组件服务的action，</span><br><span class="line">export  function test(data)&#123;</span><br><span class="line">return &#123;type:&#x27;xxxx&#x27;,data&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>countReducer.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//创建一个为count组件服务的reducer，reducer本质是一个函数</span><br><span class="line">//第一次调用时是store自动触发的，传递的preState是undefin</span><br><span class="line">//必须是纯函数（同样输入必定得到同样输出）不要在reducer中发起网络请求、改写prestate、使用Date.now() , Math.random()</span><br><span class="line">export default function (preState,action)&#123;</span><br><span class="line">const &#123;type,data&#125;=action</span><br><span class="line">switch(type)&#123;</span><br><span class="line">case 0:</span><br><span class="line">return preState//当preState没有变化时，不会引起页面刷新（浅比较）</span><br><span class="line">case 1:</span><br><span class="line">return preState+1</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>constants.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export const ADD=&#x27;add&#x27;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>test.jsx</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import store from &#x27;../store/store.js&#x27;</span><br><span class="line">import &#123;test&#125; from &#x27;../store/countAction.js&#x27;</span><br><span class="line"></span><br><span class="line">componentDidMount()&#123;</span><br><span class="line">store.subscribe(()=&gt;&#123;</span><br><span class="line">this.setState(&#123;&#125;)</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">increment()&#123;</span><br><span class="line">store.dispatch(test(123))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">return （&lt;div&gt;&#123;&#123;store.getState()&#125;&#125;&lt;/div&gt;）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="异步-action"><a href="#异步-action" class="headerlink" title="异步 action"></a>异步 action</h5><blockquote>
+<p>异步 action 指 action 返回值为函数，同步 action 指 action 返回值为对象</p>
+</blockquote>
+<ul>
+<li>store.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore,applyMiddleware&#125;form &#x27;redux&#x27;</span><br><span class="line">import countReducer from &#x27;./countReducer&#x27;</span><br><span class="line">//引入异步action中间件</span><br><span class="line">//yarn add redux-thunk</span><br><span class="line">import thunk  from &#x27;redux-thunk&#x27;</span><br><span class="line">const store=createStore(countReducer,applyMiddleware(thunk))</span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>action.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import store from &#x27;./store&#x27;</span><br><span class="line">export const add=data=(&#123;type:&#x27;add&#x27;,data&#125;)//同步action</span><br><span class="line">export const addAsync=(data,a,b,c)=&gt;&#123;</span><br><span class="line">return (dispatch)=&gt;&#123;</span><br><span class="line">setTimeout(()=&gt;&#123;</span><br><span class="line">dispatch(add(data)&#125;)</span><br><span class="line">&#125;,50000)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="react-redux"><a href="#react-redux" class="headerlink" title="react-redux"></a>react-redux</h5><blockquote>
+<p>UI 组件应该包裹一个容器组件，它们为父子关系<br>UI 组件不能使用任何 redux api，容器组件可以<br>容器给 UI 组件通过 props 传递状态、操作方法<br>不用在写 store.subscribe()</p>
+</blockquote>
+<ul>
+<li>容器组件<br>/containers/test/index.jsx</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//yran add react-redux</span><br><span class="line">import testUI from &#x27;../../components/test.jsx&#x27;</span><br><span class="line">//引入connect用于连接UI组件与redux</span><br><span class="line">import &#123;connect&#125; from &#x27;react-redux&#x27;</span><br><span class="line"></span><br><span class="line">let mapStateToProps=(state)=&gt;&#123;</span><br><span class="line">//通过props传给UI组件状态</span><br><span class="line">return &#123;</span><br><span class="line">a:1,b:state</span><br><span class="line">&#125;&#125;</span><br><span class="line"></span><br><span class="line">let mapDisoatchToProps=(dispatch)=&gt;&#123;</span><br><span class="line">//通过props传给UI操作方法</span><br><span class="line">return &#123;</span><br><span class="line">d:(data)=&gt;&#123;</span><br><span class="line">dispatch(&#123;type:&#x27;xxx&#x27;,data&#125;)</span><br><span class="line">&#125;,</span><br><span class="line">c:()=&gt;&#123;&#125;</span><br><span class="line">&#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const testContainer=connect(mapStateToProps,mapDisoatchToProps)(testUI)</span><br><span class="line"></span><br><span class="line">export default testContainer</span><br></pre></td></tr></table></figure>
+
+<p>App.jsx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import store form &#x27;../../redux/store.js&#x27;</span><br><span class="line">import Test from &#x27;../../containers/test&#x27;</span><br><span class="line"></span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;Test store=&#123;store&#125;/&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createIncreamentAction&#125; from &#x27;../store/action.js&#x27;</span><br><span class="line">const testContainer=connect(</span><br><span class="line">state=&gt;&#123;a:state&#125;,</span><br><span class="line">&#123;</span><br><span class="line">add:createIncreamentAction</span><br><span class="line">&#125;</span><br><span class="line">)(testUI)</span><br></pre></td></tr></table></figure>
+
+<h5 id="provide"><a href="#provide" class="headerlink" title="provide"></a>provide</h5><p>index.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import store from &#x27;./store&#x27;</span><br><span class="line">import &#123;Provider&#125; from &#x27;react-redux&#x27;</span><br><span class="line">//自动匹配容器组件，添加上store</span><br><span class="line">ReactDOM.render(&lt;ProVider store=&#123;store&#125;&gt;&lt;App/&gt;&lt;/ProVider&gt;,document)</span><br></pre></td></tr></table></figure>
+
+<h5 id="整合容器和-UI-组件"><a href="#整合容器和-UI-组件" class="headerlink" title="整合容器和 UI 组件"></a>整合容器和 UI 组件</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createIncreamentAction&#125; from &#x27;../store/action.js&#x27;</span><br><span class="line"></span><br><span class="line">class Test extend Componet&#123;&#125;</span><br><span class="line">export default connect(</span><br><span class="line">state=&gt;&#123;a:state&#125;,</span><br><span class="line">&#123;</span><br><span class="line">add:createIncreamentAction</span><br><span class="line">&#125;</span><br><span class="line">)(Test)</span><br></pre></td></tr></table></figure>
+
+<h5 id="多个-reducer"><a href="#多个-reducer" class="headerlink" title="多个 reducer"></a>多个 reducer</h5><ul>
+<li>store.js</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore，applyMiddleware,combineReducers&#125;form &#x27;redux&#x27;</span><br><span class="line">import countReducer1 from &#x27;./reducer/count1&#x27;</span><br><span class="line">import countReducer2 from &#x27;./reducer/count2&#x27;</span><br><span class="line">let allReducer=combineReducers(&#123;</span><br><span class="line">count1:countReducer1</span><br><span class="line">count2:countReducer2</span><br><span class="line">&#125;)</span><br><span class="line">export default createStore(allReducer)</span><br></pre></td></tr></table></figure>
+
+<h5 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let obj=&#123;a:&#123;b:1&#125;&#125;</span><br><span class="line">const &#123;a&#125;=obj;</span><br><span class="line">const &#123;a:&#123;b&#125;&#125;=obj;//连续解构赋值</span><br><span class="line">const &#123;a:&#123;b:value&#125;&#125;=obj;//连续解构赋值+重命名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h5><ul>
+<li>若 a 函数，接收的参数是一个函数，那么 a 就可以称为高阶函数</li>
+<li>若 a 函数，调用的返回值依然是一个函数，那么 a 就可以称为高阶函数<br>如 promise setTimeOut arr.map()</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">test=(type)&#123;</span><br><span class="line">return (e)=&gt;&#123;</span><br><span class="line">arr.push( &#123;[type]:e.target.value&#125;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;input onChange=&quot;&#123;test(&#x27;1&#x27;)&#125;&quot;/&gt;</span><br><span class="line">&lt;input onChange=&quot;&#123;test(&#x27;2&#x27;)&#125;&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="函数的柯里化"><a href="#函数的柯里化" class="headerlink" title="函数的柯里化"></a>函数的柯里化</h5><p>通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test=(type)&#123;</span><br><span class="line">return (e)=&gt;&#123;</span><br><span class="line">arr.push( &#123;[type]:e.target.value&#125;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function sum(a,b,c)&#123;return a+b+c&#125;</span><br><span class="line"></span><br><span class="line">function sum2(a)&#123;</span><br><span class="line">return (b)=&gt;&#123;</span><br><span class="line">return (c)=&gt;&#123;</span><br><span class="line">return a+b+c</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">sum(1)(2)(3)</span><br></pre></td></tr></table></figure>
+
+<h4 id="前端发请求"><a href="#前端发请求" class="headerlink" title="前端发请求"></a>前端发请求</h4><h5 id="xhr"><a href="#xhr" class="headerlink" title="xhr"></a>xhr</h5><ul>
+<li>jquery</li>
+<li>axios（node 使用 axios 是封装 http 协议）</li>
+</ul>
+<h5 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h5><blockquote>
+<p>原生函数,老版本兼容性差</p>
+</blockquote>
+<p>fetch(‘xxx’).then(res=&gt;{<br>//联系服务器成功<br>return res.json()<br>},err=&gt;{return new Promis(()=&gt;{})}).then(res=&gt;{},err=&gt;{})</p>
+<h5 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h5><p>写法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">state=&#123;a:1&#125;</span><br><span class="line"></span><br><span class="line">对象式setState</span><br><span class="line">this.setState(&#123;a:2&#125;)</span><br><span class="line">this.setState(&#123;a:2&#125;,()=&gt;&#123;</span><br><span class="line">//状态更新以及页面也更新后，才调用</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">函数式setState</span><br><span class="line">this.setState((state,props)=&gt;&#123;</span><br><span class="line">return &#123;a:1&#125;&#125;,()=&gt;&#123;&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="lazyLoad"><a href="#lazyLoad" class="headerlink" title="lazyLoad"></a>lazyLoad</h4><blockquote>
+<p>路由组件懒加载</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &#123;lazy,COmponent,Suspense&#125; form &#x27;react&#x27;</span><br><span class="line">const Home=lazy(()=&gt;&#123;import (&#x27;./Home&#x27;)&#125;)</span><br><span class="line">export default class Demo extend Component&#123;</span><br><span class="line"></span><br><span class="line">&lt;Suspense fallback=&#123;&lt;Loading/&gt;&#125;&gt;</span><br><span class="line">&lt;Route  path=&quot;/home&quot; component=&#123;Home&#125;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/Route&gt;</span><br><span class="line">&lt;/Suspense&gt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h4><blockquote>
+<p>hook 是 16.8 的新特性，可以让你在函数组件中使用 state 以及其他 react 特性</p>
+</blockquote>
+<h5 id="state-1"><a href="#state-1" class="headerlink" title="state"></a>state</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import React form &#x27;react&#x27;</span><br><span class="line">function Test()&#123;</span><br><span class="line">const [a,set]=React.useState(123) //初始化会调用一次，下次调用时，会缓存数据，不会覆盖</span><br><span class="line">let add1=()=&gt;&#123;set(456)&#125;</span><br><span class="line">let add2=()=&gt;&#123;set((a)=&gt;&#123;return a+1&#125;)&#125;</span><br><span class="line">return (&lt;div&gt;a&lt;/div&gt;)&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="effect"><a href="#effect" class="headerlink" title="effect"></a>effect</h5><blockquote>
+<p>函数组件里使用生命周期</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import React form &#x27;react&#x27;</span><br><span class="line">function Test()&#123;</span><br><span class="line">const [count,setCount]=React.useState(123)</span><br><span class="line"></span><br><span class="line">React.userEffect(()=&gt;&#123;&#125;,[a])//检测a,改变时调用------</span><br><span class="line">React.userEffect(()=&gt;&#123;&#125;,[])//谁也不监测,仅在挂载和卸载的时候执行----</span><br><span class="line">React.userEffect(()=&gt;&#123;&#125;)//检测所有,改变时调用----componentDidUpdate</span><br><span class="line">React.userEffect(()=&gt;&#123;return ()=&gt;&#123;组件卸载前执行&#125;&#125;,[])//componentWillUnmount</span><br><span class="line"></span><br><span class="line">return (&lt;div&gt;a&lt;/div&gt;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">在React通知到Renderer渲染器后，渲染器又分了三个子阶段来处理：</span><br><span class="line"></span><br><span class="line">beforeMutation阶段（渲染视图前）</span><br><span class="line">mutation阶段（渲染试图）</span><br><span class="line">layout阶段（渲染视图后）</span><br><span class="line">渲染器会在mutation阶段完成后， 在layout阶段同步的调用useLayoutEffect，在子组件嵌套中于是如此。在类组件中，调用的是componentDidMount生命周期函数。也就是说，在useLayoutEffect中，无论是否有重新触发setState，也不会在当前渲染里，重新更新界面。</span><br><span class="line">而在整个渲染器渲染阶段（其实也叫commit）渲染完成后，react才会异步的执行useEffect。当在useEffect中如果有setState，则会重新触发渲染器，更新界面。</span><br><span class="line"></span><br><span class="line">结论：</span><br><span class="line"></span><br><span class="line">useLayoutEffect的是在渲染器执行当前渲染界面任务时，同步执行。</span><br><span class="line">在当前一轮的Reconciler任务调度过程中，在渲染器执行完当前任务后，才会异步调用useEffect。</span><br><span class="line">useLayoutEffect先于useEffect执行，并且子组件优先执行。</span><br><span class="line">componentDidMount()完全等价于useLayoutEffect( fn , [ ] )，但是不等价于useEffect( fn , [ ] )。</span><br></pre></td></tr></table></figure>
+
+<h5 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import React form &#x27;react&#x27;</span><br><span class="line">function Test()&#123;</span><br><span class="line">const myRef=React.useRef()</span><br><span class="line">function show()&#123;myRef.style.color=&#x27;red&#x27;&#125;</span><br><span class="line">return (&lt;div ref=&#123;myRef&#125;&gt;a&lt;/div&gt;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Fragment"><a href="#Fragment" class="headerlink" title="Fragment"></a>Fragment</h4><blockquote>
+<p>可以不用必须有一个真实 DOM 根标签，编译后会移除</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">render()&#123;</span><br><span class="line"></span><br><span class="line">return (</span><br><span class="line">&lt;Fragment key=&#123;&#125;&gt;//只能有一个属性：key</span><br><span class="line">&lt;&gt;//简写，但不能写任何属性</span><br><span class="line">&lt;/&gt;</span><br><span class="line">&lt;/Fragment&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h4><blockquote>
+<p>常用与祖组件和后代组件通信<br>一般不用 Context,而是它的封装 react-redux</p>
+</blockquote>
+<p>类式组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const CountContext=React.createContext()//创建一个上下文,必须所有组件都访问得到</span><br><span class="line">class A extends Component&#123;</span><br><span class="line">state=&#123;a:1&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">return (&lt;CountContext.Provider value=&#123;this.state.a&#125;&gt;&lt;B/&gt;&lt;/CountContext.Provider&gt;)&#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends Component&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">return (&lt;C/&gt;)&#125;</span><br><span class="line">&#125;</span><br><span class="line">class C extends Component&#123;</span><br><span class="line">static contextType=CountContext//声明接收context</span><br><span class="line">render()&#123;</span><br><span class="line">return (this.context)&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>所有组件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const CountContext=React.createContext()//创建一个上下文,必须所有组件都访问得到</span><br><span class="line">const &#123;Consumer,Provider&#125;=CountContext</span><br><span class="line">class A extends Component&#123;</span><br><span class="line">state=&#123;a:1&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">return (&lt;Provider value=&#123;this.state.a&#125;&gt;&lt;B/&gt;&lt;/Provider&gt;)&#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends Component&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">return (&lt;C/&gt;)&#125;</span><br><span class="line">&#125;</span><br><span class="line">function C()&#123;</span><br><span class="line">static contextType=CountContext//声明接收context</span><br><span class="line">render()&#123;</span><br><span class="line">return (&lt;div&gt;&lt;Consumer&gt;&#123;value=&gt;&#123;return (&lt;span&gt;value&lt;/span&gt;)&#125;&lt;/Consumer&gt;&lt;/div&gt;)&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="PureComponent"><a href="#PureComponent" class="headerlink" title="PureComponent"></a>PureComponent</h4><blockquote>
+<p>只要执行 setState 即使不更新数据，组件也会重新 render9)<br>只要 render()调用，其子组件也会更新<br>原因：shouldComponentUpdate()默认总是为 true</p>
+</blockquote>
+<h5 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h5><ul>
+<li>手动比较新旧值,不一样更新，否则禁止更新</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate(nextProps,nextState)&#123;//新的</span><br><span class="line">console.log(this.props,this.state)//旧的</span><br><span class="line">return true</span><br><span class="line">return false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123;PureComponent&#125; from &#x27;react&#x27;</span><br><span class="line"></span><br><span class="line">class Test extends PureComponent &#123;</span><br><span class="line">//依赖的数据不更新时，不重新render</span><br><span class="line"></span><br><span class="line">const obj=this.state</span><br><span class="line">obj.name=&#x27;xx&#x27;</span><br><span class="line">this.setState(obj)//浅比较，数据不会更新</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="render-Props"><a href="#render-Props" class="headerlink" title="render Props"></a>render Props</h4><blockquote>
+<p>vue 中的插槽</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class A extends Component&#123;</span><br><span class="line">state=&#123;a:1&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;B&gt;aaa&lt;/B&gt;</span><br><span class="line"> &lt;B render=&#123;(val)=&gt;&#123;&lt;C b=&#123;val&#125; /&gt;&#125;/&gt;</span><br><span class="line">)&#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends Component&#123;</span><br><span class="line">state=&#123;b:1&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;span&gt;&#123;this.props.children&#125;&lt;/span&gt;</span><br><span class="line">this.props.render(this.state.b)</span><br><span class="line">)&#125;//aaa</span><br><span class="line">&#125;</span><br><span class="line">function C()&#123;</span><br><span class="line">static contextType=CountContext//声明接收context</span><br><span class="line">render()&#123;</span><br><span class="line">return (&lt;div&gt;&lt;Consumer&gt;&#123;value=&gt;&#123;return (&lt;span&gt;value&lt;/span&gt;)&#125;&lt;/Consumer&gt;&lt;/div&gt;)&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ErrorBoundary-错误边界"><a href="#ErrorBoundary-错误边界" class="headerlink" title="ErrorBoundary 错误边界"></a>ErrorBoundary 错误边界</h4><blockquote>
+<p>防止子组件出错导致整个页面出错,只能在生产环境使用<br>只能捕获后代组件生命周期产生的错误，不能捕获自己的</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">state=&#123;error:&#x27;&#x27;&#125;</span><br><span class="line">//生命周期函数</span><br><span class="line">static getDerivedStateFromError(err)&#123;//它的子组件出现报错时会调用</span><br><span class="line">componentDidCath(err,info)&#123;&#125;//发生错误时调用</span><br><span class="line">return &#123;error:err&#125;//返回新的state，在render前触发</span><br><span class="line">&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">return (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123;error?error:&#x27;&#x27;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件间通信-1"><a href="#组件间通信-1" class="headerlink" title="组件间通信"></a>组件间通信</h4><ul>
+<li>props</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">children props</span><br><span class="line">render props</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>消息订阅-发布</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pubs-sub event</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>集中式管理</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redux、dva</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>conText</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">生产者-消费者模式</span><br><span class="line">``</span><br><span class="line"></span><br><span class="line">- 搭配</span><br><span class="line">父子：props</span><br><span class="line">兄弟: 集中式管理、消息订阅发布</span><br><span class="line">祖孙: 集中式管理、消息订阅发布、context（开发用的少，封装插件用得多）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 关闭eslint</span><br><span class="line">第一步：执行以下命令：</span><br><span class="line">`npm run eject`</span><br><span class="line">第二步：在package.json 中修改代码</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>“eslintConfig”: {<br>“extends”: [<br>“react-app”,<br>“react-app/jest”<br>],<br>“rules”:{<br>“no-undef”:”off”,<br>“no-restricted-globals”: “off”,<br>“no-unused-vars”: “off”<br>}<br>},</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第三步：重启项目</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><h5 id="并发模式下在-dev-时-render-phase-会执行两次"><a href="#并发模式下在-dev-时-render-phase-会执行两次" class="headerlink" title="并发模式下在 dev 时 render-phase 会执行两次"></a>并发模式下在 dev 时 render-phase 会执行两次</h5><p>这个是 react 的一个用来突出显示应用程序中潜在问题的工具（严格模式）</p>
+<p>有一项检测意外的副作用，严格模式不能自动检测到你的副作用，但它可以帮助你发现它们，使它们更具确定性。通过故意重复调用以下函数来实现的该操作。</p>
+<p>注意：这仅适用于开发模式。生产模式下生命周期不会被调用两次。strictMode，故意在开发环境中执行多次，暴雷出代码隐藏的 bug,把标签去掉即可</p>
+<h5 id="antd-form，initialValue值变化后不更新"><a href="#antd-form，initialValue值变化后不更新" class="headerlink" title="antd+form，initialValue值变化后不更新"></a>antd+form，initialValue值变化后不更新</h5><p>当我们第一次点开Modal的时候， 会得到一个initialValue,但是这个值只在组件挂载的时候执行了一次，后续数据的更新并不会造成重新渲染，所以当我们再次打开Modal窗口的时候并不会更新。</p>
+<p>解决方案：<br>方法一：使用form.resetFields()<br>使用resetFields方法会直接重置为initialValue的值，这样再次打开编辑表单就是我们想要的数据啦。</p>
+<p>方法二：使用form.setFieldsValue<br>对于initialValue不更新问题官方文档已经给出了解决方法</p>
+<h5 id="react获取上一轮的props和state（接用-useEffect-useRef实现）"><a href="#react获取上一轮的props和state（接用-useEffect-useRef实现）" class="headerlink" title="react获取上一轮的props和state（接用 useEffect, useRef实现）"></a>react获取上一轮的props和state（接用 useEffect, useRef实现）</h5><p>如果只是 想实现 这个效果 下面的代码 也行 。就不用借助其它的了。 这个思路就是，在 改变 state之前 就 备份一下 值 。</p>
+<p>effect 的执行时机</p>
+<p>与 componentDidMount、componentDidUpdate 不同的是，传给 useEffect 的函数会在浏览器完成布局与绘制之后，在一个延迟事件中被调用。这使得它适用于许多常见的副作用场景，比如设置订阅和事件处理等情况，因为绝大多数操作不应阻塞浏览器对屏幕的更新。</p>
+<p>然而，并非所有 effect 都可以被延迟执行。例如，一个对用户可见的 DOM 变更就必须在浏览器执行下一次绘制前被同步执行，这样用户才不会感觉到视觉上的不一致。（概念上类似于被动监听事件和主动监听事件的区别。）React 为此提供了一个额外的 useLayoutEffect Hook 来处理这类 effect。它和 useEffect 的结构相同，区别只是调用时机不同。</p>
+<p>此外，从 React 18 开始，当它是离散的用户输入（如点击）的结果时，或者当它是由 flushSync 包装的更新结果时，传递给 useEffect 的函数将在屏幕布局和绘制之前同步执行。这种行为便于事件系统或 flushSync 的调用者观察该效果的结果。</p>
+<p>注意</p>
+<p>这只影响传递给 useEffect 的函数被调用时 — 在这些 effect 中执行的更新仍会被推迟。这与 useLayoutEffect 不同，后者会立即启动该函数并处理其中的更新。</p>
+<p>即使在 useEffect 被推迟到浏览器绘制之后的情况下，它也能保证在任何新的渲染前启动。React 在开始新的更新前，总会先刷新之前的渲染的 effect。<br>useRef</p>
+<p>useRef 返回一个可变的 ref 对象，其 .current 属性被初始化为传入的参数（initialValue）。返回的 ref 对象在组件的整个生命周期内持续存在。<br>本质上，useRef 就像是可以在其 .current 属性中保存一个可变值的“盒子”。</p>
+<p>你应该熟悉 ref 这一种访问 DOM 的主要方式。如果你将 ref 对象以 <div ref={myRef} /> 形式传入组件，则无论该节点如何改变，React 都会将 ref 对象的 .current 属性设置为相应的 DOM 节点。</p>
+<p>然而，useRef() 比 ref 属性更有用。它可以很方便地保存任何可变值，其类似于在 class 中使用实例字段的方式。</p>
+<p>这是因为它创建的是一个普通 Javascript 对象。而 useRef() 和自建一个 {current: …} 对象的唯一区别是，useRef 会在每次渲染时返回同一个 ref 对象。</p>
+<p>请记住，当 ref 对象内容发生变化时，useRef 并不会通知你。变更 .current 属性不会引发组件重新渲染。如果想要在 React 绑定或解绑 DOM 节点的 ref 时运行某些代码，则需要使用回调 ref 来实现。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Counter() &#123;</span><br><span class="line">  const [count, setCount] = useState(0);</span><br><span class="line"> </span><br><span class="line">  const prevCountRef = useRef();</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    prevCountRef.current = count;</span><br><span class="line">  &#125;);</span><br><span class="line">  const prevCount = prevCountRef.current;</span><br><span class="line"> </span><br><span class="line">  return &lt;h1&gt;Now: &#123;count&#125;, before: &#123;prevCount&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/12/20-23-33/" rel="prev" title="selenium">
+      <i class="fa fa-chevron-left"></i> selenium
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/12/09/20-00-00/" rel="next" title="react Native">
+      react Native <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number">1.</span> <span class="nav-text">React</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%BC%96%E5%86%99"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器中编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX"><span class="nav-number">1.2.</span> <span class="nav-text">JSX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsx-%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">jsx 语法规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%92%8C%E6%A8%A1%E5%9D%97"><span class="nav-number">1.3.</span> <span class="nav-text">组件和模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">函数式组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%BC%8F%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">类式组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">简单组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">复杂组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#state"><span class="nav-number">1.3.2.2.1.</span> <span class="nav-text">state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#props"><span class="nav-number">1.3.2.2.2.</span> <span class="nav-text">props</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#refs"><span class="nav-number">1.3.2.2.3.</span> <span class="nav-text">refs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.3.2.2.4.</span> <span class="nav-text">绑定事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%A7"><span class="nav-number">1.3.2.3.1.</span> <span class="nav-text">旧</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B0"><span class="nav-number">1.3.2.3.2.</span> <span class="nav-text">新</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-%E4%B8%AD%E7%9A%84-key-%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">react 中的 key 作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">脚手架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="nav-number">1.3.2.6.</span> <span class="nav-text">组件间通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1"><span class="nav-number">1.3.2.7.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Router-6"><span class="nav-number">1.3.2.8.</span> <span class="nav-text">React Router 6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#redux"><span class="nav-number">1.3.2.9.</span> <span class="nav-text">redux</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%80%E5%8D%95"><span class="nav-number">1.3.2.9.1.</span> <span class="nav-text">简单</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4"><span class="nav-number">1.3.2.9.2.</span> <span class="nav-text">完整</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5-action"><span class="nav-number">1.3.2.9.3.</span> <span class="nav-text">异步 action</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#react-redux"><span class="nav-number">1.3.2.9.4.</span> <span class="nav-text">react-redux</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#provide"><span class="nav-number">1.3.2.9.5.</span> <span class="nav-text">provide</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B4%E5%90%88%E5%AE%B9%E5%99%A8%E5%92%8C-UI-%E7%BB%84%E4%BB%B6"><span class="nav-number">1.3.2.9.6.</span> <span class="nav-text">整合容器和 UI 组件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA-reducer"><span class="nav-number">1.3.2.9.7.</span> <span class="nav-text">多个 reducer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="nav-number">1.3.2.9.8.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.2.9.9.</span> <span class="nav-text">高阶函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E6%9F%AF%E9%87%8C%E5%8C%96"><span class="nav-number">1.3.2.9.10.</span> <span class="nav-text">函数的柯里化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%8F%91%E8%AF%B7%E6%B1%82"><span class="nav-number">1.3.2.10.</span> <span class="nav-text">前端发请求</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#xhr"><span class="nav-number">1.3.2.10.1.</span> <span class="nav-text">xhr</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fetch"><span class="nav-number">1.3.2.10.2.</span> <span class="nav-text">fetch</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#setState"><span class="nav-number">1.3.2.10.3.</span> <span class="nav-text">setState</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lazyLoad"><span class="nav-number">1.3.2.11.</span> <span class="nav-text">lazyLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hooks"><span class="nav-number">1.3.2.12.</span> <span class="nav-text">Hooks</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#state-1"><span class="nav-number">1.3.2.12.1.</span> <span class="nav-text">state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#effect"><span class="nav-number">1.3.2.12.2.</span> <span class="nav-text">effect</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ref"><span class="nav-number">1.3.2.12.3.</span> <span class="nav-text">ref</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fragment"><span class="nav-number">1.3.2.13.</span> <span class="nav-text">Fragment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Context"><span class="nav-number">1.3.2.14.</span> <span class="nav-text">Context</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PureComponent"><span class="nav-number">1.3.2.15.</span> <span class="nav-text">PureComponent</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3"><span class="nav-number">1.3.2.15.1.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#render-Props"><span class="nav-number">1.3.2.16.</span> <span class="nav-text">render Props</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ErrorBoundary-%E9%94%99%E8%AF%AF%E8%BE%B9%E7%95%8C"><span class="nav-number">1.3.2.17.</span> <span class="nav-text">ErrorBoundary 错误边界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1-1"><span class="nav-number">1.3.2.18.</span> <span class="nav-text">组件间通信</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-number">1.3.3.</span> <span class="nav-text">常见错误</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%8B%E5%9C%A8-dev-%E6%97%B6-render-phase-%E4%BC%9A%E6%89%A7%E8%A1%8C%E4%B8%A4%E6%AC%A1"><span class="nav-number">1.3.3.0.1.</span> <span class="nav-text">并发模式下在 dev 时 render-phase 会执行两次</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#antd-form%EF%BC%8CinitialValue%E5%80%BC%E5%8F%98%E5%8C%96%E5%90%8E%E4%B8%8D%E6%9B%B4%E6%96%B0"><span class="nav-number">1.3.3.0.2.</span> <span class="nav-text">antd+form，initialValue值变化后不更新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#react%E8%8E%B7%E5%8F%96%E4%B8%8A%E4%B8%80%E8%BD%AE%E7%9A%84props%E5%92%8Cstate%EF%BC%88%E6%8E%A5%E7%94%A8-useEffect-useRef%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="nav-number">1.3.3.0.3.</span> <span class="nav-text">react获取上一轮的props和state（接用 useEffect, useRef实现）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KK</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/a913481180" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;a913481180" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kangkanghuang@foxmail.com" title="E-Mail → mailto:kangkanghuang@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com">百度</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KK</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="Nginx 负载均衡、反向代理、动静结合  配置文件匹配顺序&#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;多个配置文件时，会优先匹配配置了server_name且值不是localhost，接着是localhost，再接着是没有配置的。若端口号和server_name都一样则优先选择该目录下的第一个配置文件。 常用命令12345678910111213nginx -vnginx -Vnginx -t &#x2F;&#x2F;查看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx">
+<meta property="og:url" content="http://www.baidu.com/2022/08/11/20-22-22/index.html">
+<meta property="og:site_name" content="KK">
+<meta property="og:description" content="Nginx 负载均衡、反向代理、动静结合  配置文件匹配顺序&#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;多个配置文件时，会优先匹配配置了server_name且值不是localhost，接着是localhost，再接着是没有配置的。若端口号和server_name都一样则优先选择该目录下的第一个配置文件。 常用命令12345678910111213nginx -vnginx -Vnginx -t &#x2F;&#x2F;查看">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-11T12:22:22.000Z">
+<meta property="article:modified_time" content="2023-02-06T03:30:12.090Z">
+<meta property="article:author" content="KK">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.baidu.com/2022/08/11/20-22-22/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>nginx | KK</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KK</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2022/08/11/20-22-22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          nginx
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-11 20:22:22" itemprop="dateCreated datePublished" datetime="2022-08-11T20:22:22+08:00">2022-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-06 11:30:12" itemprop="dateModified" datetime="2023-02-06T11:30:12+08:00">2023-02-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><blockquote>
+<p>负载均衡、反向代理、动静结合</p>
+</blockquote>
+<h2 id="配置文件匹配顺序"><a href="#配置文件匹配顺序" class="headerlink" title="配置文件匹配顺序"></a>配置文件匹配顺序</h2><p>/etc/nginx/conf.d/多个配置文件时，会优先匹配配置了server_name且值不是localhost，接着是localhost，再接着是没有配置的。若端口号和server_name都一样则优先选择该目录下的第一个配置文件。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br><span class="line">nginx -V</span><br><span class="line">nginx -t //查看配置是否有问题</span><br><span class="line">nginx -s reload //重新加载配置</span><br><span class="line">nginx -s stop //强行停止</span><br><span class="line">nginx -s quit //安全退出</span><br><span class="line">ps -ef|grep nginx //查看进程</span><br><span class="line">systemctl enable nginx //开机自动启动</span><br><span class="line">//防火墙</span><br><span class="line">systemctl status firewalld.service</span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line">systemctl status firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启GZIP压缩"><a href="#开启GZIP压缩" class="headerlink" title="开启GZIP压缩"></a>开启GZIP压缩</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    gzip on;</span><br><span class="line">    gzip_type application/javascript;#压缩类型，文本文件压缩效果最好,图片视频资源压缩作用不大，大文件资源会消耗大量cpu资源不推荐</span><br><span class="line">    gzip_min_length 1k;#最小压缩单位，小于1k压缩意义不大</span><br><span class="line">    gzip_comp_level 5;#压缩级别，1-9，数字越大压缩效果越好，但会加大cpu压力，高并发场景不建议调太高,建议5左右</span><br><span class="line">    gzip_very on;#在响应头添加very:accept-encoding,让代理服务器根据请求头识别是否启用了gzip压缩</span><br><span class="line">    gzip_http_version 1.1;#启用gzip压缩的最低http版本，默认1.1</span><br><span class="line">    gzip_buffers 4 4k;#设置压缩所需的缓冲区大小和申请内存的倍率，如4 4k代表以4k为单位，按照原始数据大小以4k为单位的4倍申请内存。默认是申请跟原始数据相同大小的内存空间。</span><br><span class="line">    gzip_static on;#静态压缩，若提前已准备好了压缩文件.gz的压缩包或者提供静态文件服务，可以启用。它可避免动态压缩，提高性能</span><br><span class="line">    gzip_proxied off;#nginx作为反向代理时，开启或关闭后端服务器返回的结果（前提是后端必须返回包含Via的请求头）。off-关闭所有代理结果数据的压缩。expired-若请求头包含‘Expires’信息，则启用。no-cache-若请求头包含‘Cache-Control:no-cache’信息，则启用。no-store-若请求头包含‘Cache-Control:no-store’信息，则启用。private-&gt;若请求头包含‘Cache-Control:private’信息，则启用。no_last_modified-&gt;若请求头不包含‘Last-Modified’信息，则启用。no_etag-&gt;若请求头不包含‘Etag’信息，则启用。auth-&gt;若请求头包含“Authorization&quot;信息，则启用。any-&gt;无条件启用压缩</span><br><span class="line">    gzip_disable MSIE[1-6]\.;#设置禁用浏览器进行Gzip压缩，ie6对gzip压缩支持不好，会造成假死。</span><br><span class="line">    listen 8080;</span><br><span class="line">    server_name localhost;</span><br><span class="line">    location / &#123;</span><br><span class="line">        root /opt/test/;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启Brotli"><a href="#开启Brotli" class="headerlink" title="开启Brotli"></a>开启Brotli</h2><blockquote>
+<p>比gzip性能高，ie浏览器不支持，仅支持https，无法使用时，会降级为gzip</p>
+</blockquote>
+<ul>
+<li>下载源码</li>
+<li>下载算法</li>
+<li>重新编译，<code>./configure --prefix=安装目录 --with-http_ssl_module --add-module=brotli的安装目录</code></li>
+<li>安装好后，将 objs文件夹中nginx执行文件替换掉sbin中的执行文件</li>
+<li>编辑文件<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    ...</span><br><span class="line">brotli on；</span><br><span class="line">brotli_type application/javascript;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="请求限流"><a href="#请求限流" class="headerlink" title="请求限流"></a>请求限流</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">语法：limit_req zone=name [burst=number][nodelay|delay=number];</span><br><span class="line">上下文：http,server,location</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">示例：</span><br></pre></td></tr></table></figure>
+<p>http:{<br>limit_req_zone $binary_remote_addr zone=ip_limit:10m rate=1r/s;<br>…<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`$binary_remote_addr`-&gt;通过remote_addr这个标识来做限制，限制的是同一客户端的ip地址，在这里，客户端ip地址作为关键。注意，不是`$ remote_addr`,`$ remote_addr`变量的大小可以从7到15个字节不等，存储状态在32位平台上占用32或64字节，在64位平台上总是64字节。对于ipv4地址，`$binary_remote_addr`变量始终是4个字节，对于ipv6地址则为16个字节，</span><br><span class="line">`zone=ip_limit:10m`-&gt;生成一个10MB大小，名字为ip_limitd的内存区域，主要用来存储访问频次信息。</span><br><span class="line">`rate=1r/s`-&gt;标识允许相同标识客户端的一个访问频次，1r即1次</span><br></pre></td></tr></table></figure>
+<p>server{<br>    …<br>location / {<br>limit_req zone=ip_limit burst=5 nodelay;<br>…<br>}}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">`zone`-&gt;表示使用哪个区域来做限制</span><br><span class="line">`burst`-&gt;设置了一个大小为5的缓存区，当有大量请求即burst时，超过访问频次限制的请求可以先放到此缓存区。</span><br><span class="line">`nodelay`-&gt;超过访问频次且缓存区也满了的时候，直接返回503，若无设置，则请求会等待排队。</span><br><span class="line"></span><br><span class="line">## 连接限流</span><br></pre></td></tr></table></figure>
+<p>语法：limit_conn zone number;<br>上下文：http,server,location</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">示例：</span><br></pre></td></tr></table></figure>
+<p>http:{<br>limit_conn_zone $binary_remote_addr zone=addr:10m;<br>…<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">`$binary_remote_addr`-&gt;通过remote_addr这个标识来做限制，限制的是同一客户端的ip地址.</span><br><span class="line">`zone=addr:10m`-&gt;生成一个10MB大小，名字为addr的内存区域，主要用来存储访问频次信息。</span><br><span class="line">`server&#123;</span><br><span class="line">    ...</span><br><span class="line">location / &#123;``</span><br><span class="line">limit_conn addr 1;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>zone</code>-&gt;表示使用哪个区域来做限制<br><code>1</code>-&gt;允许相同标识客户端的一个访问频次，1代表只允许每个ip地址1个连接。</p>
+<h2 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    listen 8080;</span><br><span class="line">    server_name localhost;</span><br><span class="line">    location / &#123;</span><br><span class="line">        root /opt/test/;</span><br><span class="line">    &#125;</span><br><span class="line">    location ~* .*\.(gif|jpg|png)$&#123;</span><br><span class="line">        root /opt/test/img/;</span><br><span class="line">        valid_referers none blocked xxx.com;</span><br><span class="line">        if($invalid_referer)&#123;</span><br><span class="line">            #return 403;返回错误页面</span><br><span class="line">            rewrite ^/ http://xxxx/error;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>破解方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;header&gt;</span><br><span class="line">&lt;meta name=&quot;referrer&quot; content=&#x27;no-referrer&#x27; /&gt;</span><br><span class="line">&lt;/header&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="如何利用Nginx代理获取真实IP"><a href="#如何利用Nginx代理获取真实IP" class="headerlink" title="如何利用Nginx代理获取真实IP"></a>如何利用Nginx代理获取真实IP</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">   listen 80;</span><br><span class="line">   server_name xxx.xxxx.com;</span><br><span class="line">  </span><br><span class="line">   location / &#123;</span><br><span class="line">       #保留代理之前的host 包含客户端真实的域名和端口号</span><br><span class="line">       proxy_set_header    Host  $host; </span><br><span class="line">       #保留代理之前的真实客户端ip</span><br><span class="line">       proxy_set_header    X-Real-IP  $remote_addr;  </span><br><span class="line">       #这个Header和X-Real-IP类似，但它在多级代理时会包含真实客户端及中间每个代理服务器的IP</span><br><span class="line">       proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;</span><br><span class="line">       #表示客户端真实的协议（http还是https）</span><br><span class="line">       proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">       #指定修改被代理服务器返回的响应头中的location头域跟refresh头域数值</span><br><span class="line">       #如果使用&quot;default&quot;参数，将根据location和proxy_pass参数的设置来决定。</span><br><span class="line">       #proxy_redirect [ default|off|redirect replacement ];</span><br><span class="line">       proxy_redirect off;</span><br><span class="line">       proxy_pass http://IP:PORT;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过反向代理后，由于在客户端和web服务器之间增加了中间层，因此web服务器无法直接拿到客户端的ip，通过<code>$remote_addr</code>变量拿到的将是反向代理服务器的ip地址。<br>这句话的意思是说，当你使用了nginx反向服务器后，在web端使用request.getRemoteAddr()（本质上就是获取<code>$remote_addr</code>），取得的是nginx的地址，即<code>$remote_addr</code>变量中封装的是nginx的地址，当然是没法获得用户的真实ip的。但是，nginx是可以获得用户的真实ip的，也就是说nginx使用<code>$remote_addr</code>变量时获得的是用户的真实ip，如果我们想要在web端获得用户的真实ip，就必须在nginx里作一个赋值操作，即我在上面的配置：<br><code>proxy_set_header X-Real-IP $remote_addr;</code><br>$remote_addr 只能获取到与服务器本身直连的上层请求ip，所以设置<code>$remote_addr</code> 一般都是设置第一个代理上面;但是问题是，有时候是通过cdn访问过来的，那么后面web服务器获取到的，永远都是cdn 的ip 而非真是用户ip,那么这个时候就要用到<code>X-Forwarded-For</code> 了，这个变量的意思，其实就像是链路反追踪，从客户的真实ip为起点，穿过多层级的proxy ，最终到达web 服务器，都会记录下来，所以在获取用户真实ip的时候，一般就可以设置成 下面的配置<br><code>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; </code><br><code>X-Forwarded-For</code>变量，这是一个squid开发的，用于识别通过HTTP代理或负载平衡器原始IP一个连接到Web服务器的客户机地址的非rfc标准，如果有做<code>X-Forwarded-For</code>设置的话,每次经过proxy转发都会有记录,格式就是client1,proxy1,proxy2以逗号隔开各个地址，由于它是非rfc标准，所以默认是没有的，需要强制添加。在默认情况下经过proxy转发的请求，在后端看来远程地址都是proxy端的ip 。也就是说在默认情况下我们使用request.getAttribute(“X-Forwarded-For”)获取不到用户的ip，如果我们想要通过这个变量获得用户的ip，我们需要自己在nginx添加配置：<code>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</code><br>意思是增加一个<code>$proxy_add_x_forwarded_for</code>到<code>X-Forwarded-For</code>里去，注意是增加，而不是覆盖，当然由于默认的<code>X-Forwarded-For</code>值是空的，所以我们总感觉<code>X-Forwarded-For</code>的值就等于<code>$proxy_add_x_forwarded_for</code>的值，实际上当你搭建两台nginx在不同的ip上，并且都使用了这段配置，那你会发现在web服务器端通过request.getAttribute(“X-Forwarded-For”)获得的将会是客户端ip和第一台nginx的ip。</p>
+<p>那么<code>$proxy_add_x_forwarded_for</code>又是什么？<br><code>$proxy_add_x_forwarded_for</code>变量包含客户端请求头中的<code>X-Forwarded-For</code>与<code>$remote_addr</code>两部分，他们之间用逗号分开。</p>
+<p>举个例子，有一个web应用，在它之前通过了两个nginx转发，<a target="_blank" rel="noopener" href="http://www.linuxidc.com即用户访问该web通过两台nginx./">www.linuxidc.com即用户访问该web通过两台nginx。</a></p>
+<p>在第一台nginx中,使用：<br><code>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</code><br>现在的<code>$proxy_add_x_forwarded_for</code>变量的<code>X-Forwarded-For</code>部分是空的，所以只有<code>$remote_addr</code>，而<code>$remote_addr</code>的值是用户的ip，于是赋值以后，<code>X-Forwarded-For</code>变量的值就是用户的真实的ip地址了。</p>
+<p>到了第二台nginx，使用：</p>
+<p><code>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</code></p>
+<p>现在的<code>$proxy_add_x_forwarded_for</code>变量，<code>X-Forwarded-For</code>部分包含的是用户的真实ip，<code>$remote_addr</code>部分的值是上一台nginx的ip地址，于是通过这个赋值以后现在的<code>X-Forwarded-For</code>的值就变成了“用户的真实ip，第一台nginx的ip”，这样就清楚了吧。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/11/20-22-22/" rel="prev" title="npm仓库">
+      <i class="fa fa-chevron-left"></i> npm仓库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/11/12/20-23-33/" rel="next" title="selenium">
+      selenium <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx"><span class="nav-number">1.</span> <span class="nav-text">Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8C%B9%E9%85%8D%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.1.</span> <span class="nav-text">配置文件匹配顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AFGZIP%E5%8E%8B%E7%BC%A9"><span class="nav-number">1.3.</span> <span class="nav-text">开启GZIP压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AFBrotli"><span class="nav-number">1.4.</span> <span class="nav-text">开启Brotli</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E9%99%90%E6%B5%81"><span class="nav-number">1.5.</span> <span class="nav-text">请求限流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E7%9B%97%E9%93%BE"><span class="nav-number">1.6.</span> <span class="nav-text">防盗链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Nginx%E4%BB%A3%E7%90%86%E8%8E%B7%E5%8F%96%E7%9C%9F%E5%AE%9EIP"><span class="nav-number">1.7.</span> <span class="nav-text">如何利用Nginx代理获取真实IP</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KK</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/a913481180" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;a913481180" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kangkanghuang@foxmail.com" title="E-Mail → mailto:kangkanghuang@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com">百度</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KK</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

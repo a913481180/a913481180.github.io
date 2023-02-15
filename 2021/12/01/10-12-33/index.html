@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="MySql安装 MySQL 官网下载最新版https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;installer&#x2F; 然后在 cmd 里面 cd 到D:\mysql-8.0.11安装目录 在该文件夹下创建 my.ini 配置文件编辑 my.ini 配置以下基本信息  1234567891011121314151617[client]# 设置mysql客户端默认字符集default-cha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql">
+<meta property="og:url" content="http://www.baidu.com/2021/12/01/10-12-33/index.html">
+<meta property="og:site_name" content="KK">
+<meta property="og:description" content="MySql安装 MySQL 官网下载最新版https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;installer&#x2F; 然后在 cmd 里面 cd 到D:\mysql-8.0.11安装目录 在该文件夹下创建 my.ini 配置文件编辑 my.ini 配置以下基本信息  1234567891011121314151617[client]# 设置mysql客户端默认字符集default-cha">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-01T02:12:33.000Z">
+<meta property="article:modified_time" content="2022-09-14T13:38:01.269Z">
+<meta property="article:author" content="KK">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.baidu.com/2021/12/01/10-12-33/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MySql | KK</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KK</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/12/01/10-12-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MySql
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-01 10:12:33" itemprop="dateCreated datePublished" datetime="2021-12-01T10:12:33+08:00">2021-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-14 21:38:01" itemprop="dateModified" datetime="2022-09-14T21:38:01+08:00">2022-09-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>MySQL 官网下载最新版<code>https://dev.mysql.com/downloads/installer/</code></li>
+<li>然后在 cmd 里面 cd 到<code>D:\mysql-8.0.11</code>安装目录</li>
+<li>在该文件夹下创建 my.ini 配置文件编辑 my.ini 配置以下基本信息</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port = 3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=C:\\web\\mysql-8.0.11</span><br><span class="line"># 设置 mysql数据库的数据的存放目录MySQL 8+ 不需要以下配置，系统自己生成即可否则有可能报错</span><br><span class="line"># datadir=C:\\web\\sqldata</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=20</span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">character-set-server=utf8</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MySQL 数据库进行初始化命令操作时提示 my.ini 配置文件错误的解决方法<br>通过修改 MySQL 数据库中 my.ini 配置文件编码格式的方法解决此问题。<br>步骤：用记事本打开 my.ini 文件——》点击“文件”选择“另存为”——》将编码选为 ANSI——》保存覆盖——》重启 MySQL 。</p>
+</blockquote>
+<ul>
+<li>以管理员身份打开 cmd 命令行工具切换目录<code>cd D:\mysql-8.0.11\bin</code></li>
+<li>初始化数据库<code>mysqld --initialize --console</code>执行完成后会输出 root 用户的初始默认密码!!!!</li>
+<li>安装<code>mysqld install</code></li>
+<li>启动输入以下命令<code>net start mysql</code></li>
+<li>停止<code>net stop mysql</code></li>
+<li>登录 MySQL<code>mysql -u root -p</code></li>
+<li>修改初始密码<code>ALTER USER USER() IDENTIFIED BY &#39;123456&#39;;</code></li>
+</ul>
+<h3 id="mysql-数据类型"><a href="#mysql-数据类型" class="headerlink" title="mysql 数据类型"></a>mysql 数据类型</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数类型</td>
+<td>tinyint\smallint\mediumint\int\bigint</td>
+</tr>
+<tr>
+<td>浮点小数类型</td>
+<td>float\double</td>
+</tr>
+<tr>
+<td>定点小数类型</td>
+<td>decimal</td>
+</tr>
+<tr>
+<td>时间、日期类型</td>
+<td>year\time\date\datetime\timestamp</td>
+</tr>
+<tr>
+<td>文本字符串</td>
+<td>char\varchar\tinytext\text\mediumtext\longtext\enum\set</td>
+</tr>
+<tr>
+<td>二进制字符串</td>
+<td>bit\binary\varbinary\tinyblob\blog\mediumblob\longblob</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>char(n)和 varchar(n)中括号中 n 代表字符的个数并不代表字节个数比如 CHAR(30)就可以存储 30 个字符。</p>
+</blockquote>
+<h3 id="mysql-常用语句"><a href="#mysql-常用语句" class="headerlink" title="mysql 常用语句"></a>mysql 常用语句</h3><blockquote>
+<p>不区分大小写</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>use xxx;</td>
+<td>选择数据库</td>
+</tr>
+<tr>
+<td>show databases;</td>
+<td>显示数据库</td>
+</tr>
+<tr>
+<td>show columns from customers;</td>
+<td>获取 customers 表的一个列</td>
+</tr>
+<tr>
+<td>CREATE DATABASE xxx;</td>
+<td>创建数据库</td>
+</tr>
+<tr>
+<td>drop database xxxx;</td>
+<td>删除数据库</td>
+</tr>
+<tr>
+<td>show create database xxxx;</td>
+<td>查看数据库信息</td>
+</tr>
+<tr>
+<td>alter database 库名 选项信息;</td>
+<td>修改库信息</td>
+</tr>
+<tr>
+<td>CREATE TABLE table_name (column_name column_type,….);</td>
+<td>创建表</td>
+</tr>
+<tr>
+<td>show tables;</td>
+<td>查看所有表</td>
+</tr>
+<tr>
+<td>show tables from xxx;</td>
+<td>查看所有表</td>
+</tr>
+<tr>
+<td>ALTER TABLE 表名 表的选项</td>
+<td>修改表信息</td>
+</tr>
+<tr>
+<td>RENAME TABLE 原表名 TO 新表名</td>
+<td>对表进行重命名</td>
+</tr>
+<tr>
+<td>RENAME TABLE 原表名 TO 库名.表名</td>
+<td>可将表移动到另一个数据库</td>
+</tr>
+<tr>
+<td>ALTER TABLE 表名 操作名</td>
+<td>操作名:<code>ADD[ COLUMN] 字段名</code>– 增加字段;<code>AFTER 字段名</code>– 表示增加在该字段名后面;<code>FIRST</code>– 表示增加在第一个;<code>ADD PRIMARY KEY(字段名)</code>– 创建主键; <code>ADD UNIQUE [索引名] (字段名)</code>– 创建唯一索引;<code>ADD INDEX [索引名] (字段名)</code>– 创建普通索引;<code>DROP[ COLUMN] 字段名</code>– 删除字段;<code>MODIFY[ COLUMN] 字段名 字段属性</code>– 支持对字段属性进行修改不能修改字段名(所有原有属性也需写上);<code>CHANGE[ COLUMN] 原字段名 新字段名 字段属性</code>– 支持对字段名修改;<code>DROP PRIMARY KEY</code>– 删除主键(删除主键前需删除其 AUTO_INCREMENT 属性);<code>DROP INDEX 索引名</code>– 删除索引;<code>DROP FOREIGN KEY 外键</code> – 删除外键;</td>
+</tr>
+<tr>
+<td>DROP TABLE[ IF EXISTS] 表名</td>
+<td>删除表</td>
+</tr>
+<tr>
+<td>TRUNCATE [TABLE] 表名</td>
+<td>清空表</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>对于字段的定义<br>字段名 数据类型 [NOT NULL | NULL] [DEFAULT default_value] [AUTO_INCREMENT] [UNIQUE [KEY] | [PRIMARY] KEY] [COMMENT ‘string’]<br>– 表选项</p>
+</blockquote>
+<pre><code>-- 字符集
+    CHARSET = charset_name
+    如果表没有设定则使用数据库字符集
+-- 存储引擎
+    ENGINE = engine_name
+    表在管理数据时采用的不同的数据结构结构不同会导致处理方式、提供的特性操作等不同
+    常见的引擎InnoDB MyISAM Memory/Heap BDB Merge Example CSV MaxDB Archive
+    不同的引擎在保存表的结构和数据时采用不同的方式
+    MyISAM表文件含义.frm表定义.MYD表数据.MYI表索引
+    InnoDB表文件含义.frm表定义表空间数据和日志文件
+    SHOW ENGINES -- 显示存储引擎的状态信息
+    SHOW ENGINE 引擎名 &#123;LOGS|STATUS&#125; -- 显示存储引擎的日志或状态信息
+-- 数据文件目录
+    DATA DIRECTORY = &#39;目录&#39;
+-- 索引文件目录
+    INDEX DIRECTORY = &#39;目录&#39;
+-- 表注释
+    COMMENT = &#39;string&#39;
+-- 分区选项
+    PARTITION BY ... (详细见手册)
+</code></pre>
+<p>/_ 列属性列约束 _/</p>
+<ol>
+<li>主键</li>
+</ol>
+<ul>
+<li>能唯一标识记录的字段可以作为主键。</li>
+<li>一个表只能有一个主键。</li>
+<li>主键具有唯一性。</li>
+<li>声明字段时用 primary key 标识。<br>也可以在字段列表之后声明</li>
+</ul>
+<p>例 create table tab ( id int, stu varchar(10), primary key (id));</p>
+<ul>
+<li>主键字段的值不能为 null。</li>
+<li>主键可以由多个字段共同组成。此时需要在字段列表后声明的方法。</li>
+</ul>
+<p>例 create table tab ( id int, stu varchar(10), age int, primary key (stu, age));</p>
+<ol start="2">
+<li>unique 唯一索引唯一约束</li>
+</ol>
+<p>使得某字段的值也不能重复。</p>
+<ol start="3">
+<li><p>null 约束</p>
+<p>null 不是数据类型是列的一个属性。<br>表示当前列是否可以为 null 表示什么都没有。<br>null, 允许为空。默认。<br>not null, 不允许为空。<br>insert into tab values (null, ‘val’);<br>– 此时表示将第一个字段的值设为 null, 取决于该字段是否允许为 null</p>
+</li>
+<li><p>default 默认值属性</p>
+</li>
+</ol>
+<p>当前字段的默认值。<br>insert into tab values (default, ‘val’); – 此时表示强制使用默认值。<br>create table tab ( add_time timestamp default current_timestamp );<br>– 表示将当前时间的时间戳设为默认值。<br>current_date, current_time</p>
+<ol start="5">
+<li>auto_increment 自动增长约束</li>
+</ol>
+<p>自动增长必须为索引主键或 unique</p>
+<p>只能存在一个字段为自动增长。</p>
+<p>默认为 1 开始自动增长。可以通过表属性 auto_increment = x 进行设置或 alter table tbl auto_increment = x;</p>
+<ol start="6">
+<li>comment 注释</li>
+</ol>
+<p>例：create table tab ( id int ) comment ‘注释内容’;</p>
+<ol start="7">
+<li>foreign key 外键约束</li>
+</ol>
+<p>用于限制主表与从表数据完整性。</p>
+<p>alter table t1 add constraint <code>t1_t2_fk</code> foreign key (t1_id) references t2(id);<br>– 将表 t1 的 t1_id 外键关联到表 t2 的 id 字段。<br>– 每个外键都有一个名字可以通过 constraint 指定</p>
+<p>存在外键的表称之为从表子表外键指向的表称之为主表父表。</p>
+<p>作用保持数据一致性完整性主要目的是控制存储在外键表从表中的数据。</p>
+<p>MySQL 中可以对 InnoDB 引擎使用外键约束</p>
+<p>语法</p>
+<p>foreign key (外键字段 references 主表名 (关联字段) [主表记录删除时的动作] [主表记录更新时的动作]</p>
+<p>此时需要检测一个从表的外键需要约束为主表的已存在的值。外键在没有关联的情况下可以设置为 null.前提是该外键列没有 not null。</p>
+<p>可以不指定主表记录更改或更新时的动作那么此时主表的操作被拒绝。</p>
+<p>如果指定了 on update 或 on delete 在删除或更新时有如下几个操作可以选择</p>
+<ol>
+<li><p>cascade 级联操作。主表数据被更新主键值更新从表也被更新外键值更新。主表记录被删除从表相关记录也被删除。</p>
+</li>
+<li><p>set null 设置为 null。主表数据被更新主键值更新从表的外键被设置为 null。主表记录被删除从表相关记录外键被设置成 null。但注意要求该外键列没有 not null 属性约束。</p>
+</li>
+<li><p>restrict 拒绝父表删除和更新。</p>
+</li>
+</ol>
+<p>注意外键只被 InnoDB 存储引擎所支持。其他引擎是不支持的。</p>
+<h3 id="增删查改"><a href="#增删查改" class="headerlink" title="增删查改"></a>增删查改</h3><ul>
+<li>创建表</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS `runoob_tbl`(</span><br><span class="line">   `runoob_id` INT UNSIGNED AUTO_INCREMENT,</span><br><span class="line">   `runoob_title` VARCHAR(100) NOT NULL,</span><br><span class="line">   `runoob_author` VARCHAR(40) NOT NULL,</span><br><span class="line">   `submission_date` DATE,</span><br><span class="line">   PRIMARY KEY ( `runoob_id` )</span><br><span class="line">)ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>增</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT [INTO] 表名 [(字段列表)] VALUES (值列表)[, (值列表), ...]</span><br><span class="line">        -- 如果要插入的值列表包含所有字段并且顺序一致，则可以省略字段列表。</span><br><span class="line">        -- 可同时插入多条数据记录！</span><br><span class="line">        REPLACE 与 INSERT 完全一样，可互换。</span><br><span class="line">INSERT [INTO] 表名 SET 字段名=值[, 字段名=值, ...]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name,column_name</span><br><span class="line">FROM table_name</span><br><span class="line">[WHERE Clause]</span><br><span class="line">[LIMIT N][ OFFSET M]</span><br><span class="line">        -- 可来自多个表的多个字段</span><br><span class="line">        -- 其他子句可以不使用</span><br><span class="line">        -- 字段列表可以用*代替表示所有字段</span><br><span class="line">        你可以使用 LIMIT 属性来设定返回的记录数。</span><br><span class="line">你可以通过OFFSET指定SELECT语句开始查询的数据偏移量。默认情况下偏移量为0。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM 表名[ 删除条件子句]</span><br><span class="line"></span><br><span class="line">没有条件子句则会删除全部</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>改</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_name SET field1=new-value1, field2=new-value2</span><br><span class="line">[WHERE Clause]</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * from runoob_tbl WHERE runoob_id=3;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>WHERE 子句</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   SELECT field1, field2,...fieldN FROM table_name1, table_name2...</span><br><span class="line">[WHERE condition1 [AND [OR]] condition2.....</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MySQL 的 WHERE 子句的字符串比较是不区分大小写的。 你可以使用 BINARY 关键字来设定 WHERE 子句的字符串比较是区分大小写的。</p>
+</blockquote>
+<p><code>mysql&gt; SELECT * from runoob_tbl WHERE BINARY runoob_author=&#39;RUNOOB.COM&#39;;</code></p>
+<ul>
+<li>LIKE 子句</li>
+</ul>
+<blockquote>
+<p>LIKE 子句中使用百分号 %字符来表示任意字符类似于 UNIX 或正则表达式中的星号 *。如果没有使用百分号 %, LIKE 子句与等号= 的效果是一样的。</p>
+</blockquote>
+<p><code>mysql&gt; SELECT * from runoob_tbl WHERE runoob_author LIKE &#39;%COM&#39;;</code></p>
+<h3 id="nodejs-连接数据库"><a href="#nodejs-连接数据库" class="headerlink" title="nodejs 连接数据库"></a>nodejs 连接数据库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">client does not support authentication protocol requested by server</span><br><span class="line">//出现连接失败的原因mysql8之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password。并提供了两种解决方案</span><br><span class="line">//把用户密码登录的加密规则还原成mysql_native_password这种加密方式</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;password&#x27; PASSWORD EXPIRE NEVER;这里的password是你正在使用的密码</span><br></pre></td></tr></table></figure>
+
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>方式1：直接使用数据库提供的SQL语句<br>=======</p>
+<h3 id="MySQL-分页查询的-5-种方法"><a href="#MySQL-分页查询的-5-种方法" class="headerlink" title="MySQL 分页查询的 5 种方法"></a>MySQL 分页查询的 5 种方法</h3><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3c5cfeb51abb6cea4e5e0de711a8fed595408289</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>方式 1：</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>适应场景: 适用于数据量较少的情况(元组百/千级)。很简单，该语句的意思就是查询m+n条记录，去掉前m条，返回后n条。无疑该查询能够实现分页，但m越大，查询性能就越低，因为MySQL需要扫描全部m+n条记录。</p>
+<h1 id="方式2：基于索引再排序"><a href="#方式2：基于索引再排序" class="headerlink" title="方式2：基于索引再排序"></a>方式2：基于索引再排序</h1><p>select * from table order by id limit m, n;</p>
+<p>很简单，该语句的意思就是查询 m+n 条记录，去掉前 m 条，返回后 n 条。无疑该查询能够实现分页，但 m 越大，查询性能就越低，因为 MySQL 需要扫描全部 m+n 条记录。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3c5cfeb51abb6cea4e5e0de711a8fed595408289</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>方式 2：</p>
+<p>select * from table where id &gt; #max_id# order by id limit n;</p>
+<p>该查询同样会返回后 n 条记录，却无需像方式 1 扫描前 m 条记录，但必须在每次查询时拿到上一次查询（上一页）的最大 id（或最小 id），是比较常用的方式。</p>
+<p>当然该查询的问题也在于我们不一定能拿到这个 id，比如当前在第 3 页，需要查询第 5 页的数据，就不行了。</p>
+<p>方式 3：</p>
+<p>为了避免方式 2 不能实现的跨页查询，就需要结合方式 1。</p>
+<p>性能需要，m 得尽量小。比如当前在第 3 页，需要查询第 5 页，每页 10 条数据，且当前第 3 页的最大 id 为#max_id#，则：</p>
+<p>select * from table where id &gt; #max_id# order by id limit 10, 10;</p>
+<p>该方式就部分解决了方式 2 的问题，但如果当前在第 2 页，要查第 1000 页，性能仍然较差。</p>
+<p>方式 4：</p>
+<p>select * from table as a inner join (select id from table order by id limit m, n) as b on a.id = b.id order by a.id;</p>
+<p>该查询同方式 1 一样，m 的值可能很大，但由于内部的子查询只扫描了 id 字段，而非全表，所以性能要强于方式 1，并且能够解决跨页查询问题。</p>
+<p>方式 5：</p>
+<p>select * from table where id &gt; (select id from table order by id limit m, 1) limit n;</p>
+<p>该查询同样是通过子查询扫描字段 id，效果同方式 4。但方式 5 的性能会略好于方式 4，因为它不需要进行表的关联，而是一个简单的比较，在不知道上一页最大 id 的情况下，是比较推荐的用法。</p>
+<h2 id="插入表情"><a href="#插入表情" class="headerlink" title="插入表情"></a>插入表情</h2><ol>
+<li>MySQL 的版本</li>
+</ol>
+<p>utf8mb4 的最低 mysql 版本支持版本为 5.5.3+，若不是，请升级到较新版本。</p>
+<ol start="2">
+<li>MySQL 驱动</li>
+</ol>
+<p>5.1.34 可用,最低不能低于 5.1.13</p>
+<ol start="3">
+<li>修改 MySQL 配置文件</li>
+</ol>
+<p>修改 mysql 配置文件 my.cnf</p>
+<p>my.cnf 一般在 etc/mysql/my.cnf 位置。找到后请在以下三部分里添加如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect=&#x27;SET NAMES utf8mb4&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>重启 mysql:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">一、MySQL启动方式</span><br><span class="line">1、使用 service 启动：service mysqld start</span><br><span class="line">2、使用 mysqld 脚本启动：/etc/init.d/mysqld start</span><br><span class="line">3、使用 safe_mysqld 启动：safe_mysqld&amp;</span><br><span class="line">二、MySQL停止</span><br><span class="line">1、使用 service 启动： service mysqld stop</span><br><span class="line">2、使用 mysqld 脚本启动：/etc/init.d/mysqld stop</span><br><span class="line">3、mysqladmin shutdown</span><br><span class="line">三、MySQL重启</span><br><span class="line">1、使用 service 启动：service mysqld restart</span><br><span class="line">2、使用 mysqld 脚本启动：/etc/init.d/mysqld restart</span><br><span class="line">四、强制关闭</span><br><span class="line">以上方法都无效的时候，可以通过强行命令：“killall mysql”来关闭MySQL，但是不建议用这样的方式，</span><br><span class="line">据库服务，有可能导致表损坏……所以自己掂量着用。</span><br><span class="line">Windows下重启MySQL服务,对于没装mysql图形管理端的用户来说启动和停止mysql服务：</span><br><span class="line">…\…\bin&gt;net stop mysql</span><br><span class="line">…\…\bin&gt;net start mysql</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当数据库中涉及编码类型改变的时候，需要统一数据库，表，字段的编码类型，少一个都不行。</p>
+</blockquote>
+<p> 修改数据库字符集：<br> <code>ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;</code><br> 修改表的字符集：<br> <code>ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code><br> 修改字段的字符集：<br> <code>ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></p>
+<ol start="4">
+<li>查看是否成功修改<br>使用<code>SHOW VARIABLES WHERE Variable_name LIKE &#39;character_set_%&#39; OR Variable_name LIKE &#39;collation%&#39;;</code>查看当前编码,结果中的 collation_connection 、collation_database 、collation_server 是什么没关系。但必须保证系统变量 描述</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">character_set_client (客户端来源数据使用的字符集)</span><br><span class="line">character_set_connection (连接层字符集)</span><br><span class="line">character_set_database (当前选中数据库的默认字符集)</span><br><span class="line">character_set_results (查询结果字符集)</span><br><span class="line">character_set_server (默认的内部操作字符集)</span><br></pre></td></tr></table></figure>
+
+<p>这几个变量必须是 utf8mb4,才能插入表情。</p>
+<p>查看表编码<br><code>mysql&gt; show create table dictionary; # dictionary 是表名</code></p>
+<ol start="5">
+<li>数据库连接的配置<br>数据库连接参数中也要设置为 utf8bm4 格式，否则是无法插入的<br><code>charset=utf8mb4</code></li>
+</ol>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><ul>
+<li>多表查询语法<br><code>select  字段1,字段2... from 表1,表2... [where 条件]</code></li>
+<li>多表链接查询<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">多表连接查询语法(重点)</span><br><span class="line">SELECT 字段列表</span><br><span class="line">    FROM 表1  INNER|LEFT|RIGHT JOIN  表2</span><br><span class="line">ON 表1.字段 = 表2.字段;</span><br></pre></td></tr></table></figure>
+内连接查询与多表联合查询的效果是一样的,左外连接查询 (左边表中的数据优先全部显示),右外连接查询 (右边表中的数据优先全部显示)</li>
+</ul>
+<p>全连接查询(显示左右表中全部数据)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//全连接查询：是在内连接的基础上增加 左右两边没有显示的数据</span><br><span class="line">//注意: mysql并不支持全连接 full JOIN 关键字</span><br><span class="line">//注意: 但是mysql 提供了 UNION 关键字.使用 UNION 可以间接实现 full JOIN 功能</span><br><span class="line">select * from student left join sc on student.sid = sc.sid</span><br><span class="line">UNION</span><br><span class="line">select * from student right join sc on student.sid = sc.sid;</span><br><span class="line">/注意: UNION 和 UNION ALL 的区别:UNION 会去掉重复的数据,而 UNION ALL 则直接显示结果/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>三表查询</li>
+</ul>
+<p><code>select 表1.字段,表2.字段,表3.字段 from 表1 join 表2 on 表1.关联字段 = 表2.关联字段 join 表3 on 表2.关联字段 = 表3.关联字段 where....;</code></p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>方式3：基于索引再排序<br>=======</p>
+<h2 id="数据库备份与还原"><a href="#数据库备份与还原" class="headerlink" title="数据库备份与还原"></a>数据库备份与还原</h2><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3c5cfeb51abb6cea4e5e0de711a8fed595408289</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ol>
+<li><p>备份原文件<br>MySQL中的每一个数据库和数据表分别对应文件系统中的目录和其下的文件。在Linux下数据库文件的存放目录一般为/var/lib/mysql。在Windows下这个目录视MySQL的安装路径而定。备份文件前，需要将MySQL服务停止，然后将数据库目录拷贝即可。恢复数据数据库时，需要先创建好一个数据库(不一定同名)，然后将备份出来的文件(注意，不是目录)复制到对应的MySQL数据库目录中。使用这一方法备份和恢复数据库时，需要新旧的MySQL版本一致，否则可能会出现错误。</p>
+</li>
+<li><p>使用命令</p>
+</li>
+</ol>
+<p>备份数据库：<br><code>mysqldump –user=root –password=root密码 –lock-all-tables 数据库名 &gt; 备份文件.sql</code></p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>该方式就部分解决了方式2的问题，但如果当前在第2页，要查第1000页，性能仍然较差。</p>
+<p>方式4：</p>
+<p>select * from table as a inner join (select id from table order by id limit m, n) as b on a.id = b.id order by a.id;</p>
+<p>该查询同方式1一样，m的值可能很大，但由于内部的子查询只扫描了id字段，而非全表，所以性能要强于方式1，并且能够解决跨页查询问题。</p>
+<p>方式5：</p>
+<p>select * from table where id &gt; (select id from table order by id limit m, 1) limit n;</p>
+<p>该查询同样是通过子查询扫描字段id，效果同方式4。但方式5的性能会略好于方式4，因为它不需要进行表的关联，而是一个简单的比较，在不知道上一页最大id的情况下，是比较推荐的用法。</p>
+<p>方法6: 基于索引使用prepare<br>（第一个问号表示pageNum，第二个？表示每页元组数）</p>
+<p>—语句样式: MySQL中,可用如下方法:</p>
+<p>代码如下:</p>
+<p>PREPARE stmt_name FROM SELECT * FROM 表名称 WHERE id_pk &gt; (？* ？) ORDER BY id_pk<br>ASC LIMIT M<br>—适应场景: 大数据量。</p>
+<p>—原因: 索引扫描,速度会很快. prepare语句又比一般的查询语句快一点。</p>
+<p>方法7:利用MySQL支持ORDER操作可以利用索引快速定位部分元组,避免全表扫描<br>—比如: 读第1000到1019行元组(pk是主键/唯一键)。</p>
+<p>代码如下:</p>
+<h1 id="—SELECT-FROM-your-table-WHERE-pk-gt-1000-ORDER-BY-pk-ASC-LIMIT-0-20"><a href="#—SELECT-FROM-your-table-WHERE-pk-gt-1000-ORDER-BY-pk-ASC-LIMIT-0-20" class="headerlink" title="—SELECT * FROM your_table WHERE pk&gt;=1000 ORDER BY pk ASC LIMIT 0,20"></a>—SELECT * FROM your_table WHERE pk&gt;=1000 ORDER BY pk ASC LIMIT 0,20</h1><p>恢复数据库：<br><code>mysql -u root –password=root密码 数据库名 &lt; 备份文件.sql</code></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3c5cfeb51abb6cea4e5e0de711a8fed595408289</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/12/22-23-33/" rel="prev" title="echart">
+      <i class="fa fa-chevron-left"></i> echart
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/01/10-12-33/" rel="next" title="Three.js">
+      Three.js <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySql"><span class="nav-number">1.</span> <span class="nav-text">MySql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">mysql 数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql-%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.1.2.</span> <span class="nav-text">mysql 常用语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9"><span class="nav-number">1.1.3.</span> <span class="nav-text">增删查改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nodejs-%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.4.</span> <span class="nav-text">nodejs 连接数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E7%9A%84-5-%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.5.</span> <span class="nav-text">MySQL 分页查询的 5 种方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F2%EF%BC%9A%E5%9F%BA%E4%BA%8E%E7%B4%A2%E5%BC%95%E5%86%8D%E6%8E%92%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">方式2：基于索引再排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%A1%A8%E6%83%85"><span class="nav-number">2.1.</span> <span class="nav-text">插入表情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">2.2.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F"><span class="nav-number">2.3.</span> <span class="nav-text">数据库备份与还原</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%94SELECT-FROM-your-table-WHERE-pk-gt-1000-ORDER-BY-pk-ASC-LIMIT-0-20"><span class="nav-number">3.</span> <span class="nav-text">—SELECT * FROM your_table WHERE pk&gt;&#x3D;1000 ORDER BY pk ASC LIMIT 0,20</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KK</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/a913481180" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;a913481180" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kangkanghuang@foxmail.com" title="E-Mail → mailto:kangkanghuang@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com">百度</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KK</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/1.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="全栈初始化创建前端项目vue创建项目vue create 项目名称 使用 Vue Styleguidist 编写组件文档Vue Styleguidist官网 首先，Vue Styleguidist 只能适用于 Webpack 打包的项目，在此基础上，我们需要安装 vue-styleguidist 这个包 npm install vue-styleguidist --save-dev然后在 pack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全栈项目">
+<meta property="og:url" content="http://www.baidu.com/2022/01/12/20-11-33/index.html">
+<meta property="og:site_name" content="KK">
+<meta property="og:description" content="全栈初始化创建前端项目vue创建项目vue create 项目名称 使用 Vue Styleguidist 编写组件文档Vue Styleguidist官网 首先，Vue Styleguidist 只能适用于 Webpack 打包的项目，在此基础上，我们需要安装 vue-styleguidist 这个包 npm install vue-styleguidist --save-dev然后在 pack">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-12T12:11:33.000Z">
+<meta property="article:modified_time" content="2023-02-15T12:53:15.738Z">
+<meta property="article:author" content="KK">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.baidu.com/2022/01/12/20-11-33/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>全栈项目 | KK</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">KK</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2022/01/12/20-11-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          全栈项目
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-12 20:11:33" itemprop="dateCreated datePublished" datetime="2022-01-12T20:11:33+08:00">2022-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-15 20:53:15" itemprop="dateModified" datetime="2023-02-15T20:53:15+08:00">2023-02-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="全栈"><a href="#全栈" class="headerlink" title="全栈"></a>全栈</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><h3 id="创建前端项目"><a href="#创建前端项目" class="headerlink" title="创建前端项目"></a>创建前端项目</h3><h4 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h4><h5 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h5><p><code>vue create 项目名称</code></p>
+<h5 id="使用-Vue-Styleguidist-编写组件文档"><a href="#使用-Vue-Styleguidist-编写组件文档" class="headerlink" title="使用 Vue Styleguidist 编写组件文档"></a>使用 Vue Styleguidist 编写组件文档</h5><p><a target="_blank" rel="noopener" href="https://vue-styleguidist.github.io/">Vue Styleguidist官网</a></p>
+<p>首先，Vue Styleguidist 只能适用于 Webpack 打包的项目，在此基础上，我们需要安装 vue-styleguidist 这个包</p>
+<p><code>npm install vue-styleguidist --save-dev</code><br>然后在 package.json 配置下面两行命令，分别用于开发预览和部署打包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;styleguide&quot;: &quot;vue-styleguidist server&quot;,</span><br><span class="line">    &quot;styleguide:build&quot;: &quot;vue-styleguidist build&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果是使用 @vue/cli 3 生成的项目，可以直接使用 <code>vue-cli-plugin-styleguidist</code> 这个插件进行更快捷的安装和配置</p>
+<ul>
+<li><p>Props<br>Props 是组件最基本的 API，用于为组件传递数据,实际上，在配置好 Vue Styleguidist 之后，如果有写 prop，就已经能生成一个这样的文档</p>
+</li>
+<li><p>Events<br>除了 Props，Event 事件也是 Vue 的一个重要的 API 之一，可以通过 v-on 为组件绑定事件。Vue 的事件使用 vm.$(‘event’, …params) 的方法进行定义，我们只需要在这个方法之前，加上必要的注释就可以了。如果事件名不是字符串，可以使用 @event 进行标注，事件的参数使用 @type 进行标注</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">methods: &#123;</span><br><span class="line">  handleClick(e) &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 单击事件</span><br><span class="line">     * @type &#123;Event&#125;</span><br><span class="line">     */</span><br><span class="line">    this.$emit(&#x27;click&#x27;, e);</span><br><span class="line">  &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p>Slots<br>Slot 插槽是 Vue 的自定义元素之一，Slot 向一个组件传递内容，也是封装公共组件常见的 API 之一,与 Props 和 Events 不同的是，Slots 通常是定义在<code>&lt;template&gt;</code>部分，不能使用 JS 注释进行标注，需要使用 HTML 注释，并且在注释里使用 @slot 进行标注</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  &lt;button</span><br><span class="line">class=&quot;btn&quot;</span><br><span class="line">:type=&quot;htmlType&quot;</span><br><span class="line">:class=&quot;btnClass&quot;</span><br><span class="line">:disabled=&quot;disabled&quot;</span><br><span class="line">@click=&quot;handleClick&quot;</span><br><span class="line">  &gt;</span><br><span class="line">&lt;!-- @slot 按钮的内容 --&gt;</span><br><span class="line">&lt;slot /&gt;</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>Methods<br>看到这里可能各位会有个疑问，Methods 和 Events 有什么区别？区别主要有以下两个：定义方式不同：Methods 只要在 methods 里定义函数即可，Events 则需要使用 <code>vm.$(&#39;event&#39;, ...params)</code> 进行定义,调用方式不同：Methods 使用<code>vm.$refs.ref.method()</code>这样的方式进行调用，Events 使用 v-on 指令或者 <code>vm.$on(&#39;event&#39;)</code> 进行监听。实际上，使用 Methods 方法封装组件 API 的情况是比较少的，但是依然不能排除这种情况。对于 Methods 方法，我们只需要像使用 JSDoc 一样为函数进行注释就可以了，最后再附上 @public 进行标识</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">methods: &#123;</span><br><span class="line">  /**</span><br><span class="line">   * 单击事件</span><br><span class="line">   * @param &#123;Event&#125; e</span><br><span class="line">   * @public</span><br><span class="line">   */</span><br><span class="line">  click(e) &#123;</span><br><span class="line">    // some code</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p>组件样例<br>README 方式,在组件的同个目录下，新建一个文件 <code>README.md</code>，比如 <code>src/components/AppButton/README.md</code>然后直接调用组件代码<br>可以直接在组件下方增加一个组件 <code>&lt;docs&gt;&lt;/docs&gt;</code>，并在里面直接使用 Markdown 编写样例，这种方式适用于项目结构比较简单的项目，但是我认为会使组件的代码变得很冗长，在此不再赘述</p>
+</li>
+<li><p>配置<br>Vue Styleguidist 支持自定义配置，只需要在项目根目录下，创建 styleguide.config.js，就可以参照官方文档进行配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// styleguide.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">title: &#x27;Default Style Guide&#x27;,          // 文档的标题</span><br><span class="line">components: &#x27;src/components/**/*.vue&#x27;, // 组件的目录</span><br><span class="line">defaultExample: false,                 // 是否使用默认样例</span><br><span class="line">usageMode: &#x27;expand&#x27;,                   // 是否展开用法</span><br><span class="line">exampleMode: &#x27;expand&#x27;,                 // 是否展开示例代码</span><br><span class="line">styleguideDir: &#x27;styleguide&#x27;,           // 打包的目录</span><br><span class="line">codeSplit: true,                       // 打包时是否进行分片</span><br><span class="line">skipComponentsWithoutExample: true,    // 是否跳过没有样例的组件</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li><p>注意<br>JSDoc 的标签仍然有效。TypeScript、Flow 和 Class 组件同样可以使用，只是使用方法稍有不同。JSX 也可以使用。实际上 Vue Styleguidist 来源于 React Styleguidist（也依赖于这个项目），使用方法大同小异，不同于 Vue 组件的是，React 组件的 API 只有 Props 一项</p>
+</li>
+</ul>
+<h4 id="react"><a href="#react" class="headerlink" title="react"></a>react</h4><h5 id="安装脚手架"><a href="#安装脚手架" class="headerlink" title="安装脚手架"></a>安装脚手架</h5><p><code>npm i create-react-app -g</code></p>
+<h5 id="创建文件夹并初始化"><a href="#创建文件夹并初始化" class="headerlink" title="创建文件夹并初始化"></a>创建文件夹并初始化</h5><p><code>create-react-app test_project</code><br><code>cd test_project</code><br><code>npm run start</code></p>
+<h5 id="安装路由"><a href="#安装路由" class="headerlink" title="安装路由"></a>安装路由</h5><p><code>npm i react-router-dom</code><br>创建 router/index.js 文件,写入路由表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import React from &quot;react&quot;;</span><br><span class="line">import &#123; lazy, Suspense,  &#125; from &quot;react&quot;;</span><br><span class="line">import &#123; Navigate &#125; from &quot;react-router-dom&quot;;</span><br><span class="line">import LoadingPage from &quot;../pages/LoadingPage&quot;;</span><br><span class="line">const Home = lazy(() =&gt; import(&quot;../pages/Home&quot;));</span><br><span class="line">const ErrorBlock = lazy(() =&gt; import(&quot;../pages/ErrorBlock&quot;));</span><br><span class="line">let route = [</span><br><span class="line">	&#123;</span><br><span class="line">		path: &quot;/Home&quot;,</span><br><span class="line">		element: (</span><br><span class="line">			&lt;Suspense fallback=&#123;&lt;LoadingPage /&gt;&#125;&gt;</span><br><span class="line">				&lt;Home /&gt;</span><br><span class="line">			&lt;/Suspense&gt;</span><br><span class="line">		),</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		path: &quot;/ErrorBlock&quot;,</span><br><span class="line">		element: (</span><br><span class="line">			&lt;Suspense fallback=&#123;&lt;LoadingPage /&gt;&#125;&gt;</span><br><span class="line">				&lt;ErrorBlock /&gt;</span><br><span class="line">			&lt;/Suspense&gt;</span><br><span class="line">		),</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		path: &quot;/&quot;,</span><br><span class="line">		element: &lt;Navigate to=&quot;/Home&quot;&gt;&lt;/Navigate&gt;,</span><br><span class="line">	&#125;,</span><br><span class="line">];</span><br><span class="line">export default route;</span><br></pre></td></tr></table></figure>
+
+<p>入口文件 index.js 中加入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123;BrowserRouter&#125; from &#x27;react-router-dom&#x27;</span><br><span class="line">&lt;BrowserRouter&gt;</span><br><span class="line">&lt;App/&gt;</span><br><span class="line">&lt;/BrowserRouter&gt;</span><br></pre></td></tr></table></figure>
+
+<pre><code>App.js 中引入路由表
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;./App.scss&#x27;;</span><br><span class="line">import route from &#x27;./route/&#x27;</span><br><span class="line">import &#123; useRoutes &#125; from &#x27;react-router-dom&#x27;</span><br><span class="line">function App() &#123;</span><br><span class="line">const element = useRoutes(route)</span><br><span class="line">return (</span><br><span class="line">&lt;div className=&quot;App&quot;&gt;</span><br><span class="line">&#123;element&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">);</span><br><span class="line">&#125;</span><br><span class="line">export default App;</span><br></pre></td></tr></table></figure>
+
+<h5 id="安装-redux"><a href="#安装-redux" class="headerlink" title="安装 redux"></a>安装 redux</h5><p><code>npm i redux react-redux</code><br>新建 store/index.js、store/actions/test/index.js、store/reducers/test/index.js,<br>在 store/index.js 中写入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125; from &#x27;redux&#x27;</span><br><span class="line">import test from &#x27;./reducers/test/index.js&#x27;</span><br><span class="line">export default createStore(test)</span><br></pre></td></tr></table></figure>
+
+<p>在 store/actions/test/index.js 中写入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import store from &#x27;../../index.js&#x27;</span><br><span class="line">export const test1=(data)=&gt;&#123;</span><br><span class="line">return store.dispatch( &#123;type:&#x27;test1&#x27;,data&#125; )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 store/reducers/test/index.js 中写入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const initState=&#123;&#125;</span><br><span class="line">export default function userInfo(preState=initState,action)&#123;</span><br><span class="line">const &#123;type,data&#125;=action</span><br><span class="line">console.log(&#x27;xxxinfo&#x27;,preState,action)</span><br><span class="line">return preState</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 入口文件 src/index.js 中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserRouter &#125; from &#x27;react-router-dom&#x27;;</span><br><span class="line">import &#123; Provider &#125; from &#x27;react-redux&#x27;;</span><br><span class="line">import store from &#x27;./store&#x27;</span><br><span class="line">const root = ReactDOM.createRoot(document.getElementById(&#x27;root&#x27;));</span><br><span class="line">root.render(</span><br><span class="line">&lt;React.StrictMode&gt;</span><br><span class="line">&lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">&lt;BrowserRouter&gt;</span><br><span class="line">&lt;App /&gt;&lt;/BrowserRouter&gt;</span><br><span class="line">&lt;/Provider&gt;</span><br><span class="line">&lt;/React.StrictMode&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h5><p>在 src 中创建 setupProxy.js,在 react18 中使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const proxy = require(&quot;http-proxy-middleware&quot;).createProxyMiddleware;</span><br><span class="line">module.exports = function (app) &#123;</span><br><span class="line">app.use(</span><br><span class="line">proxy(&quot;/apis&quot;, &#123;</span><br><span class="line">target: &quot;http://xxx:xxx&quot;,</span><br><span class="line">changeOrigin: true, //控制服务器收到的响应头中的 Host 字段值</span><br><span class="line">//apis 前缀置空</span><br><span class="line">pathRewrite: &#123; &quot;^/apis&quot;: &quot;&quot; &#125;,</span><br><span class="line">&#125;),</span><br><span class="line">proxy(&quot;/api2&quot;, &#123;</span><br><span class="line">target: &quot;http://xxx:xxx&quot;,</span><br><span class="line">changeOrigin: true, //控制服务器收到的响应头中的 Host 字段值,true 时为代理服务 ip,false 为当前 ip，默认为 false</span><br><span class="line">pathRewrite: &#123; &quot;^/api2&quot;: &quot;&quot; &#125;,</span><br><span class="line">&#125;)</span><br><span class="line">);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用-sass"><a href="#使用-sass" class="headerlink" title="使用 sass"></a>使用 sass</h5><p>安装：<code>npm install node-sass --save</code></p>
+<h5 id="修改本地调试启动端口"><a href="#修改本地调试启动端口" class="headerlink" title="修改本地调试启动端口"></a>修改本地调试启动端口</h5><ol>
+<li> 依次打开“node_modules”- “react-scripts”-“scripts”文件夹，找到并打开 start.js 文件；在 start.js 文件中查找并修改“DEFAULT_PORT”项的值即可</li>
+<li> 修改 package.json 文件中</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">&quot;start&quot;: &quot;set PORT=9000 &amp;&amp; react-scripts start&quot;,</span><br><span class="line">&quot;build&quot;: &quot;react-scripts build&quot;,</span><br><span class="line">&quot;test&quot;: &quot;react-scripts test --env=jsdom&quot;,</span><br><span class="line">&quot;eject&quot;: &quot;react-scripts eject&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改-elint-语法检测"><a href="#修改-elint-语法检测" class="headerlink" title="修改 elint 语法检测"></a>修改 elint 语法检测</h5><p>修改 package.json 文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&quot;eslintConfig&quot;: &#123;</span><br><span class="line">&quot;extends&quot;: [</span><br><span class="line">&quot;react-app&quot;,</span><br><span class="line">&quot;react-app/jest&quot;</span><br><span class="line">],</span><br><span class="line">&quot;rules&quot;: &#123;</span><br><span class="line">&quot;no-unused-vars&quot;: &quot;off&quot;,</span><br><span class="line">&quot;no-undef&quot;: &quot;off&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="安装-antd"><a href="#安装-antd" class="headerlink" title="安装 antd"></a>安装 antd</h5><p><code>npm i antd --save</code><br>/src/index.js 入口文件中引入样式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;antd/dist/antd.min.css&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建后端项目"><a href="#创建后端项目" class="headerlink" title="创建后端项目"></a>创建后端项目</h3><p><code>npm install express-generator -g</code><br><code>express --view=ejs 项目名称</code></p>
+<ul>
+<li>启动项目</li>
+</ul>
+<p>`<a target="_blank" rel="noopener" href="http://dd/">http://dd</a></p>
+<h4 id="node-实例"><a href="#node-实例" class="headerlink" title="node 实例"></a>node 实例</h4><p><strong>使用 nodejs 将 base64 文件转成图片和将图片转成 base64</strong></p>
+<ul>
+<li>将 base64 转成 png 图片格式</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">const path = &#x27;你想要填写的路径/&#x27;+ Date.now() +&#x27;.png&#x27;;</span><br><span class="line">const base64 = data.replace(/^data:image\/\w+;base64,/, &quot;&quot;);//去掉图片base64码前面部分data:image/png;base64</span><br><span class="line">const dataBuffer = new Buffer(base64, &#x27;base64&#x27;); //把base64码转成buffer对象，</span><br><span class="line">fs.writeFile(path, dataBuffer, function(err)&#123;//用fs写入文件</span><br><span class="line">    if(err)&#123;</span><br><span class="line">        console.log(err);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        console.log(&#x27;写入成功！&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将图片转成 base64</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const fs = require(&quot;fs&quot;);</span><br><span class="line">const util = require(&quot;util&quot;);</span><br><span class="line">const imageData = await util.promisify(fs.readFileSync(fileUrl)); // 例：xxx/xx/xx.png</span><br><span class="line">const imageBase64 = imageData.toString(&quot;base64&quot;);</span><br><span class="line">const imagePrefix = &quot;data:image/png;base64,&quot;;</span><br><span class="line">console.log(imagePrefix + imageBase64);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><ul>
+<li>引入 antd 样式</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Failed to parse source map: &#x27;webpack://antd/./components/icon/style/index.less&#x27; URL is not supported</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>解决方法: antd-mobile 导入组件样式时加这个 min<br><code>import &#39;antd/dist/antd.min.css&#39;; </code></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/11/20-22-22/" rel="prev" title="Centos7安装">
+      <i class="fa fa-chevron-left"></i> Centos7安装
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/01/20-00-00/" rel="next" title="TypeScript">
+      TypeScript <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E6%A0%88"><span class="nav-number">1.</span> <span class="nav-text">全栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建前端项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vue"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">vue</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Vue-Styleguidist-%E7%BC%96%E5%86%99%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">使用 Vue Styleguidist 编写组件文档</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">react</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">安装脚手架</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">创建文件夹并初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%B7%AF%E7%94%B1"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">安装路由</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-redux"><span class="nav-number">1.1.1.2.4.</span> <span class="nav-text">安装 redux</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="nav-number">1.1.1.2.5.</span> <span class="nav-text">设置代理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-sass"><span class="nav-number">1.1.1.2.6.</span> <span class="nav-text">使用 sass</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.1.1.2.7.</span> <span class="nav-text">修改本地调试启动端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-elint-%E8%AF%AD%E6%B3%95%E6%A3%80%E6%B5%8B"><span class="nav-number">1.1.1.2.8.</span> <span class="nav-text">修改 elint 语法检测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-antd"><span class="nav-number">1.1.1.2.9.</span> <span class="nav-text">安装 antd</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.1.2.</span> <span class="nav-text">创建后端项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#node-%E5%AE%9E%E4%BE%8B"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">node 实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-number">1.1.3.</span> <span class="nav-text">常见错误</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KK</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/a913481180" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;a913481180" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kangkanghuang@foxmail.com" title="E-Mail → mailto:kangkanghuang@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com">百度</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KK</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
