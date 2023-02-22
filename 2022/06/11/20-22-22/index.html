@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="一，包的安装&#x2F;更新&#x2F;卸载npm i 或者 npm install装包,默认安装最新版本，直接npm i 会安装package.json中dependencies的所有包 npm i &amp;#120;&amp;#x78;&amp;#64;&amp;#x31;&amp;#46;&amp;#48;安装指定版本 npm i -S 或者 npm i –save装包到生产环境（也就是上线后需要的依赖），在package.json的dependencie">
+  <meta name="description" content="一，包的安装&#x2F;更新&#x2F;卸载npm i 或者 npm install装包,默认安装最新版本，直接npm i 会安装package.json中dependencies的所有包 npm i &amp;#120;&amp;#x78;&amp;#x40;&amp;#49;&amp;#46;&amp;#x30;安装指定版本 npm i -S 或者 npm i –save装包到生产环境（也就是上线后需要的依赖），在package.json的dependenci">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm仓库">
 <meta property="og:url" content="http://www.baidu.com/2022/06/11/20-22-22/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="一，包的安装&#x2F;更新&#x2F;卸载npm i 或者 npm install装包,默认安装最新版本，直接npm i 会安装package.json中dependencies的所有包 npm i &amp;#120;&amp;#x78;&amp;#64;&amp;#x31;&amp;#46;&amp;#48;安装指定版本 npm i -S 或者 npm i –save装包到生产环境（也就是上线后需要的依赖），在package.json的dependencie">
+<meta property="og:description" content="一，包的安装&#x2F;更新&#x2F;卸载npm i 或者 npm install装包,默认安装最新版本，直接npm i 会安装package.json中dependencies的所有包 npm i &amp;#120;&amp;#x78;&amp;#x40;&amp;#49;&amp;#46;&amp;#x30;安装指定版本 npm i -S 或者 npm i –save装包到生产环境（也就是上线后需要的依赖），在package.json的dependenci">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-11T12:22:22.000Z">
 <meta property="article:modified_time" content="2022-11-14T03:09:18.036Z">
@@ -209,12 +209,12 @@
 
       
         <h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>一，包的安装/更新/卸载<br>npm i 或者 npm install<br>装包,默认安装最新版本，直接npm i 会安装package.json中dependencies的所有包</p>
-<p>npm i <a href="mailto:&#120;&#x78;&#64;&#x31;&#46;&#48;">&#120;&#x78;&#64;&#x31;&#46;&#48;</a><br>安装指定版本</p>
+<p>npm i <a href="mailto:&#120;&#x78;&#x40;&#49;&#46;&#x30;">&#120;&#x78;&#x40;&#49;&#46;&#x30;</a><br>安装指定版本</p>
 <p>npm i -S 或者 npm i –save<br>装包到生产环境（也就是上线后需要的依赖），在package.json的dependencies中生成版本信息</p>
 <p>npm i -D 或者 npm i –save-dev<br>装包到开发环境（也就是开发时需要的依赖），在package.json的devDependencies中生成版本信息</p>
-<p>npm i <a href="mailto:&#x78;&#120;&#64;&#x31;&#46;&#x30;">&#x78;&#120;&#64;&#x31;&#46;&#x30;</a> –save-exact<br>精确安装指定版本的包到生产环境。精确的意思就是，什么版本就是什么版本，版本号前面的^ 会消失掉。有^ 代表是补丁版本</p>
+<p>npm i <a href="mailto:&#120;&#x78;&#x40;&#49;&#46;&#x30;">&#120;&#x78;&#x40;&#49;&#46;&#x30;</a> –save-exact<br>精确安装指定版本的包到生产环境。精确的意思就是，什么版本就是什么版本，版本号前面的^ 会消失掉。有^ 代表是补丁版本</p>
 <p>npm uninstall xx<br>卸载包</p>
-<p>npm update <a href="mailto:&#120;&#120;&#64;&#49;&#x2e;&#48;">&#120;&#120;&#64;&#49;&#x2e;&#48;</a><br>更新包，默认更新到最新</p>
+<p>npm update <a href="mailto:&#120;&#120;&#64;&#x31;&#46;&#48;">&#120;&#120;&#64;&#x31;&#46;&#48;</a><br>更新包，默认更新到最新</p>
 <p>npm outdated<br>检查包是否过时，默认列出所有过时的包</p>
 <p>npm i xx1@npm:xx@1<br>npm i xx2@npm:xx@2<br>安装同一个包的不同版本，如要引入1版本，则import ‘xx1’。npm 6.9及以后的版本可用</p>
 <p>二，信息查看<br>npm ls<br>查看安装过的包，加-g就是查看全局安装过的包， –depth 0就是查看第一层，不再深入递归查询出子文件夹</p>
