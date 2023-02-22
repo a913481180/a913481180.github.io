@@ -150,6 +150,139 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/01/20-00-00/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/01/20-00-00/" class="post-title-link" itemprop="url">Vim常用操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-01 20:00:00" itemprop="dateCreated datePublished" datetime="2020-12-01T20:00:00+08:00">2020-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-28 13:35:07" itemprop="dateModified" datetime="2021-06-28T13:35:07+08:00">2021-06-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Vim常用操作"><a href="#Vim常用操作" class="headerlink" title="Vim常用操作"></a>Vim常用操作</h1><h2 id="常用功能键"><a href="#常用功能键" class="headerlink" title="常用功能键"></a>常用功能键</h2><ol>
+<li>插入模式</li>
+</ol>
+<p>i ：在光标前插内内容:按8，再按i，进入插入模式，输入=， 按esc进入命令模式，就会出现8个=。</p>
+<p>a ：在光标后插入内容<br>A: 在当前行最后插入；</p>
+<p>o ：在所在行的下一行插入新行<br>O ：在所在行的上一行插入新行</p>
+<ol start="2">
+<li>删除文本</li>
+</ol>
+<p>x：删除光标后面的字符<br>X：删除光标前面的字符</p>
+<p>nx：删除光标后面n个字符<br>nX：删除光标前面的n个字符</p>
+<p>d0：删除光标至行首的内容<br>d$：删除光标至行尾的内容</p>
+<p>dd ：删除整行<br>ndd ：向下删除n行</p>
+<ol start="3">
+<li>移动光标</li>
+</ol>
+<p>vi可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母「h」、「j」、「k」、「l」，分别控制光标左、下、上、右移一格。</p>
+<p>按「ctrl」+「b」：屏幕往“后”移动一页。</p>
+<p>按「ctrl」+「f」：屏幕往“前”移动一页。</p>
+<p>按「ctrl」+「u」：屏幕往“后”移动半页。</p>
+<p>按「ctrl」+「d」：屏幕往“前”移动半页。</p>
+<p>按数字「gg」:移动到文章开头<br>按「G」：移动到文章的最后。</p>
+<p>按「$」：移动到光标所在行的“行尾”。</p>
+<p>按「0」：移动到光标所在行的“行首”</p>
+<p>按「w」：光标跳到下个字的开头</p>
+<p>按「e」：光标跳到下个字的字尾</p>
+<p>按「b」：光标回到上个字的开头</p>
+<p>按「nl」：光标移到该行的第n个位置，如：5l,56l。</p>
+<ol start="4">
+<li>查找文本</li>
+</ol>
+<p>/pattern ：向下查找</p>
+<p>?pattern ：向上查找</p>
+<p>n ：顺序查找</p>
+<p>N ：反向查找</p>
+<p>:s/p1/p2/g ：在当前行，将p1替换成p2</p>
+<p>:n1,n2s/p1/p2/g ：将n1至n2行之间的p1替换成p2<br>5. 复制<br>「yw」：将光标所在之处到字尾的字符复制到缓冲区中。<br>「nyw」：复制n个字到缓冲区<br>yy ：复制整行</p>
+<p>nyy ：复制n行</p>
+<p>p ：在所在行下一行粘贴</p>
+<p>P ：在所在行上一行粘贴</p>
+<p>在Vim中你可以把两行合并为一行，也就是说两行之间的换行符被删除了：命令是”J”。<br>dd ：剪切</p>
+<p>复制vim里面的内容至系统粘贴板：”+y</p>
+<p>粘贴系统粘贴板里面的内容至vim：”+p</p>
+<p>:n1,n2 co n3  ：将n1至n2行复制到n3行的下面</p>
+<p>:n1,n2 m n3 ：将n1至n2行剪切至n3行的下面</p>
+<p>:n1,n2 d ：将n1至n2行删除<br>6. 替换<br>「r」：替换光标所在处的字符。<br>「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</p>
+<ol start="7">
+<li><p>回复上一次操作<br>「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次“u”可以执行多次回复。<br>CTRL-R(重做)来反转撤消的动作</p>
+</li>
+<li><p>更改<br>「cw」：更改光标所在处的字到字尾处<br>「c#w」：例如，「c3w」表示更改3个字</p>
+</li>
+<li><p>跳至指定的行<br>「ctrl」+「g」列出光标所在行的行号。<br>「#G」：例如，「15G」，表示移动光标至文章的第15行行首。</p>
+</li>
+</ol>
+<p> 跳到文件中的某一行<br>「#」：「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了<br>10. 宏<br>. –重复上一个编辑动作<br>qa：开始录制宏a（键盘操作记录）<br>q：停止录制<br>@a：播放宏a</p>
+<ol start="11">
+<li>vi命令列表<br>ctrl+v进入可视块模式，之后使用 j/k/h/l键可以选中一块<br>ggVG 选中全部的文本， 其中gg为跳到行首，V选中整行，G末尾<br>:pwd 显示vim的工作目录<br>:Sex – 水平分割一个窗口，浏览文件系统；<br>:Vex – 垂直分割一个窗口，浏览文件系统<br>:ce(nter) 本行文字居中<br>:le(ft) 本行文字靠左<br>:ri(ght) 本行文字靠右<h2 id="命令："><a href="#命令：" class="headerlink" title="命令："></a>命令：</h2></li>
+</ol>
+<p>设置backspace的工作方式<br>:set backspace=indent,eol,start<br>:set spell－开启拼写检查功能<br>:set nospell－关闭拼写检查功能<br>「set nu」后，会在文件中的每一行前面列出行号。<br>高亮显示搜索结果用”:set hlsearch”<br>:set ruler  会在屏幕右下角显示当前光标所处位置</p>
+<h2 id="Gvim配置："><a href="#Gvim配置：" class="headerlink" title="Gvim配置："></a>Gvim配置：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">（“为注释）</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot; 代码补全</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">set wildmenu        &quot;vim自身命令行模式智能补全</span><br><span class="line">set completeopt-=preview    &quot;补全时不显示窗口，只显示补全列表</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot;代码折叠</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">set foldmethod=syntax       &quot;设置基于语法进行代码折叠</span><br><span class="line">set nofoldenable            &quot;关闭代码折叠</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot; 缓存设置</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">set nobackup        &quot;设置不备份</span><br><span class="line">set noswapfile      &quot;禁止生成临时文件</span><br><span class="line">set noundofile		&quot; 操作记录</span><br><span class="line">set autoread        &quot;文件在vim之外修改过，自动重新载入</span><br><span class="line">set autowrite       &quot;设置自动保存</span><br><span class="line">set confirm         &quot;在处理未保存或只读文件时，弹出确认</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot; 编码设置</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot; Lang &amp; Encoding &#123;&#123;&#123;</span><br><span class="line">set fileencodings=utf-8,gbk2312,gbk,gb18030,cp936</span><br><span class="line">set encoding=utf-8</span><br><span class="line">set langmenu=zh_CN</span><br><span class="line">let $LANG = &#x27;en_US.UTF-8&#x27;</span><br><span class="line">&quot;language messages zh_CN.UTF-8</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot; 隐藏GVIM菜单及设置</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">source $VIMRUNTIME/delmenu.vim</span><br><span class="line">source $VIMRUNTIME/menu.vim</span><br><span class="line">&quot; 窗口大小</span><br><span class="line">set lines=35 columns=140</span><br><span class="line">&quot; 分割出来的窗口位于当前窗口下边/右边</span><br><span class="line">set splitbelow</span><br><span class="line">set splitright</span><br><span class="line">&quot;不显示工具/菜单栏</span><br><span class="line">set guioptions-=T</span><br><span class="line">set guioptions-=m</span><br><span class="line">set guioptions-=L</span><br><span class="line">set guioptions-=r</span><br><span class="line">set guioptions-=b</span><br><span class="line">&quot; 使用内置 tab 样式而不是 gui</span><br><span class="line">set guioptions-=e</span><br><span class="line">set nolist</span><br><span class="line"></span><br><span class="line">set nu</span><br><span class="line">set guifont=Consolas:h11:cANSI:qDRAFT</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/11/28/19-22-34/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -725,7 +858,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-05 00:23:07" itemprop="dateModified" datetime="2022-12-05T00:23:07+08:00">2022-12-05</time>
+                <time title="修改时间：2023-02-21 23:16:02" itemprop="dateModified" datetime="2023-02-21T23:16:02+08:00">2023-02-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -748,8 +881,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="window10实用软件"><a href="#window10实用软件" class="headerlink" title="window10实用软件"></a>window10实用软件</h1><hr>
-<h3 id="PowerToys"><a href="#PowerToys" class="headerlink" title="PowerToys"></a>PowerToys</h3><p>是一款实用工具的集合，它并不是新事物，Windows 95就曾有过这款工具，只是Windows在原来的启发之下开发了这款针对Window 10系统更加高效的版本。<br>目前PowerToys包括如下7项功能，每一项都非常实用，它们分别是：</p>
+          <h1 id="window10-实用软件"><a href="#window10-实用软件" class="headerlink" title="window10 实用软件"></a>window10 实用软件</h1><hr>
+<h3 id="PowerToys"><a href="#PowerToys" class="headerlink" title="PowerToys"></a>PowerToys</h3><p>是一款实用工具的集合，它并不是新事物，Windows 95 就曾有过这款工具，只是 Windows 在原来的启发之下开发了这款针对 Window 10 系统更加高效的版本。<br>目前 PowerToys 包括如下 7 项功能，每一项都非常实用，它们分别是：</p>
 <ul>
 <li>FancyZones</li>
 <li>File Explorer Add-ons</li>
@@ -774,17 +907,21 @@
 <li><a target="_blank" rel="noopener" href="https://wwbk.lanzoue.com/isrNg0ht4wle">editThisCookie</a></li>
 </ul>
 <h3 id="other"><a href="#other" class="headerlink" title="other"></a>other</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://wwbk.lanzoue.com/iduIc0bmfhcd">IDM下载工具</a></li>
+<li><a target="_blank" rel="noopener" href="https://wwbk.lanzoue.com/iduIc0bmfhcd">IDM 下载工具</a></li>
 <li><a target="_blank" rel="noopener" href="https://wwbk.lanzoue.com/i7IKb0hsyaid">winscp+putty</a></li>
-<li><a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/i0Lmyxe5nwh">截图工具snipaste</a></li>
+<li><a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/i0Lmyxe5nwh">截图工具 snipaste</a></li>
 <li><a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/iujpA0bm9jda">鼠标右键管理工具</a></li>
 <li>无广告输入法：<a target="_blank" rel="noopener" href="http://www.xinshuru.com/">手心输入法</a></li>
-<li><a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/izNvH0bm9j9g">解压工具bandizip破解版</a></li>
-<li><a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/iR7jo0bmclsf">解压工具7-zip</a></li>
+<li><a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/izNvH0bm9j9g">解压工具 bandizip 破解版</a></li>
+<li><a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/iR7jo0bmclsf">解压工具 7-zip</a></li>
 <li>字体：<a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/ifuCp0bm9jah">inconsolata</a>、<a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/i5xTI0bm9jbi">droidsansmono</a>、<a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/iOqD50bm9jcj">monaco</a></li>
 <li>免费简洁思维导图<a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/iEtBj0bm9hfa">blumind</a></li>
 <li>精简小巧屏幕录制工具<a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/ium4t0bmagsd">FSCature</a></li>
 <li>电脑控制手机<a target="_blank" rel="noopener" href="https://wwn.lanzouy.com/iCzdu0bmc0cd">scrcpy</a></li>
+<li>window 性能监控<a target="_blank" rel="noopener" href="https://wwbk.lanzoum.com/i2Pkr0o8tdej">Traffic Monitor</a></li>
+<li>干净简单轻量级看图工具<a target="_blank" rel="noopener" href="https://wwbk.lanzoum.com/iBWdi0o8tfif">Honeyview</a></li>
+<li>WPS 教育考试专用版，纯净无广告<a target="_blank" rel="noopener" href="https://ncre.neea.edu.cn/html1/report/1507/861-1.htm">wps</a></li>
+<li>WPS 校园版,去掉了附加的增值服务以及广告（停止维护）</li>
 </ul>
 
       
@@ -1530,216 +1667,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/10/11/22-11-22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/11/22-11-22/" class="post-title-link" itemprop="url">hexo搭建博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-11 22:11:22" itemprop="dateCreated datePublished" datetime="2020-10-11T22:11:22+08:00">2020-10-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-14 11:09:18" itemprop="dateModified" datetime="2022-11-14T11:09:18+08:00">2022-11-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><ul>
-<li>archlinux:<code>pacman -S nodejs</code></li>
-<li>ubuntu </li>
-</ul>
-<h2 id="安装npm"><a href="#安装npm" class="headerlink" title="安装npm"></a>安装npm</h2><ul>
-<li>archlinux:<br><code>pacman -S npm</code></li>
-<li>ubuntu:<br><code>apt-get install npm </code></li>
-</ul>
-<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p><code>npm config set registry https://registry.npmmirror.com  //添加国内源</code></p>
-<p>使用nrm切换镜像源</p>
-<p><code>npm install nrm -g //全局安装</code></p>
-<p><code>nrm ls  //查看所有镜像源</code></p>
-<p><code>nrm use taobao  //切换为淘宝镜像源</code></p>
-<p>查看镜像源：<code>npm get registry</code></p>
-<p>安装hexo</p>
-<p><code>npm install -g hexo-cli</code></p>
-<h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><p>查看ssh</p>
-<p><code>cd ~/.ssh</code></p>
-<p>若无，则生成ssh</p>
-<p><code>ssh-keygen -t rsa -C 用户名</code></p>
-<p>一路回车默认安装,打开生成的<code>id_rsa.pub</code>复制</p>
-<p>设置git用户名邮箱  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的账号&quot;</span><br><span class="line">git config --global user.email &quot;你邮箱地址&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>进入一个文件夹进行初始化：<code>hexo init</code></p>
-<p>编辑<code>_config.yml</code><br>找到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure>
-
-<p>修改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: ........... ///克隆地址</span><br><span class="line">  branchL: master</span><br></pre></td></tr></table></figure>
-
-<p>执行<code>hexo g -d </code>上传代码（注意第一次提交需要输入yes，不要一路回车）</p>
-<p><strong>常用命令：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate	//Generate static files</span><br><span class="line">hexo server	//Run server</span><br><span class="line">hexo deploy	//Deploy to remote sites</span><br><span class="line"></span><br><span class="line">hexo new My_New_Post   	//Create a new post</span><br></pre></td></tr></table></figure>
-<h3 id="hexo博客迁移"><a href="#hexo博客迁移" class="headerlink" title="hexo博客迁移"></a>hexo博客迁移</h3><p>先新建一个文件夹，初始化后，从原来的文件夹中拷贝下列文件进行覆盖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">themes/</span><br><span class="line">_config.yml</span><br><span class="line">------------------</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br></pre></td></tr></table></figure>
-
-<h2 id="Fexo"><a href="#Fexo" class="headerlink" title="Fexo"></a>Fexo</h2><ul>
-<li><p>安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> cd my-blog</span><br><span class="line"> git clone git@github.com:forsigner/fexo.git themes/fexo</span><br><span class="line">git clone https://github.com/forsigner/fexo.git</span><br></pre></td></tr></table></figure></li>
-<li><p>配置主题<br>主题配置全部在theme/fexo里面完成，所里下面所有配置指的是配置theme/fexo/_config.yml。</p>
-</li>
-</ul>
-<p>设置基本信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">blog_name: Forsigner</span><br><span class="line">slogan: Find the bug of the world</span><br></pre></td></tr></table></figure>
-<p>设置头像</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># relative url</span><br><span class="line">avatar: /images/avatar.jpg</span><br><span class="line"># or absolute url</span><br><span class="line">avatar: https://avatars0.githubusercontent.com/u/2668081?v=3&amp;s=460</span><br></pre></td></tr></table></figure>
-
-<p>设置favicon</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">favicon: /favicon.ico</span><br></pre></td></tr></table></figure>
-<p>设置关键词<br>关键词主要作用是优化SEO</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keywords: forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript</span><br></pre></td></tr></table></figure>
-<p>设置首页内容<br>你可以设置是否在首页直接显示文章</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init_page_content: HOME_NAV  # HOME_NAV | POST</span><br></pre></td></tr></table></figure>
-
-<p>设置首页导航</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">home_nav:</span><br><span class="line">  - name: Blog</span><br><span class="line">    url: /archives</span><br><span class="line">  - name: Github</span><br><span class="line">    url: https://github.com/forsigner</span><br><span class="line">    target: _blank</span><br><span class="line">  - name: Douban</span><br><span class="line">    url: http://www.douban.com/people/forsigner/</span><br><span class="line">    target: _blank</span><br><span class="line">  - name: Twitter</span><br><span class="line">    url: https://twitter.com/forsigner</span><br><span class="line">    target: _blank</span><br></pre></td></tr></table></figure>
-
-<p>设置页面导航</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">page_nav:</span><br><span class="line">  - 博客: /archives/</span><br><span class="line">  - 分类: /category/</span><br><span class="line">  - 标签: /tag/</span><br><span class="line">  - 友链: /link/</span><br><span class="line">  - 关于: /about/</span><br><span class="line">  - RSS: /atom.xml</span><br></pre></td></tr></table></figure>
-
-<p>设置页面导航样式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">page_nav_style: CIRCLE  # CIRCLE|ROUND_RECT</span><br></pre></td></tr></table></figure>
-
-<p>设置面包屑</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">breadcrumb:</span><br><span class="line">  isShow: true # true|fase</span><br></pre></td></tr></table></figure>
-
-<p>设置盒子<br>你可设置盒子是否显示和其显示的文字</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">toolbox:</span><br><span class="line">  isShow: true # true|fase</span><br><span class="line">  text: 盒子</span><br><span class="line">搜索页面 Slogan</span><br><span class="line">search_slogan:</span><br><span class="line">  isShow: true # true|fase</span><br><span class="line">  text: Can you find the bug of world ~</span><br><span class="line">友链页面 Slogan</span><br><span class="line">link_slogan:</span><br><span class="line">  isShow: true # true|fase</span><br><span class="line">  text: 交换友链可以邮件 forsigner@gmail.com</span><br></pre></td></tr></table></figure>
-
-<p>设置文章标题对齐方式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post:</span><br><span class="line">  header_align: center # left|center</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>启用页面<br>你可以启用你想要的页面，在开启关于、友链、项目的页面后，你可以对这些设置这些页面的内容</p>
-<p>新建分类、搜索、关于界面：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">//进入source/categories/文件夹</span><br><span class="line">//编辑index.md文件,添加type或layout属性</span><br><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">layout: categories</span><br><span class="line">或</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-
-<p>启用分类页面<br>在博客根目录执行 <code>hexo new page category</code><br>修改my-blog/source/category/index.md里面的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: category</span><br><span class="line">layout: category</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>启用标签页面<br>在博客根目录执行<code> hexo new page tag</code><br>修改my-blog/source/tag/index.md里面的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tag</span><br><span class="line">layout: tag</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用友链页面</p>
-<p>在博客根目录执行<code> hexo new page link</code><br>修改my-blog/source/link/index.md里面的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: link</span><br><span class="line">layout: link</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用友链页面后，可以设置类似以下格式的内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">link:</span><br><span class="line">  - name: 织网</span><br><span class="line">    info: 身体和灵魂，总有一个在路上</span><br><span class="line">    url: http://zheng-ji.info/</span><br><span class="line">    avatar: https://avatars3.githubusercontent.com/u/1414745?v=3&amp;s=460</span><br><span class="line">  - name: Dongyado</span><br><span class="line">    info: 生命不止，折腾不息</span><br><span class="line">    url: http://dongyado.com/</span><br><span class="line">    avatar: https://avatars0.githubusercontent.com/u/6274940?v=3&amp;s=460</span><br><span class="line">  - name: OrangeCoder</span><br><span class="line">    info: android ffmpeg nodejs gradle</span><br><span class="line">    url: http://orangecoder.com/</span><br><span class="line">    avatar: https://avatars0.githubusercontent.com/u/2263785?v=3&amp;s=460</span><br><span class="line">  - name: EverET</span><br><span class="line">    info: 好记性不如烂笔头</span><br><span class="line">    url: http://everet.org/about-me/</span><br><span class="line">    avatar: https://avatars1.githubusercontent.com/u/1559563?v=3&amp;s=460</span><br></pre></td></tr></table></figure>
-
-<p>启用关于页面</p>
-<p>在博客根目录执行 <code>hexo new page about</code><br>修改my-blog/source/about/index.md里面的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">layout: about</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用关于页面后，可以设置类似以下格式的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">about:</span><br><span class="line">  - type: me</span><br><span class="line">    icon: icon-user</span><br><span class="line">    text_value:</span><br><span class="line">    - &quot;Scut，1991，Spring.&quot;</span><br><span class="line">    - &quot;喜欢设计，擅长编程，喜欢睡懒觉.&quot;</span><br><span class="line">    - &quot;前端开发工程师，常用 HTML / CSS / JavaScript.&quot;</span><br><span class="line">  - type: Github</span><br><span class="line">    icon: icon-github</span><br><span class="line">    text_key: Github</span><br><span class="line">    text_value: &quot;@forsigner&quot;</span><br><span class="line">    text_value_url: https://github.com/forsigner</span><br><span class="line">  - type: weibo</span><br><span class="line">    icon: icon-weibo</span><br><span class="line">    text_key: 微博</span><br><span class="line">    text_value: &quot;@forsigner&quot;</span><br><span class="line">    text_value_url: http://weibo.com/u/1847075964</span><br><span class="line">  - type: mail</span><br><span class="line">    icon: icon-mail</span><br><span class="line">    text_key: Gmail</span><br><span class="line">    text_value: &quot;forsigner@gmail.com&quot;</span><br><span class="line">  - type: location</span><br><span class="line">    icon: icon-location</span><br><span class="line">    text_value: 珠海</span><br></pre></td></tr></table></figure>
-
-<p>启用项目页面</p>
-<p>在博客根目录执行 <code>hexo new page project</code><br>修改my-blog/source/project/index.md里面的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: project</span><br><span class="line">layout: project</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用项目页面后，可以设置类似以下格式的内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">project:</span><br><span class="line">  - type: personal</span><br><span class="line">    name: fexo</span><br><span class="line">    url: https://github.com/forsigner/fexo</span><br><span class="line">    intro: A minimalist design theme for hexo</span><br><span class="line">  # - type: company</span><br><span class="line">  #   name: Fexo</span><br><span class="line">  #   url: https://github.com/forsigner/fexo</span><br><span class="line">  #   intro: A minimalist design theme for hexo</span><br><span class="line">  - type: personal</span><br><span class="line">    name: beside</span><br><span class="line">    url: https://github.com/forsigner/beside</span><br><span class="line">    intro: I need you beside me</span><br><span class="line">  - type: personal</span><br><span class="line">    name: web-fontmin</span><br><span class="line">    url: https://github.com/forsigner/web-fontmin</span><br><span class="line">    intro: 字体子集化，在线提取你需要的字体</span><br><span class="line">  - type: personal</span><br><span class="line">    name: magic-check</span><br><span class="line">    url: https://github.com/forsigner/magic-check</span><br><span class="line">    intro: Beautify Radio and Checkbox with pure CSS</span><br><span class="line">  - type: personal</span><br><span class="line">    name: nice-bar</span><br><span class="line">    url: https://github.com/forsigner/nice-bar</span><br><span class="line">    intro: A nice and lightweight scrollbar</span><br><span class="line">  - type: personal</span><br><span class="line">    name: angular-nice-bar</span><br><span class="line">    url: https://github.com/forsigner/angular-nice-bar</span><br><span class="line">    intro: A nice and lightweight scrollbar in Angular</span><br></pre></td></tr></table></figure>
-
-<p>启用搜索页面</p>
-<p>在博客根目录执行 <code>hexo new page search</code><br>修改my-blog/source/search/index.md里面的内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: search</span><br><span class="line">layout: search</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>然后安装 Hexo 插件 <code>hexo-search</code> (重要)<br>先进入 blog 的根目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd my-blog</span><br><span class="line">npm install hexo-search --save</span><br></pre></td></tr></table></figure>
-
-<p>个性化设置</p>
-<p>自定义CSS</p>
-<p>也许 Fexo 默认的样式满足不了你个性化的需求，使用此配置你可以在不修改 Fexo 源码的情况下，任意的自定义 Fexo 的样式，方法如下：</p>
-<p>在 blog 根目录新建文件夹 my-blog/source/css<br>然后在此目录新建一个 CSS，名字随意，如 personal-style.css<br>修改fexo/_config.yml下面配置，然后你就可以写你想要的样式了<br>personal_style: /css/personal-style.css</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 如果不想启用自定义样式，注释这行就可以了</span><br><span class="line">比如我的个人自定义样式如下：</span><br><span class="line"></span><br><span class="line">@font-face &#123;</span><br><span class="line">  font-family: &quot;Meiryo&quot;;</span><br><span class="line">  src: url(&quot;/fonts/Meiryo.eot&quot;);</span><br><span class="line">  /* IE9 */</span><br><span class="line">  src: url(&quot;/fonts/Meiryo.eot?#iefix&quot;) format(&quot;embedded-opentype&quot;), /* IE6-IE8 */</span><br><span class="line">  url(&quot;/fonts/Meiryo.woff&quot;) format(&quot;woff&quot;), /* chrome, firefox */</span><br><span class="line">  url(&quot;/fonts/Meiryo.ttf&quot;) format(&quot;truetype&quot;), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */</span><br><span class="line">  url(&quot;/fonts/Meiryo.svg#Meiryo&quot;) format(&quot;svg&quot;);</span><br><span class="line">  /* iOS 4.1- */</span><br><span class="line">  font-style: normal;</span><br><span class="line">  font-weight: normal;</span><br><span class="line">&#125;</span><br><span class="line">html.page-home &#123;</span><br><span class="line">  /*background-image: url(&#x27;/images/bg.jpg&#x27;)*/</span><br><span class="line"></span><br><span class="line">  /*background: linear-gradient( #1abc9c, transparent), linear-gradient( 90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);*/</span><br><span class="line">  /*background-blend-mode: screen;*/</span><br><span class="line"></span><br><span class="line">  /*background: linear-gradient(to left, #5f2c82, #49a09d);*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>自定义博客名的字体</p>
-<p>由于中文字体文件太大，有的快10M，所以 Fexo 没有引入中文字体，导致博客名有点难看。<br>但是可以通过提取字体来减小字体文件大小，让字体只有几KB。<br>一下步骤可以让你实现自定义博客名字体，包括英文和中文：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">下载免费可用的ttf格式字体</span><br><span class="line">利用 Web-Fontmin 提取字体，然后下载 Web 字体和样式</span><br><span class="line">在博客根目录的source文件夹新建目录 fonts</span><br><span class="line">把下载的 web-fontmin 里的 CSS 内容 copy 到你的 personal-style.css 里去</span><br><span class="line">修改fexo/_config.yml下面配置，设置字体名称：</span><br><span class="line">blog_name_font_familiy: myFontName</span><br><span class="line"></span><br><span class="line"># 注意: 这是css文件里的font-familiy的值 ,例如里面是 font-familiy: &quot;myfontName&quot;</span><br><span class="line">PS：自定义博客名字体前请先自定义CSS</span><br></pre></td></tr></table></figure>
-
-<p>为首页设置背景</p>
-<p>如果你不喜欢首页简洁的白色，想个性化一点，你可以自定义首页的背景颜色或者图片</p>
-<p>修改personal-style.css:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">html.page-home &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  background-image: url(&#x27;/images/bg.jpg&#x27;);</span><br><span class="line">  background-color: transparent;</span><br><span class="line">  background-size: cover;</span><br><span class="line">  background-position: center center;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line"></span><br><span class="line">  /*background: linear-gradient( #1abc9c, transparent), linear-gradient( 90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);*/</span><br><span class="line">  /*background-blend-mode: screen;*/</span><br><span class="line"></span><br><span class="line">  /*background: linear-gradient(to left, #5f2c82, #49a09d);*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>第三方服务</p>
-<p>启用统计</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">baidu_analytics: 57e94d016sfsf1fba3xxxx8a2b0263af0</span><br></pre></td></tr></table></figure>
-
-<p>启用评论</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">disqus_shortname: forsigner</span><br><span class="line"># duoshuo_shortname: forsigner</span><br></pre></td></tr></table></figure>
-
-<p>使用 Mathjax</p>
-<p>要使用 Mathjax，可以通过 Hexo 插件 hexo-renderer-mathjax支持</p>
-<p>查看 hexo-renderer-mathjax 文档</p>
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
-<p>解决办法：<br><code>npm install --save hexo-deployer-git</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1809,7 +1736,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
