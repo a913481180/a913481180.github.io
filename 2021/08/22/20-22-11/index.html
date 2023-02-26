@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="VScode关闭右侧预览功能：在设置中搜索”editor.minimap.enabled”把勾去掉 修改vscode配置文件改字体大小：打开VSCode安装目录下的如下文件VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css查找 .part&gt;.content修改字体大小即可 自动保存：打开vscode窗口，单击左下">
+  <meta name="description" content="vscode设置 VScode 关闭右侧预览功能：在设置中搜索”editor.minimap.enabled”把勾去掉  修改 vscode 配置文件改字体大小：打开 VSCode 安装目录下的如下文件 VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css 查找 .part&gt;.content 修改字体大小即可  自动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VScode">
 <meta property="og:url" content="http://www.baidu.com/2021/08/22/20-22-11/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="VScode关闭右侧预览功能：在设置中搜索”editor.minimap.enabled”把勾去掉 修改vscode配置文件改字体大小：打开VSCode安装目录下的如下文件VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css查找 .part&gt;.content修改字体大小即可 自动保存：打开vscode窗口，单击左下">
+<meta property="og:description" content="vscode设置 VScode 关闭右侧预览功能：在设置中搜索”editor.minimap.enabled”把勾去掉  修改 vscode 配置文件改字体大小：打开 VSCode 安装目录下的如下文件 VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css 查找 .part&gt;.content 修改字体大小即可  自动">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-22T12:22:11.000Z">
-<meta property="article:modified_time" content="2023-02-15T12:53:15.737Z">
+<meta property="article:modified_time" content="2023-02-26T08:18:05.579Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -185,7 +185,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-15 20:53:15" itemprop="dateModified" datetime="2023-02-15T20:53:15+08:00">2023-02-15</time>
+                <time title="修改时间：2023-02-26 16:18:05" itemprop="dateModified" datetime="2023-02-26T16:18:05+08:00">2023-02-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -208,26 +208,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ul>
-<li>VScode关闭右侧预览功能：在设置中搜索”editor.minimap.enabled”把勾去掉</li>
-<li>修改vscode配置文件改字体大小：打开VSCode安装目录下的如下文件VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css查找 .part&gt;.content修改字体大小即可</li>
-<li>自动保存：打开vscode窗口，单击左下角的设置(齿轮状)图标</li>
+        <h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><ul>
+<li><p>VScode 关闭右侧预览功能：在设置中搜索”editor.minimap.enabled”把勾去掉</p>
+</li>
+<li><p>修改 vscode 配置文件改字体大小：打开 VSCode 安装目录下的如下文件 VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css 查找 .part&gt;.content 修改字体大小即可</p>
+</li>
+<li><p>自动保存：</p>
+</li>
 </ul>
-<p>在设定按钮显示的菜单中，选择【Settings】选项。 这里是整个vs代码的设置入口</p>
-<p>打开【settings】画面时，默认的【Auto Save】=【off】表示不自动保存，每次都需要用户自己手动保存</p>
-<p>【后延迟】</p>
-<p>1 )这是以一定的间隔自动保存的</p>
-<p>2 )该【自动保存】选项需要指定间隔时间，以匹配下一个【自动保存延迟】配置项目，单位为毫秒</p>
-<p>【onFocusChange】</p>
-<p>1 )当焦点偏离编辑器当前窗口时自动保存</p>
-<p>2 )即，即使在编辑器内部切换标签，也会触发自动保存</p>
-<p>3 )本项目不需要【自动保存延迟】的设定值，此值也会被忽略</p>
-<p>【onWindowChange】</p>
-<p>1 )编辑器窗口失去焦点时，自动保存</p>
-<p>2 )只有在焦点偏离整个编辑器时才会触发保存，在编辑器内部切换标签时不会自动保存</p>
-<p>3 )本项目不需要【自动保存延迟】的设定值，此值也会被忽略</p>
-<p>在【Settings】画面中修正值后，不点击追加保存按钮，自动保存设定的内容。</p>
-<h2 id="vscode好用的插件系列"><a href="#vscode好用的插件系列" class="headerlink" title="vscode好用的插件系列"></a>vscode好用的插件系列</h2><p>git相关插件：gitLens、Git History、Git History Diff<br>汉化插件： Chinese (Simplified)<br>开发提示相关插件： Tabnine AI（强推）、Path Intellisense（路径提示）、Vetur、Volar、Auto Close Tag、Auto Complete Tag、Auto Rename Tag、HTML Snippets、Wrap Console Log Lite<br>浏览器调试插件： JavaScript Debugger、Debug Visualizer、scode-js-debug<br>静态服务器：Live Server<br>代码运行器： Code Runner<br>正则提示插件： any-rule、Regex Previewer（辅助验证正则结果）<br>Docker插件： Docker<br>格式化类插件： EditorConfig for VS Code、ESLint<br>进制文件查看： Hex Editor<br>TODO提示： Todo Tree<br>流程图绘制： drawio<br>PDF查看： vscode-pdf<br>Markdown预览：Markdown Preview Enhanced<br>SVG文件预览：SVG Viewer<br>图片预览（在html或者css写地址的时候可直接预览）：Image Preview<br>文件依赖分析（如：.vue文件可以通过该插件看到引用了哪些依赖）：Dependency Cruiser Extension<br>颜色选择、设置：Color Highlight、Color Picker<br>快速生成注释：vscode-fileheader 和 koroFileHeader <br>npm模块导入智能提示： npm Intellisense<br>接口请求：REST Client</p>
+<p>打开 vscode 窗口，单击左下角的设置(齿轮状)图标<br>在设定按钮显示的菜单中，选择【Settings】选项。 这里是整个 vs 代码的设置入口<br>打开【settings】画面时，默认的【Auto Save】=【off】表示不自动保存，每次都需要用户自己手动保存<br>【后延迟】<br>1 )这是以一定的间隔自动保存的<br>2 )该【自动保存】选项需要指定间隔时间，以匹配下一个【自动保存延迟】配置项目，单位为毫秒<br>【onFocusChange】<br>1 )当焦点偏离编辑器当前窗口时自动保存<br>2 )即，即使在编辑器内部切换标签，也会触发自动保存<br>3 )本项目不需要【自动保存延迟】的设定值，此值也会被忽略<br>【onWindowChange】<br>1 )编辑器窗口失去焦点时，自动保存<br>2 )只有在焦点偏离整个编辑器时才会触发保存，在编辑器内部切换标签时不会自动保存<br>3 )本项目不需要【自动保存延迟】的设定值，此值也会被忽略<br>在【Settings】画面中修正值后，不点击追加保存按钮，自动保存设定的内容。</p>
+<h2 id="vscode-好用的插件系列"><a href="#vscode-好用的插件系列" class="headerlink" title="vscode 好用的插件系列"></a>vscode 好用的插件系列</h2><ul>
+<li>汉化插件： <code>Chinese (Simplified)</code></li>
+<li>VIM:<code>Vim</code></li>
+<li>git 相关插件：<code>gitLens</code>、<code>Git History</code>、<code>Git History Diff</code></li>
+<li>路径提示： <code>Path Intellisense</code>、</li>
+<li>Docker 插件： <code>Docker</code></li>
+<li>格式化类插件： <code>Prettier - Code formatter</code>、<code>Vetur</code>、</li>
+<li>规范检查：<code>ESLint</code>、<code>Stylelint</code>、<code>TSLint（已废弃）</code></li>
+<li>标签自动化三剑客:<code>Auto Rename Tag</code>、<code>Auto Close Tag</code>、<code>Auto Import</code></li>
+<li>css:<code>CSS Modules</code></li>
+<li>代码片段：<code>ES7+ React/Redux/React-Native snippets</code>、<code>HTML CSS Support</code>、<code>JavaScript (ES6) code snippets</code></li>
+<li>Markdown 预览：<code>Markdown Preview Enhanced</code>、<code>Markdown All in One</code></li>
+<li>单词拼写：<code>Code Spell Checker</code></li>
+<li>log:<code>Turbo Console Log</code></li>
+<li>浏览器打开：<code>open in browser</code></li>
+<li>主题：<code>GitHub Theme</code></li>
+<li>图片预览：<code>Image Preview</code></li>
+<li>快速生成注释：<code>koroFileHeader</code></li>
+<li>npm 模块导入智能提示： <code>npm Intellisense</code></li>
+<li>接口请求：<code>REST Client</code></li>
+<li>SSH：<code>Remote-SSH</code>、<code>Visual Studio Code Remote - SSH: Editing Configuration Files</code>、<code>Remote Explorer</code></li>
+<li>错误显示：<code>Error Lens</code></li>
+</ul>
 
     </div>
 
@@ -308,7 +320,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode%E5%A5%BD%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6%E7%B3%BB%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">vscode好用的插件系列</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vscode"><span class="nav-number">1.</span> <span class="nav-text">vscode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-%E5%A5%BD%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6%E7%B3%BB%E5%88%97"><span class="nav-number">1.2.</span> <span class="nav-text">vscode 好用的插件系列</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -322,14 +334,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
