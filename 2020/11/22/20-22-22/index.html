@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/1.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/1.png">
@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="archlinux 安装过程连接wifiip link &#x2F;&#x2F;查看wifi设备 ip link set 设备 up &#x2F;&#x2F;启用设备 iwlist 设备 scan | grep ESSID &#x2F;&#x2F;扫描查看wifi名称 或者使用 iw dev scan .... wifi-menu 连接wpa加密wifiwpa_passphrase wifi名称 密码 &gt; internet.conf wpa_supp">
+  <meta name="description" content="archlinux 安装制作u盘 rufus 进入bios,选择u盘启动  连接wifi 查看wifi设备：ip link  启用设备：ip link set 设备 up  扫描查看wifi名称：iwlist 设备 scan | grep ESSID   或者使用 iw dev scan .... 或者使用usb网络，安装系统后记得安装驱动pacman -S usbmuxd,live系统中自带有所">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装archlinux系统">
 <meta property="og:url" content="http://www.baidu.com/2020/11/22/20-22-22/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="archlinux 安装过程连接wifiip link &#x2F;&#x2F;查看wifi设备 ip link set 设备 up &#x2F;&#x2F;启用设备 iwlist 设备 scan | grep ESSID &#x2F;&#x2F;扫描查看wifi名称 或者使用 iw dev scan .... wifi-menu 连接wpa加密wifiwpa_passphrase wifi名称 密码 &gt; internet.conf wpa_supp">
+<meta property="og:description" content="archlinux 安装制作u盘 rufus 进入bios,选择u盘启动  连接wifi 查看wifi设备：ip link  启用设备：ip link set 设备 up  扫描查看wifi名称：iwlist 设备 scan | grep ESSID   或者使用 iw dev scan .... 或者使用usb网络，安装系统后记得安装驱动pacman -S usbmuxd,live系统中自带有所">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-22T12:22:22.000Z">
-<meta property="article:modified_time" content="2021-06-28T05:35:07.515Z">
+<meta property="article:modified_time" content="2023-04-21T15:02:31.658Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 13:35:07" itemprop="dateModified" datetime="2021-06-28T13:35:07+08:00">2021-06-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,62 +213,520 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="archlinux-安装过程"><a href="#archlinux-安装过程" class="headerlink" title="archlinux 安装过程"></a>archlinux 安装过程</h1><h2 id="连接wifi"><a href="#连接wifi" class="headerlink" title="连接wifi"></a>连接wifi</h2><p><code>ip link //查看wifi设备</code></p>
-<p><code>ip link set 设备 up //启用设备</code></p>
-<p><code>iwlist 设备 scan | grep ESSID //扫描查看wifi名称</code></p>
+        <h1 id="archlinux-安装"><a href="#archlinux-安装" class="headerlink" title="archlinux 安装"></a>archlinux 安装</h1><h2 id="制作u盘"><a href="#制作u盘" class="headerlink" title="制作u盘"></a>制作u盘</h2><ul>
+<li>rufus</li>
+<li>进入bios,选择u盘启动</li>
+</ul>
+<h2 id="连接wifi"><a href="#连接wifi" class="headerlink" title="连接wifi"></a>连接wifi</h2><ul>
+<li><p>查看wifi设备：<code>ip link</code></p>
+</li>
+<li><p>启用设备：<code>ip link set 设备 up</code></p>
+</li>
+<li><p>扫描查看wifi名称：<code>iwlist 设备 scan | grep ESSID</code></p>
+</li>
+</ul>
 <p>或者使用</p>
 <p><code>iw dev scan ....</code></p>
-<p><code>wifi-menu</code></p>
+<p>或者使用usb网络，安装系统后记得安装驱动<code>pacman -S usbmuxd</code>,live系统中自带有所以不用装，但新安装的系统中没有</p>
 <h3 id="连接wpa加密wifi"><a href="#连接wpa加密wifi" class="headerlink" title="连接wpa加密wifi"></a>连接wpa加密wifi</h3><p><code>wpa_passphrase wifi名称 密码 &gt; internet.conf</code></p>
 <p><code>wpa_supplicant -i 网卡 -c internet.conf &amp;</code></p>
 <p><code>dhcpcd 网卡 &amp;</code></p>
-<h2 id="检查是否联通"><a href="#检查是否联通" class="headerlink" title="检查是否联通"></a>检查是否联通</h2><p>(ctrl+c停止)</p>
+<h2 id="检查是否能上网"><a href="#检查是否能上网" class="headerlink" title="检查是否能上网"></a>检查是否能上网</h2><p>(ctrl+c停止)</p>
 <p><code>ping www.baidu.com</code></p>
 <h2 id="更新系统时钟"><a href="#更新系统时钟" class="headerlink" title="更新系统时钟"></a>更新系统时钟</h2><p><code>timedatectl set-ntp true</code></p>
-<h2 id="查看当前的可用磁盘"><a href="#查看当前的可用磁盘" class="headerlink" title="查看当前的可用磁盘"></a>查看当前的可用磁盘</h2><p><code>fdisk -l</code></p>
-<h2 id="创建新分区"><a href="#创建新分区" class="headerlink" title="创建新分区"></a>创建新分区</h2><p><code>fdisk /dev/sda    //注意磁盘名称</code></p>
-<p>–&gt;n –&gt;回车 –&gt;回车 –&gt;回车 –&gt;+500m  （boot分区）</p>
-<p>–&gt;n –&gt;回车 –&gt;回车 –&gt;回车 –&gt;+6G      （根分区）</p>
-<p>–&gt;n –&gt;回车 –&gt;回车 –&gt;回车 –&gt;回车  （将剩余空间全部分配给该分区）</p>
-<p>–&gt;w    （写入）</p>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><blockquote>
+<p>双系统不用分boot启动分区，只需要根分区、家分区、交换分区swap。linux的boot分区直接挂载在windows的efi分区上</p>
+</blockquote>
+<ul>
+<li>查看当前的可用磁盘：<code>fdisk -l</code></li>
+</ul>
+<h3 id="使用cgdisk分区"><a href="#使用cgdisk分区" class="headerlink" title="使用cgdisk分区"></a>使用cgdisk分区</h3><ul>
+<li>选择硬盘：<code>cgdisk /dev/nvme0n1</code></li>
+<li>选择<code>NEW</code>进行分区：开始位置（默认），大小(40G) ,编号（默认）</li>
+<li>swap分区编号为8200</li>
+<li>最后选择write</li>
+</ul>
+<h3 id="使用fdisk分区"><a href="#使用fdisk分区" class="headerlink" title="使用fdisk分区"></a>使用fdisk分区</h3><ul>
+<li>创建新分区：<code>fdisk /dev/sda    //注意磁盘名称</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;+500m  （boot分区）</span><br><span class="line"> </span><br><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;+6G      （根分区）</span><br><span class="line"></span><br><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;回车  （将剩余空间全部分配给该分区）</span><br><span class="line"> </span><br><span class="line">--\&gt;w    （写入）</span><br></pre></td></tr></table></figure>
+
 <h2 id="根目录格式化为ext4"><a href="#根目录格式化为ext4" class="headerlink" title="根目录格式化为ext4"></a>根目录格式化为ext4</h2><p>请注意自己的对应的目录是那块区域</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1     /// boot分区</span><br><span class="line">mkswap /dev/sda2   //swap 分区</span><br><span class="line">mkfs.ext4 /dev/sda3</span><br></pre></td></tr></table></figure>
-<h2 id="打开swap分区"><a href="#打开swap分区" class="headerlink" title="打开swap分区#"></a>打开swap分区#</h2><p>请注意自己的 swap分区是哪块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1     /// boot分区</span><br><span class="line">mkswap /dev/sda2   //swap 分区</span><br><span class="line">mkfs.ext4 /dev/sda3</span><br></pre></td></tr></table></figure>
+
+<h2 id="打开swap分区"><a href="#打开swap分区" class="headerlink" title="打开swap分区"></a>打开swap分区</h2><p>请注意自己的 swap分区是哪块</p>
 <p><code>swapon /dev/sda2</code></p>
 <h2 id="更改pacman配置文件"><a href="#更改pacman配置文件" class="headerlink" title="更改pacman配置文件"></a>更改pacman配置文件</h2><p><code>vim /etc/pacman.conf</code></p>
 <p>去掉Color的注释,用于安装时提示信息</p>
-<h2 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区#"></a>挂载分区#</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount  /dev/sda3 /mnt     //主分区内</span><br><span class="line">ls /mnt  /////查看是否挂载成功，若出现lost+found 则代表挂载成功</span><br><span class="line">mkdir /mnt/boot</span><br><span class="line">mount /dev/sda1 /mnt/boot      /// boot分区</span><br></pre></td></tr></table></figure>
-<h2 id="配置源"><a href="#配置源" class="headerlink" title="配置源#"></a>配置源#</h2><p>将国内源放到第一位 </p>
-<p><code>vim /etc/pacman.d/mirrorlist</code></p>
-<h2 id="刷新源"><a href="#刷新源" class="headerlink" title="刷新源#"></a>刷新源#</h2><p><code> pacman -Syy</code></p>
+<h2 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h2><ul>
+<li>双系统</li>
+</ul>
+<blockquote>
+<p>先挂载根分区，再启动分区，在其他分区</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount /dev/nvme0n8 /mnt </span><br><span class="line"><span class="comment">#启动分区，挂载在win系统efi分区上</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/nvme0n1p1 /mnt/boot</span><br><span class="line"><span class="comment">#swap分区</span></span><br><span class="line">swapon /dev/nvme0n1p7</span><br><span class="line"><span class="comment">#home分区...</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/home</span><br><span class="line">mount /dev/nvme0n1p6 /mnt/home</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>单系统</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount  /dev/sda3 /mnt     </span><br><span class="line"><span class="built_in">ls</span> /mnt  /////查看是否挂载成功，若出现lost+found 则代表挂载成功</span><br><span class="line"><span class="comment">#启动分区</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/sda1 /mnt/boot      /// boot分区</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置源"><a href="#配置源" class="headerlink" title="配置源"></a>配置源</h2><p>将国内源放到第一位<br><code>vim /etc/pacman.d/mirrorlist</code></p>
+<ul>
+<li>自动查找源：<code>reflector --country China --age 72 --sort rate --protocol https --save /etc/pacman.d/mirrorlist</code></li>
+<li>手动换源：</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.bfsu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : South_Korea</span><br><span class="line">Server = https://mirror.funami.tech/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : Russia</span><br><span class="line">Server = https://mirror.kamtv.ru/manjaro/stable/$repo/$arch</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>刷新源:<code>pacman -Syy</code></li>
+</ul>
 <h2 id="安装基本包"><a href="#安装基本包" class="headerlink" title="安装基本包"></a>安装基本包</h2><p><code>pacstrap /mnt linux linux-firmware base base-devel</code></p>
-<h2 id="生成fstab文件"><a href="#生成fstab文件" class="headerlink" title="生成fstab文件"></a>生成fstab文件</h2><p><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p>
+<ul>
+<li>普通内核：<code>linux</code>,<code>linux-headers</code></li>
+<li>lts稳定内核：<code>linux-lts</code>,<code>linux-lts-headers</code></li>
+<li>高性能内核：<code>linux-zen</code>,<code>linux-zen-headers</code>（不支持nvidia显卡）</li>
+</ul>
+<h2 id="生成fstab文件"><a href="#生成fstab文件" class="headerlink" title="生成fstab文件"></a>生成fstab文件</h2><ul>
+<li><p>开机时，系统会安装fstab文件的分区信息进行挂载：<code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p>
+</li>
+<li><p>后续可以手动修改,用于挂载win盘：<code>UUID=xxxxxxxxxxx /home/xxx/xxx ntfs-3g defaults 0 0</code></p>
+</li>
+</ul>
 <h2 id="切换环境"><a href="#切换环境" class="headerlink" title="切换环境"></a>切换环境</h2><p><code>arch-chroot /mnt</code></p>
+<h2 id="安装vim"><a href="#安装vim" class="headerlink" title="安装vim"></a>安装vim</h2><p><code>pacman -S vim</code></p>
+<h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><ul>
+<li><p>将/etc/locale.gen中en_US.UTF-8的注释去掉,避免中文乱码,推荐先使用英文：<code>vim /etc/locale.gen</code></p>
+</li>
+<li><p>执行：<code>locale-gen</code></p>
+</li>
+<li><p>配置 /etc/locale.conf文件：<code>vim /mnt/etc/locale.conf</code></p>
+</li>
+<li><p>写入：<code>LANG=en_US.UTF-8</code></p>
+</li>
+</ul>
 <h2 id="配置时区"><a href="#配置时区" class="headerlink" title="配置时区"></a>配置时区</h2><p><code>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></p>
 <h2 id="硬件时间"><a href="#硬件时间" class="headerlink" title="硬件时间"></a>硬件时间</h2><p><code>hwclock --systohc</code></p>
-<h2 id="安装vim"><a href="#安装vim" class="headerlink" title="安装vim"></a>安装vim</h2><p><code>pacman -S vim</code></p>
-<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><p><code>exit</code></p>
-<h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>//将/etc/locale.gen中en_US.UTF-8的注释去掉,避免中文乱码,推荐先使用英文//</p>
-<p><code>vim /mnt/etc/locale.gen</code></p>
-<h3 id="切换环境-1"><a href="#切换环境-1" class="headerlink" title="切换环境"></a>切换环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br><span class="line">locale-gen</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-<h2 id="配置-etc-locale-conf文件"><a href="#配置-etc-locale-conf文件" class="headerlink" title="配置 /etc/locale.conf文件"></a>配置 /etc/locale.conf文件</h2><p><code>vim /mnt/etc/locale.conf</code></p>
-<p>写入</p>
-<p><code>LANG=en_US.UTF-8</code></p>
-<h3 id="切换环境-2"><a href="#切换环境-2" class="headerlink" title="切换环境"></a>切换环境</h3><p><code>arch-chroot /mnt</code></p>
-<h3 id="重置root密码"><a href="#重置root密码" class="headerlink" title="重置root密码"></a>重置root密码</h3><p><code>passwd</code></p>
-<h2 id="安装网络相关的包"><a href="#安装网络相关的包" class="headerlink" title="安装网络相关的包#"></a>安装网络相关的包#</h2><p><code> pacman -S iw wpa_supplicant dialog net-tools networkmanager dhcpcd netctl</code></p>
-<h2 id="安装编码"><a href="#安装编码" class="headerlink" title="安装编码"></a>安装编码</h2><p><code>pacman -S intel-ucode（amd-ucode） os-prober(寻找其他系统的工具） efibootmgr（efi启动）</code></p>
-<h2 id="安装引导"><a href="#安装引导" class="headerlink" title="安装引导"></a>安装引导</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub</span><br><span class="line">mkdir /boot/grub</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line">grub-install --target=i386-pc /dev/sda (整个磁盘） //// efi:grub-install --target=x86_64-efi --efi-directory=/boot</span><br></pre></td></tr></table></figure>
-<h3 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境#"></a>退出当前环境#</h3><p><code> exit</code></p>
-<h2 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h2><p><code>killall wpa_supplicant dhcpcd</code></p>
-<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><p><code>reboot</code></p>
-<h2 id="拔u盘"><a href="#拔u盘" class="headerlink" title="拔u盘"></a>拔u盘</h2><h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><ul>
-<li>图形界面：<code>xorg</code> <code>xorg-server</code> <code>xorg-xinit</code></li>
-<li>男人：<code>man</code> </li>
-</ul>
+<h2 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h2><p><code>vim /etc/hostname</code></p>
+<h2 id="重置root密码"><a href="#重置root密码" class="headerlink" title="重置root密码"></a>重置root密码</h2><p><code>passwd</code></p>
+<h2 id="安装网络相关的包"><a href="#安装网络相关的包" class="headerlink" title="安装网络相关的包"></a>安装网络相关的包</h2><ul>
+<li><p>动态Ip：<code>pacman -S dhcpcd</code></p>
+</li>
+<li><p>USB网络：<code>pacman -S usbmuxd</code></p>
+</li>
+<li><p>基本网络连接工具：<code>iw wpa_supplicant</code></p>
+</li>
+<li><p>网络管理工具(多个管理工具之间相互冲突，安装一个即可)：<code>pacman -S  networkmanager dhcpcd（可不装）</code></p>
 <ul>
-<li>文件管理器：<code>ranger</code></li>
-<li>电脑参数：<code>neofetch</code><h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3>xrandr<br>xrandr –output screen –mode 1280x800<br>feh –randomize –bg-fill /地址<br>picom</li>
+<li>启动服务：<code>systemctl enable NetworkManager.service</code></li>
+<li>图形化界面：<code>nm-connection-editor</code></li>
+<li>系统托盘：<code>network-manager-applet</code></li>
+<li>使用：<br>NetworkManager 附带 nmcli 和 nmtui。</li>
+</ul>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示附近的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到隐藏的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 hidden <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 wlan1 网络接口上的 Wi-Fi：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 ifname wlan1 profile_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 断开网络接口上的连接：</span></span><br><span class="line">$ nmcli device disconnect ifname eth0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示连接列表及其名称、UUID、类型和支持设备：</span></span><br><span class="line">$ nmcli connection show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活连接（即使用现有配置文件连接到网络）：</span></span><br><span class="line">$ nmcli connection up name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除连接：</span></span><br><span class="line">$ nmcli connection delete name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有网络设备及其状态：</span></span><br><span class="line">$ nmcli device</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭 Wi-Fi：</span></span><br><span class="line">$ nmcli radio wifi off</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑连接</span></span><br><span class="line"><span class="comment">### 获取连接列表：</span></span><br><span class="line">$ nmcli connection</span><br><span class="line"><span class="comment">###编辑</span></span><br><span class="line">nmcli connection edit <span class="string">&#x27;wifi名称&#x27;</span></span><br><span class="line"><span class="comment">###或</span></span><br><span class="line">nmcli connection modify <span class="string">&#x27;wifi名称&#x27;</span> 配置项</span><br><span class="line"><span class="comment">###或在 /etc/NetworkManager/system-connections/ 中修改对应的 wifi名.nmconnection 文件。别忘了使用nmcli connection reload 重新加载配置文件。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过Wi-Fi共享网络连接：安装<code>dnsmasq</code>包 以实现连接共享。NetworkManager 会启动自己的 dnsmasq 实例，与 dnsmasq.service 独立。点击小程序，选择”Create new wireless network”。按照指南 (如果使用WEP, 确保使用5到13字符长度的密码,其他的长度可能会失败)。</li>
+<li>移动网络支持:安装 <code>modemmanager</code>包 和 <code>usb_modeswitch</code>包。然后启用并启动 <code>ModemManager.service</code>。可能需要重新启动 <code>NetworkManager.service</code> 才能使其检测 <code>ModemManager</code>。重新启动后，重新插入调制解调器应该就可以识别了。</li>
+<li>VPN 支持:只需要 <code>wireguard</code> 内核模块</li>
+<li>通过Ethernet共享连接：安装dnsmasq包以能够真正地共享连接。你的连有internet的设备和其他的设备通过合适的ethernet线缆连接（通常这意味着一个交叉线(cross over cable)或者之间有一个交换机（switch））。从终端运行nm-connection-editor,添加一个新的ethernet连接，给它起一个合适的名字。比如”共享连接”，转到”IPv4 设置”（IPv4 settings），对于”方法:”（method） 选择 “与其他电脑共享”（Shared to other computers）,保存。现在，你在NetworkManager的有线连接下应该有了一个新”共享连接”的选项。</li>
+<li>更换内置的DHCP 客户端：请在 <code>/etc/NetworkManager/conf.d/</code> 中的配置文件中设置选项 <code>[main]\n dhcp=客户端名称</code>。注意！不要启用 dhclient包 和 dhcpcd包 软件包提供的 systemd 单元。它们会与 NetworkManager 冲突</li>
+</ul>
+</li>
+<li><p>网络管理工具：<code>dialog net-tools netctl wpa_supplicant dhcpcd</code></p>
+</li>
+</ul>
+<h2 id="安装CPU编码"><a href="#安装CPU编码" class="headerlink" title="安装CPU编码"></a>安装CPU编码</h2><p><code>pacman -S intel-ucode（amd-ucode）</code></p>
+<ul>
+<li>intel CPU 安装 ：<code>intel-ucode</code></li>
+<li>amd CPU 安装 ：<code>amd-ucode</code></li>
+</ul>
+<h2 id="安装显卡驱动"><a href="#安装显卡驱动" class="headerlink" title="安装显卡驱动"></a>安装显卡驱动</h2><ul>
+<li>intel核显：<code>xf86-video-intel</code></li>
+<li>nvidia:<code>mesa</code>,<code>nvidia(linux-lts内核，navidia-lts)</code>,<code>navida-settings</code>,<code>nvidia-dkms</code>,<code>nvidia-utils</code>,<code>nvidia-prime</code></li>
+<li>amd：<code>xf86-video-amdgpu</code></li>
+</ul>
+<h2 id="安装引导"><a href="#安装引导" class="headerlink" title="安装引导"></a>安装引导</h2><ul>
+<li><p>安装工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr（efi启动）os-prober(寻找其他系统的工具）</span><br><span class="line"><span class="built_in">mkdir</span> /boot/grub</span><br></pre></td></tr></table></figure></li>
+<li><p>Grub2.06后不再启用os-prober，需要手动启用：<code>vim /etc/default/grub</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">#grub2.06默认禁用os-prober</span><br><span class="line">#启用os-prober来识别win引导</span><br><span class="line">GRUB_DISABLE_OS_PROBER=false</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+<li><p>安装grub</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#gpt引导32位</span></span><br><span class="line"> grub-install --target=i386-pc /dev/sda (整个磁盘，即根目录`/`） </span><br><span class="line"><span class="comment">#efi引导</span></span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot</span><br></pre></td></tr></table></figure></li>
+<li><p>生成grub.cfg：<code>grub-mkconfig -o /boot/grub/grub.cfg</code></p>
+</li>
+</ul>
+<h2 id="退出当前环境"><a href="#退出当前环境" class="headerlink" title="退出当前环境"></a>退出当前环境</h2><p><code>exit</code></p>
+<h2 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h2><p><code>killall wpa_supplicant dhcpcd</code></p>
+<h2 id="重启-拔u盘"><a href="#重启-拔u盘" class="headerlink" title="重启, 拔u盘"></a>重启, 拔u盘</h2><p><code>reboot</code></p>
+<hr>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><ul>
+<li>安装sudo：<code>pacman -S sudo</code></li>
+<li>添加用户：<code>useradd -m 用户名</code></li>
+<li>添加用户：<code>useradd -m -G 组名 用户名</code></li>
+<li>设置密码：<code>passwd 用户名</code></li>
+<li>编辑权限：<code>vim /etc/sudoers</code></li>
+</ul>
+<blockquote>
+<p>第一列用户名：test、root<br>第二列，等号左边：允许从任何主机登陆当前用户<br>第二列，等号右边：第一列用户可以切换到系统中的其他用户<br>第三列，NOPASSWD表示sudo不用打密码</p>
+</blockquote>
+  <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root    ALL=(ALL:ALL) ALL</span><br><span class="line">test    ALL=(ALL:ALL) NOPASSWD:ALL</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加archlinuxcn源"><a href="#添加archlinuxcn源" class="headerlink" title="添加archlinuxcn源"></a>添加archlinuxcn源</h2><ul>
+<li><p><code>vim /etc/pacman.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">#archlinuxcn-keyring不报错的话可以不加下行</span><br><span class="line">#SigLevel=Optional TrustAll</span><br><span class="line">#Server=https://mirrors.bfsu.edu.cn/archlinuxcn/$arch</span><br><span class="line">Server=https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure></li>
+<li><p>取消<code>[multilib]</code>中两行的注释，不然32位包无法安装</p>
+</li>
+<li><p>同步：<code>pacman -Syu</code></p>
+</li>
+<li><p>安装GPGkey：<code>pacman -S archlinuxcn-keyring</code></p>
+</li>
+</ul>
+<h2 id="图形界面"><a href="#图形界面" class="headerlink" title="图形界面"></a>图形界面</h2><blockquote>
+<p>用户登陆成功后，会读取用户目录下的<code>.bashrc</code>文件(zsh终端则是<code>.zshrc</code>文件)，相当于手动执行<code>source ~/.bashrc</code>。此时登陆到tty1。接着执行startx命令会执行<code>~/.xinitrc</code>中的内容<br>.Xresources文件，用来调节dpi(默认96),<code>Xft.dpi:192</code>(数字为：放大倍数*96)</p>
+</blockquote>
+<ul>
+<li><p>安装xorg：<code>xorg</code> <code>xorg-server</code> <code>xorg-xinit</code></p>
+</li>
+<li><p>登陆管理器：</p>
+<ul>
+<li>slim:<ul>
+<li>安装 <code>pacman -S slim</code></li>
+<li>开机自启动：<code>systemctl enable slim.service</code></li>
+</ul>
+</li>
+<li>ssdm<ul>
+<li>安装：<code>pacman -S ssdm</code></li>
+<li>启动：<code>systemctl enable ssdm</code></li>
+</ul>
+</li>
+<li>lightdm<ul>
+<li>安装：<code>pacman -S lightdm lightdm-gtk-greeter</code></li>
+<li>启动：<code>systemctl enable lightdm</code></li>
+</ul>
+</li>
+<li>gdm<ul>
+<li>安装：<code>pacman -S gdm</code></li>
+<li>启动：<code>systemctl enable gdm</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>桌面环境</p>
+<ul>
+<li>xfce4(简洁)：<ul>
+<li>安装:<code>pacman -S xfce4 xfce4-goodies(工具和插件，可不装)</code></li>
+<li>配置: <code>vim .xinitrc</code>，添加<code>exec startxfce4</code></li>
+</ul>
+</li>
+<li>kde(绚丽)：<ul>
+<li>安装:<code>pacman -S plasma kde-applications</code></li>
+</ul>
+</li>
+<li>gnome(易用)：<ul>
+<li>安装:<code>pacman -S gnome gnome-extra</code></li>
+<li>配置: <code>vim .xinitrc</code>，添加<code>exec gnome-session</code></li>
+</ul>
+</li>
+<li>lxde(轻量)：</li>
+</ul>
+</li>
+</ul>
+<h2 id="蓝牙服务"><a href="#蓝牙服务" class="headerlink" title="蓝牙服务"></a>蓝牙服务</h2><ul>
+<li><p>安装： <code>bluez bluez-utils</code></p>
+</li>
+<li><p>启动服务：<code>systemctl enable bluetooth.service</code>，<code>systemctl start bluetooth.service</code></p>
+</li>
+<li><p>使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ bluetoothctl --<span class="built_in">help</span>          查看帮助命令</span><br><span class="line">$ bluetoothctl -v              查看蓝牙版本</span><br><span class="line">$ bluetoothctl            进入蓝牙管理工具环境</span><br><span class="line">[bluetooth]<span class="comment"># power on                打开蓝牙</span></span><br><span class="line">[bluetooth]<span class="comment"># agent on                开启代理</span></span><br><span class="line">[bluetooth]<span class="comment"># scan on                 扫描蓝牙设备</span></span><br><span class="line">[bluetooth]<span class="comment"># pair xx:xx:xx:...       配对该设备</span></span><br><span class="line">[bluetooth]<span class="comment"># trust xx:xx:xx:...      信任该设备</span></span><br><span class="line">[bluetooth]<span class="comment"># connect xx:xx:...       连接该设备</span></span><br></pre></td></tr></table></figure></li>
+<li><p>图形化界面：<code>sudo pacman -S blueman</code></p>
+</li>
+<li><p>如果要用蓝牙耳机，或者蓝牙音响，还需要安装pulseaudio-bluetooth<br><code># pacman -S pulseaudio-bluetooth</code><br>这个程序默认开机启动。但经常发生开机后能连接音响，却不是用音响输出声音的情况。<br>重新启动pulseaudio执行<code>pulseaudio -k</code></p>
+</li>
+</ul>
+<p>再打开音频或者视频就能从蓝牙音响输出了。</p>
+<h2 id="声音"><a href="#声音" class="headerlink" title="声音"></a>声音</h2><ul>
+<li>安装工具包:<code>pacman -S alsa-utils</code></li>
+<li>可以使用 <code>amixer</code> 解除声卡的主音量静音：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">amixer sset Master unmute</span><br><span class="line">amixer sset Speaker unmute</span><br><span class="line">amixer sset Headphone unmute</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用 <code>alsamixer</code> 可以解除声卡的静音：<code>alsamixer</code></li>
+</ul>
+<p>声道下方标有<code>MM</code>表示其已经静音，而标有<code>00</code>表示已经启用。</p>
+<p>使用<code>←</code>和<code>→</code>键滚动到 Master 和 PCM 声道，按下 m 键解除静音。</p>
+<p>使用 <code>↑</code> 键增加音量，获得0dB的增益。增益值可在左上方 Item: 字段旁边看到。<br>注意： 若增益高于0 dB，可能会听到失真。</p>
+<ul>
+<li><p>若没有声音，需配置声卡</p>
+<ul>
+<li>获取声卡的声卡ID和设备ID:<code>aplay -l</code></li>
+<li>获取amixer控制器配置:<code>amixer scontrols</code></li>
+<li>获取amixer声卡配置:<code>amixer -c 1 scontrols</code></li>
+<li>在刚才 aplay -l 里面选择声卡1,设备ID为0的声卡。把下列配置添加到系统级别的 /etc/asound.conf 或用户级别的 ~/.asoundrc 文件。如果文件不存在，可以手动创建。其中的各个ID，请根据实际情况调整：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults.pcm.card 1</span><br><span class="line">defaults.pcm.device 0</span><br><span class="line">defaults.ctl.card 1</span><br></pre></td></tr></table></figure>
+
+<p>pcm选项决定用来播放音频的设备，而ctl选项决定那个声卡能够由控制工具（如 alsamixer）使用。上述配置在重启音频程序（如 mplayer）后立即生效。</p>
+</li>
+<li><p>启用麦克风<br>要启用麦克风，按 F4 切换至 Capture （捕获）选项卡，然后按 空格 启用一个声道即可</p>
+</li>
+</ul>
+<h2 id="安装字体"><a href="#安装字体" class="headerlink" title="安装字体"></a>安装字体</h2><ul>
+<li><p>开源：<code>ttf-dejavu</code></p>
+</li>
+<li><p>中文：<code>wqy-zenhei</code></p>
+</li>
+<li><p>中文：<code>noto-fonts-cjk</code></p>
+</li>
+</ul>
+<h2 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h2><ul>
+<li>删除<code>zh_CN.UTF-8</code>注释：<code>vim /etc/locale.gen</code></li>
+<li>执行：<code>locale-gen</code></li>
+<li>全局配置中文（不建议，tty中不支持中文，会乱码）：<code>echo LANG=zh_CN.UTF-8 &gt;&gt; /etc/locale.conf</code></li>
+<li>局部配置，在<code>~/.xprofile</code>或<code>~/.xinitrc</code>中配置<code>LANG=zh_CN.UTF-8</code></li>
+</ul>
+<h2 id="中文输入法fcitx5"><a href="#中文输入法fcitx5" class="headerlink" title="中文输入法fcitx5"></a>中文输入法fcitx5</h2><ul>
+<li><p>安装：<code>pacman -S fcitx5 fcitx5-chinese-addons（简体中文输入） fcitx5-gtk（gtk程序支持） fcitx5-qt fcitx5-configtool fcitx5-config-qt（qt5程序支持） fcitx5-git fcitx5-pinyin-zhwiki(维基百科词库，无版权风险) kcm-fcitx5（kde桌面环境支持）</code></p>
+</li>
+<li><p>配置：编辑 /etc/environment 并添加以下几行，然后重新登录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">#SDL_IM_MODULE 是为了让一些使用特定版本 SDL2 库的游戏能正常使用输入法。</span><br><span class="line">SDL_IM_MODULE=fcitx</span><br><span class="line">#GLFW_IM_MODULE 是为了让 kitty 启用输入法支持。此环境变量的值只能为 ibus。</span><br><span class="line">GLFW_IM_MODULE=ibus</span><br></pre></td></tr></table></figure></li>
+<li><p>开机自启，执行：<code>cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/</code></p>
+</li>
+<li><p>主题和外观</p>
+<ul>
+<li>安装：<code>yay -S fcitx5-material-color</code></li>
+<li>配置：</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 垂直候选列表</span><br><span class="line">Vertical Candidate List=False</span><br><span class="line"># 按屏幕DPI使用</span><br><span class="line">PerScreenDPI=True</span><br><span class="line"># Font(设置成你喜欢的字体)</span><br><span class="line">Font=&quot;思源黑体 CN Medium 13&quot;</span><br><span class="line"># 主题</span><br><span class="line">Theme=Material-Color-DeepPurple</span><br></pre></td></tr></table></figure></li>
+<li><p>Emoji</p>
+<ol>
+<li>首先确保电脑上已经安装了带有 Emoji 的字体（例如 noto-fonts-emoji包）。</li>
+<li>将字体设置为 Noto Sans CJK SC</li>
+</ol>
+</li>
+<li><p>wps无法输入中文：该问题在国内版 wps-office-cn 11.1.0.9604-1 版本更新后部分用户出现，于 wps-office-cn 11.1.0.9615-1 版本修复</p>
+</li>
+<li><p>自定义词库</p>
+</li>
+</ul>
+<blockquote>
+<p>注意： 手动下载的词典文件直接放到 ~/.local/share/fcitx5/pinyin/dictionaries 路径下即可。词典文件的后缀名应当为 .dict<br>一般而言,由于 fcitx5包 支持 导入搜狗词库，因此很大程度上不需要自定义词库，但是 fcitx5包 依然提供了相关工具。</p>
+</blockquote>
+<ul>
+<li>安装 <code>libime</code>包:<br>原始词库文件是一个文本文件，其格式为： 汉字 拼音 频率,在得到原始词库文件后，调用 <code>libime_pinyindict &quot;词库文件.txt&quot; &quot;词库文件.dict&quot;</code> 即可。</li>
+</ul>
+<p>自定义词库文件放置在 <code>~/.local/share/fcitx5/pinyin/dictionaries</code></p>
+<h2 id="安装yay"><a href="#安装yay" class="headerlink" title="安装yay"></a>安装yay</h2><blockquote>
+<p>需要配置etc/pacman.conf中，加入archlinuxcn Server配置</p>
+</blockquote>
+<ul>
+<li>pacman 命令</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pacman -Syu</td>
+<td>系统升级，更新软件</td>
+</tr>
+<tr>
+<td>pacman -S 包名</td>
+<td>安装或升级单个软件</td>
+</tr>
+<tr>
+<td>pacman -Sy 包名</td>
+<td>同步数据后,再安装或升级单个软件</td>
+</tr>
+<tr>
+<td>pacman -U 包名</td>
+<td>安装本地包，扩展名为pkg.tar.gz或pkg.tar.xz</td>
+</tr>
+<tr>
+<td>pacman -U url名</td>
+<td>安装远程包</td>
+</tr>
+<tr>
+<td>pacman -Ss 名称</td>
+<td>查看仓库中的软件</td>
+</tr>
+<tr>
+<td>pacman -Qs 名称</td>
+<td>查看已安装的软件</td>
+</tr>
+<tr>
+<td>pacman -R 包名</td>
+<td>删除软件，保留依赖</td>
+</tr>
+<tr>
+<td>pacman -Rs 包名</td>
+<td>删除软件，和其他没有被引用的依赖</td>
+</tr>
+<tr>
+<td>pacman -Sc</td>
+<td>清空软件包缓存</td>
+</tr>
+<tr>
+<td>pacman -Scc</td>
+<td>清空所有缓存</td>
+</tr>
+<tr>
+<td>pacman -R $(pacman -Qdtq)</td>
+<td>清楚系统中的无用包</td>
+</tr>
+<tr>
+<td>pacman -R $(pacman -Qsq 关键词)</td>
+<td>清楚系统中的包</td>
+</tr>
+</tbody></table>
+<ul>
+<li>yay 命令,不要加sudo</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>yay -Syu</td>
+<td>更新软件</td>
+</tr>
+<tr>
+<td>pacman -S 包名</td>
+<td>安装软件</td>
+</tr>
+<tr>
+<td>pacman -Rns 包名</td>
+<td>删除单个软件</td>
+</tr>
+<tr>
+<td>pacman -Qi 包名</td>
+<td>查看包版本</td>
+</tr>
+<tr>
+<td>pacman -Ps</td>
+<td>查看系统包安装信息</td>
+</tr>
+</tbody></table>
+<h2 id="其他软件"><a href="#其他软件" class="headerlink" title="其他软件"></a>其他软件</h2><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="http://listen1.github.io/listen1/">listen1</a></p>
+<h3 id="pacman"><a href="#pacman" class="headerlink" title="pacman"></a>pacman</h3></li>
+<li><p>男人：<code>man</code></p>
+</li>
+<li><p>屏幕上显示键盘：<code>screenkey</code></p>
+</li>
+<li><p>快照保存：<code>timeshift</code></p>
+</li>
+<li><p>快速启动：<code>albert</code></p>
+</li>
+<li><p>文件管理器：<code>ranger</code></p>
+</li>
+<li><p>电脑参数：<code>neofetch</code></p>
+</li>
+<li><p>挂载ntfs：<code>ntfs-3g</code></p>
+</li>
+<li><p>办公：<code>libreoffice-fresh</code></p>
+</li>
+<li><p>火狐：<code>firefox</code></p>
+</li>
+<li><p>截图：<code>flameshot</code></p>
+</li>
+<li><p>看图：<code>feh</code></p>
+</li>
+<li><p>播放器：<code>mpv</code>,<code>vlc</code></p>
+</li>
+<li><p>录屏：<code>obs-studio</code>( 确保安装了<code>pipewire</code>,<code>libpipewire02</code>，<code>xdg-desktop-portal-wlr</code>)</p>
+</li>
+<li><p>虚拟摄像头：<code>v4l2loopback</code>（可用在直播软件中实现共享屏幕）</p>
+<ul>
+<li>移除虚拟相机命令：<code>sudo modprobe --remove v4l2loopback</code></li>
+<li>添加虚拟相机命令：<code>sudo modprobe v4l2loopback devices=2</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="aur"><a href="#aur" class="headerlink" title="aur"></a><a target="_blank" rel="noopener" href="https://aur.archlinux.org/">aur</a></h3><ul>
+<li><p>谷歌:<code>google-chrome</code>（root用户无法启动）</p>
+</li>
+<li><p>markdown:<code>remarkable</code></p>
+</li>
+<li><p>vscode:<code>visual-studio-code-bin</code>（root用户无法启动）</p>
+</li>
+<li><p>wps：<code>wps-office</code></p>
+</li>
+<li><p>qq:<code>linuxqq</code></p>
+</li>
+<li><p>腾讯会议：<code>wemeet-bin</code></p>
+</li>
+<li><p>微信：<code>wechat-uos</code></p>
+</li>
+<li><p>飞书：<code>feishu-bin</code></p>
+<h2 id="触摸板"><a href="#触摸板" class="headerlink" title="触摸板"></a>触摸板</h2></li>
+<li><p>安装驱动：<code>libinput</code>，<code>xf86-input-libinput</code></p>
+</li>
+<li><p>配置软连接：<code>ln -s /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf/40-libinput.conf</code></p>
+</li>
+<li><p>查看触摸板编号：<code>xinput list</code>，找到touchpad的id</p>
+</li>
+<li><p>编辑配置： <code>vim 40-libinput.conf</code>，找到touchpad，添加两条Option，重启.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">Section &quot;inputClass&quot;</span><br><span class="line">       Identifier &quot;libinput touchpad catchall&quot;</span><br><span class="line">       MatchIsTouchpad &quot;on&quot;</span><br><span class="line">       MatchDevicePath &quot;/dev/input/event*&quot;</span><br><span class="line">       Driver &quot;libinput&quot;</span><br><span class="line">       Option &quot;Tapping&quot; &quot;on&quot;</span><br><span class="line">       Option &quot;clickMethod&quot; &quot;clickfinger&quot;</span><br><span class="line">EndSection</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="屏幕亮度"><a href="#屏幕亮度" class="headerlink" title="屏幕亮度"></a>屏幕亮度</h2><blockquote>
+<p>亮度由 ACPI，图形或者平台的驱动来控制</p>
+</blockquote>
+<ul>
+<li>查看ACPI内核模块：<code>ls /sys/class/backlight/</code></li>
+<li>查看最大亮度：<code>ls /sys/class/backlight/acpi_video0/max_brightness</code></li>
+<li>测试,向brightness写入代表亮度等级的数值：<code>echo 5 &gt; /sys/class/backlight/acpi_video0/brightness</code></li>
+<li>若不生效或是amd显卡，可能需要修改内核：<br>编辑 <code>/etc/default/grub</code>并将您的内核选项添加至 <code>GRUB_CMDLINE_LINUX_DEFAULT=&#39;...&#39;</code> 行</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">acpi_backlight=video</span><br><span class="line">acpi_backlight=vendor</span><br><span class="line">acpi_backlight=native</span><br><span class="line">acpi_backlight=none</span><br></pre></td></tr></table></figure>
+
+<p>然后重新生成 <code>grub.cfg</code> 文件：<code>grub-mkconfig -o /boot/grub/grub.cfg</code></p>
+<ul>
+<li><p>关闭背光：<code>xset dpms force off</code></p>
+</li>
+<li><p>开启背光：<code>xset s</code></p>
+</li>
+<li><p>启用fn快捷键</p>
+<ul>
+<li>安装：<code>acpid2</code>,<code>openbsd-netcat</code></li>
+<li>启动服务：<code>systemctl start/enable acpid.service.</code></li>
+<li>查看按钮：<code>netcat -U /var/run/acpid.socket</code></li>
+</ul>
+</li>
+<li><p>创建屏幕控制脚本(重启acpid服务)：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### vim /etc/acpi/handlers/bl</span></span><br><span class="line"><span class="comment">#!/bin/sh</span></span><br><span class="line">bl_dev=/sys/class/backlight/acpi_video0</span><br><span class="line">step=1</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">  -) <span class="built_in">echo</span> $(($(&lt; <span class="variable">$bl_dev</span>/brightness) - <span class="variable">$step</span>)) &gt;<span class="variable">$bl_dev</span>/brightness;;</span><br><span class="line">  +) <span class="built_in">echo</span> $(($(&lt; <span class="variable">$bl_dev</span>/brightness) + <span class="variable">$step</span>)) &gt;<span class="variable">$bl_dev</span>/brightness;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#vim /etc/acpi/events/bl_d</span></span><br><span class="line">event=video/brightnessdown.*</span><br><span class="line">action=/etc/acpi/handlers/bl -</span><br><span class="line"></span><br><span class="line"><span class="comment">#vim /etc/acpi/events/bl_u</span></span><br><span class="line">event=video/brightnessup.*</span><br><span class="line">action=/etc/acpi/handlers/bl +</span><br></pre></td></tr></table></figure></li>
+<li><p>创建声音控制脚本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim /etc/acpi/events/vol-d</span></span><br><span class="line">event=button/volumedown</span><br><span class="line">action=amixer <span class="built_in">set</span> Master 5-</span><br><span class="line"></span><br><span class="line"><span class="comment">#vim /etc/acpi/events/vol-m</span></span><br><span class="line">event=button/mute</span><br><span class="line">action=amixer <span class="built_in">set</span> Master toggle</span><br><span class="line"></span><br><span class="line"><span class="comment">#vim /etc/acpi/events/vol-u</span></span><br><span class="line">event=button/volumeup</span><br><span class="line">action=amixer <span class="built_in">set</span> Master 5+</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="安装Deb包"><a href="#安装Deb包" class="headerlink" title="安装Deb包"></a>安装Deb包</h2><ul>
+<li>安装debtap：<code>yay -S debtap</code></li>
+<li>更新数据库：<code>sudo debtap -u</code></li>
+<li>转化deb包：<code>debtap xxx.deb</code></li>
+<li>安装：<code>sudo pacman -U xxxx.pkg</code></li>
+</ul>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>xrandr<br>xrandr –output screen –mode 1280x800<br>feh –randomize –bg-fill /地址<br>picom</p>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><ul>
+<li><code>...invalid or corrupted package (PGP sinature)</code></li>
+</ul>
+<p>同步时间：<code>timedatectl set-ntp true</code><br>运行：<code>pacman -S archlinu-keyring</code><br>回到安装，重新pacstrap安装</p>
+<ul>
+<li><p>普通用户无法startx</p>
+<ul>
+<li><code>tmp</code>目录是否有权限</li>
+<li>拷贝root用户下的<code>.Xauthority</code>，<code>xinitrc</code>到普通用户的home目录下</li>
+</ul>
+</li>
+<li><p>unzip 解压大文件错误<br>下载p7zip</p>
+</li>
+<li><p>npm nrm安装后报错<br>原因：应该使用 open 的 CommonJs规范的包 ，现在 open v9.0.0 是 ES Module 版本的包<br>解决方法：<code>npm install -g nrm open@8.4.2 -save</code></p>
+</li>
 </ul>
 
     </div>
@@ -350,7 +808,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#archlinux-%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">archlinux 安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wifi"><span class="nav-number">1.1.</span> <span class="nav-text">连接wifi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wpa%E5%8A%A0%E5%AF%86wifi"><span class="nav-number">1.1.1.</span> <span class="nav-text">连接wpa加密wifi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E8%81%94%E9%80%9A"><span class="nav-number">1.2.</span> <span class="nav-text">检查是否联通</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F"><span class="nav-number">1.3.</span> <span class="nav-text">更新系统时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9A%84%E5%8F%AF%E7%94%A8%E7%A3%81%E7%9B%98"><span class="nav-number">1.4.</span> <span class="nav-text">查看当前的可用磁盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.</span> <span class="nav-text">创建新分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%BAext4"><span class="nav-number">1.6.</span> <span class="nav-text">根目录格式化为ext4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80swap%E5%88%86%E5%8C%BA"><span class="nav-number">1.7.</span> <span class="nav-text">打开swap分区#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9pacman%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text">更改pacman配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="nav-number">1.9.</span> <span class="nav-text">挂载分区#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%BA%90"><span class="nav-number">1.10.</span> <span class="nav-text">配置源#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B7%E6%96%B0%E6%BA%90"><span class="nav-number">1.11.</span> <span class="nav-text">刷新源#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%9F%BA%E6%9C%AC%E5%8C%85"><span class="nav-number">1.12.</span> <span class="nav-text">安装基本包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90fstab%E6%96%87%E4%BB%B6"><span class="nav-number">1.13.</span> <span class="nav-text">生成fstab文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">1.14.</span> <span class="nav-text">切换环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="nav-number">1.15.</span> <span class="nav-text">配置时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E6%97%B6%E9%97%B4"><span class="nav-number">1.16.</span> <span class="nav-text">硬件时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vim"><span class="nav-number">1.17.</span> <span class="nav-text">安装vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%80%E5%87%BA"><span class="nav-number">1.18.</span> <span class="nav-text">退出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="nav-number">1.19.</span> <span class="nav-text">设置语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83-1"><span class="nav-number">1.19.1.</span> <span class="nav-text">切换环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-etc-locale-conf%E6%96%87%E4%BB%B6"><span class="nav-number">1.20.</span> <span class="nav-text">配置 &#x2F;etc&#x2F;locale.conf文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83-2"><span class="nav-number">1.20.1.</span> <span class="nav-text">切换环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E7%BD%AEroot%E5%AF%86%E7%A0%81"><span class="nav-number">1.20.2.</span> <span class="nav-text">重置root密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="nav-number">1.21.</span> <span class="nav-text">安装网络相关的包#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BC%96%E7%A0%81"><span class="nav-number">1.22.</span> <span class="nav-text">安装编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC"><span class="nav-number">1.23.</span> <span class="nav-text">安装引导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83"><span class="nav-number">1.23.1.</span> <span class="nav-text">退出当前环境#</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C"><span class="nav-number">1.24.</span> <span class="nav-text">关闭网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF"><span class="nav-number">1.25.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%94u%E7%9B%98"><span class="nav-number">1.26.</span> <span class="nav-text">拔u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.27.</span> <span class="nav-text">安装软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.27.1.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#archlinux-%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">archlinux 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E4%BD%9Cu%E7%9B%98"><span class="nav-number">1.1.</span> <span class="nav-text">制作u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wifi"><span class="nav-number">1.2.</span> <span class="nav-text">连接wifi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wpa%E5%8A%A0%E5%AF%86wifi"><span class="nav-number">1.2.1.</span> <span class="nav-text">连接wpa加密wifi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E8%83%BD%E4%B8%8A%E7%BD%91"><span class="nav-number">1.3.</span> <span class="nav-text">检查是否能上网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F"><span class="nav-number">1.4.</span> <span class="nav-text">更新系统时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.</span> <span class="nav-text">分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8cgdisk%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.1.</span> <span class="nav-text">使用cgdisk分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8fdisk%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.2.</span> <span class="nav-text">使用fdisk分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%BAext4"><span class="nav-number">1.6.</span> <span class="nav-text">根目录格式化为ext4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80swap%E5%88%86%E5%8C%BA"><span class="nav-number">1.7.</span> <span class="nav-text">打开swap分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9pacman%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text">更改pacman配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="nav-number">1.9.</span> <span class="nav-text">挂载分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%BA%90"><span class="nav-number">1.10.</span> <span class="nav-text">配置源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%9F%BA%E6%9C%AC%E5%8C%85"><span class="nav-number">1.11.</span> <span class="nav-text">安装基本包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90fstab%E6%96%87%E4%BB%B6"><span class="nav-number">1.12.</span> <span class="nav-text">生成fstab文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">1.13.</span> <span class="nav-text">切换环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vim"><span class="nav-number">1.14.</span> <span class="nav-text">安装vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="nav-number">1.15.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="nav-number">1.16.</span> <span class="nav-text">配置时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E6%97%B6%E9%97%B4"><span class="nav-number">1.17.</span> <span class="nav-text">硬件时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-number">1.18.</span> <span class="nav-text">设置主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E7%BD%AEroot%E5%AF%86%E7%A0%81"><span class="nav-number">1.19.</span> <span class="nav-text">重置root密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="nav-number">1.20.</span> <span class="nav-text">安装网络相关的包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85CPU%E7%BC%96%E7%A0%81"><span class="nav-number">1.21.</span> <span class="nav-text">安装CPU编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.22.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC"><span class="nav-number">1.23.</span> <span class="nav-text">安装引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83"><span class="nav-number">1.24.</span> <span class="nav-text">退出当前环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C"><span class="nav-number">1.25.</span> <span class="nav-text">关闭网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF-%E6%8B%94u%E7%9B%98"><span class="nav-number">1.26.</span> <span class="nav-text">重启, 拔u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="nav-number">1.27.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0archlinuxcn%E6%BA%90"><span class="nav-number">1.28.</span> <span class="nav-text">添加archlinuxcn源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-number">1.29.</span> <span class="nav-text">图形界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%93%9D%E7%89%99%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.30.</span> <span class="nav-text">蓝牙服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A3%B0%E9%9F%B3"><span class="nav-number">1.31.</span> <span class="nav-text">声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93"><span class="nav-number">1.32.</span> <span class="nav-text">安装字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87"><span class="nav-number">1.33.</span> <span class="nav-text">设置中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx5"><span class="nav-number">1.34.</span> <span class="nav-text">中文输入法fcitx5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85yay"><span class="nav-number">1.35.</span> <span class="nav-text">安装yay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.36.</span> <span class="nav-text">其他软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%98%E7%BD%91"><span class="nav-number">1.36.1.</span> <span class="nav-text">官网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pacman"><span class="nav-number">1.36.2.</span> <span class="nav-text">pacman</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aur"><span class="nav-number">1.36.3.</span> <span class="nav-text">aur</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E6%9D%BF"><span class="nav-number">1.37.</span> <span class="nav-text">触摸板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6"><span class="nav-number">1.38.</span> <span class="nav-text">屏幕亮度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Deb%E5%8C%85"><span class="nav-number">1.39.</span> <span class="nav-text">安装Deb包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.39.1.</span> <span class="nav-text">设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-number">1.40.</span> <span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -371,13 +829,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

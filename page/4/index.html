@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/1.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/1.png">
@@ -155,205 +155,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/01/11/20-22-22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/11/20-22-22/" class="post-title-link" itemprop="url">微信小程序</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-11 20:22:22" itemprop="dateCreated datePublished" datetime="2021-01-11T20:22:22+08:00">2021-01-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-12 17:49:32" itemprop="dateModified" datetime="2022-04-12T17:49:32+08:00">2022-04-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
-<li>app.json      //配置</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;page&quot;:[</span><br><span class="line">    &quot;page/index/index“，</span><br><span class="line">    &quot;page下页面路径“</span><br><span class="line">]&#125;</span><br><span class="line">&quot;window&quot;:&#123;</span><br><span class="line">   // 导航配置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>app.js  //注册小程序应用</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">App(&#123;.....&#125;)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>app.wxss    //全局公共样式</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page&#123;       //小程序会在所有页面加一个page ，因此应设置页面高度为100%</span><br><span class="line">           height:100%;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>页面：<br>page<br>\index<br>\-index.js  </li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">     page(&#123;</span><br><span class="line">     //初始化数据</span><br><span class="line">         data: &#123;</span><br><span class="line">             msg: &#x27;hello&#x27;,</span><br><span class="line">             userInfo:&#123;</span><br><span class="line">                 //存放用户信息</span><br><span class="line">             &#125;,</span><br><span class="line">         &#125;,</span><br><span class="line"></span><br><span class="line">        //事件绑定</span><br><span class="line">        handleParent()&#123;            </span><br><span class="line">            console.log(&#x27;parent&#x27;)</span><br><span class="line">        &#125;,</span><br><span class="line">        handleChild()&#123;</span><br><span class="line">            console.log(&#x27;child&#x27;)</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        //跳转至logs页面</span><br><span class="line">        toLogs()&#123;                </span><br><span class="line">            //需要使用api</span><br><span class="line">            wx,navigateTo(&#123;         //保留当前页面跳转到另一个页面</span><br><span class="line">                url:&#x27;/page/logs/logs&#x27;,   //相对路径</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">         //生命周期函数：监听页面加载，最先执行</span><br><span class="line">         onLoad:function(options)&#123;</span><br><span class="line">             console.log(&#x27;onLoad()&#x27;)        //打印</span><br><span class="line"></span><br><span class="line">             //修改msg数据：this.setData</span><br><span class="line">             consile.log(this)  //this表示当前页面的实例对象</span><br><span class="line">             consile.log(this.data.msg)   </span><br><span class="line">              this.setData(&#123;</span><br><span class="line">                 msg:&#x27;after&#x27;</span><br><span class="line">             &#125;)</span><br><span class="line"></span><br><span class="line">             //授权以后获取用户信息</span><br><span class="line">             wx.gerUserInfo(&#123;</span><br><span class="line">                 succes:() =&gt; &#123;</span><br><span class="line">                     condole.log(res);</span><br><span class="line">                     //成功后更新数据</span><br><span class="line">                     this.setData(&#123;</span><br><span class="line">                         userInfo: res.userInfo</span><br><span class="line">                     &#125;)</span><br><span class="line">                 &#125;,</span><br><span class="line">                 fail:() =&gt;&#123;</span><br><span class="line">                     condole.log(err);</span><br><span class="line">                 &#125;,</span><br><span class="line">             &#125;)</span><br><span class="line">       &#125;,</span><br><span class="line"></span><br><span class="line">    //获取用户信息</span><br><span class="line">       handleGetUserInfo(res)&#123;      //形参用于判断</span><br><span class="line">           console.log(res)</span><br><span class="line">        if(res.detail.userInfo)&#123;</span><br><span class="line">            //修改userInfo的状态数据</span><br><span class="line">            thsi.setData(&#123;</span><br><span class="line">                userInfo: res.detail.userInfo</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">       &#125;,</span><br><span class="line">.....</span><br><span class="line">                 &#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>index.wxml</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  &lt;view class=&quot;indexcontainer&quot;&gt;   &lt;!--//样式--&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;image wx:if=&#x27;&#123;&#123;userInfo.avatarUrl&#125;&#125;&#x27; class=&quot;avatarUrl&quot; src=&quot;&#123;&#123;userInfo.avatarUrl&#125;&#125;&quot;&gt; &lt;/image&gt;    &lt;!--图片路径--&gt;</span><br><span class="line">    &lt;botton wx:else bindgetuserinfo=&#x27;handleGetUserInfo&#x27; open-type=&quot;getUserInfo&quot;&gt;获取用户信息&lt;/botton&gt;</span><br><span class="line">    &lt;text class=&quot;userName&quot;&gt; 文字文字 &lt;/text&gt;</span><br><span class="line">    &lt;text&gt;&#123;&#123;msg&#125;&#125;&lt;/text&gt;    &lt;!--//使用数据--&gt;</span><br><span class="line">    &lt;!--  事件绑定  --&gt;</span><br><span class="line">&lt;!--    &lt;view class=&quot;hello&quot; bindtap=&quot;handleParent&quot;&gt;  &lt;text bindtap=&#x27;handleChild&#x27;&gt;hello&lt;/text&gt;   &lt;/view&gt;  --&gt;</span><br><span class="line"></span><br><span class="line">  &lt;view class=&quot;hello&quot; bindtap=&quot;toLogs&quot;&gt;  </span><br><span class="line">    &lt;text&gt;hello&lt;/text&gt;  </span><br><span class="line">   &lt;/view&gt; </span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>index.wxss      //样式</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">             .indexContainer&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: column;</span><br><span class="line">  align-items: center;</span><br><span class="line">  background: #f0f;       /*只有16进制*/</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.avatarUrl&#123;         /*头像尺寸样式*/</span><br><span class="line">  width: 200rpx;</span><br><span class="line">  height:200rpx;</span><br><span class="line">  border-radius: 50%;      /*圆角*/</span><br><span class="line">  margin: 100rpx 0;</span><br><span class="line">&#125;</span><br><span class="line">.usrName&#123;</span><br><span class="line">  font-size: 32rpx;</span><br><span class="line">  margin: 100rpx 0;</span><br><span class="line">&#125;</span><br><span class="line">.hello&#123;</span><br><span class="line">  width:300rpx;</span><br><span class="line">  height: 80rpx;</span><br><span class="line">  line-height: 80rpx;</span><br><span class="line">  text-align: center;</span><br><span class="line">  font-size: 28rpx;</span><br><span class="line">  border: 1rpx solid #333;</span><br><span class="line">  border-radius:10rpx</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>index.json  </p>
-</li>
-<li><p>日志：<br>log/logs.json</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;usingComponens&quot;:&#123;&#125;,</span><br><span class="line">    &quot;navigationBarTitleText&quot;: &quot;日志“    //最顶部栏文字</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h3><p>bind：冒泡事件<br>catch：非冒泡</p>
-<h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx:if=&#x27;条件&#x27;</span><br><span class="line">wx:else</span><br><span class="line">wx:elif=&#x27;条件&#x27;</span><br></pre></td></tr></table></figure>
-<h3 id="微信小程序-bindtap-传参"><a href="#微信小程序-bindtap-传参" class="headerlink" title="微信小程序 bindtap 传参"></a>微信小程序 bindtap 传参</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//index.wxml</span><br><span class="line">&lt;view bindtap=&quot;changeIndex&quot; data-src1=&quot;我固定参数1&quot; data-src2=&quot;我是固定参数2&quot; &gt;</span><br><span class="line">  </span><br><span class="line">&lt;/view&gt;</span><br><span class="line">//index.js</span><br><span class="line">page(&#123;</span><br><span class="line"> data:&#123;</span><br><span class="line">  </span><br><span class="line"> &#125;,</span><br><span class="line"> changeIndex(e)&#123;</span><br><span class="line"> console.log(e.currentTarget.dataset.src1); //我是固定参数1</span><br><span class="line"> console.log(e.currentTarget.dataset.src2); //我是固定参数2</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">////如果需要传递动态的参数 例如遍历渲染时 想传递 index 给 changeIndex方法</span><br><span class="line">//index.wxml</span><br><span class="line">&lt;view wx:for=&quot;&#123;&#123;lists&#125;&#125;&quot; wx:for-index=&quot;index&quot; wx:key=&quot;index&quot; data-index=&quot;&#123;&#123;index&#125;&#125;&quot; &gt;</span><br><span class="line">&#123;&#123;item.title&#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">//index.js</span><br><span class="line">page(&#123;</span><br><span class="line"> data:&#123;</span><br><span class="line"> lists:[&#123;title:&#x27;参数1&#x27;,id:1&#125;,&#123;title:&#x27;参数2&#x27;,id:2&#125;]</span><br><span class="line"> &#125;,</span><br><span class="line"> changeIndex(e)&#123;</span><br><span class="line"> console.log(e.currentTarget.dataset.index);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><h3 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h3><ol>
-<li>导航栏</li>
-</ol>
-<p>在app.json文件内：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;pages&quot;:[</span><br><span class="line">        &quot;路径&quot;,</span><br><span class="line">        &quot;路径&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;window&quot;:&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;tabBar&quot;:&#123;</span><br><span class="line">        &quot;backgroundColor&quot;:&quot;#f6f6f5&quot;,</span><br><span class="line">        &quot;list&quot;:[&#123;</span><br><span class="line">            &quot;pagePath&quot;:&quot;路径&quot;,</span><br><span class="line">            &quot;text&quot;:&quot;文字&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;pagePath&quot;:&quot;路径&quot;,</span><br><span class="line">            &quot;text&quot;:&quot;文字&quot;</span><br><span class="line"> </span><br><span class="line">        &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>input</li>
-</ol>
-<p>在index.js文件夹内</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">page(&#123;</span><br><span class="line">    data:&#123;</span><br><span class="line">        first:&quot;&quot;,</span><br><span class="line">        second:&quot;&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    first:function(e)&#123;</span><br><span class="line">        var n=e.detail.value;</span><br><span class="line">        if(!isNaN(n))&#123;</span><br><span class="line">            this.setData(&#123;</span><br><span class="line">                first:n</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"> calculate:function()&#123;</span><br><span class="line">    var n=this.data.first+1;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">        second:n</span><br><span class="line">    &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;,</span><br><span class="line">....</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在index.wxml文件中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\&lt;input bindinput=&quot;first&quot; placeholder=&quot;文字&quot;&gt;\&lt;/input&gt;</span><br><span class="line">\&lt;input value=&quot;second&quot; placeholder=&quot;文字&quot;disabled&gt;\&lt;/input&gt;</span><br><span class="line">//placeholder：提示</span><br><span class="line">//bindiniput:输入</span><br><span class="line">//bindconfirm:回车触发事件</span><br><span class="line">//value:输入框内容</span><br><span class="line">\&lt;input class=&quot;search_input&quot; placeholder=&quot;Search&quot; bindinput=&quot;text_input&quot; bindconfirm=&quot;searchtap&quot;value=&quot;&#123;&#123;search_key&#125;&#125;&quot;/&gt;</span><br><span class="line"></span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>textarea</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//auto-focus: 自动聚焦</span><br><span class="line">//maxlength=&quot;-1&quot;:不限长度</span><br><span class="line"> \&lt;textarea auto-focus placeholder=&quot;Text&quot;maxlength=&quot;-1&quot; bindinput=&quot;text_input&quot; value=&quot;&#123;&#123;record&#125;&#125;&quot;/&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>选择照片</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">wx.chooseImage(&#123;</span><br><span class="line">     count: 1, //数量 默认9</span><br><span class="line">     sizeType: [&#x27;original&#x27;, &#x27;compressed&#x27;], //图片质量：原图，压缩</span><br><span class="line">     sourceType: [&#x27;album&#x27;, &#x27;camera&#x27;],      //拍照，相册</span><br><span class="line">     success: (res) =&gt; &#123;</span><br><span class="line">       //成功后把地址放入全局变量中,</span><br><span class="line">       app.data.picpath = res.tempFilePaths[0];</span><br><span class="line">       //跳转到图片裁剪界面，文字识别界面</span><br><span class="line">       wx.navigateTo(&#123;</span><br><span class="line">         url: &#x27;/pages/ocr/ocr&#x27;,</span><br><span class="line">       &#125;)</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>跳转界面 </li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//返回界面</span><br><span class="line">           wx.navigateBack(&#123;</span><br><span class="line">             delta: 0,     //0表示上一层</span><br><span class="line">           &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//关闭当前页面跳转到</span><br><span class="line"> wx.redirectTo(&#123;</span><br><span class="line">   url: &#x27;/pages/index/index&#x27;,</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取列表index</li>
-</ul>
-<p>wx:for控制属性绑定一个数组进行列表渲染。</p>
-<blockquote>
-<p>（当前项的下标变量名默认为 index，数组当前项的变量名默认为 item，改名：使用 wx:for-item=“jjj” 可以指定数组当前元素的变量名，<br>使用 wx:for-index =”aa“可以指定数组当前下标的变量名。<br>这个注意了。wx:key还是要加上的，不然一直报这个提示错误：如果列表中项目的位置会动态改变或者有新的项目添加到列表中，并且希望列表中的项目保持自己的特征和状态（如 &lt;input/&gt; 中的输入内容，&lt;switch/&gt; 的选中状态），需要使用 wx:key 来指定列表中项目的唯一的标识符。</p>
-</blockquote>
-<blockquote>
-<p>wx:key 的值以两种形式提供<br>字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。<br>保留关键字 *this 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如：<br>当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。如不提供 wx:key，会报一个 warning， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。）</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">wxml:</span><br><span class="line"> &lt;view class=&quot;touch-item &#123;&#123;item.isTouchMove ? &#x27;touch-move-active&#x27; : &#x27;&#x27;&#125;&#125;&quot; data-index=&quot;&#123;&#123;index&#125;&#125;&quot; bindtouchstart=&quot;touchstart&quot; bindtouchmove=&quot;touchmove&quot; wx:for=&quot;&#123;&#123;item1&#125;&#125;&quot;   wx:key=&quot;i&quot;&gt;</span><br><span class="line"> &lt;view class=&quot;del&quot; catchtap=&quot;del&quot; style=&quot;border-radius:20rpx 0 0 20rpx;&quot;  data-detail=&quot;&#123;&#123;item.content.text&#125;&#125; &quot; data-index=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;删除&lt;/view&gt;&lt;/view&gt;</span><br><span class="line">js:</span><br><span class="line"> //列表删除</span><br><span class="line">del(e)&#123;</span><br><span class="line">    this.data.item1.splice(e.currentTarget.dataset.index, 1)</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">     item1: this.data.item1</span><br><span class="line">    &#125;)&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>搜索</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0,j=0;i&lt;app.data.item2.length;i++)&#123;</span><br><span class="line">   if(app.data.item2[i].delete==0)&#123;</span><br><span class="line">     //模糊搜索</span><br><span class="line">  if(app.data.item2[i].content.text.indexOf(this.data.search_key)!=-1)&#123;</span><br><span class="line">    this.data.item1[j]=app.data.item2[i];</span><br><span class="line">    j++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>复制</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*#######复制功能########################*/</span><br><span class="line">copy: function (e) &#123;</span><br><span class="line">  var that = this;</span><br><span class="line">  wx.setClipboardData(&#123;</span><br><span class="line">   data: e.currentTarget.dataset.detail,</span><br><span class="line">   success: function (res) &#123;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>云数据库</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wx.cloud.init(&#123;         //初始化</span><br><span class="line">  env:&quot;cloud1-3gerlsz2682ceb37&quot;,</span><br><span class="line">  traceUser:true,</span><br><span class="line">&#125;);</span><br><span class="line">const db=wx.cloud.database();</span><br><span class="line"></span><br><span class="line">Page(&#123; </span><br><span class="line">    var that = this;//定义到这里，让that先获取到外面方法的this</span><br><span class="line">    db.collection(&#x27;my_data&#x27;).where(&#123;_openid:app.data.useropenid&#125;).get(&#123;</span><br><span class="line">      success: function(res) &#123;</span><br><span class="line">    //    that.setData(&#123;item2:res.data[0].array&#125;)</span><br><span class="line">    //用户数据放入全局变量中</span><br><span class="line">    app.data.item2=res.data[0].array; </span><br><span class="line">    </span><br><span class="line">    //更新数据 ，添加新条目</span><br><span class="line">  db.collection(&#x27;my_data&#x27;)</span><br><span class="line">  .doc(app.data.useropenid)     //_id</span><br><span class="line">  .update(&#123;</span><br><span class="line">    data:&#123;</span><br><span class="line">     array: _.unshift([&#123;</span><br><span class="line">      content:&#123;</span><br><span class="line">        text: this.data.record,</span><br><span class="line">        time: this.data.record_time,</span><br><span class="line">      &#125;,</span><br><span class="line">      isTouchMove:false,</span><br><span class="line">      delete:0</span><br><span class="line">    &#125;])&#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取时间</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">util.js:</span><br><span class="line">const formatTime = date =&gt; &#123;</span><br><span class="line">  const year = date.getFullYear()</span><br><span class="line">  const month = date.getMonth() + 1</span><br><span class="line">  const day = date.getDate()</span><br><span class="line">  const hour = date.getHours()</span><br><span class="line">  const minute = date.getMinutes()</span><br><span class="line">  const second = date.getSeconds()</span><br><span class="line"></span><br><span class="line">  return [year, month, day].map(formatNumber).join(&#x27;-&#x27;) + &#x27; &#x27; + [hour, minute, second].map(formatNumber).join(&#x27;:&#x27;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const formatNumber = n =&gt; &#123;</span><br><span class="line">  n = n.toString()</span><br><span class="line">  return n[1] ? n : &#x27;0&#x27; + n</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  formatTime: formatTime</span><br><span class="line">&#125;</span><br><span class="line"> js:</span><br><span class="line"> var util = require(&#x27;../../util/util.js&#x27;);</span><br><span class="line"> Page(&#123;</span><br><span class="line">  //获取时间</span><br><span class="line">  const _ = db.command;</span><br><span class="line">  var time = util.formatTime(new Date());</span><br><span class="line">  this.setData(&#123;</span><br><span class="line">    record_time:time</span><br><span class="line">  &#125;)</span><br><span class="line">  </span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>布局</li>
-</ol>
-<ul>
-<li>固定按钮</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">wxml:</span><br><span class="line">&lt;view class=&quot;round-click&quot; bindtap=&quot;new_goto&quot;&gt;+&lt;/view&gt;</span><br><span class="line">wxss:</span><br><span class="line">  .round-click&#123;</span><br><span class="line"></span><br><span class="line">    height: 120rpx;</span><br><span class="line"></span><br><span class="line">    width: 120rpx;</span><br><span class="line">    background-color:rgb(246, 246, 246,0.9);</span><br><span class="line">    border-radius: 100%;</span><br><span class="line">    position: fixed;</span><br><span class="line">    bottom: 100rpx;</span><br><span class="line">    right: 20rpx;</span><br><span class="line"></span><br><span class="line">    display: flex;</span><br><span class="line">    align-items: center;</span><br><span class="line">	font-size:70rpx;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    z-index: 9;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>wx.request发起 HTTPS 网络请求,data请求的参数,success接口调用成功的回调函数    </p>
-<p>AudioContext对象用于与audio组件绑定，通过它可以在逻辑层操作视图层的audio组件。可以用wx.createAudioContext(audioId)接口创建并返回audio的上下文对象AudioContext。</p>
-<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><ol>
-<li>利用小程序提供的 API 跳转：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。</span><br><span class="line">// 注意：调用 navigateTo 跳转时，调用该方法的页面会被加入堆栈，但是 redirectTo </span><br><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: &#x27;page/home/home?user_id=111&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">复制代码</span><br><span class="line">// 关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages() 获取当前的页面栈，决定需要返回几层。</span><br><span class="line"></span><br><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: &#x27;page/home/home?user_id=111&#x27;　　// 页面 A</span><br><span class="line">&#125;)</span><br><span class="line">wx.navigateTo(&#123;</span><br><span class="line">  url: &#x27;page/detail/detail?product_id=222&#x27;　　// 页面 B</span><br><span class="line">&#125;)</span><br><span class="line">// 跳转到页面 A</span><br><span class="line">wx.navigateBack(&#123;</span><br><span class="line">  delta: 2</span><br><span class="line">&#125;)</span><br><span class="line">复制代码</span><br><span class="line">// 关闭当前页面，跳转到应用内的某个页面。</span><br><span class="line">wx.redirectTo(&#123;</span><br><span class="line">  url: &#x27;page/home/home?user_id=111&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">// 跳转到tabBar页面（在app.json中注册过的tabBar页面），同时关闭其他非tabBar页面。</span><br><span class="line">wx.switchTab(&#123;</span><br><span class="line">  url: &#x27;page/index/index&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">// 关闭所有页面，打开到应用内的某个页面。</span><br><span class="line">wx.reLanch(&#123;</span><br><span class="line">  url: &#x27;page/home/home?user_id=111&#x27;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>原理：wxml中不能直接使用较高级的js语法，如‘.toFixed’，‘toString()’，但可以通过引入wxs模块实现效果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1.新建`filter.wxs`</span><br><span class="line">var filters = &#123;    </span><br><span class="line">    toFix: function (value) &#123;       </span><br><span class="line">        return value.toFixed(2) // 此处2为保留两位小数，保留几位小数，这里写几    </span><br><span class="line">    &#125;,</span><br><span class="line">    toStr: function (value) &#123;       </span><br><span class="line">        return value.toString()</span><br><span class="line">    &#125;,</span><br><span class="line">    toNum: function (value) &#123;       </span><br><span class="line">        return value.toNumber()</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">module.exports = &#123;   </span><br><span class="line">    toFix: filters.toFix,</span><br><span class="line">    toStr: filters.toStr,</span><br><span class="line">    toNum: filters.toNum,//暴露接口调用</span><br><span class="line">&#125;</span><br><span class="line">2.WXML中引入WXS</span><br><span class="line">&lt;wxs module=&quot;filters&quot; src=&quot;../../utils/filters.wxs&quot;&gt;&lt;/wxs&gt;</span><br><span class="line">3.在WXML中使用</span><br><span class="line">&lt;view&gt;</span><br><span class="line">&#123;&#123; filters.toFix(price) &#125;&#125;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">　　其他如toString(),toNumber()也可用此类似方法</span><br></pre></td></tr></table></figure>
-
-<h2 id="虚拟列表"><a href="#虚拟列表" class="headerlink" title="虚拟列表"></a>虚拟列表</h2><ul>
-<li>wxml<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">&lt;scroll-view id=&#x27;scrollView&#x27; style=&quot;margin-top:80rpx;height:calc(100% - 180rpx);&quot; scroll-y=&quot;true&quot;</span><br><span class="line">  scroll-with-animation=&quot;true&quot; enable-back-to-top=&quot;true&quot; refresher-enabled=&quot;true&quot; refresher-background=&quot;#f6f6f6&quot;</span><br><span class="line">  refresher-triggered=&quot;true&quot; bindscrolltolower=&quot;listScrollBottom&quot; bindscrolltoupper=&quot;listScrollTop&quot;</span><br><span class="line">  upper-threshold=&quot;&#123;&#123;listEmptyView+100&#125;&#125;&quot; lower-threshold=&quot;100&quot; scroll-top=&quot;&#123;&#123;currentListPosition&#125;&#125;&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;view wx:if=&quot;&#123;&#123;list.length==0&#125;&#125;&quot; style=&quot;text-align:center;color:gray;padding:40rpx;&quot;&gt;还没有动态哦，快去发一条吧(。・∀・)ノ&lt;/view&gt;</span><br><span class="line">  &lt;view id=&quot;listContainer&#123;&#123;index&#125;&#125;&quot; wx:for=&quot;&#123;&#123;list&#125;&#125;&quot; wx:key=&quot;index&quot;&gt;</span><br><span class="line">    &lt;view wx:if=&quot;&#123;&#123;item.length==undefind&#125;&#125;&quot; style=&quot;height:&#123;&#123;item.height&#125;&#125;px&quot;&gt;&lt;/view&gt;</span><br><span class="line">    &lt;view wx:else&gt;</span><br><span class="line">      &lt;view class=&quot;main_container&quot; wx:for=&quot;&#123;&#123;item&#125;&#125;&quot; wx:key=&quot;i&quot;&gt;</span><br><span class="line">        &lt;image style=&quot;width:100rpx;height:100rpx;border-radius:50%;&quot; src=&quot;&#123;&#123;item.avatar&#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;/image&gt;</span><br><span class="line">        &lt;view class=&quot;main_container_right&quot;&gt;</span><br><span class="line">          &lt;view&gt;</span><br><span class="line">            &lt;view class=&quot;main_container_name&quot;&gt;&#123;&#123;item.userName&#125;&#125; &lt;/view&gt;</span><br><span class="line">            &lt;view style=&quot;display:inline-block;1font-size:30rpx;font-weight:400;color:#536471;&quot;&gt; • &#123;&#123;item.createTime&#125;&#125;</span><br><span class="line">            &lt;/view&gt;</span><br><span class="line">          &lt;/view&gt;</span><br><span class="line">          &lt;!-- 文字 --&gt;</span><br><span class="line"></span><br><span class="line">          &lt;view style=&quot;padding-left:20rpx;&quot;&gt;&lt;text&gt;&#123;&#123;item.content&#125;&#125;&lt;/text&gt;</span><br><span class="line">            &lt;!-- 视频 --&gt;</span><br><span class="line">            &lt;view data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; wx:if=&quot;&#123;&#123;item.hasVideo&amp;&amp;item.url.length!=0&#125;&#125;&quot; bindtap=&quot;videoPreview&quot;</span><br><span class="line">              class=&quot;main_container_video&quot;&gt;</span><br><span class="line">              &lt;text style=&quot;font-size:100rpx;&quot; class=&quot;iconfont icon-play&quot;&gt;&lt;/text&gt;</span><br><span class="line">            &lt;/view&gt;</span><br><span class="line"></span><br><span class="line">            &lt;image wx:if=&quot;&#123;&#123;!item.hasVideo&amp;&amp;item.url.length==1&#125;&#125;&quot; bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot;</span><br><span class="line">              data-current=&quot;0&quot; mode=&quot;aspectFill&quot; class=&quot;main_container_img1&quot; src=&quot;&#123;&#123;item.url[0]&#125;&#125;&quot;&gt;</span><br><span class="line">            &lt;/image&gt;</span><br><span class="line">            &lt;view wx:elif=&quot;&#123;&#123;item.url.length==2&#125;&#125;&quot; class=&quot;main_container_img2&quot;&gt;</span><br><span class="line">              &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;0&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                src=&quot;&#123;&#123;item.url[0]&#125;&#125;&quot;&gt;</span><br><span class="line">              &lt;/image&gt;</span><br><span class="line">              &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;1&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                src=&quot;&#123;&#123;item.url[1]&#125;&#125;&quot;&gt;</span><br><span class="line">              &lt;/image&gt;</span><br><span class="line">            &lt;/view&gt;</span><br><span class="line">            &lt;view wx:elif=&quot;&#123;&#123;item.url.length==3&#125;&#125;&quot; class=&quot;main_container_img3&quot;&gt;</span><br><span class="line">              &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;0&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                src=&quot;&#123;&#123;item.url[0]&#125;&#125;&quot;&gt;</span><br><span class="line">              &lt;/image&gt;</span><br><span class="line">              &lt;view class=&quot;main_container_img3_item&quot;&gt;</span><br><span class="line">                &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;1&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                  src=&quot;&#123;&#123;item.url[1]&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">                &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;2&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                  src=&quot;&#123;&#123;item.url[2]&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">              &lt;/view&gt;</span><br><span class="line">            &lt;/view&gt;</span><br><span class="line">            &lt;view wx:elif=&quot;&#123;&#123;item.url.length==4&#125;&#125;&quot; class=&quot;main_container_img4&quot;&gt;</span><br><span class="line">              &lt;view class=&quot;main_container_img4_item&quot;&gt;</span><br><span class="line">                &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;0&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                  style=&quot; border-radius:  16rpx 0 0 0;&quot; src=&quot;&#123;&#123;item.url[0]&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">                &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;1&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                  style=&quot; border-radius:   0 16rpx 0 0;&quot; src=&quot;&#123;&#123;item.url[1]&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">              &lt;/view&gt;</span><br><span class="line">              &lt;view class=&quot;main_container_img4_item&quot;&gt;</span><br><span class="line">                &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;2&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                  style=&quot; border-radius:   0 0 0 16rpx ;&quot; src=&quot;&#123;&#123;item.url[2]&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">                &lt;image bindtap=&quot;imgPreview&quot; data-src=&quot;&#123;&#123;item.url&#125;&#125;&quot; data-current=&quot;3&quot; mode=&quot;aspectFill&quot;</span><br><span class="line">                  style=&quot; border-radius:   0  0 16rpx 0;&quot; src=&quot;&#123;&#123;item.url[3]&#125;&#125;&quot;&gt;&lt;/image&gt;</span><br><span class="line">              &lt;/view&gt;</span><br><span class="line">            &lt;/view&gt;</span><br><span class="line">            &lt;!--位置--&gt;</span><br><span class="line">            &lt;view style=&quot;margin-top:30rpx;&quot; wx:if=&quot;&#123;&#123;item.location&#125;&#125;&quot;&gt;&lt;text</span><br><span class="line">                style=&quot;font-size:25rpx;color:#536471&quot;&gt;位于：&lt;/text&gt;&lt;text</span><br><span class="line">                style=&quot;font-size:25rpx;color:#1d9bf0&quot;&gt;&#123;&#123;item.location&#125;&#125;&lt;/text&gt;&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">          &lt;/view&gt;</span><br><span class="line">          &lt;view class=&quot;main_container_bottom&quot;&gt;</span><br><span class="line">            &lt;view data-id=&quot;&#123;&#123;item.id&#125;&#125;&quot;&gt;&lt;text class=&quot;iconfont icon-comment&quot;&gt;&lt;/text&gt;&#123;&#123;item.comments?item.comments:&#x27;&#x27;&#125;&#125;</span><br><span class="line">            &lt;/view&gt;</span><br><span class="line">            &lt;view data-id=&quot;&#123;&#123;item.id&#125;&#125;&quot;&gt;&lt;text class=&quot;iconfont icon-favorite&quot;&gt;&lt;/text&gt;&lt;/view&gt;</span><br><span class="line">            &lt;view bindtap=&quot;likesUpgrade&quot; data-id=&quot;&#123;&#123;item.id&#125;&#125;&quot; data-likes=&quot;&#123;&#123;item.likes?item.likes:0&#125;&#125;&quot;&gt;&lt;text</span><br><span class="line">                class=&quot;iconfont icon-fabulous&quot;&gt;&lt;/text&gt;&#123;&#123;item.likes?item.likes:&#x27;&#x27;&#125;&#125;&lt;/view&gt;</span><br><span class="line">            &lt;view data-id=&quot;&#123;&#123;item.id&#125;&#125;&quot;&gt;&lt;text class=&quot;iconfont icon-share&quot;&gt;&lt;/text&gt;&lt;/view&gt;</span><br><span class="line">          &lt;/view&gt;</span><br><span class="line">        &lt;/view&gt;</span><br><span class="line"></span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/scroll-view&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>-js </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">    list: [</span><br><span class="line">      [],</span><br><span class="line">      [],</span><br><span class="line">      []</span><br><span class="line">    ],</span><br><span class="line">    keyword: &#x27;&#x27;,</span><br><span class="line">    pageNo: 1,</span><br><span class="line">    pageSize: 8,</span><br><span class="line">    total: 0,</span><br><span class="line">    listEmptyView: 0,</span><br><span class="line">    currentListPosition: 0,</span><br><span class="line">    scrollContainerHeight: 0,</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">  listScrollTop(e) &#123;</span><br><span class="line">    let pageNo = this.data.pageNo - 2;</span><br><span class="line">    if (pageNo &gt; 0) &#123;</span><br><span class="line">      this.getList(pageNo, this.data.pageSize);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  listScrollBottom(e) &#123;</span><br><span class="line">    let pageNo = this.data.pageNo + 1;</span><br><span class="line">    if (pageNo &lt;= Math.ceil(this.data.total / this.data.pageSize)) &#123;</span><br><span class="line">      this.getList(pageNo, this.data.pageSize);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  getList(pageNo, pageSize) &#123;</span><br><span class="line">    //获取列表</span><br><span class="line">    axios(&#123;</span><br><span class="line">      method: &quot;get&quot;,</span><br><span class="line">      header: &#123;</span><br><span class="line">        &#x27;Authorization&#x27;: wx.getStorageSync(&#x27;Authorization&#x27;),</span><br><span class="line">      &#125;,</span><br><span class="line">      url: &quot;/updates/public?pageNo=&quot; + pageNo + &quot;&amp;pageSize=&quot; + pageSize + &quot;&amp;keyword=&quot;</span><br><span class="line">    &#125;).then(res =&gt; &#123;</span><br><span class="line">      console.log(pageNo, pageSize, res);</span><br><span class="line">      if (res.data.code == 200) &#123;</span><br><span class="line">        var that = this</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          total: res.data.data.total,</span><br><span class="line">        &#125;)</span><br><span class="line">        if (pageNo &gt;= this.data.pageNo) &#123; //向后翻页</span><br><span class="line">          // wx.createSelectorQuery().select(&#x27;#listContainer1&#x27;).boundingClientRect(function (rect) &#123;&#125;).exec(function (re) &#123;</span><br><span class="line">          //   console.log(that.data.scrollContainerHeight);</span><br><span class="line">          //   that.setData(&#123;</span><br><span class="line">          //     currentListPosition: that.data.listEmptyView  + re[0].height-that.data.scrollContainerHeight+50</span><br><span class="line">          //   &#125;)</span><br><span class="line">          // &#125;)</span><br><span class="line">          if (pageNo &gt; 2) &#123; //大于两页清除前面</span><br><span class="line">            wx.createSelectorQuery().select(&#x27;#listContainer&#x27; + (pageNo - 1)).boundingClientRect(function (rect) &#123;&#125;).exec(function (re) &#123; //空view替代删除的条目</span><br><span class="line">              that.setData(&#123;</span><br><span class="line">                listEmptyView: that.data.listEmptyView + re[0].height,</span><br><span class="line">                pageNo: pageNo,</span><br><span class="line">                [`list[$&#123;pageNo-2&#125;]`]: &#123;</span><br><span class="line">                  height: re[0].height</span><br><span class="line">                &#125;,</span><br><span class="line">                [`list[$&#123;pageNo&#125;]`]: res.data.data.records,</span><br><span class="line">              &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            this.setData(&#123;</span><br><span class="line">              pageNo: pageNo,</span><br><span class="line">              [`list[$&#123;pageNo&#125;]`]: res.data.data.records,</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; else &#123; //向前翻页</span><br><span class="line">          if (this.data.list.length &gt; (pageNo + 1)) &#123;</span><br><span class="line">            this.setData(&#123;</span><br><span class="line">              [`list[$&#123;pageNo&#125;]`]: res.data.data.records,</span><br><span class="line">              [`list[$&#123;pageNo+2&#125;]`]: [],</span><br><span class="line">              pageNo: this.data.pageNo - 1</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            this.setData(&#123;</span><br><span class="line">              [`list[$&#123;pageNo&#125;]`]: res.data.data.records,</span><br><span class="line">              pageNo: this.data.pageNo - 1</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">          wx.createSelectorQuery().select(&#x27;#listContainer&#x27; + (pageNo)).boundingClientRect(function (rect) &#123;&#125;).exec(function (res) &#123; //缩短占位view高度</span><br><span class="line">      </span><br><span class="line">            that.setData(&#123;</span><br><span class="line">              listEmptyView: that.data.listEmptyView - res[0].height</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;)</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        wx.showToast(&#123;</span><br><span class="line">          title: res.data.message,</span><br><span class="line">          duration: 1000,</span><br><span class="line">          icon: &#x27;none&#x27;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, err =&gt; &#123;</span><br><span class="line">      if (err == 201) &#123;</span><br><span class="line">        wx.redirectTo(&#123;</span><br><span class="line">          url: &#x27;/pages/login/login&#x27;,</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>微信小程序中局部更新对象或者数组中的某个数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setData(&#123;</span><br><span class="line">[&#x27;list[0][1].a&#x27;]:0</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/01/01/20-11-22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -385,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 13:35:07" itemprop="dateModified" datetime="2021-06-28T13:35:07+08:00">2021-06-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -468,7 +269,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 13:35:07" itemprop="dateModified" datetime="2021-06-28T13:35:07+08:00">2021-06-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -548,7 +349,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-28 02:08:45" itemprop="dateModified" datetime="2021-08-28T02:08:45+08:00">2021-08-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -715,7 +516,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-19 16:17:06" itemprop="dateModified" datetime="2021-07-19T16:17:06+08:00">2021-07-19</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
 
           
@@ -729,7 +530,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="ubuntu系统安装"><a href="#ubuntu系统安装" class="headerlink" title="ubuntu系统安装"></a>ubuntu系统安装</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><h3 id="软碟通写入硬盘镜像"><a href="#软碟通写入硬盘镜像" class="headerlink" title="软碟通写入硬盘镜像"></a>软碟通写入硬盘镜像</h3><h3 id="重启进入安装界面"><a href="#重启进入安装界面" class="headerlink" title="重启进入安装界面"></a>重启进入安装界面</h3><table>
+          <h1 id="ubuntu-系统安装"><a href="#ubuntu-系统安装" class="headerlink" title="ubuntu 系统安装"></a>ubuntu 系统安装</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><h3 id="软碟通写入硬盘镜像"><a href="#软碟通写入硬盘镜像" class="headerlink" title="软碟通写入硬盘镜像"></a>软碟通写入硬盘镜像</h3><h3 id="重启进入安装界面"><a href="#重启进入安装界面" class="headerlink" title="重启进入安装界面"></a>重启进入安装界面</h3><table>
 <thead>
 <tr>
 <th>分区：</th>
@@ -738,43 +539,97 @@
 </thead>
 <tbody><tr>
 <td>/boot/efi/</td>
-<td>引导分区</td>
+<td>必须，引导分区，256mb-512mb</td>
 </tr>
 <tr>
 <td>/boot</td>
-<td>启动</td>
-</tr>
-<tr>
-<td>/</td>
-<td>根目录</td>
+<td>非必须，引导分区，ext4格式，256mb</td>
 </tr>
 <tr>
 <td>swap</td>
-<td>交换分区</td>
+<td>非必须，交换分区，虚拟内存，swap格式。内存小于 2g-&gt;2g，内存小于 8g-&gt;4g-8g，内存大于 8g-&gt;8g-16g，内存大于 16-&gt;16g</td>
+</tr>
+<tr>
+<td>/</td>
+<td>必须，主分区，用于安装系统和软件，ext4格式 ，30gb</td>
 </tr>
 <tr>
 <td>/home</td>
-<td>用户存放文件</td>
+<td>用户存放文件，ext4格式</td>
 </tr>
 </tbody></table>
+<blockquote>
+<p><code>/bin</code> <code>/sbin</code>  <code>/lib</code> <code>/etc</code> <code>/dev</code>这五个目录不要与根目录<code>/</code>所在分区分开。否则系统会不能正常引导</p>
+</blockquote>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
 <li>设置根用户密码：<br><code>sudo passwd</code></li>
-<li>换源<br><code>sudo vim /etc/apt/sources.list</code><br>粘贴<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#添加阿里源</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">#添加清华源,默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse multiverse</span><br></pre></td></tr></table></figure></li>
+<li>换源<br><code>sudo vim /etc/apt/sources.list</code><br>粘贴</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#添加阿里源</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">#添加清华源,默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse multiverse</span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>执行更新命令：<br><code>sudo apt-get update</code><br><code>sudo apt-get upgrade</code></li>
 </ul>
 <h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><ul>
 <li>vim</li>
 <li>neofetch</li>
 <li>ranger</li>
-<li>google chrome</li>
-<li>搜狗输入法</li>
-<li>网易云、QQ音乐</li>
+<li>rar解压软件<ul>
+<li>(<a target="_blank" rel="noopener" href="https://www.rarlab.com/download.htm">https://www.rarlab.com/download.htm</a>) 下载最新版本的linux版本rar软件</li>
+<li>解压后进入文件夹，执行<code>sudo make</code>命令</li>
+<li>解压：<code>rar x test.rar</code></li>
+<li>解压到当前目录：<code>rar e test.rar</code></li>
+<li>压缩：<code>rar a test.rar /test</code></li>
+<li>也可以使用<code>unrar</code>命令提取rar压缩文件</li>
+</ul>
+</li>
+<li>截图工具：<code>flameshot</code><ul>
+<li>安装：<code>sudo apt install flameshot</code></li>
+<li>使用：<code>flameshot gui</code></li>
+<li>添加快捷键：<code>/usr/bin/flameshot gui</code></li>
+</ul>
+</li>
+<li>远程连接windows软件:<code>rdesktop</code><ul>
+<li>安装：<code>sudo apt install rdesktop</code></li>
+<li>使用：<code>rdesktop xxx.xxx.xxx.xxx -u kk -p 123456</code></li>
+<li>参数：<ul>
+<li><code>-f</code>：全屏模式ctrl+alt+enter可切换全屏</li>
+<li><code>-a 16</code>： 16位色彩</li>
+<li><code>-z</code>：启用RDP数据流压缩</li>
+<li><code>-x lan</code>：使用局域网级别的图像质量</li>
+<li><code>-r clipboard</code>：运行共享剪切板</li>
+<li><code>-g 1920x1080+0+0</code>：分辨率,窗口位置</li>
+<li><code>-r sound:local</code>：同步声音</li>
+<li><code>-r disk:share=/home</code>：win10网上邻居虚拟一个映射盘，ubuntu挂载到远程主机上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>nodejs<ul>
+<li> 拷贝解压<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line">sudo <span class="built_in">mkdir</span> -p /usr/local/lib/nodejs</span><br><span class="line">sudo tar -xJvf node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>.tar.xz -C /usr/local/lib/nodejs </span><br></pre></td></tr></table></figure></li>
+<li>环境变量<code>~/.profile</code>：<code>export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH</code></li>
+<li>刷新：<code>source ~/.profile</code></li>
+</ul>
+</li>
+<li>google chrome<br><code>https://www.google.cn/intl/zh-CN/chrome/</code></li>
+<li>搜狗输入法(ubuntu20移除qt4,会出现死机情况)<br><code>https://shurufa.sogou.com/</code></li>
+<li>百度输入法</li>
+<li>谷歌输入法(推荐)<br><code>sudo apt install fcitx fcitx-googlepinyin</code></li>
+<li>网易云、QQ 音乐</li>
+<li>vscode</li>
+<li>vitrulbox</li>
+<li>unzip</li>
+<li>gzip</li>
+<li>mpv、vlc</li>
+<li>百度网盘</li>
+<li>有道翻译</li>
+<li>迅雷</li>
 <li>wps</li>
-<li>字体安装<br>windows的字体一般存放在c:/windows/fonts目录下，我拷贝到linux下的字体有：<br><code>simfang.ttf</code> 仿宋体<br><code>simhei.ttf </code>黑体<br><code>simkai.ttf </code>楷体</li>
+<li>wps字体安装<br>windows 的字体一般存放在 c:/windows/fonts 目录下，我拷贝到 linux 下的字体有：<br><code>simfang.ttf</code> 仿宋体<br><code>simhei.ttf </code>黑体<br><code>simkai.ttf </code>楷体</li>
 </ul>
 <p>宋体：<code>simsunb.ttf </code>和<code>simsun.ttc</code><br><code>simsun.ttf </code>宋体和新宋体，原文件名<code>simsun.ttc</code><br>微软雅黑：<code>msyhbd.ttf</code></p>
-<p>下载字体文件，然后复制到Linux系统中的/usr/share/fonts文件夹中。<br>修改权限，并更新字体缓存<br><code>sudo chmod -R 777  /usr/share/fonts/windows-font</code><br><code>cd /usr/share/fonts/windows-font</code></p>
-<p>执行以下命令,生成字体的索引信息：<br><code>sudo mkfontscale</code><br><code>sudo mkfontdir</code><br>运行fc-cache命令更新字体缓存。<br><code>sudo fc-cache -fv</code></p>
+<p>下载字体文件，然后复制到 Linux 系统中的/usr/share/fonts/win-font 文件夹中。<br>修改权限，并更新字体缓存<br><code>sudo chmod -R 777  /usr/share/fonts/win-font</code><br><code>cd /usr/share/fonts/win-font</code></p>
+<p>执行以下命令,生成字体的索引信息：<br><code>sudo mkfontscale</code><br><code>sudo mkfontdir</code><br>运行 fc-cache 命令更新字体缓存。<br><code>sudo fc-cache -fv</code></p>
 
       
     </div>
@@ -825,7 +680,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 19:16:09" itemprop="dateModified" datetime="2021-06-28T19:16:09+08:00">2021-06-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -940,7 +795,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 13:35:07" itemprop="dateModified" datetime="2021-06-28T13:35:07+08:00">2021-06-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2129,7 +1984,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 13:35:07" itemprop="dateModified" datetime="2021-06-28T13:35:07+08:00">2021-06-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2268,7 +2123,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-22 22:40:29" itemprop="dateModified" datetime="2023-02-22T22:40:29+08:00">2023-02-22</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2380,7 +2235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-28 13:35:07" itemprop="dateModified" datetime="2021-06-28T13:35:07+08:00">2021-06-28</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2417,6 +2272,251 @@
 <h3 id="任务管理"><a href="#任务管理" class="headerlink" title="任务管理:"></a>任务管理:</h3><p>在执行某些操作(比如复制一个大文件)时不能立即完成, 这在 ranger 中就是一个任务. 你可以停止, 启动某个任务, 也可以对某个任务设置优先级.</p>
 <p>w: 打开/关闭任务视图. 在w打开的任务视图中:<br>dd: 终止一个任务<br>J: 降低当前任务的优先级<br>K: 提升当前任务的优先级</p>
 <h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他:"></a>其他:</h3><dl><dt>zf      过滤器(如过滤pdf文件, zf+pdf,回车)<br>S       在当前目录打开终端<br>z(*)    改变设置, <em>表示在弹出选项中的选择<br>o(</em>)    改变排序方式<br>! / s   使用shell命令(！shell -w ls -hl %s,%s代表当前被选中的文件)</dt><dd>使用ranger命令(3? 查看可用命令)<br>:set colorscheme snow 设置颜色模式</dd></dl>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/08/22-23-45/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/08/22-23-45/" class="post-title-link" itemprop="url">Bootloader、Linux内核和文件系统编译</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-08 22:23:45" itemprop="dateCreated datePublished" datetime="2020-12-08T22:23:45+08:00">2020-12-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/experiments/" itemprop="url" rel="index"><span itemprop="name">experiments</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="交叉编译固件及系统测试"><a href="#交叉编译固件及系统测试" class="headerlink" title="交叉编译固件及系统测试"></a>交叉编译固件及系统测试</h1><h2 id="一、目的"><a href="#一、目的" class="headerlink" title="一、目的"></a>一、目的</h2><p>掌握虚拟机软件的安装和配置，掌握Ubuntu系统的安装和配置，掌握交叉编译器的安装，掌握Bootloader、Linux内核和文件系统编译方法，并进行硬件平台系统功能测试。</p>
+<h2 id="二、内容"><a href="#二、内容" class="headerlink" title="二、内容"></a>二、内容</h2><p>1、在Windowns环境下安装虚拟机功能软件，在虚拟机环境下安装Ubuntu系统并对系统进行配置。</p>
+<p>2、安装ARM交叉编译器，配置环境变量并功能测试。</p>
+<p>3、通过对Bootloader、Linux内核和文件系统源码交叉编译，生成系统固件，记录编译结果。</p>
+<p>4、调试串口连接硬件平台，对Bootloader和Linux环境下功能命令测试，记录测试结果。</p>
+<h2 id="三、设备"><a href="#三、设备" class="headerlink" title="三、设备"></a>三、设备</h2><p>1、主机电脑。2、ARM实验箱3、调试连接配件</p>
+<p><strong>四、实验步骤</strong></p>
+<p><strong>4.1</strong> Ubuntu系统的安装和配置</p>
+<p>下载Ubuntu系统16.04稳定版系统映像，下载地址：</p>
+<p><a target="_blank" rel="noopener" href="http://releases.ubuntu.com/16.04.6/?_ga=2.221103960.1120206391.1590239549-144656828.1590239549"><strong>http://releases.ubuntu.com/16.04.6/?_ga=2.221103960.1120206391.1590239549-144656828.1590239549</strong></a></p>
+<p>在虚拟机中安装Ubuntu系统，根据自己电脑的配置情况，选择CPU数量和内存大小，硬盘分区大小等配置，安装结果下图所示。(实验室提供华清远见开发环境参考，无需安装系统)</p>
+<p>在虚拟机中配置网络适配器模式，理解NAT模式和桥接模式的区别。</p>
+<p>开机进入Ubuntu系统，进行网络配置，掌握图形界面和命令行下配置网络方法，理解ifconfig命令的使用方法，</p>
+<p>命令行方式下，vmware虚拟机网络方式为桥接模式，为ubuntu系统配置一个静态的IP地址。假设使用的网络地址为192.168.100.X段，默认为ubuntu系统分配的IP地址是192.168.100.192 。</p>
+<p>如果想修改ubuntu系统的IP地址，可以执行以下命令，修改文件内容。</p>
+<p>linux@ubuntu64-vm:~$ sudo vim /etc/network/interfaces</p>
+<p>修改完成后，重新启动网络配置。</p>
+<p>linux@ubuntu64-vm:~$ sudo /etc/init.d/networking restart</p>
+<p><strong>4. 3 安装交叉编译器并测试</strong></p>
+<p>Ubuntu系统中包含四个版本的交叉编译器，位于路径/usr/local/toolchain目录下，不用解压直接使用即可。</p>
+<p>修改bash启动文件，执行以下命令：</p>
+<p>linux@ubuntu64-vm:~$ sudo vim /etc/bash.bashrc</p>
+<p>在bash.bashrc文件最后添加以下内容并保存退出：</p>
+<p>export PATH=$PATH:/usr/local/toolchain/toolchain-4.5.1/bin/</p>
+<p>再退出bash终端重新打开，执行ARM交叉编译器命令，获取如下信息说明交叉编译器配置完成。</p>
+<p>linux@ubuntu64-vm:~$ arm-none-linux-gnueabi-gcc -v</p>
+<p><strong>4.4 Linux内核编译</strong></p>
+<ol>
+<li>首先在虚拟机工作目录下用个人学号建立自己的工作目录。</li>
+</ol>
+<p>linux@ubuntu64-vm:~$ mkdir /home/linux/2018011222/ -p</p>
+<ol>
+<li><p>通过U盘或者共享目录将Linux内核源码压缩包拷贝到该目录里面。</p>
+</li>
+<li><p>拷贝后进入该目录，解压源码。</p>
+</li>
+</ol>
+<p>linux@ubuntu64-vm:~/2018011222$ tar xvf linux-3.4.39.tar.xz</p>
+<ol>
+<li><p>拷贝ext4文件系统制作工具到/usr/bin目录下。</p>
+</li>
+<li><p>进入内核源码目录，查看源码结构。</p>
+</li>
+<li><p>拷贝硬件平台的标准配置文件为.config文件。</p>
+</li>
+</ol>
+<p>$ cp arch/arm/configs/fs6818M4_defconfig_v5 .config</p>
+<ol>
+<li>执行内核配置命令进入内核配置界面。</li>
+</ol>
+<p>$ make menuconfig</p>
+<p>查看System type和Deviec Driver配置情况，</p>
+<ol>
+<li>保存退出后，编译内核，编译结果如下图。(比较耗时间，15分钟左右，可以先做4.5小节内容)</li>
+</ol>
+<p>$ make uImage</p>
+<ol>
+<li>执行脚本打包内核镜像，内核镜像文件为boot.img，文件格式是ext4格式，其中包括开机LOGO，ramdisk文件系统和uImage内核镜像，生成boot.img文件，</li>
+</ol>
+<p>$./mkboot.sh</p>
+<p><strong>4.5 Linux文件系统镜像制作</strong></p>
+<p>1、通过U盘或者共享目录将文件系统源码压缩包拷贝到/source目录下。</p>
+<p>解压文件系统源码压缩包，查看文件系统内容。</p>
+<p>$tar xvf rootfs.tar.xz</p>
+<p>3、将文件系统打包成ext4格式的镜像，生成system_linux.img文件</p>
+<p>$make_ext4fs -s system_linux.img -l 300M rootfs</p>
+<p><strong>4.6 Bootloader</strong>** 环境测试**</p>
+<ol>
+<li>连接实验箱5V电源线，连接终</li>
+</ol>
+<p>端调试串口线和以太网线到电脑主</p>
+<p>机，如右图。</p>
+<p>(USB OTA调试线烧写镜像用，</p>
+<p>可以不连)</p>
+<ol>
+<li>安装USB转串口驱动程序，确</li>
+</ol>
+<p>认当前电脑上使用的串口号，设置</p>
+<p>电脑上串口调试软件putty。</p>
+<ol>
+<li>上电启动实验箱，在终端中可以看到启动信息，快速按空格键进入bootloader环境。</li>
+<li>通过print、setenv、saveenv等命令测试bootloader，</li>
+</ol>
+<p><strong>4.7</strong>  <strong>嵌入式</strong>** Linux **<strong>环境测试</strong></p>
+<p>按复位键重启硬件系统，等待平台系统进入Linux环境，测试三条Linux命令，</p>
+<h1 id="应用程序开发"><a href="#应用程序开发" class="headerlink" title="应用程序开发"></a>应用程序开发</h1><h2 id="一、目的-1"><a href="#一、目的-1" class="headerlink" title="一、目的"></a>一、目的</h2><p>掌握NFS挂载Linux启动方法，掌握Ubuntu 环境下交叉编译应用程序的方法。</p>
+<h2 id="二、内容-1"><a href="#二、内容-1" class="headerlink" title="二、内容"></a>二、内容</h2><p>1、使用Vim或者Gedit 文本编译器编写C 语言、汇编语言程序和Makefile文件，分别计算公式3*x2+2*x3 的值和计算4个输入数的平均数。</p>
+<p>2、编写Makefile文件，通过make编译得到ARM 可执行程序formula 和average。</p>
+<p>3、配置实验箱启动方式为NFS启动，执行并测试程序。</p>
+<h2 id="三、设备-1"><a href="#三、设备-1" class="headerlink" title="三、设备"></a>三、设备</h2><p>1、主机电脑。2、ARM实验箱3、调试连接配件</p>
+<h2 id="四、原理"><a href="#四、原理" class="headerlink" title="四、原理"></a>四、原理</h2><p>掌握嵌入式Linux 应用开发所用到的一些常用工具，包括编辑工具vim、gedit、编译工具gcc、MakeFile 文件及调试工具gdb。</p>
+<p>正确掌握C 语言、汇编语言程序和Makefile编写语法和格式。</p>
+<h2 id="五、步骤"><a href="#五、步骤" class="headerlink" title="五、步骤"></a>五、步骤</h2><h3 id="5-1-计算公式3-x-2-2-x3"><a href="#5-1-计算公式3-x-2-2-x3" class="headerlink" title="5.1 计算公式3*x^2+2*x3"></a>5.1 计算公式3*x^2+2*x3</h3><p>1、在Linux 主机上进入自己学号的工作目录，执行如下命令。</p>
+<p>$cd /home/linux/2018011222/</p>
+<p>$mkdir exam1</p>
+<p>$cd exam1</p>
+<p>$ gedit formula.c</p>
+<ol>
+<li>在formula.c 程序里面输入以下内容。</li>
+</ol>
+<p>#include&amp;lt;stdio.h&amp;gt;</p>
+<p>extern int compute(int data);</p>
+<p>int main()</p>
+<p>{</p>
+<p>int x;</p>
+<p>printf(&quot;Input x=&quot;);</p>
+<p>scanf(&quot;%d&quot;,&amp;x);</p>
+<p>printf(&quot;The result is %d\n&quot;,compute(x));</p>
+<p>return 0;</p>
+<p>}</p>
+<p>3、执行命令生成汇编文件</p>
+<p>$ gedit compute.S</p>
+<p>包含计算3*x^2+2*x^3过程的汇编文件为compute.S内容如下:.text</p>
+<p>.align</p>
+<p>.global compute</p>
+<p>compute:</p>
+<p>stmfd sp!,{r4-r11,r14}</p>
+<p>mul r1,r0,r0</p>
+<p>mov r3,#2</p>
+<p>mul r2,r1,r3</p>
+<p>mov r3,#3</p>
+<p>mul r4,r1,r3</p>
+<p>mla r0,r2,r0,r4</p>
+<p>ldmfd sp!,{r4-r11,r15}</p>
+<p>4、自行编写Makefile 文件，实现对c语言程序和汇编程序的编译得到formula可执行程序。</p>
+<p>5、在exam1目录下执行make命令得到可执行文件formula</p>
+<p>$make</p>
+<p>6、应用strip工具精简可执行程序</p>
+<p>$arm-none-linux-gnueabi-strip formula</p>
+<p>7、file命令可以查看formula程序属性，截图保存formula程序信息到实验报告中。</p>
+<p>$file formula</p>
+<h3 id="5-2-计算4-个数的平均值"><a href="#5-2-计算4-个数的平均值" class="headerlink" title="5.2 计算4 个数的平均值"></a>5.2 计算4 个数的平均值</h3><p>1、在Linux 主机上建立工作目录，执行如下命令。</p>
+<p>$cd /home/linux/2018011222/</p>
+<p>$mkdir exam2</p>
+<p>$cd exam2</p>
+<p>$gedit avg.c</p>
+<ol>
+<li>在avg.c程序里面输入以下内容。</li>
+</ol>
+<p>#include&amp;lt;stdio.h&amp;gt;</p>
+<p>extern int average(int i, int j,int k,int l);</p>
+<p>int main(void)</p>
+<p>{</p>
+<p>int a,b,c,d,avr;</p>
+<p>printf(&quot;Input 4 number: \n&quot;);</p>
+<p>scanf(&quot;%d&quot;,&amp;a);</p>
+<p>scanf(&quot;%d&quot;,&amp;b);</p>
+<p>scanf(&quot;%d&quot;,&amp;c);</p>
+<p>scanf(&quot;%d&quot;,&amp;d);</p>
+<p>printf(&quot;a=%d,b=%d,c=%d,d=%d\n&quot;,a,b,c,d);</p>
+<p>avr= average(a,b,c,d);</p>
+<p>printf(&quot;(%d+,%d+,%d+,%d)/4=,%d\n&quot;,a,b,c,d,avr);</p>
+<p>return 0;</p>
+<p>}</p>
+<p>3、执行命令生成汇编文件</p>
+<p>$gedit average.S</p>
+<p>自行编写计算平均值的汇编文件average.S程序。</p>
+<p>4、自行编写Makefile 文件，实现对c语言程序和汇编程序的编译得到formula可执行程序。</p>
+<p>5、在exam2目录下执行make命令得到可执行文件average</p>
+<p>$make</p>
+<p>6、应用strip工具精简可执行程序</p>
+<p>$ arm-none-linux-gnueabi-strip average</p>
+<p>7、file命令可以查看average程序属性，</p>
+<p>$file average</p>
+<h3 id="5-3配置NFS启动方式"><a href="#5-3配置NFS启动方式" class="headerlink" title="5.3配置NFS启动方式"></a>5.3配置NFS启动方式</h3><p>1、设置好电脑主机的IP地址为192.168.100.192 ，配置好主机的NFS服务，默认是启动的。</p>
+<p>2、在Bootloader环境下配置启动参数， <strong>注意格式不要出错！！！</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FS6818# setenv serverip 192.168.100.192</span><br><span class="line"></span><br><span class="line">FS6818#setenv ipaddr 192.168.100.100</span><br><span class="line"></span><br><span class="line">FS6818# setenv gatewayip 192.168.100.1</span><br><span class="line"></span><br><span class="line">FS6818# setenv bootcmd ext4load mmc 2:1 0x48000000 uImage\;bootm 0x48000000</span><br><span class="line"></span><br><span class="line">FS6818# setenv bootargs root=/dev/nfs nfsroot=192.168.100.192:/source/rootfs console=ttySAC0,115200 init=/linuxrc ip=192.168.100.100:::::eth0:off</span><br><span class="line"></span><br><span class="line">FS6818# saveenv</span><br></pre></td></tr></table></figure>
+
+<p>保存后复位ARM实验箱，等待进入NFS启动的文件系统，如下图。</p>
+<p><img src="RackMultipart20210826-4-1d1i54l_html_ea6ac7d22326c54c.png"></p>
+<p>拷贝之前编译好的可执行文件formula和average到主机NFS共享目录下wsn6818bp_test，这样在putty终端中就可以运行测试结果，</p>
+<p><img src="RackMultipart20210826-4-1d1i54l_html_458a03b2d32152d4.png"></p>
+
       
     </div>
 
@@ -2507,13 +2607,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

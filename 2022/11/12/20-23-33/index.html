@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/1.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/1.png">
@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="selenium在使用selenium对当前窗口操作，报错no such window: target window already closed :model&#x3D;&quot;ruleForm&quot; 绑定的ruleForm值是否挂载成功并且操作的是否是这个表单。  :rules&#x3D;&quot;rules&quot; 校验的规则格式绑定的rules是否定义并且格式正确为对象数组。  el-form">
+  <meta name="description" content="selenium在使用 selenium 对当前窗口操作，报错 no such window: target window already closed关闭了新窗口后，浏览器默认显示了百度首页，但是当我们操作百度首页的时候，报了错误：没有窗口，目标窗口已关闭，因为当前窗口句柄在第二个上面，但是我们给他删掉了，在操作第二个，就会报错，将用 switch_to.window()句柄切换到第一个标签即可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="selenium">
 <meta property="og:url" content="http://www.baidu.com/2022/11/12/20-23-33/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="selenium在使用selenium对当前窗口操作，报错no such window: target window already closed :model&#x3D;&quot;ruleForm&quot; 绑定的ruleForm值是否挂载成功并且操作的是否是这个表单。  :rules&#x3D;&quot;rules&quot; 校验的规则格式绑定的rules是否定义并且格式正确为对象数组。  el-form">
+<meta property="og:description" content="selenium在使用 selenium 对当前窗口操作，报错 no such window: target window already closed关闭了新窗口后，浏览器默认显示了百度首页，但是当我们操作百度首页的时候，报了错误：没有窗口，目标窗口已关闭，因为当前窗口句柄在第二个上面，但是我们给他删掉了，在操作第二个，就会报错，将用 switch_to.window()句柄切换到第一个标签即可">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-12T12:23:33.000Z">
-<meta property="article:modified_time" content="2022-11-14T03:09:18.037Z">
+<meta property="article:modified_time" content="2023-04-21T15:02:31.665Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-14 11:09:18" itemprop="dateModified" datetime="2022-11-14T11:09:18+08:00">2022-11-14</time>
+                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,36 +213,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h1><h2 id="在使用selenium对当前窗口操作，报错no-such-window-target-window-already-closed"><a href="#在使用selenium对当前窗口操作，报错no-such-window-target-window-already-closed" class="headerlink" title="在使用selenium对当前窗口操作，报错no such window: target window already closed"></a>在使用selenium对当前窗口操作，报错no such window: target window already closed</h2><ul>
-<li><p><code>:model=&quot;ruleForm&quot;</code> 绑定的<code>ruleForm</code>值是否挂载成功并且操作的是否是这个表单。</p>
-</li>
-<li><p><code>:rules=&quot;rules&quot;</code> 校验的规则格式绑定的<code>rules</code>是否定义并且格式正确为对象数组。</p>
-</li>
-<li><p><code>el-form-item中的</code>prop=”name”<code>是否和rules中的</code>name: [ { required: true, message: ‘请输入活动名称’, trigger: ‘blur’ }, ], <code>的名称一致，两个</code>name`相同的，element的校验就是根据这个prop找对应的输入框的。</p>
-</li>
-<li><p><code>&lt;el-input v-model=&quot;ruleForm.name&quot;&gt;&lt;/el-input&gt;</code> 的<code>v-model=&quot;ruleForm.name&quot;</code>确保对象<code>ruleForm</code>中有<code>name</code>这个属性！</p>
-</li>
+        <h1 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h1><h2 id="在使用-selenium-对当前窗口操作，报错-no-such-window-target-window-already-closed"><a href="#在使用-selenium-对当前窗口操作，报错-no-such-window-target-window-already-closed" class="headerlink" title="在使用 selenium 对当前窗口操作，报错 no such window: target window already closed"></a>在使用 selenium 对当前窗口操作，报错 no such window: target window already closed</h2><p>关闭了新窗口后，浏览器默认显示了百度首页，但是当我们操作百度首页的时候，报了错误：没有窗口，目标窗口已关闭，因为当前窗口句柄在第二个上面，但是我们给他删掉了，在操作第二个，就会报错，将用 switch_to.window()句柄切换到第一个标签即可</p>
+<h2 id="selenium-中执行使用-js-脚本"><a href="#selenium-中执行使用-js-脚本" class="headerlink" title="selenium 中执行使用 js 脚本"></a>selenium 中执行使用 js 脚本</h2><ul>
+<li>使用 JS 参数传参方式<br>在使用 Javascript 语句时，还可以动态传入参数或元素对象，Js 语句中使用占位符“argument[n]”来表示取第几个参数，如</li>
 </ul>
-<h2 id="selenium-中执行使用js脚本"><a href="#selenium-中执行使用js脚本" class="headerlink" title="selenium 中执行使用js脚本"></a>selenium 中执行使用js脚本</h2><ul>
-<li>使用JS参数传参方式<br>在使用Javascript语句时，还可以动态传入参数或元素对象，Js 语句中使用占位符“argument[n]”来表示取第几个参数，如</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js = &quot;arguments[0].setAttribute(&#x27;style&#x27;, arguments[1]);</span><br><span class="line">element = driver.find_element_by_id(&quot;kw&quot;)</span><br><span class="line">style = &quot;background: red; border: 2px solid yellow;&quot;</span><br><span class="line">driver.execute_script(js, element, style)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js = <span class="string">&quot;arguments[0].setAttribute(&#x27;style&#x27;, arguments[1]);</span></span><br><span class="line"><span class="string">element = driver.find_element_by_id(&quot;</span>kw<span class="string">&quot;)</span></span><br><span class="line"><span class="string">style = &quot;</span><span class="attr">background</span>: red; <span class="attr">border</span>: 2px solid yellow;<span class="string">&quot;</span></span><br><span class="line"><span class="string">driver.execute_script(js, element, style)</span></span><br></pre></td></tr></table></figure>
+
 <p>这里埋设了两个参数，一个是元素对象，另一个是样式字符串。</p>
 <ul>
-<li>获取js返回值<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let a=driver.execute_script(&#x27;return arguments[0].value&#x27;)</span><br></pre></td></tr></table></figure></li>
+<li>获取 js 返回值</li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = driver.<span class="title function_">execute_script</span>(<span class="string">&quot;return arguments[0].value&quot;</span>);</span><br></pre></td></tr></table></figure>
+
 <h2 id="selenium-运行报错：element-not-interactable"><a href="#selenium-运行报错：element-not-interactable" class="headerlink" title="selenium 运行报错：element not interactable"></a>selenium 运行报错：element not interactable</h2><ul>
-<li>解决一：<br>写自动化时，没有考虑到等待时间，有时候代码运行过快，web界面反应不过来，在这个报错的元素前添加一个等待时间，根据个人时间定等待时间<br>这个元素被隐藏了</li>
-<li>解决二:</li>
+<li>解决一：<br>写自动化时，没有考虑到等待时间，有时候代码运行过快，web 界面反应不过来，在这个报错的元素前添加一个等待时间，根据个人时间定等待时间<br>这个元素被隐藏了</li>
+<li>解决二:<ol>
+<li>打个比方，有一个退出按钮，你找到元素了，也定位了，但无法 click（），这个可能是被隐藏了，要将鼠标显示放在这个界面的位置，元素才能被找到 click（）</li>
+<li>元素被隐藏了，web 界面 css 元素被隐藏</li>
+</ol>
+</li>
 </ul>
-<p>1.打个比方，有一个退出按钮，你找到元素了，也定位了，但无法click（），这个可能是被隐藏了，要将鼠标显示放在这个界面的位置，元素才能被找到click（）<br>2.元素被隐藏了，web界面css元素被隐藏</p>
-<h2 id="Selenium如何使用句柄方式切换窗口"><a href="#Selenium如何使用句柄方式切换窗口" class="headerlink" title="Selenium如何使用句柄方式切换窗口"></a>Selenium如何使用句柄方式切换窗口</h2><p>获取当前页面句柄：driver.current_window_handle</p>
-<p>　　· 获取所有页面句柄：driver.window_handles</p>
-<p>　　通过句柄，我们可以进行窗口的切换。</p>
-<p>　　· 切换窗口：<br>  driver.switch_to.window(handle)</p>
-<h2 id="element获取table表格行数据，可通过template设置slot-scope-“scope”属性，在传参时使用scope-row-xxxx拿到当前行的数据"><a href="#element获取table表格行数据，可通过template设置slot-scope-“scope”属性，在传参时使用scope-row-xxxx拿到当前行的数据" class="headerlink" title="element获取table表格行数据，可通过template设置slot-scope=“scope”属性，在传参时使用scope.row.xxxx拿到当前行的数据"></a>element获取table表格行数据，可通过template设置slot-scope=“scope”属性，在传参时使用scope.row.xxxx拿到当前行的数据</h2><h2 id="当只有⼀个el-input的时候，可以⽤elementUI的⾃带的回车键触发提交事件但是有时候会同时触发刷新页⾯，这样可以在el-form上添加-submit-native-prevent来解决"><a href="#当只有⼀个el-input的时候，可以⽤elementUI的⾃带的回车键触发提交事件但是有时候会同时触发刷新页⾯，这样可以在el-form上添加-submit-native-prevent来解决" class="headerlink" title="当只有⼀个el-input的时候，可以⽤elementUI的⾃带的回车键触发提交事件但是有时候会同时触发刷新页⾯，这样可以在el-form上添加@submit.native.prevent来解决"></a>当只有⼀个el-input的时候，可以⽤elementUI的⾃带的回车键触发提交事件但是有时候会同时触发刷新页⾯，这样可以在el-form上添加@submit.native.prevent来解决</h2><h2 id="element-el-input的autofocus失效问题解决"><a href="#element-el-input的autofocus失效问题解决" class="headerlink" title="element el-input的autofocus失效问题解决"></a>element el-input的autofocus失效问题解决</h2><blockquote>
-<p>autofocus是input的原生属性,饿了么组件也支持这种方法, 但是input外面还有其他组件, 导致autofocus失效, 只能手动调用focus方法:组件上绑定ref，手动调用focus()</p>
-</blockquote>
+<h2 id="Selenium-如何使用句柄方式切换窗口"><a href="#Selenium-如何使用句柄方式切换窗口" class="headerlink" title="Selenium 如何使用句柄方式切换窗口"></a>Selenium 如何使用句柄方式切换窗口</h2><p>获取当前页面句柄：<code>driver.current_window_handle</code></p>
+<p>· 获取所有页面句柄：<code>driver.window_handles</code></p>
+<p>通过句柄，我们可以进行窗口的切换。</p>
+<p>· 切换窗口：<br><code>driver.switch_to.window(handle)</code></p>
 
     </div>
 
@@ -323,7 +317,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#selenium"><span class="nav-number">1.</span> <span class="nav-text">selenium</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E4%BD%BF%E7%94%A8selenium%E5%AF%B9%E5%BD%93%E5%89%8D%E7%AA%97%E5%8F%A3%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%8A%A5%E9%94%99no-such-window-target-window-already-closed"><span class="nav-number">1.1.</span> <span class="nav-text">在使用selenium对当前窗口操作，报错no such window: target window already closed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selenium-%E4%B8%AD%E6%89%A7%E8%A1%8C%E4%BD%BF%E7%94%A8js%E8%84%9A%E6%9C%AC"><span class="nav-number">1.2.</span> <span class="nav-text">selenium 中执行使用js脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selenium-%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99%EF%BC%9Aelement-not-interactable"><span class="nav-number">1.3.</span> <span class="nav-text">selenium 运行报错：element not interactable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selenium%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%8F%A5%E6%9F%84%E6%96%B9%E5%BC%8F%E5%88%87%E6%8D%A2%E7%AA%97%E5%8F%A3"><span class="nav-number">1.4.</span> <span class="nav-text">Selenium如何使用句柄方式切换窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#element%E8%8E%B7%E5%8F%96table%E8%A1%A8%E6%A0%BC%E8%A1%8C%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%8F%AF%E9%80%9A%E8%BF%87template%E8%AE%BE%E7%BD%AEslot-scope-%E2%80%9Cscope%E2%80%9D%E5%B1%9E%E6%80%A7%EF%BC%8C%E5%9C%A8%E4%BC%A0%E5%8F%82%E6%97%B6%E4%BD%BF%E7%94%A8scope-row-xxxx%E6%8B%BF%E5%88%B0%E5%BD%93%E5%89%8D%E8%A1%8C%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">1.5.</span> <span class="nav-text">element获取table表格行数据，可通过template设置slot-scope&#x3D;“scope”属性，在传参时使用scope.row.xxxx拿到当前行的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%93%E5%8F%AA%E6%9C%89%E2%BC%80%E4%B8%AAel-input%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%8F%AF%E4%BB%A5%E2%BD%A4elementUI%E7%9A%84%E2%BE%83%E5%B8%A6%E7%9A%84%E5%9B%9E%E8%BD%A6%E9%94%AE%E8%A7%A6%E5%8F%91%E6%8F%90%E4%BA%A4%E4%BA%8B%E4%BB%B6%E4%BD%86%E6%98%AF%E6%9C%89%E6%97%B6%E5%80%99%E4%BC%9A%E5%90%8C%E6%97%B6%E8%A7%A6%E5%8F%91%E5%88%B7%E6%96%B0%E9%A1%B5%E2%BE%AF%EF%BC%8C%E8%BF%99%E6%A0%B7%E5%8F%AF%E4%BB%A5%E5%9C%A8el-form%E4%B8%8A%E6%B7%BB%E5%8A%A0-submit-native-prevent%E6%9D%A5%E8%A7%A3%E5%86%B3"><span class="nav-number">1.6.</span> <span class="nav-text">当只有⼀个el-input的时候，可以⽤elementUI的⾃带的回车键触发提交事件但是有时候会同时触发刷新页⾯，这样可以在el-form上添加@submit.native.prevent来解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#element-el-input%E7%9A%84autofocus%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-number">1.7.</span> <span class="nav-text">element el-input的autofocus失效问题解决</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#selenium"><span class="nav-number">1.</span> <span class="nav-text">selenium</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E4%BD%BF%E7%94%A8-selenium-%E5%AF%B9%E5%BD%93%E5%89%8D%E7%AA%97%E5%8F%A3%E6%93%8D%E4%BD%9C%EF%BC%8C%E6%8A%A5%E9%94%99-no-such-window-target-window-already-closed"><span class="nav-number">1.1.</span> <span class="nav-text">在使用 selenium 对当前窗口操作，报错 no such window: target window already closed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selenium-%E4%B8%AD%E6%89%A7%E8%A1%8C%E4%BD%BF%E7%94%A8-js-%E8%84%9A%E6%9C%AC"><span class="nav-number">1.2.</span> <span class="nav-text">selenium 中执行使用 js 脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selenium-%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99%EF%BC%9Aelement-not-interactable"><span class="nav-number">1.3.</span> <span class="nav-text">selenium 运行报错：element not interactable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selenium-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%8F%A5%E6%9F%84%E6%96%B9%E5%BC%8F%E5%88%87%E6%8D%A2%E7%AA%97%E5%8F%A3"><span class="nav-number">1.4.</span> <span class="nav-text">Selenium 如何使用句柄方式切换窗口</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -344,13 +338,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
