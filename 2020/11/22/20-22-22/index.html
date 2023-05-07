@@ -28,7 +28,7 @@
 <meta property="og:description" content="archlinux 安装制作u盘 rufus 进入bios,选择u盘启动  连接wifi 查看wifi设备：ip link  启用设备：ip link set 设备 up  扫描查看wifi名称：iwlist 设备 scan | grep ESSID   或者使用 iw dev scan .... 或者使用usb网络，安装系统后记得安装驱动pacman -S usbmuxd,live系统中自带有所">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-22T12:22:22.000Z">
-<meta property="article:modified_time" content="2023-04-21T15:02:31.658Z">
+<meta property="article:modified_time" content="2023-05-07T06:16:45.457Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-21 23:02:31" itemprop="dateModified" datetime="2023-04-21T23:02:31+08:00">2023-04-21</time>
+                <time title="修改时间：2023-05-07 14:16:45" itemprop="dateModified" datetime="2023-05-07T14:16:45+08:00">2023-05-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -428,7 +428,11 @@
 <li>配置: <code>vim .xinitrc</code>，添加<code>exec gnome-session</code></li>
 </ul>
 </li>
-<li>lxde(轻量)：</li>
+<li>lxde(轻量)：<ul>
+<li>安装:<code>pacman -S lxde</code>或最少需要安装 <code>lxde-common</code>包, <code>lxsession</code>包, <code>openbox</code>包(或者其他窗口管理器）。</li>
+<li>配置: <code>vim .xinitrc</code>，添加<code>exec startlxde</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -567,6 +571,10 @@
 <td>删除软件，和其他没有被引用的依赖</td>
 </tr>
 <tr>
+<td>pacman -Rdd 包名</td>
+<td>删除软件，及依赖它的软件</td>
+</tr>
+<tr>
 <td>pacman -Sc</td>
 <td>清空软件包缓存</td>
 </tr>
@@ -615,58 +623,40 @@
 </tr>
 </tbody></table>
 <h2 id="其他软件"><a href="#其他软件" class="headerlink" title="其他软件"></a>其他软件</h2><h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><ul>
-<li><p><a target="_blank" rel="noopener" href="http://listen1.github.io/listen1/">listen1</a></p>
-<h3 id="pacman"><a href="#pacman" class="headerlink" title="pacman"></a>pacman</h3></li>
-<li><p>男人：<code>man</code></p>
-</li>
-<li><p>屏幕上显示键盘：<code>screenkey</code></p>
-</li>
-<li><p>快照保存：<code>timeshift</code></p>
-</li>
-<li><p>快速启动：<code>albert</code></p>
-</li>
-<li><p>文件管理器：<code>ranger</code></p>
-</li>
-<li><p>电脑参数：<code>neofetch</code></p>
-</li>
-<li><p>挂载ntfs：<code>ntfs-3g</code></p>
-</li>
-<li><p>办公：<code>libreoffice-fresh</code></p>
-</li>
-<li><p>火狐：<code>firefox</code></p>
-</li>
-<li><p>截图：<code>flameshot</code></p>
-</li>
-<li><p>看图：<code>feh</code></p>
-</li>
-<li><p>播放器：<code>mpv</code>,<code>vlc</code></p>
-</li>
-<li><p>录屏：<code>obs-studio</code>( 确保安装了<code>pipewire</code>,<code>libpipewire02</code>，<code>xdg-desktop-portal-wlr</code>)</p>
-</li>
-<li><p>虚拟摄像头：<code>v4l2loopback</code>（可用在直播软件中实现共享屏幕）</p>
-<ul>
+<li><a target="_blank" rel="noopener" href="http://listen1.github.io/listen1/">listen1</a></li>
+</ul>
+<h3 id="pacman"><a href="#pacman" class="headerlink" title="pacman"></a>pacman</h3><ul>
+<li>男人：<code>man</code></li>
+<li>屏幕上显示键盘：<code>screenkey</code></li>
+<li>快照保存：<code>timeshift</code></li>
+<li>快速启动：<code>albert</code></li>
+<li>文件管理器：<code>ranger</code></li>
+<li>电脑参数：<code>neofetch</code></li>
+<li>挂载ntfs：<code>ntfs-3g</code></li>
+<li>办公：<code>libreoffice-fresh</code></li>
+<li>火狐：<code>firefox</code></li>
+<li>截图：<code>flameshot</code></li>
+<li>看图：<code>feh</code></li>
+<li>播放器：<code>mpv</code>,<code>vlc</code></li>
+<li>录屏：<code>obs-studio</code>( 确保安装了<code>pipewire</code>,<code>libpipewire02</code>，<code>xdg-desktop-portal-wlr</code>)</li>
+<li>虚拟摄像头：<code>v4l2loopback</code>（可用在直播软件中实现共享屏幕）<ul>
 <li>移除虚拟相机命令：<code>sudo modprobe --remove v4l2loopback</code></li>
 <li>添加虚拟相机命令：<code>sudo modprobe v4l2loopback devices=2</code></li>
 </ul>
 </li>
 </ul>
 <h3 id="aur"><a href="#aur" class="headerlink" title="aur"></a><a target="_blank" rel="noopener" href="https://aur.archlinux.org/">aur</a></h3><ul>
-<li><p>谷歌:<code>google-chrome</code>（root用户无法启动）</p>
-</li>
-<li><p>markdown:<code>remarkable</code></p>
-</li>
-<li><p>vscode:<code>visual-studio-code-bin</code>（root用户无法启动）</p>
-</li>
-<li><p>wps：<code>wps-office</code></p>
-</li>
-<li><p>qq:<code>linuxqq</code></p>
-</li>
-<li><p>腾讯会议：<code>wemeet-bin</code></p>
-</li>
-<li><p>微信：<code>wechat-uos</code></p>
-</li>
-<li><p>飞书：<code>feishu-bin</code></p>
-<h2 id="触摸板"><a href="#触摸板" class="headerlink" title="触摸板"></a>触摸板</h2></li>
+<li>谷歌:<code>google-chrome</code>（root用户无法启动）</li>
+<li>markdown:<code>typora-free-cn</code>,<code>remarkable</code></li>
+<li>vscode:<code>visual-studio-code-bin</code>（root用户无法启动）</li>
+<li>wps：<code>wps-office</code></li>
+<li>qq:<code>linuxqq</code></li>
+<li>腾讯会议：<code>wemeet-bin</code></li>
+<li>微信：<code>wechat-uos</code></li>
+<li>飞书：<code>feishu-bin</code></li>
+<li>迅雷：<code>xunlei-bin</code></li>
+</ul>
+<h2 id="触摸板"><a href="#触摸板" class="headerlink" title="触摸板"></a>触摸板</h2><ul>
 <li><p>安装驱动：<code>libinput</code>，<code>xf86-input-libinput</code></p>
 </li>
 <li><p>配置软连接：<code>ln -s /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf/40-libinput.conf</code></p>
@@ -710,6 +700,43 @@
 <li>更新数据库：<code>sudo debtap -u</code></li>
 <li>转化deb包：<code>debtap xxx.deb</code></li>
 <li>安装：<code>sudo pacman -U xxxx.pkg</code></li>
+</ul>
+<h3 id="文件管理工具"><a href="#文件管理工具" class="headerlink" title="文件管理工具"></a>文件管理工具</h3><h4 id="dolphin"><a href="#dolphin" class="headerlink" title="dolphin"></a>dolphin</h4><p>安装： <code>sudo pacman -S dolphin breeze</code><br> 文件预览：</p>
+<ul>
+<li>kdegraphics-thumbnailers: Image files, PDFs and Blender application files.</li>
+<li>kimageformats: Gimp .xcf files</li>
+<li>libheif: HEIF files</li>
+<li>qt5-imageformats : .webp, .tiff, .tga, .jp2 files</li>
+<li>resvgAUR: Fast and accurate SVG image thumbnails</li>
+<li>kdesdk-thumbnailers: Plugins for the thumbnailing system</li>
+<li>ffmpegthumbs: Video files (based on ffmpeg)</li>
+<li>raw-thumbnailerAUR: .raw files</li>
+<li>taglib : Audio files</li>
+<li>kde-thumbnailer-apkAUR: Android package files<br>Enable preview showing of required file type in<code>Settings &gt; Configure Dolphin... &gt; General &gt; Previews.</code></li>
+</ul>
+<p>To enable <code>heif/heic image thumbnails</code>, edit <code>/usr/share/kservices5/imagethumbnail.desktop</code> by adding <code>image/heif;</code> to the line which starts with <code>MimeType=</code>.</p>
+<p>Note that heif/heic thumbnails will be enabled by default on versions of <code>kio-extras</code> after 21.12</p>
+<h4 id="pcmanfm"><a href="#pcmanfm" class="headerlink" title="pcmanfm"></a>pcmanfm</h4><h3 id="远程控制windowns"><a href="#远程控制windowns" class="headerlink" title="远程控制windowns"></a>远程控制windowns</h3><ul>
+<li><code>rdesktop</code><br>在此之前需要让Windows支持远程协助，可以在系统属性-远程中开启：【允许远程协助连接这台计算机】+【允许远程连接到此计算机】，如果勾选了【仅运行运行使用网络级别身份验证的远程桌面单位计算机连接】，那么 rdesktop 无法连接，报错信息：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Core(warning): Certificate received from server is NOT trusted by this system, an exception has been added by the user to trust this specific certificate.</span><br><span class="line">Failed to initialize NLA, <span class="keyword">do</span> you have correct Kerberos TGT initialized ?</span><br><span class="line">Failed to connect, CredSSP required by server (check <span class="keyword">if</span> server has disabled old TLS versions, <span class="keyword">if</span> <span class="built_in">yes</span> use -V option).</span><br></pre></td></tr></table></figure>
+
+<p>解决方法有两种：1）不勾选该选项；2）使用 xfreerdp<br>rdesktop 192.168.xxx.xxx 默认选项就可以远程桌面连接Windows（需要输入用户口令）。<br>rdesktop一些常用选项：<br>-u : Windows用户<br>-p : Windows口令（非PIN）<br>-g : 窗口大小，如 1366x768<br>-f :全屏<br>-a : 色彩深度 ：8, 15, 16, 24, 32<br>-r sound ：支持声音<br>-r clipboard：支持剪切板<br>-r disk： 远程连接时挂载本地文件目录</p>
+<p>详细信息 man rdesktop</p>
+<ul>
+<li><code>freerdp</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/v:&lt;server&gt;[:port] 默认端口 3389</span><br><span class="line">/w、/h 窗口大小</span><br><span class="line">/size:&lt;width&gt;x&lt;height&gt; 窗口大小，如 1024x768</span><br><span class="line">/f 全屏</span><br><span class="line">/workarea Use available work area</span><br><span class="line">/bpp:&lt;depth&gt; 色彩深度 </span><br><span class="line">/u:&lt;user&gt;[@&lt;domain&gt;] </span><br><span class="line">/p:&lt;password&gt;</span><br><span class="line">/d:&lt;domain&gt; 域，可选</span><br><span class="line">+fonts 平滑字体</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>共享盘或者传输文件</p>
+<ul>
+<li><p>对于xfreerdp 指定 /drive:<br>xfreerdp /drive:SharedDir,/home/user/SharedDir /u:user /p:password /v:ip</p>
+</li>
+<li><p>对于rdesktop 指定 -r disk:<br>rdesktop -r disk:SharedDir=/home/user/SharedDir ip<br>其中 SharedDir 是随便输入的名字，接着是共享文件夹的本地绝对路径</p>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>xrandr<br>xrandr –output screen –mode 1280x800<br>feh –randomize –bg-fill /地址<br>picom</p>
 <h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><ul>
@@ -808,7 +835,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#archlinux-%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">archlinux 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E4%BD%9Cu%E7%9B%98"><span class="nav-number">1.1.</span> <span class="nav-text">制作u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wifi"><span class="nav-number">1.2.</span> <span class="nav-text">连接wifi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wpa%E5%8A%A0%E5%AF%86wifi"><span class="nav-number">1.2.1.</span> <span class="nav-text">连接wpa加密wifi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E8%83%BD%E4%B8%8A%E7%BD%91"><span class="nav-number">1.3.</span> <span class="nav-text">检查是否能上网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F"><span class="nav-number">1.4.</span> <span class="nav-text">更新系统时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.</span> <span class="nav-text">分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8cgdisk%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.1.</span> <span class="nav-text">使用cgdisk分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8fdisk%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.2.</span> <span class="nav-text">使用fdisk分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%BAext4"><span class="nav-number">1.6.</span> <span class="nav-text">根目录格式化为ext4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80swap%E5%88%86%E5%8C%BA"><span class="nav-number">1.7.</span> <span class="nav-text">打开swap分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9pacman%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text">更改pacman配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="nav-number">1.9.</span> <span class="nav-text">挂载分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%BA%90"><span class="nav-number">1.10.</span> <span class="nav-text">配置源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%9F%BA%E6%9C%AC%E5%8C%85"><span class="nav-number">1.11.</span> <span class="nav-text">安装基本包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90fstab%E6%96%87%E4%BB%B6"><span class="nav-number">1.12.</span> <span class="nav-text">生成fstab文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">1.13.</span> <span class="nav-text">切换环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vim"><span class="nav-number">1.14.</span> <span class="nav-text">安装vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="nav-number">1.15.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="nav-number">1.16.</span> <span class="nav-text">配置时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E6%97%B6%E9%97%B4"><span class="nav-number">1.17.</span> <span class="nav-text">硬件时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-number">1.18.</span> <span class="nav-text">设置主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E7%BD%AEroot%E5%AF%86%E7%A0%81"><span class="nav-number">1.19.</span> <span class="nav-text">重置root密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="nav-number">1.20.</span> <span class="nav-text">安装网络相关的包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85CPU%E7%BC%96%E7%A0%81"><span class="nav-number">1.21.</span> <span class="nav-text">安装CPU编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.22.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC"><span class="nav-number">1.23.</span> <span class="nav-text">安装引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83"><span class="nav-number">1.24.</span> <span class="nav-text">退出当前环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C"><span class="nav-number">1.25.</span> <span class="nav-text">关闭网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF-%E6%8B%94u%E7%9B%98"><span class="nav-number">1.26.</span> <span class="nav-text">重启, 拔u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="nav-number">1.27.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0archlinuxcn%E6%BA%90"><span class="nav-number">1.28.</span> <span class="nav-text">添加archlinuxcn源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-number">1.29.</span> <span class="nav-text">图形界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%93%9D%E7%89%99%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.30.</span> <span class="nav-text">蓝牙服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A3%B0%E9%9F%B3"><span class="nav-number">1.31.</span> <span class="nav-text">声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93"><span class="nav-number">1.32.</span> <span class="nav-text">安装字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87"><span class="nav-number">1.33.</span> <span class="nav-text">设置中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx5"><span class="nav-number">1.34.</span> <span class="nav-text">中文输入法fcitx5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85yay"><span class="nav-number">1.35.</span> <span class="nav-text">安装yay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.36.</span> <span class="nav-text">其他软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%98%E7%BD%91"><span class="nav-number">1.36.1.</span> <span class="nav-text">官网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pacman"><span class="nav-number">1.36.2.</span> <span class="nav-text">pacman</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aur"><span class="nav-number">1.36.3.</span> <span class="nav-text">aur</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E6%9D%BF"><span class="nav-number">1.37.</span> <span class="nav-text">触摸板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6"><span class="nav-number">1.38.</span> <span class="nav-text">屏幕亮度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Deb%E5%8C%85"><span class="nav-number">1.39.</span> <span class="nav-text">安装Deb包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.39.1.</span> <span class="nav-text">设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-number">1.40.</span> <span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#archlinux-%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">archlinux 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E4%BD%9Cu%E7%9B%98"><span class="nav-number">1.1.</span> <span class="nav-text">制作u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wifi"><span class="nav-number">1.2.</span> <span class="nav-text">连接wifi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5wpa%E5%8A%A0%E5%AF%86wifi"><span class="nav-number">1.2.1.</span> <span class="nav-text">连接wpa加密wifi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E8%83%BD%E4%B8%8A%E7%BD%91"><span class="nav-number">1.3.</span> <span class="nav-text">检查是否能上网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F"><span class="nav-number">1.4.</span> <span class="nav-text">更新系统时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.</span> <span class="nav-text">分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8cgdisk%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.1.</span> <span class="nav-text">使用cgdisk分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8fdisk%E5%88%86%E5%8C%BA"><span class="nav-number">1.5.2.</span> <span class="nav-text">使用fdisk分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%BAext4"><span class="nav-number">1.6.</span> <span class="nav-text">根目录格式化为ext4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80swap%E5%88%86%E5%8C%BA"><span class="nav-number">1.7.</span> <span class="nav-text">打开swap分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9pacman%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text">更改pacman配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="nav-number">1.9.</span> <span class="nav-text">挂载分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%BA%90"><span class="nav-number">1.10.</span> <span class="nav-text">配置源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%9F%BA%E6%9C%AC%E5%8C%85"><span class="nav-number">1.11.</span> <span class="nav-text">安装基本包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90fstab%E6%96%87%E4%BB%B6"><span class="nav-number">1.12.</span> <span class="nav-text">生成fstab文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">1.13.</span> <span class="nav-text">切换环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vim"><span class="nav-number">1.14.</span> <span class="nav-text">安装vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="nav-number">1.15.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="nav-number">1.16.</span> <span class="nav-text">配置时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E6%97%B6%E9%97%B4"><span class="nav-number">1.17.</span> <span class="nav-text">硬件时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-number">1.18.</span> <span class="nav-text">设置主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E7%BD%AEroot%E5%AF%86%E7%A0%81"><span class="nav-number">1.19.</span> <span class="nav-text">重置root密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="nav-number">1.20.</span> <span class="nav-text">安装网络相关的包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85CPU%E7%BC%96%E7%A0%81"><span class="nav-number">1.21.</span> <span class="nav-text">安装CPU编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="nav-number">1.22.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC"><span class="nav-number">1.23.</span> <span class="nav-text">安装引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83"><span class="nav-number">1.24.</span> <span class="nav-text">退出当前环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E7%BD%91%E7%BB%9C"><span class="nav-number">1.25.</span> <span class="nav-text">关闭网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF-%E6%8B%94u%E7%9B%98"><span class="nav-number">1.26.</span> <span class="nav-text">重启, 拔u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="nav-number">1.27.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0archlinuxcn%E6%BA%90"><span class="nav-number">1.28.</span> <span class="nav-text">添加archlinuxcn源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2"><span class="nav-number">1.29.</span> <span class="nav-text">图形界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%93%9D%E7%89%99%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.30.</span> <span class="nav-text">蓝牙服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A3%B0%E9%9F%B3"><span class="nav-number">1.31.</span> <span class="nav-text">声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93"><span class="nav-number">1.32.</span> <span class="nav-text">安装字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87"><span class="nav-number">1.33.</span> <span class="nav-text">设置中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95fcitx5"><span class="nav-number">1.34.</span> <span class="nav-text">中文输入法fcitx5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85yay"><span class="nav-number">1.35.</span> <span class="nav-text">安装yay</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.36.</span> <span class="nav-text">其他软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%98%E7%BD%91"><span class="nav-number">1.36.1.</span> <span class="nav-text">官网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pacman"><span class="nav-number">1.36.2.</span> <span class="nav-text">pacman</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aur"><span class="nav-number">1.36.3.</span> <span class="nav-text">aur</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E6%9D%BF"><span class="nav-number">1.37.</span> <span class="nav-text">触摸板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6"><span class="nav-number">1.38.</span> <span class="nav-text">屏幕亮度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Deb%E5%8C%85"><span class="nav-number">1.39.</span> <span class="nav-text">安装Deb包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">1.39.1.</span> <span class="nav-text">文件管理工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dolphin"><span class="nav-number">1.39.1.1.</span> <span class="nav-text">dolphin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pcmanfm"><span class="nav-number">1.39.1.2.</span> <span class="nav-text">pcmanfm</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6windowns"><span class="nav-number">1.39.2.</span> <span class="nav-text">远程控制windowns</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.39.3.</span> <span class="nav-text">设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-number">1.40.</span> <span class="nav-text">常见错误</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
