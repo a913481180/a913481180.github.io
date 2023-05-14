@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="wifiDog首先简介一下什么是Portal认证。Portal认证。通常也会叫Web认证。未认证用户上网时，设备强制用户登录到特定站点，用户能够免费訪问当中的服务。当用户须要使用互联网中的其他信息时，必须在门户站点进行认证。仅仅有认证通过后才干够使用互联网资源。 现金非常多中国移动CMCC、中国联通、中国电信ChinaNet的WIFI都使用这样的认证接入方式。 在OpenWRT上实现Portal认">
+  <meta name="description" content="echarts echarts的图表是画在canvas上的， 可以通过grid设置来调整图表与canvas的间距：grid:{ x:50, y:50,x2:50,  y2:60,} 通过回调函数判断是否是第一个数据（params.dataIndex 的值）来决定是否显示相应的内容：formatter:(n)&#x3D;&gt;{return n.dataIndex} echarts3.0已支持多标题的设置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wifiDog">
+<meta property="og:title" content="echarts&#x2F;d3.js">
 <meta property="og:url" content="http://www.baidu.com/2021/11/12/22-23-33/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="wifiDog首先简介一下什么是Portal认证。Portal认证。通常也会叫Web认证。未认证用户上网时，设备强制用户登录到特定站点，用户能够免费訪问当中的服务。当用户须要使用互联网中的其他信息时，必须在门户站点进行认证。仅仅有认证通过后才干够使用互联网资源。 现金非常多中国移动CMCC、中国联通、中国电信ChinaNet的WIFI都使用这样的认证接入方式。 在OpenWRT上实现Portal认">
+<meta property="og:description" content="echarts echarts的图表是画在canvas上的， 可以通过grid设置来调整图表与canvas的间距：grid:{ x:50, y:50,x2:50,  y2:60,} 通过回调函数判断是否是第一个数据（params.dataIndex 的值）来决定是否显示相应的内容：formatter:(n)&#x3D;&gt;{return n.dataIndex} echarts3.0已支持多标题的设置">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-12T14:23:33.000Z">
-<meta property="article:modified_time" content="2023-05-07T06:16:45.640Z">
+<meta property="article:modified_time" content="2023-05-14T04:06:33.287Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>wifiDog | KK</title>
+  <title>echarts/d3.js | KK</title>
   
 
 
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          wifiDog
+          echarts/d3.js
         </h1>
 
         <div class="post-meta">
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-07 14:16:45" itemprop="dateModified" datetime="2023-05-07T14:16:45+08:00">2023-05-07</time>
+                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,113 +213,276 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="wifiDog"><a href="#wifiDog" class="headerlink" title="wifiDog"></a>wifiDog</h1><p>首先简介一下什么是Portal认证。Portal认证。通常也会叫Web认证。未认证用户上网时，设备强制用户登录到特定站点，用户能够免费訪问当中的服务。当用户须要使用互联网中的其他信息时，必须在门户站点进行认证。仅仅有认证通过后才干够使用互联网资源。</p>
-<p>现金非常多中国移动CMCC、中国联通、中国电信ChinaNet的WIFI都使用这样的认证接入方式。</p>
-<p>在OpenWRT上实现Portal认证，实际上早已有解决方式：</p>
-<ol>
-<li>chillispot，但原维护作者停止更新。被chillispot.info接管继续开发；</li>
+        <h2 id="echarts"><a href="#echarts" class="headerlink" title="echarts"></a>echarts</h2><ol>
+<li>echarts的图表是画在canvas上的， 可以通过grid设置来调整图表与canvas的间距：grid:{ x:50, y:50,x2:50,  y2:60,}</li>
+<li>通过回调函数判断是否是第一个数据（params.dataIndex 的值）来决定是否显示相应的内容：formatter:(n)=&gt;{return n.dataIndex}</li>
+<li>echarts3.0已支持多标题的设置</li>
+<li>Echarts设置tooltip层级z-index<br>tooltip有一个extraCssText属性。所以可以设置该属性来修改它的样式：</li>
 </ol>
-<p>2.coova-chilli，它是基于chillispot开发拓展的，功能最为强大；能够去官方看一下Coova-chilli；</p>
-<p>3.wifidog</p>
-<p>前两个因为原维护作者停止更新。笔者也没有深入研究，重点钻研了wifidog，Wifidog也是OpenWRT和DD-WRT中实现Portal比較出名的。</p>
-<p>可是。Wifidog仅仅是实现AP认证网关，须要配合外部的Portalserver才干使用。Portal主要是提供认证所需的WEB页面且实现认证计费等的功能。尽管这也有非常多商用解决方式，比如wiwiz、wifiap等，可是这些商业解决方式的目标都是盈利。即使能够免费使用。免费账号的功能和权限都受到了非常大的限制，比如不能自己定义页面。Web认证页面有广告等等。有条件的人可能打算自己搭建Portalserver。可是看看Wifidog的官方Wiki。对搭建过程实在是难以理解。后来，笔者发现网络上另一个authpuppy方案，官方站点<a target="_blank" rel="noopener" href="http://www.authpuppy.org.是一个已实现好的wifidog认证server,里面包括各种插件供你使用,官方的安装过程也非常easy,假设你懂的html和面向对象编程的相关知识且拥有一个server,能够自行改动认证页面.使用authpuppy也是一个不错的方案./">www.authpuppy.org。是一个已实现好的Wifidog认证server，里面包括各种插件供你使用，官方的安装过程也非常easy，假设你懂的HTML和面向对象编程的相关知识且拥有一个server，能够自行改动认证页面。使用authpuppy也是一个不错的方案。</a></p>
-<p>可是。即便如此，这些方案还是不够灵活，经过笔者认真钻研。查阅大量资料并经过多次抓包分析，最终理解了Wifidog的工作原理。</p>
-<p>接下来笔者将会跟你介绍怎样自行编写一个轻量级的Web Portal认证server。当然。这须要你具有程序设计基础，HTML、CSS当然是少不得的。后端开发语言能够使用PHP或Python或Java等。</p>
-<p>首先，须要简介一下Wifidog的工作原理：</p>
-<p>1.client发出初始化请求，比方訪问 <a target="_blank" rel="noopener" href="http://www.baidu.com./">www.baidu.com。</a></p>
-<p>2.网关的防火墙规则将这个请求重定向到本地网关的port上。这个port是Wifidog监听的port。</p>
-<p>3.Wfidog提供一个HTTP重定向回复，重定向到Web认证页面。重定向的Url的Querystring中包括了Gateway的ID，Gateway的FQDN以及其它的信息。</p>
-<p>4.用户向认证server发出认证请求</p>
-<p><a href="http://portal_server:port/login_script">http://portal_server:port/login_script</a>?</p>
-<p>gw_id=[GatewayID, default: “default”]</p>
-<p>gw_address=[GatewayAddress, internal IP of router]</p>
-<p>gw_port=[GatewayPort, port that wifidog Gateway is listening on]</p>
-<p>url=[user requested url]；</p>
-<p>5.网关返回一个（能够是自己定义的）splash（也称作“登录”）页面。</p>
-<p>6.用户提供他的凭据信息，比方username和password。</p>
-<p>7.成功认证的话，client将会被重定向到网关的自己的web页面上，而且带有一个认证凭据（一个一次性的token），内容比方：</p>
-<p><a href="http://GatewayIP:GatewayPort/wifidog/auth?token=[auth">http://GatewayIP:GatewayPort/wifidog/auth?token=[auth</a> token]；</p>
-<p>8.用户就是用获取到的凭据訪问网关。</p>
-<p>9.网关去认证server询问token的有效性。</p>
-<p>10.认证server确认token的有效性。</p>
-<p>11.网关发送重定向给client。以从认证服务器上获取 成功提示页面，重定向到 <a href="http://portal_server:port/portal_script">http://portal_server:port/portal_script</a> 这个位置。</p>
-<p>12.认证server通知客户请求成功，能够上网了。</p>
-<p>图解:</p>
-<p>图解Wifidog工作原理</p>
-<p>然后考察一下Wifidog的配置文件/etc/wifidog.conf，关键的配置项是：</p>
-<p>AuthServer {</p>
-<p>Hostname             (Mandatory; Default: NONE)</p>
-<p>SSLAvailable           (Optional; Default: no; Possible values: yes, no)</p>
-<p>SSLPort               (Optional; Default: 443)</p>
-<p>HTTPPort             (Optional; Default: 80)</p>
-<p>Path                  (Optional; Default: /wifidog/ Note:  The path must be both prefixed and suffixed by /.  Use a single / for server root.)</p>
-<p>LoginScriptPathFragment  (Optional; Default: login/?</p>
-<p>Note:  This is the script the user will be sent to for login.)</p>
-<p>PortalScriptPathFragment (Optional; Default: portal/? Note:  This is the script the user will be sent to after a successfull login.)</p>
-<p>MsgScriptPathFragment    (Optional; Default: gw_message.php? Note:  This is the script the user will be sent to upon error to read a readable message.)</p>
-<p>PingScriptPathFragment    (Optional; Default: ping/?</p>
-<p>Note:  This is the script the user will be sent to upon error to read a readable message.)</p>
-<p>AuthScriptPathFragment    (Optional; Default: auth/?</p>
-<p>Note:  This is the script the user will be sent to upon error to read a readable message.)</p>
-<p>}</p>
-<h1 id="Listen-on-this-port"><a href="#Listen-on-this-port" class="headerlink" title="Listen on this port"></a>Listen on this port</h1><p>GatewayPort 2060</p>
-<h1 id="Parameter-CheckInterval"><a href="#Parameter-CheckInterval" class="headerlink" title="Parameter: CheckInterval"></a>Parameter: CheckInterval</h1><h1 id="Default-60"><a href="#Default-60" class="headerlink" title="Default: 60"></a>Default: 60</h1><h1 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="How-many-seconds-should-we-wait-between-timeout-checks-This-is-also"><a href="#How-many-seconds-should-we-wait-between-timeout-checks-This-is-also" class="headerlink" title="How many seconds should we wait between timeout checks.  This is also"></a>How many seconds should we wait between timeout checks.  This is also</h1><h1 id="how-often-the-gateway-will-ping-the-auth-server-and-how-often-it-will"><a href="#how-often-the-gateway-will-ping-the-auth-server-and-how-often-it-will" class="headerlink" title="how often the gateway will ping the auth server and how often it will"></a>how often the gateway will ping the auth server and how often it will</h1><h1 id="update-the-traffic-counters-on-the-auth-server-Setting-this-too-low"><a href="#update-the-traffic-counters-on-the-auth-server-Setting-this-too-low" class="headerlink" title="update the traffic counters on the auth server.  Setting this too low"></a>update the traffic counters on the auth server.  Setting this too low</h1><h1 id="wastes-bandwidth-setting-this-too-high-will-cause-the-gateway-to-take"><a href="#wastes-bandwidth-setting-this-too-high-will-cause-the-gateway-to-take" class="headerlink" title="wastes bandwidth, setting this too high will cause the gateway to take"></a>wastes bandwidth, setting this too high will cause the gateway to take</h1><h1 id="a-long-time-to-switch-to-it’s-backup-auth-server-s"><a href="#a-long-time-to-switch-to-it’s-backup-auth-server-s" class="headerlink" title="a long time to switch to it’s backup auth server(s)."></a>a long time to switch to it’s backup auth server(s).</h1><p>CheckInterval 60</p>
-<h1 id="Parameter-ClientTimeout"><a href="#Parameter-ClientTimeout" class="headerlink" title="Parameter: ClientTimeout"></a>Parameter: ClientTimeout</h1><h1 id="Default-5"><a href="#Default-5" class="headerlink" title="Default: 5"></a>Default: 5</h1><h1 id="Optional-1"><a href="#Optional-1" class="headerlink" title="Optional"></a>Optional</h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><h1 id="Set-this-to-the-desired-of-number-of-CheckInterval-of-inactivity-before-a-client-is-logged-out"><a href="#Set-this-to-the-desired-of-number-of-CheckInterval-of-inactivity-before-a-client-is-logged-out" class="headerlink" title="Set this to the desired of number of CheckInterval of inactivity before a client is logged out"></a>Set this to the desired of number of CheckInterval of inactivity before a client is logged out</h1><h1 id="The-timeout-will-be-INTERVAL-TIMEOUT"><a href="#The-timeout-will-be-INTERVAL-TIMEOUT" class="headerlink" title="The timeout will be INTERVAL * TIMEOUT"></a>The timeout will be INTERVAL * TIMEOUT</h1><p>ClientTimeout 5</p>
-<p>AuthServer是Portalserver的配置项。GatewayPort是Wifidog监听的地址。默认是2060。一般保持默认就可以；CheckInterval是心跳时长。单位是秒。什么是心跳呢，client认证成功之后，假设有网络訪问动作，Wifidog getway就会每隔一段时间訪问Portalserver的一个脚本。用于认证计费。当然。假设客户使用超时或超流量，也能够通过心跳强制client下线。ClientTimeout是用户一次认证成功后的网络訪问时长，超过这个时间须要又一次认证，这个时长并不是由ClientTimeout单独决定。取决于INTERVAL * TIMEOUT。</p>
-<p>具体的配置信息能够訪问：<a target="_blank" rel="noopener" href="http://dev.wifidog.org/browser/trunk/wifidog/wifidog.conf%E3%80%82">http://dev.wifidog.org/browser/trunk/wifidog/wifidog.conf。</a></p>
-<p>我们重点讨论Portalserver的配置项，Hostname是Portalserver的ip或者是域名。SSLAvailable和SSLPort是SSL加密配置，假设你的Portalserver有配置HTTPS加密，则须要配置这两项。Path是指你的脚本路径(举例。<a target="_blank" rel="noopener" href="http://a.com/to/%EF%BC%8C%E5%88%99a.com%E6%98%AF%E5%9F%9F%E5%90%8D%E3%80%82/to/%E6%98%AF%E8%B7%AF%E5%BE%84)%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%B7%AF%E5%BE%84%E5%BF%85%E9%A1%BB%E4%BB%A5%E2%80%9C/%E2%80%9D%E5%BC%80%E5%A4%B4%E5%92%8C%E7%BB%93%E5%B0%BE%EF%BC%8C%E5%81%87%E8%AE%BE%E6%98%AF%E6%A0%B9%E8%B7%AF%E5%BE%84%E3%80%82%E5%88%99%E5%A1%AB%E4%B8%80%E4%B8%AA%E2%80%9C/%E2%80%9D%E5%B0%B1%E5%8F%AF%E4%BB%A5%EF%BC%9B%E6%8E%A5%E4%B8%8B%E6%9D%A5%E7%9A%845%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%8C%87%E6%98%8E%E4%BD%A0%E7%9A%84%E8%84%9A%E6%9C%AC%E5%90%8D%EF%BC%8C%E8%BF%99%E8%AF%B4%E6%98%8E%E4%BA%86%E6%88%91%E4%BB%AC%E9%A1%BB%E8%A6%81%E5%86%99%E4%BA%94%E4%B8%AA%E8%84%9A%E6%9C%AC%EF%BC%8C%E6%88%91%E4%BC%9A%E5%85%B7%E4%BD%93%E8%AF%B4%E6%98%8E%E3%80%82">http://a.com/to/，则a.com是域名。/to/是路径)，注意路径必须以“/”开头和结尾，假设是根路径。则填一个“/”就可以；接下来的5个配置指明你的脚本名，这说明了我们须要写五个脚本，我会具体说明。</a></p>
-<p>(下面文中涉及的“第几步”均是指Wifidog认证过程的步骤)</p>
-<p>LoginScriptPathFragment配置项配置的是登陆脚本，它通过GET方式接受传入參数gw_address、gw_port、gw_id、mac和url。gw_address是AP Getway的ip地址；gw_port是Wifidog监听的端口。即上面介绍的wifidog.conf中的GatewayPort配置；gw_id是AP Getway的id。配置文件wifidog.conf中能够配置，默认值是default，这个值的作用是当存在多个AP是，server或管理员能够依据不同的id确定用户的接入点；mac是客户计算机的网卡物理地址。注意不是AP网关的mac。这个mac是用来识别客户计算机的；url是客户初始訪问的Url。这些Querystring都是AP Getway向client发出重定向请求自己主动生成的。</p>
-<p>这个脚本同一时候须要提供登陆页面，假设登陆成功，须要向客户。端返回302重定向，重定向到：<a href="http://gw_address:gw_port/wifidog/auth">http://gw_address:gw_port/wifidog/auth</a>?</p>
-<p>token=[token]；即实现第7步。当中[token]是你自己自己主动生成的token字符串，随机生成一个字符串就可以，可是长度最好长些，安全性更高，另外，token须要依据不同用户保存，最好保存于数据库中，之后的AP Getway询问token有效性(第9步)还须要用到。这里最好使用cookie或session，使之后的登陆成功页面能够推断用户已经成功，阻止未登录成功的人訪问认证成功页面。</p>
-<p>PortalScriptPathFragment配置项配置的是登陆成功后server展示的脚本(第11步)，它通过GET方式接受1个传入參数，gw_id。这个脚本比較简单。告知用户登陆成功就可以，当然，最好重定向到用户之前想要方位的url。即第1步用户输入的URL。</p>
-<p>MsgScriptPathFragment配置项配置的是错误信息展示脚本，它通过GET方式接受一个传入參数message，这个脚本也非常easy，展示message的内容就可以。目的是当认证过程出现错误，AP Getway会重定向到这个脚本，URL中含有错误的信息。</p>
-<p>PingScriptPathFragment配置项配置的是心跳脚本。这个脚本它通过GET方式接受5个传入參数，gw_id，sys.uptime，sys.memfree，sys.load，wifidog.uptime，当中，sys.uptime指的是AP Getway的启动时间。sys.memfree指的是AP Getway的空暇内存，sys.load指的是AP Getway的CPU负载。wifidog.uptime指的是wifidog的启动时间，这个脚本每隔一段时间(Wifidog.conf里配置的CheckInterval)，Wifidog会自己主动訪问，可是其目的不是用户验证，而是帮助管理员管理AP节点，了解AP节点的负载情况，适时添加节点等，Wifidog訪问这个脚本时，须要这个脚本返回Pong。假设你没有统计AP节点负载数据的需求，能够丢弃这些数据。直接回应Pong，注意，这个回应仅仅包括“Pong”字符串。无需包括其它html标签。</p>
-<p>AuthScriptPathFragment是用户认证脚本。实现的是第10步的功能。这个脚本它通过GET方式接受7个传入參数：stage、ip、mac、token、incoming、outcoming和gw_id。当中stage的值是login，ip是client的ip，注意不是AP Getwap的ip；mac是client的网卡物理地址。token就是你在认证脚本生成并返回给client的。incoming和outcoming用于流量控制，默认值为0；gw_id同上。</p>
-<p>怎样识别用户登录成功，通过mac和token吧，LoginScriptPathFragment登陆脚本在用户登陆成功后须要记录用户的mac和token。然后在此处验证，假设匹配。回复Auth: 1，否则。回复Auth: 0。</p>
-<p>另外，这个脚本也是心跳脚本。每隔一段时间Wifidog会自己主动訪问，假设用户使用时间超过限制或流量超过额度。server能够及时回应Auth: 0结束用户的訪问。</p>
-<p>另外须要注意的是。回应相同无需包括html标签，另外，在Auth后的冒号和0/1之间，有一个空格，缺少这个空格也会导致出错。</p>
-<p>在配置Wifidog的配置文件wifidog.conf是。配置脚本的配置项都必须以“?</p>
-<p>”结尾，否则以GET方式传递的QueryString会因Url缺少问号訪问错误的脚本。</p>
-<p>看到了吧。只5个简单脚本。就能够实现利用Wifidog的Portal认证，当然。这过中还能够有非常多应用尚未发掘，比方流量控制、带宽控制、结合Radiusserver实现认证等。你的开发也能够更上一层楼。实现很多其它功能。只是笔者另一个建议。在登录页面除了username和password意外，最好加个验证码，防止不怀好意之人暴力破解。</p>
-<p>这样，你仅仅须要一个免费的空间，甚至是简单的百度云、新浪SAE等。就能够实现一个认证server。有的人可能还会问，能不能把这些脚本集成到路由器其中，我的回答是能，仅仅要你的脚本的功能不多。问题应该不大，可是这么做的风险比較大，路由的负载比較高，导致路由的执行会非常不稳定，甚至常常死机，这也是笔者亲身实践的结果，所以笔者不建议这么做。</p>
-<p>最后啰嗦提醒的是，WiFidog是使用iptables基于三层协议工作的，所以使用Wifidog的结果是。不仅是Wifi接入须要Portal认证，有线接入相同须要认证。</p>
-<p>避免这样的情况最简单的做法是设立mac白名单。可能有的人又会问。能不能做到仅是Wifi接入须要认证，有线接入的无需认证。有的人可能想更上一层楼，能不能开两个Wifi，仅当中一个Wifi须要认证，还有一个Wifi和有线网络不须要Portal认证，我的回答是能。至于详细做法，以后再介绍。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tooltip:&#123;extraCssText:&#x27;z-index:2&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="svg可缩放矢量图形（Scalable-Vector-Graphics）"><a href="#svg可缩放矢量图形（Scalable-Vector-Graphics）" class="headerlink" title="svg可缩放矢量图形（Scalable Vector Graphics）"></a>svg可缩放矢量图形（Scalable Vector Graphics）</h2><h3 id="SVG-CSS属性"><a href="#SVG-CSS属性" class="headerlink" title="SVG CSS属性"></a>SVG CSS属性</h3><p>SVG元素具有以下可以设置的CSS属性。并非所有元素都具有所有这些CSS属性。因此，CSS属性被分为针对不同元素的多个表。</p>
+<h4 id="形状CSS属性"><a href="#形状CSS属性" class="headerlink" title="形状CSS属性"></a>形状CSS属性</h4><p>path元素和其他形状元素的 CSS属性：</p>
+<table>
+<thead>
+<tr>
+<th>CSS属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fill</td>
+<td>设置形状的填充颜色。</td>
+</tr>
+<tr>
+<td>fill-opacity</td>
+<td>设置形状的填充不透明度。</td>
+</tr>
+<tr>
+<td>fill-rule</td>
+<td>设置形状的填充规则。</td>
+</tr>
+<tr>
+<td>marker</td>
+<td>设置沿此形状的线（边）使用的标记。</td>
+</tr>
+<tr>
+<td>marker-start</td>
+<td>设置沿此形状的线（边）使用的开始标记。</td>
+</tr>
+<tr>
+<td>marker-mid</td>
+<td>设置沿此形状的线（边）使用的中间标记。</td>
+</tr>
+<tr>
+<td>marker-end</td>
+<td>设置沿此形状的线（边）使用的结束标记。</td>
+</tr>
+<tr>
+<td>stroke</td>
+<td>设置用于绘制此形状轮廓的笔触（线条）颜色。</td>
+</tr>
+<tr>
+<td>stroke-dasharray</td>
+<td>设置用于绘制此形状轮廓的笔划（虚线）。</td>
+</tr>
+<tr>
+<td>stroke-dashoffset</td>
+<td>设置用于绘制此形状轮廓的笔划（直线）破折号偏移量。</td>
+</tr>
+<tr>
+<td>stroke-linecap</td>
+<td>设置用于绘制此形状轮廓的笔划（线）线帽。有效值为round，butt和square。</td>
+</tr>
+<tr>
+<td>stroke-miterlimit</td>
+<td>设置用于绘制此形状轮廓的笔划（直线）斜接限制。</td>
+</tr>
+<tr>
+<td>stroke-opacity</td>
+<td>设置用于绘制此形状轮廓的笔触（直线）不透明度。</td>
+</tr>
+<tr>
+<td>stroke-width</td>
+<td>设置用于绘制此形状轮廓的笔触（线条）宽度。</td>
+</tr>
+<tr>
+<td>text-rendering</td>
+<td>设置用于绘制此形状轮廓的文本渲染。</td>
+</tr>
+</tbody></table>
+<p>文字CSS属性<br>text元素的 CSS属性：</p>
+<table>
+<thead>
+<tr>
+<th>CSS属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alignment-baseline</td>
+<td>设置文本与其对齐方式x和y坐标。</td>
+</tr>
+<tr>
+<td>baseline-shift</td>
+<td>设置用于呈现文本的基线偏移。</td>
+</tr>
+<tr>
+<td>dominant-baseline</td>
+<td>设置主要基线。</td>
+</tr>
+<tr>
+<td>glyph-orientation-horizontal</td>
+<td>设置水平字形方向。</td>
+</tr>
+<tr>
+<td>glyph-orientation-vertical</td>
+<td>设置垂直字形方向。</td>
+</tr>
+<tr>
+<td>kerning</td>
+<td>设置渲染文本的字距（字距是字母间距）。</td>
+</tr>
+</tbody></table>
+<p>渐变CSS属性<br>SVG渐变的CSS属性：</p>
+<table>
+<thead>
+<tr>
+<th>CSS属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stop-color</td>
+<td>设置在渐变中使用的stop元素中使用的终止色。</td>
+</tr>
+<tr>
+<td>stop-opacity</td>
+<td>设置stop在渐变中使用的元素中使用的停止不透明度。</td>
+</tr>
+</tbody></table>
+<h4 id="class"><a href="#class" class="headerlink" title="class"></a>class</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/2000/svg&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xlink</span>=<span class="string">&quot;http://www.w3.org/1999/xlink&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> &gt;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">      &lt;![CDATA[</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">        circle.myGreen &#123;</span></span><br><span class="line"><span class="language-xml">           stroke: #006600;</span></span><br><span class="line"><span class="language-xml">           fill:   #00cc00;</span></span><br><span class="line"><span class="language-xml">        &#125;</span></span><br><span class="line"><span class="language-xml">       circle.myRed &#123;</span></span><br><span class="line"><span class="language-xml">       stroke: #660000;</span></span><br><span class="line"><span class="language-xml">       fill:   #cc0000;</span></span><br><span class="line"><span class="language-xml">    &#125;</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">      ]]&gt;</span></span><br><span class="line"><span class="language-xml">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span>  <span class="attr">class</span>=<span class="string">&quot;myGreen&quot;</span> <span class="attr">cx</span>=<span class="string">&quot;40&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;40&quot;</span>  <span class="attr">r</span>=<span class="string">&quot;24&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span>  <span class="attr">class</span>=<span class="string">&quot;myRed&quot;</span>   <span class="attr">cx</span>=<span class="string">&quot;40&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;100&quot;</span> <span class="attr">r</span>=<span class="string">&quot;24&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="style"><a href="#style" class="headerlink" title="style"></a>style</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">version</span>=<span class="string">&quot;1.1&quot;</span> <span class="attr">viewbox</span>=<span class="string">&quot;0 0 1000 500&quot;</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/2000/svg&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">height</span>=<span class="string">&quot;300&quot;</span> <span class="attr">width</span>=<span class="string">&quot;600&quot;</span> <span class="attr">x</span>=<span class="string">&quot;200&quot;</span> <span class="attr">y</span>=<span class="string">&quot;100&quot;</span></span></span><br><span class="line"><span class="tag">     <span class="attr">style</span>=<span class="string">&quot;fill: red; stroke: blue; stroke-width: 3&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="svg"><a href="#svg" class="headerlink" title="svg"></a>svg</h3><p>属性</p>
+<ul>
+<li><code>width</code>宽</li>
+<li><code>height</code>高</li>
+<li><code>x</code>水平位置</li>
+<li><code>y</code>垂直位置</li>
+<li><code>version</code> 属性用于指明 SVG 文档遵循规范。它只允许在根元素<svg> 上使用。它纯粹是一个说明，对渲染或处理没有任何影响。虽然它接受任何数字，但是只有1.0 和 1.1.这两个有效的选择。</li>
+<li><code>viewBox</code> 属性允许指定一个给定的一组图形伸展以适应特定的容器元素(裁剪画面)。属性的值是一个包含 4 个参数的列表 min-x, min-y, width and height，以空格或者逗号分隔开，在用户空间中指定一个矩形区域映射到给定的元素,不允许宽度和高度为负值，0 则禁用元素的呈现。这个属性会受到 <code>preserveAspectRatio</code> 的影响。</li>
+<li><code>preserveAspectRatio</code>:否强制进行统一缩放。</li>
+</ul>
+<h3 id="defs"><a href="#defs" class="headerlink" title="defs"></a>defs</h3><p>SVG 允许我们定义以后需要重复使用的图形元素。建议把所有需要再次使用的引用元素定义在defs元素里面。这样做可以增加 SVG 内容的易读性和无障碍。在defs元素中定义的图形元素不会直接呈现。你可以在你的视口的任意地方利用 <code>&lt;use&gt;</code>元素呈现这些元素。</p>
+<h3 id="g"><a href="#g" class="headerlink" title="g"></a>g</h3><p>元素g是用来组合对象的容器。添加到g元素上的变换会应用到其所有的子元素上。添加到g元素的属性会被其所有的子元素继承。此外，g元素也可以用来定义复杂的对象，之后可以通过<code>&lt;use&gt;</code>元素来引用它们。</p>
+<h3 id="rect"><a href="#rect" class="headerlink" title="rect"></a>rect</h3><p>rect元素是 SVG 的一个基本形状，用来创建矩形，基于一个角位置以及它的宽和高。它还可以用来创建圆角矩形</p>
+<ul>
+<li>x</li>
+<li>y</li>
+<li>width</li>
+<li>height</li>
+<li>rx圆角</li>
+<li>ry圆角</li>
+</ul>
+<h3 id="patterns"><a href="#patterns" class="headerlink" title="patterns"></a>patterns</h3><p>在我看来 patterns（图案）是 SVG 中用到的最让人混淆的填充类型之一。它的功能非常强大，所以我认为他们值得讨论一下并且我们应至少对他们有最基本的了解。跟渐变一样，<code>&lt;pattern&gt;</code> 需要放在 SVG 文档的 <code>&lt;defs&gt;</code> 内部。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> standalone=<span class="string">&quot;no&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="attr">version</span>=<span class="string">&quot;1.1&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">defs</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">linearGradient</span> <span class="attr">id</span>=<span class="string">&quot;Gradient1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">stop</span> <span class="attr">offset</span>=<span class="string">&quot;5%&quot;</span> <span class="attr">stop-color</span>=<span class="string">&quot;white&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">stop</span> <span class="attr">offset</span>=<span class="string">&quot;95%&quot;</span> <span class="attr">stop-color</span>=<span class="string">&quot;blue&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">linearGradient</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">linearGradient</span> <span class="attr">id</span>=<span class="string">&quot;Gradient2&quot;</span> <span class="attr">x1</span>=<span class="string">&quot;0&quot;</span> <span class="attr">x2</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y1</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y2</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">stop</span> <span class="attr">offset</span>=<span class="string">&quot;5%&quot;</span> <span class="attr">stop-color</span>=<span class="string">&quot;red&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">stop</span> <span class="attr">offset</span>=<span class="string">&quot;95%&quot;</span> <span class="attr">stop-color</span>=<span class="string">&quot;orange&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">linearGradient</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">pattern</span> <span class="attr">id</span>=<span class="string">&quot;Pattern&quot;</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;.25&quot;</span> <span class="attr">height</span>=<span class="string">&quot;.25&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;50&quot;</span> <span class="attr">height</span>=<span class="string">&quot;50&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;skyblue&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;25&quot;</span> <span class="attr">height</span>=<span class="string">&quot;25&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;url(#Gradient2)&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">&quot;25&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;25&quot;</span> <span class="attr">r</span>=<span class="string">&quot;20&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;url(#Gradient1)&quot;</span> <span class="attr">fill-opacity</span>=<span class="string">&quot;0.5&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">defs</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">fill</span>=<span class="string">&quot;url(#Pattern)&quot;</span> <span class="attr">stroke</span>=<span class="string">&quot;black&quot;</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>关于 pattern 容易混淆的事是，pattern 定义了一个单元系统以及他们的大小。上例中，我们在 pattern 元素上定义了width和height属性，用于描述在重复下一个图案之前应该跨过多远。如果你想要在绘制时偏移矩形的开始点，也可以使用 x 和 y 属性，原因如下。</p>
+<p>就像前面使用了gradientUnits属性，同样的pattern也有一个属性patternUnits用于描述我们使用的属性单元。这同之前使用的objectBoundingBox默认值一样，所以当一个值为 1 时，它被缩放到应用 pattern 对象的宽高值。因此，我们希望 pattern 垂直和水平的重复 4 次，所以宽高被设置位 0.25，这一位置 pattern 的宽高仅为总外框大小的 0.25。</p>
+<p>与渐变不同，pattern 有第二个属性patternContentUnits，它描述了pattern元素基于基本形状使用的单元系统，这个属性默认值为userSpaceOnUse，与patternUnits属性相反，这意味着除非你至少指定其中一个属性值（patternContentUnits或patternUnits），否则在pattern中绘制的形状将与pattern元素使用的坐标系不同，当你手写这部分时会容易混淆。为了使上例生效，我们必须考虑我们的边框（200 像素）大小和我们实际希望pattern垂直和水平重复 4 次的需求。这意味着每个 pattern 单元应该是 50x50的方形，pattern 中的两个矩形和圆形的大小会被缩放适应到一个 50x50 的边框里，任何我们绘制在边框外的内容都不会显示。因为我们希望 pattern 从边框的左上角里开始，所以 pattern 也必须偏移 10 像素，也就是 pattern 的 x 和 y 属性需要调整为 10/200=0.05。</p>
+<p>如果对象改变了大小，pattern 会自适应其大小，但是对象里面的内容不会自适应。所以当我们在 pattern 中还是放置 4 个重复的 pattern 时，组成 pattern 的对象将不会保持相同的大小，同时在他们之间会有大片空白区域。通过改变patternContentUnits属性，我们可以把所有的元素放到相同的单元系统中：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pattern</span> <span class="attr">id</span>=<span class="string">&quot;Pattern&quot;</span> <span class="attr">width</span>=<span class="string">&quot;.25&quot;</span> <span class="attr">height</span>=<span class="string">&quot;.25&quot;</span> <span class="attr">patternContentUnits</span>=<span class="string">&quot;objectBoundingBox&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;.25&quot;</span> <span class="attr">height</span>=<span class="string">&quot;.25&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;skyblue&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;.125&quot;</span> <span class="attr">height</span>=<span class="string">&quot;.125&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;url(#Gradient2)&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">&quot;.125&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;.125&quot;</span> <span class="attr">r</span>=<span class="string">&quot;.1&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;url(#Gradient1)&quot;</span> <span class="attr">fill-opacity</span>=<span class="string">&quot;0.5&quot;</span>/&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">```html</span><br><span class="line">现在，因为 pattern 内容与 pattern 本身处于相同的单元系统中，所以我们不用偏移边框以使 pattern 在正确的位置上开始，并且即使对象变大，pattern 也会自动的缩放以保证 pattern 内部的对象数目和重复不变。这与 userSpaceOnUse 系统不同，userSpaceOnUse 系统中如果对象改变大小，pattern 本身会保持不变，只是重复更多次去填满边框。</span><br><span class="line"></span><br><span class="line">它有一点点的副作用，在 Gecko 中的圆如果半径设置得小于 0.075（尽管半径应该设置的比这个值大得多。这个可能是 pattern 元素中的一个 bug，或者也不算 bug，我也不太清楚）的话绘制的时候可能会出现问题，为了规避这个问题，可能最好的办法是尽量避免在 objectBoundingBox 单元中绘制图形。</span><br><span class="line"></span><br><span class="line">在你想要使用 pattern 的时候，可能你并不中意这些方法中的任何一个，Pattern 通常都是有确认的大小并且重复他们自己，与对象形状独立开来。要想创建这种 pattern，pattern 和它的内容必须在当前用户空间中绘制，这样当对象在做如下操作时他们才不会改变形状：</span><br><span class="line">```html</span><br><span class="line"> <span class="tag">&lt;<span class="name">pattern</span> <span class="attr">id</span>=<span class="string">&quot;Pattern&quot;</span> <span class="attr">x</span>=<span class="string">&quot;10&quot;</span> <span class="attr">y</span>=<span class="string">&quot;10&quot;</span> <span class="attr">width</span>=<span class="string">&quot;50&quot;</span> <span class="attr">height</span>=<span class="string">&quot;50&quot;</span> <span class="attr">patternUnits</span>=<span class="string">&quot;userSpaceOnUse&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;50&quot;</span> <span class="attr">height</span>=<span class="string">&quot;50&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;skyblue&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">&quot;0&quot;</span> <span class="attr">y</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;25&quot;</span> <span class="attr">height</span>=<span class="string">&quot;25&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;url(#Gradient2)&quot;</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">&quot;25&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;25&quot;</span> <span class="attr">r</span>=<span class="string">&quot;20&quot;</span> <span class="attr">fill</span>=<span class="string">&quot;url(#Gradient1)&quot;</span> <span class="attr">fill-opacity</span>=<span class="string">&quot;0.5&quot;</span>/&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，这意味着如果你后续改变了对象大小，pattern 也不会缩放。上述三个举例在下图中放在一个矩形中展示，高度被轻微拉伸到 300px，但是我注意到这不是完整的图片，并且有些其他选项可能你的应用不支持。</p>
+<h2 id="d3-js"><a href="#d3-js" class="headerlink" title="d3.js"></a>d3.js</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/d3/d3/blob/main/API.md#dragging-d3-drag">https://github.com/d3/d3/blob/main/API.md#dragging-d3-drag</a></p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>npm install d3</code>命令<br><code>&lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<h3 id="选择元素"><a href="#选择元素" class="headerlink" title="选择元素"></a>选择元素</h3><blockquote>
+<p>采用了链式语法。就是说，每次打点调用 d3 提供的函数方法，都会返回一个 d3 对象，这样可以继续调用 d3 的其他函数方法</p>
+</blockquote>
+<ul>
+<li><code>select</code>  返回css选择器所匹配的第一个元素。</li>
+<li><code>selectAll</code> 返回css选择器匹配的所有元素。<br>这两个函数返回的结果称为选择集。</li>
+</ul>
+<h3 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h3><ul>
+<li>增加 ( append )元素后添加</li>
+<li>插入 ( insert )元素前添加</li>
+<li>删除元素 ( remove )</li>
+<li>设置获取元素属性 ( attr )。</li>
+<li>设置获取元素样式 ( style )。</li>
+</ul>
+<h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3><blockquote>
+<p>D3 有一个很独特的功能：能将数据绑定到 DOM 上，也就是绑定到文档上。这么说可能不好理解，例如：网页中有段落元素 <code>&lt;p&gt;</code> 和一个整数 5，于是可以将整数 5 与 <code>&lt;p&gt;</code>绑定到一起。绑定之后，当需要依靠这个数据才操作元素的时候，会很方便。数据就会添加到 DOM 元素的<code>__data__</code>属性中</p>
+</blockquote>
+<ul>
+<li><code>datum(value)</code> 绑定一个数据到选择集上</li>
+</ul>
+<blockquote>
+<p>这个方法不会进行数据绑定的计算(update、enter、exit)，只能在现有的元素上绑定数据。如果 value 是数组会自动转成字符串。<br>　　假设有一字符串 China，要将此字符串分别与三个段落元素绑定，代码如下：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;China&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> body = d3.<span class="title function_">select</span>(<span class="string">&quot;body&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> p = body.<span class="title function_">selectAll</span>(<span class="string">&quot;p&quot;</span>);</span><br><span class="line"> </span><br><span class="line">p.<span class="title function_">datum</span>(str);</span><br><span class="line"> </span><br><span class="line">p.<span class="title function_">text</span>(<span class="keyword">function</span>(<span class="params">d, i</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;第 &quot;</span>+ i + <span class="string">&quot; 个元素绑定的数据是 &quot;</span> + d;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">绑定数据后，使用此数据来修改三个段落元素的内容，其结果如下：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">第 0 个元素绑定的数据是 China</span></span><br><span class="line"><span class="comment">第 1 个元素绑定的数据是 China</span></span><br><span class="line"><span class="comment">第 2 个元素绑定的数据是 China</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">　　在上面的代码中，用到了一个无名函数 function(d, i)。当选择集需要使用被绑定的数据时，常需要这么使用。其包含两个参数，其中：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">　　（1）d 代表数据，也就是与某元素绑定的数据。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">　　（2） i 代表索引，代表数据的索引号，从 0 开始。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">　　例如，上述例子中：第 0 个元素 apple 绑定的数据是 China。</span></span><br><span class="line"><span class="comment"> * /</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>data([value])</code> 绑定一个数组到选择集上，数组的各项值分别与选择集的各元素绑定</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dataset = [<span class="string">&quot;I like dogs&quot;</span>,<span class="string">&quot;I like cats&quot;</span>,<span class="string">&quot;I like snakes&quot;</span>];</span><br><span class="line"><span class="keyword">var</span> body = d3.<span class="title function_">select</span>(<span class="string">&quot;body&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> p = body.<span class="title function_">selectAll</span>(<span class="string">&quot;p&quot;</span>);</span><br><span class="line"> </span><br><span class="line">p.<span class="title function_">data</span>(dataset)</span><br><span class="line">  .<span class="title function_">text</span>(<span class="keyword">function</span>(<span class="params">d, i</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> d;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">当 i == 0 时， d 为 I like dogs。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">　　当 i == 1 时， d 为 I like cats。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">　　当 i == 2 时， d 为 I like snakes。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>selection.data([data[, key]])</li>
+</ul>
+<p>1.如果选择集中只有一个分组，则入参 data 应该是一个数组，该数组会与选择集中的元素进行绑定。<br>2.如果选择集中含有多个分组（使用方法 selection.selectAll() 嵌套选择生成的选择集可能含有多个分组），则入参 data 应该是一个返回数组的函数，每一个分组都会调用该方法，并依次传入三个参数：</p>
+<p>当前所遍历的分组的父节点所绑定的数据 datum<code>d</code><br>当前所遍历的分组的索引 index <code>i</code><br>选择集的所有父节点 parent nodes <code>nodes</code></p>
+<p>其中函数内的 <code>this</code> 指向当前所遍历的分组的父节点，即与 nodes[i] 相同<br>最后该函数返回一个数组，然后该数组的元素就用于与该分组的元素进行绑定</p>
 <hr>
-<ol>
-<li><p>在这个配置文件里面第一格不能是空格，否则就会出错。</p>
+<p>默认基于索引来对选择集中的元素和数组中的数据进行匹配 join-by-index，即选择集的第一个元素和数组的第一个数据进行绑定，并依次类推，但我们可以通过第二个入参 key 来自定义匹配规则。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = [</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">&quot;Locke&quot;</span>, <span class="attr">number</span>: <span class="number">4</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">&quot;Reyes&quot;</span>, <span class="attr">number</span>: <span class="number">8</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">&quot;Ford&quot;</span>, <span class="attr">number</span>: <span class="number">15</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">&quot;Jarrah&quot;</span>, <span class="attr">number</span>: <span class="number">16</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">&quot;Shephard&quot;</span>, <span class="attr">number</span>: <span class="number">23</span>&#125;,</span><br><span class="line">  &#123;<span class="attr">name</span>: <span class="string">&quot;Kwon&quot;</span>, <span class="attr">number</span>: <span class="number">42</span>&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">d3.<span class="title function_">selectAll</span>(<span class="string">&quot;div&quot;</span>)</span><br><span class="line">  .<span class="title function_">data</span>(data, <span class="keyword">function</span>(<span class="params">d</span>) &#123;</span><br><span class="line">    <span class="comment">// key 函数，如果传入的 d 存在，则取其属性 name 作为键</span></span><br><span class="line">    <span class="comment">// 否则取元素的 id 属性（这是一个回退操作，因为在初始时，元素还没有绑定数据，所以 d 是 undefined）</span></span><br><span class="line">    <span class="keyword">return</span> d ? d.<span class="property">name</span> : <span class="variable language_">this</span>.<span class="property">id</span>;</span><br><span class="line">  &#125;)</span><br><span class="line">    .<span class="title function_">text</span>(<span class="function"><span class="params">d</span> =&gt;</span> d.<span class="property">number</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>元素在绑定数据时，并不一定是一一对应的，可能会出现节点和数据元素个数不匹配的问题，针对这个问题，D3 提出三个概念：</p>
+<p>如果 DOM 节点多出来，则未绑定数据的节点会进入名为 <code>exiting</code> 选择集（准备从页面「离去」的节点，一般在后续操作中删除）<br>如果数据元素多出来了，则对应多出来的「虚拟节点」会进入名为 <code>entering</code> 选择集（一般会在后续操作中实例化这些 DOM 节点，并插入在页面的相应位置）<br>可与数据对应上的 DOM 节点，进入名为 <code>updating</code>选择集，它是默认选择集，即 selection.data() 方法返回的对象就是 <code>update</code> 选择集（而 <code>enter</code> 选择集和 <code>exit</code> 选择集需要调用该对象的 enter() 和 exit() 方法才能获得）</p>
+<hr>
+<h2 id="在绑定数据后，D3-没有立即更新（增删）页面节点，而是生成-3-个选择集，这样为数据可视化提供了更大的灵活度和可定制性，例如对于-exiting-选择集的节点，可以在删除时设置一些淡出的动效；对于-entering-选择集的节点可以设置不一样的颜色，高亮出来它们是新增到页面上的"><a href="#在绑定数据后，D3-没有立即更新（增删）页面节点，而是生成-3-个选择集，这样为数据可视化提供了更大的灵活度和可定制性，例如对于-exiting-选择集的节点，可以在删除时设置一些淡出的动效；对于-entering-选择集的节点可以设置不一样的颜色，高亮出来它们是新增到页面上的" class="headerlink" title="在绑定数据后，D3 没有立即更新（增删）页面节点，而是生成 3 个选择集，这样为数据可视化提供了更大的灵活度和可定制性，例如对于 exiting 选择集的节点，可以在删除时设置一些淡出的动效；对于 entering 选择集的节点可以设置不一样的颜色，高亮出来它们是新增到页面上的"></a>在绑定数据后，D3 没有立即更新（增删）页面节点，而是生成 3 个选择集，这样为数据可视化提供了更大的灵活度和可定制性，例如对于 exiting 选择集的节点，可以在删除时设置一些淡出的动效；对于 entering 选择集的节点可以设置不一样的颜色，高亮出来它们是新增到页面上的</h2><p>选择集绑定数据后，返回的三个选择集 entering、exiting、updating 其中的元素次序会有所不同：</p>
+<p>1.其中选择集 entering 和 updating 中元素会根据其绑定的数据在新数组中的索引顺序进行排列，而且会在相应的位置「留空」（使用 null 作为占位符），便于后续两者合并 merge<br>2.而 exiting 选择集会根据其原来绑定的数据在原来的数组中的位置来排序，也是在相应的位置「留空」，以便保持元素原有的索引值。<br>然后将 entering 选择集的「虚拟节点」添加 append 到页面时，元素会基于索引顺序「混入」页面的 updating 选择集的元素中（作为兄弟元素），这样可以确保最后页面的元素顺序与它们所绑定的数据在数组顺序一致。<br>但是由于 D3 会复用 updating 选择集的元素（以便提高性能），对于 updating 选择集中的元素，如果在新绑定的数组中，它们所对应的数据的索引发生了变化时，页面的相应元素的次序并不会更新，如果不进行「重排」，可能造成最后页面的元素无法与它们所绑定的数据在数组顺序一致。因此一般在选择集绑定新数据后调用 selection.order() 方法，以更新 updating 选择集在页面的元素的顺序</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/RRie1/article/details/119315788#:~:text=%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F%20-%3E%20%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E7%9A%84%E7%BB%91%E5%AE%9A%E5%87%BD%E6%95%B0%E4%B8%BAdata%EF%BC%88data%2C,keyFunction%EF%BC%89%EF%BC%8C%E4%BD%BF%E7%94%A8keyFuntion%20%E4%B8%BA%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9Akey%E3%80%82%20%2F%2F%E6%AD%A3%E7%A1%AE%E7%BB%91%E5%AE%9A%E6%96%B9%E5%BC%8Fd3.selectAll%28%27rect%27%29.data%28data%2Cd%3D%3Ed.name%29.attr%28%27width%27%2Cd%3D%3Ed.value%29">more</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6999509011687014414">more</a></p>
+<h3 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d3.<span class="title function_">select</span>(<span class="string">&#x27;svg rect&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>,<span class="function">(<span class="params">event,data</span>)=&gt;</span>&#123;</span><br><span class="line">    d3.<span class="title function_">select</span>(event.<span class="property">target</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Panning-平移和-Zooming-缩放"><a href="#Panning-平移和-Zooming-缩放" class="headerlink" title="Panning 平移和 Zooming 缩放"></a>Panning 平移和 Zooming 缩放</h3><h4 id="创建缩放器"><a href="#创建缩放器" class="headerlink" title="创建缩放器"></a>创建缩放器</h4><blockquote>
+<p>会和mouseup事件冲突</p>
+</blockquote>
+<p>使用方法 d3.zoom() 创建一个缩放器（以下称为 zoom）<br>它既是一个方法，可以接收选择集作为参数 zoom(selection)，为选择集中的元素（一般是包含数据的容器 <g> 元素）添加相应的缩放事件监听器，并为它们设置变换 transform 的初始值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一般通过 selection.call() 方法调用缩放器创建函数</span></span><br><span class="line"><span class="comment">// 这样 selection 选择集就会作为参数传递给缩放器创建函数</span></span><br><span class="line">selection.<span class="title function_">call</span>(d3.<span class="title function_">zoom</span>().<span class="title function_">on</span>(<span class="string">&quot;zoom&quot;</span>, zoomed));</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">zoomed</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    g.<span class="title function_">attr</span>(<span class="string">&quot;transform&quot;</span>, event.<span class="property">transform</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">如果希望移除缩放相关事件的监听器，可以为将相应事件回调函数设置为 <span class="literal">null</span></span><br><span class="line">selection.<span class="title function_">on</span>(<span class="string">&quot;.zoom&quot;</span>, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以只移除特定的缩放事件的监听器，如滚轮缩放</span></span><br><span class="line">selection.<span class="title function_">on</span>(<span class="string">&quot;wheel.zoom&quot;</span>, <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>d3.zoomIdentity<br>在d3.js进行缩放的时候，有一个缩放的中心点，我们在demo进行测试的时候就会发现，这个缩放的中心点就是鼠标所在的位置，在鼠标所在的位置局部放大和缩小。<br>在默认情况下，这种中心点的位置在svg的[width/2,height/2]的位置，例如调用scaleTo,scaleBy方法的时候，就是已svg的中心为缩放的中心进行缩放；如果是调用d3.zoomIdentity.scale(2)进行缩放，那么缩放的中心点则为[0,0]:<br>因为d3.zoomIdentity表示的是坐标位置[0,0]，当前缩放为1的一种状态，因此它将缩放中心的位置定在了[0,0]。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接缩放</span></span><br><span class="line">svg.<span class="title function_">call</span>(</span><br><span class="line">    zoom.<span class="property">transform</span>,</span><br><span class="line">    d3.<span class="property">zoomIdentity</span>.<span class="title function_">translate</span>(<span class="number">100</span>，<span class="number">100</span>)</span><br><span class="line">);</span><br><span class="line"><span class="comment">//多少时间内完成缩放</span></span><br><span class="line">svg.<span class="title function_">transition</span>().<span class="title function_">duration</span>(<span class="number">1000</span>).<span class="title function_">call</span>(</span><br><span class="line">    zoom.<span class="property">transform</span>,</span><br><span class="line">    d3.<span class="property">zoomIdentity</span>.<span class="title function_">translate</span>(<span class="number">100</span>，<span class="number">100</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除缩放"><a href="#移除缩放" class="headerlink" title="移除缩放"></a>移除缩放</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> d3.<span class="title function_">select</span>(<span class="string">&quot;svg&quot;</span>).<span class="title function_">on</span>(<span class="string">&#x27;.zoom&#x27;</span>,<span class="literal">null</span>)</span><br><span class="line"><span class="comment">//重新绑定</span></span><br><span class="line"> d3.<span class="title function_">select</span>(<span class="string">&quot;svg&quot;</span>).<span class="title function_">call</span>(d3.<span class="title function_">zoom</span>());</span><br></pre></td></tr></table></figure>
+
+<h4 id="约束缩放"><a href="#约束缩放" class="headerlink" title="约束缩放"></a>约束缩放</h4><ul>
+<li>zoom.constrain([constrain]) 对缩放平移操作进行约束。<br>其入参是一个函数，该函数依次接收三个参数，最后返回一个经过约束的变换值：</li>
+</ul>
+<p>transform 原本需要执行的缩放变换对象<br>extent 视图范围<br>translateExtent 平移的范围</p>
+<p>默认的约束函数如下，其作用是确保视图范围不大于可平移的范围，这样用户就可以通过移动，将图像的各个部分移到视图的任何地方</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">constrain</span>(<span class="params">transform, extent, translateExtent</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> dx0 = transform.<span class="title function_">invertX</span>(extent[<span class="number">0</span>][<span class="number">0</span>]) - translateExtent[<span class="number">0</span>][<span class="number">0</span>],</span><br><span class="line">      dx1 = transform.<span class="title function_">invertX</span>(extent[<span class="number">1</span>][<span class="number">0</span>]) - translateExtent[<span class="number">1</span>][<span class="number">0</span>],</span><br><span class="line">      dy0 = transform.<span class="title function_">invertY</span>(extent[<span class="number">0</span>][<span class="number">1</span>]) - translateExtent[<span class="number">0</span>][<span class="number">1</span>],</span><br><span class="line">      dy1 = transform.<span class="title function_">invertY</span>(extent[<span class="number">1</span>][<span class="number">1</span>]) - translateExtent[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">  <span class="keyword">return</span> transform.<span class="title function_">translate</span>(</span><br><span class="line">    dx1 &gt; dx0 ? (dx0 + dx1) / <span class="number">2</span> : <span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="number">0</span>, dx0) || <span class="title class_">Math</span>.<span class="title function_">max</span>(<span class="number">0</span>, dx1),</span><br><span class="line">    dy1 &gt; dy0 ? (dy0 + dy1) / <span class="number">2</span> : <span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="number">0</span>, dy0) || <span class="title class_">Math</span>.<span class="title function_">max</span>(<span class="number">0</span>, dy1)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>zoom.extent([extent]) 设置视图范围 viewport extent。<br>参数 extent 是一个数组 [[x0, y0], [x1, y1]]，其中 [x0, y0] 表示视图范围的左上角，而 [x1, y1] 表示视图范围的右下角。<br>参数 extent 也可以是一个返回数组的函数，它会被选择集中的元素依次调用，并传递当前所遍历的元素所绑定的数据 datum d 作为参数。而函数内的 this 指向当前所遍历的元素节点。<br>💡 如果缩放器绑定的是普通的 HTML 元素，则视图范围的默认值 [[0, 0], [width, height]] 即与元素的宽高大小相同；如果缩放器绑定的是 SVG 类型的元素，则视图范围的默认值是 SVG 的 viewBox（如果没有设置 viewBox 属性，就使用 SVG 的宽高，即 viewport）。<br>视图的范围 viewport extent 对于一些函数有影响，如通过 zoom.scaleBy() 和 zoom.scaleTo() 方法触发的变换，其视图的中心会保持不变；视图中心和大小会影响使用插值器 d3.interpolateZoom 创建的过渡动画的路径；而平移范围 translate extent 的约束需要依赖视图范围（平移范围应该大于视图范围）。</p>
 </li>
-<li><p>GatewayAddress  192.168.1.1 //路由器地址</p>
+<li><p>zoom.translateExtent([extent]) 设置平移范围 translate extent。<br>参数 extent 是一个数组 [[x0, y0], [x1, y1]]，其中 [x0, y0] 表示平移范围的左上角，而  [x1, y1] 表示平移范围的右下角。默认值是 [[-∞, -∞], [+∞, +∞]]<br>💡 该方法虽然约束的是平移操作，但可能造成缩小时平移的发生。<br>⚠️ 该约束在通过 zoom.scaleBy()、zoom.scaleTo()、zoom.translateBy() 方法执行变换时生效；但是通过 zoom.transform() 方法执行变换时不生效</p>
 </li>
-<li><p>GatewayID 123456789 //与服务器authpuppy中对应</p>
+</ul>
+<p>以上三个方法提及的两个特殊的范围：viewport extent 视图范围、translate extent 平移范围。通过设置视图范围的大小，以及通过平移范围来约束视图（范围，一个数组）可以修改的位置，可以间接来限制元素可以平移的位置，通过这两个特殊范围的配合可以实现特定的元素不被移出画面外这一需求。</p>
+<ul>
+<li>zoom.scaleExtent([extent]) 设置缩放比例的范围。参数 extent 是一个的数组 [k0, k1]，表示缩放比例的范围，其中 k0 是可设置的最小缩放比例，k1 是可设置的最大缩放比例。默认范围是 [0,∞][0,\infty ][0,∞]<br>如果达到了约束的缩放比例极限时，即使用户继续滑动鼠标滚轮，缩放变换也会被忽略。<br>💡 以上方法限制视图的缩放，但可能会造成一个「副作用」，即当视图缩放达到了约束的缩放比例极限时，用户还继续滚动就会造成页面的滚动（如果当时页面是可滚动的），如果希望修正这个「副作用」，可以在相应的选择集上监听 wheel 事件并取消它的默认行为</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">selection</span><br><span class="line">  .<span class="title function_">on</span>(zoom) <span class="comment">// 为选择集的元素设置了缩放监听器后，取消 wheel 事件的默认行为</span></span><br><span class="line">  .<span class="title function_">on</span>(<span class="string">&quot;wheel&quot;</span>, <span class="function"><span class="params">event</span> =&gt;</span> event.<span class="title function_">preventDefault</span>());</span><br></pre></td></tr></table></figure>
+
+<p>该约束在通过 zoom.scaleBy()、zoom.scaleTo()、zoom.translateBy() 方法执行变换时生效；但是通过 zoom.transform() 方法执行变换时不生效</p>
+<ul>
+<li>zoom.filter[(filter)] 用于判断是否执行缩放变换操作。参数 filter 是一个返回布尔值的函数，当返回的是 falsy 时忽略变换操作。它用以限制特定条件下不响应缩放变换操作。<br>函数 filter 接收当前的缩放事件 event 和当前调用缩放器的选择集的元素所绑定的数据 datum d 作为参数，而函数内的 this 指向当前元素节点。<br>其默认值如下，因此按下 Ctrl（但是可以在滚动鼠标滑轮时按下 Ctrl）或使用鼠标的次级按键（对于右手用户，次级按键一般是指鼠标的右键）时，默认是无法进行缩放平移操作，因为这些操作一般有其他用途</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">filter</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// 对于设置为右手操作的鼠标</span></span><br><span class="line">  <span class="comment">// 当使用左键时，event.button 为 0</span></span><br><span class="line">  <span class="comment">// 当使用右键时，event.button 为 2</span></span><br><span class="line">  <span class="keyword">return</span> (!event.<span class="property">ctrlKey</span> || event.<span class="property">type</span> === <span class="string">&#x27;wheel&#x27;</span>) &amp;&amp; !event.<span class="property">button</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>zoom.wheelDelta([delta]) 设置鼠标滚轮的每次滚动的 delta 值，参数 delta 是一个函数，最后返回修改后的 delta 值 Δ\Delta Δ。<br>参数 delta 默认值如下</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">wheelDelta</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> -event.<span class="property">deltaY</span> * (event.<span class="property">deltaMode</span> === <span class="number">1</span> ? <span class="number">0.05</span> : event.<span class="property">deltaMode</span> ? <span class="number">1</span> : <span class="number">0.002</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该值用于在鼠标滚轮时计算缩放比例 k×2Δk\times 2^{\Delta}k×2Δ（其中 kkk 是原始的缩放比例），例如当 Δ=1\Delta = 1Δ=1 时，视图的元素会缩小一半；当 Δ=−1\Delta = -1Δ=−1 时，视图的元素会放大一倍</p>
+<ul>
+<li><p>zoom.clickDistance([distance]) 设置点击事件中，鼠标按下与放开鼠标之间允许的最大距离（该距离通过点击事件的 event.clientX、event.clientY 计算得到），如果大于等于该距离，就不会抛出点击事件。<br>💡 可以想象以鼠标按下点为圆心，以参数 distance 为半径，在该圆内释放鼠标，都会抛出点击事件，在圆外（或圆周上）放开鼠标，点击事件都会被忽略（因为此时更应该触发拖拽事件）。参数默认值 distance 是 0<br>该方法可用于优化点击放大的场景，而原始画面中有大量较小的元素，从鼠标的按下到释放可能会发生微小的移动，避免识别为对该元素的拖拽操作，可以通过设置「可移动式点击的最大距离」，来区分点击事件和拖拽事件。</p>
 </li>
-<li><p>ExternalInterface eth0.2  //外网接口，这个是wan口，连接到Internet的接口</p>
+<li><p>zoom.tapDistance([distance]) 对于触屏设备在双击时，两次点击允许的最大距离（该距离通过首次点击的 touchstart 和第二次点击的 touchend 事件的 event.clientX、event.clientY 计算得到），如果大于等于该距离，就不会抛出 dblclick 双击事件。<br>💡 其应用场景和前一个方法类似，一般是为了区分双击事件和拖拽事件，参数默认值 distance 是 10</p>
 </li>
-<li><p>GatewayInterface  br-lan  //内网接口，这个是lan口，连接到局域网的接口</p>
-</li>
-<li><p>AuthServer {                        //认证服务器配置项                             </p>
-</li>
-</ol>
-<p>Hostname xx.xx.xx.xx //认证服务器IP地址或者名                                                 </p>
-<p>SSLAvailable no //认证服务器有HTTPS加密则配置该项，此处无</p>
-<p>SSLPort //认证服务器有HTTPS加密则配置该项，此处无</p>
-<p>Path /authpuppy/web/        (认证路径)</p>
-<p>/<strong><strong><strong><strong><strong><strong><strong><strong>此处为wifidog认证服务器的五个脚本文件，用于认证</strong></strong></strong></strong></strong></strong></strong></strong>****/</p>
-<p>LoginScriptPathFragment //登录展示的脚本，以get的方式传入gw_address、gw_port、gw_id、mac、url(AP的IP地址，wifidog监听端口，AP的ID，客户端mac地址，客户初始访问的url)</p>
-<p>PortalScriptPathFragment //客户端登陆成功后展示的脚本，之传入gw_id一个参数，用于告知用户登陆成功</p>
-<p>MsgScriptPathFragment //错误信息展示脚本，通过get方式传入一个参数message，用于展示认证中出现错误的页面</p>
-<p>PingScriptPathFragment //心跳脚本，通过get方式传入5个参数，gw_id，sys.uptime，sys.memfree，sys.load，wifidog.uptime；wifidog每隔一段时间访问一次这个脚本(时间间隔由CheckInterval决定)。注意，此脚本需要返回“Pong”字符串</p>
-<p>AuthScriptPathFragment //用户认证脚本，通过get的方式接受7各参数，stage,ip,mac,token,incoming,outcoming和gw_id；stage的值为login,ip为客户端IP，mac为客户端的mac地址，                  }还有这个Path，一开始我是设置成  /   根目录，结果不行，出现了这个问题：HTTP Response from Server: [HTTP/1.1 404 Not Found后来设置成这个目录才可以。还有一点要注意的是Path的目录两边都要加/，不然也会出错。</p>
-<ol start="7">
-<li><p>GatewayPort 2060 //wifidog的监听地址，通常保持默认</p>
-</li>
-<li><p>CheckInterval 60 //心跳时长，单位是秒，</p>
-</li>
-</ol>
-<p>心跳：客户端认证成功，如果有网络访问动作，Wifidog getway就会每隔一段时间访问Portal服务器的一个脚本，用于认证计费，当然，如果客户使用超时或超流量，也可以通过心跳强制客户端下线</p>
-<ol start="9">
-<li>ClientTimeout 5 //ClientTimeout是用户一次认证成功后的网络访问时长，超过这个时间需要重新认证</li>
-</ol>
+</ul>
+<h3 id="比例尺"><a href="#比例尺" class="headerlink" title="比例尺"></a>比例尺</h3><h4 id="线性比例尺"><a href="#线性比例尺" class="headerlink" title="线性比例尺"></a>线性比例尺</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> scale = d3.<span class="title function_">scaleLinear</span>()</span><br><span class="line">           .<span class="title function_">domain</span>([<span class="number">0</span>,<span class="number">10000</span>])</span><br><span class="line">           .<span class="title function_">range</span>([<span class="number">0</span>,<span class="number">100</span>])</span><br></pre></td></tr></table></figure>
+
+<p>其中 scaleLinear() 对应法则，domain() 是定义域，range() 是值域。</p>
+<h3 id="坐标轴"><a href="#坐标轴" class="headerlink" title="坐标轴"></a>坐标轴</h3><p>D3 中提供了专门的坐标轴模块 d3-axis，只需要几行代码就可以生成各种各样的坐标轴。一般情况下，坐标轴要与比例尺一起使用。记住这句话，离开比例尺的坐标轴就是耍流氓。</p>
 
     </div>
 
@@ -339,8 +502,8 @@
       <i class="fa fa-chevron-left"></i> element UI
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/11/12/22-23-33/" rel="next" title="echart">
-      echart <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/01/10-12-33/" rel="next" title="MySql">
+      MySql <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -400,7 +563,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#wifiDog"><span class="nav-number">1.</span> <span class="nav-text">wifiDog</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Listen-on-this-port"><span class="nav-number">2.</span> <span class="nav-text">Listen on this port</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Parameter-CheckInterval"><span class="nav-number">3.</span> <span class="nav-text">Parameter: CheckInterval</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Default-60"><span class="nav-number">4.</span> <span class="nav-text">Default: 60</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Optional"><span class="nav-number">5.</span> <span class="nav-text">Optional</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-many-seconds-should-we-wait-between-timeout-checks-This-is-also"><span class="nav-number">7.</span> <span class="nav-text">How many seconds should we wait between timeout checks.  This is also</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#how-often-the-gateway-will-ping-the-auth-server-and-how-often-it-will"><span class="nav-number">8.</span> <span class="nav-text">how often the gateway will ping the auth server and how often it will</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#update-the-traffic-counters-on-the-auth-server-Setting-this-too-low"><span class="nav-number">9.</span> <span class="nav-text">update the traffic counters on the auth server.  Setting this too low</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wastes-bandwidth-setting-this-too-high-will-cause-the-gateway-to-take"><span class="nav-number">10.</span> <span class="nav-text">wastes bandwidth, setting this too high will cause the gateway to take</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-long-time-to-switch-to-it%E2%80%99s-backup-auth-server-s"><span class="nav-number">11.</span> <span class="nav-text">a long time to switch to it’s backup auth server(s).</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Parameter-ClientTimeout"><span class="nav-number">12.</span> <span class="nav-text">Parameter: ClientTimeout</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Default-5"><span class="nav-number">13.</span> <span class="nav-text">Default: 5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Optional-1"><span class="nav-number">14.</span> <span class="nav-text">Optional</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-1"><span class="nav-number">15.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Set-this-to-the-desired-of-number-of-CheckInterval-of-inactivity-before-a-client-is-logged-out"><span class="nav-number">16.</span> <span class="nav-text">Set this to the desired of number of CheckInterval of inactivity before a client is logged out</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-timeout-will-be-INTERVAL-TIMEOUT"><span class="nav-number">17.</span> <span class="nav-text">The timeout will be INTERVAL * TIMEOUT</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts"><span class="nav-number">1.</span> <span class="nav-text">echarts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#svg%E5%8F%AF%E7%BC%A9%E6%94%BE%E7%9F%A2%E9%87%8F%E5%9B%BE%E5%BD%A2%EF%BC%88Scalable-Vector-Graphics%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">svg可缩放矢量图形（Scalable Vector Graphics）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG-CSS%E5%B1%9E%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">SVG CSS属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%A2%E7%8A%B6CSS%E5%B1%9E%E6%80%A7"><span class="nav-number">2.1.1.</span> <span class="nav-text">形状CSS属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#class"><span class="nav-number">2.1.2.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#style"><span class="nav-number">2.1.3.</span> <span class="nav-text">style</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#svg"><span class="nav-number">2.2.</span> <span class="nav-text">svg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#defs"><span class="nav-number">2.3.</span> <span class="nav-text">defs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#g"><span class="nav-number">2.4.</span> <span class="nav-text">g</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rect"><span class="nav-number">2.5.</span> <span class="nav-text">rect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#patterns"><span class="nav-number">2.6.</span> <span class="nav-text">patterns</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d3-js"><span class="nav-number">3.</span> <span class="nav-text">d3.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0"><span class="nav-number">3.2.</span> <span class="nav-text">选择元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0"><span class="nav-number">3.3.</span> <span class="nav-text">操作元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="nav-number">3.4.</span> <span class="nav-text">数据绑定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BB%91%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%90%8E%EF%BC%8CD3-%E6%B2%A1%E6%9C%89%E7%AB%8B%E5%8D%B3%E6%9B%B4%E6%96%B0%EF%BC%88%E5%A2%9E%E5%88%A0%EF%BC%89%E9%A1%B5%E9%9D%A2%E8%8A%82%E7%82%B9%EF%BC%8C%E8%80%8C%E6%98%AF%E7%94%9F%E6%88%90-3-%E4%B8%AA%E9%80%89%E6%8B%A9%E9%9B%86%EF%BC%8C%E8%BF%99%E6%A0%B7%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8F%90%E4%BE%9B%E4%BA%86%E6%9B%B4%E5%A4%A7%E7%9A%84%E7%81%B5%E6%B4%BB%E5%BA%A6%E5%92%8C%E5%8F%AF%E5%AE%9A%E5%88%B6%E6%80%A7%EF%BC%8C%E4%BE%8B%E5%A6%82%E5%AF%B9%E4%BA%8E-exiting-%E9%80%89%E6%8B%A9%E9%9B%86%E7%9A%84%E8%8A%82%E7%82%B9%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%9C%A8%E5%88%A0%E9%99%A4%E6%97%B6%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%BA%9B%E6%B7%A1%E5%87%BA%E7%9A%84%E5%8A%A8%E6%95%88%EF%BC%9B%E5%AF%B9%E4%BA%8E-entering-%E9%80%89%E6%8B%A9%E9%9B%86%E7%9A%84%E8%8A%82%E7%82%B9%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E9%A2%9C%E8%89%B2%EF%BC%8C%E9%AB%98%E4%BA%AE%E5%87%BA%E6%9D%A5%E5%AE%83%E4%BB%AC%E6%98%AF%E6%96%B0%E5%A2%9E%E5%88%B0%E9%A1%B5%E9%9D%A2%E4%B8%8A%E7%9A%84"><span class="nav-number">4.</span> <span class="nav-text">在绑定数据后，D3 没有立即更新（增删）页面节点，而是生成 3 个选择集，这样为数据可视化提供了更大的灵活度和可定制性，例如对于 exiting 选择集的节点，可以在删除时设置一些淡出的动效；对于 entering 选择集的节点可以设置不一样的颜色，高亮出来它们是新增到页面上的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">绑定事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Panning-%E5%B9%B3%E7%A7%BB%E5%92%8C-Zooming-%E7%BC%A9%E6%94%BE"><span class="nav-number">4.2.</span> <span class="nav-text">Panning 平移和 Zooming 缩放</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BC%A9%E6%94%BE%E5%99%A8"><span class="nav-number">4.2.1.</span> <span class="nav-text">创建缩放器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E7%BC%A9%E6%94%BE"><span class="nav-number">4.2.2.</span> <span class="nav-text">移除缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%A6%E6%9D%9F%E7%BC%A9%E6%94%BE"><span class="nav-number">4.2.3.</span> <span class="nav-text">约束缩放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E4%BE%8B%E5%B0%BA"><span class="nav-number">4.3.</span> <span class="nav-text">比例尺</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%AF%94%E4%BE%8B%E5%B0%BA"><span class="nav-number">4.3.1.</span> <span class="nav-text">线性比例尺</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%90%E6%A0%87%E8%BD%B4"><span class="nav-number">4.4.</span> <span class="nav-text">坐标轴</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -427,7 +590,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
