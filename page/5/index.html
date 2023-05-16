@@ -155,6 +155,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/01/22/23-33-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/22/23-33-33/" class="post-title-link" itemprop="url">uni-App</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-22 23:33:33" itemprop="dateCreated datePublished" datetime="2020-01-22T23:33:33+08:00">2020-01-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="uniApp"><a href="#uniApp" class="headerlink" title="uniApp"></a>uniApp</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>配置浏览器目录</li>
+<li>微信小程序-》设置-》安全设置-》打开多端口服务</li>
+</ul>
+<h2 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h2><ul>
+<li><p>支持的通用 css 单位包括 px、rpx</p>
+</li>
+<li><p>px 即屏幕像素<br>rpx 即响应式 px，一种根据屏幕宽度自适应的动态单位。以 750 宽的屏幕为基准，750rpx 恰好为屏幕宽度。屏幕变宽，rpx 实际显示效果会等比放大，但在 App（vue2 不含 nvue） 端和 H5（vue2） 端屏幕宽度达到 960px 时，默认将按照 375px 的屏幕宽度进行计算，具体配置参考</p>
+</li>
+</ul>
+<p>vue 页面支持下面这些普通 H5 单位，但在 nvue 里不支持：</p>
+<p>rem 根字体大小可以通过 page-meta 配置<br>vh viewpoint height，视窗高度，1vh 等于视窗高度的 1%<br>vw viewpoint width，视窗宽度，1vw 等于视窗宽度的 1%<br>nvue 还不支持百分比单位。</p>
+<p>App 端，在 pages.json 里的 titleNView 或页面里写的 plus api 中涉及的单位，只支持 px。注意此时不支持 rpx<br>nvue 中，uni-app 模式（nvue 不同编译模式介绍）可以使用 px 、rpx，表现与 vue 中基本一致，另外启用 dynamicRpx 后可以适配屏幕大小动态变化。weex 模式目前遵循 weex 的单位，它的单位比较特殊：</p>
+<p>px:，以 750 宽的屏幕为基准动态计算的长度单位，与 vue 页面中的 rpx 理念相同。（一定要注意 weex 模式的 px，和 vue 里的 px 逻辑不一样。）<br>wx：与设备屏幕宽度无关的长度单位，与 vue 页面中的 px 理念相同<br>下面对 rpx 详细说明：</p>
+<p>设计师在提供设计图时，一般只提供一个分辨率的图。</p>
+<p>严格按设计图标注的 px 做开发，在不同宽度的手机上界面很容易变形。</p>
+<p>而且主要是宽度变形。高度一般因为有滚动条，不容易出问题。由此，引发了较强的动态宽度单位需求。<br>rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应。uni-app 规定屏幕基准宽度 750rpx。</p>
+<p>开发者可以通过设计稿基准宽度计算页面元素 rpx 值，设计稿 1px 与框架样式 1rpx 转换公式如下：</p>
+<p>设计稿 1px / 设计稿基准宽度 = 框架样式 1rpx / 750rpx</p>
+<p>换言之，页面元素宽度在 uni-app 中的宽度计算公式：</p>
+<p>750 * 元素在设计稿中的宽度 / 设计稿基准宽度</p>
+<p>举例说明：</p>
+<p>若设计稿宽度为 750px，元素 A 在设计稿上的宽度为 100px，那么元素 A 在 uni-app 里面的宽度应该设为：750 _ 100 / 750，结果为：100rpx。<br>若设计稿宽度为 640px，元素 A 在设计稿上的宽度为 100px，那么元素 A 在 uni-app 里面的宽度应该设为：750 _ 100 / 640，结果为：117rpx。<br>若设计稿宽度为 375px，元素 B 在设计稿上的宽度为 200px，那么元素 B 在 uni-app 里面的宽度应该设为：750 * 200 / 375，结果为：400rpx。<br>Tips</p>
+<p>注意 rpx 是和宽度相关的单位，屏幕越宽，该值实际像素越大。如不想根据屏幕宽度缩放，则应该使用 px 单位。<br>如果开发者在字体或高度中也使用了 rpx ，那么需注意这样的写法意味着随着屏幕变宽，字体会变大、高度会变大。如果你需要固定高度，则应该使用 px 。<br>rpx 不支持动态横竖屏切换计算，使用 rpx 建议锁定屏幕方向<br>设计师可以用 iPhone6 作为视觉稿的标准。<br>如果设计稿不是 750px，HBuilderX 提供了自动换算的工具，详见：HBuilderX 中自动转换 px 为 upx。<br>App 端，在 pages.json 里的 titleNView 或页面里写的 plus api 中涉及的单位，只支持 px，不支持 rpx。<br>早期 uni-app 提供了 upx ，目前已经推荐统一改为 rpx 了.</p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>目前支持的选择器有：<code>.class</code> <code>#id</code> <code>element</code> (<code>::after</code> <code>::before</code> )仅 vue 页面生效<br>注意：</p>
+<p>在 uni-app 中不能使用 * 选择器。</p>
+<p>微信小程序自定义组件中仅支持 class 选择器</p>
+<p>page 相当于 body 节点，例如：</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>uni-app 页面路由为框架统一管理，开发者需要在 pages.json 里配置每个路由页面的路径及页面样式。类似小程序在 app.json 中配置页面路由一样。所以 uni-app 的路由用法与 Vue Router 不同，如仍希望采用 Vue Router 方式管理路由，可在插件市场搜索 Vue-Router。</p>
+<p>#路由跳转<br>uni-app 有两种页面路由跳转方式：使用 navigator 组件跳转、调用 API 跳转</p>
+<p>|路由方式| 页面栈表现| 触发时机|<br>|初始化 |新页面入栈 uni-app 打开的第一个页面|<br>|打开新页面 |新页面入栈 |调用 API uni.navigateTo 、使用组件 <code>&lt;navigator open-type=&quot;navigate&quot;/&gt;</code>|<br>|页面重定向 |当前页面出栈，新页面入栈 |调用 API uni.redirectTo 、使用组件 <code>&lt;navigator open-type=&quot;redirectTo&quot;/&gt;</code>|<br>|页面返回 |页面不断出栈，直到目标返回页 |调用 API uni.navigateBack 、使用组件 <code>&lt;navigator open-type=&quot;navigateBack&quot;/&gt;</code> 、用户按左上角返回按钮、安卓用户点击物理 back 按键|<br>|Tab 切换 |页面全部出栈，只留下新的 Tab 页面 |调用 API uni.switchTab 、使用组件 <code>&lt;navigator open-type=&quot;switchTab&quot;/&gt;</code> 、用户切换 Tab|<br>|重加载 |页面全部出栈，只留下新的页面 |调用 API uni.reLaunch 、使用组件 <code>&lt;navigator open-type=&quot;reLaunch&quot;/&gt;</code>|</p>
+<h2 id="pages-json-文件"><a href="#pages-json-文件" class="headerlink" title="pages.json 文件"></a>pages.json 文件</h2><p>pages.json 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。</p>
+<p>它类似微信小程序中app.json的页面管理部分。注意定位权限申请等原属于app.json的内容，在uni-app中是在manifest中配置。</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>-</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/01/11/20-22-22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -186,7 +284,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -393,7 +491,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -542,7 +640,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -787,7 +885,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -874,7 +972,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -953,7 +1051,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -977,7 +1075,7 @@
 
       
           <h3 id="alsa库下载"><a href="#alsa库下载" class="headerlink" title="alsa库下载"></a>alsa库下载</h3><p><code>ftp://ftp.alsa-project.org/pub</code></p>
-<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p>解压进入文件夹<br><code>./configure  --prefix=/home/mine/alsa    //生成文件存放的位置</code><br>开始安装驱动<br><code>make &amp;&amp; sudo make install </code></p>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p>解压进入文件夹<br><code>./configure  --prefix=/home/mine/alsa //生成文件存放的位置</code><br>开始安装驱动<br><code>make &amp;&amp; sudo make install</code></p>
 <h3 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h3><p>使用命令</p>
 <p><code>./configure --host=arm-jyxtec-linux-gnueabi --prefix=/usr/share/arm-alsa</code></p>
 <blockquote>
@@ -989,13 +1087,14 @@
 <p>–with-alsa-inc-prefix和–with-alsa-prefix分别指定了交叉编译util应用所需要的alsa-lib的头文件和库文件；–disable-alsamixer表示不编译生成alsamixer这个应用程序，因为该程序依赖于ncurses这个图形界面库，目前我们对于该库还不能交叉编译，故放弃</p>
 </blockquote>
 <h3 id="可能出现的错误"><a href="#可能出现的错误" class="headerlink" title="可能出现的错误"></a>可能出现的错误</h3><hr>
-<p><code> error: this packages requires a curses library</code>  </p>
+<p><code>error: this packages requires a curses library</code>  </p>
 <p><strong>解决办法：</strong>  </p>
 <p><code>apt-get install libncurses5-dev</code></p>
 <hr>
-<p><code> error: panelw library not found</code>  </p>
+<p><code>error: panelw library not found</code>  </p>
 <p><strong>解决办法：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s libpanelw.so.5 /usr/lib/libpanelw.so</span><br><span class="line">sudo ln -s libformw.so.5 /usr/lib/libformw.so</span><br><span class="line">sudo ln -s libmenuw.so.5 /usr/lib/libmenuw.so</span><br><span class="line">sudo ln -s libncursesw.so.5 /lib/libncursesw.so</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">ln</span> -s libpanelw.so.5 /usr/lib/libpanelw.so</span><br><span class="line">sudo <span class="built_in">ln</span> -s libformw.so.5 /usr/lib/libformw.so</span><br><span class="line">sudo <span class="built_in">ln</span> -s libmenuw.so.5 /usr/lib/libmenuw.so</span><br><span class="line">sudo <span class="built_in">ln</span> -s libncursesw.so.5 /lib/libncursesw.so</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><strong>解决办法：</strong></p>
 <p>根据自己的错误提示来输入命令  </p>
@@ -1050,7 +1149,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1201,7 +1300,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1381,7 +1480,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1428,224 +1527,6 @@
 <p>· 获取所有页面句柄：<code>driver.window_handles</code></p>
 <p>通过句柄，我们可以进行窗口的切换。</p>
 <p>· 切换窗口：<br><code>driver.switch_to.window(handle)</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2019/10/11/22-11-22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/11/22-11-22/" class="post-title-link" itemprop="url">hexo搭建博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-11 22:11:22" itemprop="dateCreated datePublished" datetime="2019-10-11T22:11:22+08:00">2019-10-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><ul>
-<li>archlinux:<code>pacman -S nodejs</code></li>
-<li>ubuntu</li>
-</ul>
-<h2 id="安装npm"><a href="#安装npm" class="headerlink" title="安装npm"></a>安装npm</h2><ul>
-<li>archlinux:<br><code>pacman -S npm</code></li>
-<li>ubuntu:<br><code>apt-get install npm</code></li>
-</ul>
-<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p><code>npm config set registry https://registry.npmmirror.com  //添加国内源</code></p>
-<p>使用nrm切换镜像源</p>
-<p><code>npm install nrm -g //全局安装</code></p>
-<p><code>nrm ls  //查看所有镜像源</code></p>
-<p><code>nrm use taobao  //切换为淘宝镜像源</code></p>
-<p>查看镜像源：<code>npm get registry</code></p>
-<p>安装hexo</p>
-<p><code>npm install -g hexo-cli</code></p>
-<h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><p>查看ssh</p>
-<p><code>cd ~/.ssh</code></p>
-<p>若无，则生成ssh</p>
-<p><code>ssh-keygen -t rsa -C 用户名</code></p>
-<p>一路回车默认安装,打开生成的<code>id_rsa.pub</code>复制</p>
-<p>设置git用户名邮箱  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的账号&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你邮箱地址&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>进入一个文件夹进行初始化：<code>hexo init</code></p>
-<p>编辑<code>_config.yml</code><br>找到</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span></span><br></pre></td></tr></table></figure>
-
-<p>修改为：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">...........</span> <span class="string">///克隆地址</span></span><br><span class="line">  <span class="attr">branchL:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>执行<code>hexo g -d</code>上传代码（注意第一次提交需要输入yes，不要一路回车）</p>
-<p><strong>常用命令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate //Generate static files</span><br><span class="line">hexo server //Run server</span><br><span class="line">hexo deploy //Deploy to remote sites</span><br><span class="line"></span><br><span class="line">hexo new My_New_Post    //Create a new post</span><br></pre></td></tr></table></figure>
-
-<h3 id="hexo博客迁移"><a href="#hexo博客迁移" class="headerlink" title="hexo博客迁移"></a>hexo博客迁移</h3><p>先新建一个文件夹，初始化后，从原来的文件夹中拷贝下列文件进行覆盖</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">themes/</span><br><span class="line">_config.yml</span><br><span class="line">------------------</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br></pre></td></tr></table></figure>
-
-<h2 id="Fexo"><a href="#Fexo" class="headerlink" title="Fexo"></a>Fexo</h2><ul>
-<li>安装</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">cd</span> my-blog</span><br><span class="line"> git <span class="built_in">clone</span> git@github.com:forsigner/fexo.git themes/fexo</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/forsigner/fexo.git</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>配置主题<br>主题配置全部在theme/fexo里面完成，所里下面所有配置指的是配置theme/fexo/_config.yml。</li>
-</ul>
-<p>设置基本信息</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">blog_name:</span> <span class="string">Forsigner</span></span><br><span class="line"><span class="attr">slogan:</span> <span class="string">Find</span> <span class="string">the</span> <span class="string">bug</span> <span class="string">of</span> <span class="string">the</span> <span class="string">world</span></span><br></pre></td></tr></table></figure>
-
-<p>设置头像</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># relative url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/avatar.jpg</span></span><br><span class="line"><span class="comment"># or absolute url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">https://avatars0.githubusercontent.com/u/2668081?v=3&amp;s=460</span></span><br></pre></td></tr></table></figure>
-
-<p>设置favicon</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span> <span class="string">/favicon.ico</span></span><br></pre></td></tr></table></figure>
-
-<p>设置关键词<br>关键词主要作用是优化SEO</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">keywords:</span> <span class="string">forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript</span></span><br></pre></td></tr></table></figure>
-
-<p>设置首页内容<br>你可以设置是否在首页直接显示文章</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">init_page_content:</span> <span class="string">HOME_NAV</span>  <span class="comment"># HOME_NAV | POST</span></span><br></pre></td></tr></table></figure>
-
-<p>设置首页导航</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home_nav:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Blog</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Github</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/forsigner</span></span><br><span class="line">    <span class="attr">target:</span> <span class="string">_blank</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Douban</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">http://www.douban.com/people/forsigner/</span></span><br><span class="line">    <span class="attr">target:</span> <span class="string">_blank</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Twitter</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://twitter.com/forsigner</span></span><br><span class="line">    <span class="attr">target:</span> <span class="string">_blank</span></span><br></pre></td></tr></table></figure>
-
-<p>设置页面导航</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">page_nav:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">博客:</span> <span class="string">/archives/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">分类:</span> <span class="string">/category/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">标签:</span> <span class="string">/tag/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">友链:</span> <span class="string">/link/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">关于:</span> <span class="string">/about/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">RSS:</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure>
-
-<p>设置页面导航样式</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">page_nav_style:</span> <span class="string">CIRCLE</span>  <span class="comment"># CIRCLE|ROUND_RECT</span></span><br></pre></td></tr></table></figure>
-
-<p>设置面包屑</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">breadcrumb:</span></span><br><span class="line">  <span class="attr">isShow:</span> <span class="literal">true</span> <span class="comment"># true|fase</span></span><br></pre></td></tr></table></figure>
-
-<p>设置盒子<br>你可设置盒子是否显示和其显示的文字</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">toolbox:</span></span><br><span class="line">  <span class="attr">isShow:</span> <span class="literal">true</span> <span class="comment"># true|fase</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">盒子</span></span><br><span class="line"><span class="string">搜索页面</span> <span class="string">Slogan</span></span><br><span class="line"><span class="attr">search_slogan:</span></span><br><span class="line">  <span class="attr">isShow:</span> <span class="literal">true</span> <span class="comment"># true|fase</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">Can</span> <span class="string">you</span> <span class="string">find</span> <span class="string">the</span> <span class="string">bug</span> <span class="string">of</span> <span class="string">world</span> <span class="string">~</span></span><br><span class="line"><span class="string">友链页面</span> <span class="string">Slogan</span></span><br><span class="line"><span class="attr">link_slogan:</span></span><br><span class="line">  <span class="attr">isShow:</span> <span class="literal">true</span> <span class="comment"># true|fase</span></span><br><span class="line">  <span class="attr">text:</span> <span class="string">交换友链可以邮件</span> <span class="string">forsigner@gmail.com</span></span><br></pre></td></tr></table></figure>
-
-<p>设置文章标题对齐方式</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post:</span></span><br><span class="line">  <span class="attr">header_align:</span> <span class="string">center</span> <span class="comment"># left|center</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>启用页面<br>你可以启用你想要的页面，在开启关于、友链、项目的页面后，你可以对这些设置这些页面的内容</p>
-<p>新建分类、搜索、关于界面：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">//进入<span class="built_in">source</span>/categories/文件夹</span><br><span class="line">//编辑index.md文件,添加<span class="built_in">type</span>或layout属性</span><br><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">layout: categories</span><br><span class="line">或</span><br><span class="line"><span class="built_in">type</span>: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用分类页面<br>在博客根目录执行 <code>hexo new page category</code><br>修改my-blog/source/category/index.md里面的内容:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: category</span><br><span class="line">layout: category</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用标签页面<br>在博客根目录执行<code>hexo new page tag</code><br>修改my-blog/source/tag/index.md里面的内容:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tag</span><br><span class="line">layout: tag</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用友链页面</p>
-<p>在博客根目录执行<code>hexo new page link</code><br>修改my-blog/source/link/index.md里面的内容:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: link</span><br><span class="line">layout: link</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用友链页面后，可以设置类似以下格式的内容</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">link:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">织网</span></span><br><span class="line">    <span class="attr">info:</span> <span class="string">身体和灵魂，总有一个在路上</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">http://zheng-ji.info/</span></span><br><span class="line">    <span class="attr">avatar:</span> <span class="string">https://avatars3.githubusercontent.com/u/1414745?v=3&amp;s=460</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dongyado</span></span><br><span class="line">    <span class="attr">info:</span> <span class="string">生命不止，折腾不息</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">http://dongyado.com/</span></span><br><span class="line">    <span class="attr">avatar:</span> <span class="string">https://avatars0.githubusercontent.com/u/6274940?v=3&amp;s=460</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">OrangeCoder</span></span><br><span class="line">    <span class="attr">info:</span> <span class="string">android</span> <span class="string">ffmpeg</span> <span class="string">nodejs</span> <span class="string">gradle</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">http://orangecoder.com/</span></span><br><span class="line">    <span class="attr">avatar:</span> <span class="string">https://avatars0.githubusercontent.com/u/2263785?v=3&amp;s=460</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">EverET</span></span><br><span class="line">    <span class="attr">info:</span> <span class="string">好记性不如烂笔头</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">http://everet.org/about-me/</span></span><br><span class="line">    <span class="attr">avatar:</span> <span class="string">https://avatars1.githubusercontent.com/u/1559563?v=3&amp;s=460</span></span><br></pre></td></tr></table></figure>
-
-<p>启用关于页面</p>
-<p>在博客根目录执行 <code>hexo new page about</code><br>修改my-blog/source/about/index.md里面的内容:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">layout: about</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用关于页面后，可以设置类似以下格式的内容:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">about:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">me</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">icon-user</span></span><br><span class="line">    <span class="attr">text_value:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;Scut，1991，Spring.&quot;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;喜欢设计，擅长编程，喜欢睡懒觉.&quot;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;前端开发工程师，常用 HTML / CSS / JavaScript.&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">Github</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">icon-github</span></span><br><span class="line">    <span class="attr">text_key:</span> <span class="string">Github</span></span><br><span class="line">    <span class="attr">text_value:</span> <span class="string">&quot;@forsigner&quot;</span></span><br><span class="line">    <span class="attr">text_value_url:</span> <span class="string">https://github.com/forsigner</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">weibo</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">icon-weibo</span></span><br><span class="line">    <span class="attr">text_key:</span> <span class="string">微博</span></span><br><span class="line">    <span class="attr">text_value:</span> <span class="string">&quot;@forsigner&quot;</span></span><br><span class="line">    <span class="attr">text_value_url:</span> <span class="string">http://weibo.com/u/1847075964</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">mail</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">icon-mail</span></span><br><span class="line">    <span class="attr">text_key:</span> <span class="string">Gmail</span></span><br><span class="line">    <span class="attr">text_value:</span> <span class="string">&quot;forsigner@gmail.com&quot;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">location</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">icon-location</span></span><br><span class="line">    <span class="attr">text_value:</span> <span class="string">珠海</span></span><br></pre></td></tr></table></figure>
-
-<p>启用项目页面</p>
-<p>在博客根目录执行 <code>hexo new page project</code><br>修改my-blog/source/project/index.md里面的内容:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: project</span><br><span class="line">layout: project</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>启用项目页面后，可以设置类似以下格式的内容</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">project:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">personal</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">fexo</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/forsigner/fexo</span></span><br><span class="line">    <span class="attr">intro:</span> <span class="string">A</span> <span class="string">minimalist</span> <span class="string">design</span> <span class="string">theme</span> <span class="string">for</span> <span class="string">hexo</span></span><br><span class="line">  <span class="comment"># - type: company</span></span><br><span class="line">  <span class="comment">#   name: Fexo</span></span><br><span class="line">  <span class="comment">#   url: https://github.com/forsigner/fexo</span></span><br><span class="line">  <span class="comment">#   intro: A minimalist design theme for hexo</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">personal</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">beside</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/forsigner/beside</span></span><br><span class="line">    <span class="attr">intro:</span> <span class="string">I</span> <span class="string">need</span> <span class="string">you</span> <span class="string">beside</span> <span class="string">me</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">personal</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">web-fontmin</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/forsigner/web-fontmin</span></span><br><span class="line">    <span class="attr">intro:</span> <span class="string">字体子集化，在线提取你需要的字体</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">personal</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">magic-check</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/forsigner/magic-check</span></span><br><span class="line">    <span class="attr">intro:</span> <span class="string">Beautify</span> <span class="string">Radio</span> <span class="string">and</span> <span class="string">Checkbox</span> <span class="string">with</span> <span class="string">pure</span> <span class="string">CSS</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">personal</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">nice-bar</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/forsigner/nice-bar</span></span><br><span class="line">    <span class="attr">intro:</span> <span class="string">A</span> <span class="string">nice</span> <span class="string">and</span> <span class="string">lightweight</span> <span class="string">scrollbar</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">personal</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">angular-nice-bar</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">https://github.com/forsigner/angular-nice-bar</span></span><br><span class="line">    <span class="attr">intro:</span> <span class="string">A</span> <span class="string">nice</span> <span class="string">and</span> <span class="string">lightweight</span> <span class="string">scrollbar</span> <span class="string">in</span> <span class="string">Angular</span></span><br></pre></td></tr></table></figure>
-
-<p>启用搜索页面</p>
-<p>在博客根目录执行 <code>hexo new page search</code><br>修改my-blog/source/search/index.md里面的内容:</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: search</span><br><span class="line">layout: search</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>然后安装 Hexo 插件 <code>hexo-search</code> (重要)<br>先进入 blog 的根目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install hexo-search --save</span><br></pre></td></tr></table></figure>
-
-<p>个性化设置</p>
-<p>自定义CSS</p>
-<p>也许 Fexo 默认的样式满足不了你个性化的需求，使用此配置你可以在不修改 Fexo 源码的情况下，任意的自定义 Fexo 的样式，方法如下：</p>
-<p>在 blog 根目录新建文件夹 my-blog/source/css<br>然后在此目录新建一个 CSS，名字随意，如 personal-style.css<br>修改fexo/_config.yml下面配置，然后你就可以写你想要的样式了<br>personal_style: /css/personal-style.css</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 如果不想启用自定义样式，注释这行就可以了</span><br><span class="line">比如我的个人自定义样式如下：</span><br><span class="line"></span><br><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&quot;Meiryo&quot;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;/fonts/Meiryo.eot&quot;</span>);</span><br><span class="line">  <span class="comment">/* IE9 */</span></span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;/fonts/Meiryo.eot?#iefix&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;embedded-opentype&quot;</span>), <span class="comment">/* IE6-IE8 */</span></span><br><span class="line">  <span class="built_in">url</span>(<span class="string">&quot;/fonts/Meiryo.woff&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;woff&quot;</span>), <span class="comment">/* chrome, firefox */</span></span><br><span class="line">  <span class="built_in">url</span>(<span class="string">&quot;/fonts/Meiryo.ttf&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;truetype&quot;</span>), <span class="comment">/* chrome, firefox, opera, Safari, Android, iOS 4.2+ */</span></span><br><span class="line">  <span class="built_in">url</span>(<span class="string">&quot;/fonts/Meiryo.svg#Meiryo&quot;</span>) <span class="built_in">format</span>(<span class="string">&quot;svg&quot;</span>);</span><br><span class="line">  <span class="comment">/* iOS 4.1- */</span></span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">html</span><span class="selector-class">.page-home</span> &#123;</span><br><span class="line">  <span class="comment">/*background-image: url(&#x27;/images/bg.jpg&#x27;)*/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/*background: linear-gradient( #1abc9c, transparent), linear-gradient( 90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);*/</span></span><br><span class="line">  <span class="comment">/*background-blend-mode: screen;*/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/*background: linear-gradient(to left, #5f2c82, #49a09d);*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>自定义博客名的字体</p>
-<p>由于中文字体文件太大，有的快10M，所以 Fexo 没有引入中文字体，导致博客名有点难看。<br>但是可以通过提取字体来减小字体文件大小，让字体只有几KB。<br>一下步骤可以让你实现自定义博客名字体，包括英文和中文：</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">下载免费可用的ttf格式字体</span><br><span class="line">利用 Web-Fontmin 提取字体，然后下载 Web 字体和样式</span><br><span class="line">在博客根目录的source文件夹新建目录 fonts</span><br><span class="line">把下载的 web-fontmin 里的 CSS 内容 copy 到你的 personal-style.css 里去</span><br><span class="line">修改fexo/_config.yml下面配置，设置字体名称：</span><br><span class="line">blog_name_font_familiy: myFontName</span><br><span class="line"></span><br><span class="line"># 注意: 这是css文件里的font-familiy的值 ,例如里面是 font-familiy: &quot;myfontName&quot;</span><br><span class="line">PS：自定义博客名字体前请先自定义CSS</span><br></pre></td></tr></table></figure>
-
-<p>为首页设置背景</p>
-<p>如果你不喜欢首页简洁的白色，想个性化一点，你可以自定义首页的背景颜色或者图片</p>
-<p>修改personal-style.css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span><span class="selector-class">.page-home</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&#x27;/images/bg.jpg&#x27;</span>);</span><br><span class="line">  <span class="attribute">background-color</span>: transparent;</span><br><span class="line">  <span class="attribute">background-size</span>: cover;</span><br><span class="line">  <span class="attribute">background-position</span>: center center;</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*background: linear-gradient( #1abc9c, transparent), linear-gradient( 90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);*/</span></span><br><span class="line">  <span class="comment">/*background-blend-mode: screen;*/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/*background: linear-gradient(to left, #5f2c82, #49a09d);*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>第三方服务</p>
-<p>启用统计</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">google_analytics:</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">57e94d016sfsf1fba3xxxx8a2b0263af0</span></span><br></pre></td></tr></table></figure>
-
-<p>启用评论</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">disqus_shortname:</span> <span class="string">forsigner</span></span><br><span class="line"><span class="comment"># duoshuo_shortname: forsigner</span></span><br></pre></td></tr></table></figure>
-
-<p>使用 Mathjax</p>
-<p>要使用 Mathjax，可以通过 Hexo 插件 hexo-renderer-mathjax支持</p>
-<p>查看 hexo-renderer-mathjax 文档</p>
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
-
-<p>解决办法：<br><code>npm install --save hexo-deployer-git</code></p>
 
       
     </div>

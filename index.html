@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -307,7 +307,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -712,7 +712,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1475,7 +1475,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1498,7 +1498,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Threejs"><a href="#Threejs" class="headerlink" title="Threejs"></a>Threejs</h1><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="创建一个场景"><a href="#创建一个场景" class="headerlink" title="创建一个场景"></a>创建一个场景</h3><p>场景、相机和渲染器</p>
+          <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="创建一个场景"><a href="#创建一个场景" class="headerlink" title="创建一个场景"></a>创建一个场景</h3><p>场景、相机和渲染器</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> scene = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Scene</span>();</span><br><span class="line"><span class="keyword">const</span> camera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PerspectiveCamera</span>( <span class="number">75</span>, <span class="variable language_">window</span>.<span class="property">innerWidth</span> / <span class="variable language_">window</span>.<span class="property">innerHeight</span>, <span class="number">0.1</span>, <span class="number">1000</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> renderer = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">WebGLRenderer</span>();</span><br><span class="line">renderer.<span class="title function_">setSize</span>( <span class="variable language_">window</span>.<span class="property">innerWidth</span>, <span class="variable language_">window</span>.<span class="property">innerHeight</span> );</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>( renderer.<span class="property">domElement</span> );</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -1518,71 +1518,1320 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">animate</span>(<span class="params"></span>) &#123;</span><br><span class="line"> <span class="title function_">requestAnimationFrame</span>( animate );</span><br><span class="line"> renderer.<span class="title function_">render</span>( scene, camera );</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">animate</span>();</span><br></pre></td></tr></table></figure>
 
 <p>在这里我们创建了一个使渲染器能够在每次屏幕刷新时对场景进行绘制的循环（在大多数屏幕上，刷新率一般是60次/秒）。如果你是一个浏览器游戏开发的新手，你或许会说“为什么我们不直接用setInterval来实现刷新的功能呢？”当然啦，我们的确可以用setInterval，但是，requestAnimationFrame有很多的优点。最重要的一点或许就是当用户切换到其它的标签页时，它会暂停，因此不会浪费用户宝贵的处理器资源，也不会损耗电池的使用寿命。</p>
-<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h3><ul>
-<li>摄像机阵列（ArrayCamera）<br>ArrayCamera 用于更加高效地使用一组已经预定义的摄像机来渲染一个场景。这将能够更好地提升VR场景的渲染性能。<br>一个 ArrayCamera 的实例中总是包含着一组子摄像机，应当为每一个子摄像机定义viewport（视口）这个属性，这一属性决定了由该子摄像机所渲染的视口区域的大小。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cameras = [];</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">       <span class="keyword">const</span> subcamera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PerspectiveCamera</span>(<span class="number">40</span>, <span class="number">1</span>, <span class="number">0.1</span>, <span class="number">10</span>);</span><br><span class="line">       subcamera.<span class="property">viewport</span> = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Vector4</span>(</span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">floor</span>(i * <span class="number">200</span>),</span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1</span> * <span class="number">200</span>), <span class="comment">//视口高</span></span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">200</span>), <span class="comment">//宽</span></span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">200</span>) <span class="comment">//视口高</span></span><br><span class="line">       );</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="property">x</span> = i / <span class="number">3</span> - <span class="number">0.5</span>;</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="property">y</span> = <span class="number">0.5</span> + i;</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="property">z</span> = <span class="number">1.5</span>;</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="title function_">multiplyScalar</span>(<span class="number">2</span>);</span><br><span class="line">       subcamera.<span class="title function_">lookAt</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">       subcamera.<span class="title function_">updateMatrixWorld</span>();</span><br><span class="line">       cameras.<span class="title function_">push</span>(subcamera);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">let</span> camera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">ArrayCamera</span>(cameras);</span><br></pre></td></tr></table></figure>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h3 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h3><h4 id="Camera"><a href="#Camera" class="headerlink" title="Camera"></a>Camera</h4><h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><p><code>Camera()</code><br>创建一个新的Camera（摄像机）。注意：这个类并不是被直接调用的；你所想要的或许是一个 PerspectiveCamera（透视摄像机）或者 OrthographicCamera（正交摄像机）。</p>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><p>共有属性请参见其基类Object3D</p>
+<p>.isCamera : Boolean<br>Read-only flag to check if a given object is of type Camera.</p>
+<p>.layers : Layers<br>摄像机是一个layers的成员. 这是一个从Object3D继承而来的属性。</p>
+<p>当摄像机的视点被渲染的时候，物体必须和当前被看到的摄像机共享至少一个层。</p>
+<p>.matrixWorldInverse : Matrix4<br>这是matrixWorld矩阵的逆矩阵。 MatrixWorld包含了相机的世界变换矩阵。</p>
+<p>.projectionMatrix : Matrix4<br>这是投影变换矩阵。</p>
+<p>.projectionMatrixInverse : Matrix4<br>这是投影变换矩阵的逆矩阵。</p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p>共有方法请参见其基类Object3D。</p>
+<p>.clone ( ) : Camera<br>返回一个具有和当前相机的属性一样的新的相机。</p>
+<p>.copy ( source : Camera, recursive : Boolean ) : this<br>将源摄像机的属性复制到新摄像机中。</p>
+<p>.getWorldDirection ( target : Vector3 ) : Vector3<br>target — 调用该函数的结果将复制给该Vector3对象。</p>
+<p>返回一个能够表示当前摄像机所正视的世界空间方向的Vector3对象。 （注意：摄像机俯视时，其Z轴坐标为负。）</p>
+<h4 id="透视相机（PerspectiveCamera）"><a href="#透视相机（PerspectiveCamera）" class="headerlink" title="透视相机（PerspectiveCamera）"></a>透视相机（PerspectiveCamera）</h4><p>这一摄像机使用perspective projection（透视投影）来进行投影。</p>
+<p>这一投影模式被用来模拟人眼所看到的景象，它是3D场景的渲染中使用得最普遍的投影模式。<br>透视投影相机的四个参数fov, aspect, near, far构成一个四棱台3D空间，被称为视锥体，只有视锥体之内的物体，才会渲染出来，视锥体范围之外的物体不会显示在Canvas画布上。<br>透视投影相机的投影规律是远小近大，通过相机观察阵列立方体大小变化，可以看到距离相机越远，立方体的渲染视觉效果越小。增加相机视角fov，视锥体范围更大，意味着可以看到渲染范围更大，远小近大的视觉效果更明显。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> camera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PerspectiveCamera</span>( <span class="number">45</span>, width / height, <span class="number">1</span>, <span class="number">1000</span> );</span><br><span class="line">scene.<span class="title function_">add</span>( camera );</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>立方相机（CubeCamera）<br>创建6个渲染到WebGLCubeRenderTarget的摄像机<br>构造器<br>CubeCamera( near : Number, far : Number, renderTarget : WebGLCubeRenderTarget )<br>near – 近剪切面的距离<br>far – 远剪切面的距离<br>renderTarget – The destination cube render target.</li>
+<h5 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h5><p><code>PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )</code><br>fov — 摄像机视锥体垂直视野角度<br>aspect — 摄像机视锥体长宽比,一般设置为Canvas画布宽高比width / height<br>near — 摄像机视锥体近端面<br>far — 摄像机视锥体远端面</p>
+<h5 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h5><blockquote>
+<p>共有属性请参见其基类 Camera 。</p>
+</blockquote>
+<p>请注意，在大多数属性发生改变之后，你将需要调用.updateProjectionMatrix来使得这些改变生效。</p>
+<p>.aspect : Float<br>摄像机视锥体的长宽比，通常是使用画布的宽/画布的高。默认值是1（正方形画布）。</p>
+<p>.far : Float<br>摄像机的远端面，默认值是2000。</p>
+<p>该值必须大于near plane（摄像机视锥体近端面）的值。</p>
+<p>.filmGauge : Float<br>胶片尺寸，其默认值为35（毫米）。 这个参数不会影响摄像机的投影矩阵，除非.filmOffset被设置为了一个非零的值。</p>
+<p>.filmOffset : Float<br>水平偏离中心偏移量，和.filmGauge单位相同。默认值为0。</p>
+<p>.focus : Float<br>用于立体视觉和景深效果的物体的距离。 这个参数不会影响摄像机的投影矩阵，除非使用了StereoCamera。 默认值是10。</p>
+<p>.fov : Float<br>摄像机视锥体垂直视野角度，从视图的底部到顶部，以角度来表示。默认值是50。</p>
+<p>.isPerspectiveCamera : Boolean<br>Read-only flag to check if a given object is of type PerspectiveCamera.</p>
+<p>.near : Float<br>摄像机的近端面，默认值是0.1。</p>
+<p>其有效值范围是0到当前摄像机far plane（远端面）的值之间。 请注意，和OrthographicCamera不同，0对于PerspectiveCamera的近端面来说不是一个有效值。</p>
+<p>.view : Object<br>Frustum window specification or null. 这个值使用.setViewOffset方法来进行设置，使用.clearViewOffset方法来进行清除。</p>
+<p>.zoom : number<br>获取或者设置摄像机的缩放倍数，其默认值为1。</p>
+<h5 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h5><blockquote>
+<p>共有方法请参见其基类Camera。</p>
+</blockquote>
+<p>.clearViewOffset () : undefined<br>清除任何由.setViewOffset设置的偏移量。</p>
+<p>.getEffectiveFOV () : Float<br>结合.zoom（缩放倍数），以角度返回当前垂直视野角度。</p>
+<p>.getFilmHeight () : Float<br>返回当前胶片上图像的高，如果.aspect小于或等于1（肖像格式、纵向构图），则结果等于.filmGauge。</p>
+<p>.getFilmWidth () : Float<br>返回当前胶片上图像的宽，如果.aspect大于或等于1（景观格式、横向构图），则结果等于.filmGauge。</p>
+<p>.getFocalLength () : Float<br>返回当前.fov（视野角度）相对于.filmGauge（胶片尺寸）的焦距。</p>
+<p>.setFocalLength ( focalLength : Float ) : undefined<br>通过相对于当前.filmGauge的焦距，设置FOV。</p>
+<p>默认情况下，焦距是为35mm（全画幅）摄像机而指定的。</p>
+<p>.setViewOffset ( fullWidth : Float, fullHeight : Float, x : Float, y : Float, width : Float, height : Float ) : undefined<br>fullWidth — 多视图的全宽设置<br>fullHeight — 多视图的全高设置<br>x — 副摄像机的水平偏移<br>y — 副摄像机的垂直偏移<br>width — 副摄像机的宽度<br>height — 副摄像机的高度</p>
+<p>在较大的viewing frustum（视锥体）中设置偏移量，对于多窗口或者多显示器的设置是很有用的。</p>
+<p>例如，如果你有一个3x2的显示器阵列，每个显示器分辨率都是1920x1080，且这些显示器排列成像这样的网格：<br>+—+—+—+<br>| A | B | C |<br>+—+—+—+<br>| D | E | F |<br>+—+—+—+</p>
+<p>那对于每个显示器，你可以这样来设置、调用：<br>const w = 1920;<br>const h = 1080;<br>const fullWidth = w <em>3;<br>const fullHeight = h</em> 2;</p>
+<p>// A<br>camera.setViewOffset( fullWidth, fullHeight, w <em>0, h</em> 0, w, h );<br>// B<br>camera.setViewOffset( fullWidth, fullHeight, w <em>1, h</em> 0, w, h );<br>// C<br>camera.setViewOffset( fullWidth, fullHeight, w <em>2, h</em> 0, w, h );<br>// D<br>camera.setViewOffset( fullWidth, fullHeight, w <em>0, h</em> 1, w, h );<br>// E<br>camera.setViewOffset( fullWidth, fullHeight, w <em>1, h</em> 1, w, h );<br>// F<br>camera.setViewOffset( fullWidth, fullHeight, w <em>2, h</em> 1, w, h );请注意，显示器的不必具有相同的大小，或者不必在网格中。<br>.updateProjectionMatrix () : undefined<br>更新摄像机投影矩阵。在任何参数被改变以后必须被调用。</p>
+<p>.toJSON (meta : Object) : Object<br>meta – 包含有元数据的对象，例如对象后代中的纹理或图像<br>将摄像机转换为 three.js JSON Object/Scene format（three.js JSON 物体/场景格式）。</p>
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><ul>
+<li>相机位置.position<br><code>camera.position.set(200, 200, 200);</code></li>
+<li>相机观察目标.lookAt()</li>
 </ul>
-<p>构造一个包含6个PerspectiveCameras（透视摄像机）的立方摄像机， 并将其拍摄的场景渲染到一个WebGLCubeRenderTarget上。</p>
-<ul>
-<li>正交相机（OrthographicCamera）<br>这一摄像机使用orthographic projection（正交投影）来进行投影。</li>
-</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//相机观察目标指向Threejs 3D空间中某个位置</span></span><br><span class="line">camera.<span class="title function_">lookAt</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>); <span class="comment">//坐标原点</span></span><br><span class="line">camera.<span class="title function_">lookAt</span>(<span class="number">0</span>, <span class="number">10</span>, <span class="number">0</span>);  <span class="comment">//y轴上位置10</span></span><br><span class="line">camera.<span class="title function_">lookAt</span>(mesh.<span class="property">position</span>);<span class="comment">//指向mesh对应的位置</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="正交相机（OrthographicCamera）"><a href="#正交相机（OrthographicCamera）" class="headerlink" title="正交相机（OrthographicCamera）"></a>正交相机（OrthographicCamera）</h4><p>这一摄像机使用orthographic projection（正交投影）来进行投影。</p>
 <p>在这种投影模式下，无论物体距离相机距离远或者近，在最终渲染的图片中物体的大小都保持不变。</p>
 <p>这对于渲染2D场景或者UI元素是非常有用的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> camera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">OrthographicCamera</span>( width / - <span class="number">2</span>, width / <span class="number">2</span>, height / <span class="number">2</span>, height / - <span class="number">2</span>, <span class="number">1</span>, <span class="number">1000</span> );</span><br><span class="line">scene.<span class="title function_">add</span>( camera );</span><br></pre></td></tr></table></figure>
 
-<p>构造器<br>OrthographicCamera( left : Number, right : Number, top : Number, bottom : Number, near : Number, far : Number )<br>left — 摄像机视锥体左侧面。<br>right — 摄像机视锥体右侧面。<br>top — 摄像机视锥体上侧面。<br>bottom — 摄像机视锥体下侧面。<br>near — 摄像机视锥体近端面。<br>far — 摄像机视锥体远端面。</p>
-<ul>
-<li>透视相机（PerspectiveCamera）<br>这一摄像机使用perspective projection（透视投影）来进行投影。</li>
-</ul>
-<p>这一投影模式被用来模拟人眼所看到的景象，它是3D场景的渲染中使用得最普遍的投影模式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> camera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PerspectiveCamera</span>( <span class="number">45</span>, width / height, <span class="number">1</span>, <span class="number">1000</span> );</span><br><span class="line">scene.<span class="title function_">add</span>( camera );</span><br></pre></td></tr></table></figure>
+<h5 id="构造器-1"><a href="#构造器-1" class="headerlink" title="构造器"></a>构造器</h5><p>OrthographicCamera( left : Number, right : Number, top : Number, bottom : Number, near : Number, far : Number )<br>left — 摄像机视锥体左侧面。<br>right — 摄像机视锥体右侧面。<br>top — 摄像机视锥体上侧面。<br>bottom — 摄像机视锥体下侧面。<br>near — 摄像机视锥体近端面。<br>far — 摄像机视锥体远端面。</p>
+<h5 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h5><p>共有属性请参见其基类Camera。<br>请注意，在大多数属性发生改变之后，你将需要调用.updateProjectionMatrix来使得这些改变生效。</p>
+<p>.bottom : Float<br>摄像机视锥体下侧面。</p>
+<p>.far : Float<br>摄像机视锥体远端面，其默认值为2000。</p>
+<p>该值必须大于near plane（摄像机视锥体近端面）的值。</p>
+<p>.isOrthographicCamera : Boolean<br>Read-only flag to check if a given object is of type OrthographicCamera.</p>
+<p>.left : Float<br>摄像机视锥体左侧面。</p>
+<p>.near : Float<br>摄像机视锥体近端面。其默认值为0.1.</p>
+<p>其值的有效范围介于0和far（摄像机视锥体远端面）之间。<br>请注意，和PerspectiveCamera不同，0对于OrthographicCamera的近端面来说是一个有效值。</p>
+<p>.right : Float<br>摄像机视锥体右侧面。</p>
+<p>.top : Float<br>摄像机视锥体上侧面。</p>
+<p>.view : Object<br>这个值是由setViewOffset来设置的，其默认值为null。</p>
+<p>.zoom : number<br>获取或者设置摄像机的缩放倍数，其默认值为1。</p>
+<h5 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h5><p>共有方法请参见其基类Camera。</p>
+<p>.setViewOffset ( fullWidth : Float, fullHeight : Float, x : Float, y : Float, width : Float, height : Float ) : undefined<br>fullWidth — 多视图的全宽设置<br>fullHeight — 多视图的全高设置<br>x — 副摄像机的水平偏移<br>y — 副摄像机的垂直偏移<br>width — 副摄像机的宽度<br>height — 副摄像机的高度</p>
+<p>在较大的viewing frustum（视锥体）中设置偏移量，对于多窗口或者多显示器的设置是很有用的。 对于如何使用它，请查看PerspectiveCamera中的示例。</p>
+<p>.clearViewOffset () : undefined<br>清除任何由.setViewOffset设置的偏移量。</p>
+<p>.updateProjectionMatrix () : undefined<br>更新摄像机投影矩阵。在任何参数被改变以后必须被调用。</p>
+<p>.toJSON (meta : Object) : Object<br>meta – 包含有元数据的对象，例如对象后代中的纹理或图像<br>将摄像机转换为 three.js JSON Object/Scene format（three.js JSON 物体/场景格式）。</p>
+<h4 id="摄像机阵列（ArrayCamera）"><a href="#摄像机阵列（ArrayCamera）" class="headerlink" title="摄像机阵列（ArrayCamera）"></a>摄像机阵列（ArrayCamera）</h4><p>ArrayCamera 用于更加高效地使用一组已经预定义的摄像机来渲染一个场景。这将能够更好地提升VR场景的渲染性能。<br>一个 ArrayCamera 的实例中总是包含着一组子摄像机，应当为每一个子摄像机定义viewport（视口）这个属性，这一属性决定了由该子摄像机所渲染的视口区域的大小。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cameras = [];</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">       <span class="keyword">const</span> subcamera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PerspectiveCamera</span>(<span class="number">40</span>, <span class="number">1</span>, <span class="number">0.1</span>, <span class="number">10</span>);</span><br><span class="line">       subcamera.<span class="property">viewport</span> = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Vector4</span>(</span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">floor</span>(i * <span class="number">200</span>),</span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1</span> * <span class="number">200</span>), <span class="comment">//视口高</span></span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">200</span>), <span class="comment">//宽</span></span><br><span class="line">         <span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">200</span>) <span class="comment">//视口高</span></span><br><span class="line">       );</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="property">x</span> = i / <span class="number">3</span> - <span class="number">0.5</span>;</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="property">y</span> = <span class="number">0.5</span> + i;</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="property">z</span> = <span class="number">1.5</span>;</span><br><span class="line">       subcamera.<span class="property">position</span>.<span class="title function_">multiplyScalar</span>(<span class="number">2</span>);</span><br><span class="line">       subcamera.<span class="title function_">lookAt</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">       subcamera.<span class="title function_">updateMatrixWorld</span>();</span><br><span class="line">       cameras.<span class="title function_">push</span>(subcamera);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">let</span> camera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">ArrayCamera</span>(cameras);</span><br></pre></td></tr></table></figure>
 
-<p>构造器<br>PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )<br>fov — 摄像机视锥体垂直视野角度<br>aspect — 摄像机视锥体长宽比<br>near — 摄像机视锥体近端面<br>far — 摄像机视锥体远端面</p>
+<h4 id="立方相机（CubeCamera）"><a href="#立方相机（CubeCamera）" class="headerlink" title="立方相机（CubeCamera）"></a>立方相机（CubeCamera）</h4><p>创建6个渲染到WebGLCubeRenderTarget的摄像机<br>构造器<br>CubeCamera( near : Number, far : Number, renderTarget : WebGLCubeRenderTarget )<br>near – 近剪切面的距离<br>far – 远剪切面的距离<br>renderTarget – The destination cube render target.</p>
+<p>构造一个包含6个PerspectiveCameras（透视摄像机）的立方摄像机， 并将其拍摄的场景渲染到一个WebGLCubeRenderTarget上。</p>
+<h4 id="立体相机（StereoCamera）"><a href="#立体相机（StereoCamera）" class="headerlink" title="立体相机（StereoCamera）"></a>立体相机（StereoCamera）</h4><p>双透视摄像机（立体相机）常被用于创建3D Anaglyph（3D立体影像） 或者Parallax Barrier（视差屏障）。</p>
+<h3 id="几何体"><a href="#几何体" class="headerlink" title="几何体"></a>几何体</h3><h4 id="缓冲属性BufferAttribute"><a href="#缓冲属性BufferAttribute" class="headerlink" title="缓冲属性BufferAttribute"></a>缓冲属性BufferAttribute</h4><p>这个类用于存储与BufferGeometry相关联的 attribute（例如顶点位置向量，面片索引，法向量，颜色值，UV坐标以及任何自定义 attribute ）。 利用 BufferAttribute，可以更高效的向GPU传递数据。</p>
+<blockquote>
+<p>在 BufferAttribute 中，数据被存储为任意长度的矢量（通过itemSize进行定义），下列函数如无特别说明， 函数参数中的index会自动乘以矢量长度进行计算。 当想要处理类似向量的数据时， 可以使用在Vector2，Vector3， Vector4以及Color这些类中的.fromBufferAttribute( attribute, index ) 方法来更为便捷地处理。</p>
+</blockquote>
+<h5 id="构造函数-1"><a href="#构造函数-1" class="headerlink" title="构造函数"></a>构造函数</h5><p><code>BufferAttribute( array : TypedArray, itemSize : Integer, normalized : Boolean )</code><br>array – 必须是 TypedArray. 类型，用于实例化缓存。<br>该队列应该包含：<code>itemSize * numVertices</code>个元素，numVertices 是 BufferGeometry中的顶点数目</p>
+<p>itemSize – 队列中与顶点相关的数据值的大小。举例，如果 attribute 存储的是三元组（例如顶点空间坐标、法向量或颜色值）则itemSize的值应该是3。</p>
+<p>normalized – (可选) 指明缓存中的数据如何与GLSL代码中的数据对应。例如，如果array是 UInt16Array类型，且normalized的值是 true，则队列中的值将会从 0 - +65535 映射为 GLSL 中的 0.0f - +1.0f。 如果array是 Int16Array (有符号)，则值将会从 -32768 - +32767 映射为 -1.0f - +1.0f。若 normalized 的值为 false，则数据映射不会归一化，而会直接映射为 float 值，例如，32767 将会映射为 32767.0f.</p>
+<h5 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><p><code>.array</code> : TypedArray<br>在 array 中保存着缓存中的数据。</p>
+</li>
+<li><p><code>.count</code> : Integer<br>保存 array 除以 itemSize 之后的大小。若缓存存储三元组（例如顶点位置、法向量、颜色值），则该值应等于队列中三元组的个数。</p>
+</li>
+<li><p><code>.isBufferAttribute</code> : Boolean<br>用于判断对象是否为BufferAttribute类型的只读标记.</p>
+</li>
+</ul>
+<p><code>.itemSize</code> : Integer<br>保存在 array 中矢量的长度。</p>
 <ul>
-<li>立体相机（StereoCamera）<br>双透视摄像机（立体相机）常被用于创建3D Anaglyph（3D立体影像） 或者Parallax Barrier（视差屏障）。</li>
-</ul>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><h3 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h3><h4 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h4><p>Scene()<br>创建一个新的场景对象。</p>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
-<li><p>.autoUpdate : Boolean<br>默认值为true，若设置了这个值，则渲染器会检查每一帧是否需要更新场景及其中物体的矩阵。 当设为false时，你必须亲自手动维护场景中的矩阵。</p>
+<li><p><code>.name</code> : String<br>该 attribute 实例的别名，默认值为空字符串。</p>
 </li>
-<li><p>.background : Object<br>若不为空，在渲染场景的时候将设置背景，且背景总是首先被渲染的。 可以设置一个用于的“clear”的Color（颜色）、一个覆盖canvas的Texture（纹理）， 或是 a cubemap as a CubeTexture or an equirectangular as a Texture。默认值为null。<br><code>scene.background = new THREE.Color( 0xbfe3dd );</code></p>
-</li>
-<li><p>.environment : Texture<br>若该值不为null，则该纹理贴图将会被设为场景中所有物理材质的环境贴图。 然而，该属性不能够覆盖已存在的、已分配给 MeshStandardMaterial.envMap 的贴图。默认为null。<br><code>scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;</code></p>
-</li>
-<li><p>.overrideMaterial : Material<br>如果不为空，它将强制场景中的每个物体使用这里的材质来渲染。默认值为null。</p>
-</li>
-<li><p>.fog : Fog<br>一个fog实例定义了影响场景中的每个物体的雾的类型。默认值为null。<br><code>scene.fog=new THREE.FogExp2( 0xefd1b5, 0.0025 );</code></p>
+<li><p><code>.needsUpdate</code> : Boolean<br>该标志位指明当前 attribute 已经被修改过，且需要再次送入 GPU 处理。当开发者改变了该队列的值，则标志位需要设置为 true。</p>
 </li>
 </ul>
-<h3 id="雾（Fog）"><a href="#雾（Fog）" class="headerlink" title="雾（Fog）"></a>雾（Fog）</h3><p>这个类中的参数定义了线性雾。也就是说，雾的密度是随着距离线性增大的。</p>
-<h4 id="构造器-1"><a href="#构造器-1" class="headerlink" title="构造器"></a>构造器</h4><p>Fog( color : Integer, near : Float, far : Float )<br>颜色参数传入Color构造函数中，来设置颜色属性。颜色可以是一个十六进制的整型数，或者是CSS风格的字符串。</p>
-<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><ul>
-<li><p>.name : String<br>对象的名称，可选、不必唯一。默认值是一个空字符串。</p>
+<p>将标志位设为 true 同样会增加 version 的值。</p>
+<ul>
+<li><p><code>.normalized</code> : Boolean<br>指明缓存中数据在转化为GLSL着色器代码中数据时是否需要被归一化。详见构造函数中的说明。</p>
 </li>
-<li><p>.color : Color<br>雾的颜色。比如说，如果将其设置为黑色，远处的物体将被渲染成黑色。</p>
+<li><p><code>.onUploadCallback</code> : Function<br>attribute 数据传输到GPU后的回调函数。</p>
 </li>
-<li><p>.near : Float<br>开始应用雾的最小距离。距离小于活动摄像机“near”个单位的物体将不会被雾所影响。<br>默认值是1。</p>
-</li>
-<li><p>.far : Float<br>结束计算、应用雾的最大距离，距离大于活动摄像机“far”个单位的物体将不会被雾所影响。<br>默认值是1000。</p>
+<li><p><code>.updateRange</code> : Object<br>对象包含如下成员:<br>offset: 默认值为 0。 指明更新的起始位置。<br>count: 默认值为 -1，表示不指定更新范围。</p>
 </li>
 </ul>
-<h3 id="雾-指数（FogExp2）"><a href="#雾-指数（FogExp2）" class="headerlink" title="雾-指数（FogExp2）"></a>雾-指数（FogExp2）</h3><p>该类所包含的参数定义了指数雾，它可以在相机附近提供清晰的视野，且距离相机越远，雾的浓度随着指数增长越快。</p>
-<h4 id="构造器-2"><a href="#构造器-2" class="headerlink" title="构造器"></a>构造器</h4><p>FogExp2( color : Integer, density : Float )<br>颜色参数传入Color构造函数中，来设置颜色属性。颜色可以是一个十六进制的整型数，或者是CSS风格的字符串。</p>
-<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><ul>
-<li><p>.name : String<br>对象的名称，可选、不必唯一。默认值是一个空字符串。</p>
+<p>该值只可以被用于更新某些矢量数据（例如，颜色相关数据）。</p>
+<ul>
+<li><p><code>.usage</code> : Usage<br>为输入的数据定义最优的预估使用方式。等同于在WebGLRenderingContext.bufferData() 中的usage参数。默认为StaticDrawUsage。在usage constants中查看可用值。</p>
 </li>
-<li><p>.color : Color<br>雾的颜色。比如说，如果将其设置为黑色，远处的物体将被渲染成黑色。</p>
-</li>
-<li><p>.density : Float<br>定义雾的密度将会增长多块。<br>默认值是0.00025.</p>
+<li><p><code>.version</code> : Integer<br>版本号，当 needsUpdate 被设置为 true 时，该值会自增。</p>
 </li>
 </ul>
+<h5 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h5><ul>
+<li><p><code>.applyMatrix3 ( m : Matrix3 ) : this</code><br>将矩阵m应用此BufferAttribute中的每一个Vector3元素中。</p>
+</li>
+<li><p><code>.applyMatrix4 ( m : Matrix4 ) : this</code><br>将矩阵m应用到此BufferAttribute的每一个Vector3元素中</p>
+</li>
+<li><p><code>.applyNormalMatrix ( m : Matrix3 ) : this</code><br>将正规矩阵m应用到此BufferAttribute的每一个Vector3元素中</p>
+</li>
+<li><p><code>.transformDirection ( m : Matrix4 ) : this</code><br>将矩阵m应用到此BufferAttribute的每一个Vector3元素中，并将所有元素解释为方向向量。</p>
+</li>
+<li><p><code>.clone () : BufferAttribute</code><br>返回该 BufferAttribute 的拷贝。</p>
+</li>
+<li><p><code>.copyArray ( array ) : this</code><br>将参数中所给定的普通队列或 TypedArray 拷贝到 array 中。</p>
+</li>
+</ul>
+<p>拷贝 TypedArray 相关注意事项详见 TypedArray.set。</p>
+<ul>
+<li><p><code>.copyAt ( index1 : Integer, bufferAttribute : BufferAttribute, index2 : Integer ) : this</code><br>将一个矢量从 <code>bufferAttribute[index2]</code> 拷贝到 <code>array[index1]</code> 中。</p>
+</li>
+<li><p><code>.getX ( index : Integer ) : Number</code><br>获取给定索引的矢量的第一维元素 （即 X 值）。</p>
+</li>
+<li><p><code>.getY ( index : Integer ) : Number</code><br>获取给定索引的矢量的第二维元素 （即 Y 值）。</p>
+</li>
+<li><p><code>.getZ ( index : Integer ) : Number</code><br>获取给定索引的矢量的第三维元素 （即 Z 值）。</p>
+</li>
+<li><p><code>.getW ( index : Integer ) : Number</code><br>获取给定索引的矢量的第四维元素 （即 W 值）。</p>
+</li>
+<li><p><code>.onUpload ( callback : Function ) : this</code><br>见 onUploadCallback 属性。</p>
+</li>
+</ul>
+<p>在 WebGL / Buffergeometry 中，该方在缓存数据传递给 GPU 后，用于释放内存。</p>
+<ul>
+<li><code>.set ( value : Array, offset : Integer ) : this</code><br>value – 被拷贝的 Array 或 TypedArray 类型的数据。<br>offset – (可选) array 中开始拷贝的位置索引。</li>
+</ul>
+<p>对 array，调用 TypedArray.set( value, offset ) 方法。</p>
+<p>特别的, 对将 value 转为 TypedArray 的要求详见上述链接。</p>
+<ul>
+<li><p><code>.setUsage ( value : Usage ) : this</code><br>Set usage to value. See usage constants for all possible input values.</p>
+</li>
+<li><p><code>.setX ( index : Integer, x : Float ) : this</code><br>设置给定索引的矢量的第一维数据（设置 X 值）。</p>
+</li>
+<li><p><code>.setY ( index : Integer, y : Float ) : this</code><br>设置给定索引的矢量的第二维数据（设置 Y 值）。</p>
+</li>
+<li><p><code>.setZ ( index : Integer, z : Float ) : this</code><br>设置给定索引的矢量的第三维数据（设置 Z 值）。</p>
+</li>
+<li><p><code>.setW ( index : Integer, w : Float ) : this</code><br>设置给定索引的矢量的第四维数据（设置 W 值）。</p>
+</li>
+<li><p><code>.setXY ( index : Integer, x : Float, y : Float ) : this</code><br>设置给定索引的矢量的第一、二维数据（设置 X 和 Y 值）。</p>
+</li>
+<li><p><code>.setXYZ ( index : Integer, x : Float, y : Float, z : Float ) : this</code><br>设置给定索引的矢量的第一、二、三维数据（设置 X、Y 和 Z 值）。</p>
+</li>
+<li><p><code>.setXYZW ( index : Integer, x : Float, y : Float, z : Float, w : Float ) : this</code><br>设置给定索引的矢量的第一、二、三、四维数据（设置 X、Y、Z 和 W 值）。</p>
+</li>
+</ul>
+<h4 id="缓冲几何体BufferGeometry"><a href="#缓冲几何体BufferGeometry" class="headerlink" title="缓冲几何体BufferGeometry"></a>缓冲几何体BufferGeometry</h4><p>是面片、线或点几何体的有效表述。包括顶点位置，面片索引、法相量、颜色值、UV 坐标和自定义缓存属性值。使用 BufferGeometry 可以有效减少向 GPU 传输上述数据所需的开销。<br>BufferGeometry是一个没有任何形状的空几何体，你可以通过BufferGeometry自定义任何几何形状</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BufferGeometry</span>();</span><br><span class="line"><span class="comment">// 创建一个简单的矩形. 在这里我们左上和右下顶点被复制了两次。</span></span><br><span class="line"><span class="comment">// 因为在两个三角面片里，这两个顶点都需要被用到。</span></span><br><span class="line"><span class="comment">//通过javascript类型化数组 Float32Array创建一组xyz坐标数据用来表示几何体的顶点坐标</span></span><br><span class="line"><span class="keyword">const</span> vertices = <span class="keyword">new</span> <span class="title class_">Float32Array</span>( [</span><br><span class="line"> -<span class="number">1.0</span>, -<span class="number">1.0</span>,  <span class="number">1.0</span>,</span><br><span class="line">  <span class="number">1.0</span>, -<span class="number">1.0</span>,  <span class="number">1.0</span>,</span><br><span class="line">  <span class="number">1.0</span>,  <span class="number">1.0</span>,  <span class="number">1.0</span>,</span><br><span class="line"></span><br><span class="line">  <span class="number">1.0</span>,  <span class="number">1.0</span>,  <span class="number">1.0</span>,</span><br><span class="line"> -<span class="number">1.0</span>,  <span class="number">1.0</span>,  <span class="number">1.0</span>,</span><br><span class="line"> -<span class="number">1.0</span>, -<span class="number">1.0</span>,  <span class="number">1.0</span></span><br><span class="line">] );</span><br><span class="line"><span class="comment">// 创建属性缓冲区对象</span></span><br><span class="line"><span class="comment">// itemSize = 3 因为每个顶点都是一个三元组。</span></span><br><span class="line"><span class="comment">//3个为一组，表示一个顶点的xyz坐标</span></span><br><span class="line">geometry.<span class="title function_">setAttribute</span>( <span class="string">&#x27;position&#x27;</span>, <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BufferAttribute</span>( vertices, <span class="number">3</span> ) );<span class="comment">//设置几何体顶点</span></span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0xff0000</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> mesh = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造函数-2"><a href="#构造函数-2" class="headerlink" title="构造函数"></a>构造函数</h5><p><code>BufferGeometry()</code>创建一个新的 BufferGeometry. 同时将预置属性设置为默认值.</p>
+<h5 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><p><code>.attributes</code> : Object<br>通过 hashmap 存储该几何体相关的属性，hashmap 的 id 是当前 attribute 的名称，值是相应的 buffer。 你可以通过 <code>.setAttribute</code> 和 <code>.getAttribute</code> 添加和访问与当前几何体有关的 attribute。</p>
+</li>
+<li><p><code>.boundingBox</code> : Box3<br>当前 bufferGeometry 的外边界矩形。可以通过 .computeBoundingBox() 计算。默认值是 null。</p>
+</li>
+<li><p><code>.boundingSphere</code> : Sphere<br>当前 bufferGeometry 的外边界球形。可以通过 .computeBoundingSphere() 计算。默认值是 null。</p>
+</li>
+<li><p><code>.drawRange</code> : Object<br>用于判断几何体的哪个部分需要被渲染。该值不应该直接被设置，而需要通过 .setDrawRange 进行设置。默认值为<code>&#123; start: 0, count: Infinity &#125;</code></p>
+</li>
+<li><p><code>.groups</code> : Array<br>将当前几何体分割成组进行渲染，每个部分都会在单独的 WebGL 的 draw call 中进行绘制。该方法可以让当前的 bufferGeometry 可以使用一个材质队列进行描述。分割后的每个部分都是一个如下的表单：<code>&#123; start: Integer, count: Integer, materialIndex: Integer &#125;</code>start 表明当前 draw call 中的没有索引的几何体的几何体的第一个顶点；或者第一个三角面片的索引。 count 指明当前分割包含多少顶点（或 indices）。 materialIndex 指出当前用到的材质队列的索引。通过 <code>.addGroup</code> 来增加组，而不是直接更改当前队列。</p>
+</li>
+<li><p><code>.id</code> : Integer<br>当前 bufferGeometry 的唯一编号。</p>
+</li>
+<li><p><code>.index</code> : BufferAttribute<br>允许顶点在多个三角面片间可以重用。这样的顶点被称为”已索引的三角面片(indexed triangles)。 每个三角面片都和三个顶点的索引相关。该 attribute 因此所存储的是每个三角面片的三个顶点的索引。 如果该 attribute 没有设置过，则 renderer 假设每三个连续的位置代表一个三角面片。 默认值是 null。</p>
+</li>
+</ul>
+<p><code>.isBufferGeometry</code> : Boolean<br>用于判断对象是否为BufferGeometry的只读标记.</p>
+<p><code>.morphAttributes</code> : Object<br>存储 BufferAttribute 的 Hashmap，存储了几何体 morph targets 的细节信息。<br>注意：当这个geometry渲染之后，morph attribute 数据无法更改。你需要调用.dispose()，并重新创建一个新的BufferGeometry实例。</p>
+<p><code>.morphTargetsRelative</code> : Boolean<br>用于控制morph target的行为，如果设置为 true，morph target数据作为相对的偏移量，而非绝对的位置/法向。 默认为false。</p>
+<p><code>.name</code> : String<br>当前 bufferGeometry 实例的可选别名。默认值是空字符串。</p>
+<p><code>.userData</code> : Object<br>存储 BufferGeometry 的自定义数据的对象。为保持对象在克隆时完整，该对象不应该包括任何函数的引用。</p>
+<p><code>.uuid</code> : String<br>当前对象实例的 UUID，该值会自动被分配，且不应被修改。</p>
+<h5 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h5><blockquote>
+<p>EventDispatcher 在该类上可用的所有方法。</p>
+</blockquote>
+<ul>
+<li><p><code>.setAttribute ( name : String, attribute : BufferAttribute ) : this</code><br>为当前几何体设置一个 attribute 属性。在类的内部，有一个存储 .attributes 的 hashmap， 通过该 hashmap，遍历 attributes 的速度会更快。而使用该方法，可以向 hashmap 内部增加 attribute。 所以，你需要使用该方法来添加 attributes。</p>
+</li>
+<li><p><code>.addGroup ( start : Integer, count : Integer, materialIndex : Integer ) : undefined</code><br>为当前几何体增加一个 group，详见 groups 属性。</p>
+</li>
+<li><p><code>.applyMatrix4 ( matrix : Matrix4 ) : this</code><br>用给定矩阵转换几何体的顶点坐标。</p>
+</li>
+<li><p><code>.center () : this</code><br>根据边界矩形将几何体居中。</p>
+</li>
+<li><p><code>.clone () : BufferGeometrya</code><br>克隆当前的 BufferGeometry。</p>
+</li>
+<li><p><code>.copy ( bufferGeometry : BufferGeometry ) : this</code><br>将参数指定的 BufferGeometry 的值拷贝到当前 BufferGeometry 中。</p>
+</li>
+<li><p><code>.clearGroups ( ) : undefined</code><br>清空所有的 groups。</p>
+</li>
+<li><p><code>.computeBoundingBox () : undefined</code><br>计算当前几何体的的边界矩形，该操作会更新已有 <code>[param:.boundingBox]</code>。<br>边界矩形不会默认计算，需要调用该接口指定计算边界矩形，否则保持默认值 null。</p>
+</li>
+<li><p><code>.computeBoundingSphere () : undefined</code><br>计算当前几何体的的边界球形，该操作会更新已有 <code>[param:.boundingSphere]</code>。<br>边界球形不会默认计算，需要调用该接口指定计算边界球形，否则保持默认值 null。</p>
+</li>
+<li><p><code>.computeTangents () : undefined</code><br>计算并向此geometry中添加tangent attribute。<br>只支持索引化的几何体对象，并且必须拥有position(位置)，normal(法向)和 uv attributes。如果使用了切线空间法向贴图，最好使用BufferGeometryUtils.computeMikkTSpaceTangents中的MikkTSpace算法。</p>
+</li>
+<li><p><code>.computeVertexNormals () : undefined</code><br>通过面片法向量的平均值计算每个顶点的法向量。</p>
+</li>
+</ul>
+<p><code>.dispose () : undefined</code><br>从内存中销毁对象。<br>如果在运行时需要从内存中删除 BufferGeometry，则需要调用该函数。</p>
+<p><code>.getAttribute ( name : String ) : BufferAttribute</code><br>返回指定名称的 attribute。</p>
+<p><code>.getIndex () : BufferAttribute</code><br>返回缓存相关的 .index。</p>
+<p><code>.hasAttribute ( name : String ) : Boolean</code><br>检查是否存在有指定名称的attribute，如果有返回true。</p>
+<p><code>.lookAt ( vector : Vector3 ) : this</code><br>vector - 几何体所朝向的世界坐标。</p>
+<p>旋转几何体朝向控件中的一点。该过程通常在一次处理中完成，不会循环处理。典型的用法是过通过调用 Object3D.lookAt 实时改变 mesh 朝向。</p>
+<p><code>.normalizeNormals () : undefined</code><br>几何体中的每个法向量长度将会为 1。这样操作会更正光线在表面的效果。</p>
+<p><code>.deleteAttribute ( name : String ) : BufferAttribute</code><br>删除具有指定名称的 attribute。</p>
+<p><code>.rotateX ( radians : Float ) : this</code><br>在 X 轴上旋转几何体。该操作一般在一次处理中完成，不会循环处理。典型的用法是通过调用 Object3D.rotation 实时旋转几何体。</p>
+<p><code>.rotateY ( radians : Float ) : this</code><br>在 Y 轴上旋转几何体。该操作一般在一次处理中完成，不会循环处理。典型的用法是通过调用 Object3D.rotation 实时旋转几何体。</p>
+<p><code>.rotateZ ( radians : Float ) : this</code><br>在 Z 轴上旋转几何体。该操作一般在一次处理中完成，不会循环处理。典型的用法是通过调用 Object3D.rotation 实时旋转几何体。</p>
+<p><code>.scale ( x : Float, y : Float, z : Float ) : this</code><br>缩放几何体。该操作一般在一次处理中完成，不会循环处理。典型的用法是通过调用 Object3D.scale 实时旋转几何体。</p>
+<p><code>.setIndex ( index : BufferAttribute ) : this</code><br>设置缓存的 .index。</p>
+<p><code>.setDrawRange ( start : Integer, count : Integer ) : undefined</code><br>设置缓存的 .drawRange。详见相关属性说明。</p>
+<p><code>.setFromPoints ( points : Array ) : this</code><br>通过点队列设置该 BufferGeometry 的 attribute。</p>
+<p><code>.toJSON () : Object</code><br>返回代表该 BufferGeometry 的 JSON 对象。</p>
+<p><code>.toNonIndexed () : BufferGeometry</code><br>返回已索引的 BufferGeometry 的非索引版本。</p>
+<p><code>.translate ( x : Float, y : Float, z : Float ) : this</code><br>移动几何体。该操作一般在一次处理中完成，不会循环处理。典型的用法是通过调用 Object3D.rotation 实时旋转几何体。</p>
+<h4 id="立方体（BoxGeometry）"><a href="#立方体（BoxGeometry）" class="headerlink" title="立方体（BoxGeometry）"></a>立方体（BoxGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BoxGeometry</span>( <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123;<span class="attr">color</span>: <span class="number">0x00ff00</span>&#125; );</span><br><span class="line"><span class="keyword">const</span> cube = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( cube );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-2"><a href="#构造器-2" class="headerlink" title="构造器"></a>构造器</h5><p><code>BoxGeometry(width : Float, height : Float, depth : Float, widthSegments : Integer, heightSegments : Integer, depthSegments : Integer)</code><br>width — X轴上面的宽度，默认值为1。<br>height — Y轴上面的高度，默认值为1。<br>depth — Z轴上面的深度，默认值为1。<br>widthSegments — （可选）宽度的分段数，默认值是1。<br>heightSegments — （可选）高度的分段数，默认值是1。<br>depthSegments — （可选）深度的分段数，默认值是1。</p>
+<h5 id="属性-方法"><a href="#属性-方法" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="圆形（CircleGeometry）"><a href="#圆形（CircleGeometry）" class="headerlink" title="圆形（CircleGeometry）"></a>圆形（CircleGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">CircleGeometry</span>( <span class="number">5</span>, <span class="number">32</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0xffff00</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> circle = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( circle );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-3"><a href="#构造器-3" class="headerlink" title="构造器"></a>构造器</h5><p><code>CircleGeometry(radius : Float, segments : Integer, thetaStart : Float, thetaLength : Float)</code><br>radius — 圆形的半径，默认值为1<br>segments — 分段（三角面）的数量，最小值为3，默认值为32。<br>thetaStart — 第一个分段的起始角度，默认为0。（three o’clock position）<br>thetaLength — 圆形扇区的中心角，通常被称为“θ”（西塔）。默认值是2*Pi，这使其成为一个完整的圆。</p>
+<h5 id="属性-方法-1"><a href="#属性-方法-1" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="平面（PlaneGeometry）"><a href="#平面（PlaneGeometry）" class="headerlink" title="平面（PlaneGeometry）"></a>平面（PlaneGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PlaneGeometry</span>( <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123;<span class="attr">color</span>: <span class="number">0xffff00</span>, <span class="attr">side</span>: <span class="variable constant_">THREE</span>.<span class="property">DoubleSide</span>&#125; );</span><br><span class="line"><span class="keyword">const</span> plane = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( plane );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-4"><a href="#构造器-4" class="headerlink" title="构造器"></a>构造器</h5><p><code>PlaneGeometry(width : Float, height : Float, widthSegments : Integer, heightSegments : Integer)</code><br>width — 平面沿着X轴的宽度。默认值是1。<br>height — 平面沿着Y轴的高度。默认值是1。<br>widthSegments — （可选）平面的宽度分段数，默认值是1。<br>heightSegments — （可选）平面的高度分段数，默认值是1。</p>
+<h5 id="属性-方法-2"><a href="#属性-方法-2" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="圆柱（CylinderGeometry）"><a href="#圆柱（CylinderGeometry）" class="headerlink" title="圆柱（CylinderGeometry）"></a>圆柱（CylinderGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">CylinderGeometry</span>( <span class="number">5</span>, <span class="number">5</span>, <span class="number">20</span>, <span class="number">32</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123;<span class="attr">color</span>: <span class="number">0xffff00</span>&#125; );</span><br><span class="line"><span class="keyword">const</span> cylinder = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( cylinder );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-5"><a href="#构造器-5" class="headerlink" title="构造器"></a>构造器</h5><p><code>CylinderGeometry(radiusTop : Float, radiusBottom : Float, height : Float, radialSegments : Integer, heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)</code><br>radiusTop — 圆柱的顶部半径，默认值是1。<br>radiusBottom — 圆柱的底部半径，默认值是1。<br>height — 圆柱的高度，默认值是1。<br>radialSegments — 圆柱侧面周围的分段数，默认为32。<br>heightSegments — 圆柱侧面沿着其高度的分段数，默认值为1。<br>openEnded — 一个Boolean值，指明该圆锥的底面是开放的还是封顶的。默认值为false，即其底面默认是封顶的。<br>thetaStart — 第一个分段的起始角度，默认为0。（three o’clock position）<br>thetaLength — 圆柱底面圆扇区的中心角，通常被称为“θ”（西塔）。默认值是2*Pi，这使其成为一个完整的圆柱。</p>
+<h5 id="属性-方法-3"><a href="#属性-方法-3" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="挤压（ExtrudeGeometry）"><a href="#挤压（ExtrudeGeometry）" class="headerlink" title="挤压（ExtrudeGeometry）"></a>挤压（ExtrudeGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> length = <span class="number">12</span>, width = <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> shape = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Shape</span>();</span><br><span class="line">shape.<span class="title function_">moveTo</span>( <span class="number">0</span>,<span class="number">0</span> );</span><br><span class="line">shape.<span class="title function_">lineTo</span>( <span class="number">0</span>, width );</span><br><span class="line">shape.<span class="title function_">lineTo</span>( length, width );</span><br><span class="line">shape.<span class="title function_">lineTo</span>( length, <span class="number">0</span> );</span><br><span class="line">shape.<span class="title function_">lineTo</span>( <span class="number">0</span>, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> extrudeSettings = &#123;</span><br><span class="line"> <span class="attr">steps</span>: <span class="number">2</span>,</span><br><span class="line"> <span class="attr">depth</span>: <span class="number">16</span>,</span><br><span class="line"> <span class="attr">bevelEnabled</span>: <span class="literal">true</span>,</span><br><span class="line"> <span class="attr">bevelThickness</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="attr">bevelSize</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="attr">bevelOffset</span>: <span class="number">0</span>,</span><br><span class="line"> <span class="attr">bevelSegments</span>: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">ExtrudeGeometry</span>( shape, extrudeSettings );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0x00ff00</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> mesh = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material ) ;</span><br><span class="line">scene.<span class="title function_">add</span>( mesh );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-6"><a href="#构造器-6" class="headerlink" title="构造器"></a>构造器</h5><p><code>ExtrudeGeometry(shapes : Array, options : Object)</code><br>shapes — 形状或者一个包含形状的数组。<br>options — 一个包含有下列参数的对象：</p>
+<p>curveSegments — int，曲线上点的数量，默认值是12。<br>steps — int，用于沿着挤出样条的深度细分的点的数量，默认值为1。<br>depth — float，挤出的形状的深度，默认值为1。<br>bevelEnabled — bool，对挤出的形状应用是否斜角，默认值为true。<br>bevelThickness — float，设置原始形状上斜角的厚度。默认值为0.2。<br>bevelSize — float。斜角与原始形状轮廓之间的延伸距离，默认值为bevelThickness-0.1。<br>bevelOffset — float. Distance from the shape outline that the bevel starts. Default is 0.<br>bevelSegments — int。斜角的分段层数，默认值为3。<br>extrudePath — THREE.Curve对象。一条沿着被挤出形状的三维样条线。Bevels not supported for path extrusion.<br>UVGenerator — Object。提供了UV生成器函数的对象。<br>该对象将一个二维形状挤出为一个三维几何体。</p>
+<p>当使用这个几何体创建Mesh的时候，如果你希望分别对它的表面和它挤出的侧面使用单独的材质，你可以使用一个材质数组。 第一个材质将用于其表面；第二个材质则将用于其挤压出的侧面。##### 属性|方法</p>
+<blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="形状（ShapeGeometry）"><a href="#形状（ShapeGeometry）" class="headerlink" title="形状（ShapeGeometry）"></a>形状（ShapeGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> heartShape = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Shape</span>();</span><br><span class="line"></span><br><span class="line">heartShape.<span class="title function_">moveTo</span>( x + <span class="number">5</span>, y + <span class="number">5</span> );</span><br><span class="line">heartShape.<span class="title function_">bezierCurveTo</span>( x + <span class="number">5</span>, y + <span class="number">5</span>, x + <span class="number">4</span>, y, x, y );</span><br><span class="line">heartShape.<span class="title function_">bezierCurveTo</span>( x - <span class="number">6</span>, y, x - <span class="number">6</span>, y + <span class="number">7</span>,x - <span class="number">6</span>, y + <span class="number">7</span> );</span><br><span class="line">heartShape.<span class="title function_">bezierCurveTo</span>( x - <span class="number">6</span>, y + <span class="number">11</span>, x - <span class="number">3</span>, y + <span class="number">15.4</span>, x + <span class="number">5</span>, y + <span class="number">19</span> );</span><br><span class="line">heartShape.<span class="title function_">bezierCurveTo</span>( x + <span class="number">12</span>, y + <span class="number">15.4</span>, x + <span class="number">16</span>, y + <span class="number">11</span>, x + <span class="number">16</span>, y + <span class="number">7</span> );</span><br><span class="line">heartShape.<span class="title function_">bezierCurveTo</span>( x + <span class="number">16</span>, y + <span class="number">7</span>, x + <span class="number">16</span>, y, x + <span class="number">10</span>, y );</span><br><span class="line">heartShape.<span class="title function_">bezierCurveTo</span>( x + <span class="number">7</span>, y, x + <span class="number">5</span>, y + <span class="number">5</span>, x + <span class="number">5</span>, y + <span class="number">5</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">ShapeGeometry</span>( heartShape );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0x00ff00</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> mesh = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material ) ;</span><br><span class="line">scene.<span class="title function_">add</span>( mesh );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-7"><a href="#构造器-7" class="headerlink" title="构造器"></a>构造器</h5><p><code>ShapeGeometry(shapes : Array, curveSegments : Integer)</code><br>shapes — 一个单独的shape，或者一个包含形状的Array。Default is a single triangle shape.<br>curveSegments - Integer - 每一个形状的分段数，默认值为12。</p>
+<h5 id="属性-方法-4"><a href="#属性-方法-4" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="圆环（RingGeometry）"><a href="#圆环（RingGeometry）" class="headerlink" title="圆环（RingGeometry）"></a>圆环（RingGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">RingGeometry</span>( <span class="number">1</span>, <span class="number">5</span>, <span class="number">32</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0xffff00</span>, <span class="attr">side</span>: <span class="variable constant_">THREE</span>.<span class="property">DoubleSide</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> mesh = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( mesh );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-8"><a href="#构造器-8" class="headerlink" title="构造器"></a>构造器</h5><p><code>RingGeometry(innerRadius : Float, outerRadius : Float, thetaSegments : Integer, phiSegments : Integer, thetaStart : Float, thetaLength : Float)</code><br>innerRadius — 内部半径，默认值为0.5。<br>outerRadius — 外部半径，默认值为1。<br>thetaSegments — 圆环的分段数。这个值越大，圆环就越圆。最小值为3，默认值为32。<br>phiSegments — 最小值为1，默认值为8。<br>thetaStart — 起始角度，默认值为0。<br>thetaLength — 圆心角，默认值为Math.PI * 2。</p>
+<h5 id="属性-方法-5"><a href="#属性-方法-5" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="圆锥（ConeGeometry）"><a href="#圆锥（ConeGeometry）" class="headerlink" title="圆锥（ConeGeometry）"></a>圆锥（ConeGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">ConeGeometry</span>( <span class="number">5</span>, <span class="number">20</span>, <span class="number">32</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123;<span class="attr">color</span>: <span class="number">0xffff00</span>&#125; );</span><br><span class="line"><span class="keyword">const</span> cone = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( cone );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-9"><a href="#构造器-9" class="headerlink" title="构造器"></a>构造器</h5><p><code>ConeGeometry(radius : Float, height : Float, radialSegments : Integer, heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)</code><br>radius — 圆锥底部的半径，默认值为1。<br>height — 圆锥的高度，默认值为1。<br>radialSegments — 圆锥侧面周围的分段数，默认为32。<br>heightSegments — 圆锥侧面沿着其高度的分段数，默认值为1。<br>openEnded — 一个Boolean值，指明该圆锥的底面是开放的还是封顶的。默认值为false，即其底面默认是封顶的。<br>thetaStart — 第一个分段的起始角度，默认为0。（three o’clock position）<br>thetaLength — 圆锥底面圆扇区的中心角，通常被称为“θ”（西塔）。默认值是2*Pi，这使其成为一个完整的圆锥。</p>
+<h5 id="属性-方法-6"><a href="#属性-方法-6" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="球（SphereGeometry）"><a href="#球（SphereGeometry）" class="headerlink" title="球（SphereGeometry）"></a>球（SphereGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">SphereGeometry</span>( <span class="number">15</span>, <span class="number">32</span>, <span class="number">16</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0xffff00</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> sphere = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( sphere );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-10"><a href="#构造器-10" class="headerlink" title="构造器"></a>构造器</h5><p><code>SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer, phiStart : Float, phiLength : Float, thetaStart : Float, thetaLength : Float)</code><br>radius — 球体半径，默认为1。<br>widthSegments — 水平分段数（沿着经线分段），最小值为3，默认值为32。<br>heightSegments — 垂直分段数（沿着纬线分段），最小值为2，默认值为16。<br>phiStart — 指定水平（经线）起始角度，默认值为0。。<br>phiLength — 指定水平（经线）扫描角度的大小，默认值为 Math.PI * 2。<br>thetaStart — 指定垂直（纬线）起始角度，默认值为0。<br>thetaLength — 指定垂直（纬线）扫描角度大小，默认值为 Math.PI。<br>该几何体是通过扫描并计算围绕着Y轴（水平扫描）和X轴（垂直扫描）的顶点来创建的。 因此，不完整的球体（类似球形切片）可以通过为phiStart，phiLength，thetaStart和thetaLength设置不同的值来创建， 以定义我们开始（或结束）计算这些顶点的起点（或终点）。</p>
+<h5 id="属性-方法-7"><a href="#属性-方法-7" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="圆环（TorusGeometry）"><a href="#圆环（TorusGeometry）" class="headerlink" title="圆环（TorusGeometry）"></a>圆环（TorusGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">TorusGeometry</span>( <span class="number">10</span>, <span class="number">3</span>, <span class="number">16</span>, <span class="number">100</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0xffff00</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> torus = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( torus );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-11"><a href="#构造器-11" class="headerlink" title="构造器"></a>构造器</h5><p><code>TorusGeometry(radius : Float, tube : Float, radialSegments : Integer, tubularSegments : Integer, arc : Float)</code><br>radius - 环面的半径，从环面的中心到管道横截面的中心。默认值是1。<br>tube — 管道的半径，默认值为0.4。<br>radialSegments — 管道横截面的分段数，默认值为12。<br>tubularSegments — 管道的分段数，默认值为48。<br>arc — 圆环的圆心角（单位是弧度），默认值为Math.PI * 2。</p>
+<h5 id="属性-方法-8"><a href="#属性-方法-8" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="管道（TubeGeometry）"><a href="#管道（TubeGeometry）" class="headerlink" title="管道（TubeGeometry）"></a>管道（TubeGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CustomSinCurve</span> <span class="keyword">extends</span> <span class="title class_ inherited__">THREE.Curve</span> &#123;</span><br><span class="line"></span><br><span class="line"> <span class="title function_">constructor</span>(<span class="params"> scale = <span class="number">1</span> </span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">super</span>();</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">scale</span> = scale;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="title function_">getPoint</span>(<span class="params"> t, optionalTarget = <span class="keyword">new</span> THREE.Vector3() </span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> tx = t * <span class="number">3</span> - <span class="number">1.5</span>;</span><br><span class="line">  <span class="keyword">const</span> ty = <span class="title class_">Math</span>.<span class="title function_">sin</span>( <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span> * t );</span><br><span class="line">  <span class="keyword">const</span> tz = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> optionalTarget.<span class="title function_">set</span>( tx, ty, tz ).<span class="title function_">multiplyScalar</span>( <span class="variable language_">this</span>.<span class="property">scale</span> );</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="keyword">new</span> <span class="title class_">CustomSinCurve</span>( <span class="number">10</span> );</span><br><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">TubeGeometry</span>( path, <span class="number">20</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="literal">false</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0x00ff00</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> mesh = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( mesh );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-12"><a href="#构造器-12" class="headerlink" title="构造器"></a>构造器</h5><p><code>TubeGeometry(path : Curve, tubularSegments : Integer, radius : Float, radialSegments : Integer, closed : Boolean)</code><br>path — Curve - 一个由基类Curve继承而来的3D路径。 Default is a quadratic bezier curve.<br>tubularSegments — Integer - 组成这一管道的分段数，默认值为64。<br>radius — Float - 管道的半径，默认值为1。<br>radialSegments — Integer - 管道横截面的分段数目，默认值为8。<br>closed — Boolean 管道的两端是否闭合，默认值为false。</p>
+<h5 id="属性-方法-9"><a href="#属性-方法-9" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。<br><code>.tangents</code> : Array<br>一个Vector3切线数组。</p>
+<p><code>.normals</code> : Array<br>一个Vector3法线数组。</p>
+<p><code>.binormals</code> : Array<br>一个Vector3次法线数组。</p>
+<h4 id="多面缓冲几何体（PolyhedronGeometry）"><a href="#多面缓冲几何体（PolyhedronGeometry）" class="headerlink" title="多面缓冲几何体（PolyhedronGeometry）"></a>多面缓冲几何体（PolyhedronGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> verticesOfCube = [</span><br><span class="line">    -<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>,    <span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>,    <span class="number">1</span>, <span class="number">1</span>,-<span class="number">1</span>,    -<span class="number">1</span>, <span class="number">1</span>,-<span class="number">1</span>,</span><br><span class="line">    -<span class="number">1</span>,-<span class="number">1</span>, <span class="number">1</span>,    <span class="number">1</span>,-<span class="number">1</span>, <span class="number">1</span>,    <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>,    -<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> indicesOfFaces = [</span><br><span class="line">    <span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,    <span class="number">0</span>,<span class="number">3</span>,<span class="number">2</span>,</span><br><span class="line">    <span class="number">0</span>,<span class="number">4</span>,<span class="number">7</span>,    <span class="number">7</span>,<span class="number">3</span>,<span class="number">0</span>,</span><br><span class="line">    <span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,    <span class="number">5</span>,<span class="number">4</span>,<span class="number">0</span>,</span><br><span class="line">    <span class="number">1</span>,<span class="number">2</span>,<span class="number">6</span>,    <span class="number">6</span>,<span class="number">5</span>,<span class="number">1</span>,</span><br><span class="line">    <span class="number">2</span>,<span class="number">3</span>,<span class="number">7</span>,    <span class="number">7</span>,<span class="number">6</span>,<span class="number">2</span>,</span><br><span class="line">    <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,    <span class="number">6</span>,<span class="number">7</span>,<span class="number">4</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PolyhedronGeometry</span>( verticesOfCube, indicesOfFaces, <span class="number">6</span>, <span class="number">2</span> );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-13"><a href="#构造器-13" class="headerlink" title="构造器"></a>构造器</h5><p><code>PolyhedronGeometry(vertices : Array, indices : Array, radius : Float, detail : Integer)</code><br>vertices — 一个顶点Array（数组）：[1,1,1, -1,-1,-1, … ]。<br>indices — 一个构成面的索引Array（数组）， [0,1,2, 2,3,0, … ]。<br>radius — Float - 最终形状的半径。<br>detail — Integer - 将对这个几何体细分多少个级别。细节越多，形状就越平滑。</p>
+<h5 id="属性-方法-10"><a href="#属性-方法-10" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<p><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+<h4 id="边缘几何体（EdgesGeometry）"><a href="#边缘几何体（EdgesGeometry）" class="headerlink" title="边缘几何体（EdgesGeometry）"></a>边缘几何体（EdgesGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BoxGeometry</span>( <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span> );</span><br><span class="line"><span class="keyword">const</span> edges = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">EdgesGeometry</span>( geometry );</span><br><span class="line"><span class="keyword">const</span> line = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">LineSegments</span>( edges, <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">LineBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0xffffff</span> &#125; ) );</span><br><span class="line">scene.<span class="title function_">add</span>( line );</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-14"><a href="#构造器-14" class="headerlink" title="构造器"></a>构造器</h5><p><code>EdgesGeometry( geometry : BufferGeometry, thresholdAngle : Integer )</code><br>geometry — 任何一个几何体对象。<br>thresholdAngle — 仅当相邻面的法线之间的角度（单位为角度）超过这个值时，才会渲染边缘。默认值为1。</p>
+<h5 id="属性-方法-11"><a href="#属性-方法-11" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。<br><code>.parameters</code> : Object<br>一个包含着构造函数中每个参数的对象。在对象实例化之后，对该属性的任何修改都不会改变这个几何体。</p>
+</blockquote>
+<h4 id="网格几何体（WireframeGeometry）"><a href="#网格几何体（WireframeGeometry）" class="headerlink" title="网格几何体（WireframeGeometry）"></a>网格几何体（WireframeGeometry）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">SphereGeometry</span>( <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> wireframe = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">WireframeGeometry</span>( geometry );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> line = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">LineSegments</span>( wireframe );</span><br><span class="line">line.<span class="property">material</span>.<span class="property">depthTest</span> = <span class="literal">false</span>;</span><br><span class="line">line.<span class="property">material</span>.<span class="property">opacity</span> = <span class="number">0.25</span>;</span><br><span class="line">line.<span class="property">material</span>.<span class="property">transparent</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">scene.<span class="title function_">add</span>( line );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-15"><a href="#构造器-15" class="headerlink" title="构造器"></a>构造器</h5><p><code>WireframeGeometry( geometry : BufferGeometry )</code><br>geometry — 任意几何体对象。</p>
+<h5 id="属性-方法-12"><a href="#属性-方法-12" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类BufferGeometry。<br>共有属性请参见其基类BufferGeometry。</p>
+</blockquote>
+<h3 id="材质"><a href="#材质" class="headerlink" title="材质"></a>材质</h3><h4 id="Material"><a href="#Material" class="headerlink" title="Material"></a>Material</h4><p>材质描述了对象objects的外观。它们的定义方式与渲染器无关， 因此，如果您决定使用不同的渲染器，不必重写材质。</p>
+<h5 id="构造器-16"><a href="#构造器-16" class="headerlink" title="构造器"></a>构造器</h5><p><code>Material()</code>该方法创建一个通用材质。</p>
+<h4 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h4><ul>
+<li><p><code>.alphaTest</code> : Float<br>设置运行alphaTest时要使用的alpha值。如果不透明度低于此值，则不会渲染材质。默认值为0。</p>
+</li>
+<li><p><code>.alphaToCoverage</code> : Boolean<br>启用alpha to coverage. 只能在开启了MSAA的渲染环境中使用 (当渲染器创建的时候antialias 属性要true才能使用). 默认为 false.</p>
+</li>
+<li><p><code>.blendDst</code> : Integer<br>混合目标。默认值为OneMinusSrcAlphaFactor。 目标因子所有可能的取值请参阅constants。 必须将材质的blending设置为CustomBlending才能生效。</p>
+</li>
+<li><p><code>.blendDstAlpha</code> : Integer<br>.blendDst的透明度。 默认值为 null.</p>
+</li>
+<li><p><code>.blendEquation</code> : Integer<br>使用混合时所采用的混合方程式。默认值为AddEquation。 混合方程式所有可能的取值请参阅constants。 必须将材质的blending设置为CustomBlending才能生效。<br>.blendEquationAlpha : Integer<br>.blendEquation 的透明度. 默认值为 null.</p>
+</li>
+<li><p><code>.blending</code> : Blending<br>在使用此材质显示对象时要使用何种混合。<br>必须将其设置为CustomBlending才能使用自定义blendSrc, blendDst 或者 [page:Constant blendEquation]。 混合模式所有可能的取值请参阅constants。默认值为NormalBlending。</p>
+</li>
+<li><p><code>.blendSrc</code> : Integer<br>混合源。默认值为SrcAlphaFactor。 源因子所有可能的取值请参阅constants。<br>必须将材质的blending设置为CustomBlending才能生效。</p>
+</li>
+<li><p><code>.blendSrcAlpha</code> : Integer<br>.blendSrc的透明度。 默认值为 null.</p>
+</li>
+<li><p><code>.clipIntersection</code> : Boolean<br>更改剪裁平面的行为，以便仅剪切其交叉点，而不是它们的并集。默认值为 false。</p>
+</li>
+<li><p><code>.clippingPlanes</code> : Array<br>用户定义的剪裁平面，在世界空间中指定为THREE.Plane对象。这些平面适用于所有使用此材质的对象。空间中与平面的有符号距离为负的点被剪裁（未渲染）。 这需要WebGLRenderer.localClippingEnabled为true。 示例请参阅WebGL / clipping /intersection。默认值为 null。</p>
+</li>
+<li><p><code>.clipShadows</code> : Boolean<br>定义是否根据此材质上指定的剪裁平面剪切阴影。默认值为 false。</p>
+</li>
+<li><p><code>.colorWrite</code> : Boolean<br>是否渲染材质的颜色。 这可以与网格的renderOrder属性结合使用，以创建遮挡其他对象的不可见对象。默认值为true。</p>
+</li>
+<li><p><code>.defines</code> : Object<br>注入shader的自定义对象。 以键值对形式的对象传递，{ MY_CUSTOM_DEFINE: ‘’ , PI2: Math.PI * 2 }。 这些键值对在顶点和片元着色器中定义。默认值为undefined。</p>
+</li>
+<li><p><code>.depthFunc</code> : Integer<br>使用何种深度函数。默认为LessEqualDepth。 深度模式所有可能的取值请查阅constants。</p>
+</li>
+<li><p><code>.depthTest</code> : Boolean<br>是否在渲染此材质时启用深度测试。默认为 true。</p>
+</li>
+<li><p><code>.depthWrite</code> : Boolean<br>渲染此材质是否对深度缓冲区有任何影响。默认为true。</p>
+</li>
+</ul>
+<p>在绘制2D叠加时，将多个事物分层在一起而不创建z-index时，禁用深度写入会很有用。</p>
+<ul>
+<li><code>.forceSinglePass</code> : Boolean<br>决定双面透明的东西是否强制使用单通道渲染，默认为false。</li>
+</ul>
+<p>为了减少一些半透明物体的渲染错误，此引擎调用两次绘制来渲染渲染双面透明的东西。 但是此方案可能会导致在某些情况下使绘制调用次数翻倍，例如渲染一些平面的植物例如草精灵之类的。 在这些情况下，将forceSinglePass设置为true来使用单通道渲染来避免性能问题。</p>
+<ul>
+<li><p><code>.isMaterial</code> : Boolean<br>检查这个对象是否为材质Material的只读标记.</p>
+</li>
+<li><p><code>.stencilWrite</code> : Boolean<br>是否对模板缓冲执行模板操作，如果执行写入或者与模板缓冲进行比较，这个值需要设置为true。默认为false。</p>
+</li>
+<li><p><code>.stencilWriteMask</code> : Integer<br>写入模板缓冲区时所用的位元遮罩，默认为0xFF。</p>
+</li>
+<li><p><code>.stencilFunc</code> : Integer<br>使用模板比较时所用的方法，默认为AlwaysStencilFunc。在模板函数 constants 中查看可用的值</p>
+</li>
+<li><p><code>.stencilRef</code> : Integer<br>在进行模板比较或者模板操作的时候所用的基准值，默认为0。</p>
+</li>
+<li><p><code>.stencilFuncMask</code> : Integer<br>与模板缓冲进行比较时所使用的位元遮罩，默认为0xFF</p>
+</li>
+<li><p><code>.stencilFail</code> : Integer<br>当比较函数没有通过的时候要执行的模板操作，默认为KeepStencilOp，在模板操作 constants 查看可用值。</p>
+</li>
+<li><p><code>.stencilZFail</code> : Integer<br>当比较函数通过了但是深度检测没有通过的时候要执行的模板操作， 默认为KeepStencilOp，在模板操作 constants 查看可用值。</p>
+</li>
+<li><p><code>.stencilZPass</code> : Integer<br>当比较函数和深度检测都通过时要执行的模板操作，默认为KeepStencilOp，在模板操作constants 中查看可用值。</p>
+</li>
+<li><p><code>.id</code> : Integer<br>此材质实例的唯一编号。</p>
+</li>
+<li><p><code>.name</code> : String<br>对象的可选名称（不必是唯一的）。默认值为空字符串。</p>
+</li>
+<li><p><code>.needsUpdate</code> : Boolean<br>指定需要重新编译材质。</p>
+</li>
+<li><p><code>.opacity</code> : Float<br>在0.0 - 1.0的范围内的浮点数，表明材质的透明度。值0.0表示完全透明，1.0表示完全不透明。<br>如果材质的transparent属性未设置为true，则材质将保持完全不透明，此值仅影响其颜色。 默认值为1.0。</p>
+</li>
+<li><p><code>.polygonOffset</code> : Boolean<br>是否使用多边形偏移。默认值为false。这对应于WebGL的GL_POLYGON_OFFSET_FILL功能。</p>
+</li>
+<li><p><code>.polygonOffsetFactor</code> : Integer<br>设置多边形偏移系数。默认值为0。</p>
+</li>
+<li><p><code>.polygonOffsetUnits</code> : Integer<br>设置多边形偏移单位。默认值为0。</p>
+</li>
+<li><p><code>.precision</code> : String<br>重写此材质渲染器的默认精度。可以是”highp”, “mediump” 或 “lowp”。默认值为null。</p>
+</li>
+<li><p><code>.premultipliedAlpha</code> : Boolean<br>是否预乘alpha（透明度）值。有关差异的示例，请参阅WebGL / Materials / Physical / Transmission。 默认值为false。</p>
+</li>
+<li><p><code>.dithering</code> : Boolean<br>是否对颜色应用抖动以消除条带的外观。默认值为 false。</p>
+</li>
+<li><p><code>.shadowSide</code> : Integer<br>定义投影的面。设置时，可以是THREE.FrontSide, THREE.BackSide, 或Materials。默认值为 null。<br>如果为null， 则面投射阴影确定如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>THREE.FrontSide</td>
+<td>背面</td>
+</tr>
+<tr>
+<td>THREE.BackSide</td>
+<td>前面</td>
+</tr>
+<tr>
+<td>THREE.DoubleSide</td>
+<td>双面</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><code>.side</code> : Integer<br>定义将要渲染哪一面 - 正面，背面或两者。 默认为THREE.FrontSide。其他选项有THREE.BackSide 和 THREE.DoubleSide。</p>
+</li>
+<li><p><code>.toneMapped</code> : Boolean<br>定义这个材质是否会被渲染器的toneMapping设置所影响，默认为 true 。</p>
+</li>
+<li><p><code>.transparent</code> : Boolean<br>定义此材质是否透明。这对渲染有影响，因为透明对象需要特殊处理，并在非透明对象之后渲染。<br>设置为true时，通过设置材质的opacity属性来控制材质透明的程度。<br>默认值为false。</p>
+</li>
+<li><p><code>.type</code> : String<br>值是字符串’Material’。不应该被更改，并且可以用于在场景中查找此类型的所有对象。</p>
+</li>
+<li><p><code>.uuid</code> : String<br>此材质实例的UUID，会自动分配，不应该被更改。</p>
+</li>
+<li><p><code>.version</code> : Integer<br>开始为0，会记录 .needsUpdate : Boolean设置为true的次数。</p>
+</li>
+<li><p><code>.vertexColors</code> : Boolean<br>是否使用顶点着色。默认值为false。 此引擎支持RGB或者RGBA两种顶点颜色，取决于缓冲 attribute 使用的是三分量（RGB）还是四分量（RGBA）。</p>
+</li>
+<li><p><code>.visible</code> : Boolean<br>此材质是否可见。默认为true。</p>
+</li>
+<li><p><code>.userData</code> : Object<br>一个对象，可用于存储有关Material的自定义数据。它不应该包含对函数的引用，因为这些函数不会被克隆。</p>
+</li>
+</ul>
+<h5 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h5><blockquote>
+<p>EventDispatcher 方法在此类中可用。</p>
+</blockquote>
+<ul>
+<li><p><code>.clone ( ) : Material</code><br>返回与此材质具有相同参数的新材质。</p>
+</li>
+<li><p><code>.copy ( material : material ) : this</code><br>将被传入材质中的参数复制到此材质中。</p>
+</li>
+<li><p><code>.dispose () : undefined</code><br>处理材质。材质的纹理不会被处理。需要通过Texture处理。</p>
+</li>
+<li><p><code>.onBeforeCompile ( shader : Shader, renderer : WebGLRenderer ) : undefined</code><br>在编译shader程序之前立即执行的可选回调。此函数使用shader源码作为参数。用于修改内置材质。</p>
+</li>
+</ul>
+<p>和其他属性不一样的是，这个回调在.clone()，.copy() 和 .toJSON() 中不支持。</p>
+<ul>
+<li><code>.customProgramCacheKey () : String</code><br>当用到onBeforeCompile回调的时候，这个回调函数可以用来定义在onBeforeCompile中使用的配置项，这样three.js就可以根据这个回调返回的字符串来判定使用一个缓存的编译好的着色器代码还是根据需求重新编译一段新的着色器代码。</li>
+</ul>
+<p>例如一个onBeforeCompile回调函数包含了下面的条件语句:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( black ) &#123;</span><br><span class="line"> shader.<span class="property">fragmentShader</span> = shader.<span class="property">fragmentShader</span>.<span class="title function_">replace</span>(<span class="string">&#x27;gl_FragColor = vec4(1)&#x27;</span>, <span class="string">&#x27;gl_FragColor = vec4(0)&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么 customProgramCacheKey 就可以设置为:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">material.<span class="property">customProgramCacheKey</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line"> <span class="keyword">return</span> black ? <span class="string">&#x27;1&#x27;</span> : <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和其他属性不一样的是，这个回调在.clone()，.copy() 和 .toJSON() 中不支持。</p>
+<ul>
+<li><code>.setValues ( values : Object ) : undefined</code><br>values – 具有参数的容器。 根据values设置属性。</li>
+<li><code>.toJSON ( meta : Object ) : Object</code><br>meta – 包含有元数据的对象，例如该对象的纹理或图片。 将material对象转换为 three.js JSON Object/Scene format（three.js JSON 物体/场景格式）。</li>
+</ul>
+<h4 id="基础网格材质-MeshBasicMaterial"><a href="#基础网格材质-MeshBasicMaterial" class="headerlink" title="基础网格材质(MeshBasicMaterial)"></a>基础网格材质(MeshBasicMaterial)</h4><h5 id="构造器-17"><a href="#构造器-17" class="headerlink" title="构造器"></a>构造器</h5><p><code>MeshBasicMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。材质的任何属性都可以从此处传入(包括从Material继承的任何属性)。</p>
+<p>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色），内部调用Color.set(color)。</p>
+<h5 id="属性-方法-13"><a href="#属性-方法-13" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类Material。<br>共有属性请参见其基类Material。</p>
+</blockquote>
+<p><code>.alphaMap</code> : Texture<br>alpha贴图是一张灰度纹理，用于控制整个表面的不透明度。（黑色：完全透明；白色：完全不透明）。 默认值为null。</p>
+<p>仅使用纹理的颜色，忽略alpha通道（如果存在）。 对于RGB和RGBA纹理，WebGL渲染器在采样此纹理时将使用绿色通道， 因为在DXT压缩和未压缩RGB 565格式中为绿色提供了额外的精度。 Luminance-only以及luminance/alpha纹理也仍然有效。</p>
+<p><code>.aoMap</code> : Texture<br>该纹理的红色通道用作环境遮挡贴图。默认值为null。aoMap需要第二组UV。</p>
+<p><code>.aoMapIntensity</code> : Float<br>环境遮挡效果的强度。默认值为1。零是不遮挡效果。</p>
+<p><code>.color</code> : Color<br>材质的颜色(Color)，默认值为白色 (0xffffff)。</p>
+<p><code>.combine</code> : Integer<br>如何将表面颜色的结果与环境贴图（如果有）结合起来。</p>
+<p>选项为THREE.MultiplyOperation（默认值），THREE.MixOperation， THREE.AddOperation。如果选择多个，则使用.reflectivity在两种颜色之间进行混合。</p>
+<p><code>.envMap</code> : Texture<br>环境贴图。默认值为null。</p>
+<p><code>.fog</code> : Boolean<br>材质是否受雾影响。默认为true。</p>
+<p><code>.lightMap</code> : Texture<br>光照贴图。默认值为null。lightMap需要第二组UV。</p>
+<p><code>.lightMapIntensity</code> : Float<br>烘焙光的强度。默认值为1。</p>
+<p><code>.map</code> : Texture<br>颜色贴图。可以选择包括一个alpha通道，通常与.transparent 或.alphaTest。默认为null。</p>
+<p><code>.reflectivity</code> : Float<br>环境贴图对表面的影响程度; 见.combine。默认值为1，有效范围介于0（无反射）和1（完全反射）之间。</p>
+<p><code>.refractionRatio</code> : Float<br>空气的折射率（IOR）（约为1）除以材质的折射率。它与环境映射模式THREE.CubeRefractionMapping 和THREE.EquirectangularRefractionMapping一起使用。 The index of refraction (IOR) of air (approximately 1) divided by the index of refraction of the material. It is used with environment mapping mode THREE.CubeRefractionMapping. 折射率不应超过1。默认值为0.98。</p>
+<p><code>.specularMap</code> : Texture<br>材质使用的高光贴图。默认值为null。</p>
+<p><code>.wireframe</code> : Boolean<br>将几何体渲染为线框。默认值为false（即渲染为平面多边形）。</p>
+<p><code>.wireframeLinecap</code> : String<br>定义线两端的外观。可选值为 ‘butt’，’round’ 和 ‘square’。默认为’round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p><code>.wireframeLinejoin</code> : String<br>定义线连接节点的样式。可选值为 ‘round’, ‘bevel’ 和 ‘miter’。默认值为 ‘round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p><code>.wireframeLinewidth</code> : Float<br>控制线框宽度。默认值为1。</p>
+<p>由于OpenGL Core Profile与大多数平台上WebGL渲染器的限制， 无论如何设置该值，线宽始终为1。</p>
+<h4 id="Lambert网格材质-MeshLambertMaterial"><a href="#Lambert网格材质-MeshLambertMaterial" class="headerlink" title="Lambert网格材质(MeshLambertMaterial)"></a>Lambert网格材质(MeshLambertMaterial)</h4><p>一种非光泽表面的材质，没有镜面高光。<br>由于反射率和光照模型的简单性，MeshPhongMaterial，MeshStandardMaterial或者MeshPhysicalMaterial 上使用这种材质时会以一些图形精度为代价，得到更高的性能。</p>
+<h5 id="构造器-18"><a href="#构造器-18" class="headerlink" title="构造器"></a>构造器</h5><p><code>MeshLambertMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。 材质的任何属性都可以从此处传入(包括从Material继承的任何属性)。</p>
+<p>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色），内部调用Color.set(color)。</p>
+<h5 id="属性-方法-14"><a href="#属性-方法-14" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类Material。<br>共有属性请参见其基类Material。</p>
+</blockquote>
+<p>.alphaMap : Texture<br>alpha贴图是一张灰度纹理，用于控制整个表面的不透明度。（黑色：完全透明；白色：完全不透明）。 默认值为null。</p>
+<p>仅使用纹理的颜色，忽略alpha通道（如果存在）。 对于RGB和RGBA纹理，WebGL渲染器在采样此纹理时将使用绿色通道， 因为在DXT压缩和未压缩RGB 565格式中为绿色提供了额外的精度。 Luminance-only以及luminance/alpha纹理也仍然有效。</p>
+<p>.aoMap : Texture<br>该纹理的红色通道用作环境遮挡贴图。默认值为null。aoMap需要第二组UV。</p>
+<p>.aoMapIntensity : Float<br>环境遮挡效果的强度。默认值为1。零是不遮挡效果。</p>
+<p>.bumpMap : Texture<br>用于创建凹凸贴图的纹理。黑色和白色值映射到与光照相关的感知深度。凹凸实际上不会影响对象的几何形状，只影响光照。如果定义了法线贴图，则将忽略该贴图。</p>
+<p>.bumpScale : Float<br>凹凸贴图会对材质产生多大影响。典型范围是0-1。默认值为1。</p>
+<p>.color : Color<br>材质的颜色(Color)，默认值为白色 (0xffffff)。</p>
+<p>.combine : Integer<br>如何将表面颜色的结果与环境贴图（如果有）结合起来。</p>
+<p>选项为THREE.MultiplyOperation（默认值），THREE.MixOperation， THREE.AddOperation。如果选择多个，则使用.reflectivity在两种颜色之间进行混合。</p>
+<p>.displacementMap : Texture<br>位移贴图会影响网格顶点的位置，与仅影响材质的光照和阴影的其他贴图不同，移位的顶点可以投射阴影，阻挡其他对象， 以及充当真实的几何体。位移纹理是指：网格的所有顶点被映射为图像中每个像素的值（白色是最高的），并且被重定位。</p>
+<p>.displacementScale : Float<br>位移贴图对网格的影响程度（黑色是无位移，白色是最大位移）。如果没有设置位移贴图，则不会应用此值。默认值为1。</p>
+<p>.displacementBias : Float<br>位移贴图在网格顶点上的偏移量。如果没有设置位移贴图，则不会应用此值。默认值为0。</p>
+<p>.emissive : Color<br>材质的放射（光）颜色，基本上是不受其他光照影响的固有颜色。默认为黑色。</p>
+<p>.emissiveMap : Texture<br>设置放射（发光）贴图。默认值为null。放射贴图颜色由放射颜色和强度所调节。 如果你有一个放射贴图，请务必将放射颜色设置为黑色以外的其他颜色。</p>
+<p>.emissiveIntensity : Float<br>放射光强度。调节发光颜色。默认为1。</p>
+<p>.envMap : Texture<br>环境贴图。默认值为null。</p>
+<p>.flatShading : Boolean<br>定义材质是否使用平面着色进行渲染。默认值为false。</p>
+<p>.fog : Boolean<br>材质是否受雾影响。默认为true。</p>
+<p>.lightMap : Texture<br>光照贴图。默认值为null。lightMap需要第二组UV。</p>
+<p>.lightMapIntensity : Float<br>烘焙光的强度。默认值为1。</p>
+<p>.map : Texture<br>颜色贴图。可以选择包括一个alpha通道，通常与.transparent 或.alphaTest。默认为null。</p>
+<p>.normalMap : Texture<br>用于创建法线贴图的纹理。RGB值会影响每个像素片段的曲面法线，并更改颜色照亮的方式。法线贴图不会改变曲面的实际形状，只会改变光照。 In case the material has a normal map authored using the left handed convention, the y component of normalScale should be negated to compensate for the different handedness.</p>
+<p>.normalMapType : Integer<br>法线贴图的类型。</p>
+<p>选项为THREE.TangentSpaceNormalMap（默认）和THREE.ObjectSpaceNormalMap。</p>
+<p>.normalScale : Vector2<br>法线贴图对材质的影响程度。典型范围是0-1。默认值是Vector2设置为（1,1）。</p>
+<p>.reflectivity : Float<br>环境贴图对表面的影响程度; 见.combine。默认值为1，有效范围介于0（无反射）和1（完全反射）之间。</p>
+<p>.refractionRatio : Float<br>空气的折射率（IOR）（约为1）除以材质的折射率。它与环境映射模式THREE.CubeRefractionMapping 和THREE.EquirectangularRefractionMapping一起使用。 The index of refraction (IOR) of air (approximately 1) divided by the index of refraction of the material. It is used with environment mapping mode THREE.CubeRefractionMapping. 折射率不应超过1。默认值为0.98。</p>
+<p>.specularMap : Texture<br>材质使用的高光贴图。默认值为null。</p>
+<p>.wireframe : Boolean<br>将几何体渲染为线框。默认值为false（即渲染为平面多边形）。</p>
+<p>.wireframeLinecap : String<br>定义线两端的外观。可选值为 ‘butt’，’round’ 和 ‘square’。默认为’round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p>.wireframeLinejoin : String<br>定义线连接节点的样式。可选值为 ‘round’, ‘bevel’ 和 ‘miter’。默认值为 ‘round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p>.wireframeLinewidth : Float<br>控制线框宽度。默认值为1。</p>
+<p>由于OpenGL Core Profile与 大多数平台上WebGL渲染器的限制，无论如何设置该值，线宽始终为1。</p>
+<h4 id="Phong网格材质-MeshPhongMaterial"><a href="#Phong网格材质-MeshPhongMaterial" class="headerlink" title="Phong网格材质(MeshPhongMaterial)"></a>Phong网格材质(MeshPhongMaterial)</h4><p>一种用于具有镜面高光的光泽表面的材质。</p>
+<p>在MeshStandardMaterial或MeshPhysicalMaterial上使用此材质时，性能通常会更高 ，但会牺牲一些图形精度。</p>
+<h5 id="构造器-19"><a href="#构造器-19" class="headerlink" title="构造器"></a>构造器</h5><p><code>MeshPhongMaterial( parameters : Object )</code></p>
+<p>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。 材质的任何属性都可以从此处传入(包括从Material继承的任何属性)。</p>
+<p>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色），内部调用Color.set(color)。</p>
+<h5 id="属性-方法-15"><a href="#属性-方法-15" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类Material。<br>共有属性请参见其基类Material。</p>
+</blockquote>
+<p>.alphaMap : Texture<br>alpha贴图是一张灰度纹理，用于控制整个表面的不透明度。（黑色：完全透明；白色：完全不透明）。 默认值为null。</p>
+<p>仅使用纹理的颜色，忽略alpha通道（如果存在）。 对于RGB和RGBA纹理，WebGL渲染器在采样此纹理时将使用绿色通道， 因为在DXT压缩和未压缩RGB 565格式中为绿色提供了额外的精度。 Luminance-only以及luminance/alpha纹理也仍然有效。</p>
+<p>.aoMap : Texture<br>该纹理的红色通道用作环境遮挡贴图。默认值为null。aoMap需要第二组UV。</p>
+<p>.aoMapIntensity : Float<br>环境遮挡效果的强度。默认值为1。零是不遮挡效果。</p>
+<p>.bumpMap : Texture<br>用于创建凹凸贴图的纹理。黑色和白色值映射到与光照相关的感知深度。凹凸实际上不会影响对象的几何形状，只影响光照。如果定义了法线贴图，则将忽略该贴图。</p>
+<p>.bumpScale : Float<br>凹凸贴图会对材质产生多大影响。典型范围是0-1。默认值为1。</p>
+<p>.color : Color<br>材质的颜色(Color)，默认值为白色 (0xffffff)。</p>
+<p>.combine : Integer<br>如何将表面颜色的结果与环境贴图（如果有）结合起来。</p>
+<p>选项为THREE.MultiplyOperation（默认值），THREE.MixOperation， THREE.AddOperation。如果选择多个，则使用.reflectivity在两种颜色之间进行混合。</p>
+<p>.displacementMap : Texture<br>位移贴图会影响网格顶点的位置，与仅影响材质的光照和阴影的其他贴图不同，移位的顶点可以投射阴影，阻挡其他对象， 以及充当真实的几何体。位移纹理是指：网格的所有顶点被映射为图像中每个像素的值（白色是最高的），并且被重定位。</p>
+<p>.displacementScale : Float<br>位移贴图对网格的影响程度（黑色是无位移，白色是最大位移）。如果没有设置位移贴图，则不会应用此值。默认值为1。</p>
+<p>.displacementBias : Float<br>位移贴图在网格顶点上的偏移量。如果没有设置位移贴图，则不会应用此值。默认值为0。</p>
+<p>.emissive : Color<br>材质的放射（光）颜色，基本上是不受其他光照影响的固有颜色。默认为黑色。</p>
+<p>.emissiveMap : Texture<br>设置放射（发光）贴图。默认值为null。放射贴图颜色由放射颜色和强度所调节。 如果你有一个放射贴图，请务必将放射颜色设置为黑色以外的其他颜色。</p>
+<p>.emissiveIntensity : Float<br>放射光强度。调节发光颜色。默认为1。</p>
+<p>.envMap : Texture<br>环境贴图。默认值为null。</p>
+<p>.flatShading : Boolean<br>定义材质是否使用平面着色进行渲染。默认值为false。</p>
+<p>.fog : Boolean<br>材质是否受雾影响。默认为true。</p>
+<p>.lightMap : Texture<br>光照贴图。默认值为null。lightMap需要第二组UV。</p>
+<p>.lightMapIntensity : Float<br>烘焙光的强度。默认值为1。</p>
+<p>.map : Texture<br>颜色贴图。可以选择包括一个alpha通道，通常与.transparent 或.alphaTest。默认为null。 纹理贴图颜色由漫反射颜色.color调节。</p>
+<p>.normalMap : Texture<br>用于创建法线贴图的纹理。RGB值会影响每个像素片段的曲面法线，并更改颜色照亮的方式。法线贴图不会改变曲面的实际形状，只会改变光照。 In case the material has a normal map authored using the left handed convention, the y component of normalScale should be negated to compensate for the different handedness.</p>
+<p>.normalMapType : Integer<br>法线贴图的类型。</p>
+<p>选项为THREE.TangentSpaceNormalMap（默认）和THREE.ObjectSpaceNormalMap。</p>
+<p>.normalScale : Vector2<br>法线贴图对材质的影响程度。典型范围是0-1。默认值是Vector2设置为（1,1）。</p>
+<p>.reflectivity : Float<br>环境贴图对表面的影响程度; 见.combine。默认值为1，有效范围介于0（无反射）和1（完全反射）之间。</p>
+<p>.refractionRatio : Float<br>空气的折射率（IOR）（约为1）除以材质的折射率。它与环境映射模式THREE.CubeRefractionMapping 和THREE.EquirectangularRefractionMapping一起使用。 The index of refraction (IOR) of air (approximately 1) divided by the index of refraction of the material. It is used with environment mapping mode THREE.CubeRefractionMapping. 折射率不应超过1。默认值为0.98。</p>
+<p>.shininess : Float<br>.specular高亮的程度，越高的值越闪亮。默认值为 30。</p>
+<p>.specular : Color<br>材质的高光颜色。默认值为0x111111（深灰色）的颜色Color。</p>
+<p>这定义了材质的光泽度和光泽的颜色。</p>
+<p>.specularMap : Texture<br>镜面反射贴图值会影响镜面高光以及环境贴图对表面的影响程度。默认值为null。</p>
+<p>.wireframe : Boolean<br>将几何体渲染为线框。默认值为false（即渲染为平面多边形）。</p>
+<p>.wireframeLinecap : String<br>定义线两端的外观。可选值为 ‘butt’，’round’ 和 ‘square’。默认为’round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p>.wireframeLinejoin : String<br>定义线连接节点的样式。可选值为 ‘round’, ‘bevel’ 和 ‘miter’。默认值为 ‘round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p>.wireframeLinewidth : Float<br>控制线框宽度。默认值为1。</p>
+<p>由于OpenGL Core Profile与 大多数平台上WebGL渲染器的限制，无论如何设置该值，线宽始终为1。</p>
+<h4 id="标准网格材质-MeshStandardMaterial"><a href="#标准网格材质-MeshStandardMaterial" class="headerlink" title="标准网格材质(MeshStandardMaterial)"></a>标准网格材质(MeshStandardMaterial)</h4><p>一种基于物理的标准材质，使用Metallic-Roughness工作流程。</p>
+<p>该材质提供了比MeshLambertMaterial 或MeshPhongMaterial 更精确和逼真的结果，代价是计算成本更高</p>
+<h5 id="构造器-20"><a href="#构造器-20" class="headerlink" title="构造器"></a>构造器</h5><p><code>MeshStandardMaterial( parameters : Object )</code></p>
+<p>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。 材质的任何属性都可以从此处传入(包括从Material继承的任何属性)。</p>
+<p>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色），内部调用Color.set(color)。</p>
+<h5 id="属性-方法-16"><a href="#属性-方法-16" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类Material。<br>共有属性请参见其基类Material。</p>
+</blockquote>
+<p>.alphaMap : Texture<br>alpha贴图是一张灰度纹理，用于控制整个表面的不透明度。（黑色：完全透明；白色：完全不透明）。 默认值为null。</p>
+<p>仅使用纹理的颜色，忽略alpha通道（如果存在）。 对于RGB和RGBA纹理，WebGL渲染器在采样此纹理时将使用绿色通道， 因为在DXT压缩和未压缩RGB 565格式中为绿色提供了额外的精度。 Luminance-only以及luminance/alpha纹理也仍然有效。</p>
+<p>.aoMap : Texture<br>该纹理的红色通道用作环境遮挡贴图。默认值为null。aoMap需要第二组UV。</p>
+<p>.aoMapIntensity : Float<br>环境遮挡效果的强度。默认值为1。零是不遮挡效果。</p>
+<p>.bumpMap : Texture<br>用于创建凹凸贴图的纹理。黑色和白色值映射到与光照相关的感知深度。凹凸实际上不会影响对象的几何形状，只影响光照。如果定义了法线贴图，则将忽略该贴图。</p>
+<p>.bumpScale : Float<br>凹凸贴图会对材质产生多大影响。典型范围是0-1。默认值为1。</p>
+<p>.color : Color<br>材质的颜色(Color)，默认值为白色 (0xffffff)。</p>
+<p>.defines : Object<br>如下形式的对象:<code>&#123; &#39;STANDARD&#39;: &#39;&#39; &#125;</code>;WebGLRenderer使用它来选择shaders。</p>
+<p>.displacementMap : Texture<br>位移贴图会影响网格顶点的位置，与仅影响材质的光照和阴影的其他贴图不同，移位的顶点可以投射阴影，阻挡其他对象， 以及充当真实的几何体。位移纹理是指：网格的所有顶点被映射为图像中每个像素的值（白色是最高的），并且被重定位。</p>
+<p>.displacementScale : Float<br>位移贴图对网格的影响程度（黑色是无位移，白色是最大位移）。如果没有设置位移贴图，则不会应用此值。默认值为1。</p>
+<p>.displacementBias : Float<br>位移贴图在网格顶点上的偏移量。如果没有设置位移贴图，则不会应用此值。默认值为0。</p>
+<p>.emissive : Color<br>材质的放射（光）颜色，基本上是不受其他光照影响的固有颜色。默认为黑色。</p>
+<p>.emissiveMap : Texture<br>设置放射（发光）贴图。默认值为null。放射贴图颜色由放射颜色和强度所调节。 如果你有一个放射贴图，请务必将放射颜色设置为黑色以外的其他颜色。</p>
+<p>.emissiveIntensity : Float<br>放射光强度。调节发光颜色。默认为1。</p>
+<p>.envMap : Texture<br>环境贴图，为了能够保证物理渲染准确，您应该添加由PMREMGenerator预处理过的环境贴图，默认为null。</p>
+<p>.envMapIntensity : Float<br>通过乘以环境贴图的颜色来缩放环境贴图的效果。</p>
+<p>.flatShading : Boolean<br>定义材质是否使用平面着色进行渲染。默认值为false。</p>
+<p>.fog : Boolean<br>材质是否受雾影响。默认为true。</p>
+<p>.isMeshStandardMaterial : Boolean<br>检查当前对象是否为标准网格材质的标记。</p>
+<p>.lightMap : Texture<br>光照贴图。默认值为null。lightMap需要第二组UV。</p>
+<p>.lightMapIntensity : Float<br>烘焙光的强度。默认值为1。</p>
+<p>.map : Texture<br>颜色贴图。可以选择包括一个alpha通道，通常与.transparent 或.alphaTest。默认为null。 纹理贴图颜色由漫反射颜色.color调节。</p>
+<p>.metalness : Float<br>材质与金属的相似度。非金属材质，如木材或石材，使用0.0，金属使用1.0，通常没有中间值。 默认值为0.0。0.0到1.0之间的值可用于生锈金属的外观。如果还提供了metalnessMap，则两个值相乘。</p>
+<p>.metalnessMap : Texture<br>该纹理的蓝色通道用于改变材质的金属度。</p>
+<p>.normalMap : Texture<br>用于创建法线贴图的纹理。RGB值会影响每个像素片段的曲面法线，并更改颜色照亮的方式。法线贴图不会改变曲面的实际形状，只会改变光照。 In case the material has a normal map authored using the left handed convention, the y component of normalScale should be negated to compensate for the different handedness.</p>
+<p>.normalMapType : Integer<br>法线贴图的类型。</p>
+<p>选项为THREE.TangentSpaceNormalMap（默认）和THREE.ObjectSpaceNormalMap。</p>
+<p>.normalScale : Vector2<br>法线贴图对材质的影响程度。典型范围是0-1。默认值是Vector2设置为（1,1）。</p>
+<p>.refractionRatio : Float<br>空气的折射率（IOR）（约为1）除以材质的折射率。它与环境映射模式THREE.CubeRefractionMapping 和THREE.EquirectangularRefractionMapping一起使用。 The index of refraction (IOR) of air (approximately 1) divided by the index of refraction of the material. It is used with environment mapping mode THREE.CubeRefractionMapping. 折射率不应超过1。默认值为0.98。</p>
+<p>.roughness : Float<br>材质的粗糙程度。0.0表示平滑的镜面反射，1.0表示完全漫反射。默认值为1.0。如果还提供roughnessMap，则两个值相乘。</p>
+<p>.roughnessMap : Texture<br>该纹理的绿色通道用于改变材质的粗糙度。</p>
+<p>.wireframe : Boolean<br>将几何体渲染为线框。默认值为false（即渲染为平面多边形）。</p>
+<p>.wireframeLinecap : String<br>定义线两端的外观。可选值为 ‘butt’，’round’ 和 ‘square’。默认为’round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p>.wireframeLinejoin : String<br>定义线连接节点的样式。可选值为 ‘round’, ‘bevel’ 和 ‘miter’。默认值为 ‘round’。</p>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<p>.wireframeLinewidth : Float<br>控制线框宽度。默认值为1。<br>由于OpenGL Core Profile与 大多数平台上WebGL渲染器的限制，无论如何设置该值，线宽始终为1。</p>
+<h4 id="物理网格材质-MeshPhysicalMaterial"><a href="#物理网格材质-MeshPhysicalMaterial" class="headerlink" title="物理网格材质(MeshPhysicalMaterial)"></a>物理网格材质(MeshPhysicalMaterial)</h4><p>提供了更高级的基于物理的渲染属性<br>物理网格材质使用了更复杂的着色器功能，所以在每个像素的渲染都要比three.js中的其他材质更费性能，大部分的特性是默认关闭的，需要手动开启，每开启一项功能在开启的时候才会更耗性能。请注意，为获得最佳效果，您在使用此材质时应始终指定environment map。</p>
+<h5 id="构造器-21"><a href="#构造器-21" class="headerlink" title="构造器"></a>构造器</h5><p><code>MeshPhysicalMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。 材质的任何属性都可以从此处传入(包括从Material和MeshStandardMaterial继承的任何属性)</p>
+<p>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色），内部调用Color.set(color)。</p>
+<h4 id="基础线条材质（LineBasicMaterial）"><a href="#基础线条材质（LineBasicMaterial）" class="headerlink" title="基础线条材质（LineBasicMaterial）"></a>基础线条材质（LineBasicMaterial）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">LineBasicMaterial</span>( &#123;</span><br><span class="line"> <span class="attr">color</span>: <span class="number">0xffffff</span>,</span><br><span class="line"> <span class="attr">linewidth</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="attr">linecap</span>: <span class="string">&#x27;round&#x27;</span>, <span class="comment">//ignored by WebGLRenderer</span></span><br><span class="line"> <span class="attr">linejoin</span>:  <span class="string">&#x27;round&#x27;</span> <span class="comment">//ignored by WebGLRenderer</span></span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-22"><a href="#构造器-22" class="headerlink" title="构造器"></a>构造器</h5><p><code>LineBasicMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。材质的任何属性都可以从此处传入(包括从Material继承的任何属性)。</p>
+<p>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色），内部调用Color.set(color)。</p>
+<h5 id="属性-方法-17"><a href="#属性-方法-17" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类Material。<br>共有属性请参见其基类Material。</p>
+</blockquote>
+<ul>
+<li><p><code>.color : Color</code><br>材质的颜色(Color)，默认值为白色 (0xffffff)。</p>
+</li>
+<li><p><code>.fog : Boolean</code><br>材质是否受雾影响。默认为true。</p>
+</li>
+<li><p><code>.linewidth : Float</code><br>控制线宽。默认值为 1。</p>
+</li>
+</ul>
+<p>由于OpenGL Core Profile与 大多数平台上WebGL渲染器的限制，无论如何设置该值，线宽始终为1。</p>
+<ul>
+<li><code>.linecap : String</code><br>定义线两端的样式。可选值为 ‘butt’, ‘round’ 和 ‘square’。默认值为 ‘round’。</li>
+</ul>
+<p>该属性对应2D Canvas lineCap属性， 并且会被WebGL渲染器忽略。</p>
+<ul>
+<li><code>.linejoin : String</code><br>定义线连接节点的样式。可选值为 ‘round’, ‘bevel’ 和 ‘miter’。默认值为 ‘round’。</li>
+</ul>
+<p>该属性对应2D Canvas lineJoin属性， 并且会被WebGL渲染器忽略。</p>
+<ul>
+<li><code>.map : Texture</code><br>Sets the color of the lines using data from a Texture.</li>
+</ul>
+<h4 id="虚线材质-LineDashedMaterial"><a href="#虚线材质-LineDashedMaterial" class="headerlink" title="虚线材质(LineDashedMaterial)"></a>虚线材质(LineDashedMaterial)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">LineDashedMaterial</span>( &#123;</span><br><span class="line"> <span class="attr">color</span>: <span class="number">0xffffff</span>,</span><br><span class="line"> <span class="attr">linewidth</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="attr">scale</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="attr">dashSize</span>: <span class="number">3</span>,</span><br><span class="line"> <span class="attr">gapSize</span>: <span class="number">1</span>,</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-23"><a href="#构造器-23" class="headerlink" title="构造器"></a>构造器</h5><p><code>LineDashedMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。材质的任何属性都可以从此处传入(包括从LineBasicMaterial继承的任何属性)。</p>
+<h5 id="属性-方法-18"><a href="#属性-方法-18" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类Material。<br>共有属性请参见其基类Material。</p>
+</blockquote>
+<ul>
+<li><p><code>.dashSize</code> : number<br>虚线的大小，是指破折号和间隙之和。默认值为 3。</p>
+</li>
+<li><p><code>.gapSize</code> : number<br>间隙的大小，默认值为 1。</p>
+</li>
+<li><p><code>.isLineDashedMaterial</code> : Boolean<br>Read-only flag to check if a given object is of type LineDashedMaterial.</p>
+</li>
+<li><p><code>.scale</code> : number<br>线条中虚线部分的占比。默认值为 1。</p>
+</li>
+</ul>
+<h4 id="卡通着色的材质（MeshToonMaterial）"><a href="#卡通着色的材质（MeshToonMaterial）" class="headerlink" title="卡通着色的材质（MeshToonMaterial）"></a>卡通着色的材质（MeshToonMaterial）</h4><h5 id="构造器-24"><a href="#构造器-24" class="headerlink" title="构造器"></a>构造器</h5><p><code>MeshToonMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。材质的任何属性都可以从此处传入(包括从LineBasicMaterial继承的任何属性)。</p>
+<h4 id="阴影材质-ShadowMaterial"><a href="#阴影材质-ShadowMaterial" class="headerlink" title="阴影材质(ShadowMaterial)"></a>阴影材质(ShadowMaterial)</h4><p>此材质可以接收阴影，但在其他方面完全透明。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PlaneGeometry</span>( <span class="number">2000</span>, <span class="number">2000</span> );</span><br><span class="line">geometry.<span class="title function_">rotateX</span>( - <span class="title class_">Math</span>.<span class="property">PI</span> / <span class="number">2</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">ShadowMaterial</span>();</span><br><span class="line">material.<span class="property">opacity</span> = <span class="number">0.2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> plane = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">plane.<span class="property">position</span>.<span class="property">y</span> = -<span class="number">200</span>;</span><br><span class="line">plane.<span class="property">receiveShadow</span> = <span class="literal">true</span>;</span><br><span class="line">scene.<span class="title function_">add</span>( plane );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-25"><a href="#构造器-25" class="headerlink" title="构造器"></a>构造器</h5><p><code>ShadowMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。材质的任何属性都可以从此处传入(包括从LineBasicMaterial继承的任何属性)。</p>
+<h5 id="属性-方法-19"><a href="#属性-方法-19" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有方法请参见其基类Material。<br>共有属性请参见其基类Material。<br>.color : Color<br>Color of the material, by default set to black (0x000000).</p>
+</blockquote>
+<p>.fog : Boolean<br>材质是否受雾影响。默认为true。</p>
+<p>.transparent : Boolean<br>定义此材质是否透明。默认值为 true。</p>
+<h4 id="点材质-PointsMaterial"><a href="#点材质-PointsMaterial" class="headerlink" title="点材质(PointsMaterial)"></a>点材质(PointsMaterial)</h4><h5 id="构造器-26"><a href="#构造器-26" class="headerlink" title="构造器"></a>构造器</h5><p><code>PointsMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。材质的任何属性都可以从此处传入(包括从LineBasicMaterial继承的任何属性)。<br>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色），内部调用Color.set(color)。</p>
+<h4 id="点精灵材质-SpriteMaterial"><a href="#点精灵材质-SpriteMaterial" class="headerlink" title="点精灵材质(SpriteMaterial)"></a>点精灵材质(SpriteMaterial)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">TextureLoader</span>().<span class="title function_">load</span>( <span class="string">&#x27;textures/sprite.png&#x27;</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">SpriteMaterial</span>( &#123; <span class="attr">map</span>: map, <span class="attr">color</span>: <span class="number">0xffffff</span> &#125; );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sprite = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Sprite</span>( material );</span><br><span class="line">sprite.<span class="property">scale</span>.<span class="title function_">set</span>(<span class="number">200</span>, <span class="number">200</span>, <span class="number">1</span>)</span><br><span class="line">scene.<span class="title function_">add</span>( sprite );</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-27"><a href="#构造器-27" class="headerlink" title="构造器"></a>构造器</h5><p><code>SpriteMaterial( parameters : Object )</code><br>parameters - (可选)用于定义材质外观的对象，具有一个或多个属性。 材质的任何属性都可以从此处传入(包括从Material 和 ShaderMaterial继承的任何属性)。</p>
+<p>属性color例外，其可以作为十六进制字符串传递，默认情况下为 0xffffff（白色）， 内部调用Color.set(color)。 SpriteMaterials不会被Material.clippingPlanes裁剪。</p>
+<h5 id="属性-方法-20"><a href="#属性-方法-20" class="headerlink" title="属性|方法"></a>属性|方法</h5><p>.alphaMap : Texture<br>alpha贴图是一张灰度纹理，用于控制整个表面的不透明度。（黑色：完全透明；白色：完全不透明）。 默认值为null。</p>
+<p>仅使用纹理的颜色，忽略alpha通道（如果存在）。 对于RGB和RGBA纹理，WebGL渲染器在采样此纹理时将使用绿色通道， 因为在DXT压缩和未压缩RGB 565格式中为绿色提供了额外的精度。 Luminance-only以及luminance/alpha纹理也仍然有效。</p>
+<p>.color : Color<br>材质的颜色(Color)，默认值为白色 (0xffffff)。 .map会和 color 相乘。</p>
+<p>.fog : Boolean<br>材质是否受雾影响。默认为true。</p>
+<p>.isSpriteMaterial : Boolean<br>Read-only flag to check if a given object is of type SpriteMaterial.</p>
+<p>.map : Texture<br>颜色贴图。可以选择包括一个alpha通道，通常与.transparent 或.alphaTest。默认为null。</p>
+<p>.rotation : Radians<br>sprite的转动，以弧度为单位。默认值为0。</p>
+<p>.sizeAttenuation : Boolean<br>精灵的大小是否会被相机深度衰减。（仅限透视摄像头。）默认为true。</p>
+<p>.transparent : Boolean<br>定义此材质是否透明。默认值为 true。</p>
+<h3 id="物体"><a href="#物体" class="headerlink" title="物体"></a>物体</h3><h4 id="三维物体（Object3D）"><a href="#三维物体（Object3D）" class="headerlink" title="三维物体（Object3D）"></a>三维物体（Object3D）</h4><p>这是Three.js中大部分对象的基类，提供了一系列的属性和方法来对三维空间中的物体进行操纵。</p>
+<p>请注意，可以通过.add( object )方法来将对象进行组合，该方法将对象添加为子对象，但为此最好使用Group（来作为父对象）</p>
+<h5 id="构造器-28"><a href="#构造器-28" class="headerlink" title="构造器"></a>构造器</h5><p><code>Object3D()</code><br>构造器中不带有参数。</p>
+<h5 id="属性-6"><a href="#属性-6" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><p><code>.animations</code> : AnimationClip<br>三维物体所属的动画剪辑数组.</p>
+</li>
+<li><p><code>.castShadow</code> : Boolean<br>对象是否被渲染到阴影贴图中。默认值为false。</p>
+</li>
+<li><p><code>.children</code> : Array<br>含有对象的子级的数组。请参阅Group来了解将手动对象进行分组的相关信息。</p>
+</li>
+<li><p><code>.customDepthMaterial</code> : Material<br>在渲染到深度图的时候所用的自定义深度材质。 只能在网格中使用。 当使用DirectionalLight（平行光）或者SpotLight（聚光灯光）生成影子的时候, 如果你调整过顶点着色器中的顶点位置，就需要定义一个自定义深度材质来生成正确的影子。默认为undefined.</p>
+</li>
+<li><p><code>.customDistanceMaterial</code> : Material<br>与customDepthMaterial相同，但与PointLight(点光源）一起使用。默认值为undefined。</p>
+</li>
+<li><p><code>.frustumCulled</code> : Boolean<br>当这个设置了的时候，每一帧渲染前都会检测这个物体是不是在相机的视椎体范围内。 如果设置为false 物体不管是不是在相机的视椎体范围内都会渲染。默认为true。</p>
+</li>
+<li><p><code>.id</code> : Integer<br>只读 —— 表示该对象实例ID的唯一数字。</p>
+</li>
+<li><p><code>.isObject3D</code> : Boolean<br>查看所给对象是不是Object3D类型的只读标记.</p>
+</li>
+<li><p><code>.layers</code> : Layers<br>物体的层级关系。 物体只有和一个正在使用的Camera至少在同一个层时才可见。当使用Raycaster进行射线检测的时候此项属性可以用于过滤不参与检测的物体.</p>
+</li>
+<li><p><code>.matrix</code> : Matrix4<br>局部变换矩阵。</p>
+</li>
+<li><p><code>.matrixAutoUpdate</code> : Boolean<br>当这个属性设置了之后，它将计算每一帧的位移、旋转（四元变换）和缩放矩阵，并重新计算matrixWorld属性。默认值是Object3D.DEFAULT_MATRIX_AUTO_UPDATE (true)。</p>
+</li>
+<li><p><code>.matrixWorld</code> : Matrix4<br>物体的世界变换。若这个Object3D没有父级，则它将和local transform .matrix（局部变换矩阵）相同。</p>
+</li>
+<li><p><code>.matrixWorldAutoUpdate</code> : Boolean<br>默认为 true. 当设置的时候，渲染器在每一帧都会检查物体自身以及它的自带是否需要更新世界变换矩阵。 如果不需要的话它自身以及它的子代的所有世界变换矩阵都需要你来维护。</p>
+</li>
+<li><p><code>.matrixWorldNeedsUpdate</code> : Boolean<br>当这个属性设置了之后，它将计算在那一帧中的matrixWorld，并将这个值重置为false。默认值为false。</p>
+</li>
+<li><p><code>.modelViewMatrix</code> : Matrix4<br>这个值传递给着色器，用于计算物体的位置。</p>
+</li>
+<li><p><code>.name</code> : String<br>对象的名称，可选、不必唯一。默认值是一个空字符串。</p>
+</li>
+<li><p><code>.normalMatrix</code> : Matrix3<br>这个值传递给着色器，用于计算物体的光照。 它是物体的modelViewMatrix矩阵中，左上角3x3子矩阵的逆的转置矩阵。</p>
+</li>
+</ul>
+<p>使用这个特殊矩阵的原因，是只需使用modelViewMatrix就可以得出一个法线（缩放时）的非单位长度或者非垂直的方向（不规则缩放时）。</p>
+<p>另一方面，modelViewMatrix矩阵中的位移部分和法线的计算无关，因此Matrix3就已经足够了。</p>
+<ul>
+<li><code>.onAfterRender</code> : Function<br>一个可选的回调函数，在Object3D渲染之后直接执行。 使用以下参数来调用此函数：renderer，scene，camera，geometry，material，group。</li>
+</ul>
+<p>注意此回调函数只会在<em>可渲染</em>的3D物体上执行。可渲染的3D物体指的是那种拥有视觉表现的、定义了几何体与材质的物体，例如像是Mesh、Line、Points 或者Sprite。 Object3D、 Group 或者 Bone 这些是不可渲染的物体，因此此回调函数不会在这样的物体上执行。</p>
+<ul>
+<li><code>.onBeforeRender</code> : Function<br>一个可选的回调函数，在Object3D渲染之前直接执行。 使用以下参数来调用此函数：renderer，scene，camera，geometry，material，group。</li>
+</ul>
+<p>注意此回调函数只会在<em>可渲染</em>的3D物体上执行。可渲染的3D物体指的是那种拥有视觉表现的、定义了几何体与材质的物体，例如像是Mesh、Line、Points 或者Sprite。 Object3D、 Group 或者 Bone 这些是不可渲染的物体，因此此回调函数不会在这样的物体上执行。</p>
+<ul>
+<li><p><code>.parent</code> : Object3D<br>在scene graph（场景图）中，一个对象的父级对象。 一个对象最多仅能有一个父级对象。</p>
+</li>
+<li><p><code>.position</code> : Vector3<br>表示对象局部位置的Vector3。默认值为(0, 0, 0)。</p>
+</li>
+<li><p><code>.quaternion</code> : Quaternion<br>表示对象局部旋转的Quaternion（四元数）。</p>
+</li>
+<li><p><code>.receiveShadow</code> : Boolean<br>材质是否接收阴影。默认值为false。</p>
+</li>
+<li><p><code>.renderOrder</code> : Number<br>这个值将使得scene graph（场景图）中默认的的渲染顺序被覆盖， 即使不透明对象和透明对象保持独立顺序。 渲染顺序是由低到高来排序的，默认值为0。</p>
+</li>
+<li><p><code>.rotation</code> : Euler<br>物体的局部旋转，以弧度来表示。（请参阅Euler angles-欧拉角）</p>
+</li>
+<li><p><code>.scale</code> : Vector3<br>物体的局部缩放。默认值是Vector3( 1, 1, 1 )。</p>
+</li>
+<li><p><code>.up</code> : Vector3<br>这个属性由lookAt方法所使用，例如，来决定结果的朝向。 默认值是Object3D.DEFAULT_UP，即( 0, 1, 0 )。</p>
+</li>
+<li><p><code>.userData</code> : Object<br>一个用于存储Object3D自定义数据的对象。 它不应当包含对函数的引用，因为这些函数将不会被克隆。</p>
+</li>
+<li><p><code>.uuid</code> : String<br>该对象实例的UUID。 这是一个自动生成的值，不应当对其进行修改。</p>
+</li>
+<li><p><code>.visible</code> : Boolean<br>可见性。这个值为true时，物体将被渲染。默认值为true。</p>
+</li>
+</ul>
+<p>静态属性<br>静态属性和方法由每个类所定义，并非由每个类的实例所定义。 也就是说，改变Object3D.DEFAULT_UP或Object3D.DEFAULT_MATRIX_AUTO_UPDATE的值， 将改变每个在此之后由Object3D类（或派生类）创建的实例中的up和matrixAutoUpdate的值。（已经创建好的Object3D不会受到影响）。</p>
+<ul>
+<li><p><code>.DEFAULT_UP</code> : Vector3<br>默认的物体的up方向，同时也作为DirectionalLight、HemisphereLight和Spotlight（自顶向下创建的灯光）的默认方向。 默认设为( 0, 1, 0 )。</p>
+</li>
+<li><p><code>.DEFAULT_MATRIX_AUTO_UPDATE</code> : Boolean<br>matrixAutoUpdate的默认设置，用于新创建的Object3D。<br>.DEFAULT_MATRIX_WORLD_AUTO_UPDATE : Boolean<br>matrixWorldAutoUpdate的默认设置，用于新创建的Object3D。</p>
+</li>
+</ul>
+<h5 id="方法-6"><a href="#方法-6" class="headerlink" title="方法"></a>方法</h5><p>EventDispatcher 在该类上可用的所有方法。</p>
+<ul>
+<li><code>.add ( object : Object3D, ... ) : this</code><br>添加对象到这个对象的子级，可以添加任意数量的对象。 当前传入的对象中的父级将在这里被移除，因为一个对象仅能有一个父级。</li>
+</ul>
+<p>请参阅Group来查看手动编组对象的相关信息。</p>
+<ul>
+<li><p><code>.applyMatrix4 ( matrix : Matrix4 ) : undefined</code><br>对当前物体应用这个变换矩阵，并更新物体的位置、旋转和缩放。</p>
+</li>
+<li><p><code>.applyQuaternion ( quaternion : Quaternion ) : this</code><br>对当前物体应用由四元数所表示的变换。</p>
+</li>
+<li><p><code>.attach ( object : Object3D ) : this</code><br>将object作为子级来添加到该对象中，同时保持该object的世界变换。</p>
+</li>
+<li><p><code>.clone ( recursive : Boolean ) : Object3D</code><br>recursive —— 如果值为true，则该物体的后代也会被克隆。默认值为true。</p>
+</li>
+</ul>
+<p>返回对象前物体的克隆（以及可选的所有后代）。</p>
+<ul>
+<li><code>.copy ( object : Object3D, recursive : Boolean ) : this</code><br>recursive —— 如果值为true，则该物体的后代也会被复制。默认值为true。</li>
+</ul>
+<p>复制给定的对象到这个对象中。 请注意，事件监听器和用户定义的回调函数（.onAfterRender 和 .onBeforeRender）不会被复制。</p>
+<ul>
+<li><code>.getObjectById ( id : Integer ) : Object3D</code><br>id —— 标识该对象实例的唯一数字。</li>
+</ul>
+<p>从该对象开始，搜索一个对象及其子级，返回第一个带有匹配id的子对象。<br>请注意，id是按照时间顺序来分配的：1、2、3、……，每增加一个新的对象就自增1。</p>
+<ul>
+<li><code>.getObjectByName ( name : String ) : Object3D</code><br>name —— 用于来匹配子物体中Object3D.name属性的字符串。</li>
+</ul>
+<p>从该对象开始，搜索一个对象及其子级，返回第一个带有匹配name的子对象。<br>请注意，大多数的对象中name默认是一个空字符串，要使用这个方法，你将需要手动地设置name属性。</p>
+<ul>
+<li><code>.getObjectByProperty ( name : String, value : Any ) : Object3D</code><br>name —— 将要用于查找的属性的名称。<br>value —— 给定的属性的值。</li>
+</ul>
+<p>从该对象开始，搜索一个对象及其子级，返回第一个给定的属性中包含有匹配的值的子对象。</p>
+<ul>
+<li><code>.getObjectsByProperty ( name : String, value : Any ) : Object3D</code><br>name —— 将要用于查找的属性的名称。<br>value —— 给定的属性的值。</li>
+</ul>
+<p>从此对象开始，搜索一个对象及其子对象，返回包含给定属性的匹配值的所有子对象。</p>
+<ul>
+<li><code>.getWorldPosition ( target : Vector3 ) : Vector3</code><br>target — 结果将被复制到这个Vector3中。</li>
+</ul>
+<p>返回一个表示该物体在世界空间中位置的矢量。</p>
+<ul>
+<li><code>.getWorldQuaternion ( target : Quaternion ) : Quaternion</code><br>target — 结果将被复制到这个Quaternion中。</li>
+</ul>
+<p>返回一个表示该物体在世界空间中旋转的四元数。</p>
+<ul>
+<li><code>.getWorldScale ( target : Vector3 ) : Vector3</code><br>target — 结果将被复制到这个Vector3中。</li>
+</ul>
+<p>返回一个包含着该物体在世界空间中各个轴向上所应用的缩放因数的矢量。</p>
+<ul>
+<li><code>.getWorldDirection ( target : Vector3 ) : Vector3</code><br>target — 结果将被复制到这个Vector3中。</li>
+</ul>
+<p>返回一个表示该物体在世界空间中Z轴正方向的矢量。</p>
+<ul>
+<li><code>.localToWorld ( vector : Vector3 ) : Vector3</code><br>vector - 一个表示在该物体局部空间中位置的向量。</li>
+</ul>
+<p>将该向量从物体的局部空间转换到世界空间。</p>
+<ul>
+<li><code>.lookAt ( vector : Vector3 ) : undefined</code><br>.lookAt ( x : Float, y : Float, z : Float ) : undefined<br>vector - 一个表示世界空间中位置的向量。</li>
+</ul>
+<p>也可以使用世界空间中x、y和z的位置分量。</p>
+<p>旋转物体使其在世界空间中面朝一个点。</p>
+<p>这一方法不支持其父级被旋转过或者被位移过的物体。</p>
+<ul>
+<li><p><code>.raycast ( raycaster : Raycaster, intersects : Array ) : undefined</code><br>抽象（空方法），在一条被投射出的射线与这个物体之间获得交点。 在一些子类，例如Mesh, Line, and Points实现了这个方法，以用于光线投射。</p>
+</li>
+<li><p><code>.remove ( object : Object3D, ... ) : this</code><br>从当前对象的子级中移除对象。可以移除任意数量的对象。</p>
+</li>
+<li><p><code>.removeFromParent () : this</code><br>Removes this object from its current parent.</p>
+</li>
+<li><p><code>.rotateOnAxis ( axis : Vector3, angle : Float ) : this</code><br>axis —— 一个在局部空间中的标准化向量。<br>angle —— 角度，以弧度来表示。</p>
+</li>
+</ul>
+<p>在局部空间中绕着该物体的轴来旋转一个物体，假设这个轴已被标准化。</p>
+<ul>
+<li><code>.rotateOnWorldAxis ( axis : Vector3, angle : Float ) : this</code><br>axis – 一个在世界空间中的标准化向量。<br>angle – 角度，以弧度来表示。</li>
+</ul>
+<p>在世界空间中绕着该物体的轴来旋转一个物体，假设这个轴已被标准化。 方法假设该物体没有旋转过的父级。</p>
+<ul>
+<li><code>.rotateX ( rad : Float ) : this</code><br>rad - 将要旋转的角度（以弧度来表示）。</li>
+</ul>
+<p>绕局部空间的X轴旋转这个物体。</p>
+<ul>
+<li><code>.rotateY ( rad : Float ) : this</code><br>rad - 将要旋转的角度（以弧度来表示）。</li>
+</ul>
+<p>绕局部空间的Y轴旋转这个物体。</p>
+<ul>
+<li><code>.rotateZ ( rad : Float ) : this</code><br>rad - 将要旋转的角度（以弧度来表示）。</li>
+</ul>
+<p>绕局部空间的Z轴旋转这个物体。</p>
+<ul>
+<li><code>.setRotationFromAxisAngle ( axis : Vector3, angle : Float ) : undefined</code><br>axis – 一个在局部空间中的标准化向量。<br>angle – 角度（以弧度来表示）。</li>
+</ul>
+<p>调用.quaternion中的setFromAxisAngle( axis, angle )。</p>
+<ul>
+<li><p><code>.setRotationFromEuler ( euler : Euler ) : undefined</code><br>euler – 指定了旋转量的欧拉角。<br>调用.quaternion中的setRotationFromEuler( euler)。</p>
+</li>
+<li><p><code>.setRotationFromMatrix ( m : Matrix4 ) : undefined</code><br>m – 通过该矩阵中的旋转分量来旋转四元数。<br>调用.quaternion中的setFromRotationMatrix( m)。</p>
+</li>
+</ul>
+<p>请注意，这里假设m上的3x3矩阵是一个纯旋转矩阵（即未缩放的矩阵）。</p>
+<ul>
+<li><code>.setRotationFromQuaternion ( q : Quaternion ) : undefined</code><br>q – 标准化的四元数。</li>
+</ul>
+<p>将所给的四元数复制到.quaternion中。</p>
+<ul>
+<li><p><code>.toJSON ( meta : Object ) : Object</code><br>meta – 包含有元数据的对象，例如该对象的材质、纹理或图片。 将对象转换为 three.js JSON Object/Scene format（three.js JSON 物体/场景格式）。</p>
+</li>
+<li><p><code>.translateOnAxis ( axis : Vector3, distance : Float ) : this</code><br>axis – 一个在局部空间中的标准化向量。<br>distance – 将要平移的距离。</p>
+</li>
+</ul>
+<p>在局部空间中沿着一条轴来平移物体，假设轴已被标准化。</p>
+<ul>
+<li><p><code>.translateX ( distance : Float ) : this</code><br>沿着X轴将平移distance个单位。</p>
+</li>
+<li><p><code>.translateY ( distance : Float ) : this</code><br>沿着Y轴将平移distance个单位。</p>
+</li>
+<li><p><code>.translateZ ( distance : Float ) : this</code><br>沿着Z轴将平移distance个单位。</p>
+</li>
+<li><p><code>.traverse ( callback : Function ) : undefined</code><br>callback - 以一个object3D对象作为第一个参数的函数。</p>
+</li>
+</ul>
+<p>在对象以及后代中执行的回调函数。</p>
+<ul>
+<li><code>.traverseVisible ( callback : Function ) : undefined</code><br>callback - 以一个object3D对象作为第一个参数的函数。</li>
+</ul>
+<p>类似traverse函数，但在这里，回调函数仅对可见的对象执行，不可见对象的后代将不遍历。</p>
+<ul>
+<li><code>.traverseAncestors ( callback : Function ) : undefined</code><br>callback - 以一个object3D对象作为第一个参数的函数。</li>
+</ul>
+<p>在所有的祖先中执行回调函数。</p>
+<ul>
+<li><p><code>.updateMatrix () : undefined</code><br>更新局部变换。</p>
+</li>
+<li><p><code>.updateMatrixWorld ( force : Boolean ) : undefined</code><br>更新物体及其后代的全局变换。</p>
+</li>
+<li><p><code>.updateWorldMatrix ( updateParents : Boolean, updateChildren : Boolean ) : undefined</code><br>updateParents - 递归更新物体的所有祖先的全局变换.<br>updateChildren - 递归更新物体的所有后代的全局变换.</p>
+</li>
+</ul>
+<p>更新物体的全局变换。</p>
+<ul>
+<li><code>.worldToLocal ( vector : Vector3 ) : Vector3</code><br>vector - 一个表示在世界空间中位置的向量。</li>
+</ul>
+<p>将该向量从世界空间转换到物体的局部空间。</p>
+<h4 id="网格模型（Mesh）"><a href="#网格模型（Mesh）" class="headerlink" title="网格模型（Mesh）"></a>网格模型（Mesh）</h4><p>表示基于以三角形为polygon mesh（多边形网格）的物体的类。 同时也作为其他类的基类<br>网格模型Mesh其实就一个一个三角形(面)拼接构成。使用使用网格模型Mesh渲染几何体geometry，就是几何体所有顶点坐标三个为一组，构成一个三角形，多组顶点构成多个三角形，就可以用来模拟表示物体的表面。<br>空间中一个三角形有正反两面，相机对着三角形的一个面，如果三个顶点的顺序是逆时针方向，该面视为正面，如果三个顶点的顺序是顺时针方向，该面视为反面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BoxGeometry</span>( <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123; <span class="attr">color</span>: <span class="number">0xffff00</span> &#125; );</span><br><span class="line"><span class="keyword">const</span> mesh = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( mesh );</span><br></pre></td></tr></table></figure>
+
+<p>网格模型Mesh对应的几何体BufferGeometry，拆分为多个三角后，很多三角形重合的顶点位置坐标是相同的，这时候如果你想减少顶点坐标数据量，可以借助几何体顶点索引geometry.index来实现。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//每个三角形3个顶点坐标，矩形平面可以拆分为两个三角形，也就是6个顶点坐标。</span></span><br><span class="line"><span class="keyword">const</span> vertices = <span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="comment">//顶点1坐标</span></span><br><span class="line">    <span class="number">80</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="comment">//顶点2坐标</span></span><br><span class="line">    <span class="number">80</span>, <span class="number">80</span>, <span class="number">0</span>, <span class="comment">//顶点3坐标</span></span><br><span class="line">    <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="comment">//顶点4坐标   和顶点1位置相同</span></span><br><span class="line">    <span class="number">80</span>, <span class="number">80</span>, <span class="number">0</span>, <span class="comment">//顶点5坐标  和顶点3位置相同</span></span><br><span class="line">    <span class="number">0</span>, <span class="number">80</span>, <span class="number">0</span>, <span class="comment">//顶点6坐标</span></span><br><span class="line">]);</span><br><span class="line"><span class="comment">//如果几何体有顶点索引geometry.index，那么你可以吧三角形重复的顶点位置坐标删除。</span></span><br><span class="line"><span class="keyword">const</span> vertices = <span class="keyword">new</span> <span class="title class_">Float32Array</span>([</span><br><span class="line">    <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="comment">//顶点1坐标</span></span><br><span class="line">    <span class="number">80</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="comment">//顶点2坐标</span></span><br><span class="line">    <span class="number">80</span>, <span class="number">80</span>, <span class="number">0</span>, <span class="comment">//顶点3坐标</span></span><br><span class="line">    <span class="number">0</span>, <span class="number">80</span>, <span class="number">0</span>, <span class="comment">//顶点4坐标</span></span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<p>BufferAttribute定义顶点索引.index数据<br>通过javascript类型化数组Uint16Array创建顶点索引.index数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Uint16Array类型数组创建顶点索引数据</span></span><br><span class="line"><span class="keyword">const</span> indexes = <span class="keyword">new</span> <span class="title class_">Uint16Array</span>([</span><br><span class="line">    <span class="comment">// 下面索引值对应顶点位置数据中的顶点坐标</span></span><br><span class="line">    <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>,</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<p>通过threejs的属性缓冲区对象BufferAttribute表示几何体顶点索引.index数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 索引数据赋值给几何体的index属性</span></span><br><span class="line">geometry.<span class="property">index</span> = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BufferAttribute</span>(indexes, <span class="number">1</span>); <span class="comment">//1个为一组</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="构造器-29"><a href="#构造器-29" class="headerlink" title="构造器"></a>构造器</h4><p><code>Mesh( geometry : BufferGeometry, material : Material )</code><br>geometry —— （可选）BufferGeometry的实例，默认值是一个新的BufferGeometry。<br>material —— （可选）一个Material，或是一个包含有Material的数组，默认是一个新的MeshBasicMa`terial。</p>
+<h5 id="属性-7"><a href="#属性-7" class="headerlink" title="属性"></a>属性</h5><p>共有属性请参见其基类Object3D。</p>
+<p>.geometry : BufferGeometry<br>BufferGeometry 的实例或者派生类，定义了物体的结构。</p>
+<p>.isMesh : Boolean<br>Read-only flag to check if a given object is of type Mesh.</p>
+<p>.material : Material<br>由Material基类或者一个包含材质的数组派生而来的材质实例，定义了物体的外观。默认值是一个MeshBasicMaterial。</p>
+<p>.morphTargetInfluences : Array<br>一个包含有权重（值一般在0-1范围内）的数组，指定应用了多少变形。 默认情况下是未定义的，但是会被updateMorphTargets重置为一个空数组。</p>
+<p>.morphTargetDictionary : Object<br>基于morphTarget.name属性的morphTargets字典。 默认情况下是未定义的，但是会被updateMorphTargets重建。</p>
+<h5 id="方法-7"><a href="#方法-7" class="headerlink" title="方法"></a>方法</h5><p>共有方法请参见其基类Object3D。</p>
+<p>.clone () : Mesh<br>返回这个Mesh对象及其子级的克隆。</p>
+<p>.raycast ( raycaster : Raycaster, intersects : Array ) : undefined<br>在一条投射出去的Ray（射线）和这个网格之间产生交互。 Raycaster.intersectObject将会调用这个方法。</p>
+<p>.updateMorphTargets () : undefined<br>更新morphTargets，使其不对对象产生影响，重置morphTargetInfluences and morphTargetDictionary属性。</p>
+<h4 id="点（Points）"><a href="#点（Points）" class="headerlink" title="点（Points）"></a>点（Points）</h4><p>一个用于显示点的类。 由WebGLRenderer渲染的点使用 gl.POINTS。</p>
+<h5 id="构造器-30"><a href="#构造器-30" class="headerlink" title="构造器"></a>构造器</h5><p><code>Points( geometry : BufferGeometry, material : Material )</code><br>geometry —— （可选）是一个BufferGeometry的实例，默认值是一个新的BufferGeometry。几何体geometry作为点模型Points参数，会把几何体渲染为点<br>material —— （可选） 是一个对象，默认值是一个PointsMaterial。</p>
+<h5 id="属性-8"><a href="#属性-8" class="headerlink" title="属性"></a>属性</h5><p>共有属性请参见其基类Object3D。</p>
+<p>.geometry : BufferGeometry<br>一个BufferGeometry的实例（或者派生类），定义了物体的结构。</p>
+<p>.isPoints : Boolean<br>Read-only flag to check if a given object is of type Points.</p>
+<p>.material : Material<br>Material的实例。定义了物体的外观。默认值是一个的PointsMaterial。</p>
+<p>.morphTargetInfluences : Array<br>一个包含有权重（值一般在0-1范围内）的数组，指定应用了多少变形。 默认情况下是未定义的，但是会被updateMorphTargets重置为一个空数组。</p>
+<p>.morphTargetDictionary : Object<br>基于morphTarget.name属性的morphTargets字典。 默认情况下是未定义的，但是会被updateMorphTargets重建。</p>
+<h5 id="方法-8"><a href="#方法-8" class="headerlink" title="方法"></a>方法</h5><p>共有方法请参见其基类Object3D。</p>
+<p>.clone () : Mesh<br>返回这个Mesh对象及其子级的克隆。</p>
+<p>.raycast ( raycaster : Raycaster, intersects : Array ) : undefined<br>在一条投射出去的Ray（射线）和这个网格之间产生交互。 Raycaster.intersectObject将会调用这个方法。</p>
+<p>.updateMorphTargets () : undefined<br>更新morphTargets，使其不对对象产生影响，重置morphTargetInfluences and morphTargetDictionary属性。</p>
+<h4 id="精灵（Sprite）"><a href="#精灵（Sprite）" class="headerlink" title="精灵（Sprite）"></a>精灵（Sprite）</h4><p>精灵是一个总是面朝着摄像机的平面，通常含有使用一个半透明的纹理。精灵不会投射任何阴影</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">TextureLoader</span>().<span class="title function_">load</span>( <span class="string">&quot;sprite.png&quot;</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">SpriteMaterial</span>( &#123; <span class="attr">map</span>: map &#125; );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sprite = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Sprite</span>( material );</span><br><span class="line">scene.<span class="title function_">add</span>( sprite );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-31"><a href="#构造器-31" class="headerlink" title="构造器"></a>构造器</h5><p>Sprite( material : Material )<br>material - （可选值）是SpriteMaterial的一个实例。 默认值是一个白色的SpriteMaterial。</p>
+<p>创建一个新的Sprite。</p>
+<h5 id="属性-9"><a href="#属性-9" class="headerlink" title="属性"></a>属性</h5><p>共有属性请参见其基类Object3D。</p>
+<p>.isSprite : Boolean<br>Read-only flag to check if a given object is of type Sprite.</p>
+<p>.material : SpriteMaterial<br>SpriteMaterial的一个实例，定义了这个对象的外观。默认值是一个白色的SpriteMaterial。</p>
+<p>.center : Vector2<br>这个精灵的锚点，也就是精灵旋转时，围绕着旋转的点。当值为(0.5,0.5)时，对应着这个精灵的中心点；当值为(0,0)时，对应着这个精灵左下角的点。<br>其默认值是(0.5,0.5)。</p>
+<h5 id="方法-9"><a href="#方法-9" class="headerlink" title="方法"></a>方法</h5><p>共有方法请参见其基类Object3D。</p>
+<p>.clone () : Sprite<br>返回当前Sprite对象的一个克隆及其任何后代。</p>
+<p>.copy ( sprite : Sprite ) : this<br>将前一个Sprite对象的属性复制给当前的这个对象。</p>
+<p>.raycast ( raycaster : Raycaster, intersects : Array ) : undefined<br>在投射的光线和精灵之前产生交互。Raycaster.intersectObject将会调用这个方法。 在对sprite进行射线投射之前，射线投射必须通过调用Raycaster.setFromCamera()来初始化。</p>
+<h4 id="线（Line）"><a href="#线（Line）" class="headerlink" title="线（Line）"></a>线（Line）</h4><p>它几乎和LineSegments是一样的，唯一的区别是它在渲染时使用的是gl.LINE_STRIP， 而不是gl.LINES。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">LineBasicMaterial</span>(&#123;</span><br><span class="line"> <span class="attr">color</span>: <span class="number">0x0000ff</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> points = [];</span><br><span class="line">points.<span class="title function_">push</span>( <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Vector3</span>( - <span class="number">10</span>, <span class="number">0</span>, <span class="number">0</span> ) );</span><br><span class="line">points.<span class="title function_">push</span>( <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Vector3</span>( <span class="number">0</span>, <span class="number">10</span>, <span class="number">0</span> ) );</span><br><span class="line">points.<span class="title function_">push</span>( <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Vector3</span>( <span class="number">10</span>, <span class="number">0</span>, <span class="number">0</span> ) );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BufferGeometry</span>().<span class="title function_">setFromPoints</span>( points );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> line = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Line</span>( geometry, material );</span><br><span class="line">scene.<span class="title function_">add</span>( line );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-32"><a href="#构造器-32" class="headerlink" title="构造器"></a>构造器</h5><p><code>Line( geometry : BufferGeometry, material : Material )</code><br>geometry —— 表示线段的顶点，默认值是一个新的BufferGeometry。几何体作为线模型Line (opens new window)的参数，你会发现渲染效果是从第一个点开始到最后一个点，依次连成线。<br>material —— 线的材质，默认值是一个新的具有随机颜色的LineBasicMaterial。</p>
+<h5 id="属性-10"><a href="#属性-10" class="headerlink" title="属性"></a>属性</h5><p>共有属性请参见其基类Object3D。</p>
+<p>.geometry : BufferGeometry<br>表示线段的顶点。</p>
+<p>.isLine : Boolean<br>Read-only flag to check if a given object is of type Line.</p>
+<p>.material : Material<br>线的材质。</p>
+<p>.morphTargetInfluences : Array<br>An array of weights typically from 0-1 that specify how much of the morph is applied. Undefined by default, but reset to a blank array by .updateMorphTargets().</p>
+<p>.morphTargetDictionary : Object<br>A dictionary of morphTargets based on the morphTarget.name property. Undefined by default, but rebuilt .updateMorphTargets().</p>
+<h5 id="方法-10"><a href="#方法-10" class="headerlink" title="方法"></a>方法</h5><p>共有方法请参见其基类Object3D。</p>
+<p>.computeLineDistances () : this<br>计算LineDashedMaterial所需的距离的值的数组。 对于几何体中的每一个顶点，这个方法计算出了当前点到线的起始点的累积长度。</p>
+<p>.raycast ( raycaster : Raycaster, intersects : Array ) : undefined<br>在一条投射出去的Ray（射线）和这条线之间产生交互。 Raycaster.intersectObject将会调用这个方法。</p>
+<p>.clone () : Line<br>返回这条线及其子集的一个克隆对象。</p>
+<p>.updateMorphTargets () : undefined<br>Updates the morphTargets to have no influence on the object. Resets the .morphTargetInfluences and .morphTargetDictionary properties.</p>
+<h4 id="组（Group）"><a href="#组（Group）" class="headerlink" title="组（Group）"></a>组（Group）</h4><p>它几乎和Object3D是相同的，其目的是使得组中对象在语法上的结构更加清晰。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> geometry = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BoxGeometry</span>( <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"><span class="keyword">const</span> material = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>( &#123;<span class="attr">color</span>: <span class="number">0x00ff00</span>&#125; );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cubeA = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">cubeA.<span class="property">position</span>.<span class="title function_">set</span>( <span class="number">100</span>, <span class="number">100</span>, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cubeB = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>( geometry, material );</span><br><span class="line">cubeB.<span class="property">position</span>.<span class="title function_">set</span>( -<span class="number">100</span>, -<span class="number">100</span>, <span class="number">0</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">//create a group and add the two cubes</span></span><br><span class="line"><span class="comment">//These cubes can now be rotated / scaled etc as a group</span></span><br><span class="line"><span class="keyword">const</span> group = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Group</span>();</span><br><span class="line">group.<span class="title function_">add</span>( cubeA );</span><br><span class="line">group.<span class="title function_">add</span>( cubeB );</span><br><span class="line"></span><br><span class="line">scene.<span class="title function_">add</span>( group );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造器-33"><a href="#构造器-33" class="headerlink" title="构造器"></a>构造器</h5><p><code>Group( )</code></p>
+<h5 id="属性-方法-21"><a href="#属性-方法-21" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>共有属性请参见其基类Object3D。<br>共有方法请参见其基类Object3D。</p>
+</blockquote>
+<p>.isGroup : Boolean<br>Read-only flag to check if a given object is of type Group.</p>
+<p>.type : String<br>一个字符串：“Group”。这个属性不应当被改变。</p>
+<h4 id="实例化网格（InstancedMesh）"><a href="#实例化网格（InstancedMesh）" class="headerlink" title="实例化网格（InstancedMesh）"></a>实例化网格（InstancedMesh）</h4><p>一种具有实例化渲染支持的特殊版本的Mesh。你可以使用 InstancedMesh 来渲染大量具有相同几何体与材质、但具有不同世界变换的物体。 使用 InstancedMesh 将帮助你减少 draw call 的数量，从而提升你应用程序的整体渲染性能。</p>
+<h5 id="构造器-34"><a href="#构造器-34" class="headerlink" title="构造器"></a>构造器</h5><p><code>InstancedMesh( geometry : BufferGeometry, material : Material, count : Integer )</code><br>geometry - 一个 BufferGeometry 的实例。<br>material - 一个 Material 的实例。默认为一个新的 MeshBasicMaterial 。<br>count - 实例的数量</p>
+<h3 id="渲染器"><a href="#渲染器" class="headerlink" title="渲染器"></a>渲染器</h3><h4 id="WebGLRenderer"><a href="#WebGLRenderer" class="headerlink" title="WebGLRenderer"></a>WebGLRenderer</h4><p>构造器<br><code>WebGLRenderer( parameters : Object )</code><br>parameters - (可选) 该对象的属性定义了渲染器的行为。也可以完全不传参数。在所有情况下，当缺少参数时，它将采用合理的默认值。 以下是合法参数：</p>
+<p><code>canvas</code> - 一个供渲染器绘制其输出的canvas 它和下面的domElement属性对应。 如果没有传这个参数，会创建一个新canvas<br><code>context</code> - 可用于将渲染器附加到已有的渲染环境(RenderingContext)中。默认值是null<br><code>precision</code> - 着色器精度. 可以是 “highp”, “mediump” 或者 “lowp”. 如果设备支持，默认为”highp” .<br><code>alpha</code> - controls the default clear alpha value. When set to true, the value is 0. Otherwise it’s 1. Default is false.<br><code>premultipliedAlpha</code> - renderer是否假设颜色有 premultiplied alpha. 默认为true<br><code>antialias</code> - 是否执行抗锯齿。默认为false.<br><code>stencil</code> - 绘图缓存是否有一个至少8位的模板缓存(stencil buffer)。默认为true<br><code>preserveDrawingBuffer</code> -是否保留缓直到手动清除或被覆盖。 默认false.<br><code>powerPreference</code> - 提示用户代理怎样的配置更适用于当前WebGL环境。 可能是”high-performance”, “low-power” 或 “default”。默认是”default”. 详见WebGL spec<br><code>failIfMajorPerformanceCaveat</code> - 检测渲染器是否会因性能过差而创建失败。默认为false。详见 WebGL spec for details.<br><code>depth</code> - 绘图缓存是否有一个至少6位的深度缓存(depth buffer )。 默认是true.<br><code>logarithmicDepthBuffer</code> - 是否使用对数深度缓存。如果要在单个场景中处理巨大的比例差异，就有必要使用。 Note that this setting uses gl_FragDepth if available which disables the Early Fragment Test optimization and can cause a decrease in performance. 默认是false。 示例：camera / logarithmicdepthbuffer</p>
+<h5 id="属性-11"><a href="#属性-11" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><p><code>.autoClear</code> : Boolean<br>定义渲染器是否在渲染每一帧之前自动清除其输出。</p>
+</li>
+<li><p><code>.autoClearColor</code> : Boolean<br>如果autoClear为true, 定义renderer是否清除颜色缓存。 默认是true</p>
+</li>
+<li><p><code>.autoClearDepth</code> : Boolean<br>如果autoClear是true, 定义renderer是否清除深度缓存。 默认是true</p>
+</li>
+<li><p><code>.autoClearStencil</code> : Boolean<br>如果autoClear是true, 定义renderer是否清除模板缓存. 默认是true</p>
+</li>
+<li><p><code>.debug</code> : Object</p>
+<ul>
+<li>checkShaderErrors: 如果为true，定义是否检查材质着色器程序 编译和链接过程中的错误。 禁用此检查生产以获得性能增益可能很有用。 强烈建议在开发期间保持启用这些检查。 如果着色器没有编译和链接 - 它将无法工作，并且相关材料将不会呈现。 默认是true</li>
+<li>onShaderError( gl, program, glVertexShader, glFragmentShader ): A callback function that can be used for custom error reporting. The callback receives the WebGL context, an instance of WebGLProgram as well two instances of WebGLShader representing the vertex and fragment shader. Assigning a custom function disables the default error reporting. Default is null.</li>
+</ul>
+</li>
+<li><p><code>.capabilities</code> : Object<br>一个包含当前渲染环境(RenderingContext)的功能细节的对象。</p>
+<ul>
+<li>floatFragmentTextures: 环境是否支持OES_texture_float扩展</li>
+<li>floatVertexTextures: 如果floatFragmentTextures和vertexTextures都是true， 则此值为true</li>
+<li>getMaxAnisotropy(): 返回最大可用各向异性。</li>
+<li>getMaxPrecision(): 返回顶点着色器和片元着色器的最大可用精度。</li>
+<li>isWebGL2: true if the context in use is a WebGL2RenderingContext object.</li>
+<li>logarithmicDepthBuffer: 如果logarithmicDepthBuffer在构造器中被设为true且 环境支持EXT_frag_depth扩展，则此值为true</li>
+<li>maxAttributes: gl.MAX_VERTEX_ATTRIBS的值</li>
+<li>maxCubemapSize: gl.MAX_CUBE_MAP_TEXTURE_SIZE 的值，着色器可使用的立方体贴图纹理的最大宽度*高度</li>
+<li>maxFragmentUniforms: gl.MAX_FRAGMENT_UNIFORM_VECTORS的值，片元着色器可使用的全局变量(uniforms)数量</li>
+<li>maxSamples: The value of gl.MAX_SAMPLES. Maximum number of samples in context of Multisample anti-aliasing (MSAA).</li>
+<li>maxTextureSize: gl.MAX_TEXTURE_SIZE的值，着色器可使用纹理的最大宽度*高度</li>
+<li>maxTextures: *gl.MAX_TEXTURE_IMAGE_UNITS的值，着色器可使用的纹理数量</li>
+<li>maxVaryings: gl.MAX_VARYING_VECTORS的值，着色器可使用矢量的数量</li>
+<li>maxVertexTextures: gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS的值，顶点着色器可使用的纹理数量。</li>
+<li>maxVertexUniforms: gl.MAX_VERTEX_UNIFORM_VECTORS的值，顶点着色器可使用的全局变量(uniforms)数量</li>
+<li>precision: 渲染器当前使用的着色器的精度</li>
+<li>vertexTextures: 如果 .maxVertexTextures : Integer大于0，此值为true (即可以使用顶点纹理)</li>
+</ul>
+</li>
+<li><p><code>.clippingPlanes</code> : Array<br>用户自定义的剪裁平面，在世界空间中被指定为THREE.Plane对象。 这些平面全局使用。空间中与该平面点积为负的点将被切掉。 默认值是[]</p>
+</li>
+<li><p><code>.domElement</code> : DOMElement<br>一个canvas，渲染器在其上绘制输出。<br>渲染器的构造函数会自动创建(如果没有传入canvas参数);你需要做的仅仅是像下面这样将它加页面里去:<code>document.body.appendChild( renderer.domElement );</code></p>
+</li>
+<li><p><code>.extensions</code> : Object</p>
+<ul>
+<li>get( extensionName : String ): 用于检查是否支持各种扩展，并返回一个对象，其中包含扩展的详细信息。 该方法检查以下扩展：<br>WEBGL_depth_texture<br>EXT_texture_filter_anisotropic<br>WEBGL_compressed_texture_s3tc<br>WEBGL_compressed_texture_pvrtc<br>WEBGL_compressed_texture_etc1<br>.outputColorSpace : string<br>定义渲染器的输出编码。默认为THREE.SRGBColorSpace</li>
+</ul>
+</li>
+</ul>
+<p>如果渲染目标已经使用 .setRenderTarget、之后将直接使用renderTarget.texture.colorSpace</p>
+<p>查看texture constants页面以获取其他格式细节</p>
+<ul>
+<li><code>.info</code> : Object<br>一个对象，包含有关图形板内存和渲染过程的一系列统计信息。这些信息可用于调试或仅仅满足下好奇心。该对象包含以下字段:</li>
+</ul>
+<p>memory:<br>geometries<br>textures<br>render:<br>calls<br>triangles<br>points<br>lines<br>frame<br>programs<br>默认情况下，这些字段在每次渲染调用时都会重置，但是当每帧有多个渲染通道时（例如，使用后处理时），最好使用自定义模式重置。先将 autoReset 设置为 false.<br>renderer.info.autoReset = false;然后在单个帧时渲染完成后调用 reset().<br>renderer.info.reset();</p>
+<ul>
+<li><p><code>.localClippingEnabled</code> : Boolean<br>定义渲染器是否考虑对象级剪切平面。 默认为false.</p>
+</li>
+<li><p><code>.useLegacyLights</code> : Boolean<br>Whether to use the legacy lighting mode or not. 默认是true。</p>
+</li>
+<li><p><code>.properties</code> : Object<br>渲染器内部使用，以跟踪各种子对象属性。</p>
+</li>
+<li><p><code>.renderLists</code> : WebGLRenderLists<br>在内部用于处理场景渲染对象的排序。</p>
+</li>
+<li><p><code>.shadowMap</code> : WebGLShadowMap<br>如果使用，它包含阴影贴图的引用。</p>
+<ul>
+<li>enabled: 如果设置开启，允许在场景中使用阴影贴图。默认是 false。</li>
+<li>autoUpdate: 启用场景中的阴影自动更新。默认是true<br>如果不需要动态光照/阴影, 则可以在实例化渲染器时将之设为false</li>
+<li>needsUpdate: 当被设为true, 场景中的阴影贴图会在下次render调用时刷新。默认是false<br>如果你已经禁用了阴影贴图的自动更新(shadowMap.autoUpdate = false), 那么想要在下一次渲染时更新阴影的话就需要将此值设为true</li>
+<li>type: 定义阴影贴图类型 (未过滤, 关闭部分过滤, 关闭部分双线性过滤), 可选值有:</li>
+</ul>
+</li>
+</ul>
+<p>THREE.BasicShadowMap<br>THREE.PCFShadowMap (默认)<br>THREE.PCFSoftShadowMap<br>THREE.VSMShadowMap<br>详见Renderer constants</p>
+<ul>
+<li><code>.sortObjects</code> : Boolean<br>定义渲染器是否应对对象进行排序。默认是true.</li>
+</ul>
+<p>说明: 排序用于尝试正确渲染出具有一定透明度的对象。根据定义，排序可能不总是有用。根据应用的需求，可能需要关闭排序并使其他方法来处理透明度的渲染，例如， 手动确定每个对象的渲染顺序。</p>
+<ul>
+<li><p><code>.state</code> : Object<br>包含设置WebGLRenderer.context状态的各种属性的函数。</p>
+</li>
+<li><p><code>.toneMapping</code> : Constant<br>默认是NoToneMapping。查看Renderer constants以获取其它备选项</p>
+</li>
+<li><p><code>.toneMappingExposure</code> : Number<br>色调映射的曝光级别。默认是1</p>
+</li>
+</ul>
+<p>-<code>.xr</code> : WebXRManager<br>Provides access to the WebXR related interface of the renderer.</p>
+<h5 id="方法-11"><a href="#方法-11" class="headerlink" title="方法"></a>方法</h5><ul>
+<li><p><code>.render ( scene : Object3D, camera : Camera ) : undefined</code><br>用相机(camera)渲染一个场景(scene)或是其它类型的object。<br>渲染一般是在canvas上完成的，或者是renderTarget(如果有指定)<br>如果forceClear值是true，那么颜色、深度及模板缓存将会在渲染之前清除，即使渲染器的autoClear属性值是false<br>即便forceClear设为true, 也可以通过将autoClearColor、autoClearStencil或autoClearDepth属性的值设为false来阻止对应缓存被清除。</p>
+</li>
+<li><p><code>.setSize ( width : Integer, height : Integer, updateStyle : Boolean ) : undefined</code><br>将输出canvas的大小调整为(width, height)并考虑设备像素比，且将视口从(0, 0)开始调整到适合大小 将updateStyle设置为false以阻止对canvas的样式做任何改变。</p>
+</li>
+<li><p><code>.setViewport ( x : Integer, y : Integer, width : Integer, height : Integer ) : undefined</code><br>将视口大小设置为(x, y)到 (x + width, y + height).</p>
+</li>
+<li><p><code>.clear ( color : Boolean, depth : Boolean, stencil : Boolean ) : undefined</code><br>告诉渲染器清除颜色、深度或模板缓存. 此方法将颜色缓存初始化为当前颜色。参数们默认都是true</p>
+</li>
+<li><p><code>.clearColor ( ) : undefined</code><br>清除颜色缓存。 相当于调用.clear( true, false, false )</p>
+</li>
+<li><p><code>.clearDepth ( ) : undefined</code><br>清除深度缓存。相当于调用.clear( false, true, false )</p>
+</li>
+<li><p><code>.clearStencil ( ) : undefined</code><br>清除模板缓存。相当于调用.clear( false, false, true )</p>
+</li>
+<li><p><code>.compile ( scene : Object3D, camera : Camera ) : undefined</code><br>使用相机编译场景中的所有材质。这对于在首次渲染之前预编译着色器很有用。</p>
+</li>
+<li><p><code>.copyFramebufferToTexture ( position : Vector2, texture : FramebufferTexture, level : Number ) : undefined</code><br>将当前WebGLFramebuffer中的像素复制到2D纹理中。可访问WebGLRenderingContext.copyTexImage2D.</p>
+</li>
+<li><p><code>.copyTextureToTexture ( position : Vector2, srcTexture : Texture, dstTexture : Texture, level : Number ) : undefined</code><br>将纹理的所有像素复制到一个已有的从给定位置开始的纹理中。可访问WebGLRenderingContext.texSubImage2D.</p>
+</li>
+<li><p><code>.dispose ( ) : undefined</code><br>处理当前的渲染环境</p>
+</li>
+<li><p><code>.forceContextLoss () : undefined</code><br>模拟WebGL环境的丢失。需要支持 WEBGL_lose_context 扩展才能用。</p>
+</li>
+<li><p><code>.forceContextRestore ( ) : undefined</code><br>模拟WebGL环境的恢复。需要支持 WEBGL_lose_context 扩展才能用。</p>
+</li>
+<li><p><code>.getClearAlpha () : Float</code><br>返回一个表示当前alpha值的float，范围0到1</p>
+</li>
+<li><p><code>.getClearColor ( target : Color ) : Color</code><br>返回一个表示当前颜色值的THREE.Color实例</p>
+</li>
+<li><p><code>.getContext () : WebGL2RenderingContext</code><br>返回当前WebGL环境</p>
+</li>
+<li><p><code>.getContextAttributes () : WebGLContextAttributes</code><br>返回一个对象，这个对象中存有在WebGL环境在创建的时候所设置的属性</p>
+</li>
+<li><p><code>.getActiveCubeFace () : Integer</code><br>Returns the current active cube face.</p>
+</li>
+<li><p><code>.getActiveMipmapLevel () : Integer</code><br>Returns the current active mipmap level.</p>
+</li>
+<li><p><code>.getRenderTarget () : RenderTarget</code><br>如果当前存在RenderTarget，则返回该值；否则返回null。</p>
+</li>
+<li><p><code>.getCurrentViewport () : RenderTarget</code><br>返回当前视口</p>
+</li>
+<li><p><code>.getDrawingBufferSize () : Object</code><br>返回一个包含渲染器绘图缓存宽度和高度(单位像素)的对象。</p>
+</li>
+<li><p><code>.getPixelRatio () : number</code><br>返回当前使用设备像素比</p>
+</li>
+<li><p><code>.getSize ( target : Vector2 ) : Vector2</code><br>返回包含渲染器输出canvas的宽度和高度(单位像素)的对象。</p>
+</li>
+<li><p><code>.initTexture ( texture : Texture ) : undefined</code><br>初始化给定的纹理。用于预加载纹理而不是等到第一次渲染（可能会由于解码和 GPU 上传的开销而导致明显的延迟）.</p>
+</li>
+<li><p><code>.resetGLState ( ) : undefined</code><br>将GL状态重置为默认值。WebGL环境丢失时会内部调用</p>
+</li>
+<li><p><code>.readRenderTargetPixels ( renderTarget : WebGLRenderTarget, x : Float, y : Float, width : Float, height : Float, buffer : TypedArray, activeCubeFaceIndex : Integer ) : undefined</code><br>buffer - Uint8Array is the only destination type supported in all cases, other types are renderTarget and platform dependent. See WebGL spec for details.</p>
+</li>
+</ul>
+<p>将renderTarget中的像素数据读取到传入的缓冲区中。这是WebGLRenderingContext.readPixels()的包装器<br>示例：interactive / cubes / gpu</p>
+<p>For reading out a WebGLCubeRenderTarget use the optional parameter activeCubeFaceIndex to determine which face should be read.</p>
+<ul>
+<li><p><code>.resetState () : undefined</code><br>可用于重置内部 WebGL 状态。此方法主要与跨多个 WebGL 库共享单个 WebGL 上下文的应用程序相关。</p>
+</li>
+<li><p><code>.setAnimationLoop ( callback : Function ) : undefined</code><br>callback — 每个可用帧都会调用的函数。 如果传入‘null’,所有正在进行的动画都会停止。</p>
+</li>
+</ul>
+<p>可用来代替requestAnimationFrame的内置函数. 对于WebXR项目，必须使用此函数。</p>
+<ul>
+<li><p><code>.setClearAlpha ( alpha : Float ) : undefined</code><br>设置alpha。合法参数是一个0.0到 1.0之间的浮点数</p>
+</li>
+<li><p><code>.setClearColor ( color : Color, alpha : Float ) : undefined</code><br>设置颜色及其透明度</p>
+</li>
+<li><p><code>.setPixelRatio ( value : number ) : undefined</code><br>设置设备像素比。通常用于避免HiDPI设备上绘图模糊</p>
+</li>
+<li><p><code>.setRenderTarget ( renderTarget : WebGLRenderTarget, activeCubeFace : Integer, activeMipmapLevel : Integer ) : undefined</code><br>renderTarget – 需要被激活的renderTarget(可选)。若此参数为空，则将canvas设置成活跃render target。<br>activeCubeFace – Specifies the active cube side (PX 0, NX 1, PY 2, NY 3, PZ 4, NZ 5) of WebGLCubeRenderTarget. When passing a WebGLArrayRenderTarget or WebGL3DRenderTarget this indicates the z layer to render in to (optional).<br>activeMipmapLevel – Specifies the active mipmap level (optional).</p>
+</li>
+</ul>
+<p>该方法设置活跃rendertarget。</p>
+<ul>
+<li><p><code>.setScissor ( x : Integer, y : Integer, width : Integer, height : Integer ) : undefined</code><br>将剪裁区域设为(x, y)到(x + width, y + height) Sets the scissor area from</p>
+</li>
+<li><p><code>.setScissorTest ( boolean : Boolean ) : undefined</code><br>启用或禁用剪裁检测. 若启用，则只有在所定义的裁剪区域内的像素才会受之后的渲染器影响。</p>
+</li>
+</ul>
+<h4 id="WebGL1Renderer"><a href="#WebGL1Renderer" class="headerlink" title="WebGL1Renderer"></a>WebGL1Renderer</h4><p>自r118起，WebGLRenderer会自动使用 WebGL 2 渲染上下文。当升级一个已存在的项目到 =&gt; r118 ， 应用程序可能会因为下列两种原因而损坏：</p>
+<p>自定义着色器代码必须符合GLSL 3.0。<br>WebGL 1扩展检查到被更改<br>如果你不能够花时间来升级你的代码，但仍然想要使用最新版本，那你就可以使用WebGL1Renderer。 这一版本的渲染器会强制使用 WebGL 1 渲染上下文。<br>构造函数<br>WebGL1Renderer( parameters : Object )<br>Creates a new WebGL1Renderer.</p>
+<h4 id="SVG渲染器（SVGRenderer）"><a href="#SVG渲染器（SVGRenderer）" class="headerlink" title="SVG渲染器（SVGRenderer）"></a>SVG渲染器（SVGRenderer）</h4><p>SVGRenderer被用于使用SVG来渲染几何数据，所产生的矢量图形在以下几个方面十分有用：</p>
+<p>动画标志（logo）或者图标（icon）<br>可交互的2D或3D图表或图形<br>交互式地图<br>复杂的或包含动画的用户界面<br>SVGRenderer具有很多优势。它产生清晰并且锐利的图像输出，它和实际视口分辨率无关。<br>SVG元素可以通过CSS来控制样式；并且由于它可以添加诸如标题或者描述文字之类的元数据（对于搜索引擎或者屏幕阅读器十分有用），因此它具有十分良好的可访问性。</p>
+<p>然而，SVG也有一些十分重要的限制：</p>
+<p>没有高级的着色器<br>不支持纹理<br>不支持阴影</p>
+<p>SVGRenderer 是一个附加组件，必须显式导入。 See Installation / Addons.</p>
+<p><code>import &#123; SVGRenderer &#125; from &#39;three/addons/renderers/SVGRenderer.js&#39;;</code></p>
+<h4 id="CSS-3D渲染器（CSS3DRenderer）"><a href="#CSS-3D渲染器（CSS3DRenderer）" class="headerlink" title="CSS 3D渲染器（CSS3DRenderer）"></a>CSS 3D渲染器（CSS3DRenderer）</h4><p>CSS3DRenderer用于通过CSS3的transform属性， 将层级的3D变换应用到DOM元素上。 如果你希望不借助基于canvas的渲染来在你的网站上应用3D变换，那么这一渲染器十分有趣。 同时，它也可以将DOM元素与WebGL的内容相结合。</p>
+<p>然而，这一渲染器也有一些十分重要的限制：</p>
+<p>它不可能使用three.js中的材质系统。<br>同时也不可能使用几何体。<br>CSS3DRenderer 仅支持100%的浏览器和显示缩放。<br>因此，CSS3DRenderer仅仅关注普通的DOM元素，这些元素被包含到了特殊的对象中（CSS3DObject或者CSS3DSprite），然后被加入到场景图中。<br>进口<br>CSS3DRenderer 是一个附加组件，必须显式导入。 See Installation / Addons.</p>
+<p><code>import &#123; CSS3DRenderer &#125; from &#39;three/addons/renderers/CSS3DRenderer.js&#39;;</code></p>
+<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><h4 id="Scene"><a href="#Scene" class="headerlink" title="Scene"></a>Scene</h4><p>场景能够让你在什么地方、摆放什么东西来交给three.js来渲染，这是你放置物体、灯光和摄像机的地方。</p>
+<h5 id="构造器-35"><a href="#构造器-35" class="headerlink" title="构造器"></a>构造器</h5><p>Scene()<br>创建一个新的场景对象。</p>
+<h5 id="属性-12"><a href="#属性-12" class="headerlink" title="属性"></a>属性</h5><p>.background : Object<br>若不为空，在渲染场景的时候将设置背景，且背景总是首先被渲染的。 可以设置一个用于的“clear”的Color（颜色）、一个覆盖canvas的Texture（纹理）， 或是 a cubemap as a CubeTexture or an equirectangular as a Texture。默认值为null。</p>
+<p>.backgroundBlurriness : Float<br>Sets the blurriness of the background. Only influences environment maps assigned to Scene.background. Valid input is a float between 0 and 1. Default is 0.</p>
+<p>.environment : Texture<br>若该值不为null，则该纹理贴图将会被设为场景中所有物理材质的环境贴图。 然而，该属性不能够覆盖已存在的、已分配给 MeshStandardMaterial.envMap 的贴图。默认为null。</p>
+<p>.fog : Fog<br>一个fog实例定义了影响场景中的每个物体的雾的类型。默认值为null。</p>
+<p>.isScene : Boolean</p>
+<p>.overrideMaterial : Material<br>如果不为空，它将强制场景中的每个物体使用这里的材质来渲染。默认值为null。</p>
+<h5 id="方法-12"><a href="#方法-12" class="headerlink" title="方法"></a>方法</h5><p>.toJSON : Object<br>meta – 包含有元数据的对象，例如场景中的的纹理或图片。 将scene对象转换为 three.js JSON Object/Scene format（three.js JSON 物体/场景格式）。</p>
+<h4 id="雾（Fog）"><a href="#雾（Fog）" class="headerlink" title="雾（Fog）"></a>雾（Fog）</h4><p>这个类中的参数定义了线性雾。也就是说，雾的密度是随着距离线性增大的。</p>
+<h5 id="构造器-36"><a href="#构造器-36" class="headerlink" title="构造器"></a>构造器</h5><p>Fog( color : Integer, near : Float, far : Float )<br>颜色参数传入Color构造函数中，来设置颜色属性。颜色可以是一个十六进制的整型数，或者是CSS风格的字符串。</p>
+<h5 id="属性-13"><a href="#属性-13" class="headerlink" title="属性"></a>属性</h5><p>.isFog : Boolean<br>Read-only flag to check if a given object is of type Fog.</p>
+<p>.name : String<br>对象的名称，可选、不必唯一。默认值是一个空字符串。</p>
+<p>.color : Color<br>雾的颜色。比如说，如果将其设置为黑色，远处的物体将被渲染成黑色。</p>
+<p>.near : Float<br>开始应用雾的最小距离。距离小于活动摄像机“near”个单位的物体将不会被雾所影响。</p>
+<p>默认值是1。</p>
+<p>.far : Float<br>结束计算、应用雾的最大距离，距离大于活动摄像机“far”个单位的物体将不会被雾所影响。</p>
+<p>默认值是1000。</p>
+<h5 id="方法-13"><a href="#方法-13" class="headerlink" title="方法"></a>方法</h5><p>.clone () : Fog<br>返回一个具有和当前雾参数相同的新的Fog实例。</p>
+<p>.toJSON () : Object<br>以JSON格式返回Fog的数据。</p>
+<h4 id="雾-指数（FogExp2）"><a href="#雾-指数（FogExp2）" class="headerlink" title="雾-指数（FogExp2）"></a>雾-指数（FogExp2）</h4><p>该类所包含的参数定义了指数雾，它可以在相机附近提供清晰的视野，且距离相机越远，雾的浓度随着指数增长越快。</p>
+<h5 id="构造器-37"><a href="#构造器-37" class="headerlink" title="构造器"></a>构造器</h5><p>FogExp2( color : Integer, density : Float )<br>颜色参数传入Color构造函数中，来设置颜色属性。颜色可以是一个十六进制的整型数，或者是CSS风格的字符串。</p>
+<h5 id="属性-14"><a href="#属性-14" class="headerlink" title="属性"></a>属性</h5><p>.isFogExp2 : Boolean<br>Read-only flag to check if a given object is of type FogExp2.</p>
+<p>.name : String<br>对象的名称，可选、不必唯一。默认值是一个空字符串。</p>
+<p>.color : Color<br>雾的颜色。比如说，如果将其设置为黑色，远处的物体将被渲染成黑色。</p>
+<p>.density : Float<br>定义雾的密度将会增长多块。</p>
+<p>默认值是0.00025.</p>
+<h5 id="方法-14"><a href="#方法-14" class="headerlink" title="方法"></a>方法</h5><p>.clone () : FogExp2<br>返回一个具有和当前雾参数相同的新的FogExp2实例。</p>
+<p>.toJSON () : Object<br>以JSON格式返回FogExp2的数据。</p>
+<h3 id="光源"><a href="#光源" class="headerlink" title="光源"></a>光源</h3><h4 id="Light"><a href="#Light" class="headerlink" title="Light"></a>Light</h4><h5 id="构造器（Constructor）"><a href="#构造器（Constructor）" class="headerlink" title="构造器（Constructor）"></a>构造器（Constructor）</h5><p><code>Light( color : Integer, intensity : Float )</code><br>color - (可选参数) 16进制表示光的颜色。 缺省值 0xffffff (白色)。<br>intensity - (可选参数) 光照强度。 缺省值 1。</p>
+<p>创造一个新的光源。注意，这并不是直接调用的（而是使用派生类之一）。</p>
+<h5 id="属性（Properties）"><a href="#属性（Properties）" class="headerlink" title="属性（Properties）"></a>属性（Properties）</h5><p>公共属性请查看基类Object3D。</p>
+<p>.color : Color<br>光源的颜色。如果构造的时候没有传递，默认会创建一个新的 Color 并设置为白色。</p>
+<p>.intensity : Float<br>光照的强度，或者说能量。 在 physically correct 模式下, color 和强度 的乘积被解析为以坎德拉（candela）为单位的发光强度。 默认值 - 1.0<br>.isLight : Boolean<br>Read-only flag to check if a given object is of type Light.</p>
+<h5 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h5><p>公共方法请查看基类 Object3D。</p>
+<p>.copy ( source : Light ) : this<br>从source复制 color, intensity 的值到当前光源对象中。</p>
+<p>.toJSON ( meta : Object ) : Object<br>以JSON格式返回光数据。</p>
+<p>meta – 包含有元数据的对象，例如该对象的材质、纹理或图片。 将该light对象转换为 three.js JSON Object/Scene format（three.js JSON 物体/场景格式）。</p>
+<h4 id="环境光AmbientLight"><a href="#环境光AmbientLight" class="headerlink" title="环境光AmbientLight"></a>环境光AmbientLight</h4><p>环境光会均匀的照亮场景中的所有物体。环境光不能用来投射阴影，因为它没有方向。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> light = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">AmbientLight</span>( <span class="number">0x404040</span> ); <span class="comment">// soft white light</span></span><br><span class="line">scene.<span class="title function_">add</span>( light );</span><br></pre></td></tr></table></figure>
+
+<p>构造函数<br><code>AmbientLight( color : Integer, intensity : Float )</code><br>color - （参数可选）颜色的rgb数值。缺省值为 0xffffff。<br>intensity - (参数可选)光照的强度。缺省值为 1。</p>
+<p>创建一个环境光对象。</p>
+<h5 id="属性-方法-22"><a href="#属性-方法-22" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>公共属性请查看基类 Light。<br>公共方法请查看基类Light。</p>
+</blockquote>
+<p>.castShadow : Boolean<br>这个参数在对象构造的时候就被设置成了 undefined 。因为环境光不能投射阴影。</p>
+<p>.isAmbientLight : Boolean<br>Read-only flag to check if a given object is of type AmbientLight.</p>
+<h4 id="平行光（DirectionalLight）"><a href="#平行光（DirectionalLight）" class="headerlink" title="平行光（DirectionalLight）"></a>平行光（DirectionalLight）</h4><p>平行光是沿着特定方向发射的光。这种光的表现像是无限远,从它发出的光线都是平行的。常常用平行光来模拟太阳光 的效果;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> directionalLight = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">DirectionalLight</span>( <span class="number">0xffffff</span>, <span class="number">0.5</span> );</span><br><span class="line">scene.<span class="title function_">add</span>( directionalLight );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造函数-3"><a href="#构造函数-3" class="headerlink" title="构造函数"></a>构造函数</h5><p><code>DirectionalLight( color : Integer, intensity : Float )</code><br>color - (可选参数) 16进制表示光的颜色。 缺省值为 0xffffff (白色)。<br>intensity - (可选参数) 光照的强度。缺省值为1。</p>
+<h5 id="属性-方法-23"><a href="#属性-方法-23" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>公共属性请查看基类 Light。<br>公共方法请查看基类Light。</p>
+</blockquote>
+<p>.castShadow : Boolean<br>如果设置为 true 该平行光会产生动态阴影。 警告: 这样做的代价比较高而且需要一直调整到阴影看起来正确. 查看 DirectionalLightShadow 了解详细信息。该属性默认为 false。</p>
+<p>.isDirectionalLight : Boolean<br>Read-only flag to check if a given object is of type DirectionalLight.</p>
+<p>.position : Vector3<br>假如这个值设置等于 Object3D.DEFAULT_UP (0, 1, 0),那么光线将会从上往下照射。</p>
+<p>.shadow : DirectionalLightShadow<br>这个 DirectionalLightShadow 对象用来计算该平行光产生的阴影。</p>
+<p>.target : Object3D<br>平行光的方向是从它的位置到目标位置。默认的目标位置为原点 (0,0,0)。<br>注意: 对于目标的位置，要将其更改为除缺省值之外的任何位置,它必须被添加到 scene 场景中去。<code>scene.add( light.target );</code><br>这使得属性target中的 matrixWorld 会每帧自动更新。</p>
+<p>它也可以设置target为场景中的其他对象(任意拥有 position 属性的对象), 示例如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> targetObject = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Object3D</span>();</span><br><span class="line">scene.<span class="title function_">add</span>(targetObject);</span><br><span class="line"></span><br><span class="line">light.<span class="property">target</span> = targetObject;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>完成上述操作后，平行光现在就可以追踪到目标对像了。</p>
+<h5 id="方法-15"><a href="#方法-15" class="headerlink" title="方法"></a>方法</h5><p><code>.copy ( source : DirectionalLight ) : this</code><br>复制 source 的值到这个平行光源对象。</p>
+<h4 id="点光源（PointLight）"><a href="#点光源（PointLight）" class="headerlink" title="点光源（PointLight）"></a>点光源（PointLight）</h4><p>从一个点向各个方向发射的光源。一个常见的例子是模拟一个灯泡发出的光。该光源可以投射阴影</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> light = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PointLight</span>( <span class="number">0xff0000</span>, <span class="number">1</span>, <span class="number">100</span> );</span><br><span class="line">light.<span class="property">position</span>.<span class="title function_">set</span>( <span class="number">50</span>, <span class="number">50</span>, <span class="number">50</span> );</span><br><span class="line">scene.<span class="title function_">add</span>( light );</span><br></pre></td></tr></table></figure>
+
+<h5 id="构造函数-4"><a href="#构造函数-4" class="headerlink" title="构造函数"></a>构造函数</h5><p><code>PointLight( color : Integer, intensity : Float, distance : Number, decay : Float )</code><br>color - (可选参数)) 十六进制光照颜色。 缺省值 0xffffff (白色)。<br>intensity - (可选参数) 光照强度。 缺省值 1。<br>distance - 这个距离表示从光源到光照强度为0的位置。 当设置为0时，光永远不会消失(距离无穷大)。缺省值 0.<br>decay - 沿着光照距离的衰退量。缺省值 2。</p>
+<h5 id="属性-方法-24"><a href="#属性-方法-24" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>公共属性请查看基类 Light。<br>公共方法请查看基类Light。</p>
+</blockquote>
+<p>.castShadow : Boolean<br>如果设置为 true 该平行光会产生动态阴影。 警告: 这样做的代价比较高而且需要一直调整到阴影看起来正确. 查看 DirectionalLightShadow 了解详细信息。该属性默认为 false。<br>.distance : Float<br>如果非零，那么光强度将会从最大值当前灯光位置处按照距离线性衰减到0。 缺省值为 0.0。</p>
+<p>.power : Float<br>光功率<br>在 physically correct 模式中, 表示以”流明（光通量单位）”为单位的光功率。 缺省值 - 4Math.PI。</p>
+<p>该值与 intensity 直接关联<br><code>power = intensity * 4π</code>修改该值也会导致光强度的改变。</p>
+<p>.shadow : PointLightShadow<br>PointLightShadow用与计算此光照的阴影。</p>
+<p>此对象的摄像机被设置为 fov 为90度，aspect为1， 近裁剪面 near 为0，远裁剪面far 为500的透视摄像机 PerspectiveCamera。</p>
+<p>.decay : Float<br>The amount the light dims along the distance of the light. Default is 2.<br>In context of physically-correct rendering the default value should not be changed.</p>
+<h5 id="方法-16"><a href="#方法-16" class="headerlink" title="方法"></a>方法</h5><p><code>.copy ( source : PointLight ) : this</code><br>将所有属性的值从源 source 复制到此点光源对象。</p>
+<h4 id="聚光灯（SpotLight）"><a href="#聚光灯（SpotLight）" class="headerlink" title="聚光灯（SpotLight）"></a>聚光灯（SpotLight）</h4><p>光线从一个点沿一个方向射出，随着光线照射的变远，光线圆锥体的尺寸也逐渐增大。该光源可以投射阴影</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> spotLight = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">SpotLight</span>( <span class="number">0xffffff</span> );</span><br><span class="line">spotLight.<span class="property">position</span>.<span class="title function_">set</span>( <span class="number">100</span>, <span class="number">1000</span>, <span class="number">100</span> );</span><br><span class="line">spotLight.<span class="property">map</span> = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">TextureLoader</span>().<span class="title function_">load</span>( url );</span><br><span class="line"></span><br><span class="line">spotLight.<span class="property">castShadow</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">spotLight.<span class="property">shadow</span>.<span class="property">mapSize</span>.<span class="property">width</span> = <span class="number">1024</span>;</span><br><span class="line">spotLight.<span class="property">shadow</span>.<span class="property">mapSize</span>.<span class="property">height</span> = <span class="number">1024</span>;</span><br><span class="line"></span><br><span class="line">spotLight.<span class="property">shadow</span>.<span class="property">camera</span>.<span class="property">near</span> = <span class="number">500</span>;</span><br><span class="line">spotLight.<span class="property">shadow</span>.<span class="property">camera</span>.<span class="property">far</span> = <span class="number">4000</span>;</span><br><span class="line">spotLight.<span class="property">shadow</span>.<span class="property">camera</span>.<span class="property">fov</span> = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">scene.<span class="title function_">add</span>( spotLight );</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="构造函数-5"><a href="#构造函数-5" class="headerlink" title="构造函数"></a>构造函数</h5><p><code>SpotLight( color : Integer, intensity : Float, distance : Float, angle : Radians, penumbra : Float, decay : Float )</code><br>color - (可选参数) 十六进制光照颜色。 缺省值 0xffffff (白色)。<br>intensity - (可选参数) 光照强度。 缺省值 1。<br>distance - 从光源发出光的最大距离，其强度根据光源的距离线性衰减。<br>angle - 光线散射角度，最大为Math.PI/2。<br>penumbra - 聚光锥的半影衰减百分比。在0和1之间的值。默认为0。<br>decay - 沿着光照距离的衰减量。</p>
+<h5 id="属性-方法-25"><a href="#属性-方法-25" class="headerlink" title="属性|方法"></a>属性|方法</h5><blockquote>
+<p>公共属性请查看基类 Light。<br>公共方法请查看基类Light。</p>
+</blockquote>
+<p>.angle : Float<br>从聚光灯的位置以弧度表示聚光灯的最大范围。应该不超过 Math.PI/2。默认值为 Math.PI/3。</p>
+<p>.castShadow : Boolean<br>此属性设置为 true 聚光灯将投射阴影。警告: 这样做的代价比较高而且需要一直调整到阴影看起来正确。 查看 SpotLightShadow 了解详细信息。 默认值为 false</p>
+<p>.decay : Float<br>The amount the light dims along the distance of the light. Default is 2.<br>In context of physically-correct rendering the default value should not be changed.</p>
+<p>.distance : Float<br>如果非零，那么光强度将会从最大值当前灯光位置处按照距离线性衰减到0。 缺省值为 0.0。</p>
+<p>.isSpotLight : Boolean<br>Read-only flag to check if a given object is of type SpotLight.</p>
+<p>.penumbra : Float<br>聚光锥的半影衰减百分比。在0和1之间的值。 默认值 — 0.0。</p>
+<p>.position : Vector3<br>假如这个值设置等于 Object3D.DEFAULT_UP (0, 1, 0)，那么光线将会从上往下照射。</p>
+<p>.power : Float<br>光功率<br>在 physically correct 模式中， 表示以”流明（光通量单位）”为单位的光功率。 缺省值 - 4Math.PI。</p>
+<p>该值与 intensity 直接关联<br>power = intensity * 4π修改该值也会导致光强度的改变。</p>
+<p>.shadow : SpotLightShadow<br>SpotLightShadow用与计算此光照的阴影。</p>
+<p>.target : Object3D<br>聚光灯的方向是从它的位置到目标位置.默认的目标位置为原点 (0,0,0)。<br>注意: 对于目标的位置，要将其更改为除缺省值之外的任何位置，它必须被添加到 scene 场景中去。<br>scene.add( light.target );这使得属性target中的 matrixWorld 会每帧自动更新。</p>
+<p>它也可以设置target为场景中的其他对象(任意拥有 position 属性的对象), 示例如下:<br>const targetObject = new THREE.Object3D();<br>scene.add(targetObject);</p>
+<p>light.target = targetObject;完成上述操作后，聚光灯现在就可以追踪到目标对像了。</p>
+<p>.map : Texture<br>A Texture used to modulate the color of the light. The spot light color is mixed with the RGB value of this texture, with a ratio corresponding to its alpha value. The cookie-like masking effect is reproduced using pixel values (0, 0, 0, 1-cookie_value). Warning: map : SpotLight is disabled if castShadow : SpotLight is false.</p>
+<h5 id="方法（Methods）"><a href="#方法（Methods）" class="headerlink" title="方法（Methods）"></a>方法（Methods）</h5><p>公共方法请查看基类 Light。</p>
+<p>.copy ( source : SpotLight ) : this<br>将所有属性的值从源 source 复制到此聚光灯光源对象。</p>
+<h4 id="平面光光源（RectAreaLight）"><a href="#平面光光源（RectAreaLight）" class="headerlink" title="平面光光源（RectAreaLight）"></a>平面光光源（RectAreaLight）</h4><p>平面光光源从一个矩形平面上均匀地发射光线。这种光源可以用来模拟像明亮的窗户或者条状灯光光源。</p>
+<p>注意事项:</p>
+<p>不支持阴影。<br>只支持 MeshStandardMaterial 和 MeshPhysicalMaterial 两种材质。<br>你必须在你的场景中加入 RectAreaLightUniformsLib ，并调用init()。</p>
+<h3 id="三维坐标系"><a href="#三维坐标系" class="headerlink" title="三维坐标系"></a>三维坐标系</h3><p>AxesHelper的xyz轴<br>three.js坐标轴颜色红R、绿G、蓝B分别对应坐标系的x、y、z轴，对于three.js的3D坐标系默认y轴朝上。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AxesHelper：辅助观察的坐标系</span></span><br><span class="line"><span class="keyword">const</span> axesHelper = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">AxesHelper</span>(<span class="number">150</span>);</span><br><span class="line">scene.<span class="title function_">add</span>(axesHelper);</span><br></pre></td></tr></table></figure>
+
 <h2 id="全屏"><a href="#全屏" class="headerlink" title="全屏"></a>全屏</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;dblclick&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> isFull=<span class="variable language_">document</span>.<span class="property">fullscreenElement</span>;</span><br><span class="line">  <span class="keyword">if</span>(!isFull)&#123;</span><br><span class="line">    renderer.<span class="property">domElement</span>.<span class="title function_">requestFullscreen</span>(); </span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">exitFullscreen</span>(); </span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h2 id="自适应屏幕"><a href="#自适应屏幕" class="headerlink" title="自适应屏幕"></a>自适应屏幕</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;resize&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="comment">//更新摄像头</span></span><br><span class="line">  camera.<span class="property">aspect</span>=<span class="variable language_">window</span>.<span class="property">innerWidth</span>/<span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">  <span class="comment">//更新摄像机投影矩阵</span></span><br><span class="line">  camera.<span class="title function_">updateProjectionMatrix</span>();</span><br><span class="line">  <span class="comment">//更新渲染器</span></span><br><span class="line">  renderer.<span class="title function_">setSize</span>(<span class="variable language_">window</span>.<span class="property">innerWidth</span>,<span class="variable language_">window</span>.<span class="property">innerHeight</span>)</span><br><span class="line">  <span class="comment">//设置渲染器的像素比</span></span><br><span class="line">  renderer.<span class="title function_">setPixelRatio</span>(<span class="variable language_">window</span>.<span class="property">devicePixelRatio</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="自适应屏幕"><a href="#自适应屏幕" class="headerlink" title="自适应屏幕"></a>自适应屏幕</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;resize&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="comment">//更新摄像头</span></span><br><span class="line">  camera.<span class="property">aspect</span>=<span class="variable language_">window</span>.<span class="property">innerWidth</span>/<span class="variable language_">window</span>.<span class="property">innerHeight</span></span><br><span class="line">   <span class="comment">// 渲染器执行render方法的时候会读取相机对象的投影矩阵属性projectionMatrix</span></span><br><span class="line">    <span class="comment">// 但是不会每渲染一帧，就通过相机的属性计算投影矩阵(节约计算资源)</span></span><br><span class="line">  <span class="comment">//更新摄像机投影矩阵</span></span><br><span class="line">  camera.<span class="title function_">updateProjectionMatrix</span>();</span><br><span class="line">  <span class="comment">//更新渲染器</span></span><br><span class="line">  renderer.<span class="title function_">setSize</span>(<span class="variable language_">window</span>.<span class="property">innerWidth</span>,<span class="variable language_">window</span>.<span class="property">innerHeight</span>)</span><br><span class="line">  <span class="comment">//设置渲染器的像素比</span></span><br><span class="line">  renderer.<span class="title function_">setPixelRatio</span>(<span class="variable language_">window</span>.<span class="property">devicePixelRatio</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1633,7 +2882,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1769,7 +3018,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1918,17 +3167,17 @@
 <p><code>.pnpm/&lt;organization-name&gt;+&lt;package-name&gt;@&lt;version&gt;/node_modules/&lt;name&gt;// 组织名(若无会省略)+包名@版本号/node_modules/名称(项目名称)</code><br>其中.pnpm 中的包中的 node_modules 下面的包中的每个文件都是内容可寻址存储的硬链接。将 foo 和 bar 都放到 node_modules 文件夹，可以保证包能自行导入自己。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">└── .pnpm</span><br><span class="line"> ├── foo@1.0.0</span><br><span class="line"> │   └── node_modules</span><br><span class="line"> │       └── foo -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line"> │           ├── index.js</span><br><span class="line"> │           └── package.json</span><br><span class="line"> └── bar@1.0.0</span><br><span class="line">     └── node_modules</span><br><span class="line">         └── bar -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line">             ├── index.js</span><br><span class="line">             └── package.json</span><br></pre></td></tr></table></figure>
 
-<p>建立符号链接，由于 bar 依赖了 foo，因此 foo 被符号链接到<a href="mailto:&#98;&#x61;&#114;&#x40;&#x31;&#x2e;&#48;&#x2e;&#x30;">&#98;&#x61;&#114;&#x40;&#x31;&#x2e;&#48;&#x2e;&#x30;</a>/node_modules 文件夹下，</p>
+<p>建立符号链接，由于 bar 依赖了 foo，因此 foo 被符号链接到<a href="mailto:&#x62;&#x61;&#x72;&#64;&#49;&#46;&#48;&#x2e;&#x30;">&#x62;&#x61;&#x72;&#64;&#49;&#46;&#48;&#x2e;&#x30;</a>/node_modules 文件夹下，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">└── .pnpm</span><br><span class="line"> ├── foo@1.0.0</span><br><span class="line"> │   └── node_modules</span><br><span class="line"> │       └── foo -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line"> │           ├── index.js</span><br><span class="line"> │           └── package.json</span><br><span class="line"> └── bar@1.0.0</span><br><span class="line">     └── node_modules</span><br><span class="line">         └── bar -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line">         │    ├── index.js</span><br><span class="line">         │    └── package.json</span><br><span class="line">         └── foo -&gt; ../../bar@1.0.0/node_modules/bar 符号链接</span><br></pre></td></tr></table></figure>
 
 <p>处理直接依赖，bar 被符号链接到根目录的 node_modules 文件夹</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">├── bar -&gt; ./.pnpm/bar@1.0.0/node_modules/bar 符号链接</span><br><span class="line">└── .pnpm</span><br><span class="line"> ├── foo@1.0.0</span><br><span class="line"> │   └── node_modules</span><br><span class="line"> │       └── foo -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line"> │           ├── index.js</span><br><span class="line"> │           └── package.json</span><br><span class="line"> └── bar@1.0.0</span><br><span class="line">     └── node_modules</span><br><span class="line">         └── bar -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line">         │    ├── index.js</span><br><span class="line">         │    └── package.json</span><br><span class="line">         └── foo -&gt; ../../bar@1.0.0/node_modules/bar 符号链接</span><br></pre></td></tr></table></figure>
 
-<p>在项目中我们引入 bar 的时候，会在当前项目根目录的 node_modules 找 bar，从 projectRoot/node_modules/bar 这个符号链接找到 bar 的真实文件 projectRoot/node_modules/.pnpm/<a href="mailto:&#98;&#x61;&#114;&#x40;&#49;&#x2e;&#x30;&#x2e;&#48;">&#98;&#x61;&#114;&#x40;&#49;&#x2e;&#x30;&#x2e;&#48;</a>/node_modules/bar（硬链接即可看做真实存在的文件）。<br>接着 bar 依赖了 foo，根据 node 的寻址机制，会从里到外找 foo，最后在这个路径 projectRoot/node_modules/.pnpm/<a href="mailto:&#98;&#97;&#x72;&#x40;&#49;&#x2e;&#48;&#46;&#x30;">&#98;&#97;&#x72;&#x40;&#49;&#x2e;&#48;&#46;&#x30;</a>/node_modules/foo 找到了，这个是一个符号链接，会定位到 projectRoot/node_modules/.pnpm/<a href="mailto:&#x66;&#111;&#111;&#x40;&#49;&#x2e;&#x30;&#46;&#48;">&#x66;&#111;&#111;&#x40;&#49;&#x2e;&#x30;&#46;&#48;</a></p>
+<p>在项目中我们引入 bar 的时候，会在当前项目根目录的 node_modules 找 bar，从 projectRoot/node_modules/bar 这个符号链接找到 bar 的真实文件 projectRoot/node_modules/.pnpm/<a href="mailto:&#98;&#x61;&#x72;&#64;&#x31;&#x2e;&#48;&#46;&#x30;">&#98;&#x61;&#x72;&#64;&#x31;&#x2e;&#48;&#46;&#x30;</a>/node_modules/bar（硬链接即可看做真实存在的文件）。<br>接着 bar 依赖了 foo，根据 node 的寻址机制，会从里到外找 foo，最后在这个路径 projectRoot/node_modules/.pnpm/<a href="mailto:&#x62;&#97;&#x72;&#x40;&#49;&#x2e;&#48;&#46;&#48;">&#x62;&#97;&#x72;&#x40;&#49;&#x2e;&#48;&#46;&#48;</a>/node_modules/foo 找到了，这个是一个符号链接，会定位到 projectRoot/node_modules/.pnpm/<a href="mailto:&#102;&#x6f;&#111;&#64;&#x31;&#x2e;&#48;&#x2e;&#48;">&#102;&#x6f;&#111;&#64;&#x31;&#x2e;&#48;&#x2e;&#48;</a></p>
 <h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
 <li><p>解决了幽灵依赖的问题<br>yarn 和 npm 中的幽灵依赖：由于在 yarn 或 npm 中采用扁平化的安装包的方式，即所有的包（包ffff依赖）都被提升到了项目根目录中的 node_modules 中，那么项目中可以直接引用到不在 package.json 中声明的包，那么在包更新的时候，可能会导致问题。<br>而 pnmp 中的项目根目录的 node_modules 中只有项目直接依赖的包，所以不会有这个问题。</p>
 </li>
-<li><p>路径过长的问题<br>在 npm@3 之前，npm 采用的嵌套结构管理包，node_modules 结构是干净、可预测的，因为 node_modules 中的每个依赖项都有自己的 node_modules 文件夹。但是这样的管理方式会导致路径过程超出 window 的限制。<br>在 npm@3 和 yarn 中，采用了扁平化结构管理包（解决了路径过长的问题，导致了幽灵依赖的问题）。<br>pnpm 利用符号链接解决了这个问题。<br>继续上面的<br>添加<a href="mailto:&#113;&#97;&#x72;&#x40;&#x32;&#46;&#48;&#x2e;&#x30;">&#113;&#97;&#x72;&#x40;&#x32;&#46;&#48;&#x2e;&#x30;</a>作为 foo 和 bar 的依赖项,可以看到我们目录深度没有改变，但却表达了嵌套的包依赖关系。</p>
+<li><p>路径过长的问题<br>在 npm@3 之前，npm 采用的嵌套结构管理包，node_modules 结构是干净、可预测的，因为 node_modules 中的每个依赖项都有自己的 node_modules 文件夹。但是这样的管理方式会导致路径过程超出 window 的限制。<br>在 npm@3 和 yarn 中，采用了扁平化结构管理包（解决了路径过长的问题，导致了幽灵依赖的问题）。<br>pnpm 利用符号链接解决了这个问题。<br>继续上面的<br>添加<a href="mailto:&#113;&#x61;&#114;&#64;&#x32;&#x2e;&#x30;&#46;&#x30;">&#113;&#x61;&#114;&#64;&#x32;&#x2e;&#x30;&#46;&#x30;</a>作为 foo 和 bar 的依赖项,可以看到我们目录深度没有改变，但却表达了嵌套的包依赖关系。</p>
 </li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">├── bar -&gt; ./.pnpm/bar@1.0.0/node_modules/bar 符号链接</span><br><span class="line">└── .pnpm</span><br><span class="line">    ├── foo@1.0.0</span><br><span class="line">    │   └── node_modules</span><br><span class="line">    │       └── foo -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line">    │           ├── index.js</span><br><span class="line">    │           └── package.json</span><br><span class="line">    │       └── qar -&gt; ../../qar@2.0.0/node_modules/qar 符号链接</span><br><span class="line">    └── bar@1.0.0</span><br><span class="line">    │   └── node_modules</span><br><span class="line">    │       └── bar -&gt; &lt;store&gt;/bar 硬链接</span><br><span class="line">    │       │    ├── index.js</span><br><span class="line">    │       │    └── package.json</span><br><span class="line">    │        └── foo -&gt; ../../bar@1.0.0/node_modules/bar 符号链接</span><br><span class="line">    │       └── qar -&gt; ../../qar@2.0.0/node_modules/qar 符号链接</span><br><span class="line">    └── qar@2.0.0</span><br><span class="line">            └── node_modules</span><br><span class="line">                └── qar -&gt; &lt;store&gt;/qar</span><br></pre></td></tr></table></figure>
@@ -1955,15 +3204,15 @@
 <h3 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h3><p>pnpm 复刻了 npm 所有的命令，所以使用方法和 npm 一样，并且在安装目录结构上做了优化，特点是善用链接，且由于链接的优势，大多数情况下 pnpm 的安装速度比 yarn 和 npm 更快。</p>
 <p>比如安装 A，A 依赖了 B：</p>
 <ol>
-<li><p>安装依赖<br>A 和 B 一起放到.pnpm 中(和上面相比，这里没有耗时的扁平化算法)。<br>另外<a href="mailto:&#x41;&#64;&#49;&#x2e;&#48;&#46;&#48;">&#x41;&#64;&#49;&#x2e;&#48;&#46;&#48;</a>下面是 node_modules，然后才是 A，这样做有两点好处：</p>
+<li><p>安装依赖<br>A 和 B 一起放到.pnpm 中(和上面相比，这里没有耗时的扁平化算法)。<br>另外<a href="mailto:&#65;&#x40;&#49;&#46;&#x30;&#46;&#x30;">&#65;&#x40;&#49;&#46;&#x30;&#46;&#x30;</a>下面是 node_modules，然后才是 A，这样做有两点好处：</p>
 <ul>
 <li>允许包引用自身</li>
 <li>把包和它的依赖摊平，避免循环结构</li>
 </ul>
 </li>
-<li><p>处理间接依赖<br>A 平级目录创建 B，B 指向<a href="mailto:&#66;&#64;&#x31;&#x2e;&#48;&#46;&#x30;">&#66;&#64;&#x31;&#x2e;&#48;&#46;&#x30;</a>下面的 B。</p>
+<li><p>处理间接依赖<br>A 平级目录创建 B，B 指向<a href="mailto:&#x42;&#64;&#x31;&#x2e;&#x30;&#x2e;&#x30;">&#x42;&#64;&#x31;&#x2e;&#x30;&#x2e;&#x30;</a>下面的 B。</p>
 </li>
-<li><p>处理直接依赖<br>顶层 node_modules 目录下创建 A，指向<a href="mailto:&#65;&#x40;&#49;&#46;&#48;&#46;&#x30;">&#65;&#x40;&#49;&#46;&#48;&#46;&#x30;</a>下的 A。</p>
+<li><p>处理直接依赖<br>顶层 node_modules 目录下创建 A，指向<a href="mailto:&#x41;&#64;&#49;&#46;&#48;&#x2e;&#48;">&#x41;&#64;&#49;&#46;&#48;&#x2e;&#48;</a>下的 A。</p>
 </li>
 </ol>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
@@ -2026,7 +3275,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2231,7 +3480,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2389,7 +3638,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2594,7 +3843,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">

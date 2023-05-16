@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,7 +271,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -442,7 +442,7 @@
 <p>跨域资源的引入是可以的。但是js不能读写加载的内容。如嵌入到页面中的<code>&lt;script src=&quot;...&quot;&gt;&lt;/script&gt;，&lt;img&gt;，&lt;link&gt;，&lt;iframe&gt;</code>等。</p>
 <p>受到限制的</p>
 <p>Cookie、LocalStorage 和 IndexDB 无法读取<br>DOM和JS对象无法获得<br>AJAX 请求不能发送<br>跨域解决方案<br>一、JSONP跨域<br>jsonp的核心原理就是：目标页面回调本地页面的方法,并带入参数<br>服务器端实现 JSONP 接口的步骤<br>服务器端获取客户端发送过来的query参数，其中参数有回调函数的名字<br>得到的数据，拼接出一个函数调用的字符串<br>把上一步拼接得到的字符串，响应给客户端的 <code>&lt;script&gt;</code> 标签进行解析执行<br>jsonp的缺点：只能发送get一种请求。<br>1、原生JS实现<br>通过script标签src属性，发送带有callback参数的GET请求，服务端将接口返回数据拼凑到callback函数中，返回给浏览器，浏览器解析执行，从而前端拿到callback函数返回的数据。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function getData(data)&#123;</span><br><span class="line">        console.log(data)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;http://127.0.0.1:3000/web?cb=getData&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">getData</span>(<span class="params">data</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://127.0.0.1:3000/web?cb=getData&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>后端nodejs代码<br>主要用来模拟服务器<br>携带参数必须是字符串</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express=<span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> router=express.<span class="title class_">Router</span>()</span><br><span class="line">router.<span class="title function_">get</span>(<span class="string">&#x27;/web&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;cb&#125;=req.<span class="property">query</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(req.<span class="property">query</span>)</span><br><span class="line">    <span class="keyword">var</span> data = &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;xtt&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">gender</span>:<span class="string">&#x27;女孩子&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 携带参数必须是字符串</span></span><br><span class="line">    res.<span class="title function_">send</span>(<span class="string">`<span class="subst">$&#123;cb&#125;</span>(<span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(data)&#125;</span>)`</span>)</span><br><span class="line">    router.<span class="title function_">get</span>(<span class="string">&#x27;/que&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">        res.<span class="title function_">send</span>(<span class="string">`<span class="subst">$&#123;req.query.cb&#125;</span>(&#x27;dd&#x27;)`</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>=router</span><br></pre></td></tr></table></figure>
@@ -610,7 +610,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1296,7 +1296,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1712,6 +1712,662 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/01/01/10-12-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/01/10-12-33/" class="post-title-link" itemprop="url">DOM/BOM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-01 10:12:33" itemprop="dateCreated datePublished" datetime="2021-01-01T10:12:33+08:00">2021-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="DOM（文档对象模型document-object-model）"><a href="#DOM（文档对象模型document-object-model）" class="headerlink" title="DOM（文档对象模型document object model）"></a>DOM（文档对象模型document object model）</h2><blockquote>
+<p>用来提供一套操作网页内容的功能<br>HTML DOM 方法是您能够（在 HTML 元素上）执行的动作。<br>HTML DOM 属性是您能够设置或改变的 HTML 元素的值。<br>dom树：以树状结构，体现标签与标签之间的关系</p>
+</blockquote>
+<ul>
+<li><p>通过这个对象模型，JavaScript 获得创建动态 HTML 的所有力量：</p>
+<ul>
+<li>JavaScript 能改变页面中的所有 HTML 元素</li>
+<li>JavaScript 能改变页面中的所有 HTML 属性</li>
+<li>JavaScript 能改变页面中的所有 CSS 样式</li>
+<li>JavaScript 能删除已有的 HTML 元素和属性</li>
+<li>JavaScript 能添加新的 HTML 元素和属性</li>
+<li>JavaScript 能对页面中所有已有的 HTML 事件作出反应</li>
+<li>JavaScript 能在页面中创建新的 HTML 事件</li>
+</ul>
+</li>
+<li><p>节点类型:</p>
+<ul>
+<li>元素节点：<code>&lt;div&gt;&lt;/div&gt;</code></li>
+<li>属性节点：id=“div1”</li>
+<li>文本节点： 文本</li>
+</ul>
+</li>
+</ul>
+<h3 id="结点的获取"><a href="#结点的获取" class="headerlink" title="结点的获取"></a>结点的获取</h3><ul>
+<li><p>document.getElementById(id);</p>
+</li>
+<li><p>node.getElementsByTagName(标签名);<br>通过标签名获取符合条件的元素节点，返回：伪数组</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取ol下的li节点</span></span><br><span class="line">bar oOl=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;ol1&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> lis=oOl.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;li&quot;</span>);</span><br><span class="line"><span class="comment">//返回的是数组</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>node.getElementsByClassName(class名);<br>通过class名字获取符合条件的元素节点；(IE8以下不兼容）</p>
+</li>
+<li><p>document.getElementByName(name属性的值);<br>通过name属性的值获取符合条件的元素节点，一般用于表单元素,因为其他元素使用name属性没用</p>
+</li>
+<li><p>document.querySelector(CSS选择器格式字符串);<br>返回一个元素节点，找到符合条件的第一个元素节点</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="comment">//id=ol1</span></span><br><span class="line"><span class="keyword">var</span> node=<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#ol1&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//tagName=&#x27;li&#x27;</span></span><br><span class="line"><span class="keyword">var</span> node=<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;li&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//class=box</span></span><br><span class="line"><span class="keyword">var</span> node =<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.box&quot;</span>);</span><br><span class="line">node.<span class="property">style</span>.<span class="property">backgroundColor</span>=<span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>document.querySelectorAll(CSS选择器格式字符串);<br>返回一个数组</li>
+</ul>
+<h4 id="js获取子节点的方式"><a href="#js获取子节点的方式" class="headerlink" title="js获取子节点的方式"></a>js获取子节点的方式</h4><ol>
+<li>通过获取dom方式直接获取子节点<br>其中test的父标签id的值，div为标签的名字。getElementsByTagName是一个方法。返回的是一个数组。在访问的时候要按数组的形式访问。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;div&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>通过<code>childNodes</code>获取子节点</li>
+</ol>
+<p>使用childNodes获取子节点的时候，childNodes返回的是子节点的集合，是一个数组的格式。他会把文本，换行和空格也当成是节点信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b =<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">childNodes</span>;</span><br></pre></td></tr></table></figure>
+
+<p>为了不显示不必须的换行的空格，我们如果要使用childNodes就必须进行必要的过滤。通过正则表达式式取掉不必要的信息。下面是过滤掉</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//去掉换行的空格</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;b.<span class="property">length</span>;i++)&#123;</span><br><span class="line">  <span class="keyword">if</span>(b[i].<span class="property">nodeName</span> == <span class="string">&quot;#text&quot;</span> &amp;&amp; !<span class="regexp">/\s/</span>.<span class="title function_">test</span>(b.<span class="property">nodeValue</span>))&#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="title function_">removeChild</span>(b[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打印测试</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;b.<span class="property">length</span>;i++)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(i+<span class="string">&quot;---------&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(b[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//补充 document.getElementById(&quot;test&quot;).childElementCount; 可以直接获取长度 同length</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>通过<code>children</code>来获取子节点</li>
+</ol>
+<p>利用children来获取子元素是最方便的，他也会返回出一个数组。对其获取子元素的访问只需按数组的访问形式即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getFirstChild = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">children</span>[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>获取第一个子节点</li>
+</ol>
+<p>firstChild来获取第一个子元素，但是在有些情况下我们打印的时候会显示undefined，这是什么情况呢？？其实firstChild和childNodes是一样的，在浏览器解析的时候会把他当换行和空格一起解析，其实你获取的是第一个子节点，只是这个子节点是一个换行或者是一个空格而已。那么不要忘记和childNodes一样处理呀。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getFirstChild = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">firstChild</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>firstElementChild获取第一个子节点</li>
+</ol>
+<p>使用firstElementChild来获取第一个子元素的时候，这就没有firstChild的那种情况了。会获取到父元素第一个子元素的节点 这样就能直接显示出来文本信息了。他并不会匹配换行和空格信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getFirstChild = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">firstElementChild</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>获取最后一个子节点</li>
+</ol>
+<p>lastChild获取最后一个子节点的方式其实和firstChild是类似的。同样的lastElementChild和firstElementChild也是一样的。不再赘余。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getLastChildA = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">lastChild</span>;</span><br><span class="line"><span class="keyword">var</span> getLastChildB = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">lastElementChild</span>;</span><br></pre></td></tr></table></figure>
+
+<p>一个包解决你所有的JS问题,点击获取</p>
+<h4 id="js获取父节点的方式"><a href="#js获取父节点的方式" class="headerlink" title="js获取父节点的方式"></a>js获取父节点的方式</h4><ol>
+<li><code>parentNode</code>获取父节点</li>
+</ol>
+<p>获取的是当前元素的直接父元素。parentNode是w3c的标准。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">parentNode</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><code>parentElement</code>获取父节点</li>
+</ol>
+<p>parentElement和parentNode一样，只是parentElement是ie的标准。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">parentElement</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>offsetParent获取所有父节点</li>
+</ol>
+<p>一看offset我们就知道是偏移量 其实这个是于位置有关的上下级 ，直接能够获取到所有父亲节点， 这个对应的值是body下的所有节点信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p2 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">offsetParent</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="js获取兄弟节点的方式"><a href="#js获取兄弟节点的方式" class="headerlink" title="js获取兄弟节点的方式"></a>js获取兄弟节点的方式</h4><ol>
+<li>通过获取父亲节点再获取子节点来获取兄弟节点</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> brother1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">parentNode</span>.<span class="property">children</span>[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>获取上一个兄弟节点</li>
+</ol>
+<p>在获取前一个兄弟节点的时候可以使用<code>previousSibling</code>和<code>previousElementSibling</code>。他们的区别是<code>previousSibling</code>会匹配字符，包括换行和空格，而不是节点。<code>previousElementSibling</code>则直接匹配节点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> brother2 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">previousElementSibling</span>;</span><br><span class="line"><span class="keyword">var</span> brother3 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">previousSibling</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>获取下一个兄弟节点</li>
+</ol>
+<p>同<code>previousSibling</code>和<code>previousElementSibling</code>，<code>nextSibling</code>和<code>nextElementSibling</code>也是类似的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> brother4 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">nextElementSibling</span>;</span><br><span class="line"><span class="keyword">var</span> brother5 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;test&quot;</span>).<span class="property">nextSibling</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取样式"><a href="#获取样式" class="headerlink" title="获取样式"></a>获取样式</h3><ul>
+<li>node.currentStyle[‘height’]; //IE兼容</li>
+<li>getComputedStyle<a href="'height'">node</a>; //火狐、谷歌</li>
+</ul>
+<p>获取的是当前有效的样式</p>
+<ul>
+<li>node.getAttribute(“class”);</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增加属性,支持自定义</span></span><br><span class="line">node.<span class="title function_">setAttribute</span>(<span class="string">&quot;class&quot;</span>,<span class="string">&quot;box&quot;</span>);</span><br><span class="line">node.<span class="title function_">setAttribute</span>(<span class="string">&quot;jjj&quot;</span>,<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line"><span class="comment">//自定义属性data-</span></span><br><span class="line">node.<span class="title function_">setAttribute</span>(<span class="string">&quot;data-jjj&quot;</span>,<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">node.<span class="title function_">setAttribute</span>(<span class="string">&quot;data-a-b&quot;</span>,<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">node.<span class="title function_">setAttribute</span>(<span class="string">&quot;data-tB&quot;</span>,<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">node.<span class="property">dataset</span>.<span class="property">jjj</span></span><br><span class="line">node.<span class="property">dataset</span>.<span class="property">aB</span></span><br><span class="line">node.<span class="property">dataset</span>.<span class="property">tb</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//删除属性</span></span><br><span class="line">node.<span class="title function_">removeAttribute</span>(<span class="string">&quot;class&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h3><ul>
+<li>通过style属性修改</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">el.<span class="property">style</span>.<span class="property">background</span>=<span class="string">&#x27;red&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过className属性修改</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">el.<span class="property">className</span>=<span class="string">&#x27;test&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过classList属性修改</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不会覆盖原有类名</span></span><br><span class="line">el.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;类名&#x27;</span>)</span><br><span class="line">el.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;类名&#x27;</span>)</span><br><span class="line">el.<span class="property">classList</span>.<span class="title function_">toggle</span>(<span class="string">&#x27;类名&#x27;</span>)<span class="comment">//有则移除，没有则添加</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取内容"><a href="#获取内容" class="headerlink" title="获取内容"></a>获取内容</h3><ul>
+<li>innerHTML<br>获取标签内容，写入时会解析标签</li>
+<li>innerText<br>获取标签间纯文本，不会解析标签</li>
+<li>outerHTML<br>会替换整个标签</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> odiv=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(odiv.<span class="property">innerHTML</span>);</span><br><span class="line">odiv.<span class="property">innerHTML</span>=<span class="string">&quot;&lt;h1&gt;jjjjjjjj&lt;/h1&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(odiv.<span class="property">innerText</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(odiv.<span class="property">outerHTML</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取子节点"><a href="#获取子节点" class="headerlink" title="获取子节点"></a>获取子节点</h3><ul>
+<li><p>childNode<br>访问当前节点下所有的子节点</p>
+</li>
+<li><p>firstChild<br>访问子节点中的首位</p>
+</li>
+<li><p>lastChild<br>访问子节点中的最后一位</p>
+</li>
+<li><p>nextSibling 访问当前节点兄弟节点中的下一个节点</p>
+</li>
+<li><p>previousSibling 访问当前节点兄弟节点中的上一个节点</p>
+</li>
+</ul>
+<blockquote>
+<p>上面这些属性都包含文本节点</p>
+</blockquote>
+<ul>
+<li>children</li>
+<li>firstElementChild</li>
+<li>lastElementChild</li>
+<li>nextElementSibling</li>
+<li>previousElementSibling</li>
+</ul>
+<blockquote>
+<p>上面这些属性只获取子节点中的元素节点，不包含文本。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>nodeType</th>
+<th>nodeName</th>
+<th>nodeValue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素节点</td>
+<td>1</td>
+<td>标签名</td>
+<td>null</td>
+</tr>
+<tr>
+<td>属性节点</td>
+<td>2</td>
+<td>属性名</td>
+<td>属性值</td>
+</tr>
+<tr>
+<td>文本节点</td>
+<td>3</td>
+<td>#text</td>
+<td>文本内容</td>
+</tr>
+</tbody></table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> oDiv=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">childNodes</span>.<span class="property">length</span>); <span class="comment">//返回数组，里面为全部子元素，包括换行，缩进</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">childNodes</span>[<span class="number">0</span>].<span class="property">nodeName</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;div1&quot;</span> &gt;</span> <span class="tag">&lt;<span class="name">em</span>&gt;</span> text<span class="tag">&lt;/<span class="name">em</span>&gt;</span> divtext <span class="tag">&lt;<span class="name">strong</span>&gt;</span>text<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取当前元素节点上的所有的属性节点"><a href="#获取当前元素节点上的所有的属性节点" class="headerlink" title="获取当前元素节点上的所有的属性节点"></a>获取当前元素节点上的所有的属性节点</h3><ul>
+<li>attrbutes</li>
+</ul>
+<p>获取当前元素节点上的所有的属性节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">attributes</span>);</span><br></pre></td></tr></table></figure>
+
+<p>返回的是集合：</p>
+<ol>
+<li>无序</li>
+<li>不重复</li>
+</ol>
+<h3 id="获取其中的某一个属性节点"><a href="#获取其中的某一个属性节点" class="headerlink" title="获取其中的某一个属性节点"></a>获取其中的某一个属性节点</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//div中title=&quot;hello&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">attributes</span>.<span class="title function_">getNamedItem</span>(<span class="string">&quot;title&quot;</span>).<span class="property">nodeName</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">attributes</span>.<span class="title function_">getNamedItem</span>(<span class="string">&quot;title&quot;</span>).<span class="property">nodeType</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">attributes</span>.<span class="title function_">getNamedItem</span>(<span class="string">&quot;title&quot;</span>).<span class="property">nodeValue</span>);</span><br><span class="line"><span class="comment">//或</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">attributes</span>[<span class="string">&quot;title&quot;</span>].<span class="property">nodeName</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(oDiv.<span class="property">attributes</span>[<span class="string">&quot;title&quot;</span>].<span class="property">nodeType</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h3><blockquote>
+<p>document.write()会覆盖页面上的所有内容</p>
+</blockquote>
+<ul>
+<li>createElement()</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">createElement</span>();</span><br><span class="line">参数：标签名</span><br><span class="line">返回值：创建好的节点</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>appendChild(插入元素)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node1.<span class="title function_">appendChild</span>(node2);</span><br><span class="line">将node2节点插入到node1节点的子节点的末尾</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>createTextNode()</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(文本);</span><br><span class="line">创建文本节点（纯文本）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>insertBefore(插入元素，在哪个元素前)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box1的父节点.<span class="title function_">insertBefore</span>(box2,box1);</span><br><span class="line">将box2添加到box1前面</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>replaceChild()</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box1的父节点.<span class="title function_">replaceChild</span>(box2,box1);</span><br><span class="line">用box2替换掉box1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>cloneNode(是否克隆后代节点)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node.<span class="title function_">cloneNode</span>(); <span class="comment">//克隆自己</span></span><br><span class="line">node.<span class="title function_">cloneNode</span>(<span class="literal">true</span>); <span class="comment">//克隆自己和本身下的所有子节点</span></span><br><span class="line"><span class="comment">//返回克隆的新节点</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>removeChild(删除的元素)</li>
+</ul>
+<blockquote>
+<p>删除元素必须通过父元素删除</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box1的父节点.<span class="title class_">Child</span>(box1);</span><br><span class="line">删掉box1节点</span><br></pre></td></tr></table></figure>
+
+<p>实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="keyword">var</span> oDiv=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>); <span class="comment">//div</span></span><br><span class="line">               <span class="keyword">var</span> newP=<span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;p&#x27;</span>);  <span class="comment">//创建一个新的p标签节点</span></span><br><span class="line">                <span class="keyword">var</span> newText=<span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(<span class="string">&#x27;jjjj&#x27;</span>); <span class="comment">//创建一个字符节点</span></span><br><span class="line">                newP.<span class="title function_">appendChild</span>(newText);   <span class="comment">//将字符节点插入到p节点中</span></span><br><span class="line">                oDiv.<span class="title function_">appendChild</span>(newP);    <span class="comment">//将p节点插入到div节点中</span></span><br><span class="line">  <span class="keyword">var</span> newb=<span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;input&#x27;</span>);  <span class="comment">//新建一个input节点</span></span><br><span class="line">                oDiv.<span class="title function_">insertBefore</span>(newb,newP);   <span class="comment">//将input节点添加到p节点前面</span></span><br><span class="line">  <span class="comment">//doument.body.insertBefore(oP,oDiv); //将oP节点插入到oDiv 前面</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><ul>
+<li><p>offsetWidth</p>
+</li>
+<li><p>offsetHeight</p>
+</li>
+<li><p>offsetLeft</p>
+</li>
+<li><p>offsetTop</p>
+<ol>
+<li><p>在父元素均不设置position属性时，在Chrome，opera和IE浏览器中offsetLeft是<em>元素边框外侧</em>到<em>浏览器窗口内侧</em>的距离且body.offsetLeft=0,在firefox浏览器中offsetLeft是元素边框外侧到body内侧的距离body.offsetLeft=-边框宽度</p>
+</li>
+<li><p>如果父元素是body且body设置了position属性，在Chrome和opera浏览器中offsetLeft是元素边框外侧到body边框外侧的距离，在IE和fireForx浏览器中offsetLeft是元素边框外侧到body边框内侧的距离</p>
+</li>
+<li><p>如果父元素不是body元素且设置了position属性时，offsetLeft为元素边框外侧到父元素边框内侧的距离（各浏览器情况一致）。</p>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> oDiv=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>);</span><br><span class="line"><span class="comment">//alert(getStyle(ODiv,&quot;width&quot;));</span></span><br><span class="line"><span class="title function_">alert</span>(oDiv.<span class="property">offsetWidth</span>); <span class="comment">//眼睛能看到的实际宽度（width+border+padding）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> oDiv2=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div2&quot;</span>);</span><br><span class="line"><span class="title function_">alert</span>(oDiv2.<span class="property">offsetLeft</span>);<span class="comment">//眼睛能看到实际距离第一个有定位的父节点的距离。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="DOM事件监听器"><a href="#DOM事件监听器" class="headerlink" title="DOM事件监听器"></a>DOM事件监听器</h4><ul>
+<li>addEventListerner<br>语法<br><code>element.addEventListener(event, function, useCapture);</code><br>第一个参数是事件的类型（比如 “click” 或 “mousedown”）。第二个参数是当事件发生时我们需要调用的函数。第三个参数是布尔值，指定使用事件冒泡还是事件捕获,默认false事件冒泡,此参数是可选的。</li>
+</ul>
+<blockquote>
+<p>注意：请勿对事件使用 “on” 前缀；请使用 “click” 代替 “onclick”。</p>
+</blockquote>
+<p>实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加当用户点击按钮时触发的事件监听器：</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myBtn&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, displayDate);</span><br></pre></td></tr></table></figure>
+
+<p>addEventListener() 方法为指定元素指定事件处理程序。addEventListener() 方法为元素附加事件处理程序而不会覆盖已有的事件处理程序。您能够向一个元素添加多个事件处理程序。您能够向一个元素添加多个相同类型的事件处理程序，例如两个 “click” 事件。传统事件绑定重复添加会覆盖。您能够向任何 DOM 对象添加事件处理程序而非仅仅 HTML 元素，例如 window 对象。addEventListener() 方法使我们更容易控制事件如何对冒泡作出反应。当使用 addEventListener() 方法时，JavaScript 与 HTML 标记是分隔的，已达到更佳的可读性；即使在不控制 HTML 标记时也允许您添加事件监听器。</p>
+<p>您能够通过使用 <code>removeEventListener()</code> 方法轻松地删除事件监听器。</p>
+<p>格式：<code>node.removeEvenetListener()</code><br>参数：第一个为事件类型，第二个为删除函数的名字；</p>
+<h4 id="IE事件处理函数"><a href="#IE事件处理函数" class="headerlink" title="IE事件处理函数"></a>IE事件处理函数</h4><ul>
+<li><p>attachEvent();<br>参数：事件名称和函数<br>格式：node.attchEvent(onclink,fn);</p>
+</li>
+<li><p>detachEvent();<br>参数：事件名称和函数<br>格式：node.detachEvent(onclink,fn);</p>
+</li>
+<li><p>阻止超链接的默认行为</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> a1=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;a1&quot;</span>);</span><br><span class="line">a1.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="title function_">confirm</span>(<span class="string">&quot;are you sure?&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//或</span></span><br><span class="line">a1.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params">evt</span>)&#123;</span><br><span class="line">evt.<span class="title function_">preventDefault</span>();</span><br><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;done&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//or</span></span><br><span class="line">a1.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params">evt</span>)&#123;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">event</span>.<span class="property">returnValue</span>=<span class="literal">false</span>;   <span class="comment">//IE兼容</span></span><br><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;done&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;a id=<span class="string">&quot;a1&quot;</span> href=<span class="string">&quot;...&quot;</span>&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h4><p>事件委托</p>
+<ol>
+<li>找到当前节点的父节点或者祖先节点</li>
+<li>将事件添加到你找到的这个父节点或者祖先节点上</li>
+<li>找到触发对象，判断触发对象是否是想要的触发对象，进行后续操作</li>
+</ol>
+<p>li委托ul将li变成红色：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> oUl=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;ul1&quot;</span>);</span><br><span class="line">oUl.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params">ev</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> e=ev||winow.<span class="property">event</span>;</span><br><span class="line"><span class="keyword">var</span> target=e.<span class="property">target</span>||winow.<span class="property">event</span>.<span class="property">target</span>;</span><br><span class="line"><span class="keyword">if</span>(target.<span class="property">nodeName</span>.<span class="title function_">toLowerCase</span>()==<span class="string">&quot;li&quot;</span>)&#123;</span><br><span class="line">target.<span class="property">style</span>.<span class="property">backgroundColor</span>=<span class="string">&quot;red&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HTML-事件"><a href="#HTML-事件" class="headerlink" title="HTML 事件"></a>HTML 事件</h3><p>HTML 事件可以是浏览器或用户做的某些事情。</p>
+<p>写法：</p>
+<ol>
+<li>内联模式</li>
+<li>脚本模式/外联模式</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;btnClick()&quot;</span>&gt;</span> 内联模式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>外联模式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">var</span> oBtn=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;btn&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">0Btn.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;click button&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>绑定事件格式：<code>元素节点.on+事件类型=匿名函数</code>；</p>
+<blockquote>
+<p>系统会在事件绑定完成时，生成一个事件对象。触发事件时，系统会自动去调用事件绑定的函数，将事件对象当做第一个参数传入。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">show</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(argument.<span class="property">length</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> oBtn=<span class="variable language_">document</span>.<span class="title function_">getElement</span>(<span class="string">&quot;btn1&quot;</span>);</span><br><span class="line"><span class="comment">//oBtn.onclick=show;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">button属性：左键0；中键1；右键2；</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">鼠标位置：(原点位置不同）</span></span><br><span class="line"><span class="comment">clientX    clientY  //可视窗口的左上角</span></span><br><span class="line"><span class="comment">pageX    pageY   //整个页面的左上角（滚动也包括）</span></span><br><span class="line"><span class="comment">screenX    screenY  //电脑屏幕的左上角</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">oBtn.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line"><span class="comment">//事件对象获取的方式，固定写法</span></span><br><span class="line"><span class="keyword">var</span> ev=e||<span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(ev);</span><br><span class="line"><span class="comment">//console.log(ev.button);</span></span><br><span class="line"><span class="comment">//console.log(ev.clientX);</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>循环添加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Oblock</span>=<span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">   <span class="comment">//console.log(Oblock);</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span> ;i&lt; <span class="title class_">Oblock</span>.<span class="property">length</span>;i++)&#123;</span><br><span class="line">    <span class="title class_">Oblock</span>[i].<span class="property">index</span>=i;</span><br><span class="line">    <span class="title class_">Oblock</span>[i].<span class="property">onmousedown</span>=<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">index</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>window事件</p>
+<ul>
+<li>load 当页面加载完后会触发</li>
+<li>unload 当页面解析的时候触发（如刷新界面、关闭当前界面）IE浏览器兼容</li>
+<li>scroll 页面滚动</li>
+<li>resize 窗口大小发生变化的时候触发</li>
+</ul>
+</li>
+<li><p>表单事件</p>
+<ul>
+<li><p>blur 失去焦点</p>
+</li>
+<li><p>focus 获取焦点</p>
+</li>
+<li><p>select  在输入框内选中文本时触发</p>
+</li>
+<li><p>change 修改输入框内容并失去焦点时触发</p>
+</li>
+<li><p>sumit 只对sumit按钮有效</p>
+</li>
+<li><p>reset 只对reset按钮有效</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>下面是一些常见的 HTML 事件：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onchange</td>
+<td>HTML 元素已被改变</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>用户点击了 HTML 元素</td>
+</tr>
+<tr>
+<td>ondblclick</td>
+<td>双击</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>用户把鼠标移动到 HTML 元素上(经过子节点会重复触发)</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>用户把鼠标移开 HTML 元素(经过子节点会重复触发)</td>
+</tr>
+<tr>
+<td>onmouseenter</td>
+<td>用户把鼠标移动到 HTML 元素上(经过子节点不会重复触发,IE8不兼容)</td>
+</tr>
+<tr>
+<td>onmouseleave</td>
+<td>用户把鼠标移开 HTML 元素(经过子节点不会重复触发,IE8不兼容)</td>
+</tr>
+<tr>
+<td>onmousedown</td>
+<td>鼠标任一按钮被按下</td>
+</tr>
+<tr>
+<td>onmousemove</td>
+<td>鼠标被移动,会不停触发</td>
+</tr>
+<tr>
+<td>onmouseup</td>
+<td>鼠标按键被松开</td>
+</tr>
+<tr>
+<td>onkeypress</td>
+<td>用户按下键盘按键(只支持字符建，shift等没用)</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>用户按下键盘按键</td>
+</tr>
+<tr>
+<td>onkeyup</td>
+<td>用户抬起键盘按键</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>浏览器已经完成页面加载</td>
+</tr>
+</tbody></table>
+<p>键盘事件对象属性：</p>
+<ul>
+<li>shiftKey //按下shift键为true，默认为false</li>
+<li>altKey</li>
+<li>ctrlKey</li>
+<li>metaKey  //按下win键</li>
+<li>keyCode 键码  //不区分大小写，只返回大写ASCII码，支持shift、ctrl等非字符键；只在keydown下支持,可用 which兼容</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onkeydown</span>=<span class="keyword">function</span>(<span class="params">ev</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> e=ev||<span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line"><span class="keyword">var</span> w=e.<span class="property">which</span>||e.<span class="property">keyCode</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(w);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>charCode  键码  //区分大小写，只支持字符键，只在keypress下支持,可用 which兼容</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onkeypress</span>=<span class="keyword">function</span>(<span class="params">ev</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> e=ev||<span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line"><span class="keyword">var</span> w=e.<span class="property">which</span>||e.<span class="property">keyCode</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(w);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>target<br>目标对象/触发对象</li>
+</ul>
+<p>IE8以下不兼容，可使用window.event.srcElement</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> oUl=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;ul1&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onkeypress</span>=<span class="keyword">function</span>(<span class="params">ev</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> e=ev||<span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line"><span class="keyword">var</span> target=e.<span class="property">target</span>||<span class="variable language_">window</span>.<span class="property">event</span>.<span class="property">srcElement</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">tagName</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(target.<span class="property">innerHTML</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>事件冒泡：由里向外逐级触发</li>
+</ul>
+<blockquote>
+<p>事件冒泡：同样的事件会在该元素的所有祖先元素中依次被触发(从里到外)<br>事件捕获：从根元素开始去执行对应事件(从外到里)</p>
+</blockquote>
+<p>事件对象的属性和方法:<br><code>cancelBubble=true;</code><br><code>stopPropagation();</code>(捕获阶段也有效)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"><span class="keyword">var</span> oDiv=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aDivs.<span class="property">length</span>;i++)&#123;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onkeypress</span>=<span class="keyword">function</span>(<span class="params">ev</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> e=ev||<span class="variable language_">window</span>.<span class="property">event</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">tagName</span>);</span><br><span class="line">e.<span class="property">cancelBubble</span>=<span class="literal">true</span>;</span><br><span class="line"><span class="comment">//e.stopProgagation();</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>mouseover和mouseout会有冒泡效果<br>mouseenter和mouseleave没有冒泡效果</p>
+</blockquote>
+<h2 id="BOM浏览器对象模型"><a href="#BOM浏览器对象模型" class="headerlink" title="BOM浏览器对象模型"></a>BOM浏览器对象模型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">window</span>:&#123;</span><br><span class="line">    <span class="attr">document</span>:&#123;anchors,forms,images,links,location&#125;,</span><br><span class="line">    <span class="attr">frames</span>:&#123;<span class="comment">/*...*/</span>&#125;,</span><br><span class="line">    <span class="attr">history</span>:&#123;<span class="comment">/*...*/</span>&#125;,</span><br><span class="line">    <span class="attr">location</span>:&#123;<span class="comment">/*...*/</span>&#125;,</span><br><span class="line">    <span class="attr">navigator</span>:&#123;<span class="comment">/*...*/</span>&#125;,</span><br><span class="line">    <span class="attr">screen</span>:&#123;<span class="comment">/*...*/</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入输出语句"><a href="#输入输出语句" class="headerlink" title="输入输出语句"></a>输入输出语句</h3><ul>
+<li>alert(msg):浏览器弹窗提示</li>
+<li>console.log(msg):控制台打印信息</li>
+<li>innerHTML:写入HTML元素</li>
+</ul>
+<blockquote>
+<p>innerHTML 和 outerHTML 的区别：1）innerHTML:从对象的起始位置到终止位置的全部内容, 不包括HTML标签。2）outerHTML:除了包含innerHTML的全部内容外, 还包含对象标签本身。<br>如需访问 HTML 元素，JavaScript 可使用 document.getElementById(id) 方法。如：<code>document.getElementById(&quot;demo&quot;).innerHTML = 5 + 6;</code></p>
+</blockquote>
+<ul>
+<li>document.write()：写入HTML输出</li>
+</ul>
+<blockquote>
+<p>会解析标签<br>注意：在 HTML 文档完全加载后使用 document.write() 将会删除所有的标签 ;</p>
+</blockquote>
+<ul>
+<li>prompt(info):浏览器弹出，用户输入</li>
+</ul>
+<h3 id="window方法"><a href="#window方法" class="headerlink" title="window方法"></a>window方法</h3><ul>
+<li><code>alert();</code>弹出提示框</li>
+<li><code>confirm();</code>弹出带确认的提示框，点确认返回true，取消返回false</li>
+<li><code>prompt(&quot;tips&quot;,&quot;tips&quot;);</code>弹出带输入框的提示框，第一个参数为面板上的提示的内容，第二个为输入框里提示的内容</li>
+<li><code>window.open(url, _blank|_top|_self|_parent, [新窗口的参数])</code>第一个参数的为跳转的url，第二个参数为新窗口的名字，第三个参数为设置打开窗口的属性；如width,height,top,left.</li>
+</ul>
+<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><p> <code>window..history</code>掌管的是当前窗口的历史记录（只要加载的url不一样就会产生不一样的历史记录）</p>
+<p>属性：</p>
+<ul>
+<li><code>history.length</code>返回当前窗口的历史记录条数</li>
+</ul>
+<p>方法：</p>
+<ul>
+<li><code>history.back();</code>返回上一条历史记录</li>
+<li><code>history.forward()；</code>前进下一条记录</li>
+<li><code>history.go();</code>跳转到（0为刷新，正整数为前进，负整数为后退）</li>
+</ul>
+<h3 id="location地址栏"><a href="#location地址栏" class="headerlink" title="location地址栏"></a>location地址栏</h3><p>方法：</p>
+<ul>
+<li><p><code>location.assign(url)</code>当前窗口跳转到该url</p>
+</li>
+<li><p><code>location.replace(url)</code>在当前窗口替换成新的url</p>
+</li>
+<li><p><code>location.reload()</code>刷新当前窗口</p>
+</li>
+<li><p><code>location.reload(true)</code>不经过浏览器缓存，强制从服务器重载</p>
+</li>
+</ul>
+<hr>
+<p><em>url:统一资源定位符</em><br><em>协议://IP（域名）//:端口号/路径/?查询字符串#锚点</em></p>
+<ul>
+<li><code>location.protocol</code>查看协议</li>
+</ul>
+<blockquote>
+<p>file:本地磁盘文件访问<br>http:<br>https:</p>
+</blockquote>
+<ul>
+<li><p><code>location.hostname</code>查看主机名 IP</p>
+</li>
+<li><p><code>location.port</code>查看端口号(默认隐藏，无法查看)</p>
+</li>
+<li><p><code>location.pathname</code>查看路径</p>
+</li>
+<li><p><code>location.search</code>查看字符串如<code>?name1=Tom&amp;name2=Tony</code></p>
+</li>
+<li><p><code>location.hash</code>查看锚点</p>
+</li>
+<li><p><code>loaction.href</code>查看整个url</p>
+</li>
+</ul>
+<h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><p>HTML5中年，加入了一个localStorage特性，用来作为本地存储使用的，解决了cookie存储空间不足的问题。localStorage中一般浏览器支持5M大小，cookie中每条cookie的存储空间为4k。</p>
+<ul>
+<li>本地存储技术：</li>
+</ul>
+<p><em>localStorage(IE8以下不兼容);</em></p>
+<ul>
+<li><p>永久存储</p>
+</li>
+<li><p>最大可存储5M，相当于客户端一个微型数据库</p>
+</li>
+<li><p>只能存储string</p>
+</li>
+<li><p>localStorage对象</p>
+<ul>
+<li>setItem(name,value);</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="variable language_">window</span>.<span class="property">localStorage</span>)&#123;</span><br><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;当前页面不支持localStorage&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;1&quot;</span>);</span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="property">b</span>=<span class="string">&quot;2&quot;</span>;</span><br><span class="line"><span class="variable language_">localStorage</span>[<span class="string">&quot;c&quot;</span>]=<span class="string">&quot;3&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&quot;b&quot;</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">localStorage</span>.<span class="property">b</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">localStorage</span>[<span class="string">&quot;a&quot;</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>getItem(name);</li>
+<li>removeItem(name);</li>
+</ul>
+<p><em>cookie</em></p>
+<p>会话跟踪技术,从一次会话开始到结束（浏览器的关闭），会全程跟踪记录客户端的状态，记录相关信息</p>
+<ul>
+<li>可设置过期时间</li>
+<li>最大可存储4KB</li>
+<li>每一个域名下最多可存储50条数据</li>
+</ul>
+<blockquote>
+<p>只能存储字符串</p>
+</blockquote>
+<ul>
+<li>cookie的语法</li>
+</ul>
+<p>name 键；value 值，都可自定义<br><code>name=value;expires=date;path=path;domain=url;secure，其中name=value必选，剩余的可选</code></p>
+<ol>
+<li>expires/max-age:过期时间，填写日期对象。系统会自动清理过期的cookie</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">funciton <span class="title function_">afterOffDate</span>(<span class="params">n</span>)&#123;</span><br><span class="line"><span class="keyword">var</span> d=<span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="keyword">var</span> day=d.<span class="title function_">getDate</span>();</span><br><span class="line">d.<span class="title function_">setDate</span>(n+day);</span><br><span class="line"><span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span>=<span class="string">&quot;user=&#x27;xxx&#x27;;expires=&quot;</span>+<span class="title function_">afterOffDate</span>(<span class="number">7</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>path 限制访问路径，如果不设置默认加载当前.html文件的路径；</li>
+<li>domain 限制访问域名，如果不设置默认加载当前文件.html文件的服务器域名</li>
+<li>secure 加入这个字段后只能设置https协议加载cookie；</li>
+<li>httpOnly cookie的值不能修改；</li>
+</ol>
+<blockquote>
+<p>火狐浏览器支持本地加载的文件缓存cookie，谷歌只支持服务器加载文件缓存cookie</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//客户</span></span><br><span class="line"><span class="comment">//设置cookie</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span>=<span class="string">&#x27;username=xiaomi&#x27;</span>;</span><br><span class="line"><span class="comment">//读取cookie</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//服务端设置</span></span><br><span class="line"><span class="comment">//在响应头中set-cookie</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>cookie编解码</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span>=<span class="string">&quot;name1=&quot;</span>+<span class="built_in">encodeURIComponent</span>(<span class="string">&quot;小明&quot;</span>); <span class="comment">//编码写入</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="built_in">decodeURIComponent</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>); <span class="comment">//解码读取</span></span><br></pre></td></tr></table></figure>
+
+<p><em>sessionStorage(结合后台使用)</em></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/22/23-33-33/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1743,7 +2399,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
 
           
@@ -1907,7 +2563,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2026,7 +2682,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -3222,7 +3878,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -3368,7 +4024,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
+                <time title="修改时间：2023-05-16 23:50:36" itemprop="dateModified" datetime="2023-05-16T23:50:36+08:00">2023-05-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -3431,92 +4087,6 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment">#刷新dns</span></span><br><span class="line">ipconfig /flushdns</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/09/20-00-00/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/09/20-00-00/" class="post-title-link" itemprop="url">ranger</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-09 20:00:00" itemprop="dateCreated datePublished" datetime="2020-12-09T20:00:00+08:00">2020-12-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-14 12:06:33" itemprop="dateModified" datetime="2023-05-14T12:06:33+08:00">2023-05-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="下面列出常用操作的快捷键"><a href="#下面列出常用操作的快捷键" class="headerlink" title="下面列出常用操作的快捷键"></a>下面列出常用操作的快捷键</h2><p>?  查看帮助</p>
-<h3 id="浏览"><a href="#浏览" class="headerlink" title="浏览"></a>浏览</h3><p>S 使用终端定位到当前所在目录<br>H   后退<br>L   前进<br>gg  跳到顶端<br>G   跳到底端<br>gh  go home<br>gn  新建标签<br>f   查找<br>/   搜素<br>g   快速进入目录</p>
-<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p>space   选择<br>uv      取消选择<br>yy      复制<br>dd      剪切<br>pp      粘贴<br>delete  删除<br>cw      重命名<br>A       在当前名称基础上重命名<br>I       类似A, 但是光标会跳到起始位置<br>Ctrl-f  向下翻页<br>Ctrl-b  向上翻页</p>
-<h3 id="书签"><a href="#书签" class="headerlink" title="书签"></a>书签</h3><p>m       新建书签<br>`       打开书签<br>um      删除书签</p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>gn / C-n        新建标签<br>TAB / S-TAB     切换标签<br>A-Right, A-Left 切换标签<br>gc / C-w        关闭标签</p>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p>on/ob   根据文件名进行排序(natural/basename)<br>oc      根据改变时间进行排序 (Change Time 文件的权限组别和文件自身数据被修改的时间)<br>os      根据文件大小进行排序(Size)<br>ot      根据后缀名进行排序 (Type)</p>
-<p>oa      根据访问时间进行排序 (Access Time 访问文件自身数据的时间)<br>om      根据修改进行排序 (Modify time 文件自身内容被修改的时间)</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>zh      显示隐藏文件</p>
-<p>zp      打开/关闭文件预览功能<br>zP      打开目录预览功能</p>
-<h3 id="链接-Link"><a href="#链接-Link" class="headerlink" title="链接(Link)"></a>链接(Link)</h3><p>pl      粘贴绝对路径的链接<br>pL      粘贴相对路径的链接<br>phl     硬链接</p>
-<h3 id="批量改名"><a href="#批量改名" class="headerlink" title="批量改名"></a>批量改名</h3><p>批量选择文件后, 键入命令:bulkname, 会打开编辑器, 其中的文件名编辑后保存退出, 再次打开操作确认编辑, 然后就批量改名了, 如果想取消批量改名, 在确认时把文件内容删除即可.</p>
-<h3 id="任务管理"><a href="#任务管理" class="headerlink" title="任务管理"></a>任务管理</h3><p>在执行某些操作(比如复制一个大文件)时不能立即完成, 这在 ranger 中就是一个任务. 你可以停止, 启动某个任务, 也可以对某个任务设置优先级.</p>
-<p>w: 打开/关闭任务视图. 在w打开的任务视图中:<br>dd: 终止一个任务<br>J: 降低当前任务的优先级<br>K: 提升当前任务的优先级</p>
-<h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h3><dl><dt>zf      过滤器(如过滤pdf文件, zf+pdf,回车)<br>S       在当前目录打开终端<br>z(*)    改变设置,<em>表示在弹出选项中的选择<br>o(</em>)    改变排序方式<br>! / s   使用shell命令(！shell -w ls -hl %s,%s代表当前被选中的文件)</dt><dd>使用ranger命令(3? 查看可用命令)<br>:set colorscheme snow 设置颜色模式</dd></dl>
       
     </div>
 
