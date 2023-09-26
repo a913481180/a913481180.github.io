@@ -28,7 +28,7 @@
 <meta property="og:description" content="制作u盘 rufus 进入bios,选择u盘启动  连接wifi 查看wifi设备：ip link  启用设备：ip link set 设备 up  扫描查看wifi名称：iwlist 设备 scan | grep ESSID   或者使用 iw dev scan .... 或者使用usb网络，安装系统后记得安装驱动pacman -S usbmuxd,live系统中自带有所以不用装，但新安装的系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-22T12:22:22.000Z">
-<meta property="article:modified_time" content="2023-05-23T07:43:41.858Z">
+<meta property="article:modified_time" content="2023-09-26T13:33:51.567Z">
 <meta property="article:author" content="KK">
 <meta property="article:tag" content="system">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-23 15:43:41" itemprop="dateModified" datetime="2023-05-23T15:43:41+08:00">2023-05-23</time>
+                <time title="修改时间：2023-09-26 21:33:51" itemprop="dateModified" datetime="2023-09-26T21:33:51+08:00">2023-09-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +250,7 @@
 <h3 id="使用fdisk分区"><a href="#使用fdisk分区" class="headerlink" title="使用fdisk分区"></a>使用fdisk分区</h3><ul>
 <li>创建新分区：<code>fdisk /dev/sda    //注意磁盘名称</code></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;+500m  （boot分区）</span><br><span class="line"> </span><br><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;+6G      （根分区）</span><br><span class="line"></span><br><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;回车  （将剩余空间全部分配给该分区）</span><br><span class="line"> </span><br><span class="line">--\&gt;w    （写入）</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;+500m  （boot分区）</span><br><span class="line"></span><br><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;+6G      （根分区）</span><br><span class="line"></span><br><span class="line">--\&gt;n --&gt;回车 --&gt;回车 --&gt;回车 --&gt;回车  （将剩余空间全部分配给该分区）</span><br><span class="line"></span><br><span class="line">--\&gt;w    （写入）</span><br></pre></td></tr></table></figure>
 
 <h2 id="根目录格式化为ext4"><a href="#根目录格式化为ext4" class="headerlink" title="根目录格式化为ext4"></a>根目录格式化为ext4</h2><p>请注意自己的对应的目录是那块区域</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1     /// boot分区</span><br><span class="line">mkswap /dev/sda2   //swap 分区</span><br><span class="line">mkfs.ext4 /dev/sda3</span><br></pre></td></tr></table></figure>
@@ -265,12 +265,12 @@
 <blockquote>
 <p>先挂载根分区，再启动分区，在其他分区</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount /dev/nvme0n8 /mnt </span><br><span class="line"><span class="comment">#启动分区，挂载在win系统efi分区上</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/nvme0n1p1 /mnt/boot</span><br><span class="line"><span class="comment">#swap分区</span></span><br><span class="line">swapon /dev/nvme0n1p7</span><br><span class="line"><span class="comment">#home分区...</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/home</span><br><span class="line">mount /dev/nvme0n1p6 /mnt/home</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount /dev/nvme0n8 /mnt</span><br><span class="line"><span class="comment">#启动分区，挂载在win系统efi分区上</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/nvme0n1p1 /mnt/boot</span><br><span class="line"><span class="comment">#swap分区</span></span><br><span class="line">swapon /dev/nvme0n1p7</span><br><span class="line"><span class="comment">#home分区...</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/home</span><br><span class="line">mount /dev/nvme0n1p6 /mnt/home</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>单系统</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount  /dev/sda3 /mnt     </span><br><span class="line"><span class="built_in">ls</span> /mnt  /////查看是否挂载成功，若出现lost+found 则代表挂载成功</span><br><span class="line"><span class="comment">#启动分区</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/sda1 /mnt/boot      /// boot分区</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount  /dev/sda3 /mnt</span><br><span class="line"><span class="built_in">ls</span> /mnt  /////查看是否挂载成功，若出现lost+found 则代表挂载成功</span><br><span class="line"><span class="comment">#启动分区</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/sda1 /mnt/boot      /// boot分区</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置源"><a href="#配置源" class="headerlink" title="配置源"></a>配置源</h2><p>将国内源放到第一位<br><code>vim /etc/pacman.d/mirrorlist</code></p>
 <ul>
@@ -324,7 +324,7 @@
 <li>系统托盘：<code>network-manager-applet</code></li>
 <li>使用：<br>NetworkManager 附带 nmcli 和 nmtui。</li>
 </ul>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示附近的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到隐藏的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 hidden <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 wlan1 网络接口上的 Wi-Fi：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 ifname wlan1 profile_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 断开网络接口上的连接：</span></span><br><span class="line">$ nmcli device disconnect ifname eth0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示连接列表及其名称、UUID、类型和支持设备：</span></span><br><span class="line">$ nmcli connection show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活连接（即使用现有配置文件连接到网络）：</span></span><br><span class="line">$ nmcli connection up name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除连接：</span></span><br><span class="line">$ nmcli connection delete name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有网络设备及其状态：</span></span><br><span class="line">$ nmcli device</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭 Wi-Fi：</span></span><br><span class="line">$ nmcli radio wifi off</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑连接</span></span><br><span class="line"><span class="comment">### 获取连接列表：</span></span><br><span class="line">$ nmcli connection</span><br><span class="line"><span class="comment">###编辑</span></span><br><span class="line">nmcli connection edit <span class="string">&#x27;wifi名称&#x27;</span></span><br><span class="line"><span class="comment">###或</span></span><br><span class="line">nmcli connection modify <span class="string">&#x27;wifi名称&#x27;</span> 配置项</span><br><span class="line"><span class="comment">###或在 /etc/NetworkManager/system-connections/ 中修改对应的 wifi名.nmconnection 文件。别忘了使用nmcli connection reload 重新加载配置文件。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示附近的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到隐藏的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 hidden <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 wlan1 网络接口上的 Wi-Fi：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 ifname wlan1 profile_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 断开网络接口上的连接：</span></span><br><span class="line">$ nmcli device disconnect ifname eth0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示连接列表及其名称、UUID、类型和支持设备：</span></span><br><span class="line">$ nmcli connection show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活连接（即使用现有配置文件连接到网络）：</span></span><br><span class="line">$ nmcli connection up name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除连接：</span></span><br><span class="line">$ nmcli connection delete name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有网络设备及其状态：</span></span><br><span class="line">$ nmcli device</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭 Wi-Fi：</span></span><br><span class="line">$ nmcli radio wifi off</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑连接</span></span><br><span class="line"><span class="comment">### 获取连接列表：</span></span><br><span class="line">$ nmcli connection</span><br><span class="line"><span class="comment">###编辑</span></span><br><span class="line">nmcli connection edit <span class="string">&#x27;wifi名称&#x27;</span></span><br><span class="line"><span class="comment">###或</span></span><br><span class="line">nmcli connection modify <span class="string">&#x27;wifi名称&#x27;</span> 配置项</span><br><span class="line"><span class="comment">###或在 /etc/NetworkManager/system-connections/ 中修改对应的 wifi名.nmconnection 文件。别忘了使用nmcli connection reload 重新加载配置文件。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>通过Wi-Fi共享网络连接：安装<code>dnsmasq</code>包 以实现连接共享。NetworkManager 会启动自己的 dnsmasq 实例，与 dnsmasq.service 独立。点击小程序，选择”Create new wireless network”。按照指南 (如果使用WEP, 确保使用5到13字符长度的密码,其他的长度可能会失败)。</li>
@@ -353,7 +353,7 @@
 <li><p>Grub2.06后不再启用os-prober，需要手动启用：<code>vim /etc/default/grub</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">#grub2.06默认禁用os-prober</span><br><span class="line">#启用os-prober来识别win引导</span><br><span class="line">GRUB_DISABLE_OS_PROBER=false</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
 <li><p>安装grub</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#gpt引导32位</span></span><br><span class="line"> grub-install --target=i386-pc /dev/sda (整个磁盘，即根目录`/`） </span><br><span class="line"><span class="comment">#efi引导</span></span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#gpt引导32位</span></span><br><span class="line"> grub-install --target=i386-pc /dev/sda (整个磁盘，即根目录`/`）</span><br><span class="line"><span class="comment">#efi引导</span></span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot</span><br></pre></td></tr></table></figure></li>
 <li><p>生成grub.cfg：<code>grub-mkconfig -o /boot/grub/grub.cfg</code></p>
 </li>
 </ul>
@@ -371,7 +371,7 @@
 <blockquote>
 <p>第一列用户名：test、root<br>第二列，等号左边：允许从任何主机登陆当前用户<br>第二列，等号右边：第一列用户可以切换到系统中的其他用户<br>第三列，NOPASSWD表示sudo不用打密码</p>
 </blockquote>
-  <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root    ALL=(ALL:ALL) ALL</span><br><span class="line">test    ALL=(ALL:ALL) NOPASSWD:ALL</span><br></pre></td></tr></table></figure>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root    ALL=(ALL:ALL) ALL</span><br><span class="line">test    ALL=(ALL:ALL) NOPASSWD:ALL</span><br></pre></td></tr></table></figure>
 
 <h2 id="添加archlinuxcn源"><a href="#添加archlinuxcn源" class="headerlink" title="添加archlinuxcn源"></a>添加archlinuxcn源</h2><ul>
 <li><p><code>vim /etc/pacman.conf</code></p>
@@ -503,7 +503,7 @@
 <li>安装：<code>yay -S fcitx5-material-color</code></li>
 <li>配置：</li>
 </ul>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 垂直候选列表</span><br><span class="line">Vertical Candidate List=False</span><br><span class="line"># 按屏幕DPI使用</span><br><span class="line">PerScreenDPI=True</span><br><span class="line"># Font(设置成你喜欢的字体)</span><br><span class="line">Font=&quot;思源黑体 CN Medium 13&quot;</span><br><span class="line"># 主题</span><br><span class="line">Theme=Material-Color-DeepPurple</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 垂直候选列表</span><br><span class="line">Vertical Candidate List=False</span><br><span class="line"># 按屏幕DPI使用</span><br><span class="line">PerScreenDPI=True</span><br><span class="line"># Font(设置成你喜欢的字体)</span><br><span class="line">Font=&quot;思源黑体 CN Medium 13&quot;</span><br><span class="line"># 主题</span><br><span class="line">Theme=Material-Color-DeepPurple</span><br></pre></td></tr></table></figure></li>
 <li><p>Emoji</p>
 <ol>
 <li>首先确保电脑上已经安装了带有 Emoji 的字体（例如 noto-fonts-emoji包）。</li>
@@ -627,35 +627,82 @@
 <li><a target="_blank" rel="noopener" href="http://listen1.github.io/listen1/">listen1</a></li>
 </ul>
 <h3 id="pacman"><a href="#pacman" class="headerlink" title="pacman"></a>pacman</h3><ul>
-<li>男人：<code>man</code></li>
-<li>屏幕上显示键盘：<code>screenkey</code></li>
-<li>快照保存：<code>timeshift</code></li>
-<li>快速启动：<code>albert</code></li>
-<li>文件管理器：<code>ranger</code></li>
-<li>电脑参数：<code>neofetch</code></li>
-<li>挂载ntfs：<code>ntfs-3g</code></li>
-<li>办公：<code>libreoffice-fresh</code></li>
-<li>火狐：<code>firefox</code></li>
-<li>截图：<code>flameshot</code></li>
-<li>看图：<code>feh</code></li>
-<li>播放器：<code>mpv</code>,<code>vlc</code></li>
-<li>录屏：<code>obs-studio</code>( 确保安装了<code>pipewire</code>,<code>libpipewire02</code>，<code>xdg-desktop-portal-wlr</code>)</li>
-<li>虚拟摄像头：<code>v4l2loopback</code>（可用在直播软件中实现共享屏幕）<ul>
+<li><p>男人：<code>man</code></p>
+</li>
+<li><p>屏幕上显示键盘：<code>screenkey</code></p>
+</li>
+<li><p>快照保存：<code>timeshift</code></p>
+</li>
+<li><p>快速启动：<code>albert</code></p>
+</li>
+<li><p>文件管理器：<code>ranger</code></p>
+</li>
+<li><p>电脑参数：<code>neofetch</code></p>
+</li>
+<li><p>挂载ntfs：<code>ntfs-3g</code></p>
+</li>
+<li><p>办公：<code>libreoffice-fresh</code></p>
+</li>
+<li><p>火狐：<code>firefox</code></p>
+</li>
+<li><p>截图：<code>flameshot</code></p>
+</li>
+<li><p>看图：<code>feh</code></p>
+</li>
+<li><p>pdf：<code>okular</code></p>
+</li>
+<li><p>播放器：<code>mpv</code>,<code>vlc</code></p>
+</li>
+<li><p>录屏：<code>obs-studio</code>( 确保安装了<code>pipewire</code>,<code>libpipewire02</code>，<code>xdg-desktop-portal-wlr</code>)</p>
+</li>
+<li><p>图形化解压工具：<code>xarchiver</code>,<code>file-roller</code></p>
+</li>
+<li><p>虚拟摄像头：<code>v4l2loopback</code>（可用在直播软件中实现共享屏幕）</p>
+<ul>
 <li>移除虚拟相机命令：<code>sudo modprobe --remove v4l2loopback</code></li>
 <li>添加虚拟相机命令：<code>sudo modprobe v4l2loopback devices=2</code></li>
 </ul>
 </li>
+<li><p>编辑器：<code>nvim</code></p>
+<ul>
+<li>安装LazyVim配置:<ul>
+<li><code>git clone https://github.com/LazyVim/starter ~/.config/nvim</code></li>
+<li><code>rm -rf ~/.config/nvim/.git</code></li>
+<li><code>nvim</code></li>
+</ul>
+</li>
+<li>安装字体：<code>Nerd Fonts</code></li>
+</ul>
+</li>
 </ul>
 <h3 id="aur"><a href="#aur" class="headerlink" title="aur"></a><a target="_blank" rel="noopener" href="https://aur.archlinux.org/">aur</a></h3><ul>
-<li>谷歌:<code>google-chrome</code>（root用户无法启动）</li>
-<li>markdown:<code>typora-free-cn</code>,<code>remarkable</code></li>
-<li>vscode:<code>visual-studio-code-bin</code>（root用户无法启动）</li>
-<li>wps：<code>wps-office</code></li>
-<li>qq:<code>linuxqq</code></li>
-<li>腾讯会议：<code>wemeet-bin</code></li>
-<li>微信：<code>wechat-uos</code></li>
-<li>飞书：<code>feishu-bin</code></li>
-<li>迅雷：<code>xunlei-bin</code></li>
+<li><p>谷歌:<code>google-chrome</code>（root用户无法启动）</p>
+</li>
+<li><p>markdown:<code>typora-free-cn</code>,<code>remarkable</code></p>
+</li>
+<li><p>vscode:<code>visual-studio-code-bin</code>（root用户无法启动）</p>
+</li>
+<li><p>wps：<code>wps-office</code></p>
+<ul>
+<li><p>无法输入中文错误来源<br>好像是因为wps在较新的版本之后就不在读取用户的默认的配置文件~/.pam_environment，所以你在这个文件中再怎么改也没有用。</p>
+</li>
+<li><p>解决办法<br>正确的做法是直接在启动脚本中添加export变量导出。<br>启动脚本位于/usr/bin目录下，<code>/usr/bin/wps</code>, <code>/usr/bin/et</code> ,<code>/usr/bin/wpp</code>。<br>在gOpt一行下添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx5</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=@im=fcitx</span><br></pre></td></tr></table></figure>
+
+<p>然后保存退出。这样就可以成功在WPS中使用fcitx5了。</p>
+</li>
+</ul>
+</li>
+<li><p>qq:<code>linuxqq</code></p>
+</li>
+<li><p>腾讯会议：<code>wemeet-bin</code></p>
+</li>
+<li><p>微信：<code>wechat-uos</code></p>
+</li>
+<li><p>飞书：<code>feishu-bin</code></p>
+</li>
+<li><p>迅雷：<code>xunlei-bin</code></p>
+</li>
 </ul>
 <h2 id="触摸板"><a href="#触摸板" class="headerlink" title="触摸板"></a>触摸板</h2><ul>
 <li><p>安装驱动：<code>libinput</code>，<code>xf86-input-libinput</code></p>
@@ -702,7 +749,7 @@
 <li>转化deb包：<code>debtap xxx.deb</code></li>
 <li>安装：<code>sudo pacman -U xxxx.pkg</code></li>
 </ul>
-<h3 id="文件管理工具"><a href="#文件管理工具" class="headerlink" title="文件管理工具"></a>文件管理工具</h3><h4 id="dolphin"><a href="#dolphin" class="headerlink" title="dolphin"></a>dolphin</h4><p>安装： <code>sudo pacman -S dolphin breeze</code><br> 文件预览：</p>
+<h3 id="文件管理工具"><a href="#文件管理工具" class="headerlink" title="文件管理工具"></a>文件管理工具</h3><h4 id="dolphin"><a href="#dolphin" class="headerlink" title="dolphin"></a>dolphin</h4><p>安装： <code>sudo pacman -S dolphin breeze</code><br>文件预览：</p>
 <ul>
 <li>kdegraphics-thumbnailers: Image files, PDFs and Blender application files.</li>
 <li>kimageformats: Gimp .xcf files</li>
@@ -717,7 +764,11 @@
 </ul>
 <p>To enable <code>heif/heic image thumbnails</code>, edit <code>/usr/share/kservices5/imagethumbnail.desktop</code> by adding <code>image/heif;</code> to the line which starts with <code>MimeType=</code>.</p>
 <p>Note that heif/heic thumbnails will be enabled by default on versions of <code>kio-extras</code> after 21.12</p>
-<h4 id="pcmanfm"><a href="#pcmanfm" class="headerlink" title="pcmanfm"></a>pcmanfm</h4><h3 id="远程控制windowns"><a href="#远程控制windowns" class="headerlink" title="远程控制windowns"></a>远程控制windowns</h3><ul>
+<h4 id="pcmanfm"><a href="#pcmanfm" class="headerlink" title="pcmanfm"></a>pcmanfm</h4><ul>
+<li>自动挂载u盘、垃圾桶:<code>gvfs</code>,<code>udisks</code></li>
+<li>解压：<code>xarchiver</code></li>
+</ul>
+<h3 id="远程控制windowns"><a href="#远程控制windowns" class="headerlink" title="远程控制windowns"></a>远程控制windowns</h3><ul>
 <li><code>rdesktop</code><br>在此之前需要让Windows支持远程协助，可以在系统属性-远程中开启：【允许远程协助连接这台计算机】+【允许远程连接到此计算机】，如果勾选了【仅运行运行使用网络级别身份验证的远程桌面单位计算机连接】，那么 rdesktop 无法连接，报错信息：</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Core(warning): Certificate received from server is NOT trusted by this system, an exception has been added by the user to trust this specific certificate.</span><br><span class="line">Failed to initialize NLA, <span class="keyword">do</span> you have correct Kerberos TGT initialized ?</span><br><span class="line">Failed to connect, CredSSP required by server (check <span class="keyword">if</span> server has disabled old TLS versions, <span class="keyword">if</span> <span class="built_in">yes</span> use -V option).</span><br></pre></td></tr></table></figure>
@@ -727,7 +778,7 @@
 <ul>
 <li><code>freerdp</code></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/v:&lt;server&gt;[:port] 默认端口 3389</span><br><span class="line">/w、/h 窗口大小</span><br><span class="line">/size:&lt;width&gt;x&lt;height&gt; 窗口大小，如 1024x768</span><br><span class="line">/f 全屏</span><br><span class="line">/workarea Use available work area</span><br><span class="line">/bpp:&lt;depth&gt; 色彩深度 </span><br><span class="line">/u:&lt;user&gt;[@&lt;domain&gt;] </span><br><span class="line">/p:&lt;password&gt;</span><br><span class="line">/d:&lt;domain&gt; 域，可选</span><br><span class="line">+fonts 平滑字体</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/v:&lt;server&gt;[:port] 默认端口 3389</span><br><span class="line">/w、/h 窗口大小</span><br><span class="line">/size:&lt;width&gt;x&lt;height&gt; 窗口大小，如 1024x768</span><br><span class="line">/f 全屏</span><br><span class="line">/workarea Use available work area</span><br><span class="line">/bpp:&lt;depth&gt; 色彩深度</span><br><span class="line">/u:&lt;user&gt;[@&lt;domain&gt;]</span><br><span class="line">/p:&lt;password&gt;</span><br><span class="line">/d:&lt;domain&gt; 域，可选</span><br><span class="line">+fonts 平滑字体</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>共享盘或者传输文件</p>
