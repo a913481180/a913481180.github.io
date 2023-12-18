@@ -155,6 +155,349 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/18/20-00-00/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/18/20-00-00/" class="post-title-link" itemprop="url">markdown语法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-18 20:00:00" itemprop="dateCreated datePublished" datetime="2020-12-18T20:00:00+08:00">2020-12-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 这是一级标题</span></span><br><span class="line"><span class="section">## 这是二级标题</span></span><br><span class="line"><span class="section">### 这是三级标题</span></span><br><span class="line"><span class="section">#### 这是四级标题</span></span><br><span class="line"><span class="section">##### 这是五级标题</span></span><br><span class="line"><span class="section">###### 这是六级标题</span></span><br><span class="line">井号与标题间有空格</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果：</strong></p>
+<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><hr>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**<span class="emphasis">*这是斜体加粗的文字*</span>**</span></span><br><span class="line"></span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果：</strong><br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em>`<br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del></p>
+<hr>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line"></span><br><span class="line">&gt;&gt;这是引用的内容</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;这是引用的内容</span><br><span class="line">在被引用的文本前加上&gt;符号，以及一个空格就可以了</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果：</strong></p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+<blockquote>
+<p>这是引用的内容</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">简书</span>](<span class="link">http://jianshu.com</span>)</span><br><span class="line">[<span class="string">百度</span>](<span class="link">http://baidu.com</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果:</strong><br><a target="_blank" rel="noopener" href="http://jianshu.com/">简书</a><br><a target="_blank" rel="noopener" href="http://baidu.com/">百度</a></p>
+<hr>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 列表内容</span><br><span class="line"><span class="bullet">+</span> 列表内容</span><br><span class="line"><span class="bullet">*</span> 列表内容</span><br><span class="line"><span class="bullet">1.</span> 列表内容 </span><br><span class="line">\+ 列表内容 </span><br><span class="line">前面加反斜线\即可显示符号本身     </span><br><span class="line"><span class="bullet">2.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br><span class="line"><span class="bullet">3.</span> 列表内容</span><br><span class="line"><span class="bullet">  4.</span> 列表嵌套</span><br><span class="line">上一级和下一级之间敲三个空格即可</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果：</strong></p>
+<ul>
+<li><p>列表内容</p>
+</li>
+<li><p>列表内容</p>
+</li>
+<li><p>列表内容</p>
+</li>
+</ul>
+<ol>
+<li>列表内容<br>+ 列表内容</li>
+<li>列表内容</li>
+<li>列表内容<ol start="4">
+<li>列表嵌套</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="code">`代码内容`</span></span><br><span class="line"></span><br><span class="line">单行代码：代码之间分别用一个反引号包起来</span><br><span class="line"></span><br><span class="line"> \<span class="code">```</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code"> 代码块</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code"> \```</span></span><br><span class="line"></span><br><span class="line">代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行或者缩进 4 个空格或是 1 个制表符</span><br></pre></td></tr></table></figure>
+
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|商品|数量|单价|</span><br><span class="line">|-|-------:|:------:|</span><br><span class="line">|:苹果:|10|\$1|</span><br><span class="line">|:电脑|1|\$1000|</span><br><span class="line">冒号在左边表示左对齐，右边表示有对齐，两边都有表示居中。</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果：</strong></p>
+<table>
+<thead>
+<tr>
+<th>商品</th>
+<th align="right">数量</th>
+<th align="center">单价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:苹果:</td>
+<td align="right">10</td>
+<td align="center">$1</td>
+</tr>
+<tr>
+<td>:电脑</td>
+<td align="right">1</td>
+<td align="center">$1000</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h2 id="链接写法：-lt-http-baidu-com-gt"><a href="#链接写法：-lt-http-baidu-com-gt" class="headerlink" title="链接写法：&lt;http://baidu.com&gt;"></a><code>链接写法：&lt;http://baidu.com&gt;</code></h2><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">文本</span>](<span class="link">图片地址 &quot;可选标题&quot;</span>) </span><br><span class="line">开头一个感叹号 !</span><br><span class="line">接着一个方括号，里面放上图片的替代文字</span><br><span class="line">接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 &#x27;title&#x27; 属性的文字。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/12/12-12-12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/12/12-12-12/" class="post-title-link" itemprop="url">git</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-12 12:12:12" itemprop="dateCreated datePublished" datetime="2020-12-12T12:12:12+08:00">2020-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-12-18 20:32:33" itemprop="dateModified" datetime="2023-12-18T20:32:33+08:00">2023-12-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h2><p><code>sudo apt-get install git</code></p>
+<h2 id="配置-git"><a href="#配置-git" class="headerlink" title="配置 git"></a>配置 git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;用户名&quot;</span>               //个人账号</span><br><span class="line">git config --global user.email 123456@qq.com         //个人邮箱地址</span><br><span class="line"><span class="comment"># 上面的--global选项,表示以后管理git库时,默认使用上面的用户信息,也可以通过git config -l 来查看配置信息</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><p>创建分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建分支: git branch 分支名</span><br><span class="line">切换分支: git checkout 分支名</span><br><span class="line">查看所有分支: git brach -a</span><br><span class="line">分支合并: git merge 分支名 (把分支合并到当前分支)</span><br></pre></td></tr></table></figure>
+
+<p>删除分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">首先使用git branch -a查看当前所有分支。</span><br><span class="line">删除本地分支：git branch -d 分支1[,分支名2,分支名3...]</span><br><span class="line">删除远程分支: git push origin --delete 分支名1[,分支命2,分支名...]</span><br></pre></td></tr></table></figure>
+
+<h2 id="将-master-分支合并到当前迭代分支"><a href="#将-master-分支合并到当前迭代分支" class="headerlink" title="将 master 分支合并到当前迭代分支"></a>将 master 分支合并到当前迭代分支</h2><p>1、切换到 master 分支，拉取最新代码到本地</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到master分支</span></span><br><span class="line">git checkout master</span><br><span class="line"><span class="comment">#拉取最新代码</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<p>2、切换到当前开发分支，合并 master 分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到当前分支</span></span><br><span class="line">git checkout myBranch</span><br><span class="line"><span class="comment">#合并</span></span><br><span class="line">git merge master</span><br></pre></td></tr></table></figure>
+
+<p>3、代码冲突解决<br>这一步需要在编辑器上，把冲突部分解决掉（这一步特别重要，最好叫上相关负责人一起，防止弄丢 master 里的最新代码）</p>
+<p>4、当前开发分支代码提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m<span class="string">&quot;merge from master&quot;</span></span><br><span class="line">git push origin</span><br></pre></td></tr></table></figure>
+
+<h2 id="合并其他分支代码至-master-分支"><a href="#合并其他分支代码至-master-分支" class="headerlink" title="合并其他分支代码至 master 分支"></a>合并其他分支代码至 master 分支</h2><p>1.当前分支所有代码提交<br>先将 dev 分支上所有有代码提交至 git 上，提交的命令一般就是这几个，先复习下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将所有代码提交</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编写提交备注</span></span><br><span class="line">git commit -m <span class="string">&quot;修改bug&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交代码至远程分支</span></span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+
+<p>2.切换当前分支至主干（master）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果多人开发建议执行如下命令,拉取最新的代码</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+
+<p>3.合并（merge)分支代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br><span class="line"><span class="comment"># merge完成后可执行如下命令，查看是否有冲突</span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>4.提交代码至主干（master）<br><code>git push origin master</code></p>
+<p>5.最后切换回原开发分支<br><code>git checkout dev</code></p>
+<h2 id="放弃本地更改"><a href="#放弃本地更改" class="headerlink" title="放弃本地更改"></a>放弃本地更改</h2><ol>
+<li>没有添加到暂存区</li>
+</ol>
+<p>没有执行 git add , 可以用命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout – filepathname（eg: git checkout – test.cpp）</span><br></pre></td></tr></table></figure>
+
+<p>如果是放弃所有，直接执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
+
+<p>此命令用来放弃掉所有还没有加入到缓存区（就是 git add 命令）的修改：新增的文件会被删除、删除的文件会恢复回来、修改的文件会回去。回到暂存区之前的样子。对之前保存在暂存区里的代码不会有任何影响。对 commit 提交到本地分支的代码就更没影响了。当然，如果你之前压根都没有暂存或 commit，那就是回到你上次 pull 下来的样子了。</p>
+<p>但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于 git 是未知的。自己手动删除就好了。</p>
+<ol start="2">
+<li>已经添加到暂存区：<br>已经使用 git add 添加到暂存区，可以用命令</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD filepathname （比如： git reset HEAD readme.md）</span><br></pre></td></tr></table></figure>
+
+<p>同样放弃所有就是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
+
+<p>执行完此命令后，文件状态就回归到第一种情况了，此时再按照情况 1 处理。</p>
+<ol start="3">
+<li>已经提交到本地仓库：<br>使用 git commit 提交到本地仓库，可以用命令回退到上一次 commit 的状态</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>可以用命令回退到任意版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line">git reset --hard commitid<span class="comment"># 回到其中你想要的某个版</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>放弃本地修改，强制和远程同步<br>在使用 Git 的过程中，有些时候我们只想要 git 服务器中的最新版本的项目，对于本地的项目中修改不做任何理会，就需要用到 Git pull 的强制覆盖，具体代码如下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><ol>
+<li>通过 git reset 是直接删除指定的 commit</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line"></span><br><span class="line">git reset --hard</span><br><span class="line"></span><br><span class="line">git push origin HEAD --force <span class="comment"># 强制提交一次，之前错误的提交就从远程仓库删除</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>通过 git revert 是用一次新的 commit 来回滚之前的 commit</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line"></span><br><span class="line">git revert <span class="comment"># 撤销指定的版本，撤销也会作为一次提交进行保存</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>git revert 和 git reset 的区别</p>
+<ul>
+<li><p>git revert 是用一次新的 commit 来回滚之前的 commit，此次提交之前的 commit 都会被保留；</p>
+</li>
+<li><p>git reset 是回到某次提交，提交及之前的 commit 都会被保留，但是此 commit id 之后的修改都会被删除</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><p>对当前目录进行 git 管理,该目录便会成为工作区,并在当前目录下会出现个.git 隐藏目录.<br>该.git 里会保存 git 所需要的数据和资源,也就是 git 仓库和暂存区都会保存在.git 里</p>
+<ul>
+<li><code>git init</code> 本地初始化，建立缓存区</li>
+</ul>
+<p>由于 git clone 会自动生成.git 隐藏目录,所以上面无需 git init 命令初始化。<br>而且.git 目录里保存了远程仓库地址,所以上面无需 git remote 命令连接远端。</p>
+<ul>
+<li><p><code>git add filename</code><br>将暂存区里的文件提交到本地仓库,若暂存区某个文件被删除掉,则会删除仓库里的文件。加参数 -a:跳过暂存区,git 自动将工作区里记录的所有文件添加到暂存区并一起提交,从而跳过 git add 步骤<br>将工作区修改的文件添加到暂存区也可以使用<code>git add .</code> 将所有修改的文件进行添加;或<code>git add *</code>提交所有文件。</p>
+</li>
+<li><p><code>git rm filename</code><br>将暂存区的文件删除掉,若工作区文件存在,则需要使用<code>git rm -f file</code>来强制删除掉,</p>
+</li>
+<li><p><code>git commit -m &quot;your description&quot;</code><br>为本次操作添加描述</p>
+</li>
+<li><p><code>git clone https://......</code><br>克隆复制远程仓库到当前目录</p>
+</li>
+<li><p><code>git status</code><br>查看工作目录下文件的状态</p>
+</li>
+<li><p><code>git checkout filename</code><br>从暂存区恢复文件到工作区</p>
+</li>
+<li><p><code>git diff</code><br>查看工作区和暂存区版本区别</p>
+</li>
+<li><p><code>git log</code><br>查看已提交到暂存区的历史版本</p>
+</li>
+<li><p><code>git reset --hard 版本号</code><br>恢复文件到指定的版本</p>
+</li>
+</ul>
+<p>-<code>git remote add origin https://.......</code><br>添加远程仓库(origin),也就是关联本地仓库和 github 仓库</p>
+<ul>
+<li><p><code>git push origin 分支</code><br>推送(同步)数据到远程仓库,若是本地上传,必须先使用上个命令来指定远程仓库地址(origin),<br>若是从远程仓库克隆复制的,则不需要,因为.git 里会自动保存远程仓库地址.</p>
+</li>
+<li><p><code>git pull</code><br>从远程仓库中同步代码</p>
+</li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ul>
+<li>git 提交=报错 443</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment">#刷新dns</span></span><br><span class="line">ipconfig /flushdns</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Git push 命令报 hint: Updates were rejected because the remote contains work that you do 问题：<br>首先它的出现是因为在你上传的时候，远程仓库中有着本地仓库没有的文件，及导致本地仓库和远程有不同的开始点，也就是两个仓库没有共同的 commit 出现的无法提交。<br>至此大部分人的问题都能解决</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line"></span><br><span class="line">我们再次对它产生的原因分析一波发现，首先它的出现是因为在你上传的时候，远程仓库中有着本地仓库没有的文件，及导致本地仓库和远程有不同的开始点，也就是两个仓库没有共同的 commit 出现的无法提交。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/09/20-00-00/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2929,308 +3272,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/10/11/22-11-33/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/11/22-11-33/" class="post-title-link" itemprop="url">dwm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-11 22:11:33" itemprop="dateCreated datePublished" datetime="2020-10-11T22:11:33+08:00">2020-10-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="补丁"><a href="#补丁" class="headerlink" title="补丁"></a>补丁</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm</span><br><span class="line">patch &lt; xxxx.diff</span><br><span class="line">patch -R &lt; xxx.diff</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>dwm-alpha-xxx.diff：窗口透明，需配合picom</li>
-<li>dwm-awesomebar-xxx.diff：tabar隐藏窗口</li>
-<li>dwm-gaps-6.0.diff：窗口之间的缝隙</li>
-<li>dwm-focusonclick.xxx.diff：鼠标点击才窗口聚焦</li>
-<li>dwm-moveresize-xxx.diff：浮动模式，调整窗口位置大小</li>
-<li>dwm-autostart-xxxx.diff：自动运行脚本，这个补丁将在dwm进入主循环运行之前运行<del>/.dwm/autostart_blocking.sh和</del>/.dwm/autostart.sh &amp;，然后才启动dwm。可以省略其中一个或两个文件。 上面列出的文件分别在目录$XDG_DATA_HOME/DWM、$HOME/.local/Share/DWM和$HOME/.dwm中查找。将会在最先找到的目录中运行脚本，即使该目录下没有脚本。直接使用，将脚本文件放入<del>/.dwm下，同时确保没有上面提到的另两个目录。同时注意若</del>/.dwm/autostart_blocking.sh无法执行完毕，则将卡死。</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm</span><br><span class="line">sudo make clean install</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><h3 id="config-h"><a href="#config-h" class="headerlink" title="config.h"></a>config.h</h3><ul>
-<li>字体</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *fonts[]          = &#123; <span class="string">&quot;DejaVu Sans Mono:size=18&quot;</span> &#125;;</span><br><span class="line"><span class="comment">//static char *font = &quot;Droid Sans Mono:pixelsize=18:antialias=true:autohint=true&quot;;</span></span><br><span class="line"><span class="comment">//static char *font = &quot;Monaco:pixelsize=18:antialias=true:autohint=true&quot;;</span></span><br><span class="line"><span class="comment">//static char *font = &quot;Inconsolata:pixelsize=18:antialias=true:autohint=true&quot;;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>颜色</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray1[]       = <span class="string">&quot;#222222&quot;</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray2[]       = <span class="string">&quot;#444444&quot;</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray3[]       = <span class="string">&quot;#bbbbbb&quot;</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray4[]       = <span class="string">&quot;#eeeeee&quot;</span>;</span><br><span class="line"><span class="comment">//static const char col_cyan[]        = &quot;#005577&quot;;</span></span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_cyan[]        = <span class="string">&quot;#00d997&quot;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>自定义快捷键</li>
-</ul>
-<p>我们以flamshot为例，为flameshot设置截图快捷键</p>
-<p>首先在/<em>commands</em>/下添加你要设置快捷键的命令</p>
-<ul>
-<li>flameshot的截图命令是：flameshot gui，后面没有参数所以设为NULL，这条命令的名字我们设为flameshot</li>
-</ul>
-<p><code>static const char *flameshot[]  = &#123; &quot;flameshot&quot;,&quot;gui&quot;, NULL &#125;;</code></p>
-<p>进行快捷键和命令的绑定</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="number">0</span>,           XK_Print,      spawn,          &#123;.v = flameshot &#125; &#125;,</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>重新编译</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make clean install</span><br></pre></td></tr></table></figure>
-
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><ul>
-<li>启动脚本</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#~/.dwm/autostart.sh</span></span><br><span class="line">feh   --bg-fill ~/Downloads/bg.jpg</span><br><span class="line">picom &amp;</span><br><span class="line">albert &amp;</span><br><span class="line">nm-applet &amp;</span><br><span class="line">fcitx5 -d</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    bash ~/.dwm/dwm_status.sh</span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>状态脚本</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/.dwm/dwm_status.sh</span></span><br><span class="line"><span class="comment"># This function parses /proc/net/dev file searching for a line containing $interface data.</span></span><br><span class="line"><span class="comment"># Within that line, the first and ninth numbers after &#x27;:&#x27; are respectively the received and transmited bytes.</span></span><br><span class="line"><span class="keyword">function</span> get_bytes &#123;</span><br><span class="line"> <span class="comment"># Find active network interface</span></span><br><span class="line"> interface=$(ip route get 8.8.8.8 2&gt;/dev/null| awk <span class="string">&#x27;&#123;print $5&#125;&#x27;</span>)</span><br><span class="line"> line=$(grep <span class="variable">$interface</span> /proc/net/dev | <span class="built_in">cut</span> -d <span class="string">&#x27;:&#x27;</span> -f 2 | awk <span class="string">&#x27;&#123;print &quot;received_bytes=&quot;$1, &quot;transmitted_bytes=&quot;$9&#125;&#x27;</span>)</span><br><span class="line"> <span class="built_in">eval</span> <span class="variable">$line</span></span><br><span class="line"> now=$(<span class="built_in">date</span> +%s%N)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Function which calculates the speed using actual and old byte number.</span></span><br><span class="line"><span class="comment"># Speed is shown in KByte per second when greater or equal than 1 KByte per second.</span></span><br><span class="line"><span class="comment"># This function should be called each second.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> get_velocity &#123;</span><br><span class="line"> value=<span class="variable">$1</span></span><br><span class="line"> old_value=<span class="variable">$2</span></span><br><span class="line"> now=<span class="variable">$3</span></span><br><span class="line"></span><br><span class="line"> timediff=$((<span class="variable">$now</span> - <span class="variable">$old_time</span>))</span><br><span class="line"> velKB=$(<span class="built_in">echo</span> <span class="string">&quot;1000000000*(<span class="variable">$value</span>-<span class="variable">$old_value</span>)/1024/<span class="variable">$timediff</span>&quot;</span> | bc)</span><br><span class="line"> <span class="keyword">if</span> <span class="built_in">test</span> <span class="string">&quot;<span class="variable">$velKB</span>&quot;</span> -gt 1024</span><br><span class="line"> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> $(<span class="built_in">echo</span> <span class="string">&quot;scale=2; <span class="variable">$velKB</span>/1024&quot;</span> | bc)MB/s</span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;velKB&#125;</span>KB/s</span><br><span class="line"> <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get initial values</span></span><br><span class="line">get_bytes</span><br><span class="line">old_received_bytes=<span class="variable">$received_bytes</span></span><br><span class="line">old_transmitted_bytes=<span class="variable">$transmitted_bytes</span></span><br><span class="line">old_time=<span class="variable">$now</span></span><br><span class="line"></span><br><span class="line">get_bytes</span><br><span class="line"></span><br><span class="line"><span class="comment"># Calculates speeds</span></span><br><span class="line">vel_recv=$(get_velocity <span class="variable">$received_bytes</span> <span class="variable">$old_received_bytes</span> <span class="variable">$now</span>)</span><br><span class="line">vel_trans=$(get_velocity <span class="variable">$transmitted_bytes</span> <span class="variable">$old_transmitted_bytes</span> <span class="variable">$now</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print_date</span></span>()&#123;</span><br><span class="line"> <span class="comment">#date &#x27;+Y-%m-%d %H:%M:%S&#x27;</span></span><br><span class="line"> <span class="built_in">date</span> <span class="string">&#x27;+%m-%d %H:%M:%S&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">is_charging</span></span>()&#123;</span><br><span class="line"> charging=$(acpi -b | grep -Eo  <span class="string">&quot;Charging&quot;</span>)</span><br><span class="line"> <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$charging</span>&quot;</span> == <span class="string">&quot;Charging&quot;</span> ];</span><br><span class="line"> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;🔌&quot;</span>;</span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;🔋&quot;</span>;</span><br><span class="line"> <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">print_bat</span></span>()&#123;</span><br><span class="line"> remain=$(acpi -b |awk <span class="string">&#x27;&#123;print $4&#125;&#x27;</span>| grep -Eo <span class="string">&quot;[0-9]+&quot;</span> |<span class="built_in">paste</span> -sd+ |bc)</span><br><span class="line"> <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$remain</span>%&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print_volume</span></span>()&#123;</span><br><span class="line"> volume=<span class="string">&quot;<span class="subst">$(amixer get Master | tail -n1 |sed -r &#x27;s/.*\[(.*)</span>%\].*/\1/&#x27;)&quot;</span></span><br><span class="line"> <span class="keyword">if</span> <span class="built_in">test</span> <span class="string">&quot;<span class="variable">$volume</span>&quot;</span> -gt 0</span><br><span class="line"> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> -e <span class="string">&quot;V<span class="variable">$volume</span>%&quot;</span></span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> -e <span class="string">&quot;MM&quot;</span></span><br><span class="line"> <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">print_mem</span></span>()&#123;</span><br><span class="line"> memFree=$(($(grep -m1 &#x27;MemAvailable:&#x27; /proc/meminfo | awk &#x27;&#123;print <span class="variable">$2</span>&#125;&#x27;)/<span class="number">1024</span>))</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$memFree</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LOC=$(<span class="built_in">readlink</span> -f <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span><br><span class="line">DIR=$(<span class="built_in">dirname</span> <span class="string">&quot;<span class="variable">$LOC</span>&quot;</span>)</span><br><span class="line"><span class="built_in">export</span> IDENTIFIER=<span class="string">&quot;unicode&quot;</span></span><br><span class="line"></span><br><span class="line">. <span class="string">&quot;<span class="variable">$DIR</span>/dwm_resources.sh&quot;</span></span><br><span class="line">. <span class="string">&quot;<span class="variable">$DIR</span>/dwm_alsa.sh&quot;</span></span><br><span class="line"><span class="comment">#. &quot;$DIR/dwm_weather.sh&quot;</span></span><br><span class="line"><span class="comment">#. &quot;$DIR/dwm_network.sh&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xsetroot -name <span class="string">&quot;|<span class="subst">$(dwm_resources)</span>|⬇️ <span class="variable">$vel_recv</span> ⬆️ <span class="variable">$vel_trans</span>| <span class="subst">$(print_date)</span> |<span class="subst">$(dwm_alsa)</span> <span class="subst">$(is_charging)</span><span class="subst">$(print_bat)</span>&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Update old values to perform new calculations</span></span><br><span class="line">old_received_bytes=<span class="variable">$received_bytes</span></span><br><span class="line">old_transmitted_bytes=<span class="variable">$transmitted_bytes</span></span><br><span class="line">old_time=<span class="variable">$now</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>触摸板滑动反转</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get id of touchpad and the id of the field corresponding to</span></span><br><span class="line"><span class="comment"># natural scrolling</span></span><br><span class="line"><span class="built_in">id</span>=`xinput list | grep <span class="string">&quot;Touchpad&quot;</span> | <span class="built_in">cut</span> -d<span class="string">&#x27;=&#x27;</span> -f2 | <span class="built_in">cut</span> -d<span class="string">&#x27;[&#x27;</span> -f1`</span><br><span class="line">natural_scrolling_id=`xinput list-props <span class="variable">$id</span> | \</span><br><span class="line">                      grep <span class="string">&quot;Natural Scrolling Enabled (&quot;</span> \</span><br><span class="line">                      | <span class="built_in">cut</span> -d<span class="string">&#x27;(&#x27;</span> -f2 | <span class="built_in">cut</span> -d<span class="string">&#x27;)&#x27;</span> -f1`</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the property to true</span></span><br><span class="line">xinput --set-prop <span class="variable">$id</span> <span class="variable">$natural_scrolling_id</span> 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>声音</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A dwm_bar function to show the master volume of ALSA</span></span><br><span class="line"><span class="comment"># Joe Standring &lt;git@joestandring.com&gt;</span></span><br><span class="line"><span class="comment"># GNU GPLv3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dependencies: alsa-utils</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">dwm_alsa</span></span> () &#123;</span><br><span class="line">    VOL=$(amixer get Master | <span class="built_in">tail</span> -n1 | sed -r <span class="string">&quot;s/.*\[(.*)%\].*/\1/&quot;</span>)</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔇&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 0 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 33 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔈 %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 33 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 66 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔉 %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔊 %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;MUTE&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 0 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 33 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;VOL %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 33 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 66 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;VOL %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;VOL %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>天气</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A dwm_bar function to print the weather from wttr.in</span></span><br><span class="line"><span class="comment"># Joe Standring &lt;git@joestandring.com&gt;</span></span><br><span class="line"><span class="comment"># GNU GPLv3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dependencies: curl</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Change the value of LOCATION to match your city</span></span><br><span class="line"><span class="function"><span class="title">dwm_weather</span></span>() &#123;</span><br><span class="line">    LOCATION=<span class="string">&quot;chuangzhou&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="subst">$(curl -s wttr.in/$LOCATION?format=1)</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;WEA %s&quot;</span> <span class="string">&quot;<span class="subst">$(curl -s wttr.in/$LOCATION?format=1 | grep -o <span class="string">&quot;[0-9].*&quot;</span>)</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_weather</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>内存</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">dwm_resources</span></span> () &#123;</span><br><span class="line">    <span class="comment"># Used and total memory</span></span><br><span class="line">    MEMUSED=$(free -h | awk <span class="string">&#x27;(NR == 2) &#123;print $3&#125;&#x27;</span>)</span><br><span class="line">    MEMTOT=$(free -h |awk <span class="string">&#x27;(NR == 2) &#123;print $2&#125;&#x27;</span>)</span><br><span class="line">    <span class="comment"># CPU temperature</span></span><br><span class="line">    <span class="comment">#CPU=$(sysctl -n hw.sensors.cpu0.temp0 | cut -d. -f1)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Used and total storage in /home (rounded to 1024B)</span></span><br><span class="line">    <span class="comment">#STOUSED=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $3&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">##STOTOT=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $2&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">#STOPER=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $5&#125;&#x27;)</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment">#printf &quot;💻 MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s&quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment">#printf &quot;STA | MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s &quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span> </span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_resources</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>网速</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A dwm_bar function to show the current network connection/SSID, private IP, and public IP</span></span><br><span class="line"><span class="comment"># Joe Standring &lt;git@joestandring.com&gt;</span></span><br><span class="line"><span class="comment"># GNU GPLv3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dependencies: NetworkManager, curl</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">dwm_network</span></span> () &#123;</span><br><span class="line">    CONNAME=$(nmcli -a | grep <span class="string">&#x27;Wired connection&#x27;</span> | awk <span class="string">&#x27;NR==1&#123;print $1&#125;&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CONNAME</span>&quot;</span> = <span class="string">&quot;&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        CONNAME=$(nmcli -t -f active,ssid dev wifi | grep <span class="string">&#x27;^yes&#x27;</span> | <span class="built_in">cut</span> -c 5-)</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    PRIVATE=$(nmcli -a | grep <span class="string">&#x27;inet4 192&#x27;</span> | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span>)</span><br><span class="line">    PUBLIC=$(curl -s https://ipinfo.io/ip)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;🌐 %s %s | %s&quot;</span> <span class="string">&quot;<span class="variable">$CONNAME</span>&quot;</span> <span class="string">&quot;<span class="variable">$PRIVATE</span>&quot;</span> <span class="string">&quot;<span class="variable">$PUBLIC</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;NET %s %s | %s&quot;</span> <span class="string">&quot;<span class="variable">$CONNAME</span>&quot;</span> <span class="string">&quot;<span class="variable">$PRIVATE</span>&quot;</span> <span class="string">&quot;<span class="variable">$PUBLIC</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_network</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>系统托盘</li>
-</ul>
-<p>安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S trayer</span><br><span class="line">yay -S trayer-srg</span><br></pre></td></tr></table></figure>
-
-<p>编写脚本</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/.dwm/showTrayer.sh</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">result=$(ps ax |grep -v grep|grep trayer)</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$result</span>&quot;</span> == <span class="string">&quot;&quot;</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"> <span class="built_in">eval</span> <span class="string">&quot;trayer --transparent false --edge top --align right --width 21 --tint 0x88888888 --SetDockType true --margin 10 &amp;&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"> <span class="built_in">eval</span> <span class="string">&quot;killall trayer&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-
-<p>绑定快捷键</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *showTrayercmd[]  = &#123; <span class="string">&quot;/home/kk/.dwm/showTrayer.sh&quot;</span>, <span class="literal">NULL</span> &#125;;</span><br><span class="line"> &#123; MODKEY|ShiftMask,             XK_t, spawn,          &#123;.v = showTrayercmd &#125; &#125;,</span><br></pre></td></tr></table></figure>
-
-<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make clean uninstall</span><br></pre></td></tr></table></figure>
-
-<h2 id="基础快捷键"><a href="#基础快捷键" class="headerlink" title="基础快捷键"></a>基础快捷键</h2><ul>
-<li><p>打开新终端<br><code>Alt + shift + Enter</code></p>
-</li>
-<li><p>关闭一个窗口<br><code>Alt + shift + C</code></p>
-</li>
-<li><p>窗口横向排列<br><code>Alt + D</code></p>
-</li>
-<li><p>窗口竖向排列<br><code>Alt + I</code></p>
-</li>
-<li><p>窗口位置互换<br><code>Alt + Enter</code></p>
-</li>
-<li><p>在窗口间切换<br><code>Alt + J</code><br><code>Alt + k</code></p>
-</li>
-<li><p>改变窗口的长度/比例<br><code>Alt + H</code><br><code>Alt + L</code></p>
-</li>
-<li><p>平铺模式（tiling)<br><code>Alt + T</code></p>
-</li>
-<li><p>单窗口模式<br><code>Alt + M</code></p>
-</li>
-<li><p>浮动模式（float)<br><code>Alt + F</code></p>
-</li>
-<li><p>窗口模式切换<br><code>Alt + 空格</code><br><code>Alt + shift + 空格</code></p>
-</li>
-</ul>
-<h3 id="多屏幕问题"><a href="#多屏幕问题" class="headerlink" title="多屏幕问题"></a>多屏幕问题</h3><p>在主副屏之间移动焦点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 移动焦点至左边屏幕</span><br><span class="line">Mod + &lt; </span><br><span class="line"># 移动焦点至右边屏幕</span><br><span class="line">Mod + &gt;</span><br></pre></td></tr></table></figure>
-
-<p>在主副屏之间移动窗口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 移动窗口至左边屏幕</span><br><span class="line">Mod + shift + &lt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>切换标签页</li>
-</ul>
-<p><code>Mod + num</code></p>
-<ul>
-<li>移动窗口至某标签页</li>
-</ul>
-<p><code>Mod + shift + num</code></p>
-<hr>
-<h2 id="st"><a href="#st" class="headerlink" title="st"></a>st</h2><h2 id="补丁-1"><a href="#补丁-1" class="headerlink" title="补丁"></a>补丁</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> st</span><br><span class="line">patch &lt; xxxx.diff</span><br><span class="line">patch -R &lt; xxx.diff</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>st-alpha-x.x.diff：窗口透明</p>
-</li>
-<li><p>st-dracula-0.8.5.diff：主题</p>
-</li>
-<li><p>st-desktopentry-0.8.2.diff：启动程序</p>
-</li>
-<li><p>st-anysize-xxx.diff：满屏</p>
-</li>
-<li><p>st-scrollback-xxx.diff：滚动，config.h绑定案件</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; MODKEY,            XK_u,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br><span class="line">&#123; MODKEY,            XK_d,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br></pre></td></tr></table></figure></li>
-<li><p>st-scrollback-mouse-xxx.diff：支持鼠标滚动，需按shift键</p>
-</li>
-<li><p>st-scrollback-mouse-altscreen-xxx.diff：不用按shift键滚动</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/02/22/11-22-11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/22/11-22-11/" class="post-title-link" itemprop="url">vim插件管理Vundle安装</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-22 11:22:11" itemprop="dateCreated datePublished" datetime="2020-02-22T11:22:11+08:00">2020-02-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="安装Vundle插件管理器"><a href="#安装Vundle插件管理器" class="headerlink" title="安装Vundle插件管理器"></a>安装Vundle插件管理器</h2><p>github搜索Vundle，直接克隆</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.vim/bundle</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure>
-
-<h2 id="编辑-vimrc配置文件"><a href="#编辑-vimrc配置文件" class="headerlink" title="编辑.vimrc配置文件"></a>编辑.vimrc配置文件</h2><p>若没有则创建<br>在.vimrc中输入</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible   &quot;去除vi一致性</span><br><span class="line">filetype off </span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;Vundle插件位置</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">&quot;&quot;初始化</span><br><span class="line">call vundle#begin()</span><br><span class="line"></span><br><span class="line">Plugin &#x27;VundleVim/Vundle.vim&#x27;</span><br><span class="line"></span><br><span class="line">&quot;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;</span><br><span class="line">&quot;其他插件安装位置&quot;</span><br><span class="line">&quot;格式：Plugin &#x27;用户名/插件仓库名&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">call vundle#end()</span><br><span class="line">filetype plugin indent on &quot;加载vim自带的与插件的语法脚本等</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:pluginInstall  //安装插件</span><br><span class="line">:PluginClean   //删除插件</span><br><span class="line">:PluginUpdate   //更新</span><br><span class="line">:PluginSearch   //搜索</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -3296,20 +3341,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

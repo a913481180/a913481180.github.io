@@ -28,7 +28,7 @@
 <meta property="og:description" content="安装 gitsudo apt-get install git 配置 git123git config --global user.name &quot;用户名&quot;               &#x2F;&#x2F;个人账号git config --global user.email 123456@qq.com         &#x2F;&#x2F;个人邮箱地址# 上面的--global选项,表示以后管理git库时,默认使用上">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-12T04:12:12.000Z">
-<meta property="article:modified_time" content="2023-10-11T13:01:30.582Z">
+<meta property="article:modified_time" content="2023-12-18T12:32:33.164Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -190,7 +190,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+                <time title="修改时间：2023-12-18 20:32:33" itemprop="dateModified" datetime="2023-12-18T20:32:33+08:00">2023-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,17 +222,17 @@
 <p>删除分支</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">首先使用git branch -a查看当前所有分支。</span><br><span class="line">删除本地分支：git branch -d 分支1[,分支名2,分支名3...]</span><br><span class="line">删除远程分支: git push origin --delete 分支名1[,分支命2,分支名...]</span><br></pre></td></tr></table></figure>
 
-<h2 id="将-master-分支合并到当前迭代分支"><a href="#将-master-分支合并到当前迭代分支" class="headerlink" title="将 master 分支合并到当前迭代分支"></a>将 master 分支合并到当前迭代分支</h2><p>1、切换到master分支，拉取最新代码到本地</p>
+<h2 id="将-master-分支合并到当前迭代分支"><a href="#将-master-分支合并到当前迭代分支" class="headerlink" title="将 master 分支合并到当前迭代分支"></a>将 master 分支合并到当前迭代分支</h2><p>1、切换到 master 分支，拉取最新代码到本地</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到master分支</span></span><br><span class="line">git checkout master</span><br><span class="line"><span class="comment">#拉取最新代码</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 
-<p>2、切换到当前开发分支，合并master分支</p>
+<p>2、切换到当前开发分支，合并 master 分支</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到当前分支</span></span><br><span class="line">git checkout myBranch</span><br><span class="line"><span class="comment">#合并</span></span><br><span class="line">git merge master</span><br></pre></td></tr></table></figure>
 
-<p>3、代码冲突解决<br>这一步需要在编辑器上，把冲突部分解决掉（这一步特别重要，最好叫上相关负责人一起，防止弄丢master里的最新代码）</p>
+<p>3、代码冲突解决<br>这一步需要在编辑器上，把冲突部分解决掉（这一步特别重要，最好叫上相关负责人一起，防止弄丢 master 里的最新代码）</p>
 <p>4、当前开发分支代码提交</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m<span class="string">&quot;merge from master&quot;</span></span><br><span class="line">git push origin</span><br></pre></td></tr></table></figure>
 
-<h2 id="合并其他分支代码至master分支"><a href="#合并其他分支代码至master分支" class="headerlink" title="合并其他分支代码至master分支"></a>合并其他分支代码至master分支</h2><p>1.当前分支所有代码提交<br>先将dev分支上所有有代码提交至git上，提交的命令一般就是这几个，先复习下：</p>
+<h2 id="合并其他分支代码至-master-分支"><a href="#合并其他分支代码至-master-分支" class="headerlink" title="合并其他分支代码至 master 分支"></a>合并其他分支代码至 master 分支</h2><p>1.当前分支所有代码提交<br>先将 dev 分支上所有有代码提交至 git 上，提交的命令一般就是这几个，先复习下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将所有代码提交</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编写提交备注</span></span><br><span class="line">git commit -m <span class="string">&quot;修改bug&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交代码至远程分支</span></span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
 
 <p>2.切换当前分支至主干（master）</p>
@@ -246,25 +246,25 @@
 <h2 id="放弃本地更改"><a href="#放弃本地更改" class="headerlink" title="放弃本地更改"></a>放弃本地更改</h2><ol>
 <li>没有添加到暂存区</li>
 </ol>
-<p>没有执行git add , 可以用命令</p>
+<p>没有执行 git add , 可以用命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout – filepathname（eg: git checkout – test.cpp）</span><br></pre></td></tr></table></figure>
 
 <p>如果是放弃所有，直接执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .    </span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
 
-<p>此命令用来放弃掉所有还没有加入到缓存区（就是 git add 命令）的修改：新增的文件会被删除、删除的文件会恢复回来、修改的文件会回去。回到暂存区之前的样子。对之前保存在暂存区里的代码不会有任何影响。对commit提交到本地分支的代码就更没影响了。当然，如果你之前压根都没有暂存或commit，那就是回到你上次pull下来的样子了。</p>
-<p>但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。</p>
+<p>此命令用来放弃掉所有还没有加入到缓存区（就是 git add 命令）的修改：新增的文件会被删除、删除的文件会恢复回来、修改的文件会回去。回到暂存区之前的样子。对之前保存在暂存区里的代码不会有任何影响。对 commit 提交到本地分支的代码就更没影响了。当然，如果你之前压根都没有暂存或 commit，那就是回到你上次 pull 下来的样子了。</p>
+<p>但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于 git 是未知的。自己手动删除就好了。</p>
 <ol start="2">
-<li>已经添加到暂存区：<br>已经使用git add添加到暂存区，可以用命令</li>
+<li>已经添加到暂存区：<br>已经使用 git add 添加到暂存区，可以用命令</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD filepathname （比如： git reset HEAD readme.md）</span><br></pre></td></tr></table></figure>
 
 <p>同样放弃所有就是</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
 
-<p>执行完此命令后，文件状态就回归到第一种情况了，此时再按照情况1处理。</p>
+<p>执行完此命令后，文件状态就回归到第一种情况了，此时再按照情况 1 处理。</p>
 <ol start="3">
-<li>已经提交到本地仓库：<br>使用git commit提交到本地仓库，可以用命令回退到上一次commit的状态</li>
+<li>已经提交到本地仓库：<br>使用 git commit 提交到本地仓库，可以用命令回退到上一次 commit 的状态</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
 
@@ -272,26 +272,26 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line">git reset --hard commitid<span class="comment"># 回到其中你想要的某个版</span></span><br></pre></td></tr></table></figure>
 
 <ol start="4">
-<li>放弃本地修改，强制和远程同步<br>在使用Git的过程中，有些时候我们只想要git服务器中的最新版本的项目，对于本地的项目中修改不做任何理会，就需要用到Git pull的强制覆盖，具体代码如下：</li>
+<li>放弃本地修改，强制和远程同步<br>在使用 Git 的过程中，有些时候我们只想要 git 服务器中的最新版本的项目，对于本地的项目中修改不做任何理会，就需要用到 Git pull 的强制覆盖，具体代码如下：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master </span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 
 <h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><ol>
-<li>通过git reset是直接删除指定的commit</li>
+<li>通过 git reset 是直接删除指定的 commit</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line"></span><br><span class="line">git reset --hard</span><br><span class="line"></span><br><span class="line">git push origin HEAD --force <span class="comment"># 强制提交一次，之前错误的提交就从远程仓库删除</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>通过git revert是用一次新的commit来回滚之前的commit</li>
+<li>通过 git revert 是用一次新的 commit 来回滚之前的 commit</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line"></span><br><span class="line">git revert <span class="comment"># 撤销指定的版本，撤销也会作为一次提交进行保存</span></span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li><p>git revert 和 git reset的区别</p>
+<li><p>git revert 和 git reset 的区别</p>
 <ul>
-<li><p>git revert是用一次新的commit来回滚之前的commit，此次提交之前的commit都会被保留；</p>
+<li><p>git revert 是用一次新的 commit 来回滚之前的 commit，此次提交之前的 commit 都会被保留；</p>
 </li>
-<li><p>git reset是回到某次提交，提交及之前的commit都会被保留，但是此commit id之后的修改都会被删除</p>
+<li><p>git reset 是回到某次提交，提交及之前的 commit 都会被保留，但是此 commit id 之后的修改都会被删除</p>
 </li>
 </ul>
 </li>
@@ -332,6 +332,11 @@
 <li>git 提交=报错 443</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment">#刷新dns</span></span><br><span class="line">ipconfig /flushdns</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Git push 命令报 hint: Updates were rejected because the remote contains work that you do 问题：<br>首先它的出现是因为在你上传的时候，远程仓库中有着本地仓库没有的文件，及导致本地仓库和远程有不同的开始点，也就是两个仓库没有共同的 commit 出现的无法提交。<br>至此大部分人的问题都能解决</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br><span class="line"></span><br><span class="line">我们再次对它产生的原因分析一波发现，首先它的出现是因为在你上传的时候，远程仓库中有着本地仓库没有的文件，及导致本地仓库和远程有不同的开始点，也就是两个仓库没有共同的 commit 出现的无法提交。</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -412,7 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-git"><span class="nav-number">1.</span> <span class="nav-text">安装 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-git"><span class="nav-number">2.</span> <span class="nav-text">配置 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86-master-%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8D%E8%BF%AD%E4%BB%A3%E5%88%86%E6%94%AF"><span class="nav-number">4.</span> <span class="nav-text">将 master 分支合并到当前迭代分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF%E4%BB%A3%E7%A0%81%E8%87%B3master%E5%88%86%E6%94%AF"><span class="nav-number">5.</span> <span class="nav-text">合并其他分支代码至master分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BE%E5%BC%83%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9"><span class="nav-number">6.</span> <span class="nav-text">放弃本地更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BB%9A"><span class="nav-number">7.</span> <span class="nav-text">回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%91%BD%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">git 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">9.</span> <span class="nav-text">常见问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-git"><span class="nav-number">1.</span> <span class="nav-text">安装 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-git"><span class="nav-number">2.</span> <span class="nav-text">配置 git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86-master-%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8D%E8%BF%AD%E4%BB%A3%E5%88%86%E6%94%AF"><span class="nav-number">4.</span> <span class="nav-text">将 master 分支合并到当前迭代分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%85%B6%E4%BB%96%E5%88%86%E6%94%AF%E4%BB%A3%E7%A0%81%E8%87%B3-master-%E5%88%86%E6%94%AF"><span class="nav-number">5.</span> <span class="nav-text">合并其他分支代码至 master 分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BE%E5%BC%83%E6%9C%AC%E5%9C%B0%E6%9B%B4%E6%94%B9"><span class="nav-number">6.</span> <span class="nav-text">放弃本地更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BB%9A"><span class="nav-number">7.</span> <span class="nav-text">回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%91%BD%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">git 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">9.</span> <span class="nav-text">常见问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -426,20 +431,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

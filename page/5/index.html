@@ -155,6 +155,304 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/10/11/22-11-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/11/22-11-33/" class="post-title-link" itemprop="url">dwm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-11 22:11:33" itemprop="dateCreated datePublished" datetime="2020-10-11T22:11:33+08:00">2020-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="补丁"><a href="#补丁" class="headerlink" title="补丁"></a>补丁</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm</span><br><span class="line">patch &lt; xxxx.diff</span><br><span class="line">patch -R &lt; xxx.diff</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>dwm-alpha-xxx.diff：窗口透明，需配合picom</li>
+<li>dwm-awesomebar-xxx.diff：tabar隐藏窗口</li>
+<li>dwm-gaps-6.0.diff：窗口之间的缝隙</li>
+<li>dwm-focusonclick.xxx.diff：鼠标点击才窗口聚焦</li>
+<li>dwm-moveresize-xxx.diff：浮动模式，调整窗口位置大小</li>
+<li>dwm-autostart-xxxx.diff：自动运行脚本，这个补丁将在dwm进入主循环运行之前运行<del>/.dwm/autostart_blocking.sh和</del>/.dwm/autostart.sh &amp;，然后才启动dwm。可以省略其中一个或两个文件。 上面列出的文件分别在目录$XDG_DATA_HOME/DWM、$HOME/.local/Share/DWM和$HOME/.dwm中查找。将会在最先找到的目录中运行脚本，即使该目录下没有脚本。直接使用，将脚本文件放入<del>/.dwm下，同时确保没有上面提到的另两个目录。同时注意若</del>/.dwm/autostart_blocking.sh无法执行完毕，则将卡死。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm</span><br><span class="line">sudo make clean install</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><h3 id="config-h"><a href="#config-h" class="headerlink" title="config.h"></a>config.h</h3><ul>
+<li>字体</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *fonts[]          = &#123; <span class="string">&quot;DejaVu Sans Mono:size=18&quot;</span> &#125;;</span><br><span class="line"><span class="comment">//static char *font = &quot;Droid Sans Mono:pixelsize=18:antialias=true:autohint=true&quot;;</span></span><br><span class="line"><span class="comment">//static char *font = &quot;Monaco:pixelsize=18:antialias=true:autohint=true&quot;;</span></span><br><span class="line"><span class="comment">//static char *font = &quot;Inconsolata:pixelsize=18:antialias=true:autohint=true&quot;;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>颜色</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray1[]       = <span class="string">&quot;#222222&quot;</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray2[]       = <span class="string">&quot;#444444&quot;</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray3[]       = <span class="string">&quot;#bbbbbb&quot;</span>;</span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_gray4[]       = <span class="string">&quot;#eeeeee&quot;</span>;</span><br><span class="line"><span class="comment">//static const char col_cyan[]        = &quot;#005577&quot;;</span></span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> col_cyan[]        = <span class="string">&quot;#00d997&quot;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义快捷键</li>
+</ul>
+<p>我们以flamshot为例，为flameshot设置截图快捷键</p>
+<p>首先在/<em>commands</em>/下添加你要设置快捷键的命令</p>
+<ul>
+<li>flameshot的截图命令是：flameshot gui，后面没有参数所以设为NULL，这条命令的名字我们设为flameshot</li>
+</ul>
+<p><code>static const char *flameshot[]  = &#123; &quot;flameshot&quot;,&quot;gui&quot;, NULL &#125;;</code></p>
+<p>进行快捷键和命令的绑定</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="number">0</span>,           XK_Print,      spawn,          &#123;.v = flameshot &#125; &#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重新编译</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make clean install</span><br></pre></td></tr></table></figure>
+
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><ul>
+<li>启动脚本</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#~/.dwm/autostart.sh</span></span><br><span class="line">feh   --bg-fill ~/Downloads/bg.jpg</span><br><span class="line">picom &amp;</span><br><span class="line">albert &amp;</span><br><span class="line">nm-applet &amp;</span><br><span class="line">fcitx5 -d</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    bash ~/.dwm/dwm_status.sh</span><br><span class="line">    <span class="built_in">sleep</span> 1</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>状态脚本</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/.dwm/dwm_status.sh</span></span><br><span class="line"><span class="comment"># This function parses /proc/net/dev file searching for a line containing $interface data.</span></span><br><span class="line"><span class="comment"># Within that line, the first and ninth numbers after &#x27;:&#x27; are respectively the received and transmited bytes.</span></span><br><span class="line"><span class="keyword">function</span> get_bytes &#123;</span><br><span class="line"> <span class="comment"># Find active network interface</span></span><br><span class="line"> interface=$(ip route get 8.8.8.8 2&gt;/dev/null| awk <span class="string">&#x27;&#123;print $5&#125;&#x27;</span>)</span><br><span class="line"> line=$(grep <span class="variable">$interface</span> /proc/net/dev | <span class="built_in">cut</span> -d <span class="string">&#x27;:&#x27;</span> -f 2 | awk <span class="string">&#x27;&#123;print &quot;received_bytes=&quot;$1, &quot;transmitted_bytes=&quot;$9&#125;&#x27;</span>)</span><br><span class="line"> <span class="built_in">eval</span> <span class="variable">$line</span></span><br><span class="line"> now=$(<span class="built_in">date</span> +%s%N)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Function which calculates the speed using actual and old byte number.</span></span><br><span class="line"><span class="comment"># Speed is shown in KByte per second when greater or equal than 1 KByte per second.</span></span><br><span class="line"><span class="comment"># This function should be called each second.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> get_velocity &#123;</span><br><span class="line"> value=<span class="variable">$1</span></span><br><span class="line"> old_value=<span class="variable">$2</span></span><br><span class="line"> now=<span class="variable">$3</span></span><br><span class="line"></span><br><span class="line"> timediff=$((<span class="variable">$now</span> - <span class="variable">$old_time</span>))</span><br><span class="line"> velKB=$(<span class="built_in">echo</span> <span class="string">&quot;1000000000*(<span class="variable">$value</span>-<span class="variable">$old_value</span>)/1024/<span class="variable">$timediff</span>&quot;</span> | bc)</span><br><span class="line"> <span class="keyword">if</span> <span class="built_in">test</span> <span class="string">&quot;<span class="variable">$velKB</span>&quot;</span> -gt 1024</span><br><span class="line"> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> $(<span class="built_in">echo</span> <span class="string">&quot;scale=2; <span class="variable">$velKB</span>/1024&quot;</span> | bc)MB/s</span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;velKB&#125;</span>KB/s</span><br><span class="line"> <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get initial values</span></span><br><span class="line">get_bytes</span><br><span class="line">old_received_bytes=<span class="variable">$received_bytes</span></span><br><span class="line">old_transmitted_bytes=<span class="variable">$transmitted_bytes</span></span><br><span class="line">old_time=<span class="variable">$now</span></span><br><span class="line"></span><br><span class="line">get_bytes</span><br><span class="line"></span><br><span class="line"><span class="comment"># Calculates speeds</span></span><br><span class="line">vel_recv=$(get_velocity <span class="variable">$received_bytes</span> <span class="variable">$old_received_bytes</span> <span class="variable">$now</span>)</span><br><span class="line">vel_trans=$(get_velocity <span class="variable">$transmitted_bytes</span> <span class="variable">$old_transmitted_bytes</span> <span class="variable">$now</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print_date</span></span>()&#123;</span><br><span class="line"> <span class="comment">#date &#x27;+Y-%m-%d %H:%M:%S&#x27;</span></span><br><span class="line"> <span class="built_in">date</span> <span class="string">&#x27;+%m-%d %H:%M:%S&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">is_charging</span></span>()&#123;</span><br><span class="line"> charging=$(acpi -b | grep -Eo  <span class="string">&quot;Charging&quot;</span>)</span><br><span class="line"> <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$charging</span>&quot;</span> == <span class="string">&quot;Charging&quot;</span> ];</span><br><span class="line"> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;🔌&quot;</span>;</span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;🔋&quot;</span>;</span><br><span class="line"> <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">print_bat</span></span>()&#123;</span><br><span class="line"> remain=$(acpi -b |awk <span class="string">&#x27;&#123;print $4&#125;&#x27;</span>| grep -Eo <span class="string">&quot;[0-9]+&quot;</span> |<span class="built_in">paste</span> -sd+ |bc)</span><br><span class="line"> <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$remain</span>%&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print_volume</span></span>()&#123;</span><br><span class="line"> volume=<span class="string">&quot;<span class="subst">$(amixer get Master | tail -n1 |sed -r &#x27;s/.*\[(.*)</span>%\].*/\1/&#x27;)&quot;</span></span><br><span class="line"> <span class="keyword">if</span> <span class="built_in">test</span> <span class="string">&quot;<span class="variable">$volume</span>&quot;</span> -gt 0</span><br><span class="line"> <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> -e <span class="string">&quot;V<span class="variable">$volume</span>%&quot;</span></span><br><span class="line"> <span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> -e <span class="string">&quot;MM&quot;</span></span><br><span class="line"> <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">print_mem</span></span>()&#123;</span><br><span class="line"> memFree=$(($(grep -m1 &#x27;MemAvailable:&#x27; /proc/meminfo | awk &#x27;&#123;print <span class="variable">$2</span>&#125;&#x27;)/<span class="number">1024</span>))</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$memFree</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LOC=$(<span class="built_in">readlink</span> -f <span class="string">&quot;<span class="variable">$0</span>&quot;</span>)</span><br><span class="line">DIR=$(<span class="built_in">dirname</span> <span class="string">&quot;<span class="variable">$LOC</span>&quot;</span>)</span><br><span class="line"><span class="built_in">export</span> IDENTIFIER=<span class="string">&quot;unicode&quot;</span></span><br><span class="line"></span><br><span class="line">. <span class="string">&quot;<span class="variable">$DIR</span>/dwm_resources.sh&quot;</span></span><br><span class="line">. <span class="string">&quot;<span class="variable">$DIR</span>/dwm_alsa.sh&quot;</span></span><br><span class="line"><span class="comment">#. &quot;$DIR/dwm_weather.sh&quot;</span></span><br><span class="line"><span class="comment">#. &quot;$DIR/dwm_network.sh&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xsetroot -name <span class="string">&quot;|<span class="subst">$(dwm_resources)</span>|⬇️ <span class="variable">$vel_recv</span> ⬆️ <span class="variable">$vel_trans</span>| <span class="subst">$(print_date)</span> |<span class="subst">$(dwm_alsa)</span> <span class="subst">$(is_charging)</span><span class="subst">$(print_bat)</span>&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Update old values to perform new calculations</span></span><br><span class="line">old_received_bytes=<span class="variable">$received_bytes</span></span><br><span class="line">old_transmitted_bytes=<span class="variable">$transmitted_bytes</span></span><br><span class="line">old_time=<span class="variable">$now</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>触摸板滑动反转</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get id of touchpad and the id of the field corresponding to</span></span><br><span class="line"><span class="comment"># natural scrolling</span></span><br><span class="line"><span class="built_in">id</span>=`xinput list | grep <span class="string">&quot;Touchpad&quot;</span> | <span class="built_in">cut</span> -d<span class="string">&#x27;=&#x27;</span> -f2 | <span class="built_in">cut</span> -d<span class="string">&#x27;[&#x27;</span> -f1`</span><br><span class="line">natural_scrolling_id=`xinput list-props <span class="variable">$id</span> | \</span><br><span class="line">                      grep <span class="string">&quot;Natural Scrolling Enabled (&quot;</span> \</span><br><span class="line">                      | <span class="built_in">cut</span> -d<span class="string">&#x27;(&#x27;</span> -f2 | <span class="built_in">cut</span> -d<span class="string">&#x27;)&#x27;</span> -f1`</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the property to true</span></span><br><span class="line">xinput --set-prop <span class="variable">$id</span> <span class="variable">$natural_scrolling_id</span> 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>声音</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A dwm_bar function to show the master volume of ALSA</span></span><br><span class="line"><span class="comment"># Joe Standring &lt;git@joestandring.com&gt;</span></span><br><span class="line"><span class="comment"># GNU GPLv3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dependencies: alsa-utils</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">dwm_alsa</span></span> () &#123;</span><br><span class="line">    VOL=$(amixer get Master | <span class="built_in">tail</span> -n1 | sed -r <span class="string">&quot;s/.*\[(.*)%\].*/\1/&quot;</span>)</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔇&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 0 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 33 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔈 %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 33 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 66 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔉 %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;🔊 %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -eq 0 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;MUTE&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 0 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 33 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;VOL %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -gt 33 ] &amp;&amp; [ <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span> -le 66 ]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;VOL %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&quot;VOL %s%%&quot;</span> <span class="string">&quot;<span class="variable">$VOL</span>&quot;</span></span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>天气</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A dwm_bar function to print the weather from wttr.in</span></span><br><span class="line"><span class="comment"># Joe Standring &lt;git@joestandring.com&gt;</span></span><br><span class="line"><span class="comment"># GNU GPLv3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dependencies: curl</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Change the value of LOCATION to match your city</span></span><br><span class="line"><span class="function"><span class="title">dwm_weather</span></span>() &#123;</span><br><span class="line">    LOCATION=<span class="string">&quot;chuangzhou&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="subst">$(curl -s wttr.in/$LOCATION?format=1)</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;WEA %s&quot;</span> <span class="string">&quot;<span class="subst">$(curl -s wttr.in/$LOCATION?format=1 | grep -o <span class="string">&quot;[0-9].*&quot;</span>)</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_weather</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>内存</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">dwm_resources</span></span> () &#123;</span><br><span class="line">    <span class="comment"># Used and total memory</span></span><br><span class="line">    MEMUSED=$(free -h | awk <span class="string">&#x27;(NR == 2) &#123;print $3&#125;&#x27;</span>)</span><br><span class="line">    MEMTOT=$(free -h |awk <span class="string">&#x27;(NR == 2) &#123;print $2&#125;&#x27;</span>)</span><br><span class="line">    <span class="comment"># CPU temperature</span></span><br><span class="line">    <span class="comment">#CPU=$(sysctl -n hw.sensors.cpu0.temp0 | cut -d. -f1)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Used and total storage in /home (rounded to 1024B)</span></span><br><span class="line">    <span class="comment">#STOUSED=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $3&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">##STOTOT=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $2&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">#STOPER=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $5&#125;&#x27;)</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment">#printf &quot;💻 MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s&quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment">#printf &quot;STA | MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s &quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span> </span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_resources</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>网速</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A dwm_bar function to show the current network connection/SSID, private IP, and public IP</span></span><br><span class="line"><span class="comment"># Joe Standring &lt;git@joestandring.com&gt;</span></span><br><span class="line"><span class="comment"># GNU GPLv3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dependencies: NetworkManager, curl</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">dwm_network</span></span> () &#123;</span><br><span class="line">    CONNAME=$(nmcli -a | grep <span class="string">&#x27;Wired connection&#x27;</span> | awk <span class="string">&#x27;NR==1&#123;print $1&#125;&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$CONNAME</span>&quot;</span> = <span class="string">&quot;&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        CONNAME=$(nmcli -t -f active,ssid dev wifi | grep <span class="string">&#x27;^yes&#x27;</span> | <span class="built_in">cut</span> -c 5-)</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    PRIVATE=$(nmcli -a | grep <span class="string">&#x27;inet4 192&#x27;</span> | awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span>)</span><br><span class="line">    PUBLIC=$(curl -s https://ipinfo.io/ip)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;🌐 %s %s | %s&quot;</span> <span class="string">&quot;<span class="variable">$CONNAME</span>&quot;</span> <span class="string">&quot;<span class="variable">$PRIVATE</span>&quot;</span> <span class="string">&quot;<span class="variable">$PUBLIC</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;NET %s %s | %s&quot;</span> <span class="string">&quot;<span class="variable">$CONNAME</span>&quot;</span> <span class="string">&quot;<span class="variable">$PRIVATE</span>&quot;</span> <span class="string">&quot;<span class="variable">$PUBLIC</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_network</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>系统托盘</li>
+</ul>
+<p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S trayer</span><br><span class="line">yay -S trayer-srg</span><br></pre></td></tr></table></figure>
+
+<p>编写脚本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ~/.dwm/showTrayer.sh</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">result=$(ps ax |grep -v grep|grep trayer)</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$result</span>&quot;</span> == <span class="string">&quot;&quot;</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"> <span class="built_in">eval</span> <span class="string">&quot;trayer --transparent false --edge top --align right --width 21 --tint 0x88888888 --SetDockType true --margin 10 &amp;&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"> <span class="built_in">eval</span> <span class="string">&quot;killall trayer&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>绑定快捷键</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *showTrayercmd[]  = &#123; <span class="string">&quot;/home/kk/.dwm/showTrayer.sh&quot;</span>, <span class="literal">NULL</span> &#125;;</span><br><span class="line"> &#123; MODKEY|ShiftMask,             XK_t, spawn,          &#123;.v = showTrayercmd &#125; &#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make clean uninstall</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础快捷键"><a href="#基础快捷键" class="headerlink" title="基础快捷键"></a>基础快捷键</h2><ul>
+<li><p>打开新终端<br><code>Alt + shift + Enter</code></p>
+</li>
+<li><p>关闭一个窗口<br><code>Alt + shift + C</code></p>
+</li>
+<li><p>窗口横向排列<br><code>Alt + D</code></p>
+</li>
+<li><p>窗口竖向排列<br><code>Alt + I</code></p>
+</li>
+<li><p>窗口位置互换<br><code>Alt + Enter</code></p>
+</li>
+<li><p>在窗口间切换<br><code>Alt + J</code><br><code>Alt + k</code></p>
+</li>
+<li><p>改变窗口的长度/比例<br><code>Alt + H</code><br><code>Alt + L</code></p>
+</li>
+<li><p>平铺模式（tiling)<br><code>Alt + T</code></p>
+</li>
+<li><p>单窗口模式<br><code>Alt + M</code></p>
+</li>
+<li><p>浮动模式（float)<br><code>Alt + F</code></p>
+</li>
+<li><p>窗口模式切换<br><code>Alt + 空格</code><br><code>Alt + shift + 空格</code></p>
+</li>
+</ul>
+<h3 id="多屏幕问题"><a href="#多屏幕问题" class="headerlink" title="多屏幕问题"></a>多屏幕问题</h3><p>在主副屏之间移动焦点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 移动焦点至左边屏幕</span><br><span class="line">Mod + &lt; </span><br><span class="line"># 移动焦点至右边屏幕</span><br><span class="line">Mod + &gt;</span><br></pre></td></tr></table></figure>
+
+<p>在主副屏之间移动窗口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 移动窗口至左边屏幕</span><br><span class="line">Mod + shift + &lt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>切换标签页</li>
+</ul>
+<p><code>Mod + num</code></p>
+<ul>
+<li>移动窗口至某标签页</li>
+</ul>
+<p><code>Mod + shift + num</code></p>
+<hr>
+<h2 id="st"><a href="#st" class="headerlink" title="st"></a>st</h2><h2 id="补丁-1"><a href="#补丁-1" class="headerlink" title="补丁"></a>补丁</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> st</span><br><span class="line">patch &lt; xxxx.diff</span><br><span class="line">patch -R &lt; xxx.diff</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>st-alpha-x.x.diff：窗口透明</p>
+</li>
+<li><p>st-dracula-0.8.5.diff：主题</p>
+</li>
+<li><p>st-desktopentry-0.8.2.diff：启动程序</p>
+</li>
+<li><p>st-anysize-xxx.diff：满屏</p>
+</li>
+<li><p>st-scrollback-xxx.diff：滚动，config.h绑定案件</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; MODKEY,            XK_u,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br><span class="line">&#123; MODKEY,            XK_d,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br></pre></td></tr></table></figure></li>
+<li><p>st-scrollback-mouse-xxx.diff：支持鼠标滚动，需按shift键</p>
+</li>
+<li><p>st-scrollback-mouse-altscreen-xxx.diff：不用按shift键滚动</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/02/22/11-22-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/22/11-22-11/" class="post-title-link" itemprop="url">vim插件管理Vundle安装</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-22 11:22:11" itemprop="dateCreated datePublished" datetime="2020-02-22T11:22:11+08:00">2020-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="安装Vundle插件管理器"><a href="#安装Vundle插件管理器" class="headerlink" title="安装Vundle插件管理器"></a>安装Vundle插件管理器</h2><p>github搜索Vundle，直接克隆</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.vim/bundle</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br></pre></td></tr></table></figure>
+
+<h2 id="编辑-vimrc配置文件"><a href="#编辑-vimrc配置文件" class="headerlink" title="编辑.vimrc配置文件"></a>编辑.vimrc配置文件</h2><p>若没有则创建<br>在.vimrc中输入</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">set nocompatible   &quot;去除vi一致性</span><br><span class="line">filetype off </span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;Vundle插件位置</span><br><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">&quot;&quot;初始化</span><br><span class="line">call vundle#begin()</span><br><span class="line"></span><br><span class="line">Plugin &#x27;VundleVim/Vundle.vim&#x27;</span><br><span class="line"></span><br><span class="line">&quot;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;</span><br><span class="line">&quot;其他插件安装位置&quot;</span><br><span class="line">&quot;格式：Plugin &#x27;用户名/插件仓库名&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">call vundle#end()</span><br><span class="line">filetype plugin indent on &quot;加载vim自带的与插件的语法脚本等</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:pluginInstall  //安装插件</span><br><span class="line">:PluginClean   //删除插件</span><br><span class="line">:PluginUpdate   //更新</span><br><span class="line">:PluginSearch   //搜索</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/01/22/23-33-33/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1265,287 +1563,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2019/11/12/22-23-33/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/12/22-23-33/" class="post-title-link" itemprop="url">wifiDog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-12 22:23:33" itemprop="dateCreated datePublished" datetime="2019-11-12T22:23:33+08:00">2019-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="wifiDog"><a href="#wifiDog" class="headerlink" title="wifiDog"></a>wifiDog</h1><p>首先简介一下什么是Portal认证。Portal认证。通常也会叫Web认证。未认证用户上网时，设备强制用户登录到特定站点，用户能够免费訪问当中的服务。当用户须要使用互联网中的其他信息时，必须在门户站点进行认证。仅仅有认证通过后才干够使用互联网资源。</p>
-<p>现金非常多中国移动CMCC、中国联通、中国电信ChinaNet的WIFI都使用这样的认证接入方式。</p>
-<p>在OpenWRT上实现Portal认证，实际上早已有解决方式：</p>
-<ol>
-<li>chillispot，但原维护作者停止更新。被chillispot.info接管继续开发；</li>
-</ol>
-<p>2.coova-chilli，它是基于chillispot开发拓展的，功能最为强大；能够去官方看一下Coova-chilli；</p>
-<p>3.wifidog</p>
-<p>前两个因为原维护作者停止更新。笔者也没有深入研究，重点钻研了wifidog，Wifidog也是OpenWRT和DD-WRT中实现Portal比較出名的。</p>
-<p>可是。Wifidog仅仅是实现AP认证网关，须要配合外部的Portalserver才干使用。Portal主要是提供认证所需的WEB页面且实现认证计费等的功能。尽管这也有非常多商用解决方式，比如wiwiz、wifiap等，可是这些商业解决方式的目标都是盈利。即使能够免费使用。免费账号的功能和权限都受到了非常大的限制，比如不能自己定义页面。Web认证页面有广告等等。有条件的人可能打算自己搭建Portalserver。可是看看Wifidog的官方Wiki。对搭建过程实在是难以理解。后来，笔者发现网络上另一个authpuppy方案，官方站点<a target="_blank" rel="noopener" href="http://www.authpuppy.org.是一个已实现好的wifidog认证server,里面包括各种插件供你使用,官方的安装过程也非常easy,假设你懂的html和面向对象编程的相关知识且拥有一个server,能够自行改动认证页面.使用authpuppy也是一个不错的方案./">www.authpuppy.org。是一个已实现好的Wifidog认证server，里面包括各种插件供你使用，官方的安装过程也非常easy，假设你懂的HTML和面向对象编程的相关知识且拥有一个server，能够自行改动认证页面。使用authpuppy也是一个不错的方案。</a></p>
-<p>可是。即便如此，这些方案还是不够灵活，经过笔者认真钻研。查阅大量资料并经过多次抓包分析，最终理解了Wifidog的工作原理。</p>
-<p>接下来笔者将会跟你介绍怎样自行编写一个轻量级的Web Portal认证server。当然。这须要你具有程序设计基础，HTML、CSS当然是少不得的。后端开发语言能够使用PHP或Python或Java等。</p>
-<p>首先，须要简介一下Wifidog的工作原理：</p>
-<p>1.client发出初始化请求，比方訪问 <a target="_blank" rel="noopener" href="http://www.baidu.com./">www.baidu.com。</a></p>
-<p>2.网关的防火墙规则将这个请求重定向到本地网关的port上。这个port是Wifidog监听的port。</p>
-<p>3.Wfidog提供一个HTTP重定向回复，重定向到Web认证页面。重定向的Url的Querystring中包括了Gateway的ID，Gateway的FQDN以及其它的信息。</p>
-<p>4.用户向认证server发出认证请求</p>
-<p><a href="http://portal_server:port/login_script">http://portal_server:port/login_script</a>?</p>
-<p>gw_id=[GatewayID, default: “default”]</p>
-<p>gw_address=[GatewayAddress, internal IP of router]</p>
-<p>gw_port=[GatewayPort, port that wifidog Gateway is listening on]</p>
-<p>url=[user requested url]；</p>
-<p>5.网关返回一个（能够是自己定义的）splash（也称作“登录”）页面。</p>
-<p>6.用户提供他的凭据信息，比方username和password。</p>
-<p>7.成功认证的话，client将会被重定向到网关的自己的web页面上，而且带有一个认证凭据（一个一次性的token），内容比方：</p>
-<p><a href="http://GatewayIP:GatewayPort/wifidog/auth?token=[auth">http://GatewayIP:GatewayPort/wifidog/auth?token=[auth</a> token]；</p>
-<p>8.用户就是用获取到的凭据訪问网关。</p>
-<p>9.网关去认证server询问token的有效性。</p>
-<p>10.认证server确认token的有效性。</p>
-<p>11.网关发送重定向给client。以从认证服务器上获取 成功提示页面，重定向到 <a href="http://portal_server:port/portal_script">http://portal_server:port/portal_script</a> 这个位置。</p>
-<p>12.认证server通知客户请求成功，能够上网了。</p>
-<p>图解:</p>
-<p>图解Wifidog工作原理</p>
-<p>然后考察一下Wifidog的配置文件/etc/wifidog.conf，关键的配置项是：</p>
-<p>AuthServer {</p>
-<p>Hostname             (Mandatory; Default: NONE)</p>
-<p>SSLAvailable           (Optional; Default: no; Possible values: yes, no)</p>
-<p>SSLPort               (Optional; Default: 443)</p>
-<p>HTTPPort             (Optional; Default: 80)</p>
-<p>Path                  (Optional; Default: /wifidog/ Note:  The path must be both prefixed and suffixed by /.  Use a single / for server root.)</p>
-<p>LoginScriptPathFragment  (Optional; Default: login/?</p>
-<p>Note:  This is the script the user will be sent to for login.)</p>
-<p>PortalScriptPathFragment (Optional; Default: portal/? Note:  This is the script the user will be sent to after a successfull login.)</p>
-<p>MsgScriptPathFragment    (Optional; Default: gw_message.php? Note:  This is the script the user will be sent to upon error to read a readable message.)</p>
-<p>PingScriptPathFragment    (Optional; Default: ping/?</p>
-<p>Note:  This is the script the user will be sent to upon error to read a readable message.)</p>
-<p>AuthScriptPathFragment    (Optional; Default: auth/?</p>
-<p>Note:  This is the script the user will be sent to upon error to read a readable message.)</p>
-<p>}</p>
-<h1 id="Listen-on-this-port"><a href="#Listen-on-this-port" class="headerlink" title="Listen on this port"></a>Listen on this port</h1><p>GatewayPort 2060</p>
-<h1 id="Parameter-CheckInterval"><a href="#Parameter-CheckInterval" class="headerlink" title="Parameter: CheckInterval"></a>Parameter: CheckInterval</h1><h1 id="Default-60"><a href="#Default-60" class="headerlink" title="Default: 60"></a>Default: 60</h1><h1 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="How-many-seconds-should-we-wait-between-timeout-checks-This-is-also"><a href="#How-many-seconds-should-we-wait-between-timeout-checks-This-is-also" class="headerlink" title="How many seconds should we wait between timeout checks.  This is also"></a>How many seconds should we wait between timeout checks.  This is also</h1><h1 id="how-often-the-gateway-will-ping-the-auth-server-and-how-often-it-will"><a href="#how-often-the-gateway-will-ping-the-auth-server-and-how-often-it-will" class="headerlink" title="how often the gateway will ping the auth server and how often it will"></a>how often the gateway will ping the auth server and how often it will</h1><h1 id="update-the-traffic-counters-on-the-auth-server-Setting-this-too-low"><a href="#update-the-traffic-counters-on-the-auth-server-Setting-this-too-low" class="headerlink" title="update the traffic counters on the auth server.  Setting this too low"></a>update the traffic counters on the auth server.  Setting this too low</h1><h1 id="wastes-bandwidth-setting-this-too-high-will-cause-the-gateway-to-take"><a href="#wastes-bandwidth-setting-this-too-high-will-cause-the-gateway-to-take" class="headerlink" title="wastes bandwidth, setting this too high will cause the gateway to take"></a>wastes bandwidth, setting this too high will cause the gateway to take</h1><h1 id="a-long-time-to-switch-to-it’s-backup-auth-server-s"><a href="#a-long-time-to-switch-to-it’s-backup-auth-server-s" class="headerlink" title="a long time to switch to it’s backup auth server(s)."></a>a long time to switch to it’s backup auth server(s).</h1><p>CheckInterval 60</p>
-<h1 id="Parameter-ClientTimeout"><a href="#Parameter-ClientTimeout" class="headerlink" title="Parameter: ClientTimeout"></a>Parameter: ClientTimeout</h1><h1 id="Default-5"><a href="#Default-5" class="headerlink" title="Default: 5"></a>Default: 5</h1><h1 id="Optional-1"><a href="#Optional-1" class="headerlink" title="Optional"></a>Optional</h1><h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><h1 id="Set-this-to-the-desired-of-number-of-CheckInterval-of-inactivity-before-a-client-is-logged-out"><a href="#Set-this-to-the-desired-of-number-of-CheckInterval-of-inactivity-before-a-client-is-logged-out" class="headerlink" title="Set this to the desired of number of CheckInterval of inactivity before a client is logged out"></a>Set this to the desired of number of CheckInterval of inactivity before a client is logged out</h1><h1 id="The-timeout-will-be-INTERVAL-TIMEOUT"><a href="#The-timeout-will-be-INTERVAL-TIMEOUT" class="headerlink" title="The timeout will be INTERVAL * TIMEOUT"></a>The timeout will be INTERVAL * TIMEOUT</h1><p>ClientTimeout 5</p>
-<p>AuthServer是Portalserver的配置项。GatewayPort是Wifidog监听的地址。默认是2060。一般保持默认就可以；CheckInterval是心跳时长。单位是秒。什么是心跳呢，client认证成功之后，假设有网络訪问动作，Wifidog getway就会每隔一段时间訪问Portalserver的一个脚本。用于认证计费。当然。假设客户使用超时或超流量，也能够通过心跳强制client下线。ClientTimeout是用户一次认证成功后的网络訪问时长，超过这个时间须要又一次认证，这个时长并不是由ClientTimeout单独决定。取决于INTERVAL * TIMEOUT。</p>
-<p>具体的配置信息能够訪问：<a target="_blank" rel="noopener" href="http://dev.wifidog.org/browser/trunk/wifidog/wifidog.conf%E3%80%82">http://dev.wifidog.org/browser/trunk/wifidog/wifidog.conf。</a></p>
-<p>我们重点讨论Portalserver的配置项，Hostname是Portalserver的ip或者是域名。SSLAvailable和SSLPort是SSL加密配置，假设你的Portalserver有配置HTTPS加密，则须要配置这两项。Path是指你的脚本路径(举例。<a target="_blank" rel="noopener" href="http://a.com/to/%EF%BC%8C%E5%88%99a.com%E6%98%AF%E5%9F%9F%E5%90%8D%E3%80%82/to/%E6%98%AF%E8%B7%AF%E5%BE%84)%EF%BC%8C%E6%B3%A8%E6%84%8F%E8%B7%AF%E5%BE%84%E5%BF%85%E9%A1%BB%E4%BB%A5%E2%80%9C/%E2%80%9D%E5%BC%80%E5%A4%B4%E5%92%8C%E7%BB%93%E5%B0%BE%EF%BC%8C%E5%81%87%E8%AE%BE%E6%98%AF%E6%A0%B9%E8%B7%AF%E5%BE%84%E3%80%82%E5%88%99%E5%A1%AB%E4%B8%80%E4%B8%AA%E2%80%9C/%E2%80%9D%E5%B0%B1%E5%8F%AF%E4%BB%A5%EF%BC%9B%E6%8E%A5%E4%B8%8B%E6%9D%A5%E7%9A%845%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%8C%87%E6%98%8E%E4%BD%A0%E7%9A%84%E8%84%9A%E6%9C%AC%E5%90%8D%EF%BC%8C%E8%BF%99%E8%AF%B4%E6%98%8E%E4%BA%86%E6%88%91%E4%BB%AC%E9%A1%BB%E8%A6%81%E5%86%99%E4%BA%94%E4%B8%AA%E8%84%9A%E6%9C%AC%EF%BC%8C%E6%88%91%E4%BC%9A%E5%85%B7%E4%BD%93%E8%AF%B4%E6%98%8E%E3%80%82">http://a.com/to/，则a.com是域名。/to/是路径)，注意路径必须以“/”开头和结尾，假设是根路径。则填一个“/”就可以；接下来的5个配置指明你的脚本名，这说明了我们须要写五个脚本，我会具体说明。</a></p>
-<p>(下面文中涉及的“第几步”均是指Wifidog认证过程的步骤)</p>
-<p>LoginScriptPathFragment配置项配置的是登陆脚本，它通过GET方式接受传入參数gw_address、gw_port、gw_id、mac和url。gw_address是AP Getway的ip地址；gw_port是Wifidog监听的端口。即上面介绍的wifidog.conf中的GatewayPort配置；gw_id是AP Getway的id。配置文件wifidog.conf中能够配置，默认值是default，这个值的作用是当存在多个AP是，server或管理员能够依据不同的id确定用户的接入点；mac是客户计算机的网卡物理地址。注意不是AP网关的mac。这个mac是用来识别客户计算机的；url是客户初始訪问的Url。这些Querystring都是AP Getway向client发出重定向请求自己主动生成的。</p>
-<p>这个脚本同一时候须要提供登陆页面，假设登陆成功，须要向客户。端返回302重定向，重定向到：<a href="http://gw_address:gw_port/wifidog/auth">http://gw_address:gw_port/wifidog/auth</a>?</p>
-<p>token=[token]；即实现第7步。当中[token]是你自己自己主动生成的token字符串，随机生成一个字符串就可以，可是长度最好长些，安全性更高，另外，token须要依据不同用户保存，最好保存于数据库中，之后的AP Getway询问token有效性(第9步)还须要用到。这里最好使用cookie或session，使之后的登陆成功页面能够推断用户已经成功，阻止未登录成功的人訪问认证成功页面。</p>
-<p>PortalScriptPathFragment配置项配置的是登陆成功后server展示的脚本(第11步)，它通过GET方式接受1个传入參数，gw_id。这个脚本比較简单。告知用户登陆成功就可以，当然，最好重定向到用户之前想要方位的url。即第1步用户输入的URL。</p>
-<p>MsgScriptPathFragment配置项配置的是错误信息展示脚本，它通过GET方式接受一个传入參数message，这个脚本也非常easy，展示message的内容就可以。目的是当认证过程出现错误，AP Getway会重定向到这个脚本，URL中含有错误的信息。</p>
-<p>PingScriptPathFragment配置项配置的是心跳脚本。这个脚本它通过GET方式接受5个传入參数，gw_id，sys.uptime，sys.memfree，sys.load，wifidog.uptime，当中，sys.uptime指的是AP Getway的启动时间。sys.memfree指的是AP Getway的空暇内存，sys.load指的是AP Getway的CPU负载。wifidog.uptime指的是wifidog的启动时间，这个脚本每隔一段时间(Wifidog.conf里配置的CheckInterval)，Wifidog会自己主动訪问，可是其目的不是用户验证，而是帮助管理员管理AP节点，了解AP节点的负载情况，适时添加节点等，Wifidog訪问这个脚本时，须要这个脚本返回Pong。假设你没有统计AP节点负载数据的需求，能够丢弃这些数据。直接回应Pong，注意，这个回应仅仅包括“Pong”字符串。无需包括其它html标签。</p>
-<p>AuthScriptPathFragment是用户认证脚本。实现的是第10步的功能。这个脚本它通过GET方式接受7个传入參数：stage、ip、mac、token、incoming、outcoming和gw_id。当中stage的值是login，ip是client的ip，注意不是AP Getwap的ip；mac是client的网卡物理地址。token就是你在认证脚本生成并返回给client的。incoming和outcoming用于流量控制，默认值为0；gw_id同上。</p>
-<p>怎样识别用户登录成功，通过mac和token吧，LoginScriptPathFragment登陆脚本在用户登陆成功后须要记录用户的mac和token。然后在此处验证，假设匹配。回复Auth: 1，否则。回复Auth: 0。</p>
-<p>另外，这个脚本也是心跳脚本。每隔一段时间Wifidog会自己主动訪问，假设用户使用时间超过限制或流量超过额度。server能够及时回应Auth: 0结束用户的訪问。</p>
-<p>另外须要注意的是。回应相同无需包括html标签，另外，在Auth后的冒号和0/1之间，有一个空格，缺少这个空格也会导致出错。</p>
-<p>在配置Wifidog的配置文件wifidog.conf是。配置脚本的配置项都必须以“?</p>
-<p>”结尾，否则以GET方式传递的QueryString会因Url缺少问号訪问错误的脚本。</p>
-<p>看到了吧。只5个简单脚本。就能够实现利用Wifidog的Portal认证，当然。这过中还能够有非常多应用尚未发掘，比方流量控制、带宽控制、结合Radiusserver实现认证等。你的开发也能够更上一层楼。实现很多其它功能。只是笔者另一个建议。在登录页面除了username和password意外，最好加个验证码，防止不怀好意之人暴力破解。</p>
-<p>这样，你仅仅须要一个免费的空间，甚至是简单的百度云、新浪SAE等。就能够实现一个认证server。有的人可能还会问，能不能把这些脚本集成到路由器其中，我的回答是能，仅仅要你的脚本的功能不多。问题应该不大，可是这么做的风险比較大，路由的负载比較高，导致路由的执行会非常不稳定，甚至常常死机，这也是笔者亲身实践的结果，所以笔者不建议这么做。</p>
-<p>最后啰嗦提醒的是，WiFidog是使用iptables基于三层协议工作的，所以使用Wifidog的结果是。不仅是Wifi接入须要Portal认证，有线接入相同须要认证。</p>
-<p>避免这样的情况最简单的做法是设立mac白名单。可能有的人又会问。能不能做到仅是Wifi接入须要认证，有线接入的无需认证。有的人可能想更上一层楼，能不能开两个Wifi，仅当中一个Wifi须要认证，还有一个Wifi和有线网络不须要Portal认证，我的回答是能。至于详细做法，以后再介绍。</p>
-<hr>
-<ol>
-<li><p>在这个配置文件里面第一格不能是空格，否则就会出错。</p>
-</li>
-<li><p>GatewayAddress  192.168.1.1 //路由器地址</p>
-</li>
-<li><p>GatewayID 123456789 //与服务器authpuppy中对应</p>
-</li>
-<li><p>ExternalInterface eth0.2  //外网接口，这个是wan口，连接到Internet的接口</p>
-</li>
-<li><p>GatewayInterface  br-lan  //内网接口，这个是lan口，连接到局域网的接口</p>
-</li>
-<li><p>AuthServer {                        //认证服务器配置项                             </p>
-</li>
-</ol>
-<p>Hostname xx.xx.xx.xx //认证服务器IP地址或者名                                                 </p>
-<p>SSLAvailable no //认证服务器有HTTPS加密则配置该项，此处无</p>
-<p>SSLPort //认证服务器有HTTPS加密则配置该项，此处无</p>
-<p>Path /authpuppy/web/        (认证路径)</p>
-<p>/<strong><strong><strong><strong><strong><strong><strong><strong>此处为wifidog认证服务器的五个脚本文件，用于认证</strong></strong></strong></strong></strong></strong></strong></strong>****/</p>
-<p>LoginScriptPathFragment //登录展示的脚本，以get的方式传入gw_address、gw_port、gw_id、mac、url(AP的IP地址，wifidog监听端口，AP的ID，客户端mac地址，客户初始访问的url)</p>
-<p>PortalScriptPathFragment //客户端登陆成功后展示的脚本，之传入gw_id一个参数，用于告知用户登陆成功</p>
-<p>MsgScriptPathFragment //错误信息展示脚本，通过get方式传入一个参数message，用于展示认证中出现错误的页面</p>
-<p>PingScriptPathFragment //心跳脚本，通过get方式传入5个参数，gw_id，sys.uptime，sys.memfree，sys.load，wifidog.uptime；wifidog每隔一段时间访问一次这个脚本(时间间隔由CheckInterval决定)。注意，此脚本需要返回“Pong”字符串</p>
-<p>AuthScriptPathFragment //用户认证脚本，通过get的方式接受7各参数，stage,ip,mac,token,incoming,outcoming和gw_id；stage的值为login,ip为客户端IP，mac为客户端的mac地址，                  }还有这个Path，一开始我是设置成  /   根目录，结果不行，出现了这个问题：HTTP Response from Server: [HTTP/1.1 404 Not Found后来设置成这个目录才可以。还有一点要注意的是Path的目录两边都要加/，不然也会出错。</p>
-<ol start="7">
-<li><p>GatewayPort 2060 //wifidog的监听地址，通常保持默认</p>
-</li>
-<li><p>CheckInterval 60 //心跳时长，单位是秒，</p>
-</li>
-</ol>
-<p>心跳：客户端认证成功，如果有网络访问动作，Wifidog getway就会每隔一段时间访问Portal服务器的一个脚本，用于认证计费，当然，如果客户使用超时或超流量，也可以通过心跳强制客户端下线</p>
-<ol start="9">
-<li>ClientTimeout 5 //ClientTimeout是用户一次认证成功后的网络访问时长，超过这个时间需要重新认证</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2019/11/12/20-23-33/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/12/20-23-33/" class="post-title-link" itemprop="url">selenium</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-12 20:23:33" itemprop="dateCreated datePublished" datetime="2019-11-12T20:23:33+08:00">2019-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h1><h2 id="在使用-selenium-对当前窗口操作，报错-no-such-window-target-window-already-closed"><a href="#在使用-selenium-对当前窗口操作，报错-no-such-window-target-window-already-closed" class="headerlink" title="在使用 selenium 对当前窗口操作，报错 no such window: target window already closed"></a>在使用 selenium 对当前窗口操作，报错 no such window: target window already closed</h2><p>关闭了新窗口后，浏览器默认显示了百度首页，但是当我们操作百度首页的时候，报了错误：没有窗口，目标窗口已关闭，因为当前窗口句柄在第二个上面，但是我们给他删掉了，在操作第二个，就会报错，将用 switch_to.window()句柄切换到第一个标签即可</p>
-<h2 id="selenium-中执行使用-js-脚本"><a href="#selenium-中执行使用-js-脚本" class="headerlink" title="selenium 中执行使用 js 脚本"></a>selenium 中执行使用 js 脚本</h2><ul>
-<li>使用 JS 参数传参方式<br>在使用 Javascript 语句时，还可以动态传入参数或元素对象，Js 语句中使用占位符“argument[n]”来表示取第几个参数，如</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js = <span class="string">&quot;arguments[0].setAttribute(&#x27;style&#x27;, arguments[1]);</span></span><br><span class="line"><span class="string">element = driver.find_element_by_id(&quot;</span>kw<span class="string">&quot;)</span></span><br><span class="line"><span class="string">style = &quot;</span><span class="attr">background</span>: red; <span class="attr">border</span>: 2px solid yellow;<span class="string">&quot;</span></span><br><span class="line"><span class="string">driver.execute_script(js, element, style)</span></span><br></pre></td></tr></table></figure>
-
-<p>这里埋设了两个参数，一个是元素对象，另一个是样式字符串。</p>
-<ul>
-<li>获取 js 返回值</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = driver.<span class="title function_">execute_script</span>(<span class="string">&quot;return arguments[0].value&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="selenium-运行报错：element-not-interactable"><a href="#selenium-运行报错：element-not-interactable" class="headerlink" title="selenium 运行报错：element not interactable"></a>selenium 运行报错：element not interactable</h2><ul>
-<li>解决一：<br>写自动化时，没有考虑到等待时间，有时候代码运行过快，web 界面反应不过来，在这个报错的元素前添加一个等待时间，根据个人时间定等待时间<br>这个元素被隐藏了</li>
-<li>解决二:<ol>
-<li>打个比方，有一个退出按钮，你找到元素了，也定位了，但无法 click（），这个可能是被隐藏了，要将鼠标显示放在这个界面的位置，元素才能被找到 click（）</li>
-<li>元素被隐藏了，web 界面 css 元素被隐藏</li>
-</ol>
-</li>
-</ul>
-<h2 id="Selenium-如何使用句柄方式切换窗口"><a href="#Selenium-如何使用句柄方式切换窗口" class="headerlink" title="Selenium 如何使用句柄方式切换窗口"></a>Selenium 如何使用句柄方式切换窗口</h2><p>获取当前页面句柄：<code>driver.current_window_handle</code></p>
-<p>· 获取所有页面句柄：<code>driver.window_handles</code></p>
-<p>通过句柄，我们可以进行窗口的切换。</p>
-<p>· 切换窗口：<br><code>driver.switch_to.window(handle)</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1611,20 +1632,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

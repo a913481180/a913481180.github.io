@@ -155,6 +155,918 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/03/10/20-22-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/10/20-22-11/" class="post-title-link" itemprop="url">HTML超文本标记语言</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-10 20:22:11" itemprop="dateCreated datePublished" datetime="2021-03-10T20:22:11+08:00">2021-03-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTML-是用来描述网页的一种语言"><a href="#HTML-是用来描述网页的一种语言" class="headerlink" title="HTML 是用来描述网页的一种语言"></a>HTML 是用来描述网页的一种语言</h1><blockquote>
+<p>Hyper text markup Language(超文本标记语言)<br>超文本：通过超链接将文字＼图片＼音频＼动画等各种信息组织在一起</p>
+</blockquote>
+<ul>
+<li><p>w3c(world wide web consortium 万维网联盟)</p>
+<ul>
+<li>结构化标准语言(html,xml)</li>
+<li>表现标准语言(css)</li>
+<li>行为标准（dom,ecmaScript）</li>
+</ul>
+</li>
+<li><p>emmet语法：</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div*3快速生成3个<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">父子级关系：ul&gt;li</span><br><span class="line">兄弟关系：div+p</span><br><span class="line">生成带有类名的：.demo或#two</span><br><span class="line">有顺序的：加上$符号</span><br><span class="line">在生成的标签内写内容：&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>浏览器内核（渲染引擎）:</li>
+</ul>
+<blockquote>
+<p>对代码进行解析渲染</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>内核</th>
+<th>说明｜</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>Trident</td>
+<td>IE，猎豹，百度，360浏览器</td>
+</tr>
+<tr>
+<td>firefox</td>
+<td>Gecko</td>
+<td>火狐浏览器内核</td>
+</tr>
+<tr>
+<td>safari</td>
+<td>Webkit</td>
+<td>苹果浏览器内核</td>
+</tr>
+<tr>
+<td>chrome/Opera</td>
+<td>Blink</td>
+<td>Blink也是webkit的分支</td>
+</tr>
+</tbody></table>
+<h2 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h2><blockquote>
+<p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</p>
+</blockquote>
+<ul>
+<li>HTML 标签是由尖括号包围的关键词，比如<code>&lt;html&gt;</code></li>
+<li>HTML 标签通常是成对出现的，称为双标签,如<code>&lt;html&gt;</code> 和<code>&lt;/html&gt;</code>.也有单标签：<code>&lt;br/&gt;</code></li>
+<li>标签对中的第一个标签是开始标签，第二个标签是结束标签</li>
+<li>开始和结束标签也被称为开放标签和闭合标签</li>
+<li>标签中的同名属性，后写的会失效</li>
+</ul>
+<p>网页结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--告诉浏览器使用什么规范．使用html5标准进行解析网页--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--网页头部--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span>   </span><br><span class="line">  <span class="comment">&lt;!--网页标题--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>base</li>
+</ul>
+<p><code>&lt;base href=&quot;&quot; target=&quot;_top&quot;&gt;</code>所有链接标签的默认链接</p>
+<ul>
+<li>meta视口标签</li>
+</ul>
+<blockquote>
+<p>常用于指定网页描述、关键词、作者、事件等<br>seo</p>
+</blockquote>
+<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0&quot;&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name=”viewport”</td>
+<td>content=”width=(设置的是viewport宽度,可设置device-width特殊值),initial-scale=(初始缩放比，大于0的数字小于10),maximum-scale=（最大缩放比，大于0的数字)，minimum-scale=(最小缩放比，大于0的数字)，user-scalable=(用户是否可以缩放)”</td>
+</tr>
+<tr>
+<td>name=”http-equiv”</td>
+<td>额外添加头部内容</td>
+</tr>
+<tr>
+<td>http-equiv=”refresh”</td>
+<td><code>content=&quot;10;url=http://xxx&quot;</code> 自动刷新</td>
+</tr>
+<tr>
+<td>http-equiv=”X-UA-Compatible”</td>
+<td><code>content=&quot;IE=edge&quot;</code> ie兼容</td>
+</tr>
+<tr>
+<td>charset=’UTF-8’</td>
+<td>编码</td>
+</tr>
+<tr>
+<td>name=”author”</td>
+<td>content=”xxx,xxx,xx”网页作者</td>
+</tr>
+<tr>
+<td>name=”copyright”</td>
+<td>content=”2002-2022@版权”网页版权</td>
+</tr>
+<tr>
+<td>name=”keywords”</td>
+<td>content=”xxx,xxx,xx”网页关键词</td>
+</tr>
+<tr>
+<td>name=”description”</td>
+<td>content=”xxx,xxx,xx”网页描述</td>
+</tr>
+<tr>
+<td>name=”robots”</td>
+<td>content=”noindex</td>
+</tr>
+</tbody></table>
+<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><blockquote>
+<p>块级元素：元素独占一行，标签体内几乎能写任何元素<br>行内标签：由内容撑开,不独占一行, 只能写行内元素,写块级元素<br>行内块元素：</p>
+</blockquote>
+<ul>
+<li><p>标题标签:<code>&lt;h1&gt;----&lt;h6&gt;</code></p>
+</li>
+<li><p>段落标签：<code>&lt;p&gt;</code>标签体内不能写块元素,若写，会放到ｐ标签外面或脚手架报错</p>
+</li>
+<li><p>换行标签：<code>&lt;br /&gt;</code></p>
+</li>
+<li><p>分割线： <code>&lt;hr&gt;</code></p>
+</li>
+<li><p>保持原有格式显示：<code>&lt;pre&gt;&lt;/pre&gt;</code></p>
+</li>
+<li><p>字体：<code>&lt;h1&gt;这是1号标题&lt;/h1&gt; &lt;font size=&quot;6&quot;&gt;这是6号字体文本&lt;/font&gt; 可以使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式,使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式</code>  </p>
+</li>
+</ul>
+<blockquote>
+<p>嵌套问题：超链接不能嵌套超链接，p标签不能嵌套p标签，；</p>
+</blockquote>
+<ul>
+<li>内部样式表</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当单个文件需要特别样式时，就可以使用内部样式表。你可以在<span class="tag">&lt;<span class="name">head</span>&gt;</span> 部分通过 <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml">标签定义内部样式表:<span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-tag">body</span> &#123;<span class="attribute">background-color</span>:yellow;&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:blue;&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>外部样式表</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。</span><br><span class="line">使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。</span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--定义了文档与外部资源的关系--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;mystyle.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>背景色属性:<code>&lt;p style=&quot;background-color:green;&quot;&gt;这是一个段落。&lt;/p&gt;</code></p>
+</li>
+<li><p>加粗：<code>&lt;strong&gt;或&lt;b&gt;</code></p>
+</li>
+<li><p>斜体：<code>&lt;em&gt;或&lt;i&gt;</code></p>
+</li>
+<li><p>下划线：<code>&lt;ins&gt;或&lt;u&gt;</code></p>
+</li>
+<li><p>删除线：<code>&lt;del&gt;或&lt;s&gt;</code></p>
+</li>
+<li><p>盒子: <code>&lt;div&gt;与&lt;span&gt;</code></p>
+</li>
+<li><p>图像标签和路径：<code>&lt;img src=&quot;图像路径&quot;/&gt;</code></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>图片路径</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>图片不显示时提醒文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+</tr>
+<tr>
+<td>border</td>
+<td>边框</td>
+</tr>
+<tr>
+<td>width,height</td>
+<td>宽，高，只写其中一个，会等比例缩放另一个</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>图片分类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jpg</td>
+<td>有损压缩，支持的色彩丰富，占用空间小，不支持透明背景和动图</td>
+</tr>
+<tr>
+<td>png</td>
+<td>无损压缩，支持的色彩丰富，占用空间大，支持透明背景，不支持动图</td>
+</tr>
+<tr>
+<td>bmp</td>
+<td>不压缩，支持的色彩丰富，占用空间极大，不支持透明背景和动图</td>
+</tr>
+<tr>
+<td>gif</td>
+<td>仅支持256种颜色，支持简单透明背景和动图</td>
+</tr>
+<tr>
+<td>webp</td>
+<td>兼容性不太好，支持简单透明背景和动图</td>
+</tr>
+<tr>
+<td>base64</td>
+<td>用文本记录图片数据</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>超链接标签: <code>&lt;a href=&quot;跳转目标(外连接如www.xxx.com，内链接如xxx.html,空链接:#，下载链接)&quot; target=&quot;弹出方式(_self在本窗口打开，_blank在新窗口打开,_top跳出弹窗,&quot; download=&quot;下载文件&quot;&gt;文本图像&lt;/a&gt;</code></p>
+</li>
+<li><p>锚点:</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#one&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">h3</span> <span class="attr">id</span>=<span class="string">&quot;one&quot;</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;one&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>回到顶部<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>刷新页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:alert(999);&quot;</span>&gt;</span>执行脚本<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;tel:10010&quot;</span>&gt;</span>打电话<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;mailto:xxx@qq.com&quot;</span>&gt;</span>邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;sms:10086&quot;</span>&gt;</span>短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符实体:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格</td>
+<td><code>&amp;nbsp;</code></td>
+</tr>
+<tr>
+<td>小于号</td>
+<td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td>大于号</td>
+<td><code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td><code>￥</code></td>
+<td><code>&amp;yen;</code></td>
+</tr>
+<tr>
+<td>版权</td>
+<td><code>&amp;copy;</code></td>
+</tr>
+<tr>
+<td>乘号</td>
+<td><code>&amp;times;</code></td>
+</tr>
+<tr>
+<td>除号</td>
+<td><code>&amp;divide;</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>表格标签：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--table标签的width和heigth是最小值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">&quot;500px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1px&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span>  </span><br><span class="line">  <span class="comment">&lt;!--定义表格标签,属性引号可要可不要--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">caption</span>&gt;</span><span class="tag">&lt;/<span class="name">caption</span>&gt;</span><span class="comment">&lt;!--表格标题--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">thead</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span><span class="comment">&lt;!--表格头部--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span> </span><br><span class="line">   <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="comment">&lt;!--表头，td-&gt;th加粗文字--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="comment">&lt;!--列，必须嵌套在行中--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span><span class="comment">&lt;!--主体,tbody标签的height与thead、tfoot标签的height相加不能小于table标签的height--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span>&gt;</span><span class="comment">&lt;!--第1列的宽度--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span>&gt;</span><span class="comment">&lt;!--第2列的宽度--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">colgroup</span> <span class="attr">span</span>=<span class="string">&quot;6&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span>&gt;</span><span class="comment">&lt;!--接下来6列合成一组，一起设置宽度--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span> <span class="comment">&lt;!--行--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="comment">&lt;!--合并单元格,需要删除多余的单元格--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">2</span>&quot;&gt;</span><span class="comment">&lt;!--合并行,需要在下面行中删除一个单元格--&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span> <span class="attr">height</span>=<span class="string">&quot;100px&quot;</span>  <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span> <span class="comment">&lt;!--设置行高，宽无法设置--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span> <span class="comment">&lt;!--设置列宽，一整列都一致变化,哪个大用哪个--&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">tfoot</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span><span class="comment">&lt;!--页脚--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>sex<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>age<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>xiaomi<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>man<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>19<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>表格属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>left,center,right</td>
+<td>表格相对周围元素的对齐方式</td>
+</tr>
+<tr>
+<td>border</td>
+<td>1或”像素值”</td>
+<td>边框</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>像素值</td>
+<td>单元边沿与内容的的距离</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>像素值</td>
+<td>单元格间的空白</td>
+</tr>
+<tr>
+<td>width，height</td>
+<td></td>
+<td>高，宽</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>列表标签</p>
+<ul>
+<li>无序标签：</li>
+</ul>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 去掉小圆点：<code>list-style:none</code></p>
+<ul>
+<li>有序标签：</li>
+</ul>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义列表：</li>
+</ul>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dt</span>&gt;</span>名词<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词解释<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词解释<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dt</span>&gt;</span>分类<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dd</span>&gt;</span>分类１<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>表单域：</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span></span></span><br><span class="line"><span class="tag"><span class="attr">action</span>=<span class="string">&quot;url地址(服务器程序的url地址)&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">method</span>=<span class="string">&quot;提交方式(get/post)&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">name</span>=<span class="string">&quot;表单域名称&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">表单域控件</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>用<code>&lt;input type=&quot;sumit&quot; value=&quot;提交&quot; /&gt;</code>提交数据，用<code>&lt;input type=&quot;reset&quot; value=&quot;重置&quot; /&gt;</code>重置输入；input必须放在form标签内才能提交，所有提交的数据必须有name属性；</p>
+<ul>
+<li><p>input表单元素：<br><code>&lt;input type=&quot;属性值&quot; name=&quot;名称;单选按钮与复选框应是相同的name值&quot; value=&quot;规定input元素的值&quot; checked=&quot;首次加载时选中&quot; maxlength=&quot;输入字段的最大长度&quot; hidden readonly disabled placeholder=&quot;xx&quot; required pattern=&quot;[0-9]&quot;/&gt;</code></p>
+</li>
+<li><p>input 样式修改</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span>&#123;</span><br><span class="line"><span class="comment">/*除边框：*/</span></span><br><span class="line"><span class="attribute">border</span>:none;</span><br><span class="line">ouline:none;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*居中：*/</span></span><br><span class="line"><span class="attribute">vertical-align</span>:middle;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*隐藏radio的按钮:*/</span></span><br><span class="line"><span class="attribute">display</span>:none</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>type属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>button</td>
+<td>按键</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>定义复选框,name写成同样的则为一组，值为value。设置checked则默认选中</td>
+</tr>
+<tr>
+<td>file</td>
+<td>供文件上传</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>隐藏输入字段</td>
+</tr>
+<tr>
+<td>image</td>
+<td>图像形式提交按钮</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码字段</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>定义单选按钮,name写成同样的则为一组，值为value,不写则为on,设置checked则默认选中</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>重置按钮,value则为标签体的值,不能写name</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>提交按钮,value则为标签体的值,不能写name</td>
+</tr>
+<tr>
+<td>text</td>
+<td>输入字段，value默认值，maxlength最大长度</td>
+</tr>
+</tbody></table>
+<ul>
+<li>label标签：用于绑定表单域，点击自动调整到输入框</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>for=&quot;sex&quot;&gt; 男\<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">id</span>=<span class="string">&quot;sex&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>select:下拉列表</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">/*至少包含一对option*/</span><br><span class="line"><span class="tag">&lt;<span class="name">option</span>&gt;</span>\<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span>&gt;</span>\<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">/*默认选中*/</span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">&quot;selected&quot;</span>\&gt;</span>xxx\<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>textarea:多行文本输入框</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">&quot;3&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;28&quot;</span>&gt;</span>   /*cols:每行字符数； rows：行数*/</span><br><span class="line">内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>iframe</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&#x27;xxx&#x27;</span> <span class="attr">name</span>=<span class="string">&quot;mainFrame&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100px&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- name属性可以和超链接或表单的target配合用来显示不同内容 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">&quot;mainFrame&quot;</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">target</span>=<span class="string">&quot;mainFrame&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;reset&quot;</span> <span class="attr">value</span>=<span class="string">&quot;重置按钮&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> &gt;</span>默认表达提交按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="HTML5特性"><a href="#HTML5特性" class="headerlink" title="HTML5特性"></a>HTML5特性</h3><h4 id="1-新增语义化标签"><a href="#1-新增语义化标签" class="headerlink" title="1.新增语义化标签"></a>1.新增语义化标签</h4><p>标签语义化指根据网页中的内容结构，选择适合的标签进行编写。</p>
+<ul>
+<li>布局标签</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span>  元素页面主内容之外的某些内容（比如侧栏）<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span> 定义文档中的节。<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">summary</span>&gt;</span> 定义 details 元素的可见标题。<span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line">  定义用户能够查看或隐藏的额外细节。</span><br><span class="line"><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>  定义 figure 元素的标题。<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span> 规定自包含内容，比如图示、图表、照片、代码清单等。<span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span><span class="tag">&lt;/<span class="name">sub</span>&gt;</span>下标文字</span><br><span class="line"><span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span>上标文字</span><br><span class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">code</span>&gt;</span>代码块</span><br><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span> 定义重要的或强调的文本。<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">time</span>&gt;</span><span class="tag">&lt;/<span class="name">time</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--//文本注音--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ruby</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>汉<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rt</span>&gt;</span>han<span class="tag">&lt;/<span class="name">rt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ruby</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--进度条--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">progress</span> <span class="attr">max</span>=<span class="string">&quot;100&quot;</span> <span class="attr">value</span>=<span class="string">&quot;10&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">progress</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meter</span> <span class="attr">min</span>=<span class="string">&quot;0&quot;</span> <span class="attr">max</span>=<span class="string">&quot;100&quot;</span> <span class="attr">value</span>=<span class="string">&quot;30&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">meter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--列表--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">datalist</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;xx&quot;</span>&gt;</span>test<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-新增多媒体标签"><a href="#2-新增多媒体标签" class="headerlink" title="2.新增多媒体标签"></a>2.新增多媒体标签</h4><ul>
+<li><code>&lt;video&gt;</code></li>
+</ul>
+<p><code>&lt;video src=&quot;&quot; controls=&quot;controls&quot; &gt;&lt;/video&gt;</code></p>
+<p>属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>autoplay</td>
+<td>自动播放，谷歌默认禁止，可添加muted属性解决</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>播放控件</td>
+</tr>
+<tr>
+<td>width;height</td>
+<td>宽高</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>auto(加载视频);none(不加载);metadata(加载基本信息，如时长)</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>imgurl(加载等待图片)</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>静音播放</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>&lt;audio&gt;</code></li>
+</ul>
+<p><code>&lt;audio src=&quot;&quot; &gt;&lt;/audio&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>音频路径</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>静音</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放，谷歌根据媒体参与度来判断是否自动自动播放</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>auto(加载视频);none(不加载);metadata(加载基本信息，如时长)</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>播放控件</td>
+</tr>
+</tbody></table>
+<h4 id="3-input类型"><a href="#3-input类型" class="headerlink" title="3.input类型"></a>3.input类型</h4><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type=”email”</td>
+<td>限制必须输入email类型</td>
+</tr>
+<tr>
+<td>type=”number”</td>
+<td>数字类型</td>
+</tr>
+<tr>
+<td>type=”search”</td>
+<td>搜索框</td>
+</tr>
+<tr>
+<td>type=”ranger”</td>
+<td>范围滑块</td>
+</tr>
+<tr>
+<td>type=”color”</td>
+<td>颜色</td>
+</tr>
+<tr>
+<td>type=”tel”</td>
+<td>手机号码</td>
+</tr>
+<tr>
+<td>type=”date”</td>
+<td>日期</td>
+</tr>
+<tr>
+<td>type=”month”</td>
+<td>月</td>
+</tr>
+<tr>
+<td>type=”week”</td>
+<td>周</td>
+</tr>
+<tr>
+<td>type=”time”</td>
+<td>时间</td>
+</tr>
+<tr>
+<td>type=”datetime-local”</td>
+<td>日期时间</td>
+</tr>
+<tr>
+<td>maxlength=””</td>
+<td>允许输入最大长度,不会提示</td>
+</tr>
+<tr>
+<td>max</td>
+<td>允许输入最大长度</td>
+</tr>
+<tr>
+<td>min</td>
+<td>允许输入最大长度</td>
+</tr>
+</tbody></table>
+<h4 id="4-表单属性"><a href="#4-表单属性" class="headerlink" title="4.表单属性"></a>4.表单属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>placeholder</td>
+<td>提示文本</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>可多选文件提交</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td>自动聚焦</td>
+</tr>
+<tr>
+<td>autocomplete</td>
+<td>值为on,off。只能用于text输入框. 记录输入历史</td>
+</tr>
+<tr>
+<td>required</td>
+<td>不能为空，必填</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>正则校验，不能用于textarea,空输入不校验</td>
+</tr>
+</tbody></table>
+<h3 id="5-canvas"><a href="#5-canvas" class="headerlink" title="5. canvas"></a>5. canvas</h3><p>使用js在网页上绘制图像<br><code>&lt;canvas id=&#39;&#39;  width=&#39;&#39; height=&#39;&#39;&gt;&lt;/canvas&gt;</code></p>
+<h3 id="本地存储localStorage"><a href="#本地存储localStorage" class="headerlink" title="本地存储localStorage"></a>本地存储localStorage</h3><p>无时间限制，5M，只存储字符串</p>
+<h3 id="地理定位Geolocation"><a href="#地理定位Geolocation" class="headerlink" title="地理定位Geolocation"></a>地理定位Geolocation</h3><h3 id="socket通信：webscoket"><a href="#socket通信：webscoket" class="headerlink" title="socket通信：webscoket"></a>socket通信：webscoket</h3><h3 id="后台js：webworkers"><a href="#后台js：webworkers" class="headerlink" title="后台js：webworkers"></a>后台js：webworkers</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/03/03/16-32-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/03/16-32-11/" class="post-title-link" itemprop="url">web前端开发技术</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-03 16:32:11" itemprop="dateCreated datePublished" datetime="2021-03-03T16:32:11+08:00">2021-03-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="web前端开发技术的优化策略"><a href="#web前端开发技术的优化策略" class="headerlink" title="web前端开发技术的优化策略"></a>web前端开发技术的优化策略</h2><p>网络页面的核心价值在于传递消费者所需要的信息并且以此来满足消费者相应的需求。而对于消费者和体验用户来说，网页加载的快慢直接影响了这个网页的访问量。如果用户在等待网站信息呈现的事件过长，很大程度上会对其消费体验造成一定影响，会造成用户无法将信息进行高效利用。基于这样的考虑，对web前端技术进行优化并体现信息的真正价值具有重要的意义。web前端技术的优化对网络性能的改善、工作效率的提高都发挥着重要作用。可以从以下几个方面开展工作，对web前端技术进行优化：</p>
+<ol>
+<li><p>减少HTTP请求数<br>减少不必要的消耗时间的Http请求数，是web前端开发技术的一个重要方面。一个完整的Http包括DNS寻址、发送双方的数据、建立浏览器和服务器间的连接并传输数据、等待服务器响应等等多个环节。在这个过程中，每一个Http请求都必须携带数据，因此每一个请求都不免占用宽带资源，导致用户等待时间增加。要减少网页中Http的请求，经常被采用的方法有：将多个CSS文件或者JavaScript文件合并成一个；优化图片地图，在一个图像上划分不同区域以及注入不通过映射的链接；保持图片和文本一起显示和下载；通过利用CSS background进行背景图的绝对定位，这种做法可以提高网页的载入速度，提高用户的体验。</p>
+</li>
+<li><p>优化文件的规模<br>文件规模能对网页加载造成一定的影响 ，这个过程包括压缩JavaScript和CSS文件以及对相应的代码进行优化。优化代码的工作主要是删除一些不必要的Html标签，避免内联式和优化CSS代码。</p>
+</li>
+<li><p>减少DNS查找<br>DNS查找的时间开销很大，这是国内许多网站的通病。在一次DNS的解析过程中会耗费20~120ms，若DNS解析请求过于频繁，就会导致用户等待时间的增加，同时也会使信息传输的质量有所下降。并且在DNS查找结束前，浏览器将无法下载该域名下的任何东西。对于国内的站点来说，过多使用站外的Widget（微件），也易引起DNS查找过多的问题。适当减少DNS查找能有效地提高网页地加载速度，对于web前端开发技术来说，DNS查找的优化也非常重要。</p>
+</li>
+<li><p>杜绝无用响应<br>在用户访问网站的时候，常常会遇到无用响应，如404错误或拒绝访问错误，这是没有找到文件引起的。Http请求耗费时间过长，而较长的等待时间却得到一个无用的响应页面，大大降低了用户体验。对页面的链接进行充分的测试加上对web服务器Errorr日志的不断跟踪能有效地减少404错误。大多时候，这种错误由于定位稍难而容易被技术人员忽略。</p>
+</li>
+<li><p>有效避免重定向<br>网页的重定向会耗费一定的时间，这也是造成用户等待时间过长的一个因素。重定向问题的产生有很多，每增加一次重定向就必然会增加一次对web的请求，所以重定向问题应该尽量避免。这要求技术人员能对web站点的子目录后加一个”/“，这种做法能有效避免重定向。</p>
+</li>
+<li><p>优化网页内容<br>CSS的全称是层叠样式表，层叠表明后面的CSS可以覆盖前面的，高级的可以覆盖低级的，因此浏览器会在完全加载完后才考虑开展渲染工作。根据CSS这样的特性，要实现web的优化，可以考虑将样式表放在顶部。另外，可以将script放在底部，该举措是为了防止script脚本阻塞当前页面，从而造成下载速度较慢，页面的加载时间过长等问题的产生。</p>
+</li>
+</ol>
+<h2 id="Web-实时推送技术"><a href="#Web-实时推送技术" class="headerlink" title="Web 实时推送技术"></a>Web 实时推送技术</h2><h3 id="一、双向通信"><a href="#一、双向通信" class="headerlink" title="一、双向通信"></a>一、双向通信</h3><p>HTTP 协议有一个缺陷：通信只能由客户端发起。举例来说，我们想了解今天的天气，只能是客户端向服务器发出请求，服务器返回查询结果。HTTP 协议做不到服务器主动向客户端推送信息。这种单向请求的特点，注定了如果服务器有连续的状态变化，客户端要获知就非常麻烦。在WebSocket协议之前，有三种实现双向通信的方式：轮询（polling）、长轮询（long-polling）和iframe流（streaming）。</p>
+<ol>
+<li>轮询（polling）<br>轮询是客户端和服务器之间会一直进行连接，每隔一段时间就询问一次。其缺点也很明显：连接数会很多，一个接受，一个发送。而且每次发送请求都会有Http的Header，会很耗流量，也会消耗CPU的利用率。</li>
+</ol>
+<ul>
+<li>优点：实现简单，无需做过多的更改</li>
+<li>缺点：轮询的间隔过长，会导致用户不能及时接收到更新的数据；轮询的间隔过短，会导致查询请求过多，增加服务器端的负担</li>
+</ul>
+<ol start="2">
+<li>长轮询（long-polling）</li>
+</ol>
+<p>长轮询是对轮询的改进版，客户端发送HTTP给服务器之后，看有没有新消息，如果没有新消息，就一直等待。当有新消息的时候，才会返回给客户端。在某种程度上减小了网络带宽和CPU利用率等问题。由于http数据包的头部数据量往往很大（通常有400多个字节），但是真正被服务器需要的数据却很少（有时只有10个字节左右），这样的数据包在网络上周期性的传输，难免对网络带宽是一种浪费。</p>
+<ul>
+<li>优点：比 Polling 做了优化，有较好的时效性</li>
+<li>缺点：保持连接会消耗资源; 服务器没有返回有效数据，程序超时。</li>
+</ul>
+<ol start="3">
+<li>iframe流（streaming）<br>iframe流方式是在页面中插入一个隐藏的iframe，利用其src属性在服务器和客户端之间创建一条长连接，服务器向iframe传输数据（通常是HTML，内有负责插入信息的javascript），来实时更新页面。</li>
+</ol>
+<ul>
+<li>优点：消息能够实时到达；浏览器兼容好</li>
+<li>缺点：服务器维护一个长连接会增加开销；IE、chrome、Firefox会显示加载没有完成，图标会不停旋转。</li>
+</ul>
+<h3 id="二、WebSocket"><a href="#二、WebSocket" class="headerlink" title="二、WebSocket"></a>二、WebSocket</h3><ol>
+<li>什么是websocket<br>WebSocket是一种全新的协议，随着HTML5草案的不断完善，越来越多的现代浏览器开始全面支持WebSocket技术了，它将TCP的Socket（套接字）应用在了webpage上，从而使通信双方建立起一个保持在活动状态连接通道。</li>
+</ol>
+<p>一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所有的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍是客户端，而一旦确立WebSocket通信连接，不论服务器还是客户端，任意一方都可直接向对方发送报文。</p>
+<p>初次接触 WebSocket 的人，都会问同样的问题：我们已经有了 HTTP 协议，为什么还需要另一个协议？</p>
+<ol start="2">
+<li>HTTP的局限性<br>HTTP是半双工协议，也就是说，在同一时刻数据只能单向流动，客户端向服务器发送请求(单向的)，然后服务器响应请求(单向的)。<br>服务器不能主动推送数据给浏览器。这就会导致一些高级功能难以实现，诸如聊天室场景就没法实现。</li>
+<li>WebSocket的特点<br>支持双向通信，实时性更强<br>可以发送文本，也可以发送二进制数据<br>减少通信量：只要建立起WebSocket连接，就希望一直保持连接状态。和HTTP相比，不但每次连接时的总开销减少，而且由于WebSocket的首部信息很小，通信量也相应减少了相对于传统的HTTP每次请求-应答都需要客户端与服务端建立连接的模式，WebSocket是类似Socket的TCP长连接的通讯模式，一旦WebSocket连接建立后，后续数据都以帧序列的形式传输。在客户端断开WebSocket连接或Server端断掉连接前，不需要客户端和服务端重新发起连接请求。在海量并发和客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。</li>
+</ol>
+<h3 id="三、Web-实时推送技术的比较"><a href="#三、Web-实时推送技术的比较" class="headerlink" title="三、Web 实时推送技术的比较"></a>三、Web 实时推送技术的比较</h3><p>方式类型技术实现优点缺点适用场景</p>
+<ul>
+<li>轮询Pollingclient→server客户端循环请求<br>1、实现简单<br>2、 支持跨域<br>1、浪费带宽和服务器资源<br>2、 一次请求信息大半是无用（完整http头信息）<br>3、有延迟<br>4、大部分无效请求适于小型应用</li>
+<li>长轮询Long-Pollingclient→server服务器hold住连接，一直到有数据或者超时才返回，减少重复请求次数<br>1、实现简单<br>2、不会频繁发请求<br>3、节省流量<br>4、延迟低<br>1、服务器hold住连接，会消耗资源<br>2、一次请求信息大半是无用WebQQ、Hi网页版、Facebook</li>
+<li>IM长连接iframeclient→server在页面里嵌入一个隐蔵iframe，将这个 iframe 的 src 属性设为对一个长连接的请求，服务器端就能源源不断地往客户端输入数据。<br>1、数据实时送达<br>2、不发无用请求，一次链接，多次“推送”<br>1、服务器增加开销<br>2、无法准确知道连接状态<br>3、IE、chrome等一直会处于loading状态Gmail聊天</li>
+<li>WebSocketserver⇌clientnew WebSocket()<br>1、支持双向通信，实时性更强<br>2、可发送二进制文件<br>3、减少通信量<br>1、浏览器支持程度不一致<br>2、不支持断开重连网络游戏、银行交互和支付</li>
+</ul>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><blockquote>
+<p>首次请求后保存一份请求资源的响应副本，当用户再次发起相同请求后，如果判断缓存命中则拦截请求，将之前存储的响应副本返回给用户，避免重新向服务器发起资源请求。<br>减少冗余数据传输，节省网络流量，减轻服务器压力，加快访问速度</p>
+</blockquote>
+<h3 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h3><p>不会向服务器发请求，而是直接从缓存中读取资源，在控制台中返回<code>200</code>状态码</p>
+<p>响应头参数</p>
+<ul>
+<li><code>pragma</code>:<code>no-cache</code>;兼容http 1.0</li>
+<li><code>Expires</code>:兼容http 1.0,响应头里的过期时间，若在这个时间内，则命中强缓存；（以分钟为单位，在服务端配置，当客户端和服务端时间不一致的时候会出现问题，优先级比<code>Cache-Control</code>低）</li>
+<li><code>Cache-Control</code>:只兼容http 1.1。是在服务器端配置的,<ul>
+<li>当值为<code>max-age=300</code>时（以秒为单位），则代表这个请求正确返回时间的五分钟内再次加载资源，就会命中强缓存。等于0则不使用缓存</li>
+<li>当为-<code>no-cache</code>时，表示不使用强缓存，需要使用协商缓存，先与服务器确认返回的响应是否被更改，如果之前的响应中存在Etag，那么请求时会与服务端验证，如果资源未被更改，则可避免重复下载。</li>
+<li>当为-<code>no-store</code>时，表示直接禁止浏览器缓存数据。</li>
+<li>当为-<code>public</code>时，表示被所有的用户缓存，包括终端用户和cdn等中间代理服务器。</li>
+<li>当为-<code>private</code>时，表示只能被终端用户缓存，不允许cdn等中继服务器对其缓存。</li>
+</ul>
+</li>
+</ul>
+<h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><p>在使用本地缓存前，需向服务器发送请求，服务器根据请求头的参数判断是否命中协商缓存，若命中，则返回<code>304</code>状态码并带上新的响应头通知浏览器从缓存中读取数据。协商缓存可以解决本地资源不更新的问题。</p>
+<p>需设置<code>Cache-Control</code>为<code>no-cache</code></p>
+<ul>
+<li><p><code>Last-Modify</code>:浏览器第一次请求一个资源时，服务器返回的响应头会加上<code>Last-Modify</code>，其为一个时间标识，记录该资源最后修改的时间.</p>
+</li>
+<li><p><code>If-Modify-Since</code>:当浏览器再次请求同一个资源时，请求头会包含<code>If-Modify-Sine</code>，值为缓存之前返回的<code>Last—Modify</code>。服务器收到后根据当前资源修改的 时间判断是否命中缓存</p>
+</li>
+<li><p><code>Etag</code>:浏览器第一次请求一个资源时，服务器返回当前资源在服务器的唯一标识</p>
+</li>
+<li><p><code>If-None-Match</code>:再次请求时，若发现资源有Etag声明，则请求头会带上<code>If-None-Match</code>,值为<code>Etag</code>的值，服务器收到后进行比较来判断是否命中缓存。</p>
+</li>
+</ul>
+<p>区别</p>
+<ul>
+<li>优先级上，<code>etag/if-none-match</code>更高</li>
+<li>精度上<code>etag</code>要优于<code>last-modify</code>，<code>last-modify</code>单位为s，使用它无法区分一秒内修改多次的情况。</li>
+<li>性能上<code>etag</code>要逊于<code>last-modify</code>，<code>etag</code>需要服务器额外性能计算hash值。</li>
+</ul>
+<blockquote>
+<p>ctrl+r/f5/地址栏刷新：强缓存和协商缓存都生效<br>ctrl+f5/ctrl+shift+r:全部失效，会重新请求资源并缓存<br>post请求无法被缓存</p>
+</blockquote>
+<p>静态页面可通过配置meta标签设置缓存属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Cache-Control&quot;</span> <span class="attr">content</span>=<span class="string">&quot;max-age=3000&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="从输入url到页面完成加载发生了什么"><a href="#从输入url到页面完成加载发生了什么" class="headerlink" title="从输入url到页面完成加载发生了什么"></a>从输入url到页面完成加载发生了什么</h2><ul>
+<li><p>DNS解析：将域名解析成IP地址<br>DNS(domain name system，域名系统)：因特网上域名和IP地址相互映射的分布式数据库；简单理解就是域名与IP地址的对照表<br>URL(Uniform Resource Locator)，统一资源定位符，用于定位互联网上资源，俗称网址。<br>遵守以下的语法规则：<br><code>scheme://host.domain:port/path/filename</code></p>
+</li>
+<li><p>TCP连接：TCP三次握手<br>第一次握手，由浏览器发起，告诉服务器我要发送请求了；<br>第二次握手，由服务器发起，告诉浏览器我准备接受了，你赶紧发送吧。<br>第三次握手，由浏览器发送，告诉服务器，我马上就发了，准备接受吧。<br>“三次握手”的目的是“为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误”。</p>
+</li>
+<li><p>发送HTTP请求</p>
+</li>
+</ul>
+<p>HTTP请求报文格式：<code>请求行</code>+<code>请求头</code>+<code>空行</code>+<code>消息体</code>，请求行包括请求方式(GET/POST/DELETE/PUT)、请求资源路径(URL)、HTTP版本号；</p>
+<ul>
+<li>服务器处理请求并返回HTTP报文</li>
+</ul>
+<p>服务器收到请求后会发出应答，即响应数据。HTTP响应与HTTP请求相似， HTTP响应报文格式：<code>状态行</code>+<code>响应头</code>+<code>空行</code>+<code>消息体</code>，状态行包括HTTP版本号、状态码、状态说明。</p>
+<ul>
+<li>浏览器解析渲染页面<br>浏览器拿到响应文本后，解析HTML代码，请求js，css等资源，最后进行页面渲染，呈现给用户。页面渲染一般分为以下几个步骤：</li>
+</ul>
+<p>(1)根据HTML文件解析出DOM Tree</p>
+<p>(2)根据CSS解析出 CSSOM Tree(CSS规则树)</p>
+<p>(3)将 DOM Tree 和 CSSOM Tree合并，构建Render tree(渲染树)</p>
+<p>(4)reflow(重排)：根据Render tree进行节点信息计算(Layout)</p>
+<p>(5)repaint(重绘)：根据计算好的信息绘制整个页面(Painting)</p>
+<ul>
+<li>连接结束：TCP四次挥手</li>
+</ul>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、A——&gt;B ：A告诉B：“我发完了”；</span><br><span class="line"></span><br><span class="line">2、B——&gt;A：B告诉A：“好的，我知道你发完了”</span><br><span class="line"></span><br><span class="line">3、B——&gt;A：B告诉A：“我收完了”；</span><br><span class="line"></span><br><span class="line">4、A——&gt;B：A告诉B：“好的，我知道你发收完了”</span><br></pre></td></tr></table></figure>
+<h2 id="重绘-和-重排（回流）"><a href="#重绘-和-重排（回流）" class="headerlink" title="重绘 和 重排（回流）"></a>重绘 和 重排（回流）</h2><blockquote>
+<p>重绘不一定导致重排，但重排一定会导致重绘<br>重排（Reflow） &amp;&amp; 重绘（Redraw）会付出高昂的性能代价</p>
+</blockquote>
+<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><p>重绘 （Redraw）：某些元素的外观被改变所触发的浏览器行为（重新计算节点在屏幕中的绝对位置并渲染的过程）； 例如：修改元素的填充颜色，会触发重绘；</p>
+<p>下面情况会发生重绘：</p>
+<ul>
+<li>color</li>
+<li>border-style</li>
+<li>border-radius</li>
+<li>text-decoration</li>
+<li>box-shadow</li>
+<li>outline</li>
+<li>background</li>
+<li>…</li>
+</ul>
+<h3 id="重排（回流）"><a href="#重排（回流）" class="headerlink" title="重排（回流）"></a>重排（回流）</h3><p>重排 （Reflow）：重新生成布局，重新排列元素（重新计算各节点和css具体的大小和位置：渲染树需要重新计算所有受影响的节点）；例如：改元素的宽高，会触发重排；<br>通过两者概念区别明显得知，重排要比重绘的成本大得多，我们应该尽量减少重排操作，减少页面性能消耗</p>
+<ul>
+<li>页面初始渲染，这是开销最大的一次重排;</li>
+<li>添加/删除可见的DOM元素;</li>
+<li>改变<code>元素位置</code>;</li>
+<li>改变<code>元素尺寸</code>，比如边距、填充、边框、宽度和高度等;</li>
+<li>改变<code>元素内容</code>，比如文字数量，图片大小等;</li>
+<li>改变元素<code>字体大小</code>;</li>
+<li>改变浏览器窗口尺寸，比如resize事件发生时;</li>
+<li>激活<code>CSS伪类</code>（例如：:hover）;</li>
+<li>设置 <code>style 属性</code>的值，因为通过设置style属性改变结点样式的话，每一次设置都会触发一次reflow;</li>
+<li>查询某些属性或调用某些计算方法：<code>offsetWidth</code>、<code>offsetHeigh</code>t等，除此之外，当我们调用getComputedStyl方法，或者IE里的 currentStyle 时，也会触发重排，原理是一样的，都为求一个“即时性”和“准确性”;<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">width	height	margin	padding</span><br><span class="line">display	border-width	border	position</span><br><span class="line">overflow	font-size	vertical-align	min-height</span><br><span class="line">clientWidth	clientHeight	clientTop	clientLeft</span><br><span class="line">offsetWidth	offsetHeight	offsetTop	offsetLeft</span><br><span class="line">scrollWidth	scrollHeight	scrollTop	scrollLeft</span><br><span class="line">scrollIntoView()	scrollTo()	getComputedStyle()	</span><br><span class="line">getBoundingClientRect()	scrollIntoViewIfNeeded()	</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="减少重排次数"><a href="#减少重排次数" class="headerlink" title="减少重排次数"></a>减少重排次数</h3><ul>
+<li><p>样式集中改变<br>不要一条一条地修改 DOM 的样式。可以先定义好 css 的 class，然后修改 DOM 的 className。</p>
+</li>
+<li><p>分离读写操作<br>DOM 的多个读操作（或多个写操作），应该放在一起。不要两个读操作之间，加入一个写操作</p>
+</li>
+<li><p>将 DOM 离线<br>使用 display:none</p>
+</li>
+<li><p>使用 absolute 或 fixed 脱离文档流<br>为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是不会 reflow 的。</p>
+</li>
+</ul>
+<h2 id="script标签中defer和async的区别"><a href="#script标签中defer和async的区别" class="headerlink" title="script标签中defer和async的区别"></a>script标签中defer和async的区别</h2><p>多个带async属性的标签，不能保证加载的顺序；多个带defer属性的标签，按照加载顺序执行;</p>
+<ul>
+<li>async属性，表示后续文档的加载和执行与js脚本的加载和执行是并行进行的，即异步执行；</li>
+<li>defer属性，加载后续文档的过程和js脚本的加载(此时仅加载不执行)是并行进行的(异步)，js脚本需要等到文档所有元素解析完成之后才执行，DOMContentLoaded事件触发执行之前。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/02/12/20-11-33/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1460,7 +2372,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+                <time title="修改时间：2023-12-18 20:32:33" itemprop="dateModified" datetime="2023-12-18T20:32:33+08:00">2023-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1496,7 +2408,7 @@
 <h4 id="安装-Android-SDK"><a href="#安装-Android-SDK" class="headerlink" title="安装 Android SDK"></a>安装 Android SDK</h4><p>Android Studio 默认会安装最新版本的 Android SDK。目前编译 React Native 应用需要的是<code>Android 13 (Tiramisu)</code>版本的 SDK（注意 SDK 版本不等于终端系统版本，RN 目前支持 android 5 以上设备）。你可以在 Android Studio 的 SDK Manager 中选择安装各版本的 SDK。</p>
 <p>你可以在 Android Studio 的欢迎界面中找到 SDK Manager。点击”Configure”，然后就能看到”SDK Manager”。</p>
 <p>SDK Manager 还可以在 Android Studio 的”Preferences”菜单中找到。具体路径是<code>Appearance &amp; Behavior → System Settings → Android SDK</code>。</p>
-<p>在 SDK Manager 中选择”SDK Platforms”选项卡，然后在右下角勾选”Show Package Details”。展开Android 13 (Tiramisu)选项，确保勾选了下面这些组件（重申你必须使用稳定的代理软件，否则可能都看不到这个界面）：</p>
+<p>在 SDK Manager 中选择”SDK Platforms”选项卡，然后在右下角勾选”Show Package Details”。展开 Android 13 (Tiramisu)选项，确保勾选了下面这些组件（重申你必须使用稳定的代理软件，否则可能都看不到这个界面）：</p>
 <ul>
 <li><code>Android SDK Platform 33</code></li>
 <li><code>Intel x86 Atom_64 System Image</code>,<code>Google APIs Intel x86 Atom System Image</code>（官方模拟器镜像文件，使用非官方模拟器不需要安装此组件）</li>
@@ -1510,82 +2422,109 @@
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%ANDROID_HOME%\platform-tools</span><br><span class="line">%ANDROID_HOME%\emulator</span><br><span class="line">%ANDROID_HOME%\tools</span><br><span class="line">%ANDROID_HOME%\tools\bin</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><blockquote>
-<p>如果你之前全局安装过旧的react-native-cli命令行工具，请使用npm uninstall -g react-native-cli卸载掉它以避免一些冲突：<br><code>npm uninstall -g react-native-cli @react-native-community/cli</code></p>
+<p>如果你之前全局安装过旧的 react-native-cli 命令行工具，请使用 npm uninstall -g react-native-cli 卸载掉它以避免一些冲突：<br><code>npm uninstall -g react-native-cli @react-native-community/cli</code></p>
 </blockquote>
-<h3 id="使用React-Native内建的命令工具进行创建，也可以使用node自带的npx命令来安装"><a href="#使用React-Native内建的命令工具进行创建，也可以使用node自带的npx命令来安装" class="headerlink" title="使用React Native内建的命令工具进行创建，也可以使用node自带的npx命令来安装"></a>使用React Native内建的命令工具进行创建，也可以使用node自带的npx命令来安装</h3><blockquote>
-<p>请不要在目录、文件名中使用中文、空格等特殊符号。请不要单独使用常见的关键字作为项目名（如 class, native, new, package 等等）。请不要使用与核心模块同名的项目名（如 react, react-native 等）。<br>请不要在某些权限敏感的目录例如 System32 目录中 init 项目！会有各种权限限制导致不能运行！<br>请不要使用一些移植的终端环境，例如git bash或mingw等等，这些在 windows 下可能导致找不到环境变量。请使用系统自带的命令行（CMD 或 powershell）运行。<br><code>npx react-native@latest init test_project</code><br>或指定版本<br><code>npx react-native@X.XX.X init AwesomeProject --version X.XX.X</code></p>
+<h3 id="使用-React-Native-内建的命令工具进行创建，也可以使用-node-自带的-npx-命令来安装"><a href="#使用-React-Native-内建的命令工具进行创建，也可以使用-node-自带的-npx-命令来安装" class="headerlink" title="使用 React Native 内建的命令工具进行创建，也可以使用 node 自带的 npx 命令来安装"></a>使用 React Native 内建的命令工具进行创建，也可以使用 node 自带的 npx 命令来安装</h3><blockquote>
+<p>请不要在目录、文件名中使用中文、空格等特殊符号。请不要单独使用常见的关键字作为项目名（如 class, native, new, package 等等）。请不要使用与核心模块同名的项目名（如 react, react-native 等）。<br>请不要在某些权限敏感的目录例如 System32 目录中 init 项目！会有各种权限限制导致不能运行！<br>请不要使用一些移植的终端环境，例如 git bash 或 mingw 等等，这些在 windows 下可能导致找不到环境变量。请使用系统自带的命令行（CMD 或 powershell）运行。<br><code>npx react-native@latest init test_project</code><br>或指定版本<br><code>npx react-native@X.XX.X init AwesomeProject --version X.XX.X</code></p>
 </blockquote>
 <h3 id="准备-Android-设备"><a href="#准备-Android-设备" class="headerlink" title="准备 Android 设备"></a>准备 Android 设备</h3><p>使用 Android 真机<br>你也可以使用 Android 真机来代替模拟器进行开发，只需用 usb 数据线连接到电脑，然后遵照在设备上运行这篇文档的说明操作即可。</p>
-<p>使用 Android 模拟器<br>你可以使用 Android Studio 打开项目下的”android”目录，然后可以使用”AVD Manager”来查看可用的虚拟设备,如果你刚刚才安装 Android Studio，那么可能需要先创建一个虚拟设备。点击”Create Virtual Device…”，然后选择所需的设备类型并点击”Next”，然后选择Tiramisu API Level 33 image.</p>
-<p>使用第三方模拟器<br>Genymotion<br>官方下载地址：<a target="_blank" rel="noopener" href="https://www.genymotion.com/download/">https://www.genymotion.com/download/</a><br>提示：如果你的电脑上已经单独安装了VirtualBox虚拟机软件，可以只下载35MB的Genymotion。<br>在下载完成之后,在Genymotion面板就出现了你刚刚下载的模拟器,但是我们选择还不能启动,还有关键一步没有设置,就是在Genymotion软件中设置Android SDK的路径——–点击  Settings–ADB–Use custom Android SDK tools(自定义AndroidSDK工具)–Briwse  ,,然后选择你的AndroidSDK的安装路径,如果路径没有问题,在下面就会出现Android SDK tools found successfully的提示,然后就可以了,</p>
+<p>使用 Android 模拟器<br>你可以使用 Android Studio 打开项目下的”android”目录，然后可以使用”AVD Manager”来查看可用的虚拟设备,如果你刚刚才安装 Android Studio，那么可能需要先创建一个虚拟设备。点击”Create Virtual Device…”，然后选择所需的设备类型并点击”Next”，然后选择 Tiramisu API Level 33 image.</p>
+<p>使用第三方模拟器<br>Genymotion<br>官方下载地址：<a target="_blank" rel="noopener" href="https://www.genymotion.com/download/">https://www.genymotion.com/download/</a><br>提示：如果你的电脑上已经单独安装了 VirtualBox 虚拟机软件，可以只下载 35MB 的 Genymotion。<br>在下载完成之后,在 Genymotion 面板就出现了你刚刚下载的模拟器,但是我们选择还不能启动,还有关键一步没有设置,就是在 Genymotion 软件中设置 Android SDK 的路径——–点击 Settings–ADB–Use custom Android SDK tools(自定义 AndroidSDK 工具)–Briwse ,,然后选择你的 AndroidSDK 的安装路径,如果路径没有问题,在下面就会出现 Android SDK tools found successfully 的提示,然后就可以了,</p>
 <p>夜神模拟器<br><code>adb connect 127.0.0.1:62001</code></p>
 <blockquote>
-<p>启动 react native 项目，android studio编辑器里的模拟器可以正常启动，传输至夜神模拟器报错<br>检查Android SDK的adb版本和夜神模拟器的adb版本是否一致<br>使用命令 <code>adb version</code> 查看 Android SDK 的adb版本<br>使用 <code>Nox_adb version</code> 查看夜神模拟器的adb版本（需进入夜神模拟器安装目录/bin文件夹下）</p>
+<p>启动 react native 项目，android studio 编辑器里的模拟器可以正常启动，传输至夜神模拟器报错<br>检查 Android SDK 的 adb 版本和夜神模拟器的 adb 版本是否一致<br>使用命令 <code>adb version</code> 查看 Android SDK 的 adb 版本<br>使用 <code>Nox_adb version</code> 查看夜神模拟器的 adb 版本（需进入夜神模拟器安装目录/bin 文件夹下）</p>
 </blockquote>
 <p>解决方案</p>
-<p>找到Android SDK的adb文件路径：{安装Path}\android-sdk\platform-tools<br><code>adb.exe</code><br><code>AdbWinApi.dll</code><br><code>AdbWinUsbApi.dll</code><br>将上面三个Android SDK的adb文件替换夜神模拟器的adb文件(夜神模拟器adb文件路径：{安装Path}\Nox\bin)<br>删除夜神模拟器bin路径下的<code>nox_adb.exe</code>文件，再复制一份Android SDK的<code>adb.exe</code>文件到夜神模拟器bin路径下并重命名为<code>nox_adb.exe</code></p>
-<p>替换完成后，再次使用命令 adb version 和 Nox_adb version 查看Android SDK和夜神模拟器的adb版本是否一致。<br>若一致，重新打开模拟器使用命令adb connect 127.0.0.1:62001连接模拟器即可</p>
+<p>找到 Android SDK 的 adb 文件路径：{安装 Path}\android-sdk\platform-tools<br><code>adb.exe</code><br><code>AdbWinApi.dll</code><br><code>AdbWinUsbApi.dll</code><br>将上面三个 Android SDK 的 adb 文件替换夜神模拟器的 adb 文件(夜神模拟器 adb 文件路径：{安装 Path}\Nox\bin)<br>删除夜神模拟器 bin 路径下的<code>nox_adb.exe</code>文件，再复制一份 Android SDK 的<code>adb.exe</code>文件到夜神模拟器 bin 路径下并重命名为<code>nox_adb.exe</code></p>
+<p>替换完成后，再次使用命令 adb version 和 Nox_adb version 查看 Android SDK 和夜神模拟器的 adb 版本是否一致。<br>若一致，重新打开模拟器使用命令 adb connect 127.0.0.1:62001 连接模拟器即可</p>
 <ul>
 <li>编译并运行 React Native 应用</li>
 </ul>
 <p>确保你先运行了模拟器或者连接了真机，然后在你的项目目录中运行<code>yarn android</code>或者<code>yarn react-native run-android</code>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> AwesomeProject</span><br><span class="line">yarn android</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn react-native run-android</span><br></pre></td></tr></table></figure>
 
-<p>此命令会对项目的原生部分进行编译，同时在另外一个命令行中启动Metro服务对 js 代码进行实时打包处理（类似 webpack）。Metro服务也可以使用<code>yarn start</code>命令单独启动。</p>
+<p>此命令会对项目的原生部分进行编译，同时在另外一个命令行中启动 Metro 服务对 js 代码进行实时打包处理（类似 webpack）。Metro 服务也可以使用<code>yarn start</code>命令单独启动。</p>
 <p>如果配置没有问题，你应该可以看到应用自动安装到设备上并开始运行。注意第一次运行时需要下载大量编译依赖，耗时可能数十分钟。此过程严重依赖稳定的代理软件，否则将频繁遭遇链接超时和断开，导致无法运行。</p>
-<p>也可以尝试阿里云提供的maven 镜像，将<code>android/build.gradle</code>中加入</p>
+<p>也可以尝试阿里云提供的 maven 镜像，将<code>android/build.gradle</code>中加入</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/central&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/public&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/jcenter&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/google&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://https://maven.aliyun.com/repository/apache-snapshots&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/gradle-plugin&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/mapr-public&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/grails-core&#x27;</span> &#125;</span><br><span class="line">       maven &#123; url <span class="string">&#x27;https://repo1.maven.org/maven2/&#x27;</span> &#125;</span><br><span class="line">       mavenCentral()</span><br><span class="line">       google()</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>npx react-native run-android</code>只是运行应用的方式之一。你也可以在 Android Studio 中直接运行应用。</p>
-<p>译注：建议在run-android成功后再尝试使用 Android Studio 启动。请不要轻易点击 Android Studio 中可能弹出的建议更新项目中某依赖项的建议，否则可能导致无法运行。</p>
+<p>译注：建议在 run-android 成功后再尝试使用 Android Studio 启动。请不要轻易点击 Android Studio 中可能弹出的建议更新项目中某依赖项的建议，否则可能导致无法运行。</p>
 <p>如果你无法正常运行，遇到奇奇怪怪的红屏错误，先回头仔细对照文档检查，然后可以看看问题讨论区。不同时期不同版本可能会碰到不同的问题，我们会在论坛中及时解答更新。但请注意千万不要执行 bundle 命令，那样会导致代码完全无法刷新。</p>
-<h3 id="使用-TypeScript-开始新项目"><a href="#使用-TypeScript-开始新项目" class="headerlink" title="使用 TypeScript 开始新项目"></a>使用 TypeScript 开始新项目</h3><p>如果您要开始一个新项目，则有几种不同的上手方法。 您可以使用TypeScript 模板:</p>
+<h3 id="使用-TypeScript-开始新项目"><a href="#使用-TypeScript-开始新项目" class="headerlink" title="使用 TypeScript 开始新项目"></a>使用 TypeScript 开始新项目</h3><p>如果您要开始一个新项目，则有几种不同的上手方法。 您可以使用 TypeScript 模板:</p>
 <p><code>npx react-native init MyApp --template react-native-template-typescript</code></p>
-<p>如果以上命令失败，则可能是您的 PC 上全局安装了旧版本的<code>react-native</code>或<code>react-native-cli</code>。 尝试卸载 cli 并使用npx运行 cli.</p>
-<p>您可以使用具有两个 TypeScript 模板的Expo:</p>
+<p>如果以上命令失败，则可能是您的 PC 上全局安装了旧版本的<code>react-native</code>或<code>react-native-cli</code>。 尝试卸载 cli 并使用 npx 运行 cli.</p>
+<p>您可以使用具有两个 TypeScript 模板的 Expo:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g expo-cli</span><br><span class="line">expo init MyTSProject</span><br></pre></td></tr></table></figure>
 
-<p>或者，您可以使用Ignite，它也具有 TypeScript 模板:</p>
+<p>或者，您可以使用 Ignite，它也具有 TypeScript 模板:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ignite-cli</span><br><span class="line">ignite new MyTSProject</span><br></pre></td></tr></table></figure>
 
 <p>在已有的项目中添加 TypeScript<br>将 TypeScript 以及 React Native 和 Jest 的依赖添加到您的项目中。<br><code>yarn add --dev typescript @types/jest @types/react @types/react-native @types/react-test-renderer</code></p>
 <p>或<br><code>npm install --save-dev typescript @types/jest @types/react @types/react-native @types/react-test-renderer</code></p>
-<p>添加一个 TypeScript 配置文件。在项目的根目录中创建一个tsconfig.json：</p>
+<p>添加一个 TypeScript 配置文件。在项目的根目录中创建一个 tsconfig.json：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;allowJs&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;allowSyntheticDefaultImports&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;esModuleInterop&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;isolatedModules&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;jsx&quot;</span><span class="punctuation">:</span> <span class="string">&quot;react-native&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lib&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;es2017&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;react-native&quot;</span><span class="punctuation">,</span> <span class="string">&quot;jest&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;moduleResolution&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;noEmit&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;strict&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="string">&quot;esnext&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exclude&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;node_modules&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;babel.config.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;metro.config.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;jest.config.js&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>创建一个jest.config.js文件来配置 Jest 以使用 TypeScript:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">preset</span>: <span class="string">&#x27;react-native&#x27;</span>,</span><br><span class="line">  <span class="attr">moduleFileExtensions</span>: [<span class="string">&#x27;ts&#x27;</span>, <span class="string">&#x27;tsx&#x27;</span>, <span class="string">&#x27;js&#x27;</span>, <span class="string">&#x27;jsx&#x27;</span>, <span class="string">&#x27;json&#x27;</span>, <span class="string">&#x27;node&#x27;</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>创建一个 jest.config.js 文件来配置 Jest 以使用 TypeScript:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">preset</span>: <span class="string">&quot;react-native&quot;</span>,</span><br><span class="line">  <span class="attr">moduleFileExtensions</span>: [<span class="string">&quot;ts&quot;</span>, <span class="string">&quot;tsx&quot;</span>, <span class="string">&quot;js&quot;</span>, <span class="string">&quot;jsx&quot;</span>, <span class="string">&quot;json&quot;</span>, <span class="string">&quot;node&quot;</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>将 JavaScript 文件重命名为<code>* .tsx</code>:<br>请保留<code>./index.js</code>入口文件，否则将在打包生产版本时遇到问题。</p>
 <p>运行 <code>yarn tsc</code> 对 TypeScript 文件进行类型检查。<br>TypeScript 和 React Native 是如何工作的<br>无需额外配置，和非 TypeScript 的 React Native 项目一样都是直接通过 Babel 体系 将您的文件转换为 JavaScript。我们建议您只使用 TypeScript 编译器的类型检查功能（而不是编译）。如果您有已经存在的 TypeScript 代码需要迁移到 React Native，这里有一些关于使用 Babel 而不是 TypeScript 编译器的注意事项。</p>
 <h3 id="Icon-图标"><a href="#Icon-图标" class="headerlink" title="Icon 图标"></a>Icon 图标</h3><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>安装<code>npm i react-native-vector-icons -D</code><br>项目中引入 <code>import FontAwesome from &#39;react-native-vector-icons/FontAwesome&#39;</code><br>使用 <code>&lt;FontAwesome name=&quot;home&quot; size=&#123;26&#125; /&gt;</code><br>[图标预览]<a target="_blank" rel="noopener" href="https://oblador.github.io/react-native-vector-icons">https://oblador.github.io/react-native-vector-icons</a><br><a target="_blank" rel="noopener" href="https://github.com/oblador/react-native-vector-icons">https://github.com/oblador/react-native-vector-icons</a>[github]</p>
-<h4 id="Android-无法正常显示图标"><a href="#Android-无法正常显示图标" class="headerlink" title="Android 无法正常显示图标"></a>Android 无法正常显示图标</h4><p>在 <code>android/app/build.gradle</code> （注意：不是 <code>android/build.gradle</code>）  下加入</p>
+<h4 id="Android-无法正常显示图标"><a href="#Android-无法正常显示图标" class="headerlink" title="Android 无法正常显示图标"></a>Android 无法正常显示图标</h4><p>在 <code>android/app/build.gradle</code> （注意：不是 <code>android/build.gradle</code>） 下加入</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>.ext.vectoricons = [</span><br><span class="line">    iconFontNames: [ <span class="string">&#x27;FontAwesome.ttf&#x27;</span>] <span class="comment">// Name of the font files you want to copy</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">apply <span class="keyword">from</span>: <span class="keyword">file</span>(<span class="string">&quot;../../node_modules/react-native-vector-icons/fonts.gradle&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <p>或者直接引入全部</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply <span class="keyword">from</span>: <span class="keyword">file</span>(<span class="string">&quot;../../node_modules/react-native-vector-icons/fonts.gradle&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<h4 id="ios报错unRecognized-font-family-‘FontAwesome’"><a href="#ios报错unRecognized-font-family-‘FontAwesome’" class="headerlink" title="ios报错unRecognized font family ‘FontAwesome’"></a>ios报错unRecognized font family ‘FontAwesome’</h4><ol>
-<li>使用Xcode打开项目下的ios文件夹 或者 XXX.xcodeproj 文件（XXX为项目名）</li>
-<li>打开之后目录中会有一个与项目名称同名的文件夹，右键单击这个文件夹，选择 Add files to XXX，加入要使用的.ttf文件或者是 react-native-vector-icons下的整个Fonts文件夹，记得勾选上 Create floders 中的 create group 和 Add to targets 中的 XXX。</li>
+<h4 id="ios-报错-unRecognized-font-family-‘FontAwesome’"><a href="#ios-报错-unRecognized-font-family-‘FontAwesome’" class="headerlink" title="ios 报错 unRecognized font family ‘FontAwesome’"></a>ios 报错 unRecognized font family ‘FontAwesome’</h4><ol>
+<li>使用 Xcode 打开项目下的 ios 文件夹 或者 XXX.xcodeproj 文件（XXX 为项目名）</li>
+<li>打开之后目录中会有一个与项目名称同名的文件夹，右键单击这个文件夹，选择 Add files to XXX，加入要使用的.ttf 文件或者是 react-native-vector-icons 下的整个 Fonts 文件夹，记得勾选上 Create floders 中的 create group 和 Add to targets 中的 XXX。</li>
 <li>编辑 与项目名同名的文件夹 下的 info.plist，并加入行 <code>Fonts provided by application</code>，在该行中加入 字体文件名</li>
-<li>注意，每个被add的.ttf文件都要在 <code>Fonts provided by application</code> 中加入，当add的是整个Fonts文件夹时，文件夹中所有.ttf文件都要在<code>Fonts provided by application</code> 中加入，否则会出现 We ran “xcodebuild” command but it exited with error code 65. 这样的错误</li>
-<li>注意，ios的font-family要求与字体文件字体名相同（不是文件名）比如从阿里妈妈下载的文件 字体名是 iconfont，那么在XXX.js中就要使用iconfont<br><code>const iconSet = createIconSet(glyphMap, &#39;iconfont&#39;, &#39;MyIcon.ttf&#39;); //阿里妈妈的图标font-family为iconfont</code></li>
+<li>注意，每个被 add 的.ttf 文件都要在 <code>Fonts provided by application</code> 中加入，当 add 的是整个 Fonts 文件夹时，文件夹中所有.ttf 文件都要在<code>Fonts provided by application</code> 中加入，否则会出现 We ran “xcodebuild” command but it exited with error code 65. 这样的错误</li>
+<li>注意，ios 的 font-family 要求与字体文件字体名相同（不是文件名）比如从阿里妈妈下载的文件 字体名是 iconfont，那么在 XXX.js 中就要使用 iconfont<br><code>const iconSet = createIconSet(glyphMap, &#39;iconfont&#39;, &#39;MyIcon.ttf&#39;); //阿里妈妈的图标font-family为iconfont</code></li>
 </ol>
-<h3 id="吐司toast"><a href="#吐司toast" class="headerlink" title="吐司toast"></a>吐司toast</h3><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>yarn add react-native-root-toast</code></p>
-<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Toast</span>.<span class="title function_">show</span>(<span class="string">&#x27;This is a message&#x27;</span>, &#123;</span><br><span class="line">      <span class="attr">duration</span>: <span class="title class_">Toast</span>.<span class="property">durations</span>.<span class="property">LONG</span>,</span><br><span class="line">      <span class="attr">position</span>: <span class="title class_">Toast</span>.<span class="property">positions</span>.<span class="property">BOTTOM</span>,</span><br><span class="line">      <span class="attr">shadow</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">animation</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">hideOnPress</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">delay</span>: <span class="number">3</span>,</span><br><span class="line">      <span class="attr">onShow</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// calls on toast\`s appear animation start</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">onShown</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// calls on toast\`s appear animation end.</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">onHide</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// calls on toast\`s hide animation start.</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">onHidden</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// calls on toast\`s hide animation end.</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="RN-中的样式与-CSS-的不同"><a href="#RN-中的样式与-CSS-的不同" class="headerlink" title="RN 中的样式与 CSS 的不同"></a>RN 中的样式与 CSS 的不同</h3><p>1、没有继承性<br>RN 中的继承只发生在 Text 组件上</p>
+<p>2、样式名采用小驼峰命名<br>fontSize VS font-size</p>
+<p>3、所有尺寸都没有单位<br>width: 100</p>
+<p>4、有一些特殊的样式名<br>marginHorizontal（水平外边距）, marginVertical （垂直外边距）</p>
+<p>RN 样式的声明方式<br>1、通过 style 属性直接声明<br>属性值为对象：<code>&lt;组件 style=&#123;&#123;样式&#125;&#125; /&gt;</code><br>属性值为数组：<code>&lt;组件 style=&#123;[&#123;样式 1&#125;, ..., &#123;样式 N&#125;]&#125; /&gt;</code></p>
+<p>2、在 style 属性中调用 StyleSheet 声明的样式<br>引入：<code>import &#123;StyleSheet, View&#125; from &#39;react-native&#39;</code><br>声明：<code>const styles = StyleSheet.create(&#123;foo: &#123;样式 1&#125;, bar: &#123;样式 2&#125;&#125;)</code><br>使用：<code>&lt;View style=&#123;[styles.foo, styles.bar]&#125;&gt;内容&lt;/View&gt;</code></p>
+<p>使用 Flexbox 布局</p>
+<p>在 RN 中使用 flexbox 规则来指定某个组件的子元素的布局，flexbox 可以在不同屏幕尺寸上提供一致的布局结构<br>flexDirection<br>声明主轴的方向，子元素是应该沿着 水平轴（row）方向排列，还是沿着 竖直轴（column）方向排列<br>在 Web 里默认是 水平轴（row），在 RN 里默认是 垂直轴（column）<br>justifyContent<br>在组件的 style 中指定 justifyContent 可以决定其子元素沿着 主轴 的排列方式</p>
+<p>取值：<br>flex-start: 默认值，左对齐<br>flex-end: 右对齐<br>center: 居中<br>space-between: 两端对齐，项目之间的间隔都相等<br>space-around: 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与两端的间隔大一倍<br>space-evenly：每个项目之间的间隔相等，均匀排列每个项目<br>alignItems<br>在组件的 style 中指定 alignItems 可以决定其子元素沿着 交叉轴 的排列方式</p>
+<p>取值：<br>stretch: 默认值，根据容器交叉轴的高度撑满容器子元素<br>注意：要使 stretch 选项生效的话，子元素在 交叉轴 方向上不能有固定的尺寸<br>flex-end: 右对齐<br>center: 居中<br>space-between: 两端对齐，项目之间的间隔都相等<br>space-around: 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与两端的间隔大一倍<br>space-evenly：每个项目之间的间隔相等，均匀排列每个项目</p>
+<p>alignSelf<br>alignSelf 和 alignItems 具有相同的取值属性和作用，区别是：<br>alignItems 作用于容器下所有的子元素<br>alignSelf 作用于单个子元素，并且会覆盖 alignItems 指定的属性</p>
+<p>flexWrap<br>flexWrap 属性作用于容器上，控制子元素溢出时如何在主轴上排列。默认是强制不换行</p>
+<p>相对定位与绝对定位<br>一个元素的 position 类型决定了其在父元素中的位置</p>
+<p>position 取值：<br>relative：（默认值），元素的位置取决于文档流<br>absolute：元素会脱离正常的文档流</p>
+<p>宽度与高度<br>组件的宽度和高度决定了其在屏幕上显示的尺寸</p>
+<p>指定宽高<br>RN 中的尺寸都是 无单位的，表示的是与设备像素密度无关的逻辑像素点<br>指定宽高一般用于在不同尺寸的屏幕上都显示成一样的大小</p>
+<p>弹性（Flex）宽高<br>在组件中使用 flex 可以使其在可利用的空间中动态地扩张或收缩，一般会使用 flex：1 来指定某个组件扩张以撑满所有剩余的空间</p>
+<p>如果有多个并列的子组件使用了 flex：1，则这些子组件会平分父容器的剩余的空间</p>
+<p>如果这些并列的子组件的 flex 值不一样，则谁的值更大，谁占据剩余空间的比例就更大</p>
+<p>注意：使用 flex 指定宽高的前提是其父容器的尺寸不为零</p>
+<p>百分比宽高<br>用法和注意事项同 flex 宽高</p>
+<p>设备宽高</p>
+<p>用法：<br>获取设备宽度：Dimensions.get(‘window’).width<br>获取设备高度：Dimensions.get(‘window).height</p>
+<h3 id="吐司-toast"><a href="#吐司-toast" class="headerlink" title="吐司 toast"></a>吐司 toast</h3><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>yarn add react-native-root-toast</code></p>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Toast</span>.<span class="title function_">show</span>(<span class="string">&quot;This is a message&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">duration</span>: <span class="title class_">Toast</span>.<span class="property">durations</span>.<span class="property">LONG</span>,</span><br><span class="line">  <span class="attr">position</span>: <span class="title class_">Toast</span>.<span class="property">positions</span>.<span class="property">BOTTOM</span>,</span><br><span class="line">  <span class="attr">shadow</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">animation</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">hideOnPress</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">delay</span>: <span class="number">3</span>,</span><br><span class="line">  <span class="attr">onShow</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s appear animation start</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onShown</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s appear animation end.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onHide</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s hide animation start.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onHidden</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s hide animation end.</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="本地存储AsyncStorage"><a href="#本地存储AsyncStorage" class="headerlink" title="本地存储AsyncStorage"></a>本地存储AsyncStorage</h3><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p><code>yarn add @react-native-async-storage/async-storage</code></p>
-<h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> <span class="title class_">AsyncStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;my-key&#x27;</span>, textInput);</span><br><span class="line"><span class="keyword">const</span> value = <span class="keyword">await</span> <span class="title class_">AsyncStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;my-key&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="本地存储-AsyncStorage"><a href="#本地存储-AsyncStorage" class="headerlink" title="本地存储 AsyncStorage"></a>本地存储 AsyncStorage</h3><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p><code>yarn add @react-native-async-storage/async-storage</code></p>
+<h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> <span class="title class_">AsyncStorage</span>.<span class="title function_">setItem</span>(<span class="string">&quot;my-key&quot;</span>, textInput);</span><br><span class="line"><span class="keyword">const</span> value = <span class="keyword">await</span> <span class="title class_">AsyncStorage</span>.<span class="title function_">getItem</span>(<span class="string">&quot;my-key&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><h3 id="Could-not-download-react-android-0-71-3-debug-aar"><a href="#Could-not-download-react-android-0-71-3-debug-aar" class="headerlink" title="Could not download react-android-0.71.3-debug.aar"></a>Could not download react-android-0.71.3-debug.aar</h3><p>根据报错提供的地址，复制的下载链接到浏览器下载，放到如下位置（前提是你没有改过依赖的存放路径）：<br>C:\Users\你的用户名/.gradle\caches\modules-2\files-2.1，接下来在哪个文件夹就因你缺失的文件的不同而不同了，我的是如下路径：<br>C:\Users\Duan/.gradle\caches\modules-2\files-2.1\com.facebook.react\react-android\0.71.3<br>但是一般都能在报错信息中找到，其中有多个文件夹，把刚刚下好的文件放到其中一个含有.pom文件的文件夹里就对了然后重新运行就好了！！！</p>
+<h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><h3 id="index-android-bundle"><a href="#index-android-bundle" class="headerlink" title="index.android.bundle"></a>index.android.bundle</h3><ul>
+<li>清除缓存<code>./gradlew clean</code></li>
+<li>卸载 app</li>
+</ul>
+<h3 id="Could-not-download-react-android-0-71-3-debug-aar"><a href="#Could-not-download-react-android-0-71-3-debug-aar" class="headerlink" title="Could not download react-android-0.71.3-debug.aar"></a>Could not download react-android-0.71.3-debug.aar</h3><p>根据报错提供的地址，复制的下载链接到浏览器下载，放到如下位置（前提是你没有改过依赖的存放路径）：<br>C:\Users\你的用户名/.gradle\caches\modules-2\files-2.1，接下来在哪个文件夹就因你缺失的文件的不同而不同了，我的是如下路径：<br>C:\Users\Duan/.gradle\caches\modules-2\files-2.1\com.facebook.react\react-android\0.71.3<br>但是一般都能在报错信息中找到，其中有多个文件夹，把刚刚下好的文件放到其中一个含有.pom 文件的文件夹里就对了然后重新运行就好了！！！</p>
 <h3 id="“Deprecated-Gradle-features-were-used-in-this-build-making-it-incompatible-with-Gradle-7-0”"><a href="#“Deprecated-Gradle-features-were-used-in-this-build-making-it-incompatible-with-Gradle-7-0”" class="headerlink" title="“Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0”"></a>“Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0”</h3><p>根据提示，用如下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew --warning-mode all</span><br></pre></td></tr></table></figure>
 
 <p>进行编译,提示如下：</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure project :</span><br><span class="line">The compile configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 7.0. Please use the implementation configuration instead.</span><br></pre></td></tr></table></figure>
 
-<p>很显然，在Gradle 7.0，不支持compile了，所以，在build.gradle文件中，将compile改为implementation，问题就解决了。在build.gradle文件中，将compile改为implementation</p>
+<p>很显然，在 Gradle 7.0，不支持 compile 了，所以，在 build.gradle 文件中，将 compile 改为 implementation，问题就解决了。在 build.gradle 文件中，将 compile 改为 implementation</p>
 
       
     </div>
@@ -2290,7 +3229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+                <time title="修改时间：2023-12-18 20:32:33" itemprop="dateModified" datetime="2023-12-18T20:32:33+08:00">2023-12-18</time>
               </span>
 
           
@@ -2339,7 +3278,11 @@
 <li>设置根用户密码：<br><code>sudo passwd</code></li>
 <li>换源<br><code>sudo vim /etc/apt/sources.list</code><br>粘贴</li>
 </ul>
+<p>ubuntu</p>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#添加阿里源</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">#添加清华源,默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse multiverse</span><br></pre></td></tr></table></figure>
+
+<p>debain</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">#阿里</span><br><span class="line">deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.aliyun.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">#中科大</span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line">deb https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main contrib non-free</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/debian-security/ bullseye-security main contrib non-free</span><br><span class="line">#清华</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free</span><br><span class="line">#华为</span><br><span class="line">deb https://mirrors.huaweicloud.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.huaweicloud.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.huaweicloud.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.huaweicloud.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.huaweicloud.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">#腾讯</span><br><span class="line">deb https://mirrors.tencent.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.tencent.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.tencent.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.tencent.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.tencent.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tencent.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tencent.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tencent.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">#网易</span><br><span class="line">deb https://mirrors.163.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb-src https://mirrors.163.com/debian/ bullseye main non-free contrib</span><br><span class="line">deb https://mirrors.163.com/debian-security/ bullseye-security main</span><br><span class="line">deb-src https://mirrors.163.com/debian-security/ bullseye-security main</span><br><span class="line">deb https://mirrors.163.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.163.com/debian/ bullseye-updates main non-free contrib</span><br><span class="line">deb https://mirrors.163.com/debian/ bullseye-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.163.com/debian/ bullseye-backports main non-free contrib</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>执行更新命令：<br><code>sudo apt-get update</code><br><code>sudo apt-get upgrade</code></li>
@@ -2380,11 +3323,15 @@
 </ul>
 </li>
 <li>nodejs<ul>
-<li> 拷贝解压<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line">sudo <span class="built_in">mkdir</span> -p /usr/local/lib/nodejs</span><br><span class="line">sudo tar -xJvf node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>.tar.xz -C /usr/local/lib/nodejs </span><br></pre></td></tr></table></figure></li>
-<li>环境变量<code>~/.profile</code>：<code>export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH</code></li>
-<li>刷新：<code>source ~/.profile</code></li>
+<li>拷贝解压</li>
 </ul>
 </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line">sudo <span class="built_in">mkdir</span> -p /usr/local/lib/nodejs</span><br><span class="line">sudo tar -xJvf node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>.tar.xz -C /usr/local/lib/nodejs </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>环境变量<code>~/.profile</code>：<code>export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH</code></li>
+<li>刷新：<code>source ~/.profile</code></li>
 <li>google chrome<br><code>https://www.google.cn/intl/zh-CN/chrome/</code></li>
 <li>搜狗输入法(ubuntu20移除qt4,会出现死机情况)<br><code>https://shurufa.sogou.com/</code></li>
 <li>百度输入法</li>
@@ -2399,9 +3346,9 @@
 <li>有道翻译</li>
 <li>迅雷</li>
 <li>wps</li>
-<li>wps字体安装<br>windows 的字体一般存放在 c:/windows/fonts 目录下，我拷贝到 linux 下的字体有：<br><code>simfang.ttf</code> 仿宋体<br><code>simhei.ttf </code>黑体<br><code>simkai.ttf </code>楷体</li>
+<li>wps字体安装<br>windows 的字体一般存放在 c:/windows/fonts 目录下，我拷贝到 linux 下的字体有：<br><code>simfang.ttf</code> 仿宋体<br><code>simhei.ttf</code>黑体<br><code>simkai.ttf</code>楷体</li>
 </ul>
-<p>宋体：<code>simsunb.ttf </code>和<code>simsun.ttc</code><br><code>simsun.ttf </code>宋体和新宋体，原文件名<code>simsun.ttc</code><br>微软雅黑：<code>msyhbd.ttf</code></p>
+<p>宋体：<code>simsunb.ttf</code>和<code>simsun.ttc</code><br><code>simsun.ttf</code>宋体和新宋体，原文件名<code>simsun.ttc</code><br>微软雅黑：<code>msyhbd.ttf</code></p>
 <p>下载字体文件，然后复制到 Linux 系统中的/usr/share/fonts/win-font 文件夹中。<br>修改权限，并更新字体缓存<br><code>sudo chmod -R 777  /usr/share/fonts/win-font</code><br><code>cd /usr/share/fonts/win-font</code></p>
 <p>执行以下命令,生成字体的索引信息：<br><code>sudo mkfontscale</code><br><code>sudo mkfontdir</code><br>运行 fc-cache 命令更新字体缓存。<br><code>sudo fc-cache -fv</code></p>
 
@@ -3734,348 +4681,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/18/20-00-00/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/18/20-00-00/" class="post-title-link" itemprop="url">markdown语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-18 20:00:00" itemprop="dateCreated datePublished" datetime="2020-12-18T20:00:00+08:00">2020-12-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 这是一级标题</span></span><br><span class="line"><span class="section">## 这是二级标题</span></span><br><span class="line"><span class="section">### 这是三级标题</span></span><br><span class="line"><span class="section">#### 这是四级标题</span></span><br><span class="line"><span class="section">##### 这是五级标题</span></span><br><span class="line"><span class="section">###### 这是六级标题</span></span><br><span class="line">井号与标题间有空格</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果：</strong></p>
-<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><hr>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**这是加粗的文字**</span></span><br><span class="line"></span><br><span class="line"><span class="emphasis">*这是倾斜的文字*</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**<span class="emphasis">*这是斜体加粗的文字*</span>**</span></span><br><span class="line"></span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果：</strong><br><strong>这是加粗的文字</strong><br><em>这是倾斜的文字</em>`<br><em><strong>这是斜体加粗的文字</strong></em><br><del>这是加删除线的文字</del></p>
-<hr>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line"></span><br><span class="line">&gt;&gt;这是引用的内容</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;这是引用的内容</span><br><span class="line">在被引用的文本前加上&gt;符号，以及一个空格就可以了</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果：</strong></p>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-<blockquote>
-<p>这是引用的内容</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">简书</span>](<span class="link">http://jianshu.com</span>)</span><br><span class="line">[<span class="string">百度</span>](<span class="link">http://baidu.com</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果:</strong><br><a target="_blank" rel="noopener" href="http://jianshu.com/">简书</a><br><a target="_blank" rel="noopener" href="http://baidu.com/">百度</a></p>
-<hr>
-<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 列表内容</span><br><span class="line"><span class="bullet">+</span> 列表内容</span><br><span class="line"><span class="bullet">*</span> 列表内容</span><br><span class="line"><span class="bullet">1.</span> 列表内容 </span><br><span class="line">\+ 列表内容 </span><br><span class="line">前面加反斜线\即可显示符号本身     </span><br><span class="line"><span class="bullet">2.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br><span class="line"><span class="bullet">3.</span> 列表内容</span><br><span class="line"><span class="bullet">  4.</span> 列表嵌套</span><br><span class="line">上一级和下一级之间敲三个空格即可</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果：</strong></p>
-<ul>
-<li><p>列表内容</p>
-</li>
-<li><p>列表内容</p>
-</li>
-<li><p>列表内容</p>
-</li>
-</ul>
-<ol>
-<li>列表内容<br>+ 列表内容</li>
-<li>列表内容</li>
-<li>列表内容<ol start="4">
-<li>列表嵌套</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="code">`代码内容`</span></span><br><span class="line"></span><br><span class="line">单行代码：代码之间分别用一个反引号包起来</span><br><span class="line"></span><br><span class="line"> \<span class="code">```</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code"> 代码块</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code"> \```</span></span><br><span class="line"></span><br><span class="line">代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行或者缩进 4 个空格或是 1 个制表符</span><br></pre></td></tr></table></figure>
-
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|商品|数量|单价|</span><br><span class="line">|-|-------:|:------:|</span><br><span class="line">|:苹果:|10|\$1|</span><br><span class="line">|:电脑|1|\$1000|</span><br><span class="line">冒号在左边表示左对齐，右边表示有对齐，两边都有表示居中。</span><br></pre></td></tr></table></figure>
-
-<p><strong>效果：</strong></p>
-<table>
-<thead>
-<tr>
-<th>商品</th>
-<th align="right">数量</th>
-<th align="center">单价</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>:苹果:</td>
-<td align="right">10</td>
-<td align="center">$1</td>
-</tr>
-<tr>
-<td>:电脑</td>
-<td align="right">1</td>
-<td align="center">$1000</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h2 id="链接写法：-lt-http-baidu-com-gt"><a href="#链接写法：-lt-http-baidu-com-gt" class="headerlink" title="链接写法：&lt;http://baidu.com&gt;"></a><code>链接写法：&lt;http://baidu.com&gt;</code></h2><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">文本</span>](<span class="link">图片地址 &quot;可选标题&quot;</span>) </span><br><span class="line">开头一个感叹号 !</span><br><span class="line">接着一个方括号，里面放上图片的替代文字</span><br><span class="line">接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 &#x27;title&#x27; 属性的文字。</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/12/12/12-12-12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/12/12-12-12/" class="post-title-link" itemprop="url">git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-12 12:12:12" itemprop="dateCreated datePublished" datetime="2020-12-12T12:12:12+08:00">2020-12-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h2><p><code>sudo apt-get install git</code></p>
-<h2 id="配置-git"><a href="#配置-git" class="headerlink" title="配置 git"></a>配置 git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;用户名&quot;</span>               //个人账号</span><br><span class="line">git config --global user.email 123456@qq.com         //个人邮箱地址</span><br><span class="line"><span class="comment"># 上面的--global选项,表示以后管理git库时,默认使用上面的用户信息,也可以通过git config -l 来查看配置信息</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><p>创建分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建分支: git branch 分支名</span><br><span class="line">切换分支: git checkout 分支名</span><br><span class="line">查看所有分支: git brach -a</span><br><span class="line">分支合并: git merge 分支名 (把分支合并到当前分支)</span><br></pre></td></tr></table></figure>
-
-<p>删除分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">首先使用git branch -a查看当前所有分支。</span><br><span class="line">删除本地分支：git branch -d 分支1[,分支名2,分支名3...]</span><br><span class="line">删除远程分支: git push origin --delete 分支名1[,分支命2,分支名...]</span><br></pre></td></tr></table></figure>
-
-<h2 id="将-master-分支合并到当前迭代分支"><a href="#将-master-分支合并到当前迭代分支" class="headerlink" title="将 master 分支合并到当前迭代分支"></a>将 master 分支合并到当前迭代分支</h2><p>1、切换到master分支，拉取最新代码到本地</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到master分支</span></span><br><span class="line">git checkout master</span><br><span class="line"><span class="comment">#拉取最新代码</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<p>2、切换到当前开发分支，合并master分支</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换到当前分支</span></span><br><span class="line">git checkout myBranch</span><br><span class="line"><span class="comment">#合并</span></span><br><span class="line">git merge master</span><br></pre></td></tr></table></figure>
-
-<p>3、代码冲突解决<br>这一步需要在编辑器上，把冲突部分解决掉（这一步特别重要，最好叫上相关负责人一起，防止弄丢master里的最新代码）</p>
-<p>4、当前开发分支代码提交</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m<span class="string">&quot;merge from master&quot;</span></span><br><span class="line">git push origin</span><br></pre></td></tr></table></figure>
-
-<h2 id="合并其他分支代码至master分支"><a href="#合并其他分支代码至master分支" class="headerlink" title="合并其他分支代码至master分支"></a>合并其他分支代码至master分支</h2><p>1.当前分支所有代码提交<br>先将dev分支上所有有代码提交至git上，提交的命令一般就是这几个，先复习下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将所有代码提交</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编写提交备注</span></span><br><span class="line">git commit -m <span class="string">&quot;修改bug&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交代码至远程分支</span></span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
-
-<p>2.切换当前分支至主干（master）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果多人开发建议执行如下命令,拉取最新的代码</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-
-<p>3.合并（merge)分支代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git merge dev</span><br><span class="line"><span class="comment"># merge完成后可执行如下命令，查看是否有冲突</span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<p>4.提交代码至主干（master）<br><code>git push origin master</code></p>
-<p>5.最后切换回原开发分支<br><code>git checkout dev</code></p>
-<h2 id="放弃本地更改"><a href="#放弃本地更改" class="headerlink" title="放弃本地更改"></a>放弃本地更改</h2><ol>
-<li>没有添加到暂存区</li>
-</ol>
-<p>没有执行git add , 可以用命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout – filepathname（eg: git checkout – test.cpp）</span><br></pre></td></tr></table></figure>
-
-<p>如果是放弃所有，直接执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .    </span><br></pre></td></tr></table></figure>
-
-<p>此命令用来放弃掉所有还没有加入到缓存区（就是 git add 命令）的修改：新增的文件会被删除、删除的文件会恢复回来、修改的文件会回去。回到暂存区之前的样子。对之前保存在暂存区里的代码不会有任何影响。对commit提交到本地分支的代码就更没影响了。当然，如果你之前压根都没有暂存或commit，那就是回到你上次pull下来的样子了。</p>
-<p>但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。</p>
-<ol start="2">
-<li>已经添加到暂存区：<br>已经使用git add添加到暂存区，可以用命令</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD filepathname （比如： git reset HEAD readme.md）</span><br></pre></td></tr></table></figure>
-
-<p>同样放弃所有就是</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
-
-<p>执行完此命令后，文件状态就回归到第一种情况了，此时再按照情况1处理。</p>
-<ol start="3">
-<li>已经提交到本地仓库：<br>使用git commit提交到本地仓库，可以用命令回退到上一次commit的状态</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-
-<p>可以用命令回退到任意版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line">git reset --hard commitid<span class="comment"># 回到其中你想要的某个版</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>放弃本地修改，强制和远程同步<br>在使用Git的过程中，有些时候我们只想要git服务器中的最新版本的项目，对于本地的项目中修改不做任何理会，就需要用到Git pull的强制覆盖，具体代码如下：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master </span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><ol>
-<li>通过git reset是直接删除指定的commit</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line"></span><br><span class="line">git reset --hard</span><br><span class="line"></span><br><span class="line">git push origin HEAD --force <span class="comment"># 强制提交一次，之前错误的提交就从远程仓库删除</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>通过git revert是用一次新的commit来回滚之前的commit</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 得到你需要回退一次提交的commit id</span></span><br><span class="line"></span><br><span class="line">git revert <span class="comment"># 撤销指定的版本，撤销也会作为一次提交进行保存</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>git revert 和 git reset的区别</p>
-<ul>
-<li><p>git revert是用一次新的commit来回滚之前的commit，此次提交之前的commit都会被保留；</p>
-</li>
-<li><p>git reset是回到某次提交，提交及之前的commit都会被保留，但是此commit id之后的修改都会被删除</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><p>对当前目录进行 git 管理,该目录便会成为工作区,并在当前目录下会出现个.git 隐藏目录.<br>该.git 里会保存 git 所需要的数据和资源,也就是 git 仓库和暂存区都会保存在.git 里</p>
-<ul>
-<li><code>git init</code> 本地初始化，建立缓存区</li>
-</ul>
-<p>由于 git clone 会自动生成.git 隐藏目录,所以上面无需 git init 命令初始化。<br>而且.git 目录里保存了远程仓库地址,所以上面无需 git remote 命令连接远端。</p>
-<ul>
-<li><p><code>git add filename</code><br>将暂存区里的文件提交到本地仓库,若暂存区某个文件被删除掉,则会删除仓库里的文件。加参数 -a:跳过暂存区,git 自动将工作区里记录的所有文件添加到暂存区并一起提交,从而跳过 git add 步骤<br>将工作区修改的文件添加到暂存区也可以使用<code>git add .</code> 将所有修改的文件进行添加;或<code>git add *</code>提交所有文件。</p>
-</li>
-<li><p><code>git rm filename</code><br>将暂存区的文件删除掉,若工作区文件存在,则需要使用<code>git rm -f file</code>来强制删除掉,</p>
-</li>
-<li><p><code>git commit -m &quot;your description&quot;</code><br>为本次操作添加描述</p>
-</li>
-<li><p><code>git clone https://......</code><br>克隆复制远程仓库到当前目录</p>
-</li>
-<li><p><code>git status</code><br>查看工作目录下文件的状态</p>
-</li>
-<li><p><code>git checkout filename</code><br>从暂存区恢复文件到工作区</p>
-</li>
-<li><p><code>git diff</code><br>查看工作区和暂存区版本区别</p>
-</li>
-<li><p><code>git log</code><br>查看已提交到暂存区的历史版本</p>
-</li>
-<li><p><code>git reset --hard 版本号</code><br>恢复文件到指定的版本</p>
-</li>
-</ul>
-<p>-<code>git remote add origin https://.......</code><br>添加远程仓库(origin),也就是关联本地仓库和 github 仓库</p>
-<ul>
-<li><p><code>git push origin 分支</code><br>推送(同步)数据到远程仓库,若是本地上传,必须先使用上个命令来指定远程仓库地址(origin),<br>若是从远程仓库克隆复制的,则不需要,因为.git 里会自动保存远程仓库地址.</p>
-</li>
-<li><p><code>git pull</code><br>从远程仓库中同步代码</p>
-</li>
-</ul>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ul>
-<li>git 提交=报错 443</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取消代理</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br><span class="line"></span><br><span class="line"><span class="comment">#刷新dns</span></span><br><span class="line">ipconfig /flushdns</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -4141,20 +4750,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

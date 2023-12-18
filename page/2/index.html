@@ -155,6 +155,1431 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2022/01/10/20-22-22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/10/20-22-22/" class="post-title-link" itemprop="url">Centos7安装</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-10 20:22:22" itemprop="dateCreated datePublished" datetime="2022-01-10T20:22:22+08:00">2022-01-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="could-not-retrieve-mirrorlist解决"><a href="#could-not-retrieve-mirrorlist解决" class="headerlink" title="could not retrieve mirrorlist解决"></a>could not retrieve mirrorlist解决</h3><p>在执行yum指令的时候出现这个问题,先尝试一下ping指令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping 127.0.0.1</span><br><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>如果第一个正常,第二个错误,那就可能是你没有IP或者你没有启用联网功能;<br>没有IP就查查怎么配静态或者动态IP;<br><code>sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33</code><br>修改配置<code>ONBOOT=no</code>—–&gt;<code>ONBOOT=yes</code><br>wq保存退出<br><code>service network restart</code>重启网络服务</p>
+<p>如果你能ping通百度,还是报这个问题,这个就可能是你的DNS解析不了你的请求,修改DNS啊</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/resolv.conf</span><br><span class="line">nameserver 改成 8.8.8.8</span><br></pre></td></tr></table></figure>
+<h3 id="启用ifconfig-命令"><a href="#启用ifconfig-命令" class="headerlink" title="启用ifconfig 命令"></a>启用ifconfig 命令</h3><p>依赖于 net-tools 软件</p>
+<p><code> yum install -y net-tools</code></p>
+<p>CentOS7最小化安装后没有wget软件，但是以后我们会经常用到这个组件，所以我们安装一下</p>
+<p><code>yum install -y wget</code></p>
+<h3 id="CentOS自带的国外源有时候会很慢，替换成国内的阿里源"><a href="#CentOS自带的国外源有时候会很慢，替换成国内的阿里源" class="headerlink" title="CentOS自带的国外源有时候会很慢，替换成国内的阿里源"></a>CentOS自带的国外源有时候会很慢，替换成国内的阿里源</h3><p>先进入源的目录<br><code>cd /etc/yum.repos.d </code><br>备份一下官方源<br><code>mv CentOS-Base.repo CentOS-Base.repo.bak </code><br>将阿里源文件下载下来<br><code>wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo </code><br>重建源数据缓存<br><code>yum clean all</code>     # 清除系统所有的yum缓存<br><code>yum makecache </code># 生成yum缓存<br>ok,换源完成</p>
+<h3 id="在某些特定的情况下，执行-configure的时候会报错："><a href="#在某些特定的情况下，执行-configure的时候会报错：" class="headerlink" title="在某些特定的情况下，执行./configure的时候会报错："></a>在某些特定的情况下，执行./configure的时候会报错：</h3><p>error:newly created file is older than distributed files!<br>这是由于configure文件时间大于当前系统时间。</p>
+<p>解决方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line">cp configure configure_bak</span><br><span class="line">rm -f configure</span><br><span class="line">cp configure_bak configure</span><br><span class="line"></span><br><span class="line">方法二：修改当前系统时间</span><br><span class="line">hwclock --set --date=&quot;月/日/年 小时：分钟：秒钟&quot;</span><br><span class="line">hwclock --hctosys</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="一、正常的编译安装-卸载"><a href="#一、正常的编译安装-卸载" class="headerlink" title="一、正常的编译安装/卸载"></a>一、正常的编译安装/卸载</h3><p>源码的安装一般由3个步骤组成：配置(configure)、编译(make)、安装(make install)。<br>configure文件是一个可执行的脚本文件，它有很多选项，在待安装的源码目录下使用命令<code>./configure –help</code>可以输出详细的选项列表。</p>
+<p>其中<code>--prefix</code>选项是配置安装目录，如果不配置该选项，安装后可执行文件默认放在<code>/usr/local/bin</code>，库文件默认放在<code>/usr/local/lib</code>，</p>
+<p>配置文件默认放在<code>/usr/local/etc</code>，其它的资源文件放在<code>/usr/local/share</code>，比较凌乱。</p>
+<p>如果配置了<code>--prefix</code>，如：</p>
+<p><code>./configure --prefix=/usr/local/test</code><br>安装后的所有资源文件都会被放在<code>/usr/local/test</code>目录中，不会分散到其他目录。</p>
+<p>使用<code>--prefix</code>选项的另一个好处是方便卸载软件或移植软件</p>
+<p>当某个安装的软件不再需要时，只须简单的删除该安装目录，就可以把软件卸载干净；<br>移植软件只需拷贝整个目录到另外一个机器即可（相同的操作系统下）<br>当然要卸载程序，也可以在原来的<code>make</code>目录下用一次<code>make uninstall</code>，但前提是<code>Makefile</code>文件有<code>uninstall</code>命令。</p>
+<h3 id="二、关于卸载"><a href="#二、关于卸载" class="headerlink" title="二、关于卸载"></a>二、关于卸载</h3><p>如果没有配置<code>--prefix</code>选项，源码包也没有提供<code>make uninstall</code>，则可以通过以下方式可以完整卸载：</p>
+<p>一个临时目录重新安装一遍，如：</p>
+<p>  <code>./configure --prefix=/tmp/to_remove &amp;&amp; make install</code><br>然后遍历<code>/tmp/to_remove</code>的文件，如vim的<code>/bin/vimdiff =&gt;find /usr/ -name vimdiff</code></p>
+<p>删除对应安装位置的文件即可（因为<code>/tmp/to_remove</code>里的目录结构就是没有配置<code>--prefix</code>选项时的目录结构）。</p>
+<h3 id="安装桌面"><a href="#安装桌面" class="headerlink" title="安装桌面"></a>安装桌面</h3><ol>
+<li>yum 的 group 指令</li>
+</ol>
+<p>yum 可以以程序组的模式来安装成套的软件包。支持的软件包可以通过，对于 CentOS 6，Desktop、Desktop Platform、KDE Desktop、X Window System 是主要的桌面环境。对于 CentOS 7，有 KDE Plasma Workspaces 和 Gnome Desktop 两大桌面环境。</p>
+<ol start="2">
+<li>安装图形桌面环境</li>
+</ol>
+<p>CENTOS 7<br>CentOS 7 上的桌面环境安装包组合进行了调整，比以前要简单了。主要有两大阵营，KDE 和 GNOME。</p>
+<p>因为没时间测试，只是预估着下面的指令应该能完成任务，请注意！</p>
+<p>要安装 KDE 桌面环境（使用的是 Plasma 作为默认的桌面管理器了，很漂亮，看这里），</p>
+<p>复制代码代码如下:<br><code># yum groupinstall &quot;KDE Plasma Workspaces&quot;</code></p>
+<p>要安装 GNOME 环境，</p>
+<p>复制代码代码如下:<br><code># yum groupinstall &quot;GNOME Desktop&quot;</code></p>
+<p>安装程序会自动解决安装包和组件的依赖关系。</p>
+<p>CENTOS 6<br>要安装 KDE 桌面环境，执行指令，</p>
+<p>复制代码代码如下:<br><code># yum groupinstall &quot;X Window System&quot; &quot;KDE Desktop&quot; Desktop</code></p>
+<p>即可，同时安装了 3 个软件包。注意，因为 KDE Desktop 和  X Window System 两个软件包名称中间都包含空格，需要用引号引起来才行。</p>
+<p>要安装 Gnome 桌面环境，执行指令，</p>
+<p>复制代码代码如下:<br><code># yum groupinstall &quot;X Window System&quot; &quot;Desktop Platform&quot; Desktop</code></p>
+<p>即可，也是同时安装了 3 个软件包，其中 X Window System 是必须的，不管是 Gnome 还是 KDE。</p>
+<p>既然是桌面环境，可能还需要诸如字体、管理工具之类的，如，</p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># yum -y groupinstall &quot;Graphical Administration Tools&quot;</span><br><span class="line"># yum -y groupinstall &quot;Internet Browser&quot;</span><br><span class="line"># yum -y groupinstall &quot;General Purpose Desktop&quot;</span><br><span class="line"># yum -y groupinstall &quot;Office Suite and Productivity&quot;</span><br><span class="line"># yum -y groupinstall &quot;Graphics Creation Tools&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>启用</li>
+</ol>
+<p>从命令行直接启动图形桌面环境，</p>
+<p><code># startx</code><br>这样就会启动默认的 Gnome 或者 KDE 桌面环境。如果有人喜欢同时安装 GNOME 和 KDE，切换方法可以参考 CentOS 文档。</p>
+<p>如果希望启动时自动启动到图形桌面，需要修改启动配置。因为 CentOS 7 开始使用 systemd 管理器，其操作方式与之前版本有所不同。</p>
+<p>CENTOS 7：<br>CentOS 7 中直接使用 systemd 指令修改启动目的状态即可。</p>
+<p>使用，</p>
+<p>复制代码代码如下:<br><code># systemctl get-default</code></p>
+<p>可以查询到当前所设定的状态。multi-user.target 相当于以前的 level 3，也就是命令行终端；而 graphical.target 相当于以前的 level 5，也就是图形界面。</p>
+<p>所以如果要设置默认启动到图形界面，则执行，</p>
+<p>复制代码代码如下:<br><code># systemctl set-default graphical.target </code></p>
+<p>CENTOS 6 等：<br>编辑 /etc/inittab，将 id:3:initdefault: 改为 id:5:initdefault:。（请注意这里的英文半角冒号。）参考这里。</p>
+<p>直接用 sed 会很方便，</p>
+<p>复制代码代码如下:<br><code>sed -i &#39;s/id:3:initdefault:/id:5:initdefault:/&#39; /etc/inittab</code></p>
+<p>启动图形界面后，如果希望从图形界面切换到命令行界面，可以用 Ctrl + Alt + F6（实际上 F1 到 F6 都行，不过它们代表 Linux 中不同的控制台），或者反过来 Ctrl + Alt + F7 回到刚才的图形界面。</p>
+<p>4.开机跳过图形化界面</p>
+<p>复制代码代码如下:<br><code>#vi /etc/inittab--编辑/etc/inittab文件</code></p>
+<p>找到下面语句：</p>
+<p>复制代码代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Default runlevel. The runlevels used by RHS are:</span><br><span class="line"># 0 - halt (Do NOT set initdefault to this)--停机</span><br><span class="line"># 1 - Single user mode --单用户模式</span><br><span class="line"># 2 - Multiuser, without NFS (The same as 3, if you do not havenetworking) --多用户模式，不支持NFS</span><br><span class="line"># 3 - Full multiuser mode--多用户模式</span><br><span class="line"># 4 - unused--没有使用</span><br><span class="line"># 5 - X11--图形界面方式</span><br><span class="line"># 6 - reboot (Do NOT set initdefault to this)--重新启动</span><br><span class="line">#</span><br><span class="line">id:5:initdefault:--默认运行等级是5，只要将此处改成 id:3:initdefault:即可</span><br></pre></td></tr></table></figure>
+<p>在文本模式想启动图形界面，可以打如下命令：</p>
+<p>复制代码代码如下:<br><code>#startx</code></p>
+<h2 id="CentOS离线状态下安装Python3-7-0"><a href="#CentOS离线状态下安装Python3-7-0" class="headerlink" title="CentOS离线状态下安装Python3.7.0"></a>CentOS离线状态下安装Python3.7.0</h2><ul>
+<li><p>python安装包：Python-3.7.0</p>
+</li>
+<li><p>依赖安装包<br>zlib-devel　　　　　krb5-devel     　　　　ibselinux-devel<br>bzip2-devel　　　　openssl-devel　　　　ncurses-devel 　　　<br>sqlite-devel   　　　 readline-devel　　　  tk-devel<br>gdbm-devel     　　  db4-devel　　　　　   libpcap-devel 　　　　xz-devel     </p>
+</li>
+<li><p>解压python安装包: tar -xvJf  Python-3.7.0.tar.xz</p>
+</li>
+<li><p>编译安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/python3 # 创建编译安装目录</span><br><span class="line">cd Python-3.7.0　　　　　　# 进入python的解压目录</span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install　　　# 编译$安装</span><br></pre></td></tr></table></figure></li>
+<li><p>创建软连接</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3</span><br><span class="line">ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>验证是否安装成功<br>python3 -V<br>pip3 -V</li>
+</ul>
+<h2 id="CentOS7离线安装Nginx"><a href="#CentOS7离线安装Nginx" class="headerlink" title="CentOS7离线安装Nginx"></a>CentOS7离线安装Nginx</h2><ul>
+<li>准备准备离线安装包</li>
+</ul>
+<p>openssl</p>
+<p>zlib</p>
+<p>pcre</p>
+<p>nginx</p>
+<ul>
+<li><p>rpm -ivh *.rpm –nodeps –force</p>
+</li>
+<li><p>安装nginx</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">下载解压</span><br><span class="line"></span><br><span class="line">tar -xzvf  nginx-1.8.1.tar.gz</span><br><span class="line"></span><br><span class="line">cd  nginx-1.8.1</span><br><span class="line"></span><br><span class="line">./configure --prefix=/home/work/nginx</span><br><span class="line"></span><br><span class="line">编译并安装</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line">运行nginx</span><br><span class="line">cd //home/work/nginx/sbin</span><br><span class="line">./nginx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>防火墙<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@rhel7 ~]# systemctl status firewalld.service</span><br><span class="line">[root@rhel7 ~]# systemctl stop firewalld.service</span><br><span class="line">[root@rhel7 ~]# systemctl disable firewalld.service</span><br><span class="line">[root@rhel7 ~]# systemctl status firewalld.service</span><br></pre></td></tr></table></figure></li>
+<li>Nginx相关命令</li>
+</ul>
+<p>4.1 版本查看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@nginx ~]# nginx  -v</span><br><span class="line">nginx version: nginx/1.12.2</span><br></pre></td></tr></table></figure>
+<p>4.2 查看加载的模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@nginx ~]# nginx -V</span><br><span class="line">nginx version: nginx/1.12.2</span><br><span class="line">built by gcc 4.8.5 20150623 (Red Hat 4.8.5-28) (GCC) </span><br><span class="line">configure arguments: --add-module=/root/nginx-sticky-1.2.5/</span><br></pre></td></tr></table></figure>
+<p>4.3 启停命令</p>
+<p>4.3.1 启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nginx nginx-1.12.2]# nginx</span><br></pre></td></tr></table></figure>
+
+<p>4.3.2 停止</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@nginx nginx-1.12.2]# nginx -s stop</span><br><span class="line">[root@nginx nginx-1.12.2]# nginx -s quit</span><br></pre></td></tr></table></figure>
+
+<p>4.3.3 动态加载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@nginx nginx-1.12.2]# ngins -s reload</span><br></pre></td></tr></table></figure>
+
+<p>4.3.4 测试配置文件nginx.conf正确性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@nginx ~]# nginx  -t</span><br><span class="line">nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful</span><br></pre></td></tr></table></figure>
+
+<p><code>nginx -s stop</code>:此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。</p>
+<p><code>nginx -s reload</code>:动态加载，当配置文件nginx.conf有变化时执行该命令动态加载。</p>
+<p>4.4 开机自启动</p>
+<p>编辑/etc/rc.d/rc.local文件，新增一行/usr/local/nginx/sbin/nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@nginx rc.d]# cd /etc/rc.d</span><br><span class="line">[root@nginx rc.d]# sed -i &#x27;13a /usr/local/nginx/sbin/nginx&#x27; /etc/rc.d/rc.local </span><br><span class="line">[root@nginx rc.d]# chmod u+x rc.local</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/12/01/10-12-33/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KK">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KK">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/01/10-12-33/" class="post-title-link" itemprop="url">MySql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-01 10:12:33" itemprop="dateCreated datePublished" datetime="2021-12-01T10:12:33+08:00">2021-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="MySql"><a href="#MySql" class="headerlink" title="MySql"></a>MySql</h1><blockquote>
+<p>关系型数据库：建立在关系模型上，由多张相互连接的二维表组成的数据库</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>MySQL 官网下载最新版<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/installer/">https://dev.mysql.com/downloads/installer/</a></li>
+<li>然后在 cmd 里面 cd 到<code>D:\mysql-8.0.11</code>安装目录</li>
+<li>在该文件夹下创建 my.ini 配置文件编辑 my.ini 配置以下基本信息</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br><span class="line"></span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 设置3306端口</span></span><br><span class="line"><span class="attr">port</span> = <span class="number">3306</span></span><br><span class="line"><span class="comment"># 设置mysql的安装目录</span></span><br><span class="line"><span class="attr">basedir</span>=C:\\web\\mysql-<span class="number">8.0</span>.<span class="number">11</span></span><br><span class="line"><span class="comment"># 设置 mysql数据库的数据的存放目录MySQL 8+ 不需要以下配置，系统自己生成即可否则有可能报错</span></span><br><span class="line"><span class="comment"># datadir=C:\\web\\sqldata</span></span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">20</span></span><br><span class="line"><span class="comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8</span><br><span class="line"><span class="comment"># 创建新表时将使用的默认存储引擎</span></span><br><span class="line"><span class="attr">default-storage-engine</span>=INNODB</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MySQL 数据库进行初始化命令操作时提示 my.ini 配置文件错误的解决方法<br>通过修改 MySQL 数据库中 my.ini 配置文件编码格式的方法解决此问题。<br>步骤：用记事本打开 my.ini 文件——》点击“文件”选择“另存为”——》将编码选为 ANSI——》保存覆盖——》重启 MySQL 。</p>
+</blockquote>
+<ol>
+<li>以管理员身份打开 cmd 命令行工具切换目录<code>cd D:\mysql-8.0.11\bin</code></li>
+<li>初始化数据库<code>mysqld --initialize --console</code>执行完成后会输出 root 用户的初始默认密码!!!!</li>
+<li>安装<code>mysqld install</code></li>
+<li>启动输入以下命令<code>net start mysql</code></li>
+<li>停止<code>net stop mysql</code></li>
+<li>登录 MySQL<code>mysql -u root -p</code></li>
+<li>修改初始密码<code>ALTER USER USER() IDENTIFIED BY &#39;123456&#39;;</code></li>
+</ol>
+<h2 id="mysql-数据类型"><a href="#mysql-数据类型" class="headerlink" title="mysql 数据类型"></a>mysql 数据类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数类型</td>
+<td>tinyint\smallint\mediumint\int\bigint</td>
+</tr>
+<tr>
+<td>浮点小数类型</td>
+<td>float\double</td>
+</tr>
+<tr>
+<td>定点小数类型</td>
+<td>decimal</td>
+</tr>
+<tr>
+<td>时间、日期类型</td>
+<td>year\time\date\datetime\timestamp</td>
+</tr>
+<tr>
+<td>文本字符串</td>
+<td>char\varchar\tinytext\text\mediumtext\longtext\enum\set</td>
+</tr>
+<tr>
+<td>二进制字符串</td>
+<td>bit\binary\varbinary\tinyblob\blog\mediumblob\longblob</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>char(n)和 varchar(n)中括号中 n 代表字符的个数并不代表字节个数比如 CHAR(30)就可以存储 30 个字符。</p>
+</blockquote>
+<h2 id="sql-语句"><a href="#sql-语句" class="headerlink" title="sql 语句"></a>sql 语句</h2><p>语法:</p>
+<ul>
+<li>单行或多行书写，已分号结尾</li>
+<li>可使用空格缩进</li>
+<li>不区分大小写，关键词推荐大写</li>
+<li>注释：两横杆加空格<code>-- 注释...</code>或<code>/* ... */</code>或 mysql 特有的<code>#</code></li>
+</ul>
+<p>分类：</p>
+<ul>
+<li>DDL（data definition language）数据定义语句，建表、字段、数据库</li>
+<li>DML（data manipulation language）数据操作语句，增删改</li>
+<li>DQL（data query language）数据查询语句</li>
+<li>DCL（data control language）数据控制语句，创建数据库用户，权限访问控制</li>
+</ul>
+<h2 id="sql-常用语句"><a href="#sql-常用语句" class="headerlink" title="sql 常用语句"></a>sql 常用语句</h2><ul>
+<li><p>DDL</p>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>show databases;</td>
+<td>显示数据库</td>
+</tr>
+<tr>
+<td>show create database 数据库名;</td>
+<td>查看数据库信息</td>
+</tr>
+<tr>
+<td>select databases();</td>
+<td>查询当前数据库</td>
+</tr>
+<tr>
+<td>use 数据库名;</td>
+<td>选择数据库</td>
+</tr>
+<tr>
+<td>create database [ IF NOT EXISTS] 数据库名 [DEFAULT CHARSET 字符集] [COLLATE 排序规则];</td>
+<td>创建数据库</td>
+</tr>
+<tr>
+<td>drop database [ IF EXISTS] 数据库名;</td>
+<td>删除数据库</td>
+</tr>
+<tr>
+<td>alter database 库名 选项信息;</td>
+<td>修改库信息</td>
+</tr>
+<tr>
+<td>show tables;</td>
+<td>查看所有表</td>
+</tr>
+<tr>
+<td>show tables from 数据库名;</td>
+<td>查看所有表</td>
+</tr>
+<tr>
+<td>show create table 表名;</td>
+<td>查询指定表建表语句</td>
+</tr>
+<tr>
+<td>desc 表名;</td>
+<td>表结构</td>
+</tr>
+<tr>
+<td>show 列 from 表名;</td>
+<td>获取表的一个列</td>
+</tr>
+<tr>
+<td>create table 表名(字段名 字段类型[COMMENT 注释],….)[COMMENT 注释];</td>
+<td>创建表，最后一个字段后面没有逗号</td>
+</tr>
+<tr>
+<td>RENAME TABLE 原表名 TO 新表名</td>
+<td>对表进行重命名</td>
+</tr>
+<tr>
+<td>RENAME TABLE 原表名 TO 库名.表名</td>
+<td>可将表移动到另一个数据库</td>
+</tr>
+<tr>
+<td>DROP TABLE[ IF EXISTS] 表名</td>
+<td>删除表</td>
+</tr>
+<tr>
+<td>TRUNCATE [TABLE] 表名</td>
+<td>清空表</td>
+</tr>
+<tr>
+<td>ALTER TABLE 表名 操作名</td>
+<td>修改表信息，操作如下</td>
+</tr>
+<tr>
+<td>操作名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ADD[ COLUMN] 字段名</code>– 增加字段;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>AFTER 字段名</code>– 表示增加在该字段名后面;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>FIRST</code>– 表示增加在第一个;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ADD PRIMARY KEY(字段名)</code>– 创建主键;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ADD UNIQUE [索引名] (字段名)</code>– 创建唯一索引;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ADD INDEX [索引名] (字段名)</code>– 创建普通索引;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>DROP[ COLUMN] 字段名</code>– 删除字段;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>MODIFY[ COLUMN] 字段名 字段属性</code>– 支持对字段属性进行修改不能修改字段名(所有原有属性也需写上);</td>
+<td></td>
+</tr>
+<tr>
+<td><code>CHANGE[ COLUMN] 原字段名 新字段名 字段属性</code>– 支持对字段名修改;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>DROP PRIMARY KEY</code>– 删除主键(删除主键前需删除其 AUTO_INCREMENT 属性);</td>
+<td></td>
+</tr>
+<tr>
+<td><code>DROP INDEX 索引名</code>– 删除索引;</td>
+<td></td>
+</tr>
+<tr>
+<td><code>DROP FOREIGN KEY 外键</code> – 删除外键;</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>数据类型</p>
+<ul>
+<li>整型<table>
+<thead>
+<tr>
+<th>整型</th>
+<th>占用字节</th>
+<th>范围</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tinyint</td>
+<td>1</td>
+<td>-2^7^~2^7-1^</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>2</td>
+<td>-2^15^~2^15-1^</td>
+<td>-32768~32767</td>
+</tr>
+<tr>
+<td>mediumint</td>
+<td>3</td>
+<td>-2^23^~2^23-1^</td>
+<td>-8388608~8388607</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4</td>
+<td>-2^31^~2^31-1^</td>
+<td>-2147483648~2147483647</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>8</td>
+<td>-2^63^~2^63-1^</td>
+<td></td>
+</tr>
+<tr>
+<td>一个字节=8 位</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>无符号数（unsigned）:就是没有负数，无符号数的正数的范围是有符号数正数范围的 2 倍。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>浮点数<table>
+<thead>
+<tr>
+<th>浮点数</th>
+<th>占用字节</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float(单精度)</td>
+<td>4</td>
+<td>-3.4E+38~3.4E+38</td>
+</tr>
+<tr>
+<td>double(双精度)</td>
+<td>8</td>
+<td>-1.8E+308~1.8E+308</td>
+</tr>
+<tr>
+<td>浮点数的声明：float(M,D)，double(M,D)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>M：总位数 D：小数位数</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>没有指定小数位数，默认小数位数是 0 位</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MySQL 浮点数支持科学计数法</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>浮点数的精度会丢失</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>定点数<br>语法：decimal(M,D)<br>M 的最大值是 65，D 的最大值是 30，默认是(10,0)<br>decimal 是变长的，大致每 9 个数字用 4 个字节存储，整数和小数分开存储。定点数占用的资源可能会比浮点数大很多。</li>
+<li>字符型<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char(L)</td>
+<td>定长字符</td>
+</tr>
+<tr>
+<td>varchar(L)</td>
+<td>可变长度字符</td>
+</tr>
+<tr>
+<td>tinytext</td>
+<td>大段文本（大块数据） 28-1=255 个字符</td>
+</tr>
+<tr>
+<td>text</td>
+<td>大段文本（大块数据） 216-1=65535 个字符</td>
+</tr>
+<tr>
+<td>mediumtext</td>
+<td>2^24^-1</td>
+</tr>
+<tr>
+<td>longtext</td>
+<td>2^32^-1</td>
+</tr>
+<tr>
+<td>char</td>
+<td></td>
+</tr>
+<tr>
+<td>1、 char(L)：MySQL 不回收多余的空间</td>
+<td></td>
+</tr>
+<tr>
+<td>2、 L 的最大长度是 255</td>
+<td></td>
+</tr>
+<tr>
+<td>varchar</td>
+<td></td>
+</tr>
+<tr>
+<td>1、 varchar(L):MySQL 回收多余的空间</td>
+<td></td>
+</tr>
+<tr>
+<td>2、 L 的理论最大长度是 65535，但事实上达不到，因为有的字符是多字节字符，比如一个 utf8 的字符占用 3 个字节，65535/3 大约保存 2 万多字符；如果是 gbk,一个字符占两个字节，65535/2 大约保存 3 万多个字符。</td>
+<td></td>
+</tr>
+<tr>
+<td>一个记录的所有字段（不包含大数据）的总长度不能超过 65535 个字节</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>枚举（enum）<br>从集合中选择一个值作为数据（单选）,MySQL 管理枚举值是通过整型的数字来管理的，第一个值是 1，第二个值是 2，以此类推。枚举优点<br>1、 限制值<br>2、 节省空间<br>3、 运行速度快（整数比字符串运行速度快）<br>思考题：已知枚举占用 2 个字节，请问最多可以有多个枚举值。<br>答：2 个字节 16 位，可以保存 216 方个值（65536，0-65535），因为枚举值从 1 开始，所以最多可以有 65535 个枚举值</li>
+<li>集合（set）<br>从集合中选择一些值作为数据（多选）,集合和枚举一样，在 MySQL 内部也是通过数字来管理的。MySQL 为每个集合元素分配一个固定的值。分配方式从前往后依次是 20,21,22，…。如果有多个选项，值是单个选项的和<br>集合是一个按位或的关系<blockquote>
+<p>按位或和按位与</p>
+<blockquote>
+<p>按位与：所有的位都是 1 结果才是 1<br>按位或：只要有一位是 1 结果就是 1<br>思考题：一直集合占用 8 个字节，可以表示多少个选项？<br>答：8 个字节是 64 个位，可以表示 64 个选项</p>
+</blockquote>
+</blockquote>
+</li>
+<li>日期时间型<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>datetime</td>
+<td>日期时间 占 8 个字节</td>
+</tr>
+<tr>
+<td>date</td>
+<td>日期 占四个字节</td>
+</tr>
+<tr>
+<td>time</td>
+<td>时间</td>
+</tr>
+<tr>
+<td>year</td>
+<td>年份，占用 1 个字节</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>时间戳，占用 4 个字节</td>
+</tr>
+<tr>
+<td>datetime (日期时间)</td>
+<td></td>
+</tr>
+<tr>
+<td>格式：年-月-日 小时:分钟:秒</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp （时间戳）</td>
+<td></td>
+</tr>
+<tr>
+<td>datetime 和 timestamp 在表现上是一样的，他们的区别在于：Datetime 从 1 到 9999，而 timestamp 从 1970 年到 2038 年（原因是 timestamp 只占用了 4 个字节），2038 年 01 月 19 日 11:14:07 秒后就超过了 4 个字节的长度。</td>
+<td></td>
+</tr>
+<tr>
+<td>year</td>
+<td></td>
+</tr>
+<tr>
+<td>因为 year 占用 1 个字节，所以只能保存 255 个年份，范围是 1901~2155</td>
+<td></td>
+</tr>
+<tr>
+<td>time</td>
+<td></td>
+</tr>
+<tr>
+<td>可以表示时间，还可以表示时间间隔，范围是-838:59:59~838:59:59，time 也支持以天的方式表示时间间隔</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>boolean<br>MySQL 不支持 boolean 型，true 和 false 在数据库中对应的是 1 和 0</li>
+</ul>
+</li>
+</ul>
+<h3 id="对于字段的定义"><a href="#对于字段的定义" class="headerlink" title="对于字段的定义"></a>对于字段的定义</h3><p>字段名 数据类型 <code>[NOT NULL | NULL] [DEFAULT default_value] [AUTO_INCREMENT] [UNIQUE [KEY] | [PRIMARY] KEY] [COMMENT &#39;string&#39;]</code></p>
+<h3 id="表选项"><a href="#表选项" class="headerlink" title="表选项"></a>表选项</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 字符集</span></span><br><span class="line">    CHARSET <span class="operator">=</span> charset_name</span><br><span class="line">    如果表没有设定则使用数据库字符集</span><br><span class="line"><span class="comment">-- 存储引擎</span></span><br><span class="line">    ENGINE <span class="operator">=</span> engine_name</span><br><span class="line">    表在管理数据时采用的不同的数据结构结构不同会导致处理方式、提供的特性操作等不同</span><br><span class="line">    常见的引擎InnoDB MyISAM Memory<span class="operator">/</span>Heap BDB <span class="keyword">Merge</span> Example CSV MaxDB Archive</span><br><span class="line">    不同的引擎在保存表的结构和数据时采用不同的方式</span><br><span class="line">    MyISAM表文件含义.frm表定义.MYD表数据.MYI表索引</span><br><span class="line">    InnoDB表文件含义.frm表定义表空间数据和日志文件</span><br><span class="line">    <span class="keyword">SHOW</span> ENGINES <span class="comment">-- 显示存储引擎的状态信息</span></span><br><span class="line">    <span class="keyword">SHOW</span> ENGINE 引擎名 &#123;LOGS<span class="operator">|</span>STATUS&#125; <span class="comment">-- 显示存储引擎的日志或状态信息</span></span><br><span class="line"><span class="comment">-- 数据文件目录</span></span><br><span class="line">    DATA DIRECTORY <span class="operator">=</span> <span class="string">&#x27;目录&#x27;</span></span><br><span class="line"><span class="comment">-- 索引文件目录</span></span><br><span class="line">    INDEX DIRECTORY <span class="operator">=</span> <span class="string">&#x27;目录&#x27;</span></span><br><span class="line"><span class="comment">-- 表注释</span></span><br><span class="line">    COMMENT <span class="operator">=</span> <span class="string">&#x27;string&#x27;</span></span><br><span class="line"><span class="comment">-- 分区选项</span></span><br><span class="line">    <span class="keyword">PARTITION</span> <span class="keyword">BY</span> ... (详细见手册)</span><br></pre></td></tr></table></figure>
+
+<h3 id="列属性列约束"><a href="#列属性列约束" class="headerlink" title="列属性列约束"></a>列属性列约束</h3><ol>
+<li>主键约束<ul>
+<li>主键的作用 1、 保证数据完整性 2、 加快查询速度</li>
+<li>能唯一标识记录的字段可以作为主键。</li>
+<li>一个表只能有一个主键。</li>
+<li>主键具有唯一性。</li>
+<li>声明字段时用 primary key 标识。<br>也可以在字段列表之后声明，例 <code>create table tab ( id int, stu varchar(10), primary key (id));</code></li>
+<li>主键字段的值不能为 null。</li>
+<li>选择主键的原则 1、 最少性：尽量选择单个键做主键 2、 稳定性：尽量选择更新少的列做主键。3、 能用数字做主键的就不要用字符串</li>
+<li>主键可以由多个字段共同组成。此时需要在字段列表后声明的方法。<br>例 create table tab ( id int, stu varchar(10), age int, primary key (stu, age));</li>
+</ul>
+</li>
+<li>unique 唯一约束<ul>
+<li>不能重复可以为空</li>
+<li>一个表可以有多个唯一键</li>
+</ul>
+</li>
+<li>null 约束<ul>
+<li>null 不是数据类型是列的一个属性。<br>表示当前列是否可以为 null 表示什么都没有。</li>
+<li>null, 允许为空。默认。</li>
+<li>not null, 不允许为空。<br>例如： <code>insert into tab values (null, &#39;val&#39;);</code><br>此时表示将第一个字段的值设为 null, 取决于该字段是否允许为 null</li>
+</ul>
+</li>
+<li>default 默认值属性<ul>
+<li>当前字段的默认值。</li>
+<li><code>insert into tab values (default, &#39;val&#39;);</code> – 此时表示强制使用默认值。</li>
+<li><code>create table tab ( add_time timestamp default current_timestamp );</code>– 表示将当前时间的时间戳设为默认值。<code>current_date, current_time</code></li>
+</ul>
+</li>
+<li>auto_increment 自动增长约束<ul>
+<li>自动增长必须为<code>索引主键</code>或<code>unique</code></li>
+<li>只能存在一个字段为自动增长。</li>
+<li>默认为 1 开始自动增长。可以通过表属性<code>auto_increment = x</code> 进行设置或 <code>alter table tbl auto_increment = x;</code>，一般和 unsigned 一起使用（使用无符号整数）</li>
+<li>自动增长列上的数据被删除，默认不再重复使用。</li>
+<li>delete from 清空数据后编号继续增长，truncate table 清空表后编号从 1 开始增长.因为 truncate table 是删除原来的表创建一个新表。</li>
+</ul>
+</li>
+<li>comment 注释<ul>
+<li>例：<code>create table tab ( id int ) comment &#39;注释内容&#39;;</code></li>
+</ul>
+</li>
+<li>foreign key 外键约束<ul>
+<li>用于限制主表与从表数据完整性。</li>
+<li><code>create table 表名(字段名 类型)[constraint] [外键名称] foreign key(外键字段名) references 主表(主表列名)</code></li>
+<li><code>alter table 表名 add constraint 外键名称 foreign key (外键字段名) references 主表(主表列名);</code>将表的外键关联到主表的字段。每个外键都有一个名字可以通过 constraint 指定</li>
+<li>存在外键的表称之为从表子表外键指向的表称之为主表父表。</li>
+<li>作用保持数据一致性完整性主要目的是控制存储在外键表从表中的数据。</li>
+<li><code>alter table 表名 drop foreign key 外键名称</code>删除外键<br>删除、更新外键行为<table>
+<thead>
+<tr>
+<th>行为</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>no action/restrict</td>
+<td>父表操作时，检查是否有对应外键，若有则不允许删除、更新</td>
+</tr>
+<tr>
+<td>cascade</td>
+<td>级联，若有，则也删除、更新外键在子表中的记录</td>
+</tr>
+<tr>
+<td>set null</td>
+<td>若有，则设置子表中该外键值为 null，外键值必须允许取 null</td>
+</tr>
+<tr>
+<td>set default</td>
+<td>若有，则设置子表中该外键值为默认值，innodb 不支持</td>
+</tr>
+<tr>
+<td><code>create table 表名(字段名 类型)[constraint] [外键名称] foreign key(外键字段名) references 主表(主表列名) on update cascade on delete cascade</code></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="MySQL-中可以对-InnoDB-引擎使用外键约束"><a href="#MySQL-中可以对-InnoDB-引擎使用外键约束" class="headerlink" title="MySQL 中可以对 InnoDB 引擎使用外键约束"></a>MySQL 中可以对 InnoDB 引擎使用外键约束</h3><p>语法：<br><code>foreign key (外键字段 references 主表名 (关联字段) [主表记录删除时的动作] [主表记录更新时的动作]</code></p>
+<p>此时需要检测一个从表的外键需要约束为主表的已存在的值。外键在没有关联的情况下可以设置为 <code>null</code>，前提是该外键列没有 <code>not null</code>。</p>
+<p>可以不指定主表记录更改或更新时的动作那么此时主表的操作被拒绝。</p>
+<p>如果指定了 <code>on update</code> 或 <code>on delete</code> 在删除或更新时有如下几个操作可以选择</p>
+<ol>
+<li><p>cascade 级联操作。主表数据被更新主键值更新从表也被更新外键值更新。主表记录被删除从表相关记录也被删除。</p>
+</li>
+<li><p>set null 设置为 null。主表数据被更新主键值更新从表的外键被设置为 null。主表记录被删除从表相关记录外键被设置成 null。但注意要求该外键列没有 not null 属性约束。</p>
+</li>
+<li><p>restrict 拒绝父表删除和更新。</p>
+</li>
+</ol>
+<p>注意外键只被 InnoDB 存储引擎所支持。其他引擎是不支持的。</p>
+<h3 id="DML（增删改）"><a href="#DML（增删改）" class="headerlink" title="DML（增删改）"></a>DML（增删改）</h3><ul>
+<li>增</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> [<span class="keyword">INTO</span>] 表名 [(字段列表)] <span class="keyword">VALUES</span> (值列表)[, (值列表), ...]</span><br><span class="line">        <span class="comment">-- 如果要插入的值列表包含所有字段并且顺序一致，则可以省略字段列表。</span></span><br><span class="line">        <span class="comment">-- 可同时插入多条数据记录！</span></span><br><span class="line">        <span class="comment">-- 字符串和日期数据应包含在引号中</span></span><br><span class="line">        REPLACE 与 <span class="keyword">INSERT</span> 完全一样，可互换。</span><br><span class="line"><span class="keyword">INSERT</span> [<span class="keyword">INTO</span>] 表名 <span class="keyword">SET</span> 字段名<span class="operator">=</span>值[, 字段名<span class="operator">=</span>值, ...]</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名[ 删除条件子句]</span><br><span class="line"></span><br><span class="line">没有条件子句则会删除全部</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>改</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> field1<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value1, field2<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value2</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> runoob_tbl <span class="keyword">WHERE</span> runoob_id<span class="operator">=</span><span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h3><blockquote>
+<p>执行顺序<code>form</code>&gt;<code>where</code>&gt;<code>group by</code>&gt;<code>having</code>&gt;<code>select</code>&gt;<code>order by</code>&gt;<code>limit</code></p>
+</blockquote>
+<h4 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name,column_name</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line">[LIMIT N][ <span class="keyword">OFFSET</span> M]</span><br><span class="line">        <span class="comment">-- 可来自多个表的多个字段</span></span><br><span class="line">        <span class="comment">-- 其他子句可以不使用</span></span><br><span class="line">        <span class="comment">-- 字段列表可以用*代替表示所有字段</span></span><br><span class="line">        你可以使用 LIMIT 属性来设定返回的记录数。</span><br><span class="line">你可以通过<span class="keyword">OFFSET</span>指定<span class="keyword">SELECT</span>语句开始查询的数据偏移量。默认情况下偏移量为<span class="number">0</span>。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>去除重复记录<br><code>select distinct 字段列表 from 表名</code></p>
+</li>
+<li><p>设置别名 AS</p>
+</li>
+</ul>
+<p><code>SELECT 字段1[AS 别名], 字段2[AS 别名] FROM 表名;-- AS可省略</code></p>
+<ul>
+<li>WHERE 子句</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">SELECT</span> field1, field2,...fieldN <span class="keyword">FROM</span> table_name1, table_name2...</span><br><span class="line">[<span class="keyword">WHERE</span> condition1 [<span class="keyword">AND</span> [<span class="keyword">OR</span>]] condition2.....</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MySQL 的 WHERE 子句的字符串比较是不区分大小写的。 你可以使用 BINARY 关键字来设定 WHERE 子句的字符串比较是区分大小写的。<br>字符串用单引号</p>
+</blockquote>
+<p>条件判断：<code>列 操作符 值</code></p>
+<p>操作符：<br><code>= &lt; &gt; &lt;= &gt;=  !=</code><br><code>BETWEEN...AND...</code> 在某个范围（含最小最大值）<br><code>IN(...)</code>在 in 之后的列表中的值，多选一<br><code>IS NULL</code> 是 null</p>
+<p>逻辑运算符<br><code>AND</code>或<code>&amp;&amp;</code> 多个条件同时成立<br><code>OR</code>或<code>||</code> 多个条件成立一个<br><code>NOT</code>或<code>!</code> 非</p>
+<p>LIKE 子句</p>
+<p>LIKE 子句中使用百分号 <code>%</code>字符来表示任意个字符，类似于 <code>UNIX</code> 或<code>正则表达式中</code>的星号<code>*</code>。如果没有使用百分号 <code>%</code>, LIKE 子句与等号<code>=</code>的效果是一样的。<code>_</code>下划线匹配单个字符</p>
+<p><code>mysql&gt; SELECT * from runoob_tbl WHERE runoob_author LIKE &#39;%COM&#39;;</code></p>
+<ul>
+<li>分组聚合<br><code>select 列,聚合函数 from 表 [where条件] group by 列 [having 分组后的过滤条件]</code></li>
+</ul>
+<p>聚合函数（将一列数据作为一个整体进行纵向计算）:</p>
+<blockquote>
+<p>null 值不参与聚合函数计算</p>
+</blockquote>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum(列)-- 求和</span><br><span class="line">avg(列)--平均</span><br><span class="line">min(列)</span><br><span class="line">max(列)</span><br><span class="line">count(列|*)-- 数量</span><br></pre></td></tr></table></figure>
+
+<p>where 与 having:<br>where 是分组前过滤，不满足 where 条件不参与分组。having 是分组后对结果进行过滤。where 不能对聚合函数进行判断，而 having 可以</p>
+<p>分组后，查询字段一般为聚合函数和分组的字段，查询其他字段只会显示第一个值</p>
+<ul>
+<li>排序</li>
+</ul>
+<p><code>select 字段, from 表  order by 关键字 [asc|desc],关键词2 [asc|desc]</code></p>
+<p>如果是多字段排序，当第一个字段值相同的时候，才会根据第二个字段进行排序</p>
+<ul>
+<li>分页（mysql)</li>
+</ul>
+<p><code>select * from table limit n[,m]</code><br>n：起始索引,跳过前 n 条，m：取出 m 条</p>
+<h4 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h4><blockquote>
+<p>多表关系</p>
+<blockquote>
+<p>一对一(用户和用户详情)：多用于单表拆分，将用户和用户详情拆分成两个表，提升操作效率。任意一方加入外键，并设置外键为唯一<br>一对多(一个部门对于多个员工，一个员工对应一个部门)：多的一方建立外键，指向一的一方<br>多对多(一个学生对于多个课程，一个课程对应多个学生)：只能建立第三张表，包含两个外键，分别关联两方主键</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>多表查询语法(它会让参与的表先产生笛卡尔积【如两个集合 a，b 的所有组合情况】，然后在 where 过滤，性能差)</p>
+<p><code>select  字段1,字段2... from 表1,表2... [where 条件]</code></p>
+</li>
+</ul>
+<p>as 别名<br><code>select  字段1,字段2... from 表1 as 别名,表2 as 别名... [where 条件]</code></p>
+<ul>
+<li>多表链接查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 字段列表 <span class="keyword">FROM</span> 表<span class="number">1</span>  [,<span class="keyword">INNER</span>]<span class="operator">|</span>[<span class="keyword">LEFT</span><span class="operator">|</span><span class="keyword">RIGHT</span>,[<span class="keyword">OUTER</span>]] <span class="keyword">JOIN</span>  表<span class="number">2</span> <span class="keyword">ON</span> 表<span class="number">1.</span>字段 <span class="operator">=</span> 表<span class="number">2.</span>字段;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>内关联是求交集，必须双向匹配才能查出</p>
+</li>
+<li><p>外关联：左外连接查询 (左边表中的数据优先全部显示，不用匹配右边),右外连接查询 (右边表中的数据优先全部显示，不用匹配左边)</p>
+</li>
+<li><p>全连接查询(联合查询)，联合查询不会使索引失效，而 or 会</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 全连接查询：是在内连接的基础上增加 左右两边没有显示的数据</span></span><br><span class="line"><span class="comment">-- 注意: mysql并不支持全连接 full JOIN 关键字</span></span><br><span class="line"><span class="comment">-- 注意: 但是mysql 提供了 UNION 关键字.使用 UNION 可以间接实现 full JOIN 功能</span></span><br><span class="line"><span class="comment">-- 联合查询多张表的列数，类型必须保持一致</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">left</span> <span class="keyword">join</span> sc <span class="keyword">on</span> student.sid <span class="operator">=</span> sc.sid</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">right</span> <span class="keyword">join</span> sc <span class="keyword">on</span> student.sid <span class="operator">=</span> sc.sid;</span><br><span class="line"><span class="comment">-- 注意: UNION 和 UNION ALL 的区别:UNION 会去掉重复的数据,而 UNION ALL 则直接显示结果/</span></span><br></pre></td></tr></table></figure></li>
+<li><p>自连接，必须起别名，可以内联也可以外联<br><code>select 字段 from 表1 别名1 join 表1 别名2 on 条件...</code></p>
+</li>
+</ol>
+<ul>
+<li>三表查询</li>
+</ul>
+<p><code>select 表1.字段,表2.字段,表3.字段 from 表1 join 表2 on 表1.关联字段 = 表2.关联字段 join 表3 on 表2.关联字段 = 表3.关联字段 where....;</code></p>
+<ul>
+<li>子查询（嵌套查询）<ul>
+<li>标量子查询（子查询结果返回的结果为单个值）</li>
+<li>列子查询（返回的一列）<br>常用操作：<code>in</code>在集合范围内多选一,<code>not in</code>不在集合范围,<code>any</code>任意一个满足即可,<code>some</code>等同 any,<code>all</code>必须全部满足</li>
+<li>行子查询（返回的一行）<br>常用操作：<code>in</code>在集合范围内多选一,<code>not in</code>不在集合范围,<code>=</code>等于,<code>!=</code>不等于</li>
+<li>表子查询(多行多列)<br>常用操作：<code>in</code>在集合范围内多选一,</li>
+</ul>
+</li>
+</ul>
+<h3 id="DCL-管理用户管理权限"><a href="#DCL-管理用户管理权限" class="headerlink" title="DCL 管理用户管理权限"></a>DCL 管理用户管理权限</h3><ul>
+<li><p>查询用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>创建用户<br><code>create user &#39;用户名&#39;@&#39;主机名&#39; identified by &#39;密码&#39;</code><br>主机名指在哪个主机上才能登陆访问数据库，可改为<code>%</code>，即可在任何主机登陆</p>
+</li>
+<li><p>修改用户密码<br><code>alter user &#39;用户名&#39;@&#39;主机名&#39; identified width mysql_nativev_password by &#39;密码&#39;</code></p>
+</li>
+<li><p>删除用户<br><code>drop user &#39;用户名&#39;@&#39;主机名&#39;</code></p>
+</li>
+<li><p>权限控制<br>常用权限：</p>
+<table>
+<thead>
+<tr>
+<th>权限</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALL,ALLPRIVILEGES</td>
+<td>所有权限</td>
+</tr>
+<tr>
+<td>SELECT</td>
+<td>查询</td>
+</tr>
+<tr>
+<td>INSERT</td>
+<td>插入数据</td>
+</tr>
+<tr>
+<td>UPDATE</td>
+<td>修改数据</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>删除数据</td>
+</tr>
+<tr>
+<td>ALTER</td>
+<td>修改表</td>
+</tr>
+<tr>
+<td>DROP</td>
+<td>删除表，数据库，视图</td>
+</tr>
+<tr>
+<td>CREATE</td>
+<td>创建表，数据库</td>
+</tr>
+<tr>
+<td>INDEX</td>
+<td>授予用户可以在表上定义索引的权限</td>
+</tr>
+<tr>
+<td>super</td>
+<td>允许执行一系列数据库管理命令</td>
+</tr>
+<tr>
+<td>file</td>
+<td>file 权限指的是对服务器主机上文件的访问，数据库用户拥有 file 权限才可以执行 select ..into outfile，load data infile…操作.</td>
+</tr>
+<tr>
+<td>但是不要把 file, process, super 权限授予管理员以外的账号，这样存在严重的安全隐患。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>查询权限<br><code>show grants for &#39;用户名&#39;@&#39;主机名&#39;</code></p>
+<p>授权<br><code>grant 权限,权限2 on 数据库.表名 to&#39;用户名&#39;@&#39;主机名&#39;</code><br>数据库名和表名可以通配符<code>*</code>代表所有</p>
+<p>撤销权限<br><code>revoke 权限,权限2 on 数据库.表名 from  &#39;用户名&#39;@&#39;主机名&#39;</code></p>
+</li>
+</ul>
+<h2 id="mysql-函数"><a href="#mysql-函数" class="headerlink" title="mysql 函数"></a>mysql 函数</h2><h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat(s1,s2…)</td>
+<td>字符串拼接</td>
+</tr>
+<tr>
+<td>lower(str)</td>
+<td>转小写</td>
+</tr>
+<tr>
+<td>upper(str)</td>
+<td>转大写</td>
+</tr>
+<tr>
+<td>trim(str)</td>
+<td>去除首尾空格</td>
+</tr>
+<tr>
+<td>substring(str,strart,len)</td>
+<td>返回 start 起 len 个字符串</td>
+</tr>
+</tbody></table>
+<h3 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ceil(x)</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>floor(x)</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>mod(x,y)</td>
+<td>返回 x/y 的模</td>
+</tr>
+<tr>
+<td>rand()</td>
+<td>0-1 随机数</td>
+</tr>
+<tr>
+<td>round(x,y)</td>
+<td>x 的四舍五入，暴露 y 位小数</td>
+</tr>
+</tbody></table>
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>curdate()</td>
+<td>当前日期</td>
+</tr>
+<tr>
+<td>curtime()</td>
+<td>当前时间</td>
+</tr>
+<tr>
+<td>now()</td>
+<td>当前日期时间</td>
+</tr>
+<tr>
+<td>year(date)</td>
+<td>获取指定 date 的年</td>
+</tr>
+<tr>
+<td>month(date)</td>
+<td>获取指定 date 的月</td>
+</tr>
+<tr>
+<td>day(date)</td>
+<td>获取指定 date 的日</td>
+</tr>
+<tr>
+<td>date_add(date,interval expr type)</td>
+<td>返回 date 加上时间间隔 expr 后的时间值 ,type 为单位(day,month,year…)</td>
+</tr>
+<tr>
+<td>date_sub(date,interval expr type)</td>
+<td>返回 date 减去时间间隔 expr 后的时间值 ,type 为单位(day,month,year…)</td>
+</tr>
+<tr>
+<td>datediff(date1,date2)</td>
+<td>返回 date1 和 date2 之间的天数</td>
+</tr>
+</tbody></table>
+<h3 id="流程函数"><a href="#流程函数" class="headerlink" title="流程函数"></a>流程函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>if(value,t,f)</td>
+<td>如果 value 为真返回 t，否则返回 f</td>
+</tr>
+<tr>
+<td>ifnull(val1,val2)</td>
+<td>如果 val1 为不为空，返回 val1，否则返回 val2</td>
+</tr>
+<tr>
+<td>case when [val1] then [res1]when [val2] then [res2]…else [default] end</td>
+<td>如果 val1 为真，返回 res1，…否则返回 default 值</td>
+</tr>
+<tr>
+<td>case [expr] when [val1] then [res1]…else [default] end</td>
+<td>如果 expr 等于 val1 ，返回 res1，…否则返回 default 值</td>
+</tr>
+</tbody></table>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>原子性：事务是不可分割的最小操作单元，要么全部成功，要么去全部失败；</li>
+<li>一致性：事务完成时，必须使所有的数据都保持一致状态。</li>
+<li>隔离性：数据库系统提供的隔离机制，保证事务在不受外部并发操作的独立环境下运行</li>
+<li>持久性：事务一旦提交或回滚，它对数据库的数据的改变是永久的</li>
+</ul>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li>查看设置事务提交方式</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> @<span class="variable">@autocommit</span>;</span><br><span class="line"><span class="keyword">Set</span> @<span class="variable">@autocommit</span><span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>开启事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">START</span> TRANSACTION;</span><br><span class="line">或</span><br><span class="line"><span class="keyword">BEGIN</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>提交事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>回滚事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ROLLBACK</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="并发事务问题"><a href="#并发事务问题" class="headerlink" title="并发事务问题"></a>并发事务问题</h3><ul>
+<li><p>脏读：一个事务读到另一个事务还没有提交的数据</p>
+</li>
+<li><p>不可重复读：一个事务先后读取同一条记录，但两次读取的数据不同</p>
+</li>
+<li><p>幻读：一个事务按照条件查询数据时，没有对应的数据行，但是插入数据时，又提示该行数据已经存在。</p>
+</li>
+<li><p>事务隔离级别</p>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Read uncommitted</td>
+<td>出现</td>
+<td>出现</td>
+<td>出现</td>
+</tr>
+<tr>
+<td>Read committed</td>
+<td>不出现</td>
+<td>出现</td>
+<td>出现</td>
+</tr>
+<tr>
+<td>Repeatable Read(mysql 默认)</td>
+<td>不出现</td>
+<td>不出现</td>
+<td>出现</td>
+</tr>
+<tr>
+<td>Serializable</td>
+<td>不出现</td>
+<td>不出现</td>
+<td>不出现</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>查看事务隔离级别</p>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> @<span class="variable">@TRANSACTION</span>_ISOLATION;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置事务隔离级别</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> [SEEESION<span class="operator">|</span><span class="keyword">GLOBAL</span>] TRANSACTION ISOLATION LEVEL&#123;READ UNCOMMITTED<span class="operator">|</span>READ COMMITTED<span class="operator">|</span>REPEATABLE READ<span class="operator">|</span>SERIALIZABLE&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><blockquote>
+<p>就是存储数据、建立索引、更新查找数据等技术的实现方式。存储引擎是基于表的，而不是基于库的，所以存储引擎也可以被称为表类型</p>
+</blockquote>
+<ul>
+<li><p>innoDB</p>
+<blockquote>
+<p>兼顾高可靠性和高性能的通用存储引擎，在 mysql5.5 之后为默认引擎<br>特点：DM 操作遵循 ACID 模型，支持<code>事务</code>支持<code>级锁</code>提高并发访问性能；支持<code>外键</code>，保证数据的完整性和正确性;最大 64TB，空间和内存使用高，批量插入慢，适用除读操作和插入操作外，还有大量的更新、删除操作的应用。<br>文件：xxx.idb:存储该表的表结构和数据和索引</p>
+</blockquote>
+</li>
+<li><p>MyISAM</p>
+<blockquote>
+<p>早期 mysql 默认引擎<br>特点：不支持事务、外键、行锁；支持表锁，访问速度快;空间和内存使用低，批量插入快，适用于读操作和插入操作为主的应用。</p>
+</blockquote>
+</li>
+<li><p>Memory</p>
+<blockquote>
+<p>表数据存在内存中，常用于临时表、缓存使用<br>特点：内存存放、hash 索引<br>文件：xxx.sdi:存储表结构信息</p>
+</blockquote>
+</li>
+<li><p>创建表时，指定存储引擎</p>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(字段<span class="number">1</span> 类型 [comment 注释],...)engine<span class="operator">=</span>innoDB [comment 表注释];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看当前数据库支持的存储引擎</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> engines;</span><br></pre></td></tr></table></figure>
+
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><blockquote>
+<p>帮助 mysql 高效获取数据的数据结构（有序）。在数据之外，数据库还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用数据，这样就可以在这些数据结构上实现高级的查找算法，这种数据结构就是索引<br>优势：提高数据检索效率，降低数据库的 io 成本。对数据进行排序时，降低 cpu 消耗。<br>缺点：索引需要额外的磁盘空间。降低表的更新速度，效率降低。</p>
+</blockquote>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><table>
+<thead>
+<tr>
+<th>索引结构</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B+Tree 索引</td>
+<td>最常见的索引，大部分引擎都支持</td>
+</tr>
+<tr>
+<td>Hash 索引</td>
+<td>利用哈希表实现，只有精确匹配索引的查询才有效，不支持范围查找</td>
+</tr>
+<tr>
+<td>R-tree 空间索引</td>
+<td>MyISAM 引擎的一个特殊索引类型，常用于地理空间数据类型</td>
+</tr>
+<tr>
+<td>Full-text 全文索引</td>
+<td>通过建立到排索引，快速匹配文档的方式，类似 ES</td>
+</tr>
+</tbody></table>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>说明</th>
+<th>特点</th>
+<th>关键词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主键索引</td>
+<td>针对表中的主键创建的索引</td>
+<td>默认自动创建，只能有一个</td>
+<td>primary</td>
+</tr>
+<tr>
+<td>唯一索引</td>
+<td>避免同一个表中数据列的值重复</td>
+<td>可以多个</td>
+<td>unique</td>
+</tr>
+<tr>
+<td>常规索引</td>
+<td>快速定位特定数据</td>
+<td>可以多个</td>
+<td></td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>全文索引查找的是文本中的关键词，而不是比较索引中的值</td>
+<td>可以多个</td>
+<td>fulltext</td>
+</tr>
+</tbody></table>
+<p>innoDB 根据索引的存储类型又可以分为下面两种</p>
+<ul>
+<li>聚集索引 clustered Index：将数据存储和索引放到一块，索引结构的叶子节点保存了行数据（必须有，且只有一个）<ul>
+<li>如果主键存在，主键索引就是聚集索引</li>
+<li>若无主键，将使用第一个唯一索引作为聚集索引</li>
+<li>若表既无主键也无唯一索引，innoDB 将自动生成 rowid 作为隐藏的聚集索引</li>
+</ul>
+</li>
+<li>二级索引 Secondary Index：将数据和索引分开存储，索引结构的叶子节点关联的是对应的主键（可以存在多个）</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>创建索引<br><code>create [unique|fulltext] INDEX 索引名 ON 表名(字段名,...)</code></li>
+<li>查看索引<br><code>show index from 表名</code></li>
+<li>删除索引<br><code>drop idnex 索引名 on 表名</code></li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li><p>最左前缀法则：如果索引了多列，查询从索引的最左列开始，并且不跳过索引中列，若跳过某一列，索引将部分失效即后面的字段索引失效</p>
+</li>
+<li><p>范围查询：如果索引了多列，出现范围查询（<code>&gt;</code>，<code>&lt;</code>），范围查询右侧的列索引失效。可使用<code>&gt;-</code>，<code>&lt;=</code>避免出现这种情况</p>
+</li>
+<li><p>索引列运算：索引列进行运算操作，索引将失效</p>
+</li>
+<li><p>字符串不加引号：字符串不加引号，索引将失效</p>
+</li>
+<li><p>模糊查询：尾部模糊匹配，索引不失效，头部模糊索引失效。</p>
+</li>
+<li><p>or 连接：or 前后都有索引，索引才不会失效</p>
+</li>
+<li><p>数据分布影响：若 mysql 评估索引查询比全表查询慢，将不会使用索引</p>
+</li>
+<li><p>覆盖索引：尽量使用覆盖索引（查询使用了索引，兵器需要返回的列，在该索引中已经全部能够找到），减少 select *</p>
+</li>
+<li><p>单列索引与联合索引：若存在多个查询条件，建议建立联合索引。使用单列索引时，mysql 会根据评估，自动选择，并不会全用上索引</p>
+</li>
+<li><p>sql 提示：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表 use index(索引名) where...</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表 ignore index(索引名) where...</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表 force index(索引名) where...</span><br></pre></td></tr></table></figure></li>
+<li><p>前缀索引：字段类型为 varchar 或 text，建立的索引会变得非常大。通过截取字符串前一部分建立索引提交索引效率</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#n为截取的个数</span><br><span class="line"><span class="keyword">create</span> index 索引名 <span class="keyword">on</span> 表(列名(n));</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ul>
+<li>查看操作次数<br><code>show [global|session] status link &#39;com_______&#39;;</code>七个下划线</li>
+</ul>
+<h3 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h3><blockquote>
+<p>记录所有执行超过指定参数（long_query_time,单位：秒，默认 10s）的所有 sql 语句日志，默认没有开启</p>
+</blockquote>
+<ul>
+<li>查看是否开启：<code>show variables like &#39;slow_query_log&#39;;</code></li>
+<li>开启：编辑/etc/my.cng</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show_query_log=1</span><br><span class="line">long_query_time=2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>日志文件：<code>/var/lib/mysql/localhost-slow.log</code></li>
+</ul>
+<h3 id="profile-详情"><a href="#profile-详情" class="headerlink" title="profile 详情"></a>profile 详情</h3><blockquote>
+<p>查看 sql 语句具体详情</p>
+</blockquote>
+<ul>
+<li>查看是否支持：<code>select @@have_profiling;</code></li>
+<li>启动：<code>set profiling=1;</code></li>
+<li>查看：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#查看全部</span><br><span class="line"><span class="keyword">show</span> profiles;</span><br><span class="line">#指定id</span><br><span class="line"><span class="keyword">show</span> profile <span class="keyword">for</span> query <span class="keyword">sql</span>语句id;</span><br><span class="line">#查看cup情况</span><br><span class="line"><span class="keyword">show</span> profile cpu <span class="keyword">for</span> query <span class="keyword">sql</span>语句id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="explain-执行计划"><a href="#explain-执行计划" class="headerlink" title="explain 执行计划"></a>explain 执行计划</h3><blockquote>
+<p>获取 mysql 如何执行 select 语句信息。</p>
+</blockquote>
+<ul>
+<li>使用</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">explain <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表</span><br><span class="line">或</span><br><span class="line"><span class="keyword">desc</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>结果字段说明:<ul>
+<li>id：操作顺序，id 相同，从上到下，否则值也大，越先执行</li>
+<li>select_type：查询类型</li>
+<li>type：连接类型，由好到差-&gt;null、system、cons、eq_ref、ref、range、index、all</li>
+<li>prossible_key：显示可能应用在这张表上的索引</li>
+<li>key：实际使用的索引</li>
+<li>key_len：索引中使用的字节数，该值为最大可能长达，并非实际使用长度</li>
+<li>rows：必须要执行查询的行数，是个估值</li>
+<li>filterd：表示返回结果的行数占需读取行数的百分百，越大越好</li>
+</ul>
+</li>
+</ul>
+<h3 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h3><ul>
+<li><p>主键顺序插入</p>
+</li>
+<li><p>多条插入尽可以使用批量插入<code>insert into 表 values(1,&#39;1&#39;),(2,&#39;2&#39;)</code></p>
+</li>
+<li><p>手动提交事务</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">start</span> transaction;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">to</span> 表 <span class="keyword">values</span>(..)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">to</span> 表 <span class="keyword">values</span>(..)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">to</span> 表 <span class="keyword">values</span>(..)</span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>大批量插入数据：使用 mysql 的 load 指令进行插入操作</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql --local-infile -u root -p</span><br><span class="line"><span class="built_in">set</span> global local_infile=1;</span><br><span class="line">load data <span class="built_in">local</span> infile <span class="string">&#x27;/home/sql.log&#x27;</span> into table <span class="string">&#x27;表名&#x27;</span> fields terminated by <span class="string">&#x27;字段间的分割符&#x27;</span> lines teminated by <span class="string">&#x27;每一行的分隔符&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="主键优化"><a href="#主键优化" class="headerlink" title="主键优化"></a>主键优化</h3><ul>
+<li>尽量降低主键长度–减少 b+tree 空间</li>
+<li>插入数据时尽量顺序插入–避免页分裂</li>
+<li>尽量不要使用 uuid 做主键–避免页分裂</li>
+<li>避免对主键修改–重新构建 b+tree</li>
+</ul>
+<h2 id="MySQL-分页查询的-5-种方法"><a href="#MySQL-分页查询的-5-种方法" class="headerlink" title="MySQL 分页查询的 5 种方法"></a>MySQL 分页查询的 5 种方法</h2><p>方式 1：直接使用数据库提供的 SQL 语句</p>
+<p>适应场景: 适用于数据量较少的情况(元组百/千级)。很简单，该语句的意思就是查询 m+n 条记录，去掉前 m 条，返回后 n 条。无疑该查询能够实现分页，但 m 越大，查询性能就越低，因为 MySQL 需要扫描全部 m+n 条记录。</p>
+<p>方式 2：基于索引再排序</p>
+<p><code>select \* from table order by id limit m, n;</code></p>
+<p>很简单，该语句的意思就是查询 m+n 条记录，去掉前 m 条，返回后 n 条。无疑该查询能够实现分页，但 m 越大，查询性能就越低，因为 MySQL 需要扫描全部 m+n 条记录。</p>
+<p>方式 2：</p>
+<p><code>select \* from table where id &gt; #max_id# order by id limit n;</code></p>
+<p>该查询同样会返回后 n 条记录，却无需像方式 1 扫描前 m 条记录，但必须在每次查询时拿到上一次查询（上一页）的最大 id（或最小 id），是比较常用的方式。</p>
+<p>当然该查询的问题也在于我们不一定能拿到这个 id，比如当前在第 3 页，需要查询第 5 页的数据，就不行了。</p>
+<p>方式 3：</p>
+<p>方式 3：基于索引再排序<br>为了避免方式 2 不能实现的跨页查询，就需要结合方式 1。</p>
+<p>性能需要，m 得尽量小。比如当前在第 3 页，需要查询第 5 页，每页 10 条数据，且当前第 3 页的最大 id 为#max_id#，则：</p>
+<p><code>select \* from table where id &gt; #max_id# order by id limit 10, 10;</code></p>
+<p>该方式就部分解决了方式 2 的问题，但如果当前在第 2 页，要查第 1000 页，性能仍然较差。</p>
+<p>方式 4：</p>
+<p><code>select \* from table as a inner join (select id from table order by id limit m, n) as b on a.id = b.id order by a.id;</code></p>
+<p>该查询同方式 1 一样，m 的值可能很大，但由于内部的子查询只扫描了 id 字段，而非全表，所以性能要强于方式 1，并且能够解决跨页查询问题。</p>
+<p>方式 5：</p>
+<p><code>select \* from table where id &gt; (select id from table order by id limit m, 1) limit n;</code></p>
+<p>该查询同样是通过子查询扫描字段 id，效果同方式 4。但方式 5 的性能会略好于方式 4，因为它不需要进行表的关联，而是一个简单的比较，在不知道上一页最大 id 的情况下，是比较推荐的用法。</p>
+<p>方法 6: 基于索引使用 prepare,<br>语句样式: MySQL 中,可用如下方法:<br>代码如下:<br><code>PREPARE stmt*name FROM SELECT * FROM 表名称 WHERE id*pk &gt; (？* ？) ORDER BY id_pk ASC LIMIT M</code><br>（第一个问号表示 pageNum，第二个？表示每页元组数）<br>适应场景: 大数据量。<br>原因: 索引扫描,速度会很快. prepare 语句又比一般的查询语句快一点。</p>
+<p>方法 7:利用 MySQL 支持 ORDER 操作可以利用索引快速定位部分元组,避免全表扫描<br>比如: 读第 1000 到 1019 行元组(pk 是主键/唯一键)。<br>代码如下:<br><code>SELECT \* FROM your_table WHERE pk&gt;=1000 ORDER BY pk ASC LIMIT 0,20</code></p>
+<h2 id="插入表情"><a href="#插入表情" class="headerlink" title="插入表情"></a>插入表情</h2><ol>
+<li>MySQL 的版本<br><code>utf8mb4</code> 的最低 mysql 版本支持版本为 <code>5.5.3+</code>，若不是，请升级到较新版本。</li>
+<li>MySQL 驱动<br><code>5.1.34</code> 可用,最低不能低于 <code>5.1.13</code></li>
+<li>修改 MySQL 配置文件<br>修改 mysql 配置文件 <code>my.cnf</code>，<code>my.cnf</code> 一般在 <code>etc/mysql/my.cnf</code> 位置。找到后请在以下三部分里添加如下内容：</li>
+</ol>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="attr">default-character-set</span> = utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">default-character-set</span> = utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">character-set-client-handshake</span> = <span class="literal">FALSE</span></span><br><span class="line"><span class="attr">character-set-server</span> = utf8mb4</span><br><span class="line"><span class="attr">collation-server</span> = utf8mb4_unicode_ci</span><br><span class="line"><span class="attr">init_connect</span>=<span class="string">&#x27;SET NAMES utf8mb4&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>重启 mysql:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">一、MySQL启动方式</span><br><span class="line">1、使用 service 启动：service mysqld start</span><br><span class="line">2、使用 mysqld 脚本启动：/etc/init.d/mysqld start</span><br><span class="line">3、使用 safe_mysqld 启动：safe_mysqld&amp;</span><br><span class="line">二、MySQL停止</span><br><span class="line">1、使用 service 启动： service mysqld stop</span><br><span class="line">2、使用 mysqld 脚本启动：/etc/init.d/mysqld stop</span><br><span class="line">3、mysqladmin shutdown</span><br><span class="line">三、MySQL重启</span><br><span class="line">1、使用 service 启动：service mysqld restart</span><br><span class="line">2、使用 mysqld 脚本启动：/etc/init.d/mysqld restart</span><br><span class="line">四、强制关闭</span><br><span class="line">以上方法都无效的时候，可以通过强行命令：“killall mysql”来关闭MySQL，但是不建议用这样的方式，</span><br><span class="line">据库服务，有可能导致表损坏……所以自己掂量着用。</span><br><span class="line">Windows下重启MySQL服务,对于没装mysql图形管理端的用户来说启动和停止mysql服务：</span><br><span class="line">…\…\bin&gt;net stop mysql</span><br><span class="line">…\…\bin&gt;net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>当数据库中涉及编码类型改变的时候，需要统一数据库，表，字段的编码类型，少一个都不行。<br>修改数据库字符集：<br><code>ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;</code><br>修改表的字符集：<br><code>ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code><br>修改字段的字符集：<br><code>ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code> 4. 查看是否成功修改<br>使用<code>SHOW VARIABLES WHERE Variable_name LIKE &#39;character_set_%&#39; OR Variable_name LIKE &#39;collation%&#39;;</code>查看当前编码,结果中的 <code>collation_connection</code> 、<code>collation_database</code> 、<code>collation_server</code> 是什么没关系。但必须保证系统变量 描述</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">character_set_client (客户端来源数据使用的字符集)</span><br><span class="line">character_set_connection (连接层字符集)</span><br><span class="line">character_set_database (当前选中数据库的默认字符集)</span><br><span class="line">character_set_results (查询结果字符集)</span><br><span class="line">character_set_server (默认的内部操作字符集)</span><br></pre></td></tr></table></figure>
+
+<p>这几个变量必须是 utf8mb4,才能插入表情。<br>查看表编码<br><code>mysql&gt; show create table dictionary; # dictionary 是表名</code> 5. 数据库连接的配置<br>数据库连接参数中也要设置为 utf8bm4 格式，否则是无法插入的 <code>charset=utf8mb4</code></p>
+<h2 id="数据库备份与还原"><a href="#数据库备份与还原" class="headerlink" title="数据库备份与还原"></a>数据库备份与还原</h2><ol>
+<li><p>备份原文件<br>MySQL 中的每一个数据库和数据表分别对应文件系统中的目录和其下的文件。在 Linux 下数据库文件的存放目录一般为/var/lib/mysql。在 Windows 下这个目录视 MySQL 的安装路径而定。备份文件前，需要将 MySQL 服务停止，然后将数据库目录拷贝即可。恢复数据数据库时，需要先创建好一个数据库(不一定同名)，然后将备份出来的文件(注意，不是目录)复制到对应的 MySQL 数据库目录中。使用这一方法备份和恢复数据库时，需要新旧的 MySQL 版本一致，否则可能会出现错误。</p>
+</li>
+<li><p>使用命令</p>
+</li>
+</ol>
+<p>备份数据库(不需要进入 mysql)：<br><code>mysqldump –user=root –password=root密码 –lock-all-tables 数据库名 &gt; 备份文件.sql</code><br>恢复数据库：<br><code>mysql -u root –password=root密码 数据库名 &lt; 备份文件.sql</code></p>
+<h2 id="nodejs-连接数据库"><a href="#nodejs-连接数据库" class="headerlink" title="nodejs 连接数据库"></a>nodejs 连接数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">client does <span class="keyword">not</span> support authentication protocol requested <span class="keyword">by</span> server</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>出现连接失败的原因mysql8之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password。并提供了两种解决方案</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>把用户密码登录的加密规则还原成mysql_native_password这种加密方式</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;password&#x27;</span> PASSWORD EXPIRE NEVER;这里的password是你正在使用的密码</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/11/12/22-23-33/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3773,922 +5198,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/03/10/20-22-11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/10/20-22-11/" class="post-title-link" itemprop="url">HTML超文本标记语言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-10 20:22:11" itemprop="dateCreated datePublished" datetime="2021-03-10T20:22:11+08:00">2021-03-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="HTML-是用来描述网页的一种语言"><a href="#HTML-是用来描述网页的一种语言" class="headerlink" title="HTML 是用来描述网页的一种语言"></a>HTML 是用来描述网页的一种语言</h1><blockquote>
-<p>Hyper text markup Language(超文本标记语言)<br>超文本：通过超链接将文字＼图片＼音频＼动画等各种信息组织在一起</p>
-</blockquote>
-<ul>
-<li><p>w3c(world wide web consortium 万维网联盟)</p>
-<ul>
-<li>结构化标准语言(html,xml)</li>
-<li>表现标准语言(css)</li>
-<li>行为标准（dom,ecmaScript）</li>
-</ul>
-</li>
-<li><p>emmet语法：</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div*3快速生成3个<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">父子级关系：ul&gt;li</span><br><span class="line">兄弟关系：div+p</span><br><span class="line">生成带有类名的：.demo或#two</span><br><span class="line">有顺序的：加上$符号</span><br><span class="line">在生成的标签内写内容：&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>浏览器内核（渲染引擎）:</li>
-</ul>
-<blockquote>
-<p>对代码进行解析渲染</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>浏览器</th>
-<th>内核</th>
-<th>说明｜</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>IE</td>
-<td>Trident</td>
-<td>IE，猎豹，百度，360浏览器</td>
-</tr>
-<tr>
-<td>firefox</td>
-<td>Gecko</td>
-<td>火狐浏览器内核</td>
-</tr>
-<tr>
-<td>safari</td>
-<td>Webkit</td>
-<td>苹果浏览器内核</td>
-</tr>
-<tr>
-<td>chrome/Opera</td>
-<td>Blink</td>
-<td>Blink也是webkit的分支</td>
-</tr>
-</tbody></table>
-<h2 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h2><blockquote>
-<p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</p>
-</blockquote>
-<ul>
-<li>HTML 标签是由尖括号包围的关键词，比如<code>&lt;html&gt;</code></li>
-<li>HTML 标签通常是成对出现的，称为双标签,如<code>&lt;html&gt;</code> 和<code>&lt;/html&gt;</code>.也有单标签：<code>&lt;br/&gt;</code></li>
-<li>标签对中的第一个标签是开始标签，第二个标签是结束标签</li>
-<li>开始和结束标签也被称为开放标签和闭合标签</li>
-<li>标签中的同名属性，后写的会失效</li>
-</ul>
-<p>网页结构：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--告诉浏览器使用什么规范．使用html5标准进行解析网页--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--网页头部--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span>   </span><br><span class="line">  <span class="comment">&lt;!--网页标题--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>base</li>
-</ul>
-<p><code>&lt;base href=&quot;&quot; target=&quot;_top&quot;&gt;</code>所有链接标签的默认链接</p>
-<ul>
-<li>meta视口标签</li>
-</ul>
-<blockquote>
-<p>常用于指定网页描述、关键词、作者、事件等<br>seo</p>
-</blockquote>
-<p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0&quot;&gt;</code></p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>name=”viewport”</td>
-<td>content=”width=(设置的是viewport宽度,可设置device-width特殊值),initial-scale=(初始缩放比，大于0的数字小于10),maximum-scale=（最大缩放比，大于0的数字)，minimum-scale=(最小缩放比，大于0的数字)，user-scalable=(用户是否可以缩放)”</td>
-</tr>
-<tr>
-<td>name=”http-equiv”</td>
-<td>额外添加头部内容</td>
-</tr>
-<tr>
-<td>http-equiv=”refresh”</td>
-<td><code>content=&quot;10;url=http://xxx&quot;</code> 自动刷新</td>
-</tr>
-<tr>
-<td>http-equiv=”X-UA-Compatible”</td>
-<td><code>content=&quot;IE=edge&quot;</code> ie兼容</td>
-</tr>
-<tr>
-<td>charset=’UTF-8’</td>
-<td>编码</td>
-</tr>
-<tr>
-<td>name=”author”</td>
-<td>content=”xxx,xxx,xx”网页作者</td>
-</tr>
-<tr>
-<td>name=”copyright”</td>
-<td>content=”2002-2022@版权”网页版权</td>
-</tr>
-<tr>
-<td>name=”keywords”</td>
-<td>content=”xxx,xxx,xx”网页关键词</td>
-</tr>
-<tr>
-<td>name=”description”</td>
-<td>content=”xxx,xxx,xx”网页描述</td>
-</tr>
-<tr>
-<td>name=”robots”</td>
-<td>content=”noindex</td>
-</tr>
-</tbody></table>
-<h3 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h3><blockquote>
-<p>块级元素：元素独占一行，标签体内几乎能写任何元素<br>行内标签：由内容撑开,不独占一行, 只能写行内元素,写块级元素<br>行内块元素：</p>
-</blockquote>
-<ul>
-<li><p>标题标签:<code>&lt;h1&gt;----&lt;h6&gt;</code></p>
-</li>
-<li><p>段落标签：<code>&lt;p&gt;</code>标签体内不能写块元素,若写，会放到ｐ标签外面或脚手架报错</p>
-</li>
-<li><p>换行标签：<code>&lt;br /&gt;</code></p>
-</li>
-<li><p>分割线： <code>&lt;hr&gt;</code></p>
-</li>
-<li><p>保持原有格式显示：<code>&lt;pre&gt;&lt;/pre&gt;</code></p>
-</li>
-<li><p>字体：<code>&lt;h1&gt;这是1号标题&lt;/h1&gt; &lt;font size=&quot;6&quot;&gt;这是6号字体文本&lt;/font&gt; 可以使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式,使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式</code>  </p>
-</li>
-</ul>
-<blockquote>
-<p>嵌套问题：超链接不能嵌套超链接，p标签不能嵌套p标签，；</p>
-</blockquote>
-<ul>
-<li>内部样式表</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当单个文件需要特别样式时，就可以使用内部样式表。你可以在<span class="tag">&lt;<span class="name">head</span>&gt;</span> 部分通过 <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-xml">标签定义内部样式表:<span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-tag">body</span> &#123;<span class="attribute">background-color</span>:yellow;&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:blue;&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>外部样式表</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。</span><br><span class="line">使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。</span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--定义了文档与外部资源的关系--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;mystyle.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>背景色属性:<code>&lt;p style=&quot;background-color:green;&quot;&gt;这是一个段落。&lt;/p&gt;</code></p>
-</li>
-<li><p>加粗：<code>&lt;strong&gt;或&lt;b&gt;</code></p>
-</li>
-<li><p>斜体：<code>&lt;em&gt;或&lt;i&gt;</code></p>
-</li>
-<li><p>下划线：<code>&lt;ins&gt;或&lt;u&gt;</code></p>
-</li>
-<li><p>删除线：<code>&lt;del&gt;或&lt;s&gt;</code></p>
-</li>
-<li><p>盒子: <code>&lt;div&gt;与&lt;span&gt;</code></p>
-</li>
-<li><p>图像标签和路径：<code>&lt;img src=&quot;图像路径&quot;/&gt;</code></p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>src</td>
-<td>图片路径</td>
-</tr>
-<tr>
-<td>alt</td>
-<td>图片不显示时提醒文字</td>
-</tr>
-<tr>
-<td>title</td>
-<td></td>
-</tr>
-<tr>
-<td>border</td>
-<td>边框</td>
-</tr>
-<tr>
-<td>width,height</td>
-<td>宽，高，只写其中一个，会等比例缩放另一个</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>图片分类</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>jpg</td>
-<td>有损压缩，支持的色彩丰富，占用空间小，不支持透明背景和动图</td>
-</tr>
-<tr>
-<td>png</td>
-<td>无损压缩，支持的色彩丰富，占用空间大，支持透明背景，不支持动图</td>
-</tr>
-<tr>
-<td>bmp</td>
-<td>不压缩，支持的色彩丰富，占用空间极大，不支持透明背景和动图</td>
-</tr>
-<tr>
-<td>gif</td>
-<td>仅支持256种颜色，支持简单透明背景和动图</td>
-</tr>
-<tr>
-<td>webp</td>
-<td>兼容性不太好，支持简单透明背景和动图</td>
-</tr>
-<tr>
-<td>base64</td>
-<td>用文本记录图片数据</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>超链接标签: <code>&lt;a href=&quot;跳转目标(外连接如www.xxx.com，内链接如xxx.html,空链接:#，下载链接)&quot; target=&quot;弹出方式(_self在本窗口打开，_blank在新窗口打开,_top跳出弹窗,&quot; download=&quot;下载文件&quot;&gt;文本图像&lt;/a&gt;</code></p>
-</li>
-<li><p>锚点:</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#one&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">h3</span> <span class="attr">id</span>=<span class="string">&quot;one&quot;</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">h3</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;one&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>回到顶部<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>刷新页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:alert(999);&quot;</span>&gt;</span>执行脚本<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;tel:10010&quot;</span>&gt;</span>打电话<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;mailto:xxx@qq.com&quot;</span>&gt;</span>邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;sms:10086&quot;</span>&gt;</span>短信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>字符实体:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>空格</td>
-<td><code>&amp;nbsp;</code></td>
-</tr>
-<tr>
-<td>小于号</td>
-<td><code>&amp;lt;</code></td>
-</tr>
-<tr>
-<td>大于号</td>
-<td><code>&amp;gt;</code></td>
-</tr>
-<tr>
-<td><code>&amp;</code></td>
-<td><code>&amp;amp;</code></td>
-</tr>
-<tr>
-<td><code>￥</code></td>
-<td><code>&amp;yen;</code></td>
-</tr>
-<tr>
-<td>版权</td>
-<td><code>&amp;copy;</code></td>
-</tr>
-<tr>
-<td>乘号</td>
-<td><code>&amp;times;</code></td>
-</tr>
-<tr>
-<td>除号</td>
-<td><code>&amp;divide;</code></td>
-</tr>
-</tbody></table>
-<ul>
-<li>表格标签：</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--table标签的width和heigth是最小值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">&quot;500px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1px&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span>  </span><br><span class="line">  <span class="comment">&lt;!--定义表格标签,属性引号可要可不要--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">caption</span>&gt;</span><span class="tag">&lt;/<span class="name">caption</span>&gt;</span><span class="comment">&lt;!--表格标题--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">thead</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span><span class="comment">&lt;!--表格头部--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span> </span><br><span class="line">   <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="comment">&lt;!--表头，td-&gt;th加粗文字--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="comment">&lt;!--列，必须嵌套在行中--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span><span class="comment">&lt;!--主体,tbody标签的height与thead、tfoot标签的height相加不能小于table标签的height--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span>&gt;</span><span class="comment">&lt;!--第1列的宽度--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span>&gt;</span><span class="comment">&lt;!--第2列的宽度--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">colgroup</span> <span class="attr">span</span>=<span class="string">&quot;6&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span>&gt;</span><span class="comment">&lt;!--接下来6列合成一组，一起设置宽度--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span> <span class="comment">&lt;!--行--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="comment">&lt;!--合并单元格,需要删除多余的单元格--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">2</span>&quot;&gt;</span><span class="comment">&lt;!--合并行,需要在下面行中删除一个单元格--&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span> <span class="attr">height</span>=<span class="string">&quot;100px&quot;</span>  <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span> <span class="comment">&lt;!--设置行高，宽无法设置--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span> <span class="comment">&lt;!--设置列宽，一整列都一致变化,哪个大用哪个--&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">tfoot</span> <span class="attr">height</span>=<span class="string">&quot;500&quot;</span> <span class="attr">align</span>=<span class="string">&quot;center|left|right&quot;</span> <span class="attr">valign</span>=<span class="string">&quot;top|middle|bottom&quot;</span>&gt;</span><span class="comment">&lt;!--页脚--&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>sex<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>age<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>xiaomi<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>man<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>19<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>表格属性：</p>
-<table>
-<thead>
-<tr>
-<th>属性名</th>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>align</td>
-<td>left,center,right</td>
-<td>表格相对周围元素的对齐方式</td>
-</tr>
-<tr>
-<td>border</td>
-<td>1或”像素值”</td>
-<td>边框</td>
-</tr>
-<tr>
-<td>cellpadding</td>
-<td>像素值</td>
-<td>单元边沿与内容的的距离</td>
-</tr>
-<tr>
-<td>cellspacing</td>
-<td>像素值</td>
-<td>单元格间的空白</td>
-</tr>
-<tr>
-<td>width，height</td>
-<td></td>
-<td>高，宽</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>列表标签</p>
-<ul>
-<li>无序标签：</li>
-</ul>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p> 去掉小圆点：<code>list-style:none</code></p>
-<ul>
-<li>有序标签：</li>
-</ul>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>自定义列表：</li>
-</ul>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dt</span>&gt;</span>名词<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词解释<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dd</span>&gt;</span>名词解释<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dt</span>&gt;</span>分类<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dd</span>&gt;</span>分类１<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>表单域：</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span></span></span><br><span class="line"><span class="tag"><span class="attr">action</span>=<span class="string">&quot;url地址(服务器程序的url地址)&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">method</span>=<span class="string">&quot;提交方式(get/post)&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">name</span>=<span class="string">&quot;表单域名称&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">表单域控件</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>用<code>&lt;input type=&quot;sumit&quot; value=&quot;提交&quot; /&gt;</code>提交数据，用<code>&lt;input type=&quot;reset&quot; value=&quot;重置&quot; /&gt;</code>重置输入；input必须放在form标签内才能提交，所有提交的数据必须有name属性；</p>
-<ul>
-<li><p>input表单元素：<br><code>&lt;input type=&quot;属性值&quot; name=&quot;名称;单选按钮与复选框应是相同的name值&quot; value=&quot;规定input元素的值&quot; checked=&quot;首次加载时选中&quot; maxlength=&quot;输入字段的最大长度&quot; hidden readonly disabled placeholder=&quot;xx&quot; required pattern=&quot;[0-9]&quot;/&gt;</code></p>
-</li>
-<li><p>input 样式修改</p>
-</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span>&#123;</span><br><span class="line"><span class="comment">/*除边框：*/</span></span><br><span class="line"><span class="attribute">border</span>:none;</span><br><span class="line">ouline:none;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*居中：*/</span></span><br><span class="line"><span class="attribute">vertical-align</span>:middle;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*隐藏radio的按钮:*/</span></span><br><span class="line"><span class="attribute">display</span>:none</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>type属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>button</td>
-<td>按键</td>
-</tr>
-<tr>
-<td>checkbox</td>
-<td>定义复选框,name写成同样的则为一组，值为value。设置checked则默认选中</td>
-</tr>
-<tr>
-<td>file</td>
-<td>供文件上传</td>
-</tr>
-<tr>
-<td>hidden</td>
-<td>隐藏输入字段</td>
-</tr>
-<tr>
-<td>image</td>
-<td>图像形式提交按钮</td>
-</tr>
-<tr>
-<td>password</td>
-<td>密码字段</td>
-</tr>
-<tr>
-<td>radio</td>
-<td>定义单选按钮,name写成同样的则为一组，值为value,不写则为on,设置checked则默认选中</td>
-</tr>
-<tr>
-<td>reset</td>
-<td>重置按钮,value则为标签体的值,不能写name</td>
-</tr>
-<tr>
-<td>submit</td>
-<td>提交按钮,value则为标签体的值,不能写name</td>
-</tr>
-<tr>
-<td>text</td>
-<td>输入字段，value默认值，maxlength最大长度</td>
-</tr>
-</tbody></table>
-<ul>
-<li>label标签：用于绑定表单域，点击自动调整到输入框</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>for=&quot;sex&quot;&gt; 男\<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">id</span>=<span class="string">&quot;sex&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>select:下拉列表</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">/*至少包含一对option*/</span><br><span class="line"><span class="tag">&lt;<span class="name">option</span>&gt;</span>\<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span>&gt;</span>\<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">/*默认选中*/</span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">&quot;selected&quot;</span>\&gt;</span>xxx\<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>textarea:多行文本输入框</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">&quot;3&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;28&quot;</span>&gt;</span>   /*cols:每行字符数； rows：行数*/</span><br><span class="line">内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>iframe</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&#x27;xxx&#x27;</span> <span class="attr">name</span>=<span class="string">&quot;mainFrame&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100px&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100px&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- name属性可以和超链接或表单的target配合用来显示不同内容 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">&quot;mainFrame&quot;</span>&gt;</span>xxx<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">target</span>=<span class="string">&quot;mainFrame&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;reset&quot;</span> <span class="attr">value</span>=<span class="string">&quot;重置按钮&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> &gt;</span>默认表达提交按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span>&gt;</span>普通按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="HTML5特性"><a href="#HTML5特性" class="headerlink" title="HTML5特性"></a>HTML5特性</h3><h4 id="1-新增语义化标签"><a href="#1-新增语义化标签" class="headerlink" title="1.新增语义化标签"></a>1.新增语义化标签</h4><p>标签语义化指根据网页中的内容结构，选择适合的标签进行编写。</p>
-<ul>
-<li>布局标签</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span>  元素页面主内容之外的某些内容（比如侧栏）<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span> 定义文档中的节。<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">details</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">summary</span>&gt;</span> 定义 details 元素的可见标题。<span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line">  定义用户能够查看或隐藏的额外细节。</span><br><span class="line"><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>  定义 figure 元素的标题。<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span> 规定自包含内容，比如图示、图表、照片、代码清单等。<span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span><span class="tag">&lt;/<span class="name">sub</span>&gt;</span>下标文字</span><br><span class="line"><span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span>上标文字</span><br><span class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">code</span>&gt;</span>代码块</span><br><span class="line"><span class="tag">&lt;<span class="name">mark</span>&gt;</span> 定义重要的或强调的文本。<span class="tag">&lt;/<span class="name">mark</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">time</span>&gt;</span><span class="tag">&lt;/<span class="name">time</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--//文本注音--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ruby</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>汉<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rt</span>&gt;</span>han<span class="tag">&lt;/<span class="name">rt</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ruby</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--进度条--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">progress</span> <span class="attr">max</span>=<span class="string">&quot;100&quot;</span> <span class="attr">value</span>=<span class="string">&quot;10&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">progress</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meter</span> <span class="attr">min</span>=<span class="string">&quot;0&quot;</span> <span class="attr">max</span>=<span class="string">&quot;100&quot;</span> <span class="attr">value</span>=<span class="string">&quot;30&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">meter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--列表--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">datalist</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;xx&quot;</span>&gt;</span>test<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-新增多媒体标签"><a href="#2-新增多媒体标签" class="headerlink" title="2.新增多媒体标签"></a>2.新增多媒体标签</h4><ul>
-<li><code>&lt;video&gt;</code></li>
-</ul>
-<p><code>&lt;video src=&quot;&quot; controls=&quot;controls&quot; &gt;&lt;/video&gt;</code></p>
-<p>属性：</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>autoplay</td>
-<td>自动播放，谷歌默认禁止，可添加muted属性解决</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>播放控件</td>
-</tr>
-<tr>
-<td>width;height</td>
-<td>宽高</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>循环播放</td>
-</tr>
-<tr>
-<td>preload</td>
-<td>auto(加载视频);none(不加载);metadata(加载基本信息，如时长)</td>
-</tr>
-<tr>
-<td>poster</td>
-<td>imgurl(加载等待图片)</td>
-</tr>
-<tr>
-<td>muted</td>
-<td>静音播放</td>
-</tr>
-</tbody></table>
-<ul>
-<li><code>&lt;audio&gt;</code></li>
-</ul>
-<p><code>&lt;audio src=&quot;&quot; &gt;&lt;/audio&gt;</code></p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>src</td>
-<td>音频路径</td>
-</tr>
-<tr>
-<td>muted</td>
-<td>静音</td>
-</tr>
-<tr>
-<td>autoplay</td>
-<td>自动播放，谷歌根据媒体参与度来判断是否自动自动播放</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>循环播放</td>
-</tr>
-<tr>
-<td>preload</td>
-<td>auto(加载视频);none(不加载);metadata(加载基本信息，如时长)</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>播放控件</td>
-</tr>
-</tbody></table>
-<h4 id="3-input类型"><a href="#3-input类型" class="headerlink" title="3.input类型"></a>3.input类型</h4><table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>type=”email”</td>
-<td>限制必须输入email类型</td>
-</tr>
-<tr>
-<td>type=”number”</td>
-<td>数字类型</td>
-</tr>
-<tr>
-<td>type=”search”</td>
-<td>搜索框</td>
-</tr>
-<tr>
-<td>type=”ranger”</td>
-<td>范围滑块</td>
-</tr>
-<tr>
-<td>type=”color”</td>
-<td>颜色</td>
-</tr>
-<tr>
-<td>type=”tel”</td>
-<td>手机号码</td>
-</tr>
-<tr>
-<td>type=”date”</td>
-<td>日期</td>
-</tr>
-<tr>
-<td>type=”month”</td>
-<td>月</td>
-</tr>
-<tr>
-<td>type=”week”</td>
-<td>周</td>
-</tr>
-<tr>
-<td>type=”time”</td>
-<td>时间</td>
-</tr>
-<tr>
-<td>type=”datetime-local”</td>
-<td>日期时间</td>
-</tr>
-<tr>
-<td>maxlength=””</td>
-<td>允许输入最大长度,不会提示</td>
-</tr>
-<tr>
-<td>max</td>
-<td>允许输入最大长度</td>
-</tr>
-<tr>
-<td>min</td>
-<td>允许输入最大长度</td>
-</tr>
-</tbody></table>
-<h4 id="4-表单属性"><a href="#4-表单属性" class="headerlink" title="4.表单属性"></a>4.表单属性</h4><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>placeholder</td>
-<td>提示文本</td>
-</tr>
-<tr>
-<td>multiple</td>
-<td>可多选文件提交</td>
-</tr>
-<tr>
-<td>autofocus</td>
-<td>自动聚焦</td>
-</tr>
-<tr>
-<td>autocomplete</td>
-<td>值为on,off。只能用于text输入框. 记录输入历史</td>
-</tr>
-<tr>
-<td>required</td>
-<td>不能为空，必填</td>
-</tr>
-<tr>
-<td>pattern</td>
-<td>正则校验，不能用于textarea,空输入不校验</td>
-</tr>
-</tbody></table>
-<h3 id="5-canvas"><a href="#5-canvas" class="headerlink" title="5. canvas"></a>5. canvas</h3><p>使用js在网页上绘制图像<br><code>&lt;canvas id=&#39;&#39;  width=&#39;&#39; height=&#39;&#39;&gt;&lt;/canvas&gt;</code></p>
-<h3 id="本地存储localStorage"><a href="#本地存储localStorage" class="headerlink" title="本地存储localStorage"></a>本地存储localStorage</h3><p>无时间限制，5M，只存储字符串</p>
-<h3 id="地理定位Geolocation"><a href="#地理定位Geolocation" class="headerlink" title="地理定位Geolocation"></a>地理定位Geolocation</h3><h3 id="socket通信：webscoket"><a href="#socket通信：webscoket" class="headerlink" title="socket通信：webscoket"></a>socket通信：webscoket</h3><h3 id="后台js：webworkers"><a href="#后台js：webworkers" class="headerlink" title="后台js：webworkers"></a>后台js：webworkers</h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/03/03/16-32-11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KK">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KK">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/03/16-32-11/" class="post-title-link" itemprop="url">web前端开发技术</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-03 16:32:11" itemprop="dateCreated datePublished" datetime="2021-03-03T16:32:11+08:00">2021-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="web前端开发技术的优化策略"><a href="#web前端开发技术的优化策略" class="headerlink" title="web前端开发技术的优化策略"></a>web前端开发技术的优化策略</h2><p>网络页面的核心价值在于传递消费者所需要的信息并且以此来满足消费者相应的需求。而对于消费者和体验用户来说，网页加载的快慢直接影响了这个网页的访问量。如果用户在等待网站信息呈现的事件过长，很大程度上会对其消费体验造成一定影响，会造成用户无法将信息进行高效利用。基于这样的考虑，对web前端技术进行优化并体现信息的真正价值具有重要的意义。web前端技术的优化对网络性能的改善、工作效率的提高都发挥着重要作用。可以从以下几个方面开展工作，对web前端技术进行优化：</p>
-<ol>
-<li><p>减少HTTP请求数<br>减少不必要的消耗时间的Http请求数，是web前端开发技术的一个重要方面。一个完整的Http包括DNS寻址、发送双方的数据、建立浏览器和服务器间的连接并传输数据、等待服务器响应等等多个环节。在这个过程中，每一个Http请求都必须携带数据，因此每一个请求都不免占用宽带资源，导致用户等待时间增加。要减少网页中Http的请求，经常被采用的方法有：将多个CSS文件或者JavaScript文件合并成一个；优化图片地图，在一个图像上划分不同区域以及注入不通过映射的链接；保持图片和文本一起显示和下载；通过利用CSS background进行背景图的绝对定位，这种做法可以提高网页的载入速度，提高用户的体验。</p>
-</li>
-<li><p>优化文件的规模<br>文件规模能对网页加载造成一定的影响 ，这个过程包括压缩JavaScript和CSS文件以及对相应的代码进行优化。优化代码的工作主要是删除一些不必要的Html标签，避免内联式和优化CSS代码。</p>
-</li>
-<li><p>减少DNS查找<br>DNS查找的时间开销很大，这是国内许多网站的通病。在一次DNS的解析过程中会耗费20~120ms，若DNS解析请求过于频繁，就会导致用户等待时间的增加，同时也会使信息传输的质量有所下降。并且在DNS查找结束前，浏览器将无法下载该域名下的任何东西。对于国内的站点来说，过多使用站外的Widget（微件），也易引起DNS查找过多的问题。适当减少DNS查找能有效地提高网页地加载速度，对于web前端开发技术来说，DNS查找的优化也非常重要。</p>
-</li>
-<li><p>杜绝无用响应<br>在用户访问网站的时候，常常会遇到无用响应，如404错误或拒绝访问错误，这是没有找到文件引起的。Http请求耗费时间过长，而较长的等待时间却得到一个无用的响应页面，大大降低了用户体验。对页面的链接进行充分的测试加上对web服务器Errorr日志的不断跟踪能有效地减少404错误。大多时候，这种错误由于定位稍难而容易被技术人员忽略。</p>
-</li>
-<li><p>有效避免重定向<br>网页的重定向会耗费一定的时间，这也是造成用户等待时间过长的一个因素。重定向问题的产生有很多，每增加一次重定向就必然会增加一次对web的请求，所以重定向问题应该尽量避免。这要求技术人员能对web站点的子目录后加一个”/“，这种做法能有效避免重定向。</p>
-</li>
-<li><p>优化网页内容<br>CSS的全称是层叠样式表，层叠表明后面的CSS可以覆盖前面的，高级的可以覆盖低级的，因此浏览器会在完全加载完后才考虑开展渲染工作。根据CSS这样的特性，要实现web的优化，可以考虑将样式表放在顶部。另外，可以将script放在底部，该举措是为了防止script脚本阻塞当前页面，从而造成下载速度较慢，页面的加载时间过长等问题的产生。</p>
-</li>
-</ol>
-<h2 id="Web-实时推送技术"><a href="#Web-实时推送技术" class="headerlink" title="Web 实时推送技术"></a>Web 实时推送技术</h2><h3 id="一、双向通信"><a href="#一、双向通信" class="headerlink" title="一、双向通信"></a>一、双向通信</h3><p>HTTP 协议有一个缺陷：通信只能由客户端发起。举例来说，我们想了解今天的天气，只能是客户端向服务器发出请求，服务器返回查询结果。HTTP 协议做不到服务器主动向客户端推送信息。这种单向请求的特点，注定了如果服务器有连续的状态变化，客户端要获知就非常麻烦。在WebSocket协议之前，有三种实现双向通信的方式：轮询（polling）、长轮询（long-polling）和iframe流（streaming）。</p>
-<ol>
-<li>轮询（polling）<br>轮询是客户端和服务器之间会一直进行连接，每隔一段时间就询问一次。其缺点也很明显：连接数会很多，一个接受，一个发送。而且每次发送请求都会有Http的Header，会很耗流量，也会消耗CPU的利用率。</li>
-</ol>
-<ul>
-<li>优点：实现简单，无需做过多的更改</li>
-<li>缺点：轮询的间隔过长，会导致用户不能及时接收到更新的数据；轮询的间隔过短，会导致查询请求过多，增加服务器端的负担</li>
-</ul>
-<ol start="2">
-<li>长轮询（long-polling）</li>
-</ol>
-<p>长轮询是对轮询的改进版，客户端发送HTTP给服务器之后，看有没有新消息，如果没有新消息，就一直等待。当有新消息的时候，才会返回给客户端。在某种程度上减小了网络带宽和CPU利用率等问题。由于http数据包的头部数据量往往很大（通常有400多个字节），但是真正被服务器需要的数据却很少（有时只有10个字节左右），这样的数据包在网络上周期性的传输，难免对网络带宽是一种浪费。</p>
-<ul>
-<li>优点：比 Polling 做了优化，有较好的时效性</li>
-<li>缺点：保持连接会消耗资源; 服务器没有返回有效数据，程序超时。</li>
-</ul>
-<ol start="3">
-<li>iframe流（streaming）<br>iframe流方式是在页面中插入一个隐藏的iframe，利用其src属性在服务器和客户端之间创建一条长连接，服务器向iframe传输数据（通常是HTML，内有负责插入信息的javascript），来实时更新页面。</li>
-</ol>
-<ul>
-<li>优点：消息能够实时到达；浏览器兼容好</li>
-<li>缺点：服务器维护一个长连接会增加开销；IE、chrome、Firefox会显示加载没有完成，图标会不停旋转。</li>
-</ul>
-<h3 id="二、WebSocket"><a href="#二、WebSocket" class="headerlink" title="二、WebSocket"></a>二、WebSocket</h3><ol>
-<li>什么是websocket<br>WebSocket是一种全新的协议，随着HTML5草案的不断完善，越来越多的现代浏览器开始全面支持WebSocket技术了，它将TCP的Socket（套接字）应用在了webpage上，从而使通信双方建立起一个保持在活动状态连接通道。</li>
-</ol>
-<p>一旦Web服务器与客户端之间建立起WebSocket协议的通信连接，之后所有的通信都依靠这个专用协议进行。通信过程中可互相发送JSON、XML、HTML或图片等任意格式的数据。由于是建立在HTTP基础上的协议，因此连接的发起方仍是客户端，而一旦确立WebSocket通信连接，不论服务器还是客户端，任意一方都可直接向对方发送报文。</p>
-<p>初次接触 WebSocket 的人，都会问同样的问题：我们已经有了 HTTP 协议，为什么还需要另一个协议？</p>
-<ol start="2">
-<li>HTTP的局限性<br>HTTP是半双工协议，也就是说，在同一时刻数据只能单向流动，客户端向服务器发送请求(单向的)，然后服务器响应请求(单向的)。<br>服务器不能主动推送数据给浏览器。这就会导致一些高级功能难以实现，诸如聊天室场景就没法实现。</li>
-<li>WebSocket的特点<br>支持双向通信，实时性更强<br>可以发送文本，也可以发送二进制数据<br>减少通信量：只要建立起WebSocket连接，就希望一直保持连接状态。和HTTP相比，不但每次连接时的总开销减少，而且由于WebSocket的首部信息很小，通信量也相应减少了相对于传统的HTTP每次请求-应答都需要客户端与服务端建立连接的模式，WebSocket是类似Socket的TCP长连接的通讯模式，一旦WebSocket连接建立后，后续数据都以帧序列的形式传输。在客户端断开WebSocket连接或Server端断掉连接前，不需要客户端和服务端重新发起连接请求。在海量并发和客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。</li>
-</ol>
-<h3 id="三、Web-实时推送技术的比较"><a href="#三、Web-实时推送技术的比较" class="headerlink" title="三、Web 实时推送技术的比较"></a>三、Web 实时推送技术的比较</h3><p>方式类型技术实现优点缺点适用场景</p>
-<ul>
-<li>轮询Pollingclient→server客户端循环请求<br>1、实现简单<br>2、 支持跨域<br>1、浪费带宽和服务器资源<br>2、 一次请求信息大半是无用（完整http头信息）<br>3、有延迟<br>4、大部分无效请求适于小型应用</li>
-<li>长轮询Long-Pollingclient→server服务器hold住连接，一直到有数据或者超时才返回，减少重复请求次数<br>1、实现简单<br>2、不会频繁发请求<br>3、节省流量<br>4、延迟低<br>1、服务器hold住连接，会消耗资源<br>2、一次请求信息大半是无用WebQQ、Hi网页版、Facebook</li>
-<li>IM长连接iframeclient→server在页面里嵌入一个隐蔵iframe，将这个 iframe 的 src 属性设为对一个长连接的请求，服务器端就能源源不断地往客户端输入数据。<br>1、数据实时送达<br>2、不发无用请求，一次链接，多次“推送”<br>1、服务器增加开销<br>2、无法准确知道连接状态<br>3、IE、chrome等一直会处于loading状态Gmail聊天</li>
-<li>WebSocketserver⇌clientnew WebSocket()<br>1、支持双向通信，实时性更强<br>2、可发送二进制文件<br>3、减少通信量<br>1、浏览器支持程度不一致<br>2、不支持断开重连网络游戏、银行交互和支付</li>
-</ul>
-<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><blockquote>
-<p>首次请求后保存一份请求资源的响应副本，当用户再次发起相同请求后，如果判断缓存命中则拦截请求，将之前存储的响应副本返回给用户，避免重新向服务器发起资源请求。<br>减少冗余数据传输，节省网络流量，减轻服务器压力，加快访问速度</p>
-</blockquote>
-<h3 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h3><p>不会向服务器发请求，而是直接从缓存中读取资源，在控制台中返回<code>200</code>状态码</p>
-<p>响应头参数</p>
-<ul>
-<li><code>pragma</code>:<code>no-cache</code>;兼容http 1.0</li>
-<li><code>Expires</code>:兼容http 1.0,响应头里的过期时间，若在这个时间内，则命中强缓存；（以分钟为单位，在服务端配置，当客户端和服务端时间不一致的时候会出现问题，优先级比<code>Cache-Control</code>低）</li>
-<li><code>Cache-Control</code>:只兼容http 1.1。是在服务器端配置的,<ul>
-<li>当值为<code>max-age=300</code>时（以秒为单位），则代表这个请求正确返回时间的五分钟内再次加载资源，就会命中强缓存。等于0则不使用缓存</li>
-<li>当为-<code>no-cache</code>时，表示不使用强缓存，需要使用协商缓存，先与服务器确认返回的响应是否被更改，如果之前的响应中存在Etag，那么请求时会与服务端验证，如果资源未被更改，则可避免重复下载。</li>
-<li>当为-<code>no-store</code>时，表示直接禁止浏览器缓存数据。</li>
-<li>当为-<code>public</code>时，表示被所有的用户缓存，包括终端用户和cdn等中间代理服务器。</li>
-<li>当为-<code>private</code>时，表示只能被终端用户缓存，不允许cdn等中继服务器对其缓存。</li>
-</ul>
-</li>
-</ul>
-<h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><p>在使用本地缓存前，需向服务器发送请求，服务器根据请求头的参数判断是否命中协商缓存，若命中，则返回<code>304</code>状态码并带上新的响应头通知浏览器从缓存中读取数据。协商缓存可以解决本地资源不更新的问题。</p>
-<p>需设置<code>Cache-Control</code>为<code>no-cache</code></p>
-<ul>
-<li><p><code>Last-Modify</code>:浏览器第一次请求一个资源时，服务器返回的响应头会加上<code>Last-Modify</code>，其为一个时间标识，记录该资源最后修改的时间.</p>
-</li>
-<li><p><code>If-Modify-Since</code>:当浏览器再次请求同一个资源时，请求头会包含<code>If-Modify-Sine</code>，值为缓存之前返回的<code>Last—Modify</code>。服务器收到后根据当前资源修改的 时间判断是否命中缓存</p>
-</li>
-<li><p><code>Etag</code>:浏览器第一次请求一个资源时，服务器返回当前资源在服务器的唯一标识</p>
-</li>
-<li><p><code>If-None-Match</code>:再次请求时，若发现资源有Etag声明，则请求头会带上<code>If-None-Match</code>,值为<code>Etag</code>的值，服务器收到后进行比较来判断是否命中缓存。</p>
-</li>
-</ul>
-<p>区别</p>
-<ul>
-<li>优先级上，<code>etag/if-none-match</code>更高</li>
-<li>精度上<code>etag</code>要优于<code>last-modify</code>，<code>last-modify</code>单位为s，使用它无法区分一秒内修改多次的情况。</li>
-<li>性能上<code>etag</code>要逊于<code>last-modify</code>，<code>etag</code>需要服务器额外性能计算hash值。</li>
-</ul>
-<blockquote>
-<p>ctrl+r/f5/地址栏刷新：强缓存和协商缓存都生效<br>ctrl+f5/ctrl+shift+r:全部失效，会重新请求资源并缓存<br>post请求无法被缓存</p>
-</blockquote>
-<p>静态页面可通过配置meta标签设置缓存属性</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Cache-Control&quot;</span> <span class="attr">content</span>=<span class="string">&quot;max-age=3000&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="从输入url到页面完成加载发生了什么"><a href="#从输入url到页面完成加载发生了什么" class="headerlink" title="从输入url到页面完成加载发生了什么"></a>从输入url到页面完成加载发生了什么</h2><ul>
-<li><p>DNS解析：将域名解析成IP地址<br>DNS(domain name system，域名系统)：因特网上域名和IP地址相互映射的分布式数据库；简单理解就是域名与IP地址的对照表<br>URL(Uniform Resource Locator)，统一资源定位符，用于定位互联网上资源，俗称网址。<br>遵守以下的语法规则：<br><code>scheme://host.domain:port/path/filename</code></p>
-</li>
-<li><p>TCP连接：TCP三次握手<br>第一次握手，由浏览器发起，告诉服务器我要发送请求了；<br>第二次握手，由服务器发起，告诉浏览器我准备接受了，你赶紧发送吧。<br>第三次握手，由浏览器发送，告诉服务器，我马上就发了，准备接受吧。<br>“三次握手”的目的是“为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误”。</p>
-</li>
-<li><p>发送HTTP请求</p>
-</li>
-</ul>
-<p>HTTP请求报文格式：<code>请求行</code>+<code>请求头</code>+<code>空行</code>+<code>消息体</code>，请求行包括请求方式(GET/POST/DELETE/PUT)、请求资源路径(URL)、HTTP版本号；</p>
-<ul>
-<li>服务器处理请求并返回HTTP报文</li>
-</ul>
-<p>服务器收到请求后会发出应答，即响应数据。HTTP响应与HTTP请求相似， HTTP响应报文格式：<code>状态行</code>+<code>响应头</code>+<code>空行</code>+<code>消息体</code>，状态行包括HTTP版本号、状态码、状态说明。</p>
-<ul>
-<li>浏览器解析渲染页面<br>浏览器拿到响应文本后，解析HTML代码，请求js，css等资源，最后进行页面渲染，呈现给用户。页面渲染一般分为以下几个步骤：</li>
-</ul>
-<p>(1)根据HTML文件解析出DOM Tree</p>
-<p>(2)根据CSS解析出 CSSOM Tree(CSS规则树)</p>
-<p>(3)将 DOM Tree 和 CSSOM Tree合并，构建Render tree(渲染树)</p>
-<p>(4)reflow(重排)：根据Render tree进行节点信息计算(Layout)</p>
-<p>(5)repaint(重绘)：根据计算好的信息绘制整个页面(Painting)</p>
-<ul>
-<li>连接结束：TCP四次挥手</li>
-</ul>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、A——&gt;B ：A告诉B：“我发完了”；</span><br><span class="line"></span><br><span class="line">2、B——&gt;A：B告诉A：“好的，我知道你发完了”</span><br><span class="line"></span><br><span class="line">3、B——&gt;A：B告诉A：“我收完了”；</span><br><span class="line"></span><br><span class="line">4、A——&gt;B：A告诉B：“好的，我知道你发收完了”</span><br></pre></td></tr></table></figure>
-<h2 id="重绘-和-重排（回流）"><a href="#重绘-和-重排（回流）" class="headerlink" title="重绘 和 重排（回流）"></a>重绘 和 重排（回流）</h2><blockquote>
-<p>重绘不一定导致重排，但重排一定会导致重绘<br>重排（Reflow） &amp;&amp; 重绘（Redraw）会付出高昂的性能代价</p>
-</blockquote>
-<h3 id="重绘"><a href="#重绘" class="headerlink" title="重绘"></a>重绘</h3><p>重绘 （Redraw）：某些元素的外观被改变所触发的浏览器行为（重新计算节点在屏幕中的绝对位置并渲染的过程）； 例如：修改元素的填充颜色，会触发重绘；</p>
-<p>下面情况会发生重绘：</p>
-<ul>
-<li>color</li>
-<li>border-style</li>
-<li>border-radius</li>
-<li>text-decoration</li>
-<li>box-shadow</li>
-<li>outline</li>
-<li>background</li>
-<li>…</li>
-</ul>
-<h3 id="重排（回流）"><a href="#重排（回流）" class="headerlink" title="重排（回流）"></a>重排（回流）</h3><p>重排 （Reflow）：重新生成布局，重新排列元素（重新计算各节点和css具体的大小和位置：渲染树需要重新计算所有受影响的节点）；例如：改元素的宽高，会触发重排；<br>通过两者概念区别明显得知，重排要比重绘的成本大得多，我们应该尽量减少重排操作，减少页面性能消耗</p>
-<ul>
-<li>页面初始渲染，这是开销最大的一次重排;</li>
-<li>添加/删除可见的DOM元素;</li>
-<li>改变<code>元素位置</code>;</li>
-<li>改变<code>元素尺寸</code>，比如边距、填充、边框、宽度和高度等;</li>
-<li>改变<code>元素内容</code>，比如文字数量，图片大小等;</li>
-<li>改变元素<code>字体大小</code>;</li>
-<li>改变浏览器窗口尺寸，比如resize事件发生时;</li>
-<li>激活<code>CSS伪类</code>（例如：:hover）;</li>
-<li>设置 <code>style 属性</code>的值，因为通过设置style属性改变结点样式的话，每一次设置都会触发一次reflow;</li>
-<li>查询某些属性或调用某些计算方法：<code>offsetWidth</code>、<code>offsetHeigh</code>t等，除此之外，当我们调用getComputedStyl方法，或者IE里的 currentStyle 时，也会触发重排，原理是一样的，都为求一个“即时性”和“准确性”;<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">width	height	margin	padding</span><br><span class="line">display	border-width	border	position</span><br><span class="line">overflow	font-size	vertical-align	min-height</span><br><span class="line">clientWidth	clientHeight	clientTop	clientLeft</span><br><span class="line">offsetWidth	offsetHeight	offsetTop	offsetLeft</span><br><span class="line">scrollWidth	scrollHeight	scrollTop	scrollLeft</span><br><span class="line">scrollIntoView()	scrollTo()	getComputedStyle()	</span><br><span class="line">getBoundingClientRect()	scrollIntoViewIfNeeded()	</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="减少重排次数"><a href="#减少重排次数" class="headerlink" title="减少重排次数"></a>减少重排次数</h3><ul>
-<li><p>样式集中改变<br>不要一条一条地修改 DOM 的样式。可以先定义好 css 的 class，然后修改 DOM 的 className。</p>
-</li>
-<li><p>分离读写操作<br>DOM 的多个读操作（或多个写操作），应该放在一起。不要两个读操作之间，加入一个写操作</p>
-</li>
-<li><p>将 DOM 离线<br>使用 display:none</p>
-</li>
-<li><p>使用 absolute 或 fixed 脱离文档流<br>为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是不会 reflow 的。</p>
-</li>
-</ul>
-<h2 id="script标签中defer和async的区别"><a href="#script标签中defer和async的区别" class="headerlink" title="script标签中defer和async的区别"></a>script标签中defer和async的区别</h2><p>多个带async属性的标签，不能保证加载的顺序；多个带defer属性的标签，按照加载顺序执行;</p>
-<ul>
-<li>async属性，表示后续文档的加载和执行与js脚本的加载和执行是并行进行的，即异步执行；</li>
-<li>defer属性，加载后续文档的过程和js脚本的加载(此时仅加载不执行)是并行进行的(异步)，js脚本需要等到文档所有元素解析完成之后才执行，DOMContentLoaded事件触发执行之前。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -4754,20 +5267,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
