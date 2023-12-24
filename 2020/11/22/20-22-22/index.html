@@ -17,23 +17,23 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+    var CONFIG = {"hostname":"a913481180.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="制作u盘 rufus 进入bios,选择u盘启动  连接wifi 查看wifi设备：ip link  启用设备：ip link set 设备 up  扫描查看wifi名称：iwlist 设备 scan | grep ESSID   或者使用 iw dev scan .... 或者使用usb网络，安装系统后记得安装驱动pacman -S usbmuxd,live系统中自带有所以不用装，但新安装的系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装archlinux系统">
-<meta property="og:url" content="http://www.baidu.com/2020/11/22/20-22-22/index.html">
+<meta property="og:url" content="https://a913481180.github.io/2020/11/22/20-22-22/index.html">
 <meta property="og:site_name" content="KK">
 <meta property="og:description" content="制作u盘 rufus 进入bios,选择u盘启动  连接wifi 查看wifi设备：ip link  启用设备：ip link set 设备 up  扫描查看wifi名称：iwlist 设备 scan | grep ESSID   或者使用 iw dev scan .... 或者使用usb网络，安装系统后记得安装驱动pacman -S usbmuxd,live系统中自带有所以不用装，但新安装的系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-22T12:22:22.000Z">
-<meta property="article:modified_time" content="2023-10-11T13:01:30.475Z">
+<meta property="article:modified_time" content="2023-12-24T14:26:36.721Z">
 <meta property="article:author" content="KK">
 <meta property="article:tag" content="system">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.baidu.com/2020/11/22/20-22-22/">
+<link rel="canonical" href="https://a913481180.github.io/2020/11/22/20-22-22/">
 
 
 <script id="page-configurations">
@@ -104,6 +104,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -133,11 +134,38 @@
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -161,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2020/11/22/20-22-22/">
+    <link itemprop="mainEntityOfPage" href="https://a913481180.github.io/2020/11/22/20-22-22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:01:30" itemprop="dateModified" datetime="2023-10-11T21:01:30+08:00">2023-10-11</time>
+                <time title="修改时间：2023-12-24 22:26:36" itemprop="dateModified" datetime="2023-12-24T22:26:36+08:00">2023-12-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,19 +293,19 @@
 <blockquote>
 <p>先挂载根分区，再启动分区，在其他分区</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount /dev/nvme0n8 /mnt</span><br><span class="line"><span class="comment">#启动分区，挂载在win系统efi分区上</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/nvme0n1p1 /mnt/boot</span><br><span class="line"><span class="comment">#swap分区</span></span><br><span class="line">swapon /dev/nvme0n1p7</span><br><span class="line"><span class="comment">#home分区...</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/home</span><br><span class="line">mount /dev/nvme0n1p6 /mnt/home</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount /dev/nvme0n8 /mnt</span><br><span class="line"><span class="comment">#启动分区，挂载在win系统efi分区上</span></span><br><span class="line">mkdir /mnt/boot</span><br><span class="line">mount /dev/nvme0n1p1 /mnt/boot</span><br><span class="line"><span class="comment">#swap分区</span></span><br><span class="line">swapon /dev/nvme0n1p7</span><br><span class="line"><span class="comment">#home分区...</span></span><br><span class="line">mkdir /mnt/home</span><br><span class="line">mount /dev/nvme0n1p6 /mnt/home</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>单系统</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount  /dev/sda3 /mnt</span><br><span class="line"><span class="built_in">ls</span> /mnt  /////查看是否挂载成功，若出现lost+found 则代表挂载成功</span><br><span class="line"><span class="comment">#启动分区</span></span><br><span class="line"><span class="built_in">mkdir</span> /mnt/boot</span><br><span class="line">mount /dev/sda1 /mnt/boot      /// boot分区</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#根分区</span></span><br><span class="line">mount  /dev/sda3 /mnt</span><br><span class="line">ls /mnt  /////查看是否挂载成功，若出现lost+found 则代表挂载成功</span><br><span class="line"><span class="comment">#启动分区</span></span><br><span class="line">mkdir /mnt/boot</span><br><span class="line">mount /dev/sda1 /mnt/boot      /// boot分区</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置源"><a href="#配置源" class="headerlink" title="配置源"></a>配置源</h2><p>将国内源放到第一位<br><code>vim /etc/pacman.d/mirrorlist</code></p>
 <ul>
 <li>自动查找源：<code>reflector --country China --age 72 --sort rate --protocol https --save /etc/pacman.d/mirrorlist</code></li>
 <li>手动换源：</li>
 </ul>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.bfsu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : South_Korea</span><br><span class="line">Server = https://mirror.funami.tech/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : Russia</span><br><span class="line">Server = https://mirror.kamtv.ru/manjaro/stable/$repo/$arch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.bfsu.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : China</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : South_Korea</span><br><span class="line">Server = https://mirror.funami.tech/manjaro/stable/$repo/$arch</span><br><span class="line"></span><br><span class="line">## Country : Russia</span><br><span class="line">Server = https://mirror.kamtv.ru/manjaro/stable/$repo/$arch</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>刷新源:<code>pacman -Syy</code></li>
@@ -324,7 +352,7 @@
 <li>系统托盘：<code>network-manager-applet</code></li>
 <li>使用：<br>NetworkManager 附带 nmcli 和 nmtui。</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示附近的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到隐藏的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 hidden <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 wlan1 网络接口上的 Wi-Fi：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 ifname wlan1 profile_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 断开网络接口上的连接：</span></span><br><span class="line">$ nmcli device disconnect ifname eth0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示连接列表及其名称、UUID、类型和支持设备：</span></span><br><span class="line">$ nmcli connection show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活连接（即使用现有配置文件连接到网络）：</span></span><br><span class="line">$ nmcli connection up name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除连接：</span></span><br><span class="line">$ nmcli connection delete name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有网络设备及其状态：</span></span><br><span class="line">$ nmcli device</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭 Wi-Fi：</span></span><br><span class="line">$ nmcli radio wifi off</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑连接</span></span><br><span class="line"><span class="comment">### 获取连接列表：</span></span><br><span class="line">$ nmcli connection</span><br><span class="line"><span class="comment">###编辑</span></span><br><span class="line">nmcli connection edit <span class="string">&#x27;wifi名称&#x27;</span></span><br><span class="line"><span class="comment">###或</span></span><br><span class="line">nmcli connection modify <span class="string">&#x27;wifi名称&#x27;</span> 配置项</span><br><span class="line"><span class="comment">###或在 /etc/NetworkManager/system-connections/ 中修改对应的 wifi名.nmconnection 文件。别忘了使用nmcli connection reload 重新加载配置文件。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示附近的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到隐藏的 Wi-Fi 网络：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 hidden yes</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接到 wlan1 网络接口上的 Wi-Fi：</span></span><br><span class="line">$ nmcli device wifi connect SSID_或_BSSID password 密码 ifname wlan1 profile_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 断开网络接口上的连接：</span></span><br><span class="line">$ nmcli device disconnect ifname eth0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示连接列表及其名称、UUID、类型和支持设备：</span></span><br><span class="line">$ nmcli connection show</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活连接（即使用现有配置文件连接到网络）：</span></span><br><span class="line">$ nmcli connection up name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除连接：</span></span><br><span class="line">$ nmcli connection delete name_或_uuid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有网络设备及其状态：</span></span><br><span class="line">$ nmcli device</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭 Wi-Fi：</span></span><br><span class="line">$ nmcli radio wifi off</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑连接</span></span><br><span class="line"><span class="comment">### 获取连接列表：</span></span><br><span class="line">$ nmcli connection</span><br><span class="line"><span class="comment">###编辑</span></span><br><span class="line">nmcli connection edit <span class="string">&#x27;wifi名称&#x27;</span></span><br><span class="line"><span class="comment">###或</span></span><br><span class="line">nmcli connection modify <span class="string">&#x27;wifi名称&#x27;</span> 配置项</span><br><span class="line"><span class="comment">###或在 /etc/NetworkManager/system-connections/ 中修改对应的 wifi名.nmconnection 文件。别忘了使用nmcli connection reload 重新加载配置文件。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>通过Wi-Fi共享网络连接：安装<code>dnsmasq</code>包 以实现连接共享。NetworkManager 会启动自己的 dnsmasq 实例，与 dnsmasq.service 独立。点击小程序，选择”Create new wireless network”。按照指南 (如果使用WEP, 确保使用5到13字符长度的密码,其他的长度可能会失败)。</li>
@@ -349,7 +377,7 @@
 </ul>
 <h2 id="安装引导"><a href="#安装引导" class="headerlink" title="安装引导"></a>安装引导</h2><ul>
 <li><p>安装工具</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr（efi启动）os-prober(寻找其他系统的工具）</span><br><span class="line"><span class="built_in">mkdir</span> /boot/grub</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr（efi启动）os-prober(寻找其他系统的工具）</span><br><span class="line">mkdir /boot/grub</span><br></pre></td></tr></table></figure></li>
 <li><p>Grub2.06后不再启用os-prober，需要手动启用：<code>vim /etc/default/grub</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">#grub2.06默认禁用os-prober</span><br><span class="line">#启用os-prober来识别win引导</span><br><span class="line">GRUB_DISABLE_OS_PROBER=false</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
 <li><p>安装grub</p>
@@ -371,7 +399,7 @@
 <blockquote>
 <p>第一列用户名：test、root<br>第二列，等号左边：允许从任何主机登陆当前用户<br>第二列，等号右边：第一列用户可以切换到系统中的其他用户<br>第三列，NOPASSWD表示sudo不用打密码</p>
 </blockquote>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root    ALL=(ALL:ALL) ALL</span><br><span class="line">test    ALL=(ALL:ALL) NOPASSWD:ALL</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root    ALL=(ALL:ALL) ALL</span><br><span class="line">test    ALL=(ALL:ALL) NOPASSWD:ALL</span><br></pre></td></tr></table></figure>
 
 <h2 id="添加archlinuxcn源"><a href="#添加archlinuxcn源" class="headerlink" title="添加archlinuxcn源"></a>添加archlinuxcn源</h2><ul>
 <li><p><code>vim /etc/pacman.conf</code></p>
@@ -631,8 +659,6 @@
 </li>
 <li><p>屏幕上显示键盘：<code>screenkey</code></p>
 </li>
-<li><p>快照保存：<code>timeshift</code></p>
-</li>
 <li><p>快速启动：<code>albert</code></p>
 </li>
 <li><p>文件管理器：<code>ranger</code></p>
@@ -681,6 +707,15 @@
 <li><p>markdown:<code>typora-free-cn</code>,<code>remarkable</code></p>
 </li>
 <li><p>vscode:<code>visual-studio-code-bin</code>（root用户无法启动）</p>
+</li>
+<li><p>快照保存：<code>timeshift</code></p>
+<ul>
+<li>打开 Timeshift 后，从下一个窗口中选择快照类型。您有两个选项可供选择：<br><code>RSync</code>：使用 rsync 和硬链接拍摄快照。快照之间共享公共文件，从而节省磁盘空间。每个快照都是完整的系统备份，可以使用文件管理器进行浏览。<br><code>BTRFS</code>：使用 BTRFS 文件系统的内置功能拍摄快照。 BTRFS 快照仅在具有 Ubuntu 类型子卷布局（带有 @ 和 @home 子卷）的 BTRFS 系统上受支持。</li>
+<li>第三步：选择存储设备<br>在此阶段，您需要指定存储备份的位置。您可以使用计算机的硬盘或外部 USB 磁盘进行备份存储。如果您使用计算机的硬盘，则可以按计划自动创建 Timehsift 备份。如果您使用外部 USB 磁盘，则必须在插入时手动创建备份或始终保持插入状态。建议使用外部驱动器作为备份位置，以防硬盘发生严重问题。您要使用的 USB 或外部驱动器应格式化为 Linux 文件系统。否则，将不会被检测到。</li>
+<li>配置计划快照<br>下一个屏幕将指导您设置计划备份。有多种计划选项，例如每月、每周、每天、每小时等</li>
+<li>选择文件/文件夹<br>在此步骤中，您需要选择要备份系统的哪些部分。默认情况下，不备份用户文件。仅备份系统启动和运行所需的文件。这有几个优点。如果您备份用户文件，则在恢复时，这些文件将被覆盖，并且创建备份后所做的任何更改都将消失。因此，请明智地选择这些文件夹。</li>
+<li>创建备份<br>初始设置完成后，您将到达 Timeshift 主页，您可以在其中单击创建按钮创建第一个备份。</li>
+</ul>
 </li>
 <li><p>wps：<code>wps-office</code></p>
 <ul>
@@ -771,7 +806,7 @@
 <h3 id="远程控制windowns"><a href="#远程控制windowns" class="headerlink" title="远程控制windowns"></a>远程控制windowns</h3><ul>
 <li><code>rdesktop</code><br>在此之前需要让Windows支持远程协助，可以在系统属性-远程中开启：【允许远程协助连接这台计算机】+【允许远程连接到此计算机】，如果勾选了【仅运行运行使用网络级别身份验证的远程桌面单位计算机连接】，那么 rdesktop 无法连接，报错信息：</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Core(warning): Certificate received from server is NOT trusted by this system, an exception has been added by the user to trust this specific certificate.</span><br><span class="line">Failed to initialize NLA, <span class="keyword">do</span> you have correct Kerberos TGT initialized ?</span><br><span class="line">Failed to connect, CredSSP required by server (check <span class="keyword">if</span> server has disabled old TLS versions, <span class="keyword">if</span> <span class="built_in">yes</span> use -V option).</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Core(warning): Certificate received from server is NOT trusted by this system, an exception has been added by the user to trust this specific certificate.</span><br><span class="line">Failed to initialize NLA, <span class="keyword">do</span> you have correct Kerberos TGT initialized ?</span><br><span class="line">Failed to connect, CredSSP required by server (check <span class="keyword">if</span> server has disabled old TLS versions, <span class="keyword">if</span> yes use -V option).</span><br></pre></td></tr></table></figure>
 
 <p>解决方法有两种：1）不勾选该选项；2）使用 xfreerdp<br>rdesktop 192.168.xxx.xxx 默认选项就可以远程桌面连接Windows（需要输入用户口令）。<br>rdesktop一些常用选项：<br>-u : Windows用户<br>-p : Windows口令（非PIN）<br>-g : 窗口大小，如 1366x768<br>-f :全屏<br>-a : 色彩深度 ：8, 15, 16, 24, 32<br>-r sound ：支持声音<br>-r clipboard：支持剪切板<br>-r disk： 远程连接时挂载本地文件目录</p>
 <p>详细信息 man rdesktop</p>
@@ -938,7 +973,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com">百度</a>
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">百度</a>
         </li>
     </ul>
   </div>
@@ -1001,6 +1036,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

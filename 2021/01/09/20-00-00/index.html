@@ -17,23 +17,23 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.baidu.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+    var CONFIG = {"hostname":"a913481180.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
   <meta name="description" content="React Native 0.71环境搭建Node注意 Node 的版本应大于等于 16，安装完 Node 后建议设置 npm 镜像（淘宝源）以加速后面的过程（或使用科学上网工具）注意：不要使用 cnpm！cnpm 安装的模块路径比较奇怪，packager 不能正常识别！ JDK 低于 0.67 版本的 React Native 需要 JDK 1.8 版本（官方也称 8 版本）。React Nat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react Native">
-<meta property="og:url" content="http://www.baidu.com/2021/01/09/20-00-00/index.html">
+<meta property="og:url" content="https://a913481180.github.io/2021/01/09/20-00-00/index.html">
 <meta property="og:site_name" content="KK">
 <meta property="og:description" content="React Native 0.71环境搭建Node注意 Node 的版本应大于等于 16，安装完 Node 后建议设置 npm 镜像（淘宝源）以加速后面的过程（或使用科学上网工具）注意：不要使用 cnpm！cnpm 安装的模块路径比较奇怪，packager 不能正常识别！ JDK 低于 0.67 版本的 React Native 需要 JDK 1.8 版本（官方也称 8 版本）。React Nat">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-09T12:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-18T12:32:33.167Z">
+<meta property="article:modified_time" content="2023-12-24T14:26:36.934Z">
 <meta property="article:author" content="KK">
 <meta property="article:tag" content="app">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://www.baidu.com/2021/01/09/20-00-00/">
+<link rel="canonical" href="https://a913481180.github.io/2021/01/09/20-00-00/">
 
 
 <script id="page-configurations">
@@ -104,6 +104,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -133,11 +134,38 @@
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -161,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.baidu.com/2021/01/09/20-00-00/">
+    <link itemprop="mainEntityOfPage" href="https://a913481180.github.io/2021/01/09/20-00-00/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-18 20:32:33" itemprop="dateModified" datetime="2023-12-18T20:32:33+08:00">2023-12-18</time>
+                <time title="修改时间：2023-12-24 22:26:36" itemprop="dateModified" datetime="2023-12-24T22:26:36+08:00">2023-12-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,7 +266,7 @@
 <p>你可以在 Android Studio 的”Preferences”菜单中查看 SDK 的真实路径，具体是<code>Appearance &amp; Behavior</code> → <code>System Settings</code> → <code>Android SDK。</code></p>
 <p>你需要关闭现有的命令符提示窗口然后重新打开，这样新的环境变量才能生效。</p>
 <p>把一些工具目录添加到环境变量 Path<br>打开<code>控制面板</code> -&gt; <code>系统和安全</code> -&gt; <code>系统</code> -&gt; <code>高级系统设置</code> -&gt; <code>高级</code> -&gt; <code>环境变量</code>，选中<code>Path</code>变量，然后点击编辑。点击新建然后把这些工具目录路径添加进去：platform-tools、emulator、tools、tools/bin</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%ANDROID_HOME%\platform-tools</span><br><span class="line">%ANDROID_HOME%\emulator</span><br><span class="line">%ANDROID_HOME%\tools</span><br><span class="line">%ANDROID_HOME%\tools\bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%ANDROID_HOME%\platform-tools</span><br><span class="line">%ANDROID_HOME%\emulator</span><br><span class="line">%ANDROID_HOME%\tools</span><br><span class="line">%ANDROID_HOME%\tools\bin</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><blockquote>
 <p>如果你之前全局安装过旧的 react-native-cli 命令行工具，请使用 npm uninstall -g react-native-cli 卸载掉它以避免一些冲突：<br><code>npm uninstall -g react-native-cli @react-native-community/cli</code></p>
@@ -282,10 +310,10 @@
 <p>在已有的项目中添加 TypeScript<br>将 TypeScript 以及 React Native 和 Jest 的依赖添加到您的项目中。<br><code>yarn add --dev typescript @types/jest @types/react @types/react-native @types/react-test-renderer</code></p>
 <p>或<br><code>npm install --save-dev typescript @types/jest @types/react @types/react-native @types/react-test-renderer</code></p>
 <p>添加一个 TypeScript 配置文件。在项目的根目录中创建一个 tsconfig.json：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;allowJs&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;allowSyntheticDefaultImports&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;esModuleInterop&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;isolatedModules&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;jsx&quot;</span><span class="punctuation">:</span> <span class="string">&quot;react-native&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;lib&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;es2017&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;react-native&quot;</span><span class="punctuation">,</span> <span class="string">&quot;jest&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;moduleResolution&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;noEmit&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;strict&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="string">&quot;esnext&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exclude&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;node_modules&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;babel.config.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;metro.config.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;jest.config.js&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;allowJs&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;allowSyntheticDefaultImports&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;esModuleInterop&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;isolatedModules&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;jsx&quot;</span>: <span class="string">&quot;react-native&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;lib&quot;</span>: [<span class="string">&quot;es2017&quot;</span>],</span><br><span class="line">    <span class="attr">&quot;types&quot;</span>: [<span class="string">&quot;react-native&quot;</span>, <span class="string">&quot;jest&quot;</span>],</span><br><span class="line">    <span class="attr">&quot;moduleResolution&quot;</span>: <span class="string">&quot;node&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;noEmit&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;strict&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;target&quot;</span>: <span class="string">&quot;esnext&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;exclude&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;node_modules&quot;</span>,</span><br><span class="line">    <span class="string">&quot;babel.config.js&quot;</span>,</span><br><span class="line">    <span class="string">&quot;metro.config.js&quot;</span>,</span><br><span class="line">    <span class="string">&quot;jest.config.js&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>创建一个 jest.config.js 文件来配置 Jest 以使用 TypeScript:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">preset</span>: <span class="string">&quot;react-native&quot;</span>,</span><br><span class="line">  <span class="attr">moduleFileExtensions</span>: [<span class="string">&quot;ts&quot;</span>, <span class="string">&quot;tsx&quot;</span>, <span class="string">&quot;js&quot;</span>, <span class="string">&quot;jsx&quot;</span>, <span class="string">&quot;json&quot;</span>, <span class="string">&quot;node&quot;</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">preset</span>: <span class="string">&quot;react-native&quot;</span>,</span><br><span class="line">  <span class="attr">moduleFileExtensions</span>: [<span class="string">&quot;ts&quot;</span>, <span class="string">&quot;tsx&quot;</span>, <span class="string">&quot;js&quot;</span>, <span class="string">&quot;jsx&quot;</span>, <span class="string">&quot;json&quot;</span>, <span class="string">&quot;node&quot;</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>将 JavaScript 文件重命名为<code>* .tsx</code>:<br>请保留<code>./index.js</code>入口文件，否则将在打包生产版本时遇到问题。</p>
 <p>运行 <code>yarn tsc</code> 对 TypeScript 文件进行类型检查。<br>TypeScript 和 React Native 是如何工作的<br>无需额外配置，和非 TypeScript 的 React Native 项目一样都是直接通过 Babel 体系 将您的文件转换为 JavaScript。我们建议您只使用 TypeScript 编译器的类型检查功能（而不是编译）。如果您有已经存在的 TypeScript 代码需要迁移到 React Native，这里有一些关于使用 Babel 而不是 TypeScript 编译器的注意事项。</p>
@@ -327,10 +355,10 @@
 <p>设备宽高</p>
 <p>用法：<br>获取设备宽度：Dimensions.get(‘window’).width<br>获取设备高度：Dimensions.get(‘window).height</p>
 <h3 id="吐司-toast"><a href="#吐司-toast" class="headerlink" title="吐司 toast"></a>吐司 toast</h3><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>yarn add react-native-root-toast</code></p>
-<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Toast</span>.<span class="title function_">show</span>(<span class="string">&quot;This is a message&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">duration</span>: <span class="title class_">Toast</span>.<span class="property">durations</span>.<span class="property">LONG</span>,</span><br><span class="line">  <span class="attr">position</span>: <span class="title class_">Toast</span>.<span class="property">positions</span>.<span class="property">BOTTOM</span>,</span><br><span class="line">  <span class="attr">shadow</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">animation</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">hideOnPress</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">delay</span>: <span class="number">3</span>,</span><br><span class="line">  <span class="attr">onShow</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s appear animation start</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onShown</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s appear animation end.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onHide</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s hide animation start.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onHidden</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s hide animation end.</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Toast.show(<span class="string">&quot;This is a message&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">duration</span>: Toast.durations.LONG,</span><br><span class="line">  <span class="attr">position</span>: Toast.positions.BOTTOM,</span><br><span class="line">  <span class="attr">shadow</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">animation</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">hideOnPress</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">delay</span>: <span class="number">3</span>,</span><br><span class="line">  <span class="attr">onShow</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s appear animation start</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onShown</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s appear animation end.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onHide</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s hide animation start.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">onHidden</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// calls on toast\`s hide animation end.</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="本地存储-AsyncStorage"><a href="#本地存储-AsyncStorage" class="headerlink" title="本地存储 AsyncStorage"></a>本地存储 AsyncStorage</h3><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p><code>yarn add @react-native-async-storage/async-storage</code></p>
-<h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> <span class="title class_">AsyncStorage</span>.<span class="title function_">setItem</span>(<span class="string">&quot;my-key&quot;</span>, textInput);</span><br><span class="line"><span class="keyword">const</span> value = <span class="keyword">await</span> <span class="title class_">AsyncStorage</span>.<span class="title function_">getItem</span>(<span class="string">&quot;my-key&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> AsyncStorage.setItem(<span class="string">&quot;my-key&quot;</span>, textInput);</span><br><span class="line"><span class="keyword">const</span> value = <span class="keyword">await</span> AsyncStorage.getItem(<span class="string">&quot;my-key&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><h3 id="index-android-bundle"><a href="#index-android-bundle" class="headerlink" title="index.android.bundle"></a>index.android.bundle</h3><ul>
 <li>清除缓存<code>./gradlew clean</code></li>
@@ -341,7 +369,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradlew --warning-mode all</span><br></pre></td></tr></table></figure>
 
 <p>进行编译,提示如下：</p>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure project :</span><br><span class="line">The compile configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 7.0. Please use the implementation configuration instead.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure project :</span><br><span class="line">The compile configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 7.0. Please use the implementation configuration instead.</span><br></pre></td></tr></table></figure>
 
 <p>很显然，在 Gradle 7.0，不支持 compile 了，所以，在 build.gradle 文件中，将 compile 改为 implementation，问题就解决了。在 build.gradle 文件中，将 compile 改为 implementation</p>
 
@@ -475,7 +503,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com">百度</a>
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">百度</a>
         </li>
     </ul>
   </div>
@@ -538,6 +566,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
