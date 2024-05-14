@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"a913481180.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="补丁123cd dwmpatch &lt; xxxx.diffpatch -R &lt; xxx.diff   dwm-alpha-xxx.diff：窗口透明，需配合picom dwm-awesomebar-xxx.diff：tabar隐藏窗口 dwm-gaps-6.0.diff：窗口之间的缝隙 dwm-focusonclick.xxx.diff：鼠标点击才窗口聚焦 dwm-moveresize-">
+  <meta name="description" content="补丁123cd dwmpatch &lt; xxxx.diffpatch -R &lt; xxx.diff   dwm-alpha-xxx.diff：窗口透明，需配合 picom dwm-awesomebar-xxx.diff：tabar 隐藏窗口 dwm-gaps-6.0.diff：窗口之间的缝隙 dwm-focusonclick.xxx.diff：鼠标点击才窗口聚焦 dwm-moveresiz">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dwm">
 <meta property="og:url" content="https://a913481180.github.io/2020/10/11/22-11-33/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="补丁123cd dwmpatch &lt; xxxx.diffpatch -R &lt; xxx.diff   dwm-alpha-xxx.diff：窗口透明，需配合picom dwm-awesomebar-xxx.diff：tabar隐藏窗口 dwm-gaps-6.0.diff：窗口之间的缝隙 dwm-focusonclick.xxx.diff：鼠标点击才窗口聚焦 dwm-moveresize-">
+<meta property="og:description" content="补丁123cd dwmpatch &lt; xxxx.diffpatch -R &lt; xxx.diff   dwm-alpha-xxx.diff：窗口透明，需配合 picom dwm-awesomebar-xxx.diff：tabar 隐藏窗口 dwm-gaps-6.0.diff：窗口之间的缝隙 dwm-focusonclick.xxx.diff：鼠标点击才窗口聚焦 dwm-moveresiz">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-11T14:11:33.000Z">
-<meta property="article:modified_time" content="2024-03-05T12:12:03.919Z">
+<meta property="article:modified_time" content="2024-05-14T15:04:20.364Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-05 20:12:03" itemprop="dateModified" datetime="2024-03-05T20:12:03+08:00">2024-03-05</time>
+                <time title="修改时间：2024-05-14 23:04:20" itemprop="dateModified" datetime="2024-05-14T23:04:20+08:00">2024-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,12 +244,12 @@
         <h2 id="补丁"><a href="#补丁" class="headerlink" title="补丁"></a>补丁</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm</span><br><span class="line">patch &lt; xxxx.diff</span><br><span class="line">patch -R &lt; xxx.diff</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>dwm-alpha-xxx.diff：窗口透明，需配合picom</li>
-<li>dwm-awesomebar-xxx.diff：tabar隐藏窗口</li>
+<li>dwm-alpha-xxx.diff：窗口透明，需配合 picom</li>
+<li>dwm-awesomebar-xxx.diff：tabar 隐藏窗口</li>
 <li>dwm-gaps-6.0.diff：窗口之间的缝隙</li>
 <li>dwm-focusonclick.xxx.diff：鼠标点击才窗口聚焦</li>
 <li>dwm-moveresize-xxx.diff：浮动模式，调整窗口位置大小</li>
-<li>dwm-autostart-xxxx.diff：自动运行脚本，这个补丁将在dwm进入主循环运行之前运行<del>/.dwm/autostart_blocking.sh和</del>/.dwm/autostart.sh &amp;，然后才启动dwm。可以省略其中一个或两个文件。 上面列出的文件分别在目录$XDG_DATA_HOME/DWM、$HOME/.local/Share/DWM和$HOME/.dwm中查找。将会在最先找到的目录中运行脚本，即使该目录下没有脚本。直接使用，将脚本文件放入<del>/.dwm下，同时确保没有上面提到的另两个目录。同时注意若</del>/.dwm/autostart_blocking.sh无法执行完毕，则将卡死。</li>
+<li>dwm-autostart-xxxx.diff：自动运行脚本，这个补丁将在 dwm 进入主循环运行之前运行<del>/.dwm/autostart_blocking.sh 和</del>/.dwm/autostart.sh &amp;，然后才启动 dwm。可以省略其中一个或两个文件。 上面列出的文件分别在目录$XDG_DATA_HOME/DWM、$HOME/.local/Share/DWM 和$HOME/.dwm 中查找。将会在最先找到的目录中运行脚本，即使该目录下没有脚本。直接使用，将脚本文件放入<del>/.dwm 下，同时确保没有上面提到的另两个目录。同时注意若</del>/.dwm/autostart_blocking.sh 无法执行完毕，则将卡死。</li>
 </ul>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> dwm</span><br><span class="line">sudo make clean install</span><br></pre></td></tr></table></figure>
 
@@ -266,10 +266,10 @@
 <ul>
 <li>自定义快捷键</li>
 </ul>
-<p>我们以flamshot为例，为flameshot设置截图快捷键</p>
+<p>我们以 flamshot 为例，为 flameshot 设置截图快捷键</p>
 <p>首先在/<em>commands</em>/下添加你要设置快捷键的命令</p>
 <ul>
-<li>flameshot的截图命令是：flameshot gui，后面没有参数所以设为NULL，这条命令的名字我们设为flameshot</li>
+<li>flameshot 的截图命令是：flameshot gui，后面没有参数所以设为 NULL，这条命令的名字我们设为 flameshot</li>
 </ul>
 <p><code>static const char *flameshot[]  = &#123; &quot;flameshot&quot;,&quot;gui&quot;, NULL &#125;;</code></p>
 <p>进行快捷键和命令的绑定</p>
@@ -308,7 +308,7 @@
 <ul>
 <li>内存</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">dwm_resources</span></span> () &#123;</span><br><span class="line">    <span class="comment"># Used and total memory</span></span><br><span class="line">    MEMUSED=$(free -h | awk <span class="string">&#x27;(NR == 2) &#123;print $3&#125;&#x27;</span>)</span><br><span class="line">    MEMTOT=$(free -h |awk <span class="string">&#x27;(NR == 2) &#123;print $2&#125;&#x27;</span>)</span><br><span class="line">    <span class="comment"># CPU temperature</span></span><br><span class="line">    <span class="comment">#CPU=$(sysctl -n hw.sensors.cpu0.temp0 | cut -d. -f1)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Used and total storage in /home (rounded to 1024B)</span></span><br><span class="line">    <span class="comment">#STOUSED=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $3&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">##STOTOT=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $2&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">#STOPER=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $5&#125;&#x27;)</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment">#printf &quot;💻 MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s&quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment">#printf &quot;STA | MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s &quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span> </span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_resources</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">dwm_resources</span></span> () &#123;</span><br><span class="line">    <span class="comment"># Used and total memory</span></span><br><span class="line">    MEMUSED=$(free -h | awk <span class="string">&#x27;(NR == 2) &#123;print $3&#125;&#x27;</span>)</span><br><span class="line">    MEMTOT=$(free -h |awk <span class="string">&#x27;(NR == 2) &#123;print $2&#125;&#x27;</span>)</span><br><span class="line">    <span class="comment"># CPU temperature</span></span><br><span class="line">    <span class="comment">#CPU=$(sysctl -n hw.sensors.cpu0.temp0 | cut -d. -f1)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Used and total storage in /home (rounded to 1024B)</span></span><br><span class="line">    <span class="comment">#STOUSED=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $3&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">##STOTOT=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $2&#125;&#x27;)</span></span><br><span class="line">    <span class="comment">#STOPER=$(df -h | grep &#x27;/home$&#x27; | awk &#x27;&#123;print $5&#125;&#x27;)</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s&quot;</span> <span class="string">&quot;<span class="variable">$SEP1</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$IDENTIFIER</span>&quot;</span> = <span class="string">&quot;unicode&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment">#printf &quot;💻 MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s&quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment">#printf &quot;STA | MEM %s/%s CPU %s STO %s/%s: %s&quot; &quot;$MEMUSED&quot; &quot;$MEMTOT&quot; &quot;$CPU&quot; &quot;$STOUSED&quot; &quot;$STOTOT&quot; &quot;$STOPER&quot;</span></span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&quot;%s/%s &quot;</span> <span class="string">&quot;<span class="variable">$MEMUSED</span>&quot;</span> <span class="string">&quot;<span class="variable">$MEMTOT</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%s\n&quot;</span> <span class="string">&quot;<span class="variable">$SEP2</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dwm_resources</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>网速</li>
@@ -354,7 +354,7 @@
 </li>
 </ul>
 <h3 id="多屏幕问题"><a href="#多屏幕问题" class="headerlink" title="多屏幕问题"></a>多屏幕问题</h3><p>在主副屏之间移动焦点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 移动焦点至左边屏幕</span><br><span class="line">Mod + &lt; </span><br><span class="line"># 移动焦点至右边屏幕</span><br><span class="line">Mod + &gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 移动焦点至左边屏幕</span><br><span class="line">Mod + &lt;</span><br><span class="line"># 移动焦点至右边屏幕</span><br><span class="line">Mod + &gt;</span><br></pre></td></tr></table></figure>
 
 <p>在主副屏之间移动窗口</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 移动窗口至左边屏幕</span><br><span class="line">Mod + shift + &lt;</span><br></pre></td></tr></table></figure>
@@ -379,11 +379,11 @@
 </li>
 <li><p>st-anysize-xxx.diff：满屏</p>
 </li>
-<li><p>st-scrollback-xxx.diff：滚动，config.h绑定案件</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; MODKEY,            XK_u,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br><span class="line">&#123; MODKEY,            XK_d,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br></pre></td></tr></table></figure></li>
-<li><p>st-scrollback-mouse-xxx.diff：支持鼠标滚动，需按shift键</p>
+<li><p>st-scrollback-xxx.diff：滚动，config.h 绑定案件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; MODKEY,            XK_u,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br><span class="line">&#123; MODKEY,            XK_d,     kscrollup,      &#123;.i = <span class="number">2</span>&#125; &#125;,</span><br></pre></td></tr></table></figure></li>
+<li><p>st-scrollback-mouse-xxx.diff：支持鼠标滚动，需按 shift 键</p>
 </li>
-<li><p>st-scrollback-mouse-altscreen-xxx.diff：不用按shift键滚动</p>
+<li><p>st-scrollback-mouse-altscreen-xxx.diff：不用按 shift 键滚动</p>
 </li>
 </ul>
 

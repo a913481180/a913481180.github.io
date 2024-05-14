@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"a913481180.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="Linux文的权限r:4 读；w:2 写；x:1  执行(运行)；－：对应数值0；777：第一个7:表示当前文件的拥有者的权限,第二个7:表示当前文件的所属组（同组用户）权限,第三个7:表示当前文件的组外权限, 小技巧 Tab键：一下补全，两下提示 简写：若仅输入alias，则可列出目前所有的别名设置。alias的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在.profile或.cs">
+  <meta name="description" content="Linux 文的权限r:4 读；w:2 写；x:1 执行(运行)；－：对应数值 0；777：第一个 7:表示当前文件的拥有者的权限,第二个 7:表示当前文件的所属组（同组用户）权限,第三个 7:表示当前文件的组外权限, 小技巧 Tab 键：一下补全，两下提示 简写：若仅输入alias，则可列出目前所有的别名设置。alias 的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在.profi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux常用命令">
 <meta property="og:url" content="https://a913481180.github.io/2020/01/11/20-22-11/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="Linux文的权限r:4 读；w:2 写；x:1  执行(运行)；－：对应数值0；777：第一个7:表示当前文件的拥有者的权限,第二个7:表示当前文件的所属组（同组用户）权限,第三个7:表示当前文件的组外权限, 小技巧 Tab键：一下补全，两下提示 简写：若仅输入alias，则可列出目前所有的别名设置。alias的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在.profile或.cs">
+<meta property="og:description" content="Linux 文的权限r:4 读；w:2 写；x:1 执行(运行)；－：对应数值 0；777：第一个 7:表示当前文件的拥有者的权限,第二个 7:表示当前文件的所属组（同组用户）权限,第三个 7:表示当前文件的组外权限, 小技巧 Tab 键：一下补全，两下提示 简写：若仅输入alias，则可列出目前所有的别名设置。alias 的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在.profi">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-11T12:22:11.000Z">
-<meta property="article:modified_time" content="2024-03-05T12:12:04.023Z">
+<meta property="article:modified_time" content="2024-05-14T15:04:20.367Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-05 20:12:04" itemprop="dateModified" datetime="2024-03-05T20:12:04+08:00">2024-03-05</time>
+                <time title="修改时间：2024-05-14 23:04:20" itemprop="dateModified" datetime="2024-05-14T23:04:20+08:00">2024-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,15 +241,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Linux文的权限"><a href="#Linux文的权限" class="headerlink" title="Linux文的权限"></a>Linux文的权限</h2><p>r:4 读；w:2 写；x:1  执行(运行)；－：对应数值0；777：第一个7:表示当前文件的拥有者的权限,第二个7:表示当前文件的所属组（同组用户）权限,第三个7:表示当前文件的组外权限,</p>
+        <h2 id="Linux-文的权限"><a href="#Linux-文的权限" class="headerlink" title="Linux 文的权限"></a>Linux 文的权限</h2><p>r:4 读；w:2 写；x:1 执行(运行)；－：对应数值 0；777：第一个 7:表示当前文件的拥有者的权限,第二个 7:表示当前文件的所属组（同组用户）权限,第三个 7:表示当前文件的组外权限,</p>
 <h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><ol>
-<li>Tab键：一下补全，两下提示</li>
-<li>简写：<br>若仅输入<code>alias</code>，则可列出目前所有的别名设置。alias的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在.profile或.cshrc中设定指令的别名。</li>
+<li>Tab 键：一下补全，两下提示</li>
+<li>简写：<br>若仅输入<code>alias</code>，则可列出目前所有的别名设置。alias 的效力仅及于该次登入的操作。若要每次登入是即自动设好别名，可在.profile 或.cshrc 中设定指令的别名。</li>
 </ol>
 <p><code>alias 别名=指令名称</code><br>如<code>alias ll=ls -l</code></p>
 <ol start="3">
 <li>强制关闭程序：<code>kill -9 进程pid</code></li>
-<li>修改hosts：<code>sudo vim /etc/hosts</code></li>
+<li>修改 hosts：<code>sudo vim /etc/hosts</code></li>
 <li>退出用户：<code>tty -&gt; w -&gt; sudo pkill -9 tty1</code></li>
 </ol>
 <h2 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h2><p><code>apt [options] [command] [package ...]</code></p>
@@ -269,21 +269,21 @@
 <p>查找软件包命令： <code>sudo apt search &lt;keyword&gt;</code></p>
 <p>列出所有已安装的包：<code>apt list --installed</code></p>
 <p>列出所有已安装的包的版本信息：<code>apt list --all-versions</code></p>
-<h3 id="linux-chmod命令"><a href="#linux-chmod命令" class="headerlink" title="linux chmod命令"></a>linux chmod命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</span><br><span class="line">+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。</span><br><span class="line">r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</span><br></pre></td></tr></table></figure>
+<h3 id="linux-chmod-命令"><a href="#linux-chmod-命令" class="headerlink" title="linux chmod 命令"></a>linux chmod 命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</span><br><span class="line">+ 表示增加权限、- 表示取消权限、= 表示唯一设定权限。</span><br><span class="line">r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</span><br></pre></td></tr></table></figure>
 
-<p>chmod命令可以使用八进制数来指定权限。文件或目录的权限位是由9个权限位来控制，每三位为一组。例如， 765 将这样解释：</p>
+<p>chmod 命令可以使用八进制数来指定权限。文件或目录的权限位是由 9 个权限位来控制，每三位为一组。例如， 765 将这样解释：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">所有者的权限用数字表达：属主的那三个权限位的数字加起来的总和。如 rwx ，也就是 4+2+1 ，应该是 7。</span><br><span class="line">用户组的权限用数字表达：属组的那个权限位数字的相加的总和。如 rw- ，也就是 4+2+0 ，应该是 6。</span><br><span class="line">其它用户的权限数字表达：其它用户权限位的数字相加的总和。如 r-x ，也就是 4+0+1 ，应该是 5。</span><br></pre></td></tr></table></figure>
 
-<h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><p>Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。</p>
+<h3 id="find-命令"><a href="#find-命令" class="headerlink" title="find 命令"></a>find 命令</h3><p>Linux find 命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则 find 命令将在当前目录下查找子目录与文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find   path   -option   [   -<span class="built_in">print</span> ]   [ -<span class="built_in">exec</span>   -ok   <span class="built_in">command</span> ]   &#123;&#125; \;</span><br><span class="line"></span><br><span class="line">-<span class="built_in">type</span> c : 文件类型是 c 的文件。</span><br><span class="line"> -name <span class="string">&quot;*.c&quot;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="ln-命令"><a href="#ln-命令" class="headerlink" title="ln 命令"></a>ln 命令</h3><p>Linux ln（英文全拼：link files）命令是一个非常重要命令，它的功能是为某一个文件在另外一个位置建立一个同步的链接。</p>
-<p>当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在 其它的目录下用ln命令链接（link）它就可以，不必重复的占用磁盘空间<br><code>ln [参数][源文件或目录][目标文件或目录]</code></p>
+<p>当我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在某个固定的目录，放上该文件，然后在 其它的目录下用 ln 命令链接（link）它就可以，不必重复的占用磁盘空间<br><code>ln [参数][源文件或目录][目标文件或目录]</code></p>
 <blockquote>
 <p>必要参数：<br>-b 删除，覆盖以前建立的链接<br>-d 允许超级用户制作目录的硬链接<br>-f 强制执行<br>-i 交互模式，文件存在则提示用户是否覆盖<br>-n 把符号链接视为一般目录<br>-s 软链接(符号链接)<br>-v 显示详细的处理过程</p>
 </blockquote>
 <h3 id="mv-命令"><a href="#mv-命令" class="headerlink" title="mv 命令"></a>mv 命令</h3><p>Linux mv（英文全拼：move file）命令用来为文件或目录改名、或将文件或目录移入其它位置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv source_directory(目录) dest_directory(目录) </span><br><span class="line">//目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv source_directory(目录) dest_directory(目录)</span><br><span class="line">//目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>参数说明：<br>-b: 当目标文件或目录存在时，在执行覆盖前，会为其创建一个备份。<br>-i: 如果指定移动的源目录或文件与目标的目录或文件同名，则会先询问是否覆盖旧文件，输入 y 表示直接覆盖，输入 n 表示取消该操作。<br>-f: 如果指定移动的源目录或文件与目标的目录或文件同名，不会询问，直接覆盖旧文件。<br>-n: 不要覆盖任何已存在的文件或目录。<br>-u：当源文件比目标文件新或者目标文件不存在时，才执行移动操作。</p>
@@ -292,30 +292,30 @@
 <p>参数：<br>-i 删除前逐一询问确认。<br>-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。<br>-r 将目录及以下之档案亦逐一删除。</p>
 </blockquote>
 <h3 id="cp-命令"><a href="#cp-命令" class="headerlink" title="cp 命令"></a>cp 命令</h3><blockquote>
-<p>参数说明：<br>-a：此选项通常在复制目录时使用，它保留链接、文件属性，并复制目录下的所有内容。其作用等于dpR参数组合。<br>-d：复制时保留链接。这里所说的链接相当于Windows系统中的快捷方式。<br>-f：覆盖已经存在的目标文件而不给出提示。<br>-i：与-f选项相反，在覆盖目标文件之前给出提示，要求用户确认是否覆盖，回答”y”时目标文件将被覆盖。<br>-p：除复制文件的内容外，还把修改时间和访问权限也复制到新文件中。<br>-r：若给出的源文件是一个目录文件，此时将复制该目录下所有的子目录和文件。<br>-l：不复制文件，只是生成链接文件。</p>
+<p>参数说明：<br>-a：此选项通常在复制目录时使用，它保留链接、文件属性，并复制目录下的所有内容。其作用等于 dpR 参数组合。<br>-d：复制时保留链接。这里所说的链接相当于 Windows 系统中的快捷方式。<br>-f：覆盖已经存在的目标文件而不给出提示。<br>-i：与-f 选项相反，在覆盖目标文件之前给出提示，要求用户确认是否覆盖，回答”y”时目标文件将被覆盖。<br>-p：除复制文件的内容外，还把修改时间和访问权限也复制到新文件中。<br>-r：若给出的源文件是一个目录文件，此时将复制该目录下所有的子目录和文件。<br>-l：不复制文件，只是生成链接文件。</p>
 </blockquote>
-<h3 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h3><p>Linux which命令用于查找文件。</p>
-<p>which指令会在环境变量$PATH设置的目录里查找符合条件的文件。</p>
-<h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>Linux touch命令用于修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会建立一个新的文件。</p>
+<h3 id="which-命令"><a href="#which-命令" class="headerlink" title="which 命令"></a>which 命令</h3><p>Linux which 命令用于查找文件。</p>
+<p>which 指令会在环境变量$PATH 设置的目录里查找符合条件的文件。</p>
+<h3 id="touch-命令"><a href="#touch-命令" class="headerlink" title="touch 命令"></a>touch 命令</h3><p>Linux touch 命令用于修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会建立一个新的文件。</p>
 <blockquote>
 <p>参数说明：<br>a 改变档案的读取时间记录。<br>m 改变档案的修改时间记录。<br>c 假如目的档案不存在，不会建立新的档案。与 –no-create 的效果一样。<br>f 不使用，是为了与其他 unix 系统的相容性而保留。<br>r 使用参考档的时间记录，与 –file 的效果一样。<br>d 设定时间与日期，可以使用各种不同的格式。<br>t 设定档案的时间记录，格式与 date 指令相同。<br>–no-create 不会建立新档案。<br>–help 列出指令格式。<br>–version 列出版本讯息。</p>
 </blockquote>
-<h3 id="mount命令"><a href="#mount命令" class="headerlink" title="mount命令"></a>mount命令</h3><p>Linux mount命令是经常会使用到的命令，它用于挂载Linux系统外的文件。</p>
+<h3 id="mount-命令"><a href="#mount-命令" class="headerlink" title="mount 命令"></a>mount 命令</h3><p>Linux mount 命令是经常会使用到的命令，它用于挂载 Linux 系统外的文件。</p>
 <blockquote>
 <p>参数说明：<br>-V：显示程序版本<br>-h：显示辅助讯息<br>-v：显示较讯息，通常和 -f 用来除错。<br>-a：将 /etc/fstab 中定义的所有档案系统挂上。<br>-F：这个命令通常和 -a 一起使用，它会为每一个 mount 的动作产生一个行程负责执行。在系统需要挂上大量 NFS 档案系统时可以加快挂上的动作。<br>-f：通常用在除错的用途。它会使 mount 并不执行实际挂上的动作，而是模拟整个挂上的过程。通常会和 -v 一起使用。<br>-o remount：将一个已经挂下的档案系统重新用不同的方式挂上。例如原先是唯读的系统，现在用可读写的模式重新挂上。<br>-o ro：用唯读模式挂上。<br>-o rw：用可读写模式挂上。<br>-o loop=：使用 loop 模式用来将一个档案当成硬盘分割挂上系统。<br>-t：指定档案系统的型态，通常不必指定。mount 会自动选择正确的型态。<br>-o async：打开非同步模式，所有的档案读写动作都会用非同步模式执行。<br>-o sync：在同步模式下执行。<br>-o atime、-o noatime：当 atime 打开时，系统会在每次读取档案时更新档案的『上一次调用时间』。当我们使用 flash 档案系统时可能会选项把这个选项关闭以减少写入的次数。</p>
 </blockquote>
-<p>将 /tmp/image.iso 这个光碟的 image 档使用 loop 模式挂在 /mnt/cdrom之下。用这种方法可以将一般网络上可以找到的 Linux 光 碟 ISO 档在不烧录成光碟的情况下检视其内容。<br><code>#mount -o loop /tmp/image.iso /mnt/cdrom</code></p>
+<p>将 /tmp/image.iso 这个光碟的 image 档使用 loop 模式挂在 /mnt/cdrom 之下。用这种方法可以将一般网络上可以找到的 Linux 光 碟 ISO 档在不烧录成光碟的情况下检视其内容。<br><code>#mount -o loop /tmp/image.iso /mnt/cdrom</code></p>
 <h3 id="df-命令"><a href="#df-命令" class="headerlink" title="df 命令"></a>df 命令</h3><p>Linux df（英文全拼：disk free） 命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。</p>
 <h3 id="mkdir-命令"><a href="#mkdir-命令" class="headerlink" title="mkdir 命令"></a>mkdir 命令</h3><p>Linux mkdir（英文全拼：make directory）命令用于创建目录。</p>
 <blockquote>
 <p>参数说明：<br>-p 确保目录名称存在，不存在的就建一个。</p>
 </blockquote>
-<h3 id="logout命令"><a href="#logout命令" class="headerlink" title="logout命令"></a>logout命令</h3><p>Linux logout命令用于退出系统。</p>
-<h3 id="passwd命令"><a href="#passwd命令" class="headerlink" title="passwd命令"></a>passwd命令</h3><p><code>passwd [-k] [-l] [-u [-f]] [-d] [-S] [username]</code></p>
+<h3 id="logout-命令"><a href="#logout-命令" class="headerlink" title="logout 命令"></a>logout 命令</h3><p>Linux logout 命令用于退出系统。</p>
+<h3 id="passwd-命令"><a href="#passwd-命令" class="headerlink" title="passwd 命令"></a>passwd 命令</h3><p><code>passwd [-k] [-l] [-u [-f]] [-d] [-S] [username]</code></p>
 <blockquote>
 <p>必要参数：<br>-d 删除密码<br>-f 强迫用户下次登录时必须修改口令<br>-w 口令要到期提前警告的天数<br>-k 更新只能发送在过期之后<br>-l 停止账号使用<br>-S 显示密码信息<br>-u 启用已被停止的账户<br>-x 指定口令最长存活期<br>-g 修改群组密码<br>指定口令最短存活期<br>-i 口令过期后多少天停用账户</p>
 </blockquote>
-<h3 id="Linux系统用户账号的管理"><a href="#Linux系统用户账号的管理" class="headerlink" title="Linux系统用户账号的管理"></a>Linux系统用户账号的管理</h3><p>添加新的用户账号使用useradd命令，其语法如下：<br><code>useradd 选项 用户名</code></p>
+<h3 id="Linux-系统用户账号的管理"><a href="#Linux-系统用户账号的管理" class="headerlink" title="Linux 系统用户账号的管理"></a>Linux 系统用户账号的管理</h3><p>添加新的用户账号使用 useradd 命令，其语法如下：<br><code>useradd 选项 用户名</code></p>
 <p>删除帐号:<br><code>userdel 选项 用户名 //常用的选项是 -r，它的作用是把用户的主目录一起删除。</code></p>
 
     </div>
@@ -397,7 +397,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E7%9A%84%E6%9D%83%E9%99%90"><span class="nav-number">1.</span> <span class="nav-text">Linux文的权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">1.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apt"><span class="nav-number">2.</span> <span class="nav-text">apt</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-chmod%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">linux chmod命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.</span> <span class="nav-text">find命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.3.</span> <span class="nav-text">ln 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.4.</span> <span class="nav-text">mv 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.5.</span> <span class="nav-text">rm 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.6.</span> <span class="nav-text">cp 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#which%E5%91%BD%E4%BB%A4"><span class="nav-number">2.7.</span> <span class="nav-text">which命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="nav-number">2.8.</span> <span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mount%E5%91%BD%E4%BB%A4"><span class="nav-number">2.9.</span> <span class="nav-text">mount命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.10.</span> <span class="nav-text">df 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.11.</span> <span class="nav-text">mkdir 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logout%E5%91%BD%E4%BB%A4"><span class="nav-number">2.12.</span> <span class="nav-text">logout命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd%E5%91%BD%E4%BB%A4"><span class="nav-number">2.13.</span> <span class="nav-text">passwd命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">2.14.</span> <span class="nav-text">Linux系统用户账号的管理</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E6%96%87%E7%9A%84%E6%9D%83%E9%99%90"><span class="nav-number">1.</span> <span class="nav-text">Linux 文的权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">1.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apt"><span class="nav-number">2.</span> <span class="nav-text">apt</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-chmod-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">linux chmod 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.</span> <span class="nav-text">find 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.3.</span> <span class="nav-text">ln 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.4.</span> <span class="nav-text">mv 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.5.</span> <span class="nav-text">rm 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.6.</span> <span class="nav-text">cp 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#which-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.7.</span> <span class="nav-text">which 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#touch-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.8.</span> <span class="nav-text">touch 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mount-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.9.</span> <span class="nav-text">mount 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.10.</span> <span class="nav-text">df 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.11.</span> <span class="nav-text">mkdir 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logout-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.12.</span> <span class="nav-text">logout 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.13.</span> <span class="nav-text">passwd 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">2.14.</span> <span class="nav-text">Linux 系统用户账号的管理</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

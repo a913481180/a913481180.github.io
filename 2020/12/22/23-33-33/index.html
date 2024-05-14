@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"a913481180.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="安装下载镜像软碟通写入硬盘镜像重启进入安装界面   分区：     &#x2F;boot&#x2F;efi&#x2F; 必须，引导分区，256mb-512mb   &#x2F;boot 非必须，引导分区，ext4格式，256mb   swap 非必须，交换分区，虚拟内存，swap格式。内存小于 2g-&gt;2g，内存小于 8g-&gt;4g-8g，内存大于 8g-&gt;8g-16g，内存大于 16-&gt;16g   &#x2F; 必须，主分">
+  <meta name="description" content="安装下载镜像软碟通写入硬盘镜像重启进入安装界面   分区：     &#x2F;boot&#x2F;efi&#x2F; 必须，引导分区，256mb-512mb   &#x2F;boot 非必须，引导分区，ext4 格式，256mb   swap 非必须，交换分区，虚拟内存，swap 格式。内存小于 2g-&gt;2g，内存小于 8g-&gt;4g-8g，内存大于 8g-&gt;8g-16g，内存大于 16-&gt;16g   &#x2F; 必须，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu系统安装">
 <meta property="og:url" content="https://a913481180.github.io/2020/12/22/23-33-33/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="安装下载镜像软碟通写入硬盘镜像重启进入安装界面   分区：     &#x2F;boot&#x2F;efi&#x2F; 必须，引导分区，256mb-512mb   &#x2F;boot 非必须，引导分区，ext4格式，256mb   swap 非必须，交换分区，虚拟内存，swap格式。内存小于 2g-&gt;2g，内存小于 8g-&gt;4g-8g，内存大于 8g-&gt;8g-16g，内存大于 16-&gt;16g   &#x2F; 必须，主分">
+<meta property="og:description" content="安装下载镜像软碟通写入硬盘镜像重启进入安装界面   分区：     &#x2F;boot&#x2F;efi&#x2F; 必须，引导分区，256mb-512mb   &#x2F;boot 非必须，引导分区，ext4 格式，256mb   swap 非必须，交换分区，虚拟内存，swap 格式。内存小于 2g-&gt;2g，内存小于 8g-&gt;4g-8g，内存大于 8g-&gt;8g-16g，内存大于 16-&gt;16g   &#x2F; 必须，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-22T15:33:33.000Z">
-<meta property="article:modified_time" content="2024-03-05T12:12:04.273Z">
+<meta property="article:modified_time" content="2024-05-14T15:04:20.377Z">
 <meta property="article:author" content="KK">
 <meta property="article:tag" content="system">
 <meta name="twitter:card" content="summary">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-05 20:12:04" itemprop="dateModified" datetime="2024-03-05T20:12:04+08:00">2024-03-05</time>
+                <time title="修改时间：2024-05-14 23:04:20" itemprop="dateModified" datetime="2024-05-14T23:04:20+08:00">2024-05-14</time>
               </span>
 
           
@@ -246,23 +246,23 @@
 </tr>
 <tr>
 <td>/boot</td>
-<td>非必须，引导分区，ext4格式，256mb</td>
+<td>非必须，引导分区，ext4 格式，256mb</td>
 </tr>
 <tr>
 <td>swap</td>
-<td>非必须，交换分区，虚拟内存，swap格式。内存小于 2g-&gt;2g，内存小于 8g-&gt;4g-8g，内存大于 8g-&gt;8g-16g，内存大于 16-&gt;16g</td>
+<td>非必须，交换分区，虚拟内存，swap 格式。内存小于 2g-&gt;2g，内存小于 8g-&gt;4g-8g，内存大于 8g-&gt;8g-16g，内存大于 16-&gt;16g</td>
 </tr>
 <tr>
 <td>/</td>
-<td>必须，主分区，用于安装系统和软件，ext4格式 ，30gb</td>
+<td>必须，主分区，用于安装系统和软件，ext4 格式 ，30gb</td>
 </tr>
 <tr>
 <td>/home</td>
-<td>用户存放文件，ext4格式</td>
+<td>用户存放文件，ext4 格式</td>
 </tr>
 </tbody></table>
 <blockquote>
-<p><code>/bin</code> <code>/sbin</code>  <code>/lib</code> <code>/etc</code> <code>/dev</code>这五个目录不要与根目录<code>/</code>所在分区分开。否则系统会不能正常引导</p>
+<p><code>/bin</code> <code>/sbin</code> <code>/lib</code> <code>/etc</code> <code>/dev</code>这五个目录不要与根目录<code>/</code>所在分区分开。否则系统会不能正常引导</p>
 </blockquote>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
 <li>设置根用户密码：<br><code>sudo passwd</code></li>
@@ -284,13 +284,13 @@
 <li>vim</li>
 <li>neofetch</li>
 <li>ranger</li>
-<li>rar解压软件<ul>
-<li>(<a target="_blank" rel="noopener" href="https://www.rarlab.com/download.htm">https://www.rarlab.com/download.htm</a>) 下载最新版本的linux版本rar软件</li>
+<li>rar 解压软件<ul>
+<li>(<a target="_blank" rel="noopener" href="https://www.rarlab.com/download.htm">https://www.rarlab.com/download.htm</a>) 下载最新版本的 linux 版本 rar 软件</li>
 <li>解压后进入文件夹，执行<code>sudo make</code>命令</li>
 <li>解压：<code>rar x test.rar</code></li>
 <li>解压到当前目录：<code>rar e test.rar</code></li>
 <li>压缩：<code>rar a test.rar /test</code></li>
-<li>也可以使用<code>unrar</code>命令提取rar压缩文件</li>
+<li>也可以使用<code>unrar</code>命令提取 rar 压缩文件</li>
 </ul>
 </li>
 <li>截图工具：<code>flameshot</code><ul>
@@ -299,18 +299,18 @@
 <li>添加快捷键：<code>/usr/bin/flameshot gui</code></li>
 </ul>
 </li>
-<li>远程连接windows软件:<code>rdesktop</code><ul>
+<li>远程连接 windows 软件:<code>rdesktop</code><ul>
 <li>安装：<code>sudo apt install rdesktop</code></li>
 <li>使用：<code>rdesktop xxx.xxx.xxx.xxx -u kk -p 123456</code></li>
 <li>参数：<ul>
-<li><code>-f</code>：全屏模式ctrl+alt+enter可切换全屏</li>
-<li><code>-a 16</code>： 16位色彩</li>
-<li><code>-z</code>：启用RDP数据流压缩</li>
+<li><code>-f</code>：全屏模式 ctrl+alt+enter 可切换全屏</li>
+<li><code>-a 16</code>： 16 位色彩</li>
+<li><code>-z</code>：启用 RDP 数据流压缩</li>
 <li><code>-x lan</code>：使用局域网级别的图像质量</li>
 <li><code>-r clipboard</code>：运行共享剪切板</li>
 <li><code>-g 1920x1080+0+0</code>：分辨率,窗口位置</li>
 <li><code>-r sound:local</code>：同步声音</li>
-<li><code>-r disk:share=/home</code>：win10网上邻居虚拟一个映射盘，ubuntu挂载到远程主机上</li>
+<li><code>-r disk:share=/home</code>：win10 网上邻居虚拟一个映射盘，ubuntu 挂载到远程主机上</li>
 </ul>
 </li>
 </ul>
@@ -320,15 +320,15 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/lib/nodejs</span><br><span class="line">sudo tar -xJvf node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>.tar.xz -C /usr/<span class="built_in">local</span>/lib/nodejs </span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">VERSION=v10.15.0</span><br><span class="line">DISTRO=linux-x64</span><br><span class="line">sudo mkdir -p /usr/<span class="built_in">local</span>/lib/nodejs</span><br><span class="line">sudo tar -xJvf node-<span class="variable">$VERSION</span>-<span class="variable">$DISTRO</span>.tar.xz -C /usr/<span class="built_in">local</span>/lib/nodejs</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>环境变量<br>编辑文件<code>vim ~/.profile</code><br>添加<code>export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH</code><br>刷新：<code>source ~/.profile</code></li>
 <li>google chrome<br><code>https://www.google.cn/intl/zh-CN/chrome/</code></li>
-<li>搜狗输入法(ubuntu20移除qt4,会出现死机情况)<br><code>https://shurufa.sogou.com/</code></li>
+<li>搜狗输入法(ubuntu20 移除 qt4,会出现死机情况)<br><code>https://shurufa.sogou.com/</code></li>
 <li>百度输入法</li>
 <li>谷歌输入法(推荐)<br><code>sudo dpkg-reconfigure locales</code>选择中文<code>zh_CN.UTF-8 UTF-8</code><br><code>sudo apt install fcitx fcitx-googlepinyin</code></li>
-<li>fcitx5中文输入法<br><code>sudo apt install fcitx5 fcitx5-chinese-addons</code></li>
+<li>fcitx5 中文输入法<br><code>sudo apt install fcitx5 fcitx5-chinese-addons</code></li>
 <li>网易云、QQ 音乐</li>
 <li>vscode</li>
 <li>vitrulbox</li>
@@ -339,17 +339,23 @@
 <li>有道翻译</li>
 <li>迅雷</li>
 <li>wps</li>
-<li>wps字体安装<br>windows 的字体一般存放在 c:/windows/fonts 目录下，我拷贝到 linux 下的字体有：<br><code>simfang.ttf</code> 仿宋体<br><code>simhei.ttf</code>黑体<br><code>simkai.ttf</code>楷体</li>
+<li>wps 字体安装<br>windows 的字体一般存放在 c:/windows/fonts 目录下，我拷贝到 linux 下的字体有：<br><code>simfang.ttf</code> 仿宋体<br><code>simhei.ttf</code>黑体<br><code>simkai.ttf</code>楷体</li>
 </ul>
 <p>宋体：<code>simsunb.ttf</code>和<code>simsun.ttc</code><br><code>simsun.ttf</code>宋体和新宋体，原文件名<code>simsun.ttc</code><br>微软雅黑：<code>msyhbd.ttf</code></p>
 <p>下载字体文件，然后复制到 Linux 系统中的/usr/share/fonts/win-font 文件夹中。<br>修改权限，并更新字体缓存<br><code>sudo chmod -R 777  /usr/share/fonts/win-font</code><br><code>cd /usr/share/fonts/win-font</code></p>
 <p>执行以下命令,生成字体的索引信息：<br><code>sudo mkfontscale</code><br><code>sudo mkfontdir</code><br>运行 fc-cache 命令更新字体缓存。<br><code>sudo fc-cache -fv</code></p>
 <h2 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h2><ul>
-<li>zip 命令<br>示例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">zip -r test.zip file</span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">unzip test.zip</span><br></pre></td></tr></table></figure>
-释义：<br><code>-r</code> : 递归处理</li>
-<li>rar 命令<br>示例：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">rar a -r test.rar file</span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">unrar x test.rar</span><br></pre></td></tr></table></figure>
-释义：</li>
+<li>zip 命令<br>示例：</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">zip -r test.zip file</span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">unzip test.zip</span><br></pre></td></tr></table></figure>
+
+<p>释义：<br><code>-r</code> : 递归处理</p>
+<ul>
+<li>rar 命令<br>示例：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">rar a -r test.rar file</span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">unrar x test.rar</span><br></pre></td></tr></table></figure>
+
+<p>释义：</p>
 <p><code>a </code>: 添加到压缩文件</p>
 <p><code>-r </code>: 递归处理</p>
 <p><code>x </code>: 以绝对路径解压文件</p>
@@ -357,7 +363,8 @@
 <li>tar 命令<br>语法： <code>tar [主选项 + 辅选项] 文件或目录</code></li>
 </ul>
 <p>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件 file1 和目录 dir2 到 test.tar.gz</span></span><br><span class="line">tar -zcvf test.tar.gz file1 dir2</span><br><span class="line"><span class="comment"># 解压 test.tar.gz（将 c 换成 x 即可）</span></span><br><span class="line">tar -zxvf test.tar.gz</span><br><span class="line"><span class="comment"># 列出压缩文件的内容</span></span><br><span class="line">tar -ztvf test.tar.gz </span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 压缩文件 file1 和目录 dir2 到 test.tar.gz</span></span><br><span class="line">tar -zcvf test.tar.gz file1 dir2</span><br><span class="line"><span class="comment"># 解压 test.tar.gz（将 c 换成 x 即可）</span></span><br><span class="line">tar -zxvf test.tar.gz</span><br><span class="line"><span class="comment"># 列出压缩文件的内容</span></span><br><span class="line">tar -ztvf test.tar.gz</span><br></pre></td></tr></table></figure>
+
 <p>释义：</p>
 <p><code>-z</code> : 使用 gzip 来压缩和解压文件</p>
 <p><code>-v</code> : –verbose 详细的列出处理的文件</p>

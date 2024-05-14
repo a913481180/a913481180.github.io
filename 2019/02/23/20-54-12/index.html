@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"a913481180.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="MATLAB **图像的空间变换及相邻区域和块的处理一、目的 掌握MATLAB的基本应用方法 熟悉MATLAB的4个内置函数：clc, clear, close, cputime 掌握MATLAB空间变换–图像插值、缩放、旋转 掌握MATLAB相邻区域和块的处理-滑动邻域和图像块操作  二、仪器设备、软件仪器设备： 计算机 操作系统：Windows10 编程软件：MATLAB R2019a 截图软">
+  <meta name="description" content="MATLAB **图像的空间变换及相邻区域和块的处理一、目的 掌握 MATLAB 的基本应用方法 熟悉 MATLAB 的 4 个内置函数：clc, clear, close, cputime 掌握 MATLAB 空间变换–图像插值、缩放、旋转 掌握 MATLAB 相邻区域和块的处理-滑动邻域和图像块操作  二、仪器设备、软件仪器设备： 计算机 操作系统：Windows10 编程软件：MATLAB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MATLAB 图像的空间变换及相邻区域和块的处理">
 <meta property="og:url" content="https://a913481180.github.io/2019/02/23/20-54-12/index.html">
 <meta property="og:site_name" content="KK">
-<meta property="og:description" content="MATLAB **图像的空间变换及相邻区域和块的处理一、目的 掌握MATLAB的基本应用方法 熟悉MATLAB的4个内置函数：clc, clear, close, cputime 掌握MATLAB空间变换–图像插值、缩放、旋转 掌握MATLAB相邻区域和块的处理-滑动邻域和图像块操作  二、仪器设备、软件仪器设备： 计算机 操作系统：Windows10 编程软件：MATLAB R2019a 截图软">
+<meta property="og:description" content="MATLAB **图像的空间变换及相邻区域和块的处理一、目的 掌握 MATLAB 的基本应用方法 熟悉 MATLAB 的 4 个内置函数：clc, clear, close, cputime 掌握 MATLAB 空间变换–图像插值、缩放、旋转 掌握 MATLAB 相邻区域和块的处理-滑动邻域和图像块操作  二、仪器设备、软件仪器设备： 计算机 操作系统：Windows10 编程软件：MATLAB">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://a913481180.github.io/2019/02/23/20-54-12/RackMultipart20210826-4-1uatq9n_html_830d1655bcbf2565.png">
 <meta property="article:published_time" content="2019-02-23T12:54:12.000Z">
-<meta property="article:modified_time" content="2024-03-05T12:12:04.136Z">
+<meta property="article:modified_time" content="2024-05-14T15:04:20.371Z">
 <meta property="article:author" content="KK">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://a913481180.github.io/2019/02/23/20-54-12/RackMultipart20210826-4-1uatq9n_html_830d1655bcbf2565.png">
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-05 20:12:04" itemprop="dateModified" datetime="2024-03-05T20:12:04+08:00">2024-03-05</time>
+                <time title="修改时间：2024-05-14 23:04:20" itemprop="dateModified" datetime="2024-05-14T23:04:20+08:00">2024-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,111 +243,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="MATLAB-图像的空间变换及相邻区域和块的处理"><a href="#MATLAB-图像的空间变换及相邻区域和块的处理" class="headerlink" title="MATLAB **图像的空间变换及相邻区域和块的处理"></a>MATLAB **<strong>图像的空间变换及相邻区域和块的处理</strong></h1><h2 id="一、目的"><a href="#一、目的" class="headerlink" title="一、目的"></a>一、目的</h2><ol>
-<li>掌握MATLAB的基本应用方法</li>
-<li>熟悉MATLAB的4个内置函数：clc, clear, close, cputime</li>
-<li>掌握MATLAB空间变换–图像插值、缩放、旋转</li>
-<li>掌握MATLAB相邻区域和块的处理-滑动邻域和图像块操作</li>
+        <h1 id="MATLAB-图像的空间变换及相邻区域和块的处理"><a href="#MATLAB-图像的空间变换及相邻区域和块的处理" class="headerlink" title="MATLAB **图像的空间变换及相邻区域和块的处理"></a>MATLAB *<strong>*图像的空间变换及相邻区域和块的处理</strong></h1><h2 id="一、目的"><a href="#一、目的" class="headerlink" title="一、目的"></a>一、目的</h2><ol>
+<li>掌握 MATLAB 的基本应用方法</li>
+<li>熟悉 MATLAB 的 4 个内置函数：clc, clear, close, cputime</li>
+<li>掌握 MATLAB 空间变换–图像插值、缩放、旋转</li>
+<li>掌握 MATLAB 相邻区域和块的处理-滑动邻域和图像块操作</li>
 </ol>
 <h2 id="二、仪器设备、软件"><a href="#二、仪器设备、软件" class="headerlink" title="二、仪器设备、软件"></a>二、仪器设备、软件</h2><p>仪器设备： 计算机</p>
 <p>操作系统：Windows10</p>
 <p>编程软件：MATLAB R2019a</p>
 <p>截图软件：截图工具(SnippingTool.exe)</p>
-<h2 id="三、内容及步骤-参考MATLAB-图像处理工具箱的帮助完成相应功能"><a href="#三、内容及步骤-参考MATLAB-图像处理工具箱的帮助完成相应功能" class="headerlink" title="三、内容及步骤(参考MATLAB 图像处理工具箱的帮助完成相应功能)"></a>三、内容及步骤(参考MATLAB 图像处理工具箱的帮助完成相应功能)</h2><p><strong>1.</strong>  <strong>了解图像插值的方法和应用</strong></p>
-<p>在图像缩放、旋转中MATLAB图像处理工具箱提供了以下三种插值方法：</p>
+<h2 id="三、内容及步骤-参考-MATLAB-图像处理工具箱的帮助完成相应功能"><a href="#三、内容及步骤-参考-MATLAB-图像处理工具箱的帮助完成相应功能" class="headerlink" title="三、内容及步骤(参考 MATLAB 图像处理工具箱的帮助完成相应功能)"></a>三、内容及步骤(参考 MATLAB 图像处理工具箱的帮助完成相应功能)</h2><p><strong>1.</strong> <strong>了解图像插值的方法和应用</strong></p>
+<p>在图像缩放、旋转中 MATLAB 图像处理工具箱提供了以下三种插值方法：</p>
 <p><strong>&#39;nearest&#39;</strong></p>
 <p>nearest neighbor interpolation （最邻近插值）</p>
 <p>对于最邻近插值来说，输出像素被赋值为当前点落入的像素点的值。</p>
 <p>使用方法：</p>
-<p>x=(-3.5:3.5)&#39;;</p>
-<p>[x convergent(x) nearest(x) round(x)]</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=(-<span class="number">3.5</span>:<span class="number">3.5</span>)&amp;<span class="comment">#39;;</span></span><br><span class="line"></span><br><span class="line">[x convergent(x) nearest(x) <span class="built_in">round</span>(x)]</span><br></pre></td></tr></table></figure>
+
 <p><strong>&#39;bilinear&#39;</strong></p>
 <p>bilinear interpolation（双线性插值）</p>
-<p>对于双线性插值来说，输出像素被赋值为2×2矩阵所包含的有效点的加权平均值。</p>
+<p>对于双线性插值来说，输出像素被赋值为 2×2 矩阵所包含的有效点的加权平均值。</p>
 <p>使用方法：</p>
-<p>% Design a 6-th order Elliptic analog low pass filter and transform</p>
-<p>% it to a Discrete-time representation.</p>
-<p>Fs =0.5; % Sampling Frequency</p>
-<p>[z,p,k]=ellipap(6,5,90); % Lowpass filter prototype</p>
-<p>[num,den]=zp2tf(z,p,k); % Convert to transfer function form</p>
-<p>[numd,dend]=bilinear(num,den,Fs); % Analog to Digital conversion</p>
-<p>fvtool(numd,dend) % Visualize the filter</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">% Design a <span class="number">6</span>-th order Elliptic analog low <span class="keyword">pass</span> <span class="built_in">filter</span> <span class="keyword">and</span> transform</span><br><span class="line"></span><br><span class="line">% it to a Discrete-time representation.</span><br><span class="line"></span><br><span class="line">Fs =<span class="number">0.5</span>; % Sampling Frequency</span><br><span class="line"></span><br><span class="line">[z,p,k]=ellipap(<span class="number">6</span>,<span class="number">5</span>,<span class="number">90</span>); % Lowpass <span class="built_in">filter</span> prototype</span><br><span class="line"></span><br><span class="line">[num,den]=zp2tf(z,p,k); % Convert to transfer function form</span><br><span class="line"></span><br><span class="line">[numd,dend]=bilinear(num,den,Fs); % Analog to Digital conversion</span><br><span class="line"></span><br><span class="line">fvtool(numd,dend) % Visualize the <span class="built_in">filter</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>&#39;bicubic&#39;</strong></p>
 <p>bicubic interpolation（双立次插值）</p>
-<p>对于双立次插值来说，输出像素被赋值为4×4矩阵所包含的有效点的加权平均值。</p>
+<p>对于双立次插值来说，输出像素被赋值为 4×4 矩阵所包含的有效点的加权平均值。</p>
 <p>使用方法：</p>
-<p>%双三次插值具体实现</p>
-<p> clc,clear; fff=imread(&#39;E:\Documents\BUPT\DIP\图片\lena.bmp&#39;);</p>
-<p> ff = rgb2gray(fff);%转化为灰度图像</p>
-<p> [mm,nn]=size(ff);               %将图像隔行隔列抽取元素，得到缩小的图像f m=mm/2;n=nn/2;</p>
-<p>f = zeros(m,n);</p>
-<p> for i=1:m</p>
-<p> for j=1:n</p>
-<p> f(i,j)=ff(2*i,2*j);</p>
-<p> end</p>
-<p>end</p>
-<p>k=5;                       %设置放大倍数</p>
-<p> bijiao1 = imresize(f,k,&#39;bilinear&#39;);%双线性插值结果比较</p>
-<p>bijiao = uint8(bijiao1);</p>
-<p> a=f(1,:);c=f(m,:);             %将待插值图像矩阵前后各扩展两行两列,共扩展四行四列</p>
-<p>b=[f(1,1),f(1,1),f(:,1)&#39;,f(m,1),f(m,1)];</p>
-<p>d=[f(1,n),f(1,n),f(:,n)&#39;,f(m,n),f(m,n)];</p>
-<p> a1=[a;a;f;c;c];</p>
-<p> b1=[b;b;a1&#39;;d;d];</p>
-<p>ffff=b1&#39;;</p>
-<p>f1=double(ffff);</p>
-<p> g1 = zeros(k*m,k*n);</p>
-<p> for i=1:k*m                 %利用双三次插值公式对新图象所有像素赋值</p>
-<p>   u=rem(i,k)/k; i1=floor(i/k)+2;</p>
-<p>A=[sw(1+u) sw(u) sw(1-u) sw(2-u)];</p>
-<pre><code>  for j=1:k\*n
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line">%双三次插值具体实现</span><br><span class="line"></span><br><span class="line">clc,clear; fff=imread(&amp;<span class="comment">#39;E:\Documents\BUPT\DIP\图片\lena.bmp&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">ff = rgb2gray(fff);%转化为灰度图像</span><br><span class="line"></span><br><span class="line">[mm,nn]=size(ff); %将图像隔行隔列抽取元素，得到缩小的图像 f m=mm/<span class="number">2</span>;n=nn/<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">f = zeros(m,n);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i=<span class="number">1</span>:m</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j=<span class="number">1</span>:n</span><br><span class="line"></span><br><span class="line">f(i,j)=ff(<span class="number">2</span>\*i,<span class="number">2</span>\*j);</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">k=<span class="number">5</span>; %设置放大倍数</span><br><span class="line"></span><br><span class="line">bijiao1 = imresize(f,k,&amp;<span class="comment">#39;bilinear&amp;#39;);%双线性插值结果比较</span></span><br><span class="line"></span><br><span class="line">bijiao = uint8(bijiao1);</span><br><span class="line"></span><br><span class="line">a=f(<span class="number">1</span>,:);c=f(m,:); %将待插值图像矩阵前后各扩展两行两列,共扩展四行四列</span><br><span class="line"></span><br><span class="line">b=[f(<span class="number">1</span>,<span class="number">1</span>),f(<span class="number">1</span>,<span class="number">1</span>),f(:,<span class="number">1</span>)&amp;<span class="comment">#39;,f(m,1),f(m,1)];</span></span><br><span class="line"></span><br><span class="line">d=[f(<span class="number">1</span>,n),f(<span class="number">1</span>,n),f(:,n)&amp;<span class="comment">#39;,f(m,n),f(m,n)];</span></span><br><span class="line"></span><br><span class="line">a1=[a;a;f;c;c];</span><br><span class="line"></span><br><span class="line">b1=[b;b;a1&amp;<span class="comment">#39;;d;d];</span></span><br><span class="line"></span><br><span class="line">ffff=b1&amp;<span class="comment">#39;;</span></span><br><span class="line"></span><br><span class="line">f1=double(ffff);</span><br><span class="line"></span><br><span class="line">g1 = zeros(k\*m,k\*n);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i=<span class="number">1</span>:k\*m %利用双三次插值公式对新图象所有像素赋值</span><br><span class="line"></span><br><span class="line">u=rem(i,k)/k; i1=floor(i/k)+<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">A=[sw(<span class="number">1</span>+u) sw(u) sw(<span class="number">1</span>-u) sw(<span class="number">2</span>-u)];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> j=<span class="number">1</span>:k\*n</span><br><span class="line"></span><br><span class="line">    v=rem(j,k)/k;</span><br><span class="line"></span><br><span class="line">j1=floor(j/k)+<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">      C=[sw(<span class="number">1</span>+v);sw(v);sw(<span class="number">1</span>-v);sw(<span class="number">2</span>-v)];</span><br><span class="line"></span><br><span class="line">      B=[f1(i1-<span class="number">1</span>,j1-<span class="number">1</span>) f1(i1-<span class="number">1</span>,j1) f1(i1-<span class="number">1</span>,j1+<span class="number">1</span>) f1(i1-<span class="number">1</span>,j1+<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">     f1(i1,j1-<span class="number">1</span>)   f1(i1,j1)   f1(i1,j1+<span class="number">1</span>)   f1(i1,j1+<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    f1(i1+<span class="number">1</span>,j1-<span class="number">1</span>)  f1(i1+<span class="number">1</span>,j1) f1(i1+<span class="number">1</span>,j1+<span class="number">1</span>) f1(i1+<span class="number">1</span>,j1+<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">f1(i1+<span class="number">2</span>,j1-<span class="number">1</span>) f1(i1+<span class="number">2</span>,j1) f1(i1+<span class="number">2</span>,j1+<span class="number">1</span>) f1(i1+<span class="number">2</span>,j1+<span class="number">2</span>)];</span><br><span class="line"></span><br><span class="line">      g1(i,j)=(A\*B\*C);</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">g=uint8(g1);</span><br><span class="line"></span><br><span class="line">imshow(uint8(f));</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;缩小的图像&amp;#39;); %显示缩小的图像</span></span><br><span class="line"></span><br><span class="line">Figure</span><br><span class="line"></span><br><span class="line">,imshow(ff);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;原图&amp;#39;); %显示原图像</span></span><br><span class="line"></span><br><span class="line">figure,</span><br><span class="line"></span><br><span class="line">imshow(g);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;双三次插值放大的图像&amp;#39;); %显示插值后的图像</span></span><br><span class="line"></span><br><span class="line">figure,imshow(bijiao);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;双线性插值放大结果&amp;#39;); %显示插值后的图像</span></span><br><span class="line"></span><br><span class="line">mse=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">ff=double(ff);</span><br><span class="line"></span><br><span class="line">g=double(g);</span><br><span class="line"></span><br><span class="line">ff2=fftshift(fft2(ff)); %计算原图像和插值图像的傅立叶幅度谱</span><br><span class="line"></span><br><span class="line">g2=fftshift(fft2(g));</span><br><span class="line"></span><br><span class="line">figure,subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>),imshow(log(<span class="built_in">abs</span>(ff2)),[<span class="number">8</span>,<span class="number">10</span>]);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;原图像的傅立叶幅度谱&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>),imshow(log(<span class="built_in">abs</span>(g2)),[<span class="number">8</span>,<span class="number">10</span>]);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;双三次插值图像的傅立叶幅度谱&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">function A=sw(w1) w=<span class="built_in">abs</span>(w1);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> w\&amp;lt;<span class="number">1</span>&amp;amp;&amp;amp;w\&amp;gt;=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">A=<span class="number">1</span>-<span class="number">2</span>\*w^<span class="number">2</span>+w^<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">elseif w\&amp;gt;=<span class="number">1</span>&amp;amp;&amp;amp;w\&amp;lt;<span class="number">2</span></span><br><span class="line"></span><br><span class="line">A=<span class="number">4</span>-<span class="number">8</span>\*w+<span class="number">5</span>\*w^<span class="number">2</span>-w^<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">Else</span><br><span class="line"></span><br><span class="line">A=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
-v=rem(j,k)/k;
-</code></pre>
-<p>j1=floor(j/k)+2;</p>
-<pre><code>  C=[sw(1+v);sw(v);sw(1-v);sw(2-v)];
-
-  B=[f1(i1-1,j1-1) f1(i1-1,j1) f1(i1-1,j1+1) f1(i1-1,j1+2)
-
- f1(i1,j1-1)   f1(i1,j1)   f1(i1,j1+1)   f1(i1,j1+2)
-
-f1(i1+1,j1-1)  f1(i1+1,j1) f1(i1+1,j1+1) f1(i1+1,j1+2)
-</code></pre>
-<p>   f1(i1+2,j1-1) f1(i1+2,j1) f1(i1+2,j1+1) f1(i1+2,j1+2)];</p>
-<pre><code>  g1(i,j)=(A\*B\*C);
-</code></pre>
-<p>end</p>
-<p>end</p>
-<p>g=uint8(g1);</p>
-<p> imshow(uint8(f));</p>
-<p> title(&#39;缩小的图像&#39;);    %显示缩小的图像</p>
-<p>Figure</p>
-<p>,imshow(ff);</p>
-<p>title(&#39;原图&#39;);               %显示原图像</p>
-<p>figure,</p>
-<p>imshow(g);</p>
-<p>title(&#39;双三次插值放大的图像&#39;);     %显示插值后的图像</p>
-<p>figure,imshow(bijiao);</p>
-<p>title(&#39;双线性插值放大结果&#39;);     %显示插值后的图像</p>
-<p>mse=0;</p>
-<p>ff=double(ff);</p>
-<p>g=double(g);</p>
-<p> ff2=fftshift(fft2(ff));                     %计算原图像和插值图像的傅立叶幅度谱</p>
-<p> g2=fftshift(fft2(g));</p>
-<p>figure,subplot(1,2,1),imshow(log(abs(ff2)),[8,10]);</p>
-<p>title(&#39;原图像的傅立叶幅度谱&#39;);</p>
-<p>subplot(1,2,2),imshow(log(abs(g2)),[8,10]);</p>
-<p>title(&#39;双三次插值图像的傅立叶幅度谱&#39;);</p>
-<p>function A=sw(w1) w=abs(w1);</p>
-<p>if w&amp;lt;1&amp;&amp;w&amp;gt;=0</p>
-<p>   A=1-2*w^2+w^3;</p>
-<p> elseif w&amp;gt;=1&amp;&amp;w&amp;lt;2</p>
-<p>A=4-8*w+5*w^2-w^3;</p>
-<p> Else</p>
-<p>A=0;</p>
-<p> end</p>
-<p><strong>2.</strong>  <strong>了解图像相邻区域和块的处理</strong>** - **<strong>滑动窗和图像块操作</strong></p>
-<p><strong>3.</strong>** 熟悉 <strong><strong>MATLAB</strong></strong> 的 <strong><strong>4</strong></strong> 个内置函数： **<strong>clc, clear, close, cputime</strong></p>
+<p><strong>2.</strong> <strong>了解图像相邻区域和块的处理**</strong> - *<strong>*滑动窗和图像块操作</strong></p>
+<p><strong>3.**</strong> 熟悉 *<strong>*MATLAB**</strong> 的 *<strong>*4**</strong> 个内置函数： *<strong>*clc, clear, close, cputime</strong></p>
 <ol>
 <li><p>clc - Clear Command Window（清除命令行窗口）</p>
 </li>
@@ -360,172 +287,75 @@ f1(i1+1,j1-1)  f1(i1+1,j1) f1(i1+1,j1+1) f1(i1+1,j1+2)
 </ol>
 <p>close ALL - closes all the open figure windows(关闭所有打开的图形窗口)</p>
 <ol start="4">
-<li>cputime - CPU time in seconds(以秒为单位的CPU时间)</li>
+<li>cputime - CPU time in seconds(以秒为单位的 CPU 时间)</li>
 </ol>
 <p>cputime returns the CPU time in seconds that has been used</p>
 <p>by the MATLAB process since MATLAB started.</p>
-<p>cputime返回自从MATLAB打开MATLAB进程使用的以秒为单位的CPU时间</p>
+<p>cputime 返回自从 MATLAB 打开 MATLAB 进程使用的以秒为单位的 CPU 时间</p>
 <p>For example:</p>
-<p>t=cputime; your_operation; cputime-t</p>
-<p>returns the cpu time used to run your_operation.</p>
-<p>读取原始图像后，图像处理前调用一次cputime赋值给变量t，图像处理后再调用一次cputime减去图像处理前CPU时间t，即为运行图像处理操作所花费的时间。以此可以评测图像处理算法的时间复杂度。</p>
-<p><strong>4.</strong>  <strong>放大和缩小一幅图像</strong>** (imresize)**</p>
-<p>B=imresize(A, SCALE, METHOD)</p>
-<p>B=imresize(A, [NUMROWS NUMCOLS], METHOD)</p>
-<p>放大和缩小后图像的分辨率不一样，不要用同一个图形窗口内的subplot （子图）显示原图像、放大和缩小后的图像。显示每一幅图像前，加figure (创建新的图形窗口)。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t=cputime; your_operation; cputime-t</span><br><span class="line"></span><br><span class="line">returns the cpu time used to run your_operation.</span><br></pre></td></tr></table></figure>
+
+<p>读取原始图像后，图像处理前调用一次 cputime 赋值给变量 t，图像处理后再调用一次 cputime 减去图像处理前 CPU 时间 t，即为运行图像处理操作所花费的时间。以此可以评测图像处理算法的时间复杂度。</p>
+<p><strong>4.</strong> <strong>放大和缩小一幅图像**</strong> (imresize)**</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">B=imresize(A, SCALE, METHOD)</span><br><span class="line"></span><br><span class="line">B=imresize(A, [NUMROWS NUMCOLS], METHOD)</span><br></pre></td></tr></table></figure>
+
+<p>放大和缩小后图像的分辨率不一样，不要用同一个图形窗口内的 subplot （子图）显示原图像、放大和缩小后的图像。显示每一幅图像前，加 figure (创建新的图形窗口)。</p>
 <p><strong>使用方法：</strong></p>
 <p>B = imresize(A,scale)</p>
-<p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&amp;s_tid=doc_srchtitle#d117e606348">B</a> = imresize(<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&amp;s_tid=doc_srchtitle#d117e605577">A</a>,<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&amp;s_tid=doc_srchtitle#d117e605629">scale</a>) 返回图像 B，它是将 A 的长宽大小缩放 scale 倍之后的图像。输入图像 A 可以是灰度、RGB 或二值图像。如果 A 有两个以上维度，则 imresize 只调整前两个维度的大小。如果 scale 在 [0, 1] 范围内，则 B 比 A 小。如果 scale 大于 1，则 B 比 A 大。默认情况下，imresize 使用双三次插值。</p>
+<p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&s_tid=doc_srchtitle#d117e606348">B</a> = imresize(<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&s_tid=doc_srchtitle#d117e605577">A</a>,<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imresize.html?searchHighlight=imresize&s_tid=doc_srchtitle#d117e605629">scale</a>) 返回图像 B，它是将 A 的长宽大小缩放 scale 倍之后的图像。输入图像 A 可以是灰度、RGB 或二值图像。如果 A 有两个以上维度，则 imresize 只调整前两个维度的大小。如果 scale 在 [0, 1] 范围内，则 B 比 A 小。如果 scale 大于 1，则 B 比 A 大。默认情况下，imresize 使用双三次插值。</p>
 <p>举例：</p>
-<p>I = imread(&#39;ngc6543a.jpg&#39;);<br> %将图像的长宽缩小二分之一。<br> J = imresize(I, 0.5);<br> %显示原始图像和调整大小后的图像。<br> figure(2); imshow(I);<br> figure(3); imshow(J);</p>
-<p>综上所述，在MATLAB Editor（编辑器），新建一个文件，编写代码如下：</p>
-<p>clc,clear;close all;</p>
-<p>A=imread(&#39;baby.jpg&#39;);</p>
-<p>%将图像的长宽缩小十分之一。</p>
-<p>B =imresize(A,0.1);</p>
-<p>%将图像的长宽放大二分之一。</p>
-<p>C =imresize(A,2);</p>
-<p>%显示图像</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(A);</p>
-<p>title(&#39;原图&#39;);</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(B);</p>
-<p>title(&#39;缩小&#39;);</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(C);</p>
-<p>title(&#39;放大&#39;);</p>
-<p>点击MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I = imread(&amp;<span class="comment">#39;ngc6543a.jpg&amp;#39;);</span></span><br><span class="line">%将图像的长宽缩小二分之一。</span><br><span class="line">J = imresize(I, <span class="number">0.5</span>);</span><br><span class="line">%显示原始图像和调整大小后的图像。</span><br><span class="line">figure(<span class="number">2</span>); imshow(I);</span><br><span class="line">figure(<span class="number">3</span>); imshow(J);</span><br></pre></td></tr></table></figure>
+
+<p>综上所述，在 MATLAB Editor（编辑器），新建一个文件，编写代码如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">clc,clear;close <span class="built_in">all</span>;</span><br><span class="line"></span><br><span class="line">A=imread(&amp;<span class="comment">#39;baby.jpg&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">%将图像的长宽缩小十分之一。</span><br><span class="line"></span><br><span class="line">B =imresize(A,<span class="number">0.1</span>);</span><br><span class="line"></span><br><span class="line">%将图像的长宽放大二分之一。</span><br><span class="line"></span><br><span class="line">C =imresize(A,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">%显示图像</span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(A);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;原图&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(B);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;缩小&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(C);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;放大&amp;#39;);</span></span><br></pre></td></tr></table></figure>
+
+<p>点击 MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</p>
 <ol>
-<li><strong>旋转一幅图像</strong>** (imrotate)**</li>
+<li><strong>旋转一幅图像**</strong> (imrotate)**</li>
 </ol>
-<p>B = imrotate(A,ANGLE,METHOD)</p>
-<p>B = imrotate(A,ANGLE,METHOD,BBOX)</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">B = imrotate(A,ANGLE,METHOD)</span><br><span class="line"></span><br><span class="line">B = imrotate(A,ANGLE,METHOD,BBOX)</span><br></pre></td></tr></table></figure>
+
 <p><strong>使用方法：</strong></p>
-<p>B = imrotate(A,angle)<br>将图像A（图像的数据矩阵）绕图像的中心点旋转angle度， 正数表示逆时针旋转， 负数表示顺时针旋转。返回旋转后的图像矩阵。</p>
-<p>B = imrotate(A,angle,method)<br>使用method参数可以改变插值算法，method参数可以为下面这三个值：需要引号引出，默认值用大括号{}括起来。<br> &#39;nearest&#39;：最邻近线性插值（Nearest-neighbor interpolation）<br> &#39;bilinear&#39;： 双线性插值（Bilinear interpolation）<br> &#39;bicubic&#39;： 双三次插值（或叫做双立方插值）（Bicubic interpolation）</p>
-<p>B = imrotate(A,angle,method,bbox)<br> bbox参数用于指定输出图像属性：<br> &#39;crop&#39;： 通过对旋转后的图像B进行裁剪， 保持旋转后输出图像B的尺寸和输入图像A的尺寸一样。<br> &#39;loose&#39;： 使输出图像足够大， 以保证源图像旋转后超出图像尺寸范围的像素值没有丢失。 一般这种格式产生的图像的尺寸都要大于源图像的尺寸。</p>
-<p>综上所述，在MATLAB Editor（编辑器），新建一个文件，编写代码如下：</p>
-<p>clc,clear;close all;</p>
-<p>A=imread(&#39;baby.jpg&#39;);</p>
-<p>%顺时针旋转60度</p>
-<p>B = imrotate(A,60);</p>
-<p>%顺时针旋转30度,双线性插值法</p>
-<p>C = imrotate(A,30,&#39;bilinear&#39;);</p>
-<p>%顺时针旋转15度,最邻近线性插值法</p>
-<p>D = imrotate(A,15,&#39;nearest&#39;);</p>
-<p>%逆时针旋转60度,双三次插值法</p>
-<p>E = imrotate(A,-60,&#39;bicubic&#39;);</p>
-<p>%指定输出图像属性</p>
-<p>%通过对旋转后的图像B进行裁剪，</p>
-<p>%逆时针旋转30度,旋转后输出图像B的尺寸和输入图像A的尺寸一样</p>
-<p>F = imrotate(A,-30,&#39;bilinear&#39;,&#39;crop&#39;);</p>
-<p>%逆时针旋转15度,使输出图像足够大，</p>
-<p>G = imrotate(A,-15,&#39;bilinear&#39;,&#39;crop&#39;);</p>
-<p>% %显示图像</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(A);</p>
-<p>title(&#39;原图&#39;);</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(B);</p>
-<p>title(&#39;顺时针旋转60度&#39;);</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(C);</p>
-<p>title(&#39;顺时针旋转30度,双线性插值法&#39;);</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(D);</p>
-<p>title(&#39;顺时针旋转15度,最邻近线性插值法&#39;);</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(E);</p>
-<p>title(&#39;逆时针旋转60度,双三次插值法&#39;);</p>
-<p>figure</p>
-<p>subplot(111);</p>
-<p>imshow(F);</p>
-<p>title(&#39;逆时针旋转30度,旋转后输出图像B的尺寸和输入图像A的尺寸一样&#39;);</p>
-<p>imshow(G);</p>
-<p>title(&#39;逆时针旋转30度,旋转后使输出图像足够大&#39;);</p>
-<p>点击MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</p>
-<p><strong>6.</strong>  <strong>滑动邻域操作</strong>** (nlfilter)**</p>
-<p>B = nlfilter(A,[M N],FUN)</p>
-<p>FUN必须为一个函数句柄</p>
-<p>B = nlfilter(A,[m n],fun)</p>
-<p>使用对A使用滤波函数，滤波函数的形式为fun</p>
-<p>tips:nlfilter在较大的图像中操作时间较长，可以使用colfilt函数代替该函数</p>
-<p>综上所述，在MATLAB Editor（编辑器），新建一个文件，编写代码如下：</p>
-<p>clc,clear;close all;</p>
-<p>A=imread(&#39;coins.png&#39;);</p>
-<p>%滤波函数</p>
-<p>fun = @(x) median(x(:));</p>
-<p>%对A使用滤波函数，滤波函数的形式为fun</p>
-<p>B = nlfilter(A,[3 3],fun);</p>
-<p>%显示图像</p>
-<p>suplot(111),</p>
-<p>imshow(A),</p>
-<p>title(&#39;原图&#39;);</p>
-<p>figure,</p>
-<p>suplot(111),</p>
-<p>imshow(B),</p>
-<p>title(&#39;处理后图像&#39;);</p>
-<p>点击MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</p>
-<p><strong>7.</strong>  <strong>图像块操作</strong> <strong>(blockproc)</strong></p>
-<p>使用8-by-8 blocks DCT 变换对图像进行压缩与解压缩，利用dctmtx, blockproc等函数，更改mask 矩阵的值观察解压缩重构图像的变化（区域编码mask矩阵值只能为0或1，1表示选取，0表示舍弃）。</p>
+<p>B = imrotate(A,angle)<br>将图像 A（图像的数据矩阵）绕图像的中心点旋转 angle 度， 正数表示逆时针旋转， 负数表示顺时针旋转。返回旋转后的图像矩阵。</p>
+<p>B = imrotate(A,angle,method)<br>使用 method 参数可以改变插值算法，method 参数可以为下面这三个值：需要引号引出，默认值用大括号{}括起来。<br>&#39;nearest&#39;：最邻近线性插值（Nearest-neighbor interpolation）<br>&#39;bilinear&#39;： 双线性插值（Bilinear interpolation）<br>&#39;bicubic&#39;： 双三次插值（或叫做双立方插值）（Bicubic interpolation）</p>
+<p>B = imrotate(A,angle,method,bbox)<br>bbox 参数用于指定输出图像属性：<br>&#39;crop&#39;： 通过对旋转后的图像 B 进行裁剪， 保持旋转后输出图像 B 的尺寸和输入图像 A 的尺寸一样。<br>&#39;loose&#39;： 使输出图像足够大， 以保证源图像旋转后超出图像尺寸范围的像素值没有丢失。 一般这种格式产生的图像的尺寸都要大于源图像的尺寸。</p>
+<p>综上所述，在 MATLAB Editor（编辑器），新建一个文件，编写代码如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">clc,clear;close <span class="built_in">all</span>;</span><br><span class="line"></span><br><span class="line">A=imread(&amp;<span class="comment">#39;baby.jpg&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">%顺时针旋转 <span class="number">60</span> 度</span><br><span class="line"></span><br><span class="line">B = imrotate(A,<span class="number">60</span>);</span><br><span class="line"></span><br><span class="line">%顺时针旋转 <span class="number">30</span> 度,双线性插值法</span><br><span class="line"></span><br><span class="line">C = imrotate(A,<span class="number">30</span>,&amp;<span class="comment">#39;bilinear&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">%顺时针旋转 <span class="number">15</span> 度,最邻近线性插值法</span><br><span class="line"></span><br><span class="line">D = imrotate(A,<span class="number">15</span>,&amp;<span class="comment">#39;nearest&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">%逆时针旋转 <span class="number">60</span> 度,双三次插值法</span><br><span class="line"></span><br><span class="line">E = imrotate(A,-<span class="number">60</span>,&amp;<span class="comment">#39;bicubic&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">%指定输出图像属性</span><br><span class="line"></span><br><span class="line">%通过对旋转后的图像 B 进行裁剪，</span><br><span class="line"></span><br><span class="line">%逆时针旋转 <span class="number">30</span> 度,旋转后输出图像 B 的尺寸和输入图像 A 的尺寸一样</span><br><span class="line"></span><br><span class="line">F = imrotate(A,-<span class="number">30</span>,&amp;<span class="comment">#39;bilinear&amp;#39;,&amp;#39;crop&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">%逆时针旋转 <span class="number">15</span> 度,使输出图像足够大，</span><br><span class="line"></span><br><span class="line">G = imrotate(A,-<span class="number">15</span>,&amp;<span class="comment">#39;bilinear&amp;#39;,&amp;#39;crop&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">% %显示图像</span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(A);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;原图&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(B);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;顺时针旋转 60 度&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(C);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;顺时针旋转 30 度,双线性插值法&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(D);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;顺时针旋转 15 度,最邻近线性插值法&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(E);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;逆时针旋转 60 度,双三次插值法&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure</span><br><span class="line"></span><br><span class="line">subplot(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">imshow(F);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;逆时针旋转 30 度,旋转后输出图像 B 的尺寸和输入图像 A 的尺寸一样&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">imshow(G);</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;逆时针旋转 30 度,旋转后使输出图像足够大&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">点击 MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</span><br><span class="line"></span><br><span class="line">**<span class="number">6.</span>** **滑动邻域操作\*\*** (nlfilter)\*\*</span><br><span class="line"></span><br><span class="line">B = nlfilter(A,[M N],FUN)</span><br><span class="line"></span><br><span class="line">FUN 必须为一个函数句柄</span><br><span class="line"></span><br><span class="line">B = nlfilter(A,[m n],fun)</span><br><span class="line"></span><br><span class="line">使用对 A 使用滤波函数，滤波函数的形式为 fun</span><br><span class="line"></span><br><span class="line">tips:nlfilter 在较大的图像中操作时间较长，可以使用 colfilt 函数代替该函数</span><br><span class="line"></span><br><span class="line">综上所述，在 MATLAB Editor（编辑器），新建一个文件，编写代码如下：</span><br><span class="line"></span><br><span class="line">clc,clear;close <span class="built_in">all</span>;</span><br><span class="line"></span><br><span class="line">A=imread(&amp;<span class="comment">#39;coins.png&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">%滤波函数</span><br><span class="line"></span><br><span class="line">fun = @(x) median(x(:));</span><br><span class="line"></span><br><span class="line">%对 A 使用滤波函数，滤波函数的形式为 fun</span><br><span class="line"></span><br><span class="line">B = nlfilter(A,[<span class="number">3</span> <span class="number">3</span>],fun);</span><br><span class="line"></span><br><span class="line">%显示图像</span><br><span class="line"></span><br><span class="line">suplot(<span class="number">111</span>),</span><br><span class="line"></span><br><span class="line">imshow(A),</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;原图&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure,</span><br><span class="line"></span><br><span class="line">suplot(<span class="number">111</span>),</span><br><span class="line"></span><br><span class="line">imshow(B),</span><br><span class="line"></span><br><span class="line">title(&amp;<span class="comment">#39;处理后图像&amp;#39;);</span></span><br></pre></td></tr></table></figure>
+
+<p>点击 MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</p>
+<p><strong>7.</strong> <strong>图像块操作</strong> <strong>(blockproc)</strong></p>
+<p>使用 8-by-8 blocks DCT 变换对图像进行压缩与解压缩，利用 dctmtx, blockproc 等函数，更改 mask 矩阵的值观察解压缩重构图像的变化（区域编码 mask 矩阵值只能为 0 或 1，1 表示选取，0 表示舍弃）。</p>
 <p>B = blockproc(A,[m n],fun) 通过对大小为 [m n] 的每个非重叠图像块应用 fun 函数并将结果串联到输出图像 B 中，来处理图像 A。</p>
 <p>B = blockproc(src_filename,[m n],fun) 处理文件名为 src_filename 的图像，一次读取和处理一个图像块。此语法对于处理大型图像很有用。</p>
 <p>B = blockproc(adapter,[m n],fun) 处理由 adapter（一个 ImageAdapter 对象）指定的源图像。如果您需要自定义 API 来读写特定图像文件格式，请使用此语法。</p>
 <p>blockproc(___,Name,Value) 使用名称-值对组参数来控制图像块行为的各个方面。</p>
-<p>通 <img src="RackMultipart20210826-4-1uatq9n_html_830d1655bcbf2565.png">过改变模板矩阵中非零元素的个数，得到不同缩编码图像，编写程序计算原图像和dct变换后得到的图像之间的均方误差。用到的matlab函数为im2double,dctmtx,blkproc，对比还是容易发现，第二个代码的运行结果图片损失程度还是比较大的，因程序二模板的0个数占比更多，使更多的高频像素被压缩，而该压缩是不可逆的，所以图二损失程度更大。</p>
-<p>MATLAB图像处理工具箱实现离散余弦变换有两种方法：dct2和dctmtx（1）使用函数dct2，该函数用一个基于FFT的算法来提高当输入较大的方阵时的计算速度。</p>
-<p>（2）使用由dctmtx函数返回的DCT变换矩阵，这种方法较适合于较小的输入方阵（例如8×8或16×16）。</p>
-<p>①函数：dct2</p>
+<p>通 <img src="RackMultipart20210826-4-1uatq9n_html_830d1655bcbf2565.png">过改变模板矩阵中非零元素的个数，得到不同缩编码图像，编写程序计算原图像和 dct 变换后得到的图像之间的均方误差。用到的 matlab 函数为 im2double,dctmtx,blkproc，对比还是容易发现，第二个代码的运行结果图片损失程度还是比较大的，因程序二模板的 0 个数占比更多，使更多的高频像素被压缩，而该压缩是不可逆的，所以图二损失程度更大。</p>
+<p>MATLAB 图像处理工具箱实现离散余弦变换有两种方法：dct2 和 dctmtx（1）使用函数 dct2，该函数用一个基于 FFT 的算法来提高当输入较大的方阵时的计算速度。</p>
+<p>（2）使用由 dctmtx 函数返回的 DCT 变换矩阵，这种方法较适合于较小的输入方阵（例如 8×8 或 16×16）。</p>
+<p>① 函数：dct2</p>
 <p>实现图像的二维离散余弦变换。调用格式为：</p>
-<p>B = dct2(A)</p>
-<p>B = dct2(A,[M N])</p>
-<p>B = dct2(A,M,N)</p>
-<p>式中A表示要变换的图像，M和N是可选参数，表示填充后的图像矩阵大小，B表示变换后得到的图像矩阵。</p>
-<p>②函数：dctmtx</p>
-<p>D = dctmtx(N)</p>
-<p>式中D是返回N×N的DCT变换矩阵，如果矩阵A是N×N方阵，则A的DCT变换可用D×A×D&#39;来计算。这在有时比dct2计算快，特别是对于A很大的情况。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">B = dct2(A)</span><br><span class="line"></span><br><span class="line">B = dct2(A,[M N])</span><br><span class="line"></span><br><span class="line">B = dct2(A,M,N)</span><br></pre></td></tr></table></figure>
+
+<p>式中 A 表示要变换的图像，M 和 N 是可选参数，表示填充后的图像矩阵大小，B 表示变换后得到的图像矩阵。</p>
+<p>② 函数：dctmtx</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D = dctmtx(N)</span><br></pre></td></tr></table></figure>
+
+<p>式中 D 是返回 N×N 的 DCT 变换矩阵，如果矩阵 A 是 N×N 方阵，则 A 的 DCT 变换可用 D×A×D&#39;来计算。这在有时比 dct2 计算快，特别是对于 A 很大的情况。</p>
 <p>Blkproc</p>
 <p>功能：对图像进行分块处理</p>
 <p>函数调用形式：B = blkproc(A,[m n],fun, parameter1, parameter2, …)</p>
-<p>B = blkproc(A,[m n],[mborder nborder],fun,…)</p>
-<p>B = blkproc(A,&#39;indexed&#39;,…)</p>
-<p>参数解释：[m n] ：图像以m*n为分块单位，对图像进行处理（如8像素*8像素）</p>
-<p>Fun： 应用此函数对分别对每个m*n分块的像素进行处理</p>
-<p>parameter1, parameter2： 要传给fun函数的参数</p>
-<p>mborder nborder：对每个m*n块上下进行mborder个单位的扩充，左右进行nborder个单位的扩充，扩充的像素值为0，fun函数对整个扩充后的分块进行处理。</p>
-<p>Mse等价于sum(a.^2)/lenght(a);</p>
-<p>MSE和RMSE都是网络的性能函数。MSE是（神经）网络的均方误差，叫&quot;Mean Square Error&quot;。比如有n对输入输出数据，每对为[Pi,Ti],i=1,2,…,n.网络通过训练后有网络输出,记为Yi。那MSE＝(求和(Ti-Yi)^2(i=1,2,..n))/n，即每一组数的误差平方和再除以数据的对数。RMSE叫&quot;Root Mean Square Error&quot;，即在MSE基础上要开根号，中文译为&quot;均方根误差&quot;，MSE=MSE开根号。亦即RMSE是MSE的平方根。</p>
-<p>综上所述，在MATLAB Editor（编辑器），新建一个文件，编写代码如下：</p>
-<p>clc,clear;close all;</p>
-<p>I=imread(&#39;cameraman.tif&#39;);</p>
-<p>I=im2double(I);</p>
-<p>T=dctmtx(8);%得到一个8*8的离散余弦变化矩阵</p>
-<p>B=blkproc(I,[8 8],&#39;P1*x*P2&#39;,T,T&#39;);% x就是每一个分成的8*8大小的块，P1*x*P2相当于像素块的处理函数，p1=T p2=T&#39;,也就是fun=p1*x*p2&#39;=T*x*T&#39;的功能是进行离散余弦变换</p>
-<p>m=[1 1 1 0 0 0 0 0</p>
-<p>1 1 0 0 0 0 0 0</p>
-<p>1 0 0 0 0 0 0 0</p>
-<p>0 0 0 0 0 0 0 0</p>
-<p>0 0 0 0 0 0 0 0</p>
-<p>0 0 0 0 0 0 0 0</p>
-<p>0 0 0 0 0 0 0 0</p>
-<p>0 0 0 0 0 0 0 0 ];</p>
-<p>B2=blkproc(B,[8 8],&#39;P1.*x&#39;,m);%舍弃每个块中的高频系数，达到图像压缩的目的</p>
-<p>I2=blkproc(B2,[8 8],&#39;P1*x*P2&#39;,T&#39;,T);%进行反余弦变换，得到压缩后的图象</p>
-<p>cha=abs(I-I2);</p>
-<p>junfang=mse(cha);</p>
-<p>figure,imshow(I),title(&#39;原始图像&#39;);</p>
-<p>figure,imshow(I2),title(&#39;压缩（解压缩）图像&#39;),</p>
-<p>xlabel({&#39;均方误差: &#39;;junfang});</p>
-<p>点击MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">B = blkproc(A,[m n],[mborder nborder],fun,...)</span><br><span class="line"></span><br><span class="line">B = blkproc(A,&amp;<span class="comment">#39;indexed&amp;#39;,...)</span></span><br></pre></td></tr></table></figure>
+
+<p>参数解释：[m n] ：图像以 m*n 为分块单位，对图像进行处理（如 8 像素*8 像素）</p>
+<p>Fun： 应用此函数对分别对每个 m*n 分块的像素进行处理</p>
+<p>parameter1, parameter2： 要传给 fun 函数的参数</p>
+<p>mborder nborder：对每个 m*n 块上下进行 mborder 个单位的扩充，左右进行 nborder 个单位的扩充，扩充的像素值为 0，fun 函数对整个扩充后的分块进行处理。</p>
+<p>Mse 等价于 sum(a.^2)/lenght(a);</p>
+<p>MSE 和 RMSE 都是网络的性能函数。MSE 是（神经）网络的均方误差，叫&quot;Mean Square Error&quot;。比如有 n 对输入输出数据，每对为[Pi,Ti],i=1,2,…,n.网络通过训练后有网络输出,记为 Yi。那 MSE ＝(求和(Ti-Yi)^2(i=1,2,..n))/n，即每一组数的误差平方和再除以数据的对数。RMSE 叫&quot;Root Mean Square Error&quot;，即在 MSE 基础上要开根号，中文译为&quot;均方根误差&quot;，MSE=MSE 开根号。亦即 RMSE 是 MSE 的平方根。</p>
+<p>综上所述，在 MATLAB Editor（编辑器），新建一个文件，编写代码如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">clc,clear;close <span class="built_in">all</span>;</span><br><span class="line"></span><br><span class="line">I=imread(&amp;<span class="comment">#39;cameraman.tif&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">I=im2double(I);</span><br><span class="line"></span><br><span class="line">T=dctmtx(<span class="number">8</span>);%得到一个 <span class="number">8</span>\*<span class="number">8</span> 的离散余弦变化矩阵</span><br><span class="line"></span><br><span class="line">B=blkproc(I,[<span class="number">8</span> <span class="number">8</span>],&amp;<span class="comment">#39;P1\*x\*P2&amp;#39;,T,T&amp;#39;);% x 就是每一个分成的 8\*8 大小的块，P1\*x\*P2 相当于像素块的处理函数，p1=T p2=T&amp;#39;,也就是 fun=p1\*x\*p2&amp;#39;=T\*x\*T&amp;#39;的功能是进行离散余弦变换</span></span><br><span class="line"></span><br><span class="line">m=[<span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> ];</span><br><span class="line"></span><br><span class="line">B2=blkproc(B,[<span class="number">8</span> <span class="number">8</span>],&amp;<span class="comment">#39;P1.\*x&amp;#39;,m);%舍弃每个块中的高频系数，达到图像压缩的目的</span></span><br><span class="line"></span><br><span class="line">I2=blkproc(B2,[<span class="number">8</span> <span class="number">8</span>],&amp;<span class="comment">#39;P1\*x\*P2&amp;#39;,T&amp;#39;,T);%进行反余弦变换，得到压缩后的图象</span></span><br><span class="line"></span><br><span class="line">cha=<span class="built_in">abs</span>(I-I2);</span><br><span class="line"></span><br><span class="line">junfang=mse(cha);</span><br><span class="line"></span><br><span class="line">figure,imshow(I),title(&amp;<span class="comment">#39;原始图像&amp;#39;);</span></span><br><span class="line"></span><br><span class="line">figure,imshow(I2),title(&amp;<span class="comment">#39;压缩（解压缩）图像&amp;#39;),</span></span><br><span class="line"></span><br><span class="line">xlabel(&#123;&amp;<span class="comment">#39;均方误差: &amp;#39;;junfang&#125;);</span></span><br></pre></td></tr></table></figure>
+
+<p>点击 MATLAB Editor（编辑器）的运行按钮，可看到工作区内容以及运行结果</p>
 
     </div>
 
@@ -606,7 +436,7 @@ f1(i1+1,j1-1)  f1(i1+1,j1) f1(i1+1,j1+1) f1(i1+1,j1+2)
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MATLAB-%E5%9B%BE%E5%83%8F%E7%9A%84%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2%E5%8F%8A%E7%9B%B8%E9%82%BB%E5%8C%BA%E5%9F%9F%E5%92%8C%E5%9D%97%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">MATLAB **图像的空间变换及相邻区域和块的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%9B%AE%E7%9A%84"><span class="nav-number">1.1.</span> <span class="nav-text">一、目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BB%AA%E5%99%A8%E8%AE%BE%E5%A4%87%E3%80%81%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">二、仪器设备、软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%86%85%E5%AE%B9%E5%8F%8A%E6%AD%A5%E9%AA%A4-%E5%8F%82%E8%80%83MATLAB-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%AE%B1%E7%9A%84%E5%B8%AE%E5%8A%A9%E5%AE%8C%E6%88%90%E7%9B%B8%E5%BA%94%E5%8A%9F%E8%83%BD"><span class="nav-number">1.3.</span> <span class="nav-text">三、内容及步骤(参考MATLAB 图像处理工具箱的帮助完成相应功能)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MATLAB-%E5%9B%BE%E5%83%8F%E7%9A%84%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2%E5%8F%8A%E7%9B%B8%E9%82%BB%E5%8C%BA%E5%9F%9F%E5%92%8C%E5%9D%97%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">MATLAB **图像的空间变换及相邻区域和块的处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%9B%AE%E7%9A%84"><span class="nav-number">1.1.</span> <span class="nav-text">一、目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BB%AA%E5%99%A8%E8%AE%BE%E5%A4%87%E3%80%81%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">二、仪器设备、软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%86%85%E5%AE%B9%E5%8F%8A%E6%AD%A5%E9%AA%A4-%E5%8F%82%E8%80%83-MATLAB-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7%E7%AE%B1%E7%9A%84%E5%B8%AE%E5%8A%A9%E5%AE%8C%E6%88%90%E7%9B%B8%E5%BA%94%E5%8A%9F%E8%83%BD"><span class="nav-number">1.3.</span> <span class="nav-text">三、内容及步骤(参考 MATLAB 图像处理工具箱的帮助完成相应功能)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
